@@ -3,7 +3,7 @@
 - Class: 8
 - Subject: Science (বিজ্ঞান)
 - Chapter: 11 — আলো
-- Current status: **LESSON_1_STORYBOARD_DRAFT_COMPLETE — LESSON_2_NEXT**
+- Current status: **LESSONS_1_2_STORYBOARDS_DRAFT_COMPLETE — LESSON_3_NEXT**
 - Last updated: 2026-09-05
 
 ## Durable workflow rules now active
@@ -14,99 +14,87 @@
 - Do not depend on Gemini browsing GitHub/importing the repository.
 - Old Gemini bundles become stale when any included canonical file changes.
 - Canonical procedure: root `GEMINI_REVIEW_WORKFLOW.md`.
+- Universal stage rule: **Finish → record → then continue.**
 
 ## Source intake
 
 - Complete 2026 textbook received: Yes, full PDF supplied by the user.
-- Canonical Tier-1 source record: `sources/class-8/science/2026/SOURCE_RECORD.md`
-- School-year designation: 2026; book front matter says revised October 2025.
-- Chapter printed page range: 108–118.
-- Working-copy PDF page range: 113–123.
-- Input integrity gate: PASS_WITH_NOTES.
-- Source type: image/scanned PDF with unreliable/absent native text extraction.
-- Raw working-copy PDF page count: 162.
-- ChatGPT file-ingestion layer exposed 150 pages, so extractor page counts must not be treated as authoritative for this file.
-- Critical wording verification: visible rendered textbook pages are authoritative; do not rely on OCR-only text.
+- Canonical source record: `sources/class-8/science/2026/SOURCE_RECORD.md`
+- Printed Chapter 11 range: 108–118.
+- Working-copy PDF range: 113–123.
+- Source type: scanned/image PDF; visible rendered pages authoritative for critical wording.
 
-## Analysis and split
+## Analysis / source / planning state
 
-- Chapter analysis: COMPLETE and rebased to full 2026 source.
+- Full chapter analysis: COMPLETE.
 - Approved lesson count: **4**.
-- Lesson split approved by user: **Yes — 2026-09-05**.
-- Gemini Gate A did not require a material replan.
-- Approved split record: `LESSON_SPLIT_PROPOSAL_V2.md` — includes Gate A refinements.
-- Coverage matrix: `COVERAGE_MATRIX.md` — Lesson 1 concrete slide IDs mapped; Lessons 2–4 pending.
-- Source issue register: `SOURCE_ISSUES.md`.
-- Source map: `SOURCE_MAP.md` — source reconciliation pass 2 complete.
+- Gemini Gate A: COMPLETED + RECONCILED.
+- Source reconciliation pass 2: COMPLETE.
+- Four lesson plans: GATE_A_RECONCILED_PLAN.
+- Coverage matrix: Lessons 1–2 concrete slide IDs mapped; Lessons 3–4 pending.
 
 ## Current production split
 
 | Lesson | Working title | Plan status | Storyboard status | CORE | FLEX | Planned |
 |---|---|---|---|---:|---:|---:|
 | 1 | আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম | GATE_A_RECONCILED_PLAN | **DRAFT_COMPLETE / QA_PASS_WITH_NOTES** | 43 min | 7 min | 50 min |
-| 2 | প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন | GATE_A_RECONCILED_PLAN | NOT_STARTED | 44 min | 8 min | 52 min |
+| 2 | প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন | GATE_A_RECONCILED_PLAN | **DRAFT_COMPLETE / RESOURCE_MAP_COMPLETE / QA_PASS_WITH_NOTES** | 44 min | 8 min | 52 min |
 | 3 | উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা | GATE_A_RECONCILED_PLAN | NOT_STARTED | 42 min | 8 min | 50 min |
 | 4 | আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ | GATE_A_RECONCILED_PLAN | NOT_STARTED | 44 min | 8 min | 52 min |
 
 Estimated total planned load: approximately **204 minutes CORE + FLEX** across four classes.
 
-## Lesson 1 storyboard checkpoint
+## Lesson 1 checkpoint
 
-Canonical files:
-
+Files:
 - `lessons/lesson-01/LESSON_PLAN.md`
 - `lessons/lesson-01/STORYBOARD.md`
 - `lessons/lesson-01/QA.md`
 
-Storyboard structure:
-
+Structure:
 - 14 CORE slides: `L1-S01`–`L1-S14`
 - 2 FLEX slides: `L1-F01`–`L1-F02`
-- CORE total: 43 min
-- FLEX total: 7 min
-- contingency: 10 min
+- CORE 43 min + FLEX 7 min = 50 min
+- contingency 10 min
+
+Internal QA: `PASS_WITH_NONBLOCKING_NOTES`.
+
+## Lesson 2 checkpoint
+
+Files:
+- `lessons/lesson-02/LESSON_PLAN.md`
+- `lessons/lesson-02/STORYBOARD.md`
+- `lessons/lesson-02/RESOURCES.md`
+- `lessons/lesson-02/QA.md`
+
+Structure:
+- 14 CORE slides: `L2-S01`–`L2-S14`
+- 2 FLEX slides: `L2-F01`–`L2-F02`
+- CORE 44 min + FLEX 8 min = 52 min
+- contingency 8 min
 
 Key storyboard decisions:
+- retrieval of normal/angle/bending rules without reteaching L1;
+- actual vs apparent position taught using real rays plus dashed backward extensions;
+- stick → coin → fish applications progress from familiar to applied;
+- mirage uses temperature/refractive-index gradient + progressive bending, not a single hard mirror-like boundary;
+- critical angle built progressively and explicitly separated from TIR;
+- TIR requires higher-index→lower-index direction plus `i > C`;
+- optical fibre follows immediately as repeated-TIR application;
+- PhET `Bending Light` is FLEX only; CORE remains fully offline;
+- deterministic/custom scientific diagrams preferred for apparent position, mirage, critical angle/TIR and fibre.
 
-- darkness/seeing hook first;
-- brief current-science description of light;
-- minimal non-assessed photon note only;
-- pencil-in-water observation before causal speed-change explanation;
-- interface/normal/ray vocabulary built progressively;
-- optical density explicitly separated from mass density;
-- normal-incidence exception explicit;
-- rarer→denser / denser→rarer prediction sequence;
-- summary + four-question exit check;
-- parallel-sided slab relegated to FLEX with geometry-bound equal-angle clarification;
-- no internet dependency for CORE.
+Resource mapping:
+- `R2-01` apparent-position ray construction
+- `R2-02` mirage gradient diagram
+- `R2-03` critical-angle/TIR three-state sequence
+- `R2-04` optical-fibre cutaway
+- `R2-05` PhET Bending Light FLEX simulation
+- `R2-06` textbook-style TIR practice redraw
 
-Lesson 1 coverage IDs have been written into `COVERAGE_MATRIX.md`.
+Internal QA: `PASS_WITH_NONBLOCKING_NOTES` for storyboard stage.
 
-Lesson 1 internal storyboard QA verdict:
-
-`PASS_WITH_NONBLOCKING_NOTES` for storyboard stage only.
-
-Not yet complete:
-
-- actual visual asset build/licensing records;
-- rendered diagram validation;
-- RT-01;
-- Gemini Gate B;
-- content freeze/export QA.
-
-## Gemini Gate A
-
-Raw external review:
-- `reviews/GEMINI_GATE_A_RAW_2026-09-05.md`
-
-Independent reconciliation:
-- `reviews/GEMINI_GATE_A_RECONCILIATION_2026-09-05.md`
-
-External verdict:
-- `PASS_WITH_TARGETED_CHANGES`
-
-Canonical reconciliation verdict:
-- **ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED**
+Before freeze, rendered ray geometry, mirage gradient, `i=C` vs `i>C`, fibre arrows and NCTB exercise redraw must all be visually inspected.
 
 ## Source reconciliation status
 
@@ -118,16 +106,16 @@ Canonical reconciliation verdict:
 - `SI-11-006` cornea/lens focusing roles: RESOLVED.
 - `SI-11-007` eye-camera focusing analogy limit: RESOLVED.
 
-## Chapter-wide QA
+## Chapter-wide QA state
 
 - G0 Input integrity: PASS_WITH_NOTES.
 - G1 Curriculum/scope analysis: PASS.
 - G2 Critical source verification: PASS_FOR_STORYBOARD.
 - G3 Scientific accuracy: PASS_FOR_STORYBOARD.
-- G4 Timing: PASS_FOR_STORYBOARD after Gate A refinements.
+- G4 Timing: PASS_FOR_STORYBOARD.
 - G5 Pedagogy/cognitive load: PASS_FOR_STORYBOARD.
-- Coverage audit: Lesson 1 slide trace complete; Lessons 2–4 pending.
-- Duplication audit: full chapter storyboard audit pending.
+- Coverage audit: Lessons 1–2 mapped; Lessons 3–4 pending.
+- Duplication audit: full four-storyboard audit pending.
 - Cross-lesson continuity: PASS at plan level; storyboard-level audit pending.
 
 ## Gemini cadence
@@ -138,13 +126,13 @@ Gate B remains required after **all four storyboards + resource mappings** are c
 
 ## Next authorized action
 
-1. Develop Lesson 2 storyboard from the Gate-A-reconciled plan.
-2. Map Lesson 2 concrete slide IDs into `COVERAGE_MATRIX.md`.
-3. Run Lesson 2 storyboard QA/checkpoint.
-4. Continue Lessons 3 and 4 similarly.
-5. Complete resource mappings and chapter-wide storyboard audit.
-6. Generate a fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
-7. Reconcile Gate B, run G1–G7, freeze content.
+1. Develop Lesson 3 storyboard and resource mapping from the Gate-A-reconciled plan.
+2. Map Lesson 3 slide IDs into `COVERAGE_MATRIX.md`.
+3. Run Lesson 3 storyboard QA and checkpoint.
+4. Repeat for Lesson 4.
+5. Run chapter-wide storyboard/resource/duplication audit.
+6. Generate fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
+7. Reconcile Gate B, run final G1–G7, freeze content.
 8. Run RT-01, select renderer routing, render and export-QA.
 
 Do not render final decks yet.
