@@ -1,52 +1,53 @@
 # Chapter Production Workflow
 
-Version: 2.0
+Version: 3.0
+Last revised: 2026-09-05
 
-## Phase 0 - Safety and state recovery
+## Phase 0 — Safety and state recovery
 
 1. Verify the exact repository is `iqbalhimel004/science-slides`.
-2. Read `AGENTS.md`, `PROJECT_MASTER.md`, `CURRENT_STATE.md`, `SOURCE_POLICY.md`, `QUALITY_GATES.md`, `SLIDE_STYLE_GUIDE.md`, `VISUAL_ENGAGEMENT_SYSTEM.md`, `TOOL_ROUTING.md`, and `DECISIONS.md`.
-3. Confirm one active chapter only.
+2. Read `OPERATING_BRIEF.md` and `CURRENT_STATE.md`.
+3. If a chapter is active, read its `STATUS.md` and only the files needed for the current stage.
+4. Read deeper policy files only when relevant to the task.
 
-## Phase 1 - Chapter intake
+## Phase 1 — Chapter intake and source integrity
 
 The user supplies the complete chapter as PDF or ordered screenshots.
 
-Check before analysis:
+Check:
 
-- chapter title and class/subject identity
+- chapter title and class/subject
 - edition/year if identifiable
-- first and last page present
-- page order and continuity
-- missing pages/screenshots
-- readable text, equations, tables, and diagrams
-- whether any page is cropped or ambiguous
+- first/last page and page continuity
+- missing/cropped pages
+- readability of Bangla text, equations, tables and diagrams
+- source type: reliable text layer / partial text / scanned-image PDF / screenshots
 
-If essential content is missing or unreadable, stop and ask for the missing material. Do not silently infer it.
+Do not silently infer missing material.
 
-## Phase 2 - Textbook-only chapter analysis
+OCR/text extraction may assist, but critical wording must be checked against the visible source page/image when extraction is uncertain.
 
-Analyze the complete textbook chapter before external research.
+## Phase 2 — Full chapter analysis
 
-Produce `CHAPTER_ANALYSIS.md` containing:
+Analyze the complete chapter before external supplementation or lesson splitting.
 
-- chapter scope
-- concept map
+Record:
+
+- chapter scope and concept map
+- curricular/textbook learning outcomes where available
 - prerequisites
-- key definitions
-- laws/formulas/units
+- key definitions, laws, formulas and units
 - diagrams/processes
 - experiments/activities
-- numerical/problem-solving requirements
-- likely student misconceptions/difficulties
-- textbook examples and applications
-- visual complexity
-- likely high-engagement opportunities
-- approximate total instructional load
+- textbook examples/applications
+- numerical/problem-solving load
+- misconceptions/difficult points
+- exam-facing practice opportunities where appropriate
+- total instructional load and visual complexity
 
-## Phase 3 - Determine lesson count and split
+## Phase 3 — Determine lesson count and split
 
-Divide the chapter by logical instructional boundaries, not page count.
+Split by logical instructional boundaries and realistic classroom load.
 
 For each proposed lesson specify:
 
@@ -54,213 +55,222 @@ For each proposed lesson specify:
 - concepts covered
 - prerequisites
 - learning outcomes
-- estimated teaching time
-- reason for the boundary
-- bridge to previous/next lesson
-- major visual/interaction opportunities
+- CORE content
+- FLEX content
+- STRETCH/appendix content if useful
+- estimated classroom time
+- reason for boundary
+- bridge from/to adjacent lessons
 
-Target 50-55 minutes planned time per lesson; 60 minutes is a hard maximum.
+Default 60-minute model:
 
-Record the proposed split in `LESSON_SPLIT.md` and obtain user approval before final deck production.
+- CORE: ~40–45 min
+- FLEX: ~5–10 min
+- planned CORE + FLEX: ~50–55 min
+- contingency: 5–10 min intentionally left unallocated
+- STRETCH: not part of planned core delivery
 
-## Phase 4 - Source verification
+Obtain user approval of the lesson split before final deck production.
 
-Build `SOURCE_MAP.md` and lesson-level source records.
+## Phase 4 — Source verification
 
-Verify syllabus-critical definitions, laws, formulas, units, and claims according to `SOURCE_POLICY.md`.
+Build claim/source records before content freeze.
 
-If NCTB wording is available, preserve its meaning and prioritize it for exam-sensitive content. Use 10 Minute School or another established source for corroboration and/or clearer explanation when useful. Use international authoritative sources for supplementary validation where appropriate.
+For important definitions/laws/formulas/units:
 
-Flag material source conflicts explicitly.
+- pin source edition/year/page where possible
+- verify against the visible NCTB page/image when OCR/extraction is uncertain
+- distinguish exam-safe/source-grounded wording from simpler explanation
+- use Tier 2 for local wording/convention/explanation ideas
+- use authoritative Tier 3 sources for scientific validation when useful
+- record material conflicts explicitly
 
-## Phase 5 - Lesson planning
+## Phase 5 — Lesson planning
 
-For each approved lesson create `LESSON_PLAN.md` with:
+For each approved lesson create a lesson plan containing:
 
-- target duration
 - learning outcomes
-- prerequisites
+- CORE/FLEX/STRETCH classification
 - time budget
+- retrieval/prior-knowledge opener
 - teaching sequence
 - teacher actions
 - student actions
-- planned questions
-- examples/numericals
-- misconceptions to address
-- attention-reset opportunities where useful
-- visual teaching opportunities
-- optional homework/enrichment
+- questions/prompts
+- hinge/check-for-understanding where useful
+- worked examples/numericals
+- misconceptions/refutation where relevant
+- guided practice/application
+- summary + exit check
+- homework/enrichment as optional material
 
-Aim for 50-55 planned minutes and retain practical buffer.
+Every student response, board-writing segment, media launch, transition and debrief counts as time.
 
-## Phase 6 - Resource discovery
+## Phase 6 — Resource discovery
 
-Before generating custom assets, search for suitable existing:
+Search existing trusted resources before generating custom equivalents.
+
+Consider:
 
 - simulations
 - videos/animations
-- diagrams
+- diagrams/images
 - interactive models
-- authoritative images/visualizations
+- authoritative visualizations
 
-Record selected resources in `RESOURCES.md` / `ASSETS.md` with source, URL/reference, purpose, target slide, classroom suitability, license/usage status, reuse mode, attribution requirement, and fallback where needed.
+Record:
 
-Custom generation is a fallback, not the default.
+- source/creator
+- URL/reference
+- instructional purpose
+- target slide
+- classroom time
+- licensing/reuse note where material
+- online/offline status
+- static fallback
 
-## Phase 7 - Storyboard and visual architecture
+For online video, prefer legal embed/source playback with timestamps rather than creating unauthorized clips.
 
-Create `STORYBOARD.md` for every lesson.
+## Phase 7 — Storyboard
 
-Each slide/item should record:
+For every slide/item record:
 
-- slide number
-- title
+- slide number/title
+- segment: CORE / FLEX / STRETCH
 - purpose
-- exact approved content or content specification
+- exact approved content or specification
+- visual purpose
 - visual/resource requirement
-- visual purpose: Motivate / Explain / Compare / Locate / Sequence / Quantify / Predict / Practice / Summarize
-- layout/slide-family intent
 - teacher note
-- student interaction if any
-- expected response where relevant
+- student action/question
+- expected response
 - estimated time
-- source reference(s)
-- transition to next idea
-- static fallback for core online/interactive elements where relevant
+- source references
+- equation/source notation where relevant
+- static/offline fallback when needed
+- transition
 
-The storyboard's total planned time must remain within the lesson limit.
+The planned CORE + FLEX total should normally remain 50–55 minutes and may never exceed the 60-minute class ceiling.
 
-Also inspect visual rhythm across the deck. Avoid long runs of the same composition and place meaningful attention resets where pedagogy benefits.
+## Phase 8 — Independent review
 
-## Phase 8 - Independent review when useful
+Use Gemini selectively, not automatically for every trivial step.
 
-Use Gemini selectively as an independent/adversarial reviewer for:
+High-value review points:
 
-- difficult or ambiguous science
-- source conflicts
-- missing-topic checks
-- lesson decomposition sanity checks
-- misconception coverage
-- cognitive-load concerns
-- visual/pedagogical mismatch
-- final chapter coverage audit
+1. lesson-split/decomposition review for complex chapters or several-lesson chapters
+2. pre-freeze review of difficult science, misconception handling, exam-sensitive wording or missing coverage
+3. targeted external research when needed
 
-Treat Gemini findings as findings to verify, not automatic truth. Incorporate only validated corrections.
+Findings must be verified before incorporation.
 
-## Phase 9 - Content QA and freeze
+## Phase 9 — Content QA and freeze
 
-Before design/rendering, pass:
+Before rendering, verify:
 
-- curriculum/scope QA
-- source QA
-- scientific QA
-- formula/unit QA
-- timing QA
-- pedagogy/clarity/cognitive-load QA
-- resource suitability QA
-- storyboard readiness QA
+- curriculum/scope
+- source provenance
+- scientific accuracy
+- formulas/units/calculations
+- realistic timing
+- pedagogy/cognitive load
+- misconception handling
+- resource suitability
+- storyboard completeness
 
-Once approved, mark content `CONTENT_FROZEN` for design purposes. Design tools must not silently alter scientific content.
+Then obtain/record content approval and mark `CONTENT_FROZEN`.
 
-## Phase 10 - Visual design and rendering
+After freeze, design tools may improve layout/styling but may not silently alter scientific meaning.
 
-Default renderer: Beautiful.ai.
+## Phase 10 — Renderer calibration (RT-01)
 
-Use Canva when a custom infographic, worksheet, poster, special diagram, or visually constrained slide is better served there.
+Before locking a default renderer, run the same small stress-test through Beautiful.ai and Canva; add another fallback renderer only if needed.
 
-Hyperagent is reserved for genuinely needed custom simulation/interactive/media assets.
+Test:
 
-During rendering:
-
-- apply the project master theme
-- preserve grade-appropriate density
-- preserve the slide's declared visual purpose
-- improve layout without changing scientific meaning
-- use motion only when pedagogically meaningful
-- keep static fallbacks available
-
-Any meaning-changing edit reopens content QA.
-
-## Phase 11 - Visual engagement, accessibility, and classroom QA
-
-Check:
-
-- visual attractiveness and age appropriateness
-- focal hierarchy
-- visual rhythm and layout variation
-- cognitive load and clutter
+- Bangla conjuncts and mixed Bangla/English
+- scientific symbols/units
+- subscripts/superscripts/equations
+- diagram labels
+- visual hierarchy
+- editability
+- export fidelity
 - projector readability
-- contrast
-- Bangla/English terminology consistency
-- Bangla glyph/conjunct rendering
-- equations/symbols
-- diagram correctness and label size
-- image relevance
-- no scientific content drift introduced by the design tool
-- no key visual requires zooming
+- workflow friction
 
-## Phase 12 - Actual artifact/export QA
+Record the decision in `DECISIONS.md`.
 
-Validate the format that will actually be used in class.
+RT-01 is one-time unless tool behaviour materially changes.
 
-As applicable, test:
+## Phase 11 — Rendering
 
-- Beautiful.ai playback
-- PDF/PPTX export
-- font substitution
-- image crops
-- equations/symbols
-- links and QR codes
-- media launch
-- simulation launch
-- animations/transitions
-- static/offline fallbacks
+Choose the renderer that best fits the lesson and passed calibration.
 
-Do not mark a lesson classroom-ready solely because it looks correct in the editor.
+- Beautiful.ai: strong candidate for structured full decks
+- Canva: strong candidate for full visual/diagram-heavy decks and bespoke visual work
+- Hyperagent: programmatic SVG/equation assets, custom HTML/JS simulations/visualizations, deterministic QA, or other specialist build tasks
 
-## Phase 13 - Chapter-wide final audit
+Prefer one primary renderer per lesson. Avoid unnecessary cross-tool round trips.
 
-Compare the original chapter against all lessons.
+## Phase 12 — Visual, export and classroom QA
 
-Every meaningful subsection must be classified as:
+Check the actual artifact, not just the editor:
+
+- Bangla rendering and line breaks
+- equation/symbol rendering
+- text size and contrast
+- diagram labels/arrows
+- crop/layout integrity
+- projector readability
+- links/QRs
+- media/simulation launch
+- static/offline fallback
+- no scientific content drift
+
+The classroom package should contain:
+
+1. primary delivery deck
+2. PDF fallback
+3. fallback resources/assets for classroom-critical online/animated elements
+4. GitHub storyboard/source records
+
+## Phase 13 — Chapter-wide final audit
+
+Compare all lessons back to the original chapter.
+
+Every meaningful subsection should be classified as:
 
 - Covered
 - Supplementary
 - Homework/self-study
-- Intentionally omitted with recorded reason
+- Intentionally omitted with reason
 
-Also check:
+Also verify:
 
-- unnecessary repetition across lessons
-- logical continuity between lessons
-- no orphan concept lacking prerequisite explanation
-- all presentations remain within the timing limit
-- visual conventions remain coherent across the chapter
+- no unnecessary duplication
+- prerequisites precede dependent concepts
+- bridges between lessons are coherent
+- no important content was lost during splitting
 
-## Phase 14 - Completion and handoff
+## Phase 14 — Completion and handoff
 
 Update:
 
-- lesson QA files
-- chapter `QA_SUMMARY.md`
+- lesson/chapter QA records
 - chapter `STATUS.md`
 - `CURRENT_STATE.md`
-- `DECISIONS.md` for durable decisions
-- master-theme decisions if the first chapter or a design-system change was approved
+- `DECISIONS.md` for durable new decisions
+- source/resource records
 
-A chapter is not `COMPLETE` until every applicable quality gate passes.
+## Phase 15 — Post-class calibration
 
-## Phase 15 - Optional post-class calibration
-
-After classroom delivery, record:
+For at least the first few lessons/chapters, record:
 
 - actual time
-- slides that were too fast/slow
+- what overran/finished early
 - confusing concepts
-- successful resources
-- student misconceptions observed
-- activities that overran
-- visuals that noticeably improved attention/comprehension
-- visuals or effects that distracted students
+- effective resources
+- observed misconceptions
+- resource/technical failures
 
-Revise to a later version (for example `v1.1`) without losing the prior classroom-ready version history.
+Use real classroom evidence to recalibrate future timing and design heuristics.
