@@ -21,8 +21,11 @@ Read, in order:
 5. `SOURCE_POLICY.md`
 6. `QUALITY_GATES.md`
 7. `SLIDE_STYLE_GUIDE.md`
-8. `TOOL_ROUTING.md`
-9. `DECISIONS.md`
+8. `VISUAL_ENGAGEMENT_SYSTEM.md`
+9. `TOOL_ROUTING.md`
+10. `DECISIONS.md`
+
+Read `PLAN_AUDIT_2026-09-05.md` when reviewing or changing the master workflow/design system.
 
 Then read only the files for the active chapter/lesson identified in `CURRENT_STATE.md`.
 
@@ -38,7 +41,25 @@ A production chat should handle one complete chapter from intake through lesson 
 
 If the active chapter has not yet been ingested, wait for the user to provide the complete chapter PDF or ordered screenshots. Then perform input integrity checks before content planning.
 
-## 6. End-of-chat handoff
+## 6. Visual-engagement requirement
+
+Do not treat attractiveness as optional polish. Apply the visual-engagement system during storyboard and rendering:
+
+- clear focal hierarchy
+- age-appropriate modern UI
+- controlled cognitive load
+- meaningful visual variety
+- purposeful attention resets where useful
+- visual-purpose classification
+- restrained pedagogical motion
+- static fallbacks for core interactive/online media
+- grade-level density calibration
+
+## 7. Final artifact requirement
+
+Do not call a lesson classroom-ready solely from the editor preview. Validate the actual delivery artifact/playback for Bangla rendering, equations, labels, links/QRs, crops, media, contrast, and projector usability.
+
+## 8. End-of-chat handoff
 
 Before a chapter chat is considered safely handed off, update:
 
@@ -47,5 +68,6 @@ Before a chapter chat is considered safely handed off, update:
 - chapter/lesson QA files as applicable
 - `DECISIONS.md` for durable new decisions
 - any source/resource records affected by the work
+- any approved master-theme/design-system changes
 
 The next chat should be able to continue from repository state without needing a summary copied from the previous chat.
