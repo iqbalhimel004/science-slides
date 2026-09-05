@@ -130,3 +130,15 @@ Operational rule:
 - future chats must follow this same bundle workflow for Gemini Gate B and later Gemini review gates unless the user explicitly changes the method.
 
 Canonical procedure: `GEMINI_REVIEW_WORKFLOW.md`.
+
+## D-035 — Gate B is targeted implementation QA, not a second Gate A
+Decision: Gemini Gate B reviews only **new storyboard/resource/pre-freeze implementation risk**. Science and planning already reconciled at Gate A are treated as established unless the current implementation contradicts them, weakens an accepted correction, introduces a new risky claim/diagram/analogy, creates a new prerequisite/coverage/duplication problem, or otherwise shows regression.
+
+Operational rule:
+- Gate B should not re-prove settled science or redesign the chapter from scratch;
+- ask for `NO NEW ISSUE` where no implementation-specific problem exists;
+- focus on Gate-A regression, slide-level science drift, visual-model risk, concrete coverage/duplication, timing/cognitive load, resource/fallback risk and pre-freeze blockers;
+- distinguish content/storyboard defects from later RT-01/render/export QA;
+- use the downloadable single-file bundle workflow from D-034.
+
+Reason: retain independent pre-freeze quality control without duplicating Gate A work.
