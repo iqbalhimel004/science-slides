@@ -6,7 +6,7 @@ Last updated: 2026-09-05
 
 Plan v3.0 is the current canonical operating plan.
 
-The first real chapter is in the pilot workflow. Full chapter analysis is complete and the revised **four-lesson split has been explicitly approved by the user**.
+The first real chapter is in the pilot workflow. Full chapter analysis is complete and the revised **four-lesson split has been explicitly approved by the user**. Source reconciliation pass 1 is complete, the coverage matrix has been remapped to four lessons, and detailed lesson-plan drafts now exist for all four lessons.
 
 ## Canonical repository
 
@@ -38,7 +38,7 @@ The project uses a durable source/version architecture:
 - chapter concept inventory: `CHAPTER_ANALYSIS.md`
 - chapter topic-to-lesson/slide traceability: `COVERAGE_MATRIX.md`
 - textbook ambiguity/error/gap register: `SOURCE_ISSUES.md`
-- detailed claim provenance later: `SOURCE_MAP.md`
+- detailed claim provenance: `SOURCE_MAP.md`
 
 Do not commit full textbook PDFs to Git by default; preserve links, edition metadata, fingerprints/checksums and page mappings instead.
 
@@ -52,7 +52,7 @@ Canonical chapter path:
 
 Current status:
 
-`LESSON_SPLIT_APPROVED`
+`SOURCE_RECONCILIATION_AND_LESSON_PLANNING`
 
 Key files:
 
@@ -60,7 +60,12 @@ Key files:
 - `CHAPTER_ANALYSIS.md`
 - `COVERAGE_MATRIX.md`
 - `SOURCE_ISSUES.md`
+- `SOURCE_MAP.md`
 - `LESSON_SPLIT_PROPOSAL_V2.md`
+- `lessons/lesson-01/LESSON_PLAN.md`
+- `lessons/lesson-02/LESSON_PLAN.md`
+- `lessons/lesson-03/LESSON_PLAN.md`
+- `lessons/lesson-04/LESSON_PLAN.md`
 
 2026 source range:
 
@@ -76,31 +81,41 @@ Key files:
 
 Estimated total planned instructional load: approximately 209 minutes across four 60-minute classes, excluding unallocated contingency and STRETCH.
 
-The approved split includes clearly labelled supplementary prerequisite/bridge concepts needed for conceptual understanding:
+## Source reconciliation pass 1
 
-- what light is; minimal photon/wave overview
-- how seeing occurs
-- chapter-relevant properties of light
-- optical medium and transparent/translucent/opaque recap
-- interface, normal and angle measurement
-- reflection vs refraction
-- propagation-speed change; optical density vs ordinary mass density
-- normal-incidence exception
-- actual vs apparent position
-- convex-lens focus/focal-length prerequisite
-- real/virtual, erect/inverted, magnified/reduced image vocabulary
-- focusing/accommodation bridge for eye/camera
+Resolved/clarified:
 
-These additions must not be presented as verbatim NCTB chapter body content.
+- normal-incidence nuance: resolved; no directional deviation at normal incidence although speed may change
+- equal incident/emergent angle: bound specifically to the demonstrated parallel-sided slab geometry
+- film-camera chemistry: independently verified and must be labelled as film-camera context
+- spectacles: NCTB outcome/body mismatch remains a documented source gap; basic corrective-lens science is independently verified and may be used only as clearly labelled supplementary support
 
-## Source issues confirmed/flagged
+Detailed evidence: `SOURCE_MAP.md` and `SOURCE_ISSUES.md`.
 
-- The 2026 chapter opener includes `চশমার কাজ ব্যাখ্যা করতে পারব`, but the full chapter through printed p.118 contains no corresponding spectacles-working subsection. A Lesson 3 slot is reserved but not content-frozen; intended scope must be verified before use.
-- Introductory refraction wording may sound more universal than the later normal-incidence exception; final classroom wording requires source/science reconciliation.
-- Equal incident/emergent-angle wording must be bound to the demonstrated geometry rather than generalized without verification.
-- Photographic-camera chemistry must be clearly labelled as the film-camera model and independently checked before freeze.
+## Detailed planning status
 
-Full records: `chapters/class-8/science/chapter-11-light/SOURCE_ISSUES.md`.
+- Lesson 1: detailed plan draft complete
+- Lesson 2: detailed plan draft complete
+- Lesson 3: detailed plan draft complete
+- Lesson 4: detailed plan draft complete
+
+Each plan includes:
+
+- learning goals
+- NCTB vs supplementary-source separation
+- minute-level CORE/FLEX timing
+- misconceptions
+- student-response/hinge/exit elements
+- board-writing/visual/resource notes where relevant
+- offline/static fallback expectations
+
+## Resource candidates identified
+
+- PhET Bending Light — useful for refraction/TIR, with static fallback required
+- authoritative static/custom ray diagrams for apparent depth, critical angle/TIR and lens/image relationships
+- simplified high-resolution eye/camera diagrams
+
+Existing trusted resources remain preferred before custom media generation.
 
 ## First chapter = pilot/calibration chapter
 
@@ -125,37 +140,15 @@ No permanent default renderer is locked.
 
 Before the first final deck, run RT-01 using representative Bangla/science stress-test content through Beautiful.ai and Canva, adding another practical fallback only if needed.
 
-## Timing status
-
-Confirmed project requirement: one deck must fit within one 60-minute class.
-
-Current model:
-
-- CORE: approximately 40–45 minutes
-- FLEX: approximately 5–10 minutes
-- planned CORE + FLEX: approximately 50–55 minutes
-- contingency: 5–10 minutes intentionally unallocated
-- STRETCH: appendix/enrichment only
-
-All student responses, board writing, media setup/debrief, activities and transitions count as time.
-
-## Current tool position
-
-- ChatGPT: lead chapter analysis, pedagogy, storyboard, source reconciliation, QA/state coordination
-- NotebookLM: conditional source-grounded support when it adds value
-- Gemini AI Pro: targeted independent review/research
-- Beautiful.ai: candidate full-deck renderer
-- Canva: candidate full-deck renderer + specialist visual tool
-- Hyperagent: specialist build/QA/interactive engine
-
 ## Next authorized stage
 
 Proceed to:
 
-1. source reconciliation/verification for flagged textbook issues and supplementary bridge claims;
-2. remap `COVERAGE_MATRIX.md` to the approved four-lesson structure;
-3. detailed lesson planning and resource discovery;
-4. storyboard development.
+1. develop Lesson 1 storyboard first;
+2. assign concrete slide identifiers into `COVERAGE_MATRIX.md` as storyboard sections are accepted;
+3. continue storyboard development for Lessons 2–4;
+4. perform slide-level source/wording QA;
+5. run RT-01 before the first final deck.
 
 Final content freeze and final deck rendering remain blocked until applicable source/QA gates pass and RT-01 is completed.
 
