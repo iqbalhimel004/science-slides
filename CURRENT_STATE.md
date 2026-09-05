@@ -4,7 +4,7 @@ Last updated: 2026-09-05
 
 ## Project status
 
-Foundation initialized and master plan revised to Version 2.0 after a gap/consistency audit focused on visual engagement, cognitive load, accessibility, export reliability, and classroom attention.
+Plan v3.0 refinement in progress after an external Hyperagent/Fable 5.1 adversarial audit. Valid findings are being incorporated; incorrect or environment-mismatched findings are not adopted automatically.
 
 ## Canonical repository
 
@@ -12,67 +12,80 @@ Foundation initialized and master plan revised to Version 2.0 after a gap/consis
 
 This is the only repository authorized for writes for this project.
 
-## Completed
+## Important validation notes from the external audit
 
-- Project mission and 60-minute lesson constraint defined.
-- One-chat-one-chapter operating model defined.
-- Repository safety boundary defined.
-- Source hierarchy and verification rules defined.
-- Quality gates defined and expanded to include visual engagement, cognitive load, accessibility/projector usability, and final artifact/export QA.
-- Slide style rules revised to Version 2.0.
-- Dedicated `VISUAL_ENGAGEMENT_SYSTEM.md` created.
-- Master plan gap audit recorded in `PLAN_AUDIT_2026-09-05.md`.
-- Attention-reset heuristic and visual-purpose taxonomy defined.
-- Grade-level visual-density calibration defined.
-- Motion/animation purpose and static-fallback policy defined.
-- Asset provenance, licensing/reuse mode, attribution, and fallback tracking strengthened.
-- Tool-routing roles defined for ChatGPT, NotebookLM, Gemini, Beautiful.ai, Canva, and Hyperagent.
-- New-chat recovery protocol defined.
-- Storyboard and QA templates expanded for visual engagement and export checks.
+Accepted as material improvements:
+
+- make the 60-minute timing model explicit as CORE + FLEX + contingency
+- add a classroom profile instead of guessing hardware/connectivity details
+- treat scanned/image-based source intake as a first-class case; critical wording must be verified against the visible source page
+- test Bangla typography, equations, labels and exports before declaring a default renderer
+- make renderer selection conditional on real output tests rather than permanent vendor preference
+- reduce new-chat recovery overhead through a compact `OPERATING_BRIEF.md`
+- strengthen offline/static fallback policy
+- strengthen retrieval, hinge-question and exit-check structure
+- reduce reliance on folklore-style fixed attention-span rules
+
+Rejected/corrected audit assumptions:
+
+- ChatGPT in this environment DOES have a connected GitHub integration with write actions; current project writes are being performed through that connector. Therefore GitHub maintenance is not transferred exclusively to Hyperagent.
+- Beautiful.ai IS connected in this environment and exposes presentation creation/review/export actions. Therefore the audit claim that there is no ChatGPT/Beautiful.ai integration does not apply to this workspace.
+- Canva IS connected and exposes presentation-generation and editing workflows. It remains a viable full-deck candidate, not only an asset tool.
+
+## New canonical setup files
+
+- `OPERATING_BRIEF.md` — compact new-chat recovery and non-negotiables
+- `CLASSROOM_PROFILE.md` — timing/hardware/connectivity facts and unknowns
 
 ## Active chapter
 
 None yet.
 
+## Renderer status
+
+No permanent default renderer is locked yet.
+
+Before the first final deck, run renderer calibration (RT-01) using the same Bangla/science stress-test content through:
+
+- Beautiful.ai
+- Canva
+- another practical fallback if needed
+
+Compare Bangla rendering, equations, diagrams, editability, workflow friction, export quality and projector readability. Then record the selected default/fallback in `DECISIONS.md`.
+
+## Timing status
+
+Confirmed project requirement: one deck must fit within one 60-minute class.
+
+Current planning model:
+
+- CORE: approximately 40-45 minutes of non-skippable instruction
+- FLEX: approximately 5-10 minutes of useful but skippable practice/example
+- planned CORE + FLEX: approximately 50-55 minutes
+- contingency: 5-10 minutes left unallocated within the 60-minute class
+- STRETCH: appendix/enrichment only, not part of the planned core lesson
+
 ## Waiting for
 
-The user to provide the first complete Class 8-10 science chapter as a PDF or ordered screenshots.
+1. user-provided first complete Class 8-10 science chapter as PDF or ordered screenshots
+2. classroom-profile details when available
+3. RT-01 renderer calibration during the first pilot chapter
 
 ## Next required action
 
 When the first chapter arrives:
 
-1. perform input integrity/readability/continuity checks
-2. perform textbook-only full chapter analysis
-3. estimate instructional load and visual complexity
-4. propose the number and boundaries of <=60-minute presentations
-5. identify major visual/interaction opportunities
-6. obtain user approval of the lesson split
-7. continue through source verification, lesson plans, resource discovery, storyboards, QA, content freeze, final deck rendering, visual/accessibility/export QA, and chapter-wide audit
-8. use the first completed chapter to calibrate the reusable master visual theme
-
-## Current design-tool policy
-
-- Beautiful.ai: primary final deck renderer after content freeze.
-- Canva: supplementary visual-production tool when it materially improves an infographic, worksheet, diagram, poster, or special visual layout.
-- Hyperagent: custom simulation/interactive/media gap-filler only when trusted existing resources are insufficient.
-- No final deck has been created yet.
-
-## Current visual policy
-
-- Visual engagement is a first-class quality requirement.
-- Slides should be attractive, modern, age-appropriate, and attention-retaining without decorative overload.
-- Every nontrivial visual should have an instructional purpose.
-- Meaningful attention resets should be considered roughly every 7-10 minutes where pedagogically useful.
-- Important online/animated/interactive elements require practical fallbacks.
-- Final delivery artifacts must be checked for Bangla rendering, equations, labels, contrast, links/QRs, crops, media, and projection usability.
-
-## Current external-review policy
-
-Gemini may be used as an independent/adversarial reviewer where useful. Findings must be independently validated before they change canonical project state.
-
-## Unresolved items
-
-- First chapter not yet supplied.
-- Final reusable master visual theme/template will be calibrated from the first completed chapter.
-- Real classroom timing and engagement heuristics will be refined after post-class feedback becomes available.
+1. verify completeness/order/readability and whether the source has a reliable text layer
+2. analyze the complete visible chapter before lesson splitting
+3. identify curriculum outcomes, definitions, laws, formulas, diagrams, activities, numericals and misconceptions
+4. verify critical wording against the actual page/image
+5. estimate instructional load using CORE/FLEX/STRETCH
+6. propose the number and boundaries of <=60-minute presentations
+7. obtain user approval of the split
+8. build lesson plans/storyboards/resources
+9. run independent review where high-value
+10. freeze content
+11. perform RT-01 if not yet completed, then render
+12. perform science/source/timing/pedagogy/visual/export/offline-fallback QA
+13. perform chapter-wide coverage and continuity audit
+14. update repository state
