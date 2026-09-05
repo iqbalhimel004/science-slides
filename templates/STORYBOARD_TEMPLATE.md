@@ -6,16 +6,19 @@
 - Lesson:
 - Class:
 - Subject:
-- Target duration:
+- Class period: 60 min
+- Target planned CORE + FLEX: 50–55 min
 - Content status: DRAFT / VERIFIED / CONTENT_FROZEN
 - Grade-density profile: Class 8 / Class 9 / Class 10
+- Renderer status: NOT_TESTED / RT01_PASSED / SELECTED
 
 ## Slide records
 
 Repeat this block for each slide.
 
-### Slide XX - Title
+### Slide XX — Title
 
+- Segment: CORE / FLEX / STRETCH
 - Purpose:
 - Core content:
 - Slide family/layout intent:
@@ -24,29 +27,40 @@ Repeat this block for each slide.
 - Teacher note:
 - Student action/question:
 - Expected response:
-- Attention-reset role: Yes / No / N/A
+- Segment-response role: retrieval / hinge / practice / explain / predict / observe / exit / none
 - Estimated time:
 - Source reference(s):
+- Equation/source expression, if applicable:
 - Static/offline fallback if needed:
 - Transition to next slide:
 
-## Visual rhythm review
+## Visual rhythm and cognitive-load review
 
 - Any long run of visually identical layouts?:
 - Focal hierarchy clear on every slide?:
 - Any decorative visual without instructional purpose?:
 - Any overloaded slide that should be segmented?:
-- Attention resets distributed appropriately?:
+- Any long passive teacher-only stretch without a meaningful student response?:
 - Motion/animation used only for pedagogical purpose?:
+- Bangla/English density appropriate for the grade?:
 
 ## Timing summary
 
-| Slide/segment | Time |
-|---|---:|
-| | |
-| **Total planned time** | |
+| Slide/segment | Segment class | Time |
+|---|---|---:|
+| | CORE/FLEX/STRETCH | |
+| **CORE total** | | |
+| **FLEX total** | | |
+| **CORE + FLEX** | | |
+| **STRETCH total** | | |
 
-PASS only if total planned time is <=60 minutes, with 50-55 minutes preferred where practical.
+PASS only if:
+
+- CORE is normally about 40–45 min
+- FLEX is normally about 5–10 min
+- CORE + FLEX is normally about 50–55 min
+- 5–10 min remains unallocated contingency inside the 60-minute class
+- STRETCH is not required for successful lesson completion
 
 ## Content-freeze checklist
 
@@ -55,7 +69,11 @@ PASS only if total planned time is <=60 minutes, with 50-55 minutes preferred wh
 - [ ] formula/unit QA passed where applicable
 - [ ] timing QA passed
 - [ ] pedagogy/cognitive-load QA passed
+- [ ] retrieval/prior-knowledge opener present where appropriate
+- [ ] hinge/check-for-understanding present where useful
+- [ ] summary + exit check retained
 - [ ] all required visuals/resources identified
 - [ ] visual purpose recorded for nontrivial visuals
-- [ ] fallbacks identified for core online/interactive resources
-- [ ] no unresolved content changes
+- [ ] fallbacks identified for classroom-critical online/interactive resources
+- [ ] exact/source expressions preserved for equations/chemistry notation where needed
+- [ ] no unresolved material content changes
