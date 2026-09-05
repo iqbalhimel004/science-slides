@@ -4,9 +4,9 @@ Last updated: 2026-09-05
 
 ## Project status
 
-Plan v3.0 remains the canonical production plan, with durable policy refinements recorded in `OPERATING_BRIEF.md` v3.2, `SOURCE_POLICY.md` v3.1, `WORKFLOW.md` v3.1 and `DECISIONS.md` D-031/D-032.
+Plan v3.0 remains canonical, with durable policy refinements recorded in `OPERATING_BRIEF.md`, `SOURCE_POLICY.md`, `WORKFLOW.md` and `DECISIONS.md`.
 
-The first real chapter is in the pilot workflow. Full chapter analysis is complete, the revised **four-lesson split has been explicitly approved by the user**, source reconciliation pass 1 is complete, the coverage matrix has been remapped to four lessons, and detailed lesson-plan drafts exist for all four lessons.
+The first real chapter is the pilot/calibration chapter. Full chapter analysis is complete, the **four-lesson split is user-approved**, Gemini Review Gate A has been completed externally and independently reconciled, source reconciliation pass 2 is complete, and all four lesson plans have been updated with validated Gate A changes.
 
 ## Canonical repository
 
@@ -16,124 +16,125 @@ This is the only repository authorized for writes for this project.
 
 ## Durable source-authority rule
 
-NCTB is used as the primary syllabus/chapter/exam-context source, but **not as automatic scientific authority**.
+NCTB is the syllabus/chapter/exam-context source, **not automatic scientific authority**.
 
-- never infer scientific currentness from a recent print/revision year alone;
+- do not infer scientific currentness from a recent print/revision year;
 - verify material scientific claims against current authoritative sources;
-- when NCTB is outdated, ambiguous, misleading or wrong, record the textbook statement and the verified current science separately;
-- teach the scientifically correct/current explanation;
-- preserve NCTB/exam wording separately when students may encounter it;
-- record verified mismatches in `SOURCE_ISSUES.md` / `SOURCE_MAP.md`.
+- when NCTB is outdated, ambiguous, misleading or wrong, record textbook wording and current science separately;
+- teach scientifically current/correct explanations;
+- preserve exam-context wording separately where useful.
 
 ## Universal checkpoint rule
 
 **Finish → record → then continue.**
 
-A meaningful task/stage is not operationally complete until its durable result is saved to GitHub. After analysis, verification, lesson planning, Gemini review/reconciliation, storyboard, resource mapping, QA, RT-01, rendering, export QA or other durable work:
-
-- save/update the relevant artifact;
-- update chapter/lesson `STATUS.md` and `CURRENT_STATE.md` when applicable;
-- update `DECISIONS.md` when a durable rule changes;
-- update Fable reconciliation when a pilot item is resolved/materially reclassified.
+Every meaningful completed stage must be saved to GitHub before proceeding.
 
 ## Active textbook baseline
 
-The user supplied the full **2026 Class 8 Science** PDF.
+Full **2026 Class 8 Science** PDF supplied by the user.
 
 Canonical source record:
-
 `sources/class-8/science/2026/SOURCE_RECORD.md`
 
-Book identity verified from front matter:
-
-- `বিজ্ঞান — অষ্টম শ্রেণি`
-- National Curriculum and Textbook Board, Bangladesh
-- for the 2026 school year
-- revised October 2025
-
-Important interpretation: this publication/revision metadata is source identity only; it does not establish that all underlying scientific content was substantively updated.
-
-The working copy is an image/scanned PDF with unreliable/absent native text extraction. Raw PDF inspection reports 162 pages, while the ChatGPT file-ingestion layer exposed 150 pages. Therefore visible rendered pages plus raw-PDF preflight are authoritative for page integrity; OCR/extractor page counts are advisory only.
+Important source facts:
+- printed Chapter 11 range: 108–118
+- working-copy PDF range: 113–123
+- scanned/image PDF
+- raw PDF count: 162 pages
+- ChatGPT ingestion exposed 150 pages
+- visible rendered pages are authoritative for critical wording
 
 ## Active chapter
 
 **Class 8 Science — Chapter 11: আলো**
 
-Canonical chapter path:
-
+Canonical path:
 `chapters/class-8/science/chapter-11-light/`
 
 Current status:
+**GEMINI_GATE_A_RECONCILED — STORYBOARD_READY**
 
-`GEMINI_GATE_A_BUNDLE_READY_EXTERNAL_RUN_PENDING`
+## Current four-lesson plan
 
-Key files:
+1. **আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম** — CORE 43 + FLEX 7 = 50 min
+2. **প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন** — CORE 44 + FLEX 8 = 52 min
+3. **উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা** — CORE 42 + FLEX 8 = 50 min
+4. **আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ** — CORE 44 + FLEX 8 = 52 min
 
-- `STATUS.md`
+Total planned CORE + FLEX: approximately **204 minutes** across four classes.
+
+## Gemini Review Gate A — completed
+
+Raw external review:
+`chapters/class-8/science/chapter-11-light/reviews/GEMINI_GATE_A_RAW_2026-09-05.md`
+
+Independent reconciliation:
+`chapters/class-8/science/chapter-11-light/reviews/GEMINI_GATE_A_RECONCILIATION_2026-09-05.md`
+
+Gemini verdict:
+`PASS_WITH_TARGETED_CHANGES`
+
+Canonical verdict:
+**ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED**
+
+### Implemented changes
+
+- L1: pencil-in-water phenomenon moved before abstract speed-change/optical-density explanation.
+- L1: separate wave-particle-duality block removed; only a very brief non-assessed photon note remains because the user explicitly wanted “আলো কী দিয়ে তৈরি” addressed.
+- L2: mirage clarified as a refractive-index-gradient / progressively bending ray phenomenon; avoid a single hard mirror-like boundary.
+- L3: minimum diverging/concave-lens action introduced before myopia spectacle correction.
+- L3: cornea recognized as the major initial focusing surface; crystalline lens fine-tunes through accommodation.
+- L3: anatomy reorganized by functional groups to reduce overload.
+- L4: eye-camera focusing comparison now explicitly says similar function, different mechanism; no universal claim that all cameras focus by one mechanism.
+- Gemini kerosene/water numeric example was not adopted because its specific values were not independently source-pinned.
+
+## Current source-issue register
+
+- `SI-11-001` spectacles outcome/body gap — documented; science supplement verified.
+- `SI-11-002` normal-incidence nuance — resolved.
+- `SI-11-003` slab incident/emergent angle geometry — resolved.
+- `SI-11-004` film-camera chemistry context — resolved.
+- `SI-11-005` mirage visualization/gradient clarification — resolved.
+- `SI-11-006` cornea versus lens focusing role — resolved.
+- `SI-11-007` eye-camera focusing analogy limit — resolved.
+
+## Key files now authoritative for storyboard work
+
 - `CHAPTER_ANALYSIS.md`
+- `LESSON_SPLIT_PROPOSAL_V2.md`
 - `COVERAGE_MATRIX.md`
 - `SOURCE_ISSUES.md`
 - `SOURCE_MAP.md`
-- `LESSON_SPLIT_PROPOSAL_V2.md`
 - `lessons/lesson-01/LESSON_PLAN.md`
 - `lessons/lesson-02/LESSON_PLAN.md`
 - `lessons/lesson-03/LESSON_PLAN.md`
 - `lessons/lesson-04/LESSON_PLAN.md`
-- `reviews/GEMINI_GATE_A_PROMPT.md`
-- `reviews/GEMINI_GATE_A_BUNDLE_MANIFEST.md`
+- `reviews/GEMINI_GATE_A_RECONCILIATION_2026-09-05.md`
 
-## Important stale-state correction completed
+The earlier transport bundle is now stale because canonical files changed after reconciliation. Do **not** reuse `GEMINI_GATE_A_BUNDLE.md` as a source of current planning truth.
 
-`CHAPTER_ANALYSIS.md` previously retained the original three-lesson recommendation from the first screenshot-only analysis. It has now been rebased to:
+## Gemini cadence evidence
 
-- the full 2026 textbook baseline;
-- the user-approved four-lesson architecture;
-- current source-authority policy;
-- current source issues and review gate state.
+Gate A was useful: it caught sequencing, prerequisite and analogy risks. It also produced at least one overgeneralized camera-focusing statement and an unsourced numeric example, confirming why Gemini findings must be independently validated rather than blindly adopted.
 
-The Gemini bundle was generated only after this correction.
-
-## Approved lesson split
-
-1. **আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম** — CORE 44 + FLEX 8 = 52 min
-2. **প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন** — CORE 44 + FLEX 8 = 52 min
-3. **উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা** — CORE 45 + FLEX 8 = 53 min
-4. **আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ** — CORE 44 + FLEX 8 = 52 min
-
-## Gemini Gate A state
-
-Direct Gemini access from this ChatGPT workspace is unavailable. The user's Gemini session also failed to read both the compressed repository import and public GitHub/raw GitHub URLs.
-
-Therefore a **single consolidated Markdown transport bundle** was generated for direct file upload to Gemini:
-
-`GEMINI_GATE_A_BUNDLE.md`
-
-Delivery snapshot:
-
-- size: 77,451 bytes
-- SHA-256: `277087d105fe114bb95f531e8653d6c0c20454f541f1b51e8e5bf8063ed2e26f`
-- manifest: `reviews/GEMINI_GATE_A_BUNDLE_MANIFEST.md`
-
-The bundle contains the Gate A prompt, corrected chapter analysis, approved lesson split, coverage matrix, source issues, source map and all four lesson plans.
-
-The bundle is a transport artifact only; canonical editable content remains the individual GitHub files. Regenerate the bundle if any included canonical file changes.
-
-Recommended Gemini instruction:
-
-> Read the attached `GEMINI_GATE_A_BUNDLE.md` completely. Perform the full independent Gate A review exactly according to the instructions contained inside the file. Do not skip any required section. Independently verify material scientific claims using current authoritative sources.
+Gate B remains required after all four storyboards/resource mappings and before content freeze.
 
 ## Renderer status
 
-No permanent default renderer is locked. RT-01 remains later, after content freeze prerequisites.
+No permanent renderer is locked.
+
+RT-01 remains after content/storyboard freeze prerequisites and before first final deck rendering.
 
 ## Next authorized action
 
-1. User uploads `GEMINI_GATE_A_BUNDLE.md` to Gemini and runs Gate A.
-2. User returns Gemini's full response here.
-3. ChatGPT saves the raw review in GitHub.
-4. ChatGPT independently validates every material finding.
-5. Record `ACCEPT / PARTIAL / REJECT` dispositions and update affected canonical files.
-6. Checkpoint `STATUS.md` and `CURRENT_STATE.md` immediately.
-7. Only then begin Lesson 1 storyboard.
+1. Read `templates/STORYBOARD_TEMPLATE.md`.
+2. Develop Lesson 1 storyboard from the Gate-A-reconciled plan.
+3. Assign slide IDs into `COVERAGE_MATRIX.md` as storyboard sections stabilize.
+4. Continue Lessons 2–4 storyboards/resource mapping.
+5. Run chapter-wide storyboard audit.
+6. Run Gemini Gate B.
+7. Reconcile Gate B, run G1–G7, freeze content.
+8. Run RT-01, select renderer routing, render and export-QA.
 
-Do not begin storyboard/content freeze/rendering until the Gate A review is returned and reconciled, unless the user explicitly changes this gate requirement.
+Do not render final decks yet.
