@@ -107,3 +107,26 @@ Operational note: a yearly publication/reprint/revision label must not be assume
 Decision: A meaningful task or stage is not considered operationally complete until its result/state is saved to the canonical GitHub repository. After completing analysis, verification, lesson planning, Gemini review/reconciliation, storyboard, resource mapping, QA, renderer calibration, rendering, export QA or any other durable project step, immediately update the relevant chapter/lesson artifact plus `STATUS.md`/`CURRENT_STATE.md` as applicable before moving on.
 
 Reason: prevent duplicate work, stale state and context loss; ensure a new chat can determine exactly what is complete, what evidence exists and what the next action is without relying on prior chat history.
+
+## D-033 — User-facing prompts must be one-click copy-ready
+Decision: Whenever ChatGPT gives the user a prompt intended to be pasted into Gemini, Canva, Beautiful.ai, Hyperagent, Codex or another external tool, provide the complete prompt in **one single fenced code block** with no commentary interleaved inside it. The block must be self-contained and ready to copy in one action.
+
+Operational rule:
+- do not split one prompt across multiple code blocks;
+- do not require the user to manually merge instructions from surrounding prose;
+- put any explanation before or after the block, not inside the copy workflow;
+- when practical, include exact filenames/paths and expected output format in the prompt itself.
+
+Reason: reduce mobile friction and copy/paste errors.
+
+## D-034 — Gemini reviews use downloadable single-file bundles
+Decision: For planned Gemini review gates, do not depend on Gemini being able to browse GitHub, raw GitHub URLs or imported repositories. Build a **single consolidated Markdown review bundle** from the current canonical GitHub files, give it to the user as a downloadable file, and provide one copy-ready prompt instructing Gemini to read that attachment and perform the required review.
+
+Operational rule:
+- the bundle is a transport artifact, not canonical truth;
+- record a manifest/checksum or equivalent bundle snapshot in GitHub;
+- if any included canonical file changes, the old bundle becomes stale and must not be reused;
+- after Gemini returns a review, save the raw review to GitHub, independently validate material findings, record ACCEPT/PARTIAL/REJECT dispositions, implement only validated changes, and checkpoint status immediately;
+- future chats must follow this same bundle workflow for Gemini Gate B and later Gemini review gates unless the user explicitly changes the method.
+
+Canonical procedure: `GEMINI_REVIEW_WORKFLOW.md`.
