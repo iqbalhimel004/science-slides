@@ -17,14 +17,14 @@ The first completed chapter is therefore also a **pilot/calibration chapter**. I
 | Fable finding | Project disposition | Current status / implementation |
 |---|---|---|
 | F-01 timing arithmetic contradiction | **ACCEPTED, corrected** | 60-minute requirement is confirmed by the user. Plan now uses CORE ~40–45 + FLEX ~5–10 = 50–55 planned minutes, leaving 5–10 unallocated contingency. STRETCH is appendix-only. |
-| F-02 scanned/image PDF intake risk | **PARTIALLY ACCEPTED** | Do not assume any supplied NCTB PDF has a reliable text layer. Classify each actual source. OCR may assist, but critical wording is verified against the visible page/image. The universal claim that every NCTB PDF is scanned is not treated as a project fact. |
+| F-02 scanned/image PDF intake risk | **PARTIALLY ACCEPTED; FIRST-PILOT EVIDENCE OBTAINED** | Do not assume every NCTB PDF is scanned. The actual 2026 Class 8 Science source was tested and is image/scanned with unreliable/absent native extraction. Raw PDF inspection reports 162 pages while the ChatGPT file-ingestion layer exposed 150; visible rendering plus raw preflight is therefore authoritative for this source. |
 | F-03 ChatGPT cannot maintain GitHub | **REJECTED for this environment** | This ChatGPT workspace has a connected write-capable GitHub integration. Writes remain allowed only to `iqbalhimel004/science-slides`. Hyperagent is not made the exclusive repo writer. |
 | F-04 Bangla typography unspecified | **ACCEPTED; TEST PENDING** | RT-01 renderer calibration is required before locking a default renderer. Bangla conjuncts, mixed Bangla/English, labels, export and projector rendering must be tested. Exact final font stack remains a calibration decision. |
 | F-05 equation/subscript/superscript method missing | **ACCEPTED; IMPLEMENTED AS FALLBACK POLICY** | Preserve source expression in storyboard; if renderer is unreliable, use controlled LaTeX/MathJax → SVG/PNG and visually verify. Final preferred method depends on RT-01/first chapter. |
 | F-06 canonical classroom artifact undecided | **PARTIALLY ACCEPTED** | GitHub storyboard/content remains canonical source of truth. Every classroom-ready lesson requires a PDF fallback. Primary delivery format remains pending renderer calibration; PDF is not the editable source of truth. |
-| F-07 edition/exam format not pinned | **PARTIALLY ACCEPTED** | Edition/year and source page are now pinned where identifiable. Exam-format practice should be aligned when relevant, but no rigid rule forces the same CQ/MCQ pattern into every lesson regardless of subject/grade/pedagogical need. |
+| F-07 edition/exam format not pinned | **PARTIALLY ACCEPTED; FIRST SOURCE NOW PINNED** | The 2026 Class 8 Science baseline is now versioned with revision metadata, page mapping and checksum. Exam-format practice remains contextual rather than forced into every lesson. |
 | F-08 Tier-2 source role/copyright ambiguity | **ACCEPTED** | Tier 2 (e.g. 10 Minute School) is for local wording/convention, examples and explanation ideas; it does not independently validate scientific truth. Avoid unnecessary verbatim proprietary copying. Tier 3 supports scientific validation. |
-| F-09 documentation duplication/stale risk | **ACCEPTED IN PRINCIPLE; PARTIAL CLEANUP COMPLETE** | `OPERATING_BRIEF.md` is now the compact recovery entry point. Full merge/delete of older policy files is intentionally pending until the first pilot proves no useful rule would be lost. |
+| F-09 documentation duplication/stale risk | **ACCEPTED IN PRINCIPLE; PARTIAL CLEANUP COMPLETE** | `OPERATING_BRIEF.md` is now the compact recovery entry point. Full merge/delete of older policy files is intentionally pending until the first pilot proves no useful rule would be lost. New curriculum/coverage files are deliberately navigation/traceability layers and are not duplicates of detailed analysis. |
 | F-10 one-chat-one-chapter vs context reality | **PARTIALLY ACCEPTED** | One complete chapter remains the normal production scope per user preference. If context becomes impractically large, checkpoint exact state in GitHub and continue in a new chat. Stage-scoped chats are fallback, not mandatory architecture. |
 | F-11 Beautiful.ai default based on unverified assumptions | **ACCEPTED; generic connector claim rejected** | Beautiful.ai is actually connected in this workspace. It is now a candidate full-deck renderer, not permanently default. RT-01 decides based on real Bangla/science output. |
 | F-12 Canva Education/trial dependency | **PENDING USER/ACCOUNT VERIFICATION** | Canva is connected and is a viable full-deck renderer plus specialist visual tool. Canva for Education eligibility/status should be verified separately; the project must not depend on an unverified entitlement. |
@@ -32,13 +32,13 @@ The first completed chapter is therefore also a **pilot/calibration chapter**. I
 | F-14 pedagogy missing retrieval/hinge/exit/refutation | **ACCEPTED IN CORE FORM** | Retrieval/prior knowledge, meaningful student response, hinge/check where useful, guided practice, misconception correction and exit check are now part of the lesson spine. Exam-format/CQ elements are contextual rather than forced into every lesson. |
 | F-15 rigid 7–10 min attention-reset heuristic weakly grounded | **ACCEPTED** | Replaced with segment/response logic: avoid long passive teacher-only stretches; roughly 10 min is only a heuristic ceiling for unchanged exposition, not a biological attention-span rule. |
 | F-16 no numeric visual baselines | **PENDING PILOT CALIBRATION** | The first chapter/RT-01 will establish practical font sizes, density, spacing and projector-safe baselines using actual renderer/export/projector behaviour. Do not lock arbitrary numbers before testing. |
-| F-17 chapter paths/artifact storage/templates inconsistent | **PARTIALLY PENDING** | Existing templates remain usable. Exact chapter folder and artifact convention will be instantiated with the first real chapter, then standardized based on actual workflow friction. |
+| F-17 chapter paths/artifact storage/templates inconsistent | **PARTIALLY RESOLVED BY PILOT** | Real workflow has instantiated `chapters/class-8/science/chapter-11-light/`, a versioned source path, `COVERAGE_MATRIX.md` and `SOURCE_ISSUES.md`. Final artifact/deck storage convention remains pending rendering/export evidence. |
 | F-18 Gemini review scope unbounded | **PARTIALLY ACCEPTED** | Gemini is a targeted independent reviewer/research layer at high-value gates, not a duplicate author. Do not force expensive duplicate review when risk is low. Exact cadence is chapter-dependent. |
 | F-19 video excerpt wording/ToS risk | **ACCEPTED** | Do not create unauthorized downloaded excerpts. Prefer timestamped source segments/legal embeds and static fallback for classroom-critical online media. |
 | F-20 stale branch / branch policy | **LOW PRIORITY / PENDING** | Not required before first chapter. Do not delete branches solely for neatness without confirming no value remains. |
 | F-21 quality-priority order missing | **ACCEPTED** | Priority is: scientific/source accuracy → pedagogical clarity & cognitive load → realistic timing → attention/visual engagement → polish. |
 | F-22 multi-account Hyperagent promo assumptions | **ACCEPTED AS CAUTION** | Do not architect the workflow around uncertain promo terms or multi-account assumptions. Use Hyperagent where it materially improves output; account/credit terms remain external uncertainty. |
-| F-23 curriculum index metadata thin | **PARTIALLY PENDING** | Add/standardize subject, class, chapter and edition metadata as real chapters are ingested; avoid speculative bulk population before sources are supplied. |
+| F-23 curriculum index metadata thin | **RESOLVED FOR 2026 CLASS 8 SCIENCE BASELINE** | `CURRICULUM_INDEX.md` is now populated from the supplied full 2026 Class 8 Science source, with chapter titles, printed page ranges, production status and links to chapter traceability records. Other classes/subjects remain unpopulated until their sources are supplied. |
 
 ## What was explicitly rejected/corrected from the audit
 
@@ -65,6 +65,8 @@ The first completed chapter is therefore also a **pilot/calibration chapter**. I
 - segment/response attention-management rule
 - source/video licensing discipline
 - explicit project quality-priority order
+- versioned textbook source records and edition fingerprints
+- curriculum index + chapter coverage/source-issue traceability
 
 ## Pending items that the first pilot chapter should resolve
 
@@ -75,7 +77,7 @@ The first completed chapter is therefore also a **pilot/calibration chapter**. I
 3. **Bangla typography:** final reliable font choices, conjunct rendering and export behaviour.
 4. **Equation/chemistry notation path:** determine which content can remain native and when SVG fallback is required.
 5. **Primary classroom delivery format:** live/native deck vs exported format; PDF remains mandatory fallback.
-6. **Actual source ingestion behaviour:** test the first real chapter PDF for text layer/OCR/vision reliability; test NotebookLM only if useful.
+6. **Actual source ingestion behaviour:** **RESOLVED FOR THE 2026 CLASS 8 SCIENCE WORKING COPY.** It is image/scanned, direct native text extraction is unreliable, raw PDF inspection reports 162 pages while the file-ingestion layer exposed 150, and visible rendered pages are authoritative for critical wording. NotebookLM utility remains a separate P1 experiment if it adds value.
 7. **Classroom profile:** fill actual projector/device/internet/audio/phone constraints when the user provides them.
 
 ### P1 — evaluate from the first chapter workflow
@@ -84,7 +86,7 @@ The first completed chapter is therefore also a **pilot/calibration chapter**. I
 9. Beautiful.ai full-deck workflow quality and friction.
 10. Whether hybrid Canva assets inside another renderer improve output enough to justify complexity.
 11. Hyperagent programmatic SVG/equation/QA value versus added workflow overhead.
-12. Exact chapter-folder/template convention based on real files produced.
+12. **Chapter/source folder convention: PARTIALLY RESOLVED.** Real paths and traceability records are now instantiated; final artifact/export storage convention still awaits rendering evidence.
 13. Numeric visual baselines (font sizes, density, spacing) based on actual projection/export.
 14. Gemini review cadence that gives useful independent findings without duplicating work.
 15. NotebookLM role: optional vs high-value for long/dense chapters after real source testing.
