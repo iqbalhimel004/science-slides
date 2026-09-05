@@ -6,7 +6,7 @@ Last updated: 2026-09-05
 
 Plan v3.0 remains canonical, with durable policy refinements recorded in `OPERATING_BRIEF.md`, `SOURCE_POLICY.md`, `WORKFLOW.md`, `DECISIONS.md` and `GEMINI_REVIEW_WORKFLOW.md`.
 
-The first real chapter is the pilot/calibration chapter. Full chapter analysis is complete, the **four-lesson split is user-approved**, Gemini Review Gate A has been completed externally and independently reconciled, source reconciliation pass 2 is complete, all four lesson plans are Gate-A reconciled, and **Lesson 1 + Lesson 2 storyboard draft stages are now complete**. Lesson 2 also has an explicit resource/asset map.
+The first real chapter is the pilot/calibration chapter. Full chapter analysis is complete, the **four-lesson split is user-approved**, Gemini Review Gate A has been completed externally and independently reconciled, source reconciliation pass 2 is complete, all four lesson plans are Gate-A reconciled, and **Lesson 1 + Lesson 2 + Lesson 3 storyboard draft stages are now complete**. Lessons 2 and 3 have explicit resource/asset maps.
 
 ## Canonical repository
 
@@ -53,7 +53,7 @@ Canonical path:
 `chapters/class-8/science/chapter-11-light/`
 
 Current status:
-**LESSONS_1_2_STORYBOARDS_DRAFT_COMPLETE — LESSON_3_NEXT**
+**LESSONS_1_2_3_STORYBOARDS_DRAFT_COMPLETE — LESSON_4_NEXT**
 
 ## Current four-lesson plan
 
@@ -90,8 +90,6 @@ Structure:
 
 Internal QA: `PASS_WITH_NONBLOCKING_NOTES`.
 
-Lesson 1 slide IDs are mapped in `COVERAGE_MATRIX.md`.
-
 ## Lesson 2 storyboard — complete draft stage
 
 Canonical files:
@@ -106,28 +104,51 @@ Structure:
 - CORE 44 min + FLEX 8 min = 52 min
 - contingency 8 min
 
+Internal QA: `PASS_WITH_NONBLOCKING_NOTES`.
+
+## Lesson 3 storyboard — complete draft stage
+
+Canonical files:
+- `lessons/lesson-03/LESSON_PLAN.md`
+- `lessons/lesson-03/STORYBOARD.md`
+- `lessons/lesson-03/RESOURCES.md`
+- `lessons/lesson-03/QA.md`
+
+Structure:
+- `L3-S01`–`L3-S13`: 13 CORE slides
+- `L3-F01`–`L3-F02`: 2 FLEX slides
+- CORE 42 min + FLEX 8 min = 50 min
+- contingency 10 min
+
 Important decisions:
-- actual/apparent position uses solid real rays + dashed backward extensions;
-- stick, coin and fish applications precede the more abstract mirage/critical-angle sequence;
-- mirage uses a temperature/refractive-index gradient visual, not a single hard mirror boundary;
-- critical angle is explicitly the `r = 90°` threshold, not TIR itself;
-- TIR requires both higher-index→lower-index propagation and `i > C`;
-- optical fibre follows as repeated-TIR application;
-- optional core/cladding note remains non-assessed and supplementary;
-- PhET `Bending Light` is FLEX only; CORE remains fully offline;
-- deterministic/custom ray diagrams are required for all high-risk scientific visuals.
+- convex/converging and concave/diverging action introduced qualitatively only;
+- no lens formula, power, sign convention or numerical ray-tracing burden in CORE;
+- focus/focal length introduced only for magnifier reasoning;
+- real/virtual and orientation/magnification vocabulary kept to the minimum needed by this chapter;
+- magnifier requires object inside focal length and forms virtual, erect, enlarged image;
+- eye anatomy is staged by functional group rather than textbook-dump labelling;
+- cornea is explicitly the major initial refracting/focusing surface and crystalline lens fine-tunes through accommodation;
+- pupil is an opening in the iris;
+- accommodation uses lens-shape/optical-power change, not movement toward/away from retina;
+- spectacles content is visibly marked as supplementary source-gap repair;
+- myopia gets the minimum diverging-lens prerequisite and hyperopia the minimum converging-lens correction concept;
+- no internet is required for CORE.
 
 Resource map IDs:
-- `R2-01` apparent-position ray construction
-- `R2-02` mirage gradient diagram
-- `R2-03` critical-angle/TIR three-state sequence
-- `R2-04` optical-fibre cutaway
-- `R2-05` PhET Bending Light FLEX simulation
-- `R2-06` textbook-style TIR practice redraw
+- `R3-01` converging/diverging lens comparison
+- `R3-02` image-vocabulary mini-panels
+- `R3-03` magnifying-glass ray construction
+- `R3-04` human-eye functional-group cross-section
+- `R3-05` accommodation two-state sequence
+- `R3-06` spectacles minimum correction concept
+- `R3-07` eye labelling practice
+- `R3-08` corrective-lens FLEX extension
 
 Internal QA: `PASS_WITH_NONBLOCKING_NOTES` for storyboard stage.
 
-Lesson 2 slide IDs are now mapped in `COVERAGE_MATRIX.md`.
+Lesson 3 slide IDs are mapped in `COVERAGE_MATRIX.md`.
+
+Before content freeze, magnifier rays, eye anatomy labels, accommodation visual and corrective-lens ray diagrams must be scientifically/visually inspected after drawing.
 
 ## Current source-issue register
 
@@ -143,7 +164,8 @@ Lesson 2 slide IDs are now mapped in `COVERAGE_MATRIX.md`.
 
 - Lesson 1: concrete slide IDs mapped.
 - Lesson 2: concrete slide IDs mapped.
-- Lessons 3–4: pending.
+- Lesson 3: concrete slide IDs mapped.
+- Lesson 4: pending.
 
 ## Gemini cadence evidence
 
@@ -157,13 +179,12 @@ No permanent renderer is locked. RT-01 remains after storyboard/content-freeze p
 
 ## Next authorized action
 
-1. Develop Lesson 3 storyboard + resource mapping from the Gate-A-reconciled plan.
-2. Map Lesson 3 slide IDs into `COVERAGE_MATRIX.md`.
-3. Run Lesson 3 storyboard QA and checkpoint.
-4. Repeat for Lesson 4.
-5. Run chapter-wide storyboard/resource/duplication audit.
-6. Generate a fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
-7. Reconcile Gate B, run final G1–G7, freeze content.
-8. Run RT-01, select renderer routing, render and export-QA.
+1. Develop Lesson 4 storyboard + resource mapping from the Gate-A-reconciled plan.
+2. Map Lesson 4 slide IDs into `COVERAGE_MATRIX.md`.
+3. Run Lesson 4 storyboard QA and checkpoint.
+4. Run chapter-wide storyboard/resource/duplication audit.
+5. Generate a fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
+6. Reconcile Gate B, run final G1–G7, freeze content.
+7. Run RT-01, select renderer routing, render and export-QA.
 
 Do not render final decks yet.
