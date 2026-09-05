@@ -1,29 +1,30 @@
 # Chapter Analysis — Class 8 Science, Chapter 11: আলো
 
 Date: 2026-09-05
-Status: ANALYSIS_COMPLETE_SPLIT_PENDING_APPROVAL
-Source mode: ordered screenshots supplied by the user
+Status: ANALYSIS_COMPLETE_SPLIT_APPROVED
+Source baseline: NCTB Class 8 Science, 2026 school year; revised October 2025
+Canonical source record: `sources/class-8/science/2026/SOURCE_RECORD.md`
 
-## A. Input integrity / readability
+## A. Input integrity / source identity
 
 - Chapter identity: একাদশ অধ্যায় — আলো
 - Class: 8
 - Subject: বিজ্ঞান (Science)
-- Source-year marker: `২০২৫` is visibly printed on supplied pages.
-- Edition/publication metadata: not fully identifiable from these chapter screenshots alone; do not infer beyond the visible ২০২৫ marker.
-- Source type: image-only screenshots; no native text layer is available in this intake.
-- Visible sequence: chapter opener followed continuously by printed textbook pages 109–118. The opener immediately precedes p.109 and is likely the preceding textbook page, but its printed page number is not visible and therefore is not treated as confirmed.
-- Page continuity: PASS for the visible chapter sequence.
-- Missing/cropped/unreadable content: no material loss found. Some screenshots contain viewer/UI overlays or partial crops, but overlapping adjacent screenshots expose the obscured textbook content.
-- Bangla body text: readable.
-- Diagrams/tables: readable enough for analysis; small labels will require redraw/enlargement for projection.
-- Equations: no substantial equation set appears in this chapter.
-- Critical OCR reliance: none. Critical wording was read from the visible textbook images rather than trusted from OCR.
+- Full 2026 textbook PDF supplied by the user and inspected.
+- Printed chapter range: pp.108–118.
+- Working-copy PDF range: pp.113–123.
+- Source type: image/scanned PDF with unreliable/absent native text extraction.
+- Raw working-copy PDF page count: 162.
+- ChatGPT ingestion layer exposed 150 pages; therefore parser page counts are not authoritative for this file.
+- Visible rendered textbook pages remain authoritative for source wording.
+- No material chapter-page loss was found.
 - G0 result: PASS_WITH_NOTES.
 
-## Explicit chapter learning outcomes visible on opener
+Important interpretation: the recent print/revision metadata establishes source identity only. It does **not** establish that the underlying scientific content was substantively modernized. Under project policy, NCTB controls curriculum/scope/exam context, while current authoritative scientific sources control scientific correctness.
 
-By the end of the chapter students are expected to be able to:
+## Explicit chapter learning outcomes
+
+The chapter opener states that students should be able to:
 
 1. explain with diagrams everyday phenomena involving refraction of light;
 2. explain total internal reflection;
@@ -33,62 +34,67 @@ By the end of the chapter students are expected to be able to:
 6. compare the human eye with a camera;
 7. appreciate the contribution of light in everyday activities.
 
-### Important source-internal discrepancy
+### Source-internal discrepancy
 
-The opener visibly includes `চশমার কাজ ব্যাখ্যা করতে পারব`, but no explanatory spectacles section appears in the supplied continuous pages through the chapter exercise. This must not be silently invented. It is a source-verification blocker to resolve against the official book/curriculum before content freeze.
+The opener includes `চশমার কাজ ব্যাখ্যা করতে পারব`, but the full chapter body through printed p.118 contains no spectacles-working subsection. This is tracked as `SI-11-001` in `SOURCE_ISSUES.md`.
 
-## B. Chapter-wide concept map
+## B. Chapter-wide dependency map
 
-Dependency sequence:
+Approved teaching dependency sequence:
 
-1. **Light crossing media**
-   - transparent media
-   - change of speed across media
-   - change of direction for oblique incidence
-   - refraction
+1. **Light foundation** — supplementary prerequisite
+   - what light is, at Class-8 level
+   - minimal wave/photon overview
+   - how seeing occurs
+   - chapter-relevant properties of light
+   - optical medium and transparent/translucent/opaque recap
+   - straight-line ray model in a homogeneous transparent medium
 
-2. **Observation/activity for refraction**
-   - pencil partly immersed in water
-   - apparent bending/position change
-   - ray direction changes at boundary
-
-3. **Ray vocabulary and rules**
-   - incident ray
+2. **Interface/ray foundation** — supplementary + NCTB bridge
+   - boundary/interface
    - point of incidence
    - normal
-   - angle of incidence
-   - refracted ray
-   - angle of refraction
-   - rare → dense: toward normal
-   - dense → rare: away from normal
-   - incident ray, refracted ray and normal lie in the same plane
+   - angle measurement from the normal
+   - reflection versus refraction
+   - qualitative speed-change idea
+   - optical density versus mass density
+   - normal-incidence exception
 
-4. **Everyday applications of refraction**
-   - immersed stick appears bent/shorter/raised
-   - coin becomes visible after water is added
-   - apparent depth: fish appears nearer to surface
-   - practical aiming implication while spearfishing
-   - mirage in hot regions/desert
+3. **Refraction observation and rules**
+   - pencil-in-water activity
+   - incident ray
+   - refracted ray
+   - angle of incidence
+   - angle of refraction
+   - optically rarer → denser: toward normal
+   - optically denser → rarer: away from normal
+   - incident ray, refracted ray and normal lie in the same plane
+   - parallel-sided slab geometry clarification
+
+4. **Everyday refraction / apparent position**
+   - immersed stick
+   - coin visibility
+   - fish apparent depth / aiming implication
+   - actual versus apparent position
+   - backward extension of rays
+   - mirage, qualitatively
 
 5. **Critical angle and total internal reflection**
-   - dense → rare transition
-   - refraction angle increases as incidence angle increases
-   - critical-angle condition when refracted ray travels along interface
-   - incidence angle greater than critical angle → total internal reflection
-   - conditions for TIR
+   - denser → rarer progression
+   - refracted angle increases with incidence angle
+   - critical-angle condition: `r = 90°`
+   - TIR only above critical angle and only toward a lower refractive-index medium
 
-6. **Applications of TIR**
-   - optical fibre
-   - repeated internal reflection through fibre
-   - medical observation/endoscopic-type use described by text
-   - telecommunication
+6. **Optical fibre**
+   - light guidance by repeated total internal reflection
+   - medical/observation context in textbook
+   - telecommunication context
 
-7. **Convex lens as magnifying glass**
-   - convex lens
-   - focal point / focal length context
-   - object close to lens / within focal region
-   - erect, enlarged virtual image
-   - near point context
+7. **Convex-lens prerequisite and magnifying glass**
+   - converging action
+   - focus and focal length
+   - real/virtual, erect/inverted, magnified/reduced image vocabulary
+   - object within focal length → virtual, upright, enlarged image
 
 8. **Human eye**
    - eyeball
@@ -97,356 +103,281 @@ Dependency sequence:
    - choroid
    - iris
    - pupil
-   - convex lens
+   - lens
    - retina
    - aqueous humour
    - vitreous humour
-   - image formation on retina
-   - control of admitted light and focusing/accommodation ideas in comparison table
+   - retinal image
+   - light regulation
+   - accommodation/focusing
 
-9. **Photographic camera**
-   - camera body
-   - lens
-   - aperture/diaphragm
-   - shutter
-   - photographic plate/film pathway described in text
-   - image focusing by camera-box/lens arrangement
-   - exposure
-   - latent image / reduction to silver
-   - washing/fixing with hypo (sodium thiosulphate) as described
-   - negative image
+9. **Spectacles — source-gap repair**
+   - NCTB learning outcome exists but body explanation is absent
+   - only a concise scientifically verified supplementary corrective-lens principle is eligible for CORE/FLEX use
+   - detailed eye-defect numericals/lens power are outside CORE
 
-10. **Camera vs human eye**
-    - light-proof enclosure vs scleral/choroidal enclosure
-    - shutter vs eyelid
-    - diaphragm/aperture vs iris/pupil
-    - focusing mechanism vs accommodation
-    - image-receiving plate vs retina
-    - both form real inverted images on receptive surface
+10. **Photographic camera**
+    - camera body
+    - lens
+    - aperture/diaphragm
+    - shutter
+    - image formation
+    - exposure
+    - textbook film/photographic-plate chemistry
+    - development/fixing/negative
+    - explicit distinction from modern digital cameras
 
-11. **Exercise / assessment layer**
-    - fill-in-the-blanks
-    - short-answer questions
-    - MCQ
-    - diagram interpretation
-    - creative/contextual questions
+11. **Eye-camera comparison and synthesis**
+    - compare by optical function, not literal structural identity
+    - chapter-wide concept map
+    - textbook exercise/ray reasoning distributed across lessons
 
-## Prerequisites
+## C. Prerequisites / bridge concepts
 
-Students should already be comfortable with:
+The following are intentionally supplied because they are necessary or high-value for understanding but are not all explicit textbook body content:
 
-- light travels in straight lines within a uniform transparent medium;
-- basic idea of transparent media;
-- simple ray diagrams and angles;
-- perpendicular/normal line and angle measurement;
-- basic lens idea (at least recognizing a convex lens) before magnifying-glass and eye/camera treatment.
+- light as electromagnetic radiation at an age-appropriate level;
+- minimal wave/photon framing without quantum mathematics;
+- how seeing occurs;
+- straight-line ray model;
+- optical medium/interface/normal;
+- reflection versus refraction;
+- qualitative speed change and refraction;
+- optical density ≠ mass density;
+- normal-incidence no-deviation case;
+- actual versus apparent position;
+- convex-lens converging action, focus and focal length;
+- real/virtual and orientation/magnification vocabulary;
+- accommodation;
+- concise spectacle-correction principle.
 
-If these are weak, retrieval must reactivate them rather than assuming mastery.
+These items must be labelled as prerequisite/supplementary support where relevant and must not be represented as verbatim NCTB text.
 
-## C. Inventory
+## D. Definitions / source-sensitive terms
 
-### Definitions / source-sensitive terms
-
-| Item | Textbook role | Verification note |
+| Item | Teaching role | Verification/treatment |
 |---|---|---|
-| আলোর প্রতিসরণ (refraction) | Directional change of light when moving from one transparent medium to another under the stated conditions | Critical wording must remain visually/source verified |
-| আপতিত রশ্মি | Incoming ray at interface | Diagram-dependent |
-| আপতন বিন্দু | Point where ray strikes boundary | Diagram-dependent |
-| অভিলম্ব | Normal at point of incidence | Diagram-dependent |
-| আপতন কোণ | Angle between incident ray and normal | Exam-sensitive diagram wording |
-| প্রতিসরিত রশ্মি | Ray after entering second medium | Diagram-dependent |
-| প্রতিসরণ কোণ | Angle between refracted ray and normal | Exam-sensitive diagram wording |
-| সংকট কোণ (critical angle) | Incidence angle in denser medium for which refracted angle is 90° | Must preserve medium-direction condition |
-| পূর্ণ অভ্যন্তরীণ প্রতিফলন | Complete/total reflection back into denser medium when TIR conditions are met | Source + science verification required |
-| নিকট বিন্দু | Nearest point seen clearly by eye in magnifying-glass discussion | Keep grade-appropriate explanation |
-| অক্ষিগোলক | Eyeball | Anatomy label |
-| স্ক্লেরা/শ্বেতমণ্ডল | Outer tough white layer | Anatomy label |
-| কর্নিয়া | Transparent front part | Anatomy label |
-| কোরয়েড/কৃষ্ণমণ্ডল | Pigmented vascular layer | Anatomy label |
-| আইরিস | Coloured diaphragm-like structure | Anatomy label |
-| মণি/তারারন্ধ্র (pupil) | Central opening in iris | Anatomy label |
-| রেটিনা | Light-sensitive inner layer | Anatomy label |
-| অ্যাকুয়াস হিউমার | Fluid between cornea and lens | Anatomy label |
-| ভিট্রিয়াস হিউমার | Jelly-like material behind lens | Anatomy label |
-| exposure | Duration/act of admitting light to photographic plate | Camera process term |
+| আলোর প্রতিসরণ (refraction) | Main phenomenon | Use NCTB-compatible exam wording plus current-science clarification that speed changes across media and directional deviation is not guaranteed at normal incidence |
+| আপতিত রশ্মি | Ray vocabulary | Diagram-dependent |
+| আপতন বিন্দু | Ray vocabulary | Diagram-dependent |
+| অভিলম্ব / normal | Ray vocabulary | Angle reference line |
+| আপতন কোণ `i` | Ray vocabulary | Measured from normal, not surface |
+| প্রতিসরিত রশ্মি | Ray vocabulary | Diagram-dependent |
+| প্রতিসরণ কোণ `r` | Ray vocabulary | Measured from normal |
+| optical density | Supplementary clarification | Qualitative only; distinguish from mass density |
+| apparent position | Bridge/application | Explain using backward ray extension |
+| সংকট কোণ | NCTB core | Incidence angle in higher-index medium for which refracted angle is 90° |
+| পূর্ণ অভ্যন্তরীণ প্রতিফলন | NCTB core | Requires higher-index→lower-index direction and `i > C` |
+| focus / focal length | L3 prerequisite | Conceptual only; no lens formula CORE |
+| real / virtual image | L3 prerequisite | Only distinctions needed by magnifier/eye/camera |
+| pupil | Eye | Opening in iris, not a solid black structure |
+| accommodation | Eye bridge | Qualitative change in optical power/focusing |
+| exposure | Camera | Film-camera context in textbook; duration/act of admitting light |
 
-### Laws / rules / relationships
+## E. Laws / qualitative relationships
 
-The chapter contains rules rather than a numerical Snell-law formula.
+1. Incident ray, refracted ray and normal at the point of incidence lie in the same plane.
+2. For oblique incidence from optically lower-index/rarer to higher-index/denser medium, the ray bends toward the normal; in the shown case `r < i`.
+3. For oblique incidence from higher-index/denser to lower-index/rarer medium, the ray bends away from the normal; in the shown case `r > i`.
+4. At normal incidence the ray does not change direction although its speed changes.
+5. Equal incident/emergent angle is taught only for the demonstrated parallel-sided slab geometry; it is not a universal arbitrary-interface rule.
+6. At the critical angle, the refracted ray travels along the interface: `r = 90°`.
+7. TIR occurs only when light travels toward a lower refractive-index medium and the incidence angle exceeds the critical angle.
 
-1. Incident ray, refracted ray and the normal at the point of incidence lie in the same plane.
-2. From optically rarer to denser medium, the refracted ray bends toward the normal; `i > r` in the illustrated case.
-3. From denser to rarer medium, the refracted ray bends away from the normal; `r > i` in the illustrated case.
-4. Textbook also states an equal-angle relation for a ray returning to the same medium after passing through another medium. This wording needs science reconciliation before slide freeze because equality of incident and emergent angles depends on the geometry (e.g. parallel-sided slab) and must not be overgeneralized.
-5. TIR conditions: light travels from denser to rarer medium and incidence angle exceeds the critical angle.
-6. At the critical-angle condition, refracted ray is along the boundary (`r = 90°`).
+No Snell-law numerical calculations are required in CORE.
 
-### Formula / notation inventory
+## F. Diagrams / visual models required
 
-- No major algebraic formula or numerical derivation is present.
-- Important notation: `i`, `r`, `90°`, ray labels such as PO/OP′/QO/OQ′/RO/OR′, normal `NN′`, and prime marks.
-- This chapter therefore tests scientific symbols and diagram notation more than equation rendering.
+1. Light/seeing hook.
+2. Optical medium / interface / normal.
+3. Reflection versus refraction.
+4. Normal incidence versus oblique incidence.
+5. Pencil-in-water observation and ray reconstruction.
+6. Rarer→denser and denser→rarer ray diagrams.
+7. Parallel-sided glass slab.
+8. Stick/coin/fish apparent-position constructions.
+9. Mirage qualitative ray path.
+10. Critical-angle progression: `i < C`, `i = C`, `i > C`.
+11. Optical-fibre cutaway.
+12. Convex-lens focus/focal-length prerequisite.
+13. Magnifying-glass virtual-image construction.
+14. Human-eye cross-section.
+15. Optional concise spectacle-correction visual.
+16. Film-camera cutaway / ray diagram.
+17. Eye-camera functional comparison.
+18. Projector-safe versions of textbook exercise diagrams.
 
-### Diagrams / processes
+## G. Activities / demonstrations
 
-1. Pencil-in-water refraction activity.
-2. Glass-block refraction with incident/refracted/emergent rays and normals.
-3. Rare-to-denser ray-bending diagram.
-4. Stick in water appears bent.
-5. Coin/apparent-depth setup.
-6. Fish apparent-position / spearfishing diagram.
-7. Mirage explanation context.
-8. Critical-angle/TIR family of rays at water/air interface.
-9. Magnifying glass image concept.
-10. Human-eye cross-section with labelled parts.
-11. Photographic camera ray/image-formation diagram.
-12. Camera-vs-eye comparison table.
-13. Exercise ray diagrams P/Q/R/S.
-14. Creative-question TIR ray diagram.
+- Pencil in water — strong CORE live demo with static fallback.
+- Glass-block ray tracing — useful FLEX/teacher-demo option because setup and tracing can consume time.
+- Coin visibility/apparent depth — strong low-cost application demo; keep compact.
+- PhET Bending Light — useful optional teacher-controlled visualization for refraction/TIR; static fallback required.
+- Mirage — use diagram/animation rather than attempted classroom recreation.
 
-### Activities / demonstrations
+## H. Major misconceptions / difficult areas
 
-- **Pencil in water activity** — highly suitable as a short live demonstration; core candidate.
-- **Glass-block ray tracing** — useful but setup/board time can be substantial; can be represented by progressive diagram plus optional live activity.
-- **Coin visibility/apparent depth** — excellent low-cost demo; core or flex depending on lesson pacing.
-- **Fish apparent depth** — visual application; no live experiment required.
-- **Mirage** — best taught through diagram/animation or trusted short visual rather than attempting a classroom demo.
+1. Refraction means light always bends.
+2. Angles are measured from the surface rather than the normal.
+3. Optical density means ordinary mass density/heaviness.
+4. The boundary itself mechanically “pushes” light.
+5. Dense→rare always produces TIR.
+6. At the critical angle TIR has already occurred.
+7. Fish/coin physically rises.
+8. Mirage is literal water or simple reflection from a wet road.
+9. Optical fibre stores light.
+10. Convex lens always produces the same image type.
+11. Magnifying glass magnifies at any object distance.
+12. Pupil is a solid black object.
+13. Eye lens alone controls admitted light.
+14. Spectacles physically make the eye/object bigger/smaller rather than altering ray convergence/divergence.
+15. Eye and camera are structurally identical.
+16. Eyelid and shutter are exact equivalents.
+17. Digital cameras use film developer/fixer chemistry.
+18. Retina stores a photograph like film.
 
-### Numerical/problem-solving load
+## I. Current source-risk register
 
-- No calculation-heavy numerical set.
-- Main problem-solving load is qualitative ray reasoning:
-  - determine bending direction;
-  - compare `i` and `r`;
-  - identify critical-angle/TIR rays;
-  - explain apparent depth;
-  - interpret eye/camera diagrams and comparison.
+See `SOURCE_ISSUES.md` and `SOURCE_MAP.md`.
 
-### Likely misconceptions / difficult areas
+Key items:
 
-1. Refraction means light always bends; correction: normal incidence does not change direction even though speed changes.
-2. Light bends because the boundary itself “pushes” it; correction: change in propagation speed across media causes direction change for oblique incidence.
-3. Rarer/dense optical medium confused with mass density; use “optical density” carefully.
-4. `i` and `r` measured from the surface instead of the normal.
-5. Dense→rare always causes TIR; correction: TIR occurs only above critical angle.
-6. At critical angle the ray is already reflected totally; correction: the refracted ray runs along the interface at the threshold.
-7. Fish/coin physically rises; correction: apparent position changes because refracted rays are traced backward.
-8. Mirage is a reflection from water on the road/desert; correction: it is an optical effect caused by refractive-index gradients with TIR-type behavior under suitable conditions.
-9. Optical fibre “stores” light; correction: it guides light through repeated internal reflection.
-10. A magnifying glass always magnifies; correction: enlarged erect virtual image requires appropriate object placement relative to focal length.
-11. Pupil is a solid black structure; correction: pupil is an opening in the iris.
-12. Eye lens itself is the only control of incoming light; correction: iris/pupil regulate light amount while lens/ciliary mechanism handles focusing.
-13. Camera and eye are identical devices; correction: comparison is functional/optical, not literal anatomical equivalence.
-14. Film-camera chemistry may be conflated with modern digital cameras; keep textbook camera model explicit.
+- `SI-11-001`: spectacles outcome/body gap — scientific supplement verified; NCTB companion-source gap remains.
+- `SI-11-002`: normal-incidence nuance — resolved.
+- `SI-11-003`: incident/emergent-angle equality — resolved as parallel-sided-slab geometry dependent.
+- `SI-11-004`: film-camera chemistry — verified but context-specific.
 
-### Exam-facing opportunities
+Additional slide-level verification remains mandatory for mirage wording, optical-density wording, eye simplifications and any diagram labels.
 
-- define refraction, critical angle, total internal reflection;
-- draw/interpret ray diagrams and compare `i`/`r`;
-- state TIR conditions;
-- explain apparent depth/fish/coin/mirage qualitatively;
-- explain optical-fibre and magnifying-glass working;
-- identify human-eye parts and functions;
-- compare camera and eye;
-- use textbook MCQ/CQ diagrams as guided/exit practice without forcing exam format into every slide.
+## J. Approved instructional load and lesson count
 
-## D. Total instructional-load estimate
+The user approved **4 presentations**, not the earlier three-lesson draft.
 
-A realistic whole-chapter estimate, including explanation, demonstrations, student responses, diagram reasoning, practice, transitions and exit checks, is approximately **156 planned minutes** across three classes, plus unallocated contingency within each 60-minute period.
+Planned total across four classes: approximately **209 minutes CORE + FLEX**, excluding unallocated contingency and STRETCH.
 
-Approximate cluster load before splitting:
+| Lesson | Working title | CORE | FLEX | Planned total |
+|---|---|---:|---:|---:|
+| 1 | আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম | 44 | 8 | 52 min |
+| 2 | প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন | 44 | 8 | 52 min |
+| 3 | উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা | 45 | 8 | 53 min |
+| 4 | আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ | 44 | 8 | 52 min |
 
-| Cluster | Estimated teach/practice load |
-|---|---:|
-| Refraction concept + pencil activity + ray language | 22–25 min |
-| Refraction rules + glass-block reasoning | 16–18 min |
-| Everyday applications: stick/coin/fish/mirage | 16–20 min |
-| Critical angle + TIR | 20–22 min |
-| Optical fibre | 8–10 min |
-| Magnifying glass | 8–10 min |
-| Human-eye structure/function | 20–24 min |
-| Camera structure/action + film process | 17–20 min |
-| Eye-camera comparison + synthesis | 9–12 min |
-| Assessment/exit opportunities integrated across lessons | embedded |
+This follows the project timing model of roughly 40–45 min CORE + 5–10 min FLEX, leaving 5–10 min unallocated contingency in each 60-minute class.
 
-This load is not credible in one or two 60-minute classes without dropping significant source content or creating long passive stretches.
+## K. Approved lesson boundaries
 
-## E. Recommended number of <=60-minute presentations
+### Lesson 1 — আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম
 
-**Recommendation: 3 presentations.**
+Covers:
+- light/seeing foundation
+- minimal wave/photon overview
+- chapter-relevant properties
+- optical medium
+- straight-line ray model
+- interface/normal/angle measurement
+- reflection vs refraction
+- speed change / optical density
+- normal-incidence exception
+- pencil-in-water demo
+- refraction terminology
+- qualitative bending rules
 
-Why not 2:
-- roughly 78 minutes of planned learning per class would be required before contingency;
-- one class would need to combine TIR/optical fibre/magnifier with eye/camera or overload the initial refraction lesson;
-- demonstrations, diagram reasoning and student responses would be squeezed out.
+Boundary rationale: students first need a stable ray/refraction model before apparent depth, critical angle and TIR.
 
-Why not 4:
-- possible, but currently unnecessary;
-- the concept dependencies form three strong instructional clusters that fit the 50–55 minute planning model;
-- a fourth lesson would likely create avoidable fragmentation unless classroom evidence later shows timing overruns.
+### Lesson 2 — প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন
 
-## F. Proposed lesson boundaries
-
-### Lesson 1 — আলোর প্রতিসরণ: ধারণা, নিয়ম ও দৈনন্দিন প্রয়োগ
-
-**Concepts**
-- refraction concept
-- pencil activity
-- ray terms and normal
-- rare↔dense bending directions
-- core refraction rules
-- stick, coin, fish/apparent-depth applications
-- mirage as a culminating application
-
-**CORE — 44 min**
-- retrieval/hook: 4
-- pencil-in-water observation: 6
-- conceptual explanation of refraction: 7
-- ray vocabulary + normal + `i/r`: 7
-- bending rules / glass-block reasoning: 9
-- everyday application reasoning: 8
-- summary + exit check: 3
-
-**FLEX — 8 min**
-- extra diagram practice / textbook MCQ-style ray identification
-- optional second apparent-depth demonstration
-
-**CORE + FLEX = 52 min**
-
-**STRETCH**
-- deeper refractive-index discussion or quantitative Snell-law preview (not required and not part of this chapter's core).
-
-**Bridge**
-Dense→rare bending naturally raises the question: how far can the refracted ray move away from the normal? This opens critical angle and TIR.
-
-### Lesson 2 — সংকট কোণ, পূর্ণ অভ্যন্তরীণ প্রতিফলন, অপটিক্যাল ফাইবার ও ম্যাগনিফাইং গ্লাস
-
-**Concepts**
-- dense→rare progression
+Covers:
+- actual vs apparent position
+- stick/coin/fish applications
+- mirage
+- progressive denser→rarer ray behavior
 - critical angle
 - TIR conditions
-- ray classification around critical angle
-- optical fibre working and uses
-- convex lens as magnifying glass
+- optical fibre
 
-**CORE — 44 min**
-- retrieval from Lesson 1: 4
-- progressive ray model toward critical angle: 10
-- TIR concept + conditions: 8
-- hinge/ray classification: 5
-- optical fibre explanation/application: 7
-- magnifying-glass working: 7
-- summary + exit: 3
+Boundary rationale: apparent-position phenomena apply ordinary refraction, then critical angle/TIR extends the same denser→rarer reasoning and optical fibre is its immediate application.
 
-**FLEX — 7 min**
-- textbook CQ/diagram reasoning or additional optical-fibre visual.
+### Lesson 3 — উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা
 
-**CORE + FLEX = 51 min**
-
-**STRETCH**
-- optional trusted simulation of TIR/fibre paths.
-
-**Bridge**
-The magnifying-glass lens introduces the optical-lens idea needed to understand the eye and camera as image-forming systems.
-
-### Lesson 3 — মানব চক্ষু, আলোক-চিত্রগ্রাহী ক্যামেরা ও তুলনা
-
-**Concepts**
-- eye structures and functions
-- image formation on retina
+Covers:
+- convex-lens prerequisite
+- focus/focal length
+- essential image vocabulary
+- magnifying glass
+- human eye
 - iris/pupil light control
-- focusing/accommodation at the chapter's level
-- camera parts and working
-- exposure and film/plate process described by textbook
-- camera-eye functional comparison
+- accommodation
+- concise supplementary spectacles principle
 
-**CORE — 45 min**
-- retrieval/hook: 4
-- labelled eye structure/function: 14
-- eye image/light-control reasoning: 5
-- camera parts + optical action: 9
-- photographic plate/exposure process: 5
-- camera-eye comparison: 5
-- summary + exit: 3
+Boundary rationale: magnifier, eye and corrective lenses all depend on basic lens/image concepts; prerequisite instruction prevents isolated memorization.
 
-**FLEX — 8 min**
-- diagram labelling / comparison-table completion / textbook MCQ-CQ practice.
+### Lesson 4 — আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ
 
-**CORE + FLEX = 53 min**
+Covers:
+- camera parts/functions
+- real inverted image formation
+- aperture/diaphragm
+- shutter/exposure
+- film-camera development/fixing process
+- eye-camera functional comparison
+- whole-chapter synthesis
+- exam-facing application
 
-**STRETCH**
-- modern digital-camera contrast, only as optional contextual enrichment and clearly separated from the textbook film-camera model.
+Boundary rationale: camera is easiest after students already understand convex-lens image formation and the eye; comparison then closes the chapter coherently.
 
-## G. Why the boundaries are pedagogically logical
+## L. Deliberately excluded from CORE
 
-1. **Lesson 1 establishes the governing phenomenon first.** Students need a stable mental model of refraction and normal-based angle reasoning before critical-angle behavior can make sense.
-2. **Lesson 2 is the threshold/application cluster.** Critical angle → TIR → optical fibre is one direct causal chain; magnifying glass then closes the pure-optics portion through lens application and bridges to biological/technological imaging.
-3. **Lesson 3 is an image-forming-systems comparison.** Eye and camera share enough optical-function analogies to be learned together, and the textbook itself culminates in a comparison table.
-4. The split preserves retrieval, response, hinge/practice and exit checks without relying on a rigid attention-span timer.
-5. Each lesson retains 7–9 minutes of practical contingency inside the 60-minute class when FLEX is included as planned.
+Unless later evidence requires otherwise:
 
-## H. Major source-verification risks
+- full electromagnetic spectrum
+- wavelength/frequency calculations
+- photon-energy equation `E=hf`
+- Snell-law calculations
+- refractive-index calculations
+- lens formula and lens-power calculations
+- numerical critical-angle problems
+- detailed myopia/hypermetropia derivation
+- numerical optical-fibre/NA treatment
+- detailed digital-camera electronics
 
-1. **Spectacles learning outcome vs absent visible section** — highest priority source discrepancy.
-2. **Equal incident/emergent angle wording** — must be framed only under valid geometry such as a parallel-sided slab; do not generalize from the textbook sentence.
-3. **Mirage explanation** — needs authoritative science reconciliation so the classroom explanation is correct but still NCTB-aligned.
-4. **Optical density terminology** — avoid conflating it with mass density.
-5. **Critical angle/TIR definitions** — must preserve the denser→rarer condition and threshold distinction.
-6. **Magnifying-glass object position** — verify exact textbook-compatible focal relation before final diagram wording.
-7. **Eye anatomy/function simplifications** — cross-check labels and avoid overstating the camera analogy.
-8. **Film-camera chemistry** — preserve textbook scope but verify developer/fixer terminology and sodium thiosulphate role before freeze.
-9. **2025 source marker vs formal edition metadata** — full edition/publication identity is not visible in the supplied chapter screenshots.
+These may appear only in FLEX/STRETCH or a future linked lesson where justified.
 
-## I. Major visual / simulation opportunities
+## M. Exam-facing opportunities
 
-Highest-value visuals:
+- define/describe refraction, critical angle and TIR;
+- label incident/refracted ray, normal, `i`, `r`;
+- predict bending direction;
+- explain apparent-depth applications;
+- explain TIR and optical fibre;
+- explain magnifying-glass working;
+- identify eye parts/functions;
+- compare eye and camera;
+- interpret textbook ray diagrams and contextual questions.
 
-1. live pencil-in-water hook plus clean ray overlay;
-2. progressive animation: rare→dense and dense→rare around a normal;
-3. interactive or stepped `i` vs `r` classification;
-4. apparent-depth ray construction for coin/fish;
-5. mirage cross-section with warm-air gradient and ray path;
-6. critical-angle progression with three rays: below, at, above critical angle;
-7. optical-fibre cutaway showing repeated internal reflection;
-8. magnifying-glass virtual-image construction;
-9. large simplified eye cross-section with progressive labels;
-10. camera cutaway/ray diagram;
-11. side-by-side eye vs camera visual mapping rather than a dense table;
-12. exercise-ray diagrams rebuilt at projector-safe size.
+Exam familiarity must not override scientific correctness. Where NCTB wording is outdated or misleading, teach current science and separately note the exam-context wording when necessary.
 
-Existing trusted simulations/visuals should be searched first after split approval; all classroom-critical online resources require static fallbacks.
+## N. First-pilot calibration relevance
 
-## J. First-pilot calibration items relevant to this chapter
+Strong tests:
 
-### Strong tests
+- Bangla conjunct rendering and mixed Bangla/English terminology;
+- `90°`, `i`, `r`, prime marks and ray labels;
+- projector readability of dense anatomy/ray labels;
+- diagram-heavy renderer quality;
+- Beautiful.ai vs Canva export/editability;
+- Hyperagent value for deterministic SVG ray paths;
+- Gemini value for independent science/pedagogy review;
+- 50–55 minute planned timing realism.
 
-- Bangla conjunct rendering and line breaking.
-- Mixed Bangla/English terms: Eye-ball, Sclera, Cornea, Choroid, Iris, Pupil, Convex lens, Retina, Aqueous humour, Vitreous humour, Photographic Camera.
-- Degree symbol `90°`, Latin variables `i`, `r`, prime marks, ray labels and normals.
-- Dense scientific diagram labels and arrow clarity.
-- Side-by-side comparison-table readability.
-- Projector readability of anatomy/ray labels.
-- Beautiful.ai vs Canva handling of diagram-heavy science slides.
-- Export fidelity and PDF fallback.
-- Hyperagent value for deterministic SVG ray diagrams / optical-fibre paths / label QA.
-- Gemini value as an independent reviewer for the source-risk items above.
-- Actual screenshot/vision ingestion reliability: positive for this chapter; visible-page verification was practical without OCR.
-- Timing realism: three lessons provide a concrete 51–53 minute planned test.
+Weak test:
 
-### Weak / incomplete tests
+- this chapter does not strongly stress complex equations or chemistry notation, so RT-01 still needs a representative notation stress item beyond the chapter itself.
 
-- This chapter does **not** strongly stress complex equations, subscripts/superscripts or chemistry notation. RT-01 still needs a representative equation/notation stress item even though the chapter itself does not supply one.
-- NotebookLM usefulness is not yet tested; because the supplied source is screenshots rather than a clean source-grounded PDF/text layer, its value is currently uncertain and should not be assumed.
-- Canva Education entitlement remains unrelated/unverified and should not affect the pilot workflow.
+## O. Current gate
 
-## Preliminary coverage assignment
-
-- Refraction concept/activity/rules/applications → Lesson 1
-- Critical angle/TIR/optical fibre/magnifying glass → Lesson 2
-- Human eye/camera/comparison → Lesson 3
-- Exercises → distributed as guided/FLEX/exit practice
-- Spectacles outcome → BLOCKED pending source reconciliation; not silently assigned invented content
-
-## Approval gate
-
-Do not storyboard, freeze or render final decks until the user approves or revises this three-lesson split.
+- Full chapter analysis: COMPLETE.
+- Four-lesson split: APPROVED BY USER.
+- Source reconciliation pass 1: COMPLETE.
+- Four detailed lesson-plan drafts: COMPLETE.
+- Next required stage: Gemini Review Gate A, independent validation/reconciliation, then storyboarding.
+- Do not freeze or render final decks before required review/QA/RT-01 gates pass.
