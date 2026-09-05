@@ -1,7 +1,7 @@
 # RT-01 Renderer Calibration — Class 8 Science, Chapter 11: আলো
 
 Date: 2026-09-06
-Status: **IN_PROGRESS — BEAUTIFUL_CREATED / CANVA_IMPORT_VERIFIED / CANVA_NATIVE_GENERATION_PENDING**
+Status: **IN_PROGRESS — CANVA_NATIVE_AUDITED / BEAUTIFUL_EXPORT_VISUAL_CHECK_PENDING**
 
 ## Purpose
 
@@ -79,62 +79,142 @@ Canva returned the following critical strings intact after import:
 - `প্রতিফলিত রশ্মি`
 - `critical angle ≠ TIR yet; TIR occurs only when i > C`
 
-Therefore Canva's **PPTX import text layer** currently passes the core Bangla/notation preservation check.
+Therefore Canva's **PPTX import text layer** passes the core Bangla/notation preservation check.
 
-Important limitation:
+## Canva arm — native AI generation audit
 
-- this Canva arm is currently an **import-fidelity/editability test**, not yet a fair native-AI-generation comparison against Beautiful.ai;
-- Canva native presentation generation must still be run on the same 7-slide outline before choosing the permanent default renderer;
-- Canva export-tool access is not currently exposed in the connected action set, so end-to-end Canva PDF/PPTX export fidelity may require user-side export or a later connector capability if still unavailable.
+Native Canva generation was run on the same seven-slide RT-01 outline.
 
-## Current provisional observations
+- native design ID: `DAHUWooiXrI`
+- title: `Bangla Science Renderer Calibration Slides`
+- page count: 7
+- dimensions: 1920 × 1080
+- user-side PDF export received and rendered at 180 dpi for inspection
+
+### Visual findings
+
+#### 1. Bangla glyph/rendering
+
+- large Bangla headings render visually legibly in the PDF;
+- several small body/caption lines are too small to serve as reliable projector text;
+- PDF text extraction is partially garbled for Bangla, which is a text-layer/search/accessibility concern even where the rendered glyphs look visually acceptable.
+
+Verdict: **VISUAL PASS WITH NOTES; TEXT-LAYER FIDELITY WEAK.**
+
+#### 2. Mixed notation
+
+The PDF visibly retains:
+
+- `c ≈ 3.0 × 10⁸ m/s`;
+- `i = C হলে r = 90°`;
+- `H₂O`, `CO₂`, `AgBr`, `Na₂S₂O₃`.
+
+However the slide that tests this material uses very small table/checklist text, so correct notation does not translate into classroom readability.
+
+Verdict: **NOTATION PASS; PROJECTOR READABILITY FAIL.**
+
+#### 3. Template pollution / visual control
+
+Native Canva generation introduced unrelated template artifacts not requested by the calibration brief, including:
+
+- `SALFORD & CO.`;
+- `PRESENTATION`;
+- `www.reallygreatsite.com`.
+
+These are unacceptable for final classroom decks and create cleanup friction.
+
+Verdict: **FAIL AS GENERATED.**
+
+#### 4. Layout/readability
+
+Material issues:
+
+- Slide 3 has an oversized heading and dense body text at very small size;
+- Slides 4–5 contain body text too small for back-row/projector use;
+- Slide 7 checklist is materially too small relative to the available canvas;
+- the design prioritizes decorative negative space and theme styling over instructional focal hierarchy.
+
+Verdict: **FAIL FOR PROJECTOR-FIRST DEFAULT GENERATION.**
+
+#### 5. Scientific diagram reliability
+
+The native critical-angle slide does not meet the deterministic diagram standard required by this project.
+
+Problems in the generated ray visual include:
+
+- poor contrast on labels/rays;
+- visually ambiguous ray geometry;
+- a dominant cyan ray treatment that does not cleanly communicate the required `i=C` state;
+- critical scientific meaning is not sufficiently readable at classroom projection scale.
+
+Therefore high-risk optics diagrams cannot be delegated to unconstrained native Canva generation.
+
+Verdict: **FAIL FOR HIGH-RISK SCIENTIFIC VISUALS.**
+
+### Provisional Canva-native score
+
+| Criterion | Score / 5 | Note |
+|---|---:|---|
+| Bangla conjuncts/glyphs | 4 | Large rendered Bangla generally readable; small text and PDF text-layer extraction weak |
+| Mixed Bangla-English baseline | 3 | Mostly visible, but dense/small layouts reduce practical quality |
+| Symbols/subscripts/superscripts | 5 | Critical Unicode notation visually retained |
+| Diagram labels/arrows | 2 | Critical-angle visual is not deterministic/readable enough |
+| Editability in Canva | 5 | Native Canva design is editable |
+| PDF fidelity | 4 | Visual PDF renders consistently; extracted Bangla text layer is poor |
+| Projector readability | 2 | Multiple body/table/checklist regions too small |
+| Workflow friction/time | 3 | Generation is easy, but substantial cleanup would be required |
+
+Provisional native score: **28/40**.
+
+This score is not the final RT-01 winner decision because the Beautiful.ai export still needs equivalent visual inspection.
+
+## Current provisional renderer interpretation
+
+### Canva native AI generation
+
+**Not acceptable as the project's default end-to-end renderer in its current generated form.**
+
+It remains useful for:
+
+- manual editing/polish;
+- importing externally built deterministic slides/assets;
+- presentation hosting/export where final QA passes.
+
+### Canva controlled import route
+
+The controlled PptxGenJS → Canva import route remains materially stronger than native Canva generation for science-critical content because:
+
+- text/notation preservation passed at the Canva content layer;
+- deterministic science visuals remain under project control;
+- 16:9 layout is preserved;
+- the result remains editable in Canva.
 
 ### Beautiful.ai
 
-Strengths already verified:
-- native structured presentation generation works;
-- exact-text-preservation option exists;
-- editable PPTX and PDF export are directly supported;
-- presentation editor/player accessible.
-
-Still pending:
-- visual inspection of actual Bangla conjunct rendering in exported deck;
-- notation/subscript/superscript fidelity in final export;
-- projector readability;
-- whether generated science diagram layout is deterministic enough for high-risk visuals.
-
-### Canva
-
-Strengths already verified:
-- controlled PPTX import preserves critical Bangla and Unicode notation text;
-- 16:9 dimensions preserved;
-- imported design is editable;
-- reference deterministic science visuals can therefore be built externally and brought into Canva without losing the text content layer.
-
-Still pending:
-- native Canva AI generation using the exact same outline;
-- native-generation visual comparison vs Beautiful.ai;
-- full Canva export fidelity if connector export remains unavailable.
+Native generation and export capabilities are confirmed, but visual inspection of the actual exported PDF/PPTX remains required before selecting it as default or fallback.
 
 ## RT-01 decision rule
 
 Do **not** lock the permanent renderer yet.
 
-A permanent default/fallback decision requires at minimum:
+A final default/fallback decision still requires:
 
-1. native Beautiful.ai result;
-2. native Canva generation on identical outline;
-3. Bangla glyph comparison;
-4. mixed notation comparison;
-5. editability comparison;
-6. scientific diagram-risk comparison;
-7. export/playback practicality comparison;
-8. workflow-friction comparison.
+1. Beautiful.ai exported visual inspection;
+2. direct Bangla readability comparison;
+3. direct scientific-diagram comparison;
+4. direct projector-readability comparison;
+5. editability/export workflow comparison.
 
 ## Current checkpoint verdict
 
-`RT_01_IN_PROGRESS — BEAUTIFUL_NATIVE_DONE — CANVA_IMPORT_TEXT_PASS — CANVA_NATIVE_NEXT`
+`RT_01_IN_PROGRESS — CANVA_NATIVE_AUDITED_AND_NOT_DEFAULT_QUALITY — BEAUTIFUL_EXPORT_VISUAL_CHECK_NEXT`
 
 ## Next action
 
-Run Canva native presentation generation on the same seven-slide RT-01 outline, then compare against the Beautiful.ai native result and the controlled PptxGenJS reference. Only after that should `DECISIONS.md` record the renderer default/fallback.
+Obtain/materialize the Beautiful.ai RT-01 exported PDF or PPTX for local visual inspection. Compare it against:
+
+1. the controlled PptxGenJS reference;
+2. the controlled Canva import route;
+3. the native Canva PDF.
+
+Then record the permanent default/fallback renderer decision in `DECISIONS.md` and update `CURRENT_STATE.md`.
