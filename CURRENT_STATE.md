@@ -4,7 +4,7 @@ Last updated: 2026-09-05
 
 ## Project status
 
-Plan v3.0 refinement in progress after an external Hyperagent/Fable 5.1 adversarial audit. Valid findings are being incorporated; incorrect or environment-mismatched findings are not adopted automatically.
+Plan v3.0 is the current canonical operating plan and is ready for the first real chapter-production workflow. It incorporates validated findings from the external Hyperagent/Fable 5.1 adversarial audit while rejecting assumptions that do not match this connected environment.
 
 ## Canonical repository
 
@@ -32,9 +32,16 @@ Rejected/corrected audit assumptions:
 - Beautiful.ai IS connected in this environment and exposes presentation creation/review/export actions. Therefore the audit claim that there is no ChatGPT/Beautiful.ai integration does not apply to this workspace.
 - Canva IS connected and exposes presentation-generation and editing workflows. It remains a viable full-deck candidate, not only an asset tool.
 
-## New canonical setup files
+## Canonical setup files
 
 - `OPERATING_BRIEF.md` — compact new-chat recovery and non-negotiables
+- `PROJECT_MASTER.md` — master principles
+- `WORKFLOW.md` — detailed chapter-production workflow
+- `SOURCE_POLICY.md` — source/definition/provenance rules
+- `TOOL_ROUTING.md` — current tool-role and renderer-routing policy
+- `QUALITY_GATES.md` — release gates
+- `VISUAL_ENGAGEMENT_SYSTEM.md` — visual/attention principles
+- `DECISIONS.md` — durable decisions
 - `CLASSROOM_PROFILE.md` — timing/hardware/connectivity facts and unknowns
 
 ## Active chapter
@@ -70,6 +77,20 @@ Current planning model:
 1. user-provided first complete Class 8-10 science chapter as PDF or ordered screenshots
 2. classroom-profile details when available
 3. RT-01 renderer calibration during the first pilot chapter
+
+## Exact new-chat handoff
+
+A new chat should recover state from GitHub, not from memory or an old chat summary.
+
+Read in this order:
+
+1. `OPERATING_BRIEF.md`
+2. `CURRENT_STATE.md`
+3. only the deeper policy files needed for the immediate task
+
+Then wait for / inspect the complete chapter PDF or ordered screenshots supplied in that new chat.
+
+The first deliverable for a new chapter is **not a slide deck**. It is the full chapter intake and decomposition analysis, followed by a justified recommendation for how many <=60-minute presentations the chapter requires.
 
 ## Next required action
 
