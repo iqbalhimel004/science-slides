@@ -1,22 +1,23 @@
 # Lesson 4 Plan — আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ
 
-Status: STORYBOARD_REBASED_PLAN
+Status: GATE_B_RECONCILED_PLAN
 Target duration: 60 min
-Planned CORE: 46 min
-Planned FLEX: 8 min
-Unallocated contingency: 6 min
+Planned CORE: **42 min**
+Planned FLEX: **8 min**
+Unallocated contingency: **10 min**
 
 ## Learning goals
 
 Students should be able to:
 
 1. identify the main parts of the textbook photographic camera and state their functions;
-2. explain qualitatively how a convex lens forms a real, inverted image in the camera;
-3. explain aperture/diaphragm, shutter and exposure at the level of the textbook;
-4. distinguish the textbook film-camera chemical process from modern digital-camera operation;
-5. compare human eye and camera by optical function without treating them as literally identical;
-6. distinguish eye accommodation from camera focusing in a scientifically safer way;
-7. synthesize the chapter's concept chain from light/refraction to optical instruments.
+2. explain qualitatively how a converging lens forms a real, inverted image in the camera;
+3. distinguish aperture/diaphragm from shutter/exposure;
+4. explain the textbook black-and-white film development/fixing sequence at a qualitative level;
+5. state in one sentence that digital cameras record light electronically rather than using film developer/hypo chemistry;
+6. compare human eye and camera by function without treating them as mechanically identical;
+7. distinguish eye accommodation from conventional camera focusing mechanisms;
+8. synthesize the full chapter concept chain.
 
 ## NCTB core
 
@@ -25,104 +26,73 @@ Students should be able to:
 - eye-camera comparison: printed p.116 / PDF p.121
 - chapter summary/exercises: printed pp.116–118 / PDF pp.121–123
 
-## Storyboard-rebased sequence
+## Revised sequence after Gate B
 
 1. Retrieval from L3 — 3 min
-2. Camera parts + complete optical path — 7 min
-3. Lens-based real/inverted image formation — 3 min
-4. Aperture/diaphragm — 3 min
-5. Shutter + exposure — 3 min
-6. Textbook film-camera development/fixing process — 5 min
-7. Human eye vs camera shared functions — 3 min
-8. Eye accommodation vs camera focusing mechanism — 3 min
-9. Analogy limits — 2 min
-10. Film vs digital recording distinction — 2 min
-11. Whole-chapter concept map — 5 min
-12. Guided exam-facing application — 4 min
-13. Exit check — 3 min
+2. Camera parts — 4 min
+3. Object → lens → image plane — 3 min
+4. Real/inverted camera image — 3 min
+5. Aperture/diaphragm — 3 min
+6. Shutter/exposure — 3 min
+7. Film chemistry + one-line digital contrast — 5 min
+8. Eye-camera shared functions — 3 min
+9. Eye accommodation vs camera focusing — 3 min
+10. Analogy limits — 2 min
+11. Guided application — 4 min
+12. Integrated chapter map + final exit — 6 min
 
-CORE total: **46 min**
+CORE total: **42 min**
 
-The storyboard-level estimate supersedes the earlier 44-minute plan estimate. CORE + FLEX remains **54 min**, leaving **6 min contingency** within the 60-minute class.
+## Gate-B compression decisions
+
+- dedicated CORE film-vs-digital slide removed;
+- digital-camera distinction remains only as one sentence on the film-chemistry slide;
+- detailed CCD/CMOS/sensor discussion moved to STRETCH only;
+- standalone 5-minute concept-map lecture removed;
+- chapter map merged into the final synthesis/exit;
+- total planned time becomes **50 min**, restoring **10 min contingency**.
 
 ## Camera chemistry treatment
 
-Clearly label as **photographic/film-camera chemistry**:
+- exposure creates latent image pattern in silver-halide film/emulsion;
+- developer reduces exposed grains to metallic silver in simplified black-and-white processing;
+- fixer/hypo removes remaining undeveloped/unexposed silver halide;
+- remaining metallic-silver pattern forms a negative.
 
-- exposure creates a latent image pattern in silver-halide film/emulsion;
-- developer reduces exposed silver-halide grains to metallic silver in the simplified black-and-white process;
-- fixer/hypo (thiosulfate) removes remaining undeveloped/unexposed silver halide;
-- the remaining metallic-silver pattern forms a negative.
+Context label:
+`Film camera chemistry — modern digital cameras do not use this process.`
 
-Do not imply modern digital cameras use this chemistry.
+One-line digital clarification:
+`Digital cameras record light electronically on image-sensor pixels rather than using developer/hypo film processing.`
 
-## Film vs digital clarification
+No detailed sensor electronics in CORE.
 
-At CORE level, keep only one essential distinction:
+## Eye-camera comparison
 
-- film camera records on photosensitive film/plate and requires chemical development/fixing;
-- digital camera records light electronically on an image sensor and does not use the film developer/hypo process.
-
-No CMOS/CCD electronics detail is required. Pin a current authoritative digital-camera source before content freeze if this statement remains on-slide.
-
-## Eye-camera comparison — functional mapping
-
-- camera lens system ↔ cornea + crystalline lens as a focusing system
+Shared functions:
+- camera lens system ↔ cornea + crystalline lens focusing system
 - diaphragm/aperture ↔ iris/pupil light-control system
-- film/plate/sensor receiving plane ↔ retina as receiving surface
-- camera focusing mechanism ↔ eye accommodation only at the level of **shared function**, not identical mechanism
+- film/sensor plane ↔ retina as receiving surface
 
-### Required focusing distinction
+Mechanism distinction:
+- eye accommodation changes crystalline-lens shape/optical power while retina distance is essentially fixed;
+- conventional cameras may focus by changing lens/lens-group position relative to the image plane;
+- no universal camera-focusing mechanism claim.
 
-**Eye:**
-- retina distance is essentially fixed;
-- ciliary action changes crystalline-lens shape/optical power during accommodation;
-- cornea provides most of the initial focusing, while the crystalline lens fine-tunes.
-
-**Camera:**
-- focusing is achieved by adjusting the optical system;
-- in conventional cameras this commonly includes moving a lens/lens group relative to the film/sensor/image plane;
-- do not state that every modern camera uses one universal focusing mechanism.
-
-Use a `similar function, different mechanism` banner.
-
-## Analogy limits
-
-- eyelid may block incoming light but is not the exact optical equivalent of a camera shutter;
-- retina receives light and initiates biological visual processing; it does not store a photographic negative like film;
-- shared function does not imply identical structure or mechanism.
-
-## Major misconceptions
-
-- camera and eye are structurally identical;
-- eyelid and shutter are exact equivalents;
-- camera focusing and eye accommodation use the same physical mechanism;
-- eye focuses mainly by moving its lens toward/away from the retina;
-- digital cameras use film developer/fixer chemistry;
-- lens itself controls exposure duration;
-- retina stores a photograph like film.
+Analogy limits:
+- eyelid ≠ exact shutter equivalent;
+- retina ≠ photographic film storage sheet;
+- similar function ≠ identical structure/mechanism.
 
 ## FLEX — 8 min
 
-- diagram labelling / camera-eye component-function practice — 4 min
-- extra textbook CQ/short-answer comparison practice — 4 min
+- camera/eye labelling and function practice — 4 min
+- short/CQ comparison practice — 4 min
 
 ## STRETCH
 
-- modern digital sensor details, clearly labelled enrichment and only after authoritative source pinning.
+- CCD/CMOS/digital-sensor details only if later desired and explicitly source-pinned.
 
 ## Offline fallback
 
-- static camera cutaway
-- static real/inverted camera ray diagram
-- static aperture/shutter comparison
-- static film-processing sequence
-- static eye-camera function/mechanism comparison
-- static chapter concept map
-
-## Exit check
-
-1. camera image real না virtual?
-2. aperture আর shutter-এর কাজ কীভাবে আলাদা?
-3. eye accommodation আর camera focusing-এর mechanism কি identical?
-4. developer + hypo film camera না digital camera context?
+All CORE visuals are static/deterministic or have static equivalents.
