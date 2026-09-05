@@ -82,3 +82,18 @@ Decision: Sources such as 10 Minute School may inform local wording/convention a
 
 ## D-027 — Connected-tool reality overrides generic vendor assumptions
 Decision: Tool-routing decisions must reflect the capabilities actually available in this workspace. Current verified state includes write-capable GitHub actions, connected Beautiful.ai presentation creation/export actions, and connected Canva presentation-generation/editing workflows.
+
+## D-028 — Textbook editions are versioned source baselines, not overwritten
+Decision: For each supplied current NCTB textbook, maintain a versioned `SOURCE_RECORD.md` containing class/subject/year/revision metadata, source links, working-copy fingerprint, pagination mapping and ingestion reliability. Do not overwrite the previous edition when a later textbook appears. Use edition-to-edition diff to identify affected chapters/decks.
+
+Reason: This makes future maintenance reproducible and lets us update only slides whose source content changed.
+
+## D-029 — Curriculum index + chapter coverage matrix provide edit traceability
+Decision: Maintain a lightweight `CURRICULUM_INDEX.md` as the project-wide navigation/status layer. For every active/produced chapter, maintain `COVERAGE_MATRIX.md` mapping textbook topics/pages to lesson/slide coverage and `SOURCE_ISSUES.md` separating textbook wording from scientific assessment, verified clarification/correction and classroom treatment.
+
+Reason: Future edits should be able to answer quickly: what the chapter contains, what was taught, where it appears in decks, what source issues exist, and exactly which artifacts are affected by a textbook change.
+
+## D-030 — Do not commit full current textbooks to Git by default
+Decision: Keep full textbook PDFs outside the Git repository by default. Store durable metadata, government/authorized source links where available, checksums of inspected working copies, page mappings and derived source records in GitHub. Commit the raw textbook only if there is a specific legal/storage/operational reason to do so.
+
+Reason: Git should remain a maintainable project/source-traceability repository rather than a binary textbook archive.
