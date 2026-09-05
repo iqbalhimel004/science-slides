@@ -1,12 +1,13 @@
 # Lesson Split Proposal v2 — Class 8 Science, Chapter 11: আলো
 
 Date: 2026-09-05
-Status: PROPOSED — USER APPROVAL REQUIRED
+Status: **APPROVED BY USER**
+Approval date: 2026-09-05
 Source baseline: NCTB Class 8 Science, 2026 school year (revised October 2025)
 
 ## Why v2 exists
 
-The initial three-lesson proposal was based mainly on the chapter's explicit textbook body. The user requested a stronger conceptual foundation so students can understand the chapter rather than merely follow its sections. This proposal therefore adds a small number of prerequisite/bridge concepts and re-splits the chapter by dependency and realistic 60-minute load.
+The initial three-lesson proposal was based mainly on the chapter's explicit textbook body. The user requested a stronger conceptual foundation so students can understand the chapter rather than merely follow its sections. This approved proposal therefore adds a small number of prerequisite/bridge concepts and re-splits the chapter by dependency and realistic 60-minute load.
 
 Supplementary material must be labelled as such and must not be presented as verbatim NCTB chapter content.
 
@@ -59,11 +60,11 @@ Supplementary material must be labelled as such and must not be presented as ver
 
 These may appear only as FLEX/STRETCH or future linked lessons where pedagogically justified.
 
-## Revised recommendation
+## Approved structure
 
 **4 presentations**, each teachable within one 60-minute class.
 
-Rationale: once light foundations, image/lens prerequisites and the spectacles outcome gap are handled responsibly, the three-lesson plan becomes too compressed for meaningful student response, diagrams, demonstrations and guided practice. Four lessons preserve concept dependency without creating an unnecessary one-topic-per-class fragmentation.
+Rationale: once light foundations, image/lens prerequisites and the spectacles outcome gap are handled responsibly, the three-lesson plan becomes too compressed for meaningful student response, diagrams, demonstrations and guided practice. Four lessons preserve concept dependency without creating unnecessary one-topic-per-class fragmentation.
 
 Estimated planned load: approximately **209 minutes** total across four classes (CORE + FLEX), leaving unallocated contingency inside each 60-minute period.
 
@@ -215,6 +216,8 @@ Camera explanation becomes much easier after students already understand convex-
 
 `What is light?` → `how light travels` → `medium/interface/normal` → `refraction` → `apparent position` → `critical angle/TIR` → `optical fibre` → `convex lens/image types` → `magnifier` → `eye` → `spectacles if verified` → `camera` → `eye-camera comparison`.
 
-## Approval gate
+## Approval record
 
-This proposal is not approved yet. No final storyboard/content freeze/rendering should proceed until the user explicitly approves or revises this four-lesson split.
+User explicitly approved this four-lesson split on 2026-09-05.
+
+This approval authorizes the next stage: source reconciliation/verification, detailed lesson planning, resource discovery and storyboard development. It does **not** authorize final content freeze or final deck rendering before the remaining quality gates and RT-01 are completed.
