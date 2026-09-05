@@ -1,10 +1,10 @@
 # Lesson 4 Plan — আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ
 
-Status: GATE_A_RECONCILED_PLAN
+Status: STORYBOARD_REBASED_PLAN
 Target duration: 60 min
-Planned CORE: 44 min
+Planned CORE: 46 min
 Planned FLEX: 8 min
-Unallocated contingency: 8 min
+Unallocated contingency: 6 min
 
 ## Learning goals
 
@@ -25,36 +25,50 @@ Students should be able to:
 - eye-camera comparison: printed p.116 / PDF p.121
 - chapter summary/exercises: printed pp.116–118 / PDF pp.121–123
 
-## Sequence
+## Storyboard-rebased sequence
 
 1. Retrieval from L3 — 3 min
-2. Camera parts and functions — 7 min
-3. Lens-based image formation — 6 min
-4. Diaphragm/aperture — 3 min
+2. Camera parts + complete optical path — 7 min
+3. Lens-based real/inverted image formation — 3 min
+4. Aperture/diaphragm — 3 min
 5. Shutter + exposure — 3 min
 6. Textbook film-camera development/fixing process — 5 min
-7. Human eye vs camera comparison — 8 min
-8. Whole-chapter concept map — 5 min
-9. Guided exam-facing application — 2 min
-10. Exit check — 2 min
+7. Human eye vs camera shared functions — 3 min
+8. Eye accommodation vs camera focusing mechanism — 3 min
+9. Analogy limits — 2 min
+10. Film vs digital recording distinction — 2 min
+11. Whole-chapter concept map — 5 min
+12. Guided exam-facing application — 4 min
+13. Exit check — 3 min
 
-CORE total: 44 min
+CORE total: **46 min**
+
+The storyboard-level estimate supersedes the earlier 44-minute plan estimate. CORE + FLEX remains **54 min**, leaving **6 min contingency** within the 60-minute class.
 
 ## Camera chemistry treatment
 
 Clearly label as **photographic/film-camera chemistry**:
 
-- exposed silver-halide grains are reduced during development to metallic silver;
-- fixer/hypo (thiosulfate) removes remaining undeveloped silver halide;
-- the remaining silver pattern forms a negative in black-and-white film processing.
+- exposure creates a latent image pattern in silver-halide film/emulsion;
+- developer reduces exposed silver-halide grains to metallic silver in the simplified black-and-white process;
+- fixer/hypo (thiosulfate) removes remaining undeveloped/unexposed silver halide;
+- the remaining metallic-silver pattern forms a negative.
 
 Do not imply modern digital cameras use this chemistry.
+
+## Film vs digital clarification
+
+At CORE level, keep only one essential distinction:
+
+- film camera records on photosensitive film/plate and requires chemical development/fixing;
+- digital camera records light electronically on an image sensor and does not use the film developer/hypo process.
+
+No CMOS/CCD electronics detail is required. Pin a current authoritative digital-camera source before content freeze if this statement remains on-slide.
 
 ## Eye-camera comparison — functional mapping
 
 - camera lens system ↔ cornea + crystalline lens as a focusing system
 - diaphragm/aperture ↔ iris/pupil light-control system
-- shutter ↔ eyelid only as a limited textbook analogy; eyelid is not a true optical shutter equivalent
 - film/plate/sensor receiving plane ↔ retina as receiving surface
 - camera focusing mechanism ↔ eye accommodation only at the level of **shared function**, not identical mechanism
 
@@ -72,6 +86,12 @@ Do not imply modern digital cameras use this chemistry.
 
 Use a `similar function, different mechanism` banner.
 
+## Analogy limits
+
+- eyelid may block incoming light but is not the exact optical equivalent of a camera shutter;
+- retina receives light and initiates biological visual processing; it does not store a photographic negative like film;
+- shared function does not imply identical structure or mechanism.
+
 ## Major misconceptions
 
 - camera and eye are structurally identical;
@@ -84,16 +104,25 @@ Use a `similar function, different mechanism` banner.
 
 ## FLEX — 8 min
 
-- diagram labelling / P-Q-R-S ray reasoning — 4 min
+- diagram labelling / camera-eye component-function practice — 4 min
 - extra textbook CQ/short-answer comparison practice — 4 min
 
 ## STRETCH
 
-- modern digital sensor comparison, clearly labelled enrichment
+- modern digital sensor details, clearly labelled enrichment and only after authoritative source pinning.
+
+## Offline fallback
+
+- static camera cutaway
+- static real/inverted camera ray diagram
+- static aperture/shutter comparison
+- static film-processing sequence
+- static eye-camera function/mechanism comparison
+- static chapter concept map
 
 ## Exit check
 
-One comparison + two distinctions:
-- camera aperture and pupil/iris are similar in what way?
-- eye accommodation আর camera focusing-এর mechanism কীভাবে আলাদা?
-- film camera and digital camera differ in image-recording method how?
+1. camera image real না virtual?
+2. aperture আর shutter-এর কাজ কীভাবে আলাদা?
+3. eye accommodation আর camera focusing-এর mechanism কি identical?
+4. developer + hypo film camera না digital camera context?
