@@ -6,7 +6,7 @@ Last updated: 2026-09-05
 
 Plan v3.0 remains canonical, with durable policy refinements recorded in `OPERATING_BRIEF.md`, `SOURCE_POLICY.md`, `WORKFLOW.md`, `DECISIONS.md` and `GEMINI_REVIEW_WORKFLOW.md`.
 
-The first real chapter is the pilot/calibration chapter. Full chapter analysis is complete, the **four-lesson split is user-approved**, Gemini Review Gate A has been completed externally and independently reconciled, source reconciliation pass 2 is complete, all four lesson plans have been updated with validated Gate A changes, and **Lesson 1 storyboard draft + storyboard QA + coverage mapping are complete**.
+The first real chapter is the pilot/calibration chapter. Full chapter analysis is complete, the **four-lesson split is user-approved**, Gemini Review Gate A has been completed externally and independently reconciled, source reconciliation pass 2 is complete, all four lesson plans are Gate-A reconciled, and **Lesson 1 + Lesson 2 storyboard draft stages are now complete**. Lesson 2 also has an explicit resource/asset map.
 
 ## Canonical repository
 
@@ -16,53 +16,19 @@ This is the only repository authorized for writes for this project.
 
 ## Durable source-authority rule
 
-NCTB is the syllabus/chapter/exam-context source, **not automatic scientific authority**.
-
-- do not infer scientific currentness from a recent print/revision year;
-- verify material scientific claims against current authoritative sources;
-- when NCTB is outdated, ambiguous, misleading or wrong, record textbook wording and current science separately;
-- teach scientifically current/correct explanations;
-- preserve exam-context wording separately where useful.
+NCTB is the syllabus/chapter/exam-context source, **not automatic scientific authority**. Material science must be checked against current authoritative sources; outdated or misleading textbook treatment is preserved separately for exam awareness and corrected in classroom teaching.
 
 ## Universal checkpoint rule
 
-**Finish → record → then continue.**
-
-Every meaningful completed stage must be saved to GitHub before proceeding.
+**Finish → record → then continue.** Every meaningful completed stage must be saved to GitHub before proceeding.
 
 ## Permanent external-prompt rule
 
-Whenever the user must paste a prompt into Gemini, Canva, Beautiful.ai, Hyperagent, Codex or another external tool, ChatGPT must provide the complete prompt in **one self-contained fenced code block** so it can be copied in one action.
-
-Do not split one prompt across multiple blocks or require the user to merge prose manually.
-
-Canonical durable decision: `DECISIONS.md` D-033.
+All prompts intended for Gemini/Canva/Beautiful.ai/Hyperagent/Codex or another external tool must be delivered in **one self-contained fenced code block** for one-click copy. Durable decision: `D-033`.
 
 ## Permanent Gemini review method
 
-Planned Gemini review gates use a **fresh downloadable single-file Markdown bundle**, not GitHub browsing/import as the default transport.
-
-Canonical procedure:
-`GEMINI_REVIEW_WORKFLOW.md`
-
-Required sequence:
-
-1. generate a consolidated bundle from current canonical GitHub files relevant to that review gate;
-2. create/update a manifest with included files + fingerprint;
-3. give the user the downloadable bundle;
-4. give exactly one one-click-copy prompt in a single fenced code block;
-5. user uploads bundle to Gemini and returns the full review text;
-6. save raw review to GitHub;
-7. independently validate material findings;
-8. record `ACCEPT / PARTIAL / REJECT` dispositions;
-9. implement only validated changes;
-10. checkpoint status before moving on.
-
-An old bundle becomes stale immediately when any included canonical file changes.
-
-Future chats must use this same method for Gemini Gate B and later planned Gemini reviews unless the user explicitly changes the workflow.
-
-Canonical durable decision: `DECISIONS.md` D-034.
+Planned Gemini review gates use a **fresh downloadable single-file Markdown bundle** plus one copy-ready prompt. Do not rely on Gemini browsing GitHub/imported repositories. Old bundles become stale when included canonical files change. Canonical procedure: `GEMINI_REVIEW_WORKFLOW.md`. Durable decision: `D-034`.
 
 ## Active textbook baseline
 
@@ -87,7 +53,7 @@ Canonical path:
 `chapters/class-8/science/chapter-11-light/`
 
 Current status:
-**LESSON_1_STORYBOARD_DRAFT_COMPLETE — LESSON_2_NEXT**
+**LESSONS_1_2_STORYBOARDS_DRAFT_COMPLETE — LESSON_3_NEXT**
 
 ## Current four-lesson plan
 
@@ -106,59 +72,62 @@ Raw external review:
 Independent reconciliation:
 `chapters/class-8/science/chapter-11-light/reviews/GEMINI_GATE_A_RECONCILIATION_2026-09-05.md`
 
-Gemini verdict:
-`PASS_WITH_TARGETED_CHANGES`
-
 Canonical verdict:
 **ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED**
 
-### Implemented changes
-
-- L1: pencil-in-water phenomenon moved before abstract speed-change/optical-density explanation.
-- L1: separate wave-particle-duality block removed; only a very brief non-assessed photon note remains because the user explicitly wanted “আলো কী দিয়ে তৈরি” addressed.
-- L2: mirage clarified as a refractive-index-gradient / progressively bending ray phenomenon; avoid a single hard mirror-like boundary.
-- L3: minimum diverging/concave-lens action introduced before myopia spectacle correction.
-- L3: cornea recognized as the major initial focusing surface; crystalline lens fine-tunes through accommodation.
-- L3: anatomy reorganized by functional groups to reduce overload.
-- L4: eye-camera focusing comparison now explicitly says similar function, different mechanism; no universal claim that all cameras focus by one mechanism.
-- Gemini kerosene/water numeric example was not adopted because its specific values were not independently source-pinned.
-
-## Lesson 1 storyboard — completed draft stage
+## Lesson 1 storyboard — complete draft stage
 
 Canonical files:
+- `lessons/lesson-01/LESSON_PLAN.md`
+- `lessons/lesson-01/STORYBOARD.md`
+- `lessons/lesson-01/QA.md`
 
-- `chapters/class-8/science/chapter-11-light/lessons/lesson-01/LESSON_PLAN.md`
-- `chapters/class-8/science/chapter-11-light/lessons/lesson-01/STORYBOARD.md`
-- `chapters/class-8/science/chapter-11-light/lessons/lesson-01/QA.md`
-
-Storyboard structure:
-
+Structure:
 - `L1-S01`–`L1-S14`: 14 CORE slides
 - `L1-F01`–`L1-F02`: 2 FLEX slides
-- CORE: 43 min
-- FLEX: 7 min
-- CORE + FLEX: 50 min
-- contingency: 10 min
+- CORE 43 min + FLEX 7 min = 50 min
+- contingency 10 min
 
-Internal storyboard QA:
-`PASS_WITH_NONBLOCKING_NOTES` for storyboard stage.
+Internal QA: `PASS_WITH_NONBLOCKING_NOTES`.
 
-Lesson 1 slide IDs are now mapped in `COVERAGE_MATRIX.md`.
+Lesson 1 slide IDs are mapped in `COVERAGE_MATRIX.md`.
 
-Important storyboard choices:
+## Lesson 2 storyboard — complete draft stage
 
-- darkness/seeing retrieval hook;
-- current-science light description + minimal non-assessed photon note;
-- chapter-relevant light properties only;
-- optical medium recap;
-- pencil demo before causal mechanism;
-- progressive interface/normal/ray vocabulary;
-- optical density vs mass-density clarification;
-- normal-incidence no-deviation case;
-- paired bending rules + prediction;
-- concept-chain summary + 4-question exit check;
-- parallel-sided slab kept as FLEX with geometry-bound equal-angle rule;
-- CORE has no internet dependency.
+Canonical files:
+- `lessons/lesson-02/LESSON_PLAN.md`
+- `lessons/lesson-02/STORYBOARD.md`
+- `lessons/lesson-02/RESOURCES.md`
+- `lessons/lesson-02/QA.md`
+
+Structure:
+- `L2-S01`–`L2-S14`: 14 CORE slides
+- `L2-F01`–`L2-F02`: 2 FLEX slides
+- CORE 44 min + FLEX 8 min = 52 min
+- contingency 8 min
+
+Important decisions:
+- actual/apparent position uses solid real rays + dashed backward extensions;
+- stick, coin and fish applications precede the more abstract mirage/critical-angle sequence;
+- mirage uses a temperature/refractive-index gradient visual, not a single hard mirror boundary;
+- critical angle is explicitly the `r = 90°` threshold, not TIR itself;
+- TIR requires both higher-index→lower-index propagation and `i > C`;
+- optical fibre follows as repeated-TIR application;
+- optional core/cladding note remains non-assessed and supplementary;
+- PhET `Bending Light` is FLEX only; CORE remains fully offline;
+- deterministic/custom ray diagrams are required for all high-risk scientific visuals.
+
+Resource map IDs:
+- `R2-01` apparent-position ray construction
+- `R2-02` mirage gradient diagram
+- `R2-03` critical-angle/TIR three-state sequence
+- `R2-04` optical-fibre cutaway
+- `R2-05` PhET Bending Light FLEX simulation
+- `R2-06` textbook-style TIR practice redraw
+
+Internal QA: `PASS_WITH_NONBLOCKING_NOTES` for storyboard stage.
+
+Lesson 2 slide IDs are now mapped in `COVERAGE_MATRIX.md`.
 
 ## Current source-issue register
 
@@ -170,46 +139,31 @@ Important storyboard choices:
 - `SI-11-006` cornea versus lens focusing role — resolved.
 - `SI-11-007` eye-camera focusing analogy limit — resolved.
 
-## Key files now authoritative for ongoing storyboard work
+## Coverage state
 
-- `CHAPTER_ANALYSIS.md`
-- `LESSON_SPLIT_PROPOSAL_V2.md`
-- `COVERAGE_MATRIX.md`
-- `SOURCE_ISSUES.md`
-- `SOURCE_MAP.md`
-- `lessons/lesson-01/LESSON_PLAN.md`
-- `lessons/lesson-01/STORYBOARD.md`
-- `lessons/lesson-01/QA.md`
-- `lessons/lesson-02/LESSON_PLAN.md`
-- `lessons/lesson-03/LESSON_PLAN.md`
-- `lessons/lesson-04/LESSON_PLAN.md`
-- `reviews/GEMINI_GATE_A_RECONCILIATION_2026-09-05.md`
-
-The earlier Gate A transport bundle is stale because canonical files changed after reconciliation. Do **not** reuse it.
+- Lesson 1: concrete slide IDs mapped.
+- Lesson 2: concrete slide IDs mapped.
+- Lessons 3–4: pending.
 
 ## Gemini cadence evidence
 
-Gate A was useful: it caught sequencing, prerequisite and analogy risks. It also produced at least one overgeneralized camera-focusing statement and an unsourced numeric example, confirming why Gemini findings must be independently validated rather than blindly adopted.
-
-Gate B remains required after all four storyboards/resource mappings and before content freeze.
+Gate A was useful but required independent validation. Gate B remains mandatory after all four storyboards/resource mappings and before content freeze.
 
 When Gate B is reached, generate a **fresh downloadable bundle** according to `GEMINI_REVIEW_WORKFLOW.md`; do not ask Gemini to browse GitHub.
 
 ## Renderer status
 
-No permanent renderer is locked.
-
-RT-01 remains after content/storyboard freeze prerequisites and before first final deck rendering.
+No permanent renderer is locked. RT-01 remains after storyboard/content-freeze prerequisites and before final deck rendering.
 
 ## Next authorized action
 
-1. Develop Lesson 2 storyboard from the Gate-A-reconciled plan.
-2. Map Lesson 2 slide IDs into `COVERAGE_MATRIX.md`.
-3. Run Lesson 2 storyboard QA and checkpoint.
-4. Repeat for Lessons 3 and 4.
-5. Complete resource mappings + chapter-wide storyboard audit.
-6. Generate fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
-7. Reconcile Gate B, run G1–G7, freeze content.
+1. Develop Lesson 3 storyboard + resource mapping from the Gate-A-reconciled plan.
+2. Map Lesson 3 slide IDs into `COVERAGE_MATRIX.md`.
+3. Run Lesson 3 storyboard QA and checkpoint.
+4. Repeat for Lesson 4.
+5. Run chapter-wide storyboard/resource/duplication audit.
+6. Generate a fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
+7. Reconcile Gate B, run final G1–G7, freeze content.
 8. Run RT-01, select renderer routing, render and export-QA.
 
 Do not render final decks yet.
