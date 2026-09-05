@@ -1,84 +1,61 @@
 # Coverage Matrix — Class 8 Science, Chapter 11: আলো
 
 Source baseline: `NCTB-C8-SCI-2026-REV2025-10`
-
-Printed textbook pages: **108–118**  
+Printed textbook pages: **108–118**
 Working-copy PDF pages: **113–123**
-
-Status: `ALL_4_LESSON_STORYBOARDS_MAPPED — CHAPTER_AUDIT_NEXT`
-
-Purpose: make every textbook subsection and approved supplementary bridge concept traceable to the lesson/deck/slide that teaches it, so future edits can identify exactly what is affected without re-analysing the entire chapter.
+Status: `ALL_4_LESSONS_MAPPED — GATE_B_RECONCILED`
 
 ## Textbook chapter coverage
 
-| ID | Textbook topic / element | Printed page(s) | PDF page(s) | Approved lesson | Coverage status | Slide trace |
-|---|---|---:|---:|---|---|---|
-| C11-001 | Chapter framing + learning outcomes | 108 | 113 | L1-L4 distributed | MAPPED | L1-S01–L1-S03 opening foundation; L2-S14; L3-S13; L4-S12/L4-S14 synthesis |
-| C11-002 | আলোর প্রতিসরণ — concept and pencil-in-water activity | 109 | 114 | L1 | MAPPED_CORE | L1-S06, L1-S08, L1-S09 |
-| C11-003 | Glass-block activity; incident ray, refracted ray, normal, `i`, `r` | 110 | 115 | L1 | MAPPED_CORE/FLEX | L1-S07, L1-S08, L1-F01 |
-| C11-004 | Refraction rules: rarer→denser, denser→rarer; coplanarity; normal incidence note | 110–111 | 115–116 | L1 | MAPPED_CORE | L1-S10, L1-S11, L1-S12; slab clarification L1-F01 |
-| C11-005 | Stick in water appears bent/raised | 111 | 116 | L2 | MAPPED_CORE | L2-S04 |
-| C11-006 | Coin visibility / apparent depth | 111 | 116 | L2 | MAPPED_CORE | L2-S05 |
-| C11-007 | Fish apparent position / spearfishing implication | 111 | 116 | L2 | MAPPED_CORE | L2-S06 |
-| C11-008 | Mirage | 112 | 117 | L2 | MAPPED_CORE_WITH_CLARIFICATION | L2-S07 |
-| C11-009 | Critical angle | 112 | 117 | L2 | MAPPED_CORE | L2-S08, L2-S09, L2-S11 |
-| C11-010 | Total internal reflection + conditions | 112–113 | 117–118 | L2 | MAPPED_CORE | L2-S10, L2-S11; FLEX L2-F01/L2-F02 |
-| C11-011 | Optical fibre: working + medical/telecommunication uses | 113 | 118 | L2 | MAPPED_CORE | L2-S12, L2-S13 |
-| C11-012 | Magnifying glass / convex lens / near-point context | 113 | 118 | L3 | MAPPED_CORE | L3-S02–L3-S06 |
-| C11-013 | Human eye structure and functions | 114 | 119 | L3 | MAPPED_CORE_WITH_CLARIFICATION | L3-S07–L3-S11; FLEX L3-F01 |
-| C11-014 | Photographic camera parts and working | 115 | 120 | L4 | MAPPED_CORE | L4-S02–L4-S06 |
-| C11-015 | Film exposure / developer / silver halide / hypo fixing / negative | 115 | 120 | L4 | MAPPED_CORE_WITH_CONTEXT_LABEL | L4-S07; contextual distinction L4-S11 |
-| C11-016 | Camera vs human-eye comparison | 116 | 121 | L4 | MAPPED_CORE_WITH_ANALOGY_LIMIT | L4-S08–L4-S10; practice L4-S13/L4-F01/L4-F02 |
-| C11-017 | Chapter summary / new terms | 116–117 | 121–122 | L1-L4 | MAPPED_AS_RETRIEVAL_SUMMARY | L1-S13/L1-S14; L2-S14; L3-S13; L4-S12/L4-S14 |
-| C11-018 | MCQ / ray-diagram questions | 117 | 122 | L1/L2/L4 FLEX/EXIT | MAPPED_PRACTICE | L1-S08/L1-S12/L1-S14/L1-F01; L2-S11/L2-S14/L2-F02; L4-S13/L4-F01 |
-| C11-019 | Creative/contextual questions + TIR diagram | 118 | 123 | L2/L4 FLEX/EXIT | MAPPED_PRACTICE | L2-F02; L4-S13/L4-F02 |
-| C11-020 | Short-answer questions | 118 | 123 | L1-L4 | MAPPED_PRACTICE/HOMEWORK | L1-S14; L2-S14; L3-S13; L4-S13/L4-S14/L4-F02 |
-| C11-021 | `চশমার কাজ ব্যাখ্যা করতে পারব` learning outcome | 108 only in chapter body | 113 | L3 | SOURCE_GAP_WITH_VERIFIED_SUPPLEMENT | L3-S12; FLEX L3-F02 |
+| ID | Topic | Lesson | Coverage | Slide trace |
+|---|---|---|---|---|
+| C11-001 | Chapter framing + outcomes | L1–L4 | MAPPED | L1-S01–S03; L2-S14; L3-S13; L4-S12 |
+| C11-002 | Refraction + pencil activity | L1 | CORE | L1-S06, S08, S09 |
+| C11-003 | Ray vocabulary / glass block | L1 | CORE/FLEX | L1-S07, S08, F01 |
+| C11-004 | Refraction rules / normal incidence | L1 | CORE | L1-S10–S12; slab L1-F01 |
+| C11-005 | Stick in water | L2 | CORE | L2-S04 |
+| C11-006 | Coin / apparent depth | L2 | CORE | L2-S05 |
+| C11-007 | Fish apparent position | L2 | CORE | L2-S06 |
+| C11-008 | Mirage | L2 | CORE_WITH_CLARIFICATION | L2-S07 |
+| C11-009 | Critical angle | L2 | CORE | L2-S08, S09, S11 |
+| C11-010 | TIR | L2 | CORE | L2-S10, S11; FLEX F01/F02 |
+| C11-011 | Optical fibre | L2 | CORE | L2-S12, S13 |
+| C11-012 | Magnifying glass / convex lens | L3 | CORE | L3-S02–S06 |
+| C11-013 | Human eye | L3 | CORE_WITH_CLARIFICATION | L3-S07–S11; FLEX F01 |
+| C11-014 | Photographic camera parts/working | L4 | CORE | L4-S02–S06 |
+| C11-015 | Film exposure/development/fixing/negative | L4 | CORE_WITH_CONTEXT_LABEL | L4-S07 |
+| C11-016 | Eye-camera comparison | L4 | CORE_WITH_ANALOGY_LIMIT | L4-S08–S10; practice L4-S11/F01/F02 |
+| C11-017 | Summary/new terms | L1–L4 | RETRIEVAL_SUMMARY | L1-S13/S14; L2-S14; L3-S13; L4-S12 |
+| C11-018 | MCQ/ray questions | L1/L2/L4 | PRACTICE | L1-S08/S12/S14/F01; L2-S11/S14/F02; L4-S11/F01 |
+| C11-019 | Creative/TIR contexts | L2/L4 | PRACTICE | L2-F02; L4-S11/F02 |
+| C11-020 | Short answer | L1–L4 | PRACTICE | exits + L4-S11/S12/F02 |
+| C11-021 | Spectacles outcome source gap | L3 | VERIFIED_SUPPLEMENT | L3-S12; FLEX L3-F02 |
 
-## Approved supplementary bridge coverage
+## Supplementary bridge coverage
 
-| ID | Supplementary bridge concept | Approved lesson | Role | Status | Slide trace |
-|---|---|---|---|---|---|
-| B11-001 | আলো কী — grade-appropriate scientific definition | L1 | prerequisite | VERIFIED_CORE | L1-S03 |
-| B11-002 | Minimal photon note | L1 | modern context | VERIFIED_NONASSESSED / FLEXIBLE | L1-S03; optional repeat L1-F02 |
-| B11-003 | আমরা দেখি কীভাবে — light reaches eye/retina | L1 | hook/prerequisite | VERIFIED | L1-S01, L1-S02 |
-| B11-004 | Chapter-relevant properties of light | L1 | prerequisite | VERIFIED | L1-S04 |
-| B11-005 | Optical medium + transparent/translucent/opaque recap | L1 | prerequisite | VERIFIED | L1-S05 |
-| B11-006 | Straight-line ray model in a homogeneous transparent medium | L1 | prerequisite | VERIFIED | L1-S04 |
-| B11-007 | Interface/boundary, normal, angle measurement | L1 | prerequisite | VERIFIED | L1-S07, L1-S08 |
-| B11-008 | Reflection vs refraction | L1 | contrast/hinge | VERIFIED | L1-S08 |
-| B11-009 | Speed change and qualitative bending | L1 | causal bridge | VERIFIED | L1-S09, L1-S10 |
-| B11-010 | Optical density ≠ mass density | L1 | misconception guardrail | VERIFIED_CLARIFICATION | L1-S09, L1-S14 |
-| B11-011 | Normal incidence: no directional deviation though speed changes | L1 | misconception guardrail | VERIFIED_CLARIFICATION | L1-S10, L1-S14 |
-| B11-012 | Actual vs apparent position / backward ray tracing | L2 | prerequisite for applications | VERIFIED | L2-S02, L2-S03 |
-| B11-013 | Mirage as refractive-index-gradient effect | L2 | scientific clarification | VERIFIED_CLARIFICATION | L2-S07 |
-| B11-014 | Convex-lens converging action, focus, focal length | L3 | prerequisite | VERIFIED | L3-S02, L3-S03 |
-| B11-015 | Diverging/concave lens action | L3 | minimal prerequisite for spectacles | VERIFIED_MINIMAL | L3-S01, L3-S02, L3-S12; FLEX L3-F02 |
-| B11-016 | Real/virtual; erect/inverted; magnified/reduced image vocabulary | L3 | prerequisite | VERIFIED | L3-S04, L3-S05, L3-S06; retrieved L4-S01/L4-S04 |
-| B11-017 | Cornea provides most initial eye focusing; lens fine-tunes | L3/L4 | scientific clarification | VERIFIED_CLARIFICATION | L3-S07/L3-S09/L3-S10/L3-S13; L4-S08/L4-S09 |
-| B11-018 | Eye focusing/accommodation | L3 | bridge | VERIFIED | L3-S10; compared L4-S09 |
-| B11-019 | Spectacles basic corrective-lens principle | L3 | NCTB-outcome repair | VERIFIED_SCIENCE / LABEL_SUPPLEMENTARY | L3-S12; FLEX L3-F02 |
-| B11-020 | Eye-camera focusing: similar function, different mechanism | L4 | analogy guardrail | VERIFIED_CLARIFICATION | L4-S08–L4-S10; L4-S14/L4-F02 |
+| ID | Concept | Status | Slide trace |
+|---|---|---|---|
+| B11-001 | Light definition | VERIFIED_CORE | L1-S03 |
+| B11-002 | Minimal photon note | NONASSESSED | L1-S03; optional F02 |
+| B11-003 | Seeing model | VERIFIED | L1-S01/S02 |
+| B11-004–011 | light properties, medium, normal, speed/bending, optical density, normal incidence | VERIFIED | L1-S04–S14 |
+| B11-012 | Actual/apparent position | VERIFIED | L2-S02/S03 |
+| B11-013 | Mirage gradient | VERIFIED_CLARIFICATION | L2-S07 |
+| B11-014 | Convex lens/focus | VERIFIED | L3-S02/S03 |
+| B11-015 | Diverging lens minimum prerequisite | VERIFIED_MINIMAL | L3-S01/S02/S12; F02 |
+| B11-016 | Image vocabulary | VERIFIED | L3-S04–S06; retrieved L4-S01/S04 |
+| B11-017 | Cornea major initial focus; lens fine-tunes | VERIFIED_CLARIFICATION | L3-S07/S09/S10/S13; L4-S08/S09 |
+| B11-018 | Accommodation | VERIFIED | L3-S10; compared L4-S09 |
+| B11-019 | Spectacles principle | VERIFIED_SUPPLEMENT | L3-S12/F02 |
+| B11-020 | Eye-camera mechanism distinction | VERIFIED_CLARIFICATION | L4-S08–S10; L4-S12/F02 |
 
-## Source clarification links
+## Gate-B implementation notes
 
-- `SI-11-001` spectacles source gap → L3-S12/L3-F02, B11-015/B11-019
-- `SI-11-002` normal-incidence clarification → L1-S09/L1-S10/L1-S14, B11-011
-- `SI-11-003` equal incident/emergent angle only for the demonstrated parallel-sided slab geometry → L1-F01, C11-003/C11-004
-- `SI-11-004` film-camera chemistry context → L4-S07/L4-S11, C11-015
-- `SI-11-005` mirage gradient clarification → L2-S07, C11-008/B11-013
-- `SI-11-006` cornea/lens focusing roles → L3-S07/L3-S09/L3-S10/L3-S13 and L4-S08/L4-S09, C11-013/B11-017
-- `SI-11-007` eye-camera focusing analogy limit → L4-S08–L4-S10/L4-F02, C11-016/B11-020
+- L2-S09: critical-angle visual now requires both grazing refracted ray and reflected ray; TIR remains only for `i > C`.
+- L3-S06/R3-03 already required solid actual rays + dashed backward extensions for virtual magnifier image; no Gate-B change needed.
+- L4 dedicated digital-camera CORE slide was removed; one-sentence digital contrast is embedded in L4-S07.
+- L4 standalone concept-map lecture was removed; chapter map is integrated with final exit in L4-S12.
 
-## Current storyboard mapping checkpoint
+## Final mapping result
 
-- Lesson 1: concrete slide IDs mapped.
-- Lesson 2: concrete slide IDs mapped.
-- Lesson 3: concrete slide IDs mapped.
-- Lesson 4: concrete slide IDs mapped.
-- No textbook-body row remains without a lesson/slide disposition.
-- Chapter-wide duplication/continuity/resource audit is the next required step before Gemini Gate B.
-
-## Future maintenance rule
-
-When any source statement changes in a later textbook edition, use this matrix to identify the exact impacted lesson/slide records before editing decks. After content freeze, preserve slide identifiers across minor design revisions whenever possible so source-to-slide traceability remains stable.
+No textbook-body topic is unmapped. Slide IDs should now remain stable through content freeze unless a validated scientific or timing blocker requires change.
