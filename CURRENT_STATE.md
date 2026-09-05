@@ -4,7 +4,9 @@ Last updated: 2026-09-05
 
 ## Project status
 
-Plan v3.0 is the current canonical operating plan and is ready for the first real chapter-production workflow. It incorporates validated findings from the external Hyperagent/Fable 5.1 adversarial audit while rejecting assumptions that do not match this connected environment.
+Plan v3.0 is the current canonical operating plan and is **handoff-ready for the first real chapter-production workflow**.
+
+A final pre-handoff consistency audit has been completed. Startup files, legacy agent/style guidance, source/storyboard/QA templates and the Fable-audit reconciliation have been aligned so a new chat does not inherit the earlier Beautiful.ai-default or rigid 7–10-minute attention-reset assumptions.
 
 ## Canonical repository
 
@@ -12,101 +14,151 @@ Plan v3.0 is the current canonical operating plan and is ready for the first rea
 
 This is the only repository authorized for writes for this project.
 
-## Important validation notes from the external audit
+## First-pilot bootstrap — mandatory
 
-Accepted as material improvements:
+For the **first real chapter**, a new chat must read:
 
-- make the 60-minute timing model explicit as CORE + FLEX + contingency
-- add a classroom profile instead of guessing hardware/connectivity details
-- treat scanned/image-based source intake as a first-class case; critical wording must be verified against the visible source page
-- test Bangla typography, equations, labels and exports before declaring a default renderer
-- make renderer selection conditional on real output tests rather than permanent vendor preference
-- reduce new-chat recovery overhead through a compact `OPERATING_BRIEF.md`
-- strengthen offline/static fallback policy
-- strengthen retrieval, hinge-question and exit-check structure
-- reduce reliance on folklore-style fixed attention-span rules
+1. `OPERATING_BRIEF.md`
+2. `CURRENT_STATE.md`
+3. `FABLE_AUDIT_RECONCILIATION_2026-09-05.md`
+4. `CLASSROOM_PROFILE.md`
+5. `PROJECT_MASTER.md`
+6. `WORKFLOW.md`
+7. `SOURCE_POLICY.md`
+8. `TOOL_ROUTING.md`
+9. `QUALITY_GATES.md`
+10. `SLIDE_STYLE_GUIDE.md`
+11. `VISUAL_ENGAGEMENT_SYSTEM.md`
+12. `DECISIONS.md`
+13. task-relevant files under `templates/`
 
-Rejected/corrected audit assumptions:
+For this first pilot, do not use the usual minimal-read shortcut. The pilot must carry forward every unresolved renderer/tool/typography/equation/workflow item from the Fable reconciliation.
 
-- ChatGPT in this environment DOES have a connected GitHub integration with write actions; current project writes are being performed through that connector. Therefore GitHub maintenance is not transferred exclusively to Hyperagent.
-- Beautiful.ai IS connected in this environment and exposes presentation creation/review/export actions. Therefore the audit claim that there is no ChatGPT/Beautiful.ai integration does not apply to this workspace.
-- Canva IS connected and exposes presentation-generation and editing workflows. It remains a viable full-deck candidate, not only an asset tool.
+After the first pilot resolves those items, the compact recovery sequence in `OPERATING_BRIEF.md` may be restored for later chapters.
 
-## Canonical setup files
+## External Fable 5.1 audit reconciliation
 
-- `OPERATING_BRIEF.md` — compact new-chat recovery and non-negotiables
-- `PROJECT_MASTER.md` — master principles
-- `WORKFLOW.md` — detailed chapter-production workflow
-- `SOURCE_POLICY.md` — source/definition/provenance rules
-- `TOOL_ROUTING.md` — current tool-role and renderer-routing policy
-- `QUALITY_GATES.md` — release gates
-- `VISUAL_ENGAGEMENT_SYSTEM.md` — visual/attention principles
-- `DECISIONS.md` — durable decisions
-- `CLASSROOM_PROFILE.md` — timing/hardware/connectivity facts and unknowns
+Accepted material improvements include:
+
+- corrected 60-minute timing architecture: CORE + FLEX + unallocated contingency
+- classroom-profile file instead of guessing hardware/connectivity
+- scanned/image source handling and visible-page verification of critical wording
+- RT-01 renderer calibration before locking a default renderer
+- stronger Bangla/equation/export checks
+- PDF/static/offline fallback policy
+- stronger retrieval/hinge/practice/exit pedagogy spine
+- replacement of rigid attention-reset timing with segment/response design
+- clearer Tier-2 vs Tier-3 source roles
+- expanded Hyperagent build/QA/interactive role
+
+Rejected/corrected audit assumptions include:
+
+- ChatGPT cannot write to GitHub: **false in this connected workspace**; the GitHub integration exposes write actions
+- no ChatGPT ↔ Beautiful.ai integration: **false in this workspace**; Beautiful.ai is connected and exposes presentation actions
+- Canva is only an asset tool: **not adopted**; Canva is also a candidate full-deck renderer
+- stage-scoped chats must replace one-chat-one-chapter: **not adopted as default**; GitHub checkpoint fallback is used only if needed
+- PDF must be the sole canonical source artifact: **not adopted**; GitHub source/storyboard is canonical, PDF is mandatory fallback
+
+Full finding-by-finding disposition and pending items are in `FABLE_AUDIT_RECONCILIATION_2026-09-05.md`.
 
 ## Active chapter
 
 None yet.
 
+## First chapter = pilot/calibration chapter
+
+The first completed chapter must provide evidence for:
+
+- Beautiful.ai vs Canva renderer quality/workflow
+- whether a hybrid renderer workflow is worth the complexity
+- Bangla typography/conjunct reliability
+- equation/chemistry notation workflow
+- primary classroom delivery format
+- export fidelity and PDF fallback
+- projector readability
+- Hyperagent SVG/equation/QA value
+- NotebookLM usefulness on the actual source
+- Gemini review cadence/value
+- source text-layer/OCR/vision reliability
+- realism of CORE/FLEX/contingency timing
+- which policy/template files are genuinely useful vs redundant
+
+Long-term renderer/tool defaults must not be locked before this evidence exists.
+
 ## Renderer status
 
-No permanent default renderer is locked yet.
+No permanent default renderer is locked.
 
-Before the first final deck, run renderer calibration (RT-01) using the same Bangla/science stress-test content through:
+Before the first final deck, run RT-01 using representative Bangla/science stress-test content through:
 
 - Beautiful.ai
 - Canva
-- another practical fallback if needed
+- another practical fallback only if needed
 
-Compare Bangla rendering, equations, diagrams, editability, workflow friction, export quality and projector readability. Then record the selected default/fallback in `DECISIONS.md`.
+Compare:
+
+- Bangla rendering/conjuncts
+- mixed Bangla/English
+- equations/subscripts/superscripts/symbols
+- diagram labels
+- visual quality
+- editability
+- export fidelity
+- projector readability
+- workflow time/friction
+
+Record the selected default/fallback in `DECISIONS.md` and this file.
 
 ## Timing status
 
 Confirmed project requirement: one deck must fit within one 60-minute class.
 
-Current planning model:
+Current model:
 
-- CORE: approximately 40-45 minutes of non-skippable instruction
-- FLEX: approximately 5-10 minutes of useful but skippable practice/example
-- planned CORE + FLEX: approximately 50-55 minutes
-- contingency: 5-10 minutes left unallocated within the 60-minute class
-- STRETCH: appendix/enrichment only, not part of the planned core lesson
+- CORE: approximately 40–45 minutes non-skippable
+- FLEX: approximately 5–10 minutes useful but skippable
+- planned CORE + FLEX: approximately 50–55 minutes
+- contingency: 5–10 minutes intentionally unallocated inside the 60-minute class
+- STRETCH: appendix/enrichment only
+
+All student responses, board writing, media setup/debrief, activities and transitions count as time.
+
+## Current source rule
+
+Do not assume a supplied NCTB PDF has a reliable text layer. Classify the actual source at intake. OCR/vision may assist, but important definitions/laws/formulas/units/exam-sensitive wording must be verified against the visible page/image when extraction is uncertain.
+
+## Current tool position
+
+- ChatGPT: lead chapter analysis, pedagogy, storyboard, source reconciliation, QA/state coordination
+- NotebookLM: conditional source-grounded support when it adds value
+- Gemini AI Pro: targeted independent review/research
+- Beautiful.ai: candidate full-deck renderer
+- Canva: candidate full-deck renderer + specialist visual tool
+- Hyperagent: specialist build/QA/interactive engine
+
+Existing trusted educational resources remain preferred before custom media/simulation generation.
 
 ## Waiting for
 
-1. user-provided first complete Class 8-10 science chapter as PDF or ordered screenshots
+1. the user's first complete Class 8–10 science chapter as PDF or ordered screenshots
 2. classroom-profile details when available
-3. RT-01 renderer calibration during the first pilot chapter
+3. RT-01 during the first pilot before final deck rendering
 
-## Exact new-chat handoff
+## First required deliverable after chapter upload
 
-A new chat should recover state from GitHub, not from memory or an old chat summary.
+Do **not** jump directly to slides.
 
-Read in this order:
+First deliver:
 
-1. `OPERATING_BRIEF.md`
-2. `CURRENT_STATE.md`
-3. only the deeper policy files needed for the immediate task
+1. input integrity/readability/text-layer result
+2. full chapter analysis and concept map
+3. definitions/laws/formulas/diagrams/activities/numericals/misconceptions inventory
+4. instructional-load estimate
+5. justified number of <=60-minute presentations
+6. proposed CORE/FLEX/STRETCH lesson boundaries and continuity
 
-Then wait for / inspect the complete chapter PDF or ordered screenshots supplied in that new chat.
+Then obtain user approval of the split before final deck production.
 
-The first deliverable for a new chapter is **not a slide deck**. It is the full chapter intake and decomposition analysis, followed by a justified recommendation for how many <=60-minute presentations the chapter requires.
+## End-of-stage rule
 
-## Next required action
-
-When the first chapter arrives:
-
-1. verify completeness/order/readability and whether the source has a reliable text layer
-2. analyze the complete visible chapter before lesson splitting
-3. identify curriculum outcomes, definitions, laws, formulas, diagrams, activities, numericals and misconceptions
-4. verify critical wording against the actual page/image
-5. estimate instructional load using CORE/FLEX/STRETCH
-6. propose the number and boundaries of <=60-minute presentations
-7. obtain user approval of the split
-8. build lesson plans/storyboards/resources
-9. run independent review where high-value
-10. freeze content
-11. perform RT-01 if not yet completed, then render
-12. perform science/source/timing/pedagogy/visual/export/offline-fallback QA
-13. perform chapter-wide coverage and continuity audit
-14. update repository state
+Update GitHub before any stage/chat handoff so the next chat can continue without the previous transcript. Update `FABLE_AUDIT_RECONCILIATION_2026-09-05.md` when a first-pilot pending item becomes resolved or materially reclassified.
