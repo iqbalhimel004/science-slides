@@ -6,7 +6,7 @@ Last updated: 2026-09-06
 
 `iqbalhimel004/science-slides`
 
-This is the only repository authorized for writes for this project.
+Only this repository is authorized for Science Slides writes.
 
 ## Durable rules
 
@@ -14,8 +14,8 @@ This is the only repository authorized for writes for this project.
 - Material science is checked against current authoritative sources.
 - **Finish → record → then continue.**
 - External-tool prompts are one self-contained fenced code block for one-click copy (`D-033`).
-- Planned Gemini reviews use a fresh downloadable single-file Markdown bundle, not GitHub browsing/import (`D-034`).
-- Gemini Gate B is a **targeted implementation audit**, not a second Gate A (`D-035`).
+- Planned Gemini reviews use fresh downloadable single-file bundles (`D-034`).
+- Gate B is targeted implementation QA, not a second Gate A (`D-035`).
 
 ## Active chapter
 
@@ -25,93 +25,101 @@ Canonical path:
 `chapters/class-8/science/chapter-11-light/`
 
 Current status:
-**GEMINI_GATE_B_TARGETED_BUNDLE_READY — EXTERNAL_RUN_PENDING**
+**GATE_B_RECONCILED — FINAL_G1_G7_PASS — CONTENT_STORYBOARD_FROZEN — RT_01_NEXT**
 
-## Production state
+## Review state
 
-All four lesson plans, storyboards, resource maps and storyboard QA records exist. All textbook-body coverage rows are mapped to concrete slide IDs/dispositions. Chapter-wide storyboard/resource/duplication audit is complete.
+Gate A: completed + reconciled.
+
+Gate B: completed + reconciled.
+
+Files:
+- `reviews/GEMINI_GATE_B_RAW_2026-09-06.md`
+- `reviews/GEMINI_GATE_B_RECONCILIATION_2026-09-06.md`
+
+Gate B external verdict:
+`PASS_WITH_TARGETED_CHANGES`
+
+Canonical Gate B result:
+**ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED**
+
+## Implemented Gate-B changes
+
+1. **Critical angle visual**
+   - L2-S09/R2-03 now explicitly includes reflected ray at `i=C` together with grazing refracted ray (`r=90°`).
+   - TIR remains only for `i>C`.
+   - No Fresnel/reflected-power fraction is taught.
+
+2. **Magnifier finding**
+   - Rejected as already implemented.
+   - L3-S06/R3-03 already required solid actual rays + dashed backward extensions for the virtual image.
+
+3. **Lesson 4 compression**
+   - removed dedicated digital-camera CORE slide;
+   - retained one-sentence digital contrast on film-chemistry slide;
+   - detailed digital sensor material moved to STRETCH;
+   - standalone chapter concept map merged into final synthesis/exit;
+   - L4 reduced from 46 CORE + 8 FLEX = 54 to **42 CORE + 8 FLEX = 50**.
+
+## Frozen lesson timing
 
 | Lesson | CORE | FLEX | Planned | Contingency |
 |---|---:|---:|---:|---:|
 | L1 | 43 | 7 | 50 | 10 |
 | L2 | 44 | 8 | 52 | 8 |
 | L3 | 42 | 8 | 50 | 10 |
-| L4 | 46 | 8 | 54 | 6 |
+| L4 | 42 | 8 | 50 | 10 |
 
-Chapter planned CORE + FLEX total: **206 minutes**.
+Chapter planned CORE + FLEX total: **202 minutes**.
 
-L4 is closest to the ceiling. Do not add more CORE content before Gate B reconciliation.
+## Final pre-freeze QA
 
-## Gate A
+Canonical file:
+`chapters/class-8/science/chapter-11-light/FINAL_PRE_FREEZE_QA_2026-09-06.md`
 
-Completed externally and independently reconciled.
+Result:
+`PASS — CONTENT/STORYBOARD FREEZE APPROVED`
 
-Canonical Gate-A result:
-**ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED**
+All textbook-body topics remain mapped. No material prerequisite, duplication, continuity, scientific wording or timing blocker remains at storyboard/content level.
 
-Important accepted corrections remain canonical:
-- L1 phenomenon-first sequencing;
-- normal-incidence exception;
-- optical-density clarification;
-- slab geometry limit;
-- mirage gradient/progressive bending;
-- minimal diverging-lens prerequisite before myopia correction;
-- cornea major initial focusing + crystalline-lens accommodation;
-- spectacles clearly labelled supplementary source-gap repair;
-- film-camera chemistry context label;
-- eye-camera shared-function/different-mechanism guardrail.
+## What is frozen
 
-## Chapter audit
+Unless later production reveals a material scientific/usability defect:
+- four-lesson architecture;
+- slide IDs and sequence;
+- CORE/FLEX classification;
+- storyboard scientific wording and misconception guardrails;
+- source-gap/supplement labels;
+- timing architecture;
+- resource specifications.
 
-Canonical audit:
-`chapters/class-8/science/chapter-11-light/CHAPTER_STORYBOARD_AUDIT.md`
+## What is still pending
 
-Verdict:
-**PASS_TO_GEMINI_GATE_B_WITH_TARGETED_NOTES**
+The chapter is **not classroom-ready yet**.
 
-No material lesson-boundary change, missing textbook-body topic or material duplication was found. All CORE lessons are offline-capable.
+Pending:
+- RT-01 renderer calibration;
+- default/fallback renderer decision;
+- deterministic scientific visual construction;
+- rendered diagram/anatomy/process QA;
+- Bangla/notation/export/projector QA;
+- offline/static fallback verification;
+- PDF fallback generation/verification;
+- final rendered chapter audit.
 
-## Gate B — targeted method
+## Next authorized action
 
-Gate B must **not** repeat Gate A. It reviews only new implementation-layer risk:
+Run **RT-01** using representative Bangla/science content through Beautiful.ai and Canva. Compare:
 
-- regression against accepted Gate-A corrections;
-- slide-level science drift;
-- misleading diagram/visual specifications;
-- missing coverage/prerequisite/continuity;
-- unnecessary duplication;
-- timing/cognitive-load risk;
-- resource/fallback risk;
-- pre-freeze blockers.
+- Bangla conjunct rendering;
+- mixed Bangla/English scientific text;
+- `i`, `r`, `90°`, subscripts/superscripts/equation notation;
+- scientific diagram labels;
+- editability;
+- export fidelity;
+- projector readability;
+- workflow friction/time.
 
-Previously reconciled science is treated as established unless the current storyboard introduces a contradiction, omission, regression or new implementation risk.
+Then record the default/fallback renderer decision in `DECISIONS.md` before first final-deck rendering.
 
-Canonical instructions:
-`chapters/class-8/science/chapter-11-light/reviews/GEMINI_GATE_B_TARGETED_PROMPT.md`
-
-## Gate B transport bundle
-
-User-download filename:
-`GEMINI_GATE_B_TARGETED_BUNDLE.md`
-
-Bundle manifest:
-`chapters/class-8/science/chapter-11-light/reviews/GEMINI_GATE_B_BUNDLE_MANIFEST.md`
-
-Snapshot:
-- size: `18,656 bytes`
-- SHA-256: `3d4e7b78700399cf3baaa46693f21f1ef5a796057c7023a5d919c27b34145fa8`
-
-The bundle is a transport snapshot, not canonical truth. If any review-relevant canonical file changes before Gemini runs, regenerate the bundle.
-
-## Remaining pre-freeze work
-
-1. User uploads current Gate B bundle to Gemini and returns full review text.
-2. Save raw review in GitHub.
-3. Independently validate every material **new** finding.
-4. Record `ACCEPT / PARTIAL / REJECT`.
-5. Implement only validated changes.
-6. Checkpoint status.
-7. Run final relevant G1–G7 and content freeze.
-8. Then run RT-01, select renderer routing, render, export/projector/offline QA.
-
-Do not content-freeze or render final decks before Gate B reconciliation.
+No further Gemini planning review is required unless a later production step introduces a material content/science regression.
