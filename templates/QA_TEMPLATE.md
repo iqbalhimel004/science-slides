@@ -16,14 +16,18 @@
 | G1 Curriculum and scope | PASS / FAIL | |
 | G2 Source verification | PASS / FAIL | |
 | G3 Scientific accuracy | PASS / FAIL | |
-| G4 Lesson timing | PASS / FAIL | |
-| G5 Pedagogy / clarity / cognitive load | PASS / FAIL | |
+| G4 Realistic 60-minute timing | PASS / FAIL | |
+| G5 Pedagogy and cognitive load | PASS / FAIL | |
 | G6 Resource suitability / fallback | PASS / FAIL / N/A | |
 | G7 Storyboard readiness | PASS / FAIL | |
 | G8 Content freeze | PASS / FAIL | |
-| G9 Visual engagement / UI quality | PASS / FAIL | |
-| G10 Accessibility / projector usability | PASS / FAIL | |
-| G11 Final artifact / export QA | PASS / FAIL / N/A | |
+| G9 Renderer calibration | PASS / FAIL / N/A | |
+| G10 Visual engagement / classroom usability | PASS / FAIL | |
+| G11 Export / playback / offline reliability | PASS / FAIL / N/A | |
+| G12 Chapter-wide coverage | PASS / FAIL / N/A | |
+| G13 Cross-lesson continuity / duplication | PASS / FAIL / N/A | |
+| G14 Final chapter completion | PASS / FAIL / N/A | |
+| G15 Post-class calibration | DONE / PENDING / N/A | |
 
 ## Critical findings
 
@@ -35,28 +39,37 @@ List optional improvements separately from blockers.
 
 ## Timing check
 
-- Planned time:
-- Hard ceiling respected?:
-- Buffer retained?:
+- CORE planned time:
+- FLEX planned time:
+- CORE + FLEX:
+- Contingency retained:
+- STRETCH required for lesson success?:
+- Questions/board work/media setup/transitions counted?:
 - Unrealistic pacing assumptions?:
 
 ## Scientific/source checks
 
-- Definitions verified:
+- Definitions source-traceable:
+- Critical OCR/extracted wording visually checked where uncertain:
 - Laws/formulas/units verified:
 - Calculations checked:
 - Diagram labels/directions checked:
 - Material source conflicts resolved:
+- Equation/source expression preserved where needed:
 
 ## Pedagogy and cognitive load
 
+- Retrieval/prior knowledge activated?:
 - Learning sequence logical?:
+- Major segments include meaningful student response?:
+- Hinge/check-for-understanding useful and present where needed?:
+- Guided practice/application present?:
+- Misconceptions addressed where relevant?:
+- Summary + exit check retained?:
 - Textbook dumping avoided?:
 - Complex material segmented?:
 - Redundant on-screen prose controlled?:
-- Misconceptions addressed?:
-- Checks for understanding meaningful?:
-- Attention resets purposeful and reasonably distributed?:
+- Long passive teacher-only stretches avoided?:
 
 ## Visual engagement / UI
 
@@ -68,6 +81,23 @@ List optional improvements separately from blockers.
 - Decorative clutter absent?:
 - Grade-density profile appropriate?:
 - Motion/animation pedagogically justified?:
+
+## Renderer calibration / first-pilot checks
+
+For the first chapter only, record:
+
+- Beautiful.ai RT-01 result:
+- Canva RT-01 result:
+- Bangla conjunct rendering comparison:
+- Equation/notation comparison:
+- Editability comparison:
+- Export fidelity comparison:
+- Projector-readability comparison:
+- Workflow friction/time comparison:
+- Selected default/fallback renderer decision:
+- Any Hyperagent SVG/equation/QA support used and value gained:
+- NotebookLM usefulness on actual source:
+- Gemini review usefulness/cadence:
 
 ## Accessibility / projector
 
@@ -85,14 +115,17 @@ List optional improvements separately from blockers.
 - QR codes checked:
 - Core media/simulation fallback available:
 - Licensing/attribution recorded:
+- Unauthorized downloaded video clips avoided?:
 
 ## Final artifact check
 
-- Delivery format tested:
+- Primary delivery format tested:
+- PDF fallback available and checked:
 - Font substitution issues:
 - Image crop issues:
-- Media/animation behavior:
+- Media/animation behaviour:
 - Scientific content drift after rendering?:
+- Offline/static fallback works?:
 
 ## Final decision
 
