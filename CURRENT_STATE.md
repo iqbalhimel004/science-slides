@@ -65,7 +65,7 @@ Canonical chapter path:
 
 Current status:
 
-`GEMINI_GATE_A_PACKAGE_READY_EXTERNAL_RUN_PENDING`
+`GEMINI_GATE_A_BUNDLE_READY_EXTERNAL_RUN_PENDING`
 
 Key files:
 
@@ -80,6 +80,18 @@ Key files:
 - `lessons/lesson-03/LESSON_PLAN.md`
 - `lessons/lesson-04/LESSON_PLAN.md`
 - `reviews/GEMINI_GATE_A_PROMPT.md`
+- `reviews/GEMINI_GATE_A_BUNDLE_MANIFEST.md`
+
+## Important stale-state correction completed
+
+`CHAPTER_ANALYSIS.md` previously retained the original three-lesson recommendation from the first screenshot-only analysis. It has now been rebased to:
+
+- the full 2026 textbook baseline;
+- the user-approved four-lesson architecture;
+- current source-authority policy;
+- current source issues and review gate state.
+
+The Gemini bundle was generated only after this correction.
 
 ## Approved lesson split
 
@@ -90,33 +102,25 @@ Key files:
 
 ## Gemini Gate A state
 
-The exact external review package has been prepared and saved at:
+Direct Gemini access from this ChatGPT workspace is unavailable. The user's Gemini session also failed to read both the compressed repository import and public GitHub/raw GitHub URLs.
 
-`chapters/class-8/science/chapter-11-light/reviews/GEMINI_GATE_A_PROMPT.md`
+Therefore a **single consolidated Markdown transport bundle** was generated for direct file upload to Gemini:
 
-It instructs Gemini to review:
+`GEMINI_GATE_A_BUNDLE.md`
 
-- decomposition/scope sanity
-- missing prerequisites / duplication
-- timing plausibility
-- misconception coverage
-- difficult-science risk
-- outdated-textbook risk
-- exam-sensitive wording risk
-- current scientific authority versus NCTB framing
+Delivery snapshot:
 
-The prompt requires a structured verdict and external evidence, and explicitly forbids automatic adoption of Gemini findings.
+- size: 77,451 bytes
+- SHA-256: `277087d105fe114bb95f531e8653d6c0c20454f541f1b51e8e5bf8063ed2e26f`
+- manifest: `reviews/GEMINI_GATE_A_BUNDLE_MANIFEST.md`
 
-### External-tool limitation
+The bundle contains the Gate A prompt, corrected chapter analysis, approved lesson split, coverage matrix, source issues, source map and all four lesson plans.
 
-No direct Gemini/Gemini AI Pro connector is available in this ChatGPT workspace. Plugin discovery was checked and did not expose a usable Gemini integration. Therefore the Gate A **review itself has not yet run** here.
+The bundle is a transport artifact only; canonical editable content remains the individual GitHub files. Regenerate the bundle if any included canonical file changes.
 
-Storyboard work is paused at this gate. The next valid actions are either:
+Recommended Gemini instruction:
 
-1. run `reviews/GEMINI_GATE_A_PROMPT.md` in the user's Gemini account and return the response here; or
-2. if a Gemini integration becomes available later, run the same package through it.
-
-After the response is supplied, ChatGPT must save the raw review, independently validate material findings, record accept/partial/reject dispositions, update affected plans/source records, checkpoint state, and only then start Lesson 1 storyboard.
+> Read the attached `GEMINI_GATE_A_BUNDLE.md` completely. Perform the full independent Gate A review exactly according to the instructions contained inside the file. Do not skip any required section. Independently verify material scientific claims using current authoritative sources.
 
 ## Renderer status
 
@@ -124,6 +128,12 @@ No permanent default renderer is locked. RT-01 remains later, after content free
 
 ## Next authorized action
 
-**Obtain the actual Gemini Gate A review output using the prepared package.**
+1. User uploads `GEMINI_GATE_A_BUNDLE.md` to Gemini and runs Gate A.
+2. User returns Gemini's full response here.
+3. ChatGPT saves the raw review in GitHub.
+4. ChatGPT independently validates every material finding.
+5. Record `ACCEPT / PARTIAL / REJECT` dispositions and update affected canonical files.
+6. Checkpoint `STATUS.md` and `CURRENT_STATE.md` immediately.
+7. Only then begin Lesson 1 storyboard.
 
-Do not begin storyboard/content freeze/rendering until that review is returned and reconciled, unless the user explicitly changes this gate requirement.
+Do not begin storyboard/content freeze/rendering until the Gate A review is returned and reconciled, unless the user explicitly changes this gate requirement.
