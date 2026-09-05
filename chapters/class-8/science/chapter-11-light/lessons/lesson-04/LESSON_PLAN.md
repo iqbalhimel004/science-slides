@@ -1,6 +1,6 @@
 # Lesson 4 Plan — আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ
 
-Status: DETAILED_PLAN_DRAFT
+Status: GATE_A_RECONCILED_PLAN
 Target duration: 60 min
 Planned CORE: 44 min
 Planned FLEX: 8 min
@@ -15,7 +15,8 @@ Students should be able to:
 3. explain aperture/diaphragm, shutter and exposure at the level of the textbook;
 4. distinguish the textbook film-camera chemical process from modern digital-camera operation;
 5. compare human eye and camera by optical function without treating them as literally identical;
-6. synthesize the chapter's concept chain from light/refraction to optical instruments.
+6. distinguish eye accommodation from camera focusing in a scientifically safer way;
+7. synthesize the chapter's concept chain from light/refraction to optical instruments.
 
 ## NCTB core
 
@@ -51,18 +52,32 @@ Do not imply modern digital cameras use this chemistry.
 
 ## Eye-camera comparison — functional mapping
 
-- camera lens ↔ cornea + eye lens as focusing system (avoid false one-to-one simplification)
+- camera lens system ↔ cornea + crystalline lens as a focusing system
 - diaphragm/aperture ↔ iris/pupil light-control system
-- shutter ↔ eyelid only as limited analogy; eyelid is not a true optical shutter equivalent
+- shutter ↔ eyelid only as a limited textbook analogy; eyelid is not a true optical shutter equivalent
 - film/plate/sensor receiving plane ↔ retina as receiving surface
-- camera focusing mechanism ↔ accommodation
+- camera focusing mechanism ↔ eye accommodation only at the level of **shared function**, not identical mechanism
 
-Use a 'similar function, not identical structure' banner.
+### Required focusing distinction
+
+**Eye:**
+- retina distance is essentially fixed;
+- ciliary action changes crystalline-lens shape/optical power during accommodation;
+- cornea provides most of the initial focusing, while the crystalline lens fine-tunes.
+
+**Camera:**
+- focusing is achieved by adjusting the optical system;
+- in conventional cameras this commonly includes moving a lens/lens group relative to the film/sensor/image plane;
+- do not state that every modern camera uses one universal focusing mechanism.
+
+Use a `similar function, different mechanism` banner.
 
 ## Major misconceptions
 
 - camera and eye are structurally identical;
 - eyelid and shutter are exact equivalents;
+- camera focusing and eye accommodation use the same physical mechanism;
+- eye focuses mainly by moving its lens toward/away from the retina;
 - digital cameras use film developer/fixer chemistry;
 - lens itself controls exposure duration;
 - retina stores a photograph like film.
@@ -78,6 +93,7 @@ Use a 'similar function, not identical structure' banner.
 
 ## Exit check
 
-One comparison + one distinction:
+One comparison + two distinctions:
 - camera aperture and pupil/iris are similar in what way?
-- film camera and digital camera differ in the image-recording method how?
+- eye accommodation আর camera focusing-এর mechanism কীভাবে আলাদা?
+- film camera and digital camera differ in image-recording method how?
