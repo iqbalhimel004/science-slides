@@ -3,8 +3,8 @@
 - Class: 8
 - Subject: Science (বিজ্ঞান)
 - Chapter: 11 — আলো
-- Current status: **LESSONS_1_2_3_STORYBOARDS_DRAFT_COMPLETE — LESSON_4_NEXT**
-- Last updated: 2026-09-05
+- Current status: **ALL_4_STORYBOARDS_MAPPED — CHAPTER_AUDIT_COMPLETE — GEMINI_GATE_B_NEXT**
+- Last updated: 2026-09-06
 
 ## Durable workflow rules now active
 
@@ -30,91 +30,82 @@
 - Approved lesson count: **4**.
 - Gemini Gate A: COMPLETED + RECONCILED.
 - Source reconciliation pass 2: COMPLETE.
-- Four lesson plans: GATE_A_RECONCILED_PLAN.
-- Coverage matrix: Lessons 1–3 concrete slide IDs mapped; Lesson 4 pending.
+- All four lesson plans: current and storyboard-reconciled where needed.
+- All four storyboards: DRAFT_COMPLETE.
+- All four resource maps: DRAFT_COMPLETE.
+- All four storyboard QA records: PASS_WITH_NONBLOCKING_NOTES.
+- Coverage matrix: all four lessons mapped to concrete slide IDs/dispositions.
+- Chapter-wide storyboard/resource/duplication audit: COMPLETE.
 
 ## Current production split
 
-| Lesson | Working title | Plan status | Storyboard status | CORE | FLEX | Planned |
-|---|---|---|---|---:|---:|---:|
-| 1 | আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম | GATE_A_RECONCILED_PLAN | **DRAFT_COMPLETE / QA_PASS_WITH_NOTES** | 43 min | 7 min | 50 min |
-| 2 | প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন | GATE_A_RECONCILED_PLAN | **DRAFT_COMPLETE / RESOURCE_MAP_COMPLETE / QA_PASS_WITH_NOTES** | 44 min | 8 min | 52 min |
-| 3 | উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা | GATE_A_RECONCILED_PLAN | **DRAFT_COMPLETE / RESOURCE_MAP_COMPLETE / QA_PASS_WITH_NOTES** | 42 min | 8 min | 50 min |
-| 4 | আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ | GATE_A_RECONCILED_PLAN | NOT_STARTED | 44 min | 8 min | 52 min |
+| Lesson | Working title | Storyboard status | CORE | FLEX | Planned | Contingency |
+|---|---|---|---:|---:|---:|---:|
+| 1 | আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম | DRAFT_COMPLETE / QA_PASS_WITH_NOTES | 43 | 7 | 50 | 10 |
+| 2 | প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন | DRAFT_COMPLETE / RESOURCE_MAP_COMPLETE / QA_PASS_WITH_NOTES | 44 | 8 | 52 | 8 |
+| 3 | উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা | DRAFT_COMPLETE / RESOURCE_MAP_COMPLETE / QA_PASS_WITH_NOTES | 42 | 8 | 50 | 10 |
+| 4 | আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ | DRAFT_COMPLETE / RESOURCE_MAP_COMPLETE / QA_PASS_WITH_NOTES | 46 | 8 | 54 | 6 |
 
-Estimated total planned load: approximately **204 minutes CORE + FLEX** across four classes.
+Chapter planned CORE + FLEX total: **206 minutes** across four classes.
 
-## Lesson 1 checkpoint
+Lesson 4 storyboard detail superseded the older 44-minute CORE estimate. The current 46+8=54-minute plan remains within the 50–55 minute target but leaves only 6 minutes contingency. Do not add more CORE content to L4 before Gate B.
 
-Files:
+## Lesson checkpoints
+
+### Lesson 1
 - `lessons/lesson-01/LESSON_PLAN.md`
 - `lessons/lesson-01/STORYBOARD.md`
+- `lessons/lesson-01/RESOURCES.md`
 - `lessons/lesson-01/QA.md`
+- 14 CORE + 2 FLEX slides
 
-Structure:
-- 14 CORE slides: `L1-S01`–`L1-S14`
-- 2 FLEX slides: `L1-F01`–`L1-F02`
-- CORE 43 min + FLEX 7 min = 50 min
-- contingency 10 min
-
-Internal QA: `PASS_WITH_NONBLOCKING_NOTES`.
-
-## Lesson 2 checkpoint
-
-Files:
+### Lesson 2
 - `lessons/lesson-02/LESSON_PLAN.md`
 - `lessons/lesson-02/STORYBOARD.md`
 - `lessons/lesson-02/RESOURCES.md`
 - `lessons/lesson-02/QA.md`
+- 14 CORE + 2 FLEX slides
 
-Structure:
-- 14 CORE slides: `L2-S01`–`L2-S14`
-- 2 FLEX slides: `L2-F01`–`L2-F02`
-- CORE 44 min + FLEX 8 min = 52 min
-- contingency 8 min
-
-Internal QA: `PASS_WITH_NONBLOCKING_NOTES` for storyboard stage.
-
-## Lesson 3 checkpoint
-
-Files:
+### Lesson 3
 - `lessons/lesson-03/LESSON_PLAN.md`
 - `lessons/lesson-03/STORYBOARD.md`
 - `lessons/lesson-03/RESOURCES.md`
 - `lessons/lesson-03/QA.md`
+- 13 CORE + 2 FLEX slides
 
-Structure:
-- 13 CORE slides: `L3-S01`–`L3-S13`
-- 2 FLEX slides: `L3-F01`–`L3-F02`
-- CORE 42 min + FLEX 8 min = 50 min
-- contingency 10 min
+### Lesson 4
+- `lessons/lesson-04/LESSON_PLAN.md`
+- `lessons/lesson-04/STORYBOARD.md`
+- `lessons/lesson-04/RESOURCES.md`
+- `lessons/lesson-04/QA.md`
+- 14 CORE + 2 FLEX slides
 
-Key storyboard decisions:
-- minimal converging/diverging lens prerequisite only; no lens formula/power/sign convention;
-- focus/focal length introduced only as needed for magnifier reasoning;
-- real/virtual + erect/inverted + magnified/reduced vocabulary split across two slides;
-- magnifying glass explicitly requires object inside focal length and produces virtual, erect, enlarged image;
-- human eye taught by functional groups instead of nine isolated labels;
-- cornea identified as the major initial refracting/focusing surface; crystalline lens fine-tunes through accommodation;
-- pupil explicitly taught as an opening in the iris;
-- accommodation visual must show lens-shape change, not lens translation toward/away from retina;
-- spectacles slide clearly labelled supplementary because NCTB outcome exists but body explanation is missing;
-- myopia gets a minimal diverging-lens prerequisite; hyperopia gets a minimal converging-lens correction concept;
-- CORE remains fully offline.
+Key L4 decisions:
+- textbook photographic/film camera is explicitly context-labelled;
+- real/inverted camera image is explained from lens optics;
+- aperture and shutter functions are separated;
+- developer/fixer/hypo chemistry remains black-and-white film context;
+- eye-camera comparison is functional, not one-to-one structural identity;
+- accommodation and camera focusing are explicitly different mechanisms;
+- eyelid ≠ exact shutter and retina ≠ photographic film;
+- film-vs-digital distinction is minimal; a current authoritative digital-camera source must be pinned before freeze if L4-S11 remains CORE.
 
-Resource mapping:
-- `R3-01` converging/diverging lens comparison
-- `R3-02` image-vocabulary mini-panels
-- `R3-03` magnifying-glass ray construction
-- `R3-04` human-eye functional-group cross-section
-- `R3-05` accommodation two-state sequence
-- `R3-06` spectacles minimum correction concept
-- `R3-07` eye labelling practice
-- `R3-08` corrective-lens FLEX extension
+## Chapter-wide audit
 
-Internal QA: `PASS_WITH_NONBLOCKING_NOTES` for storyboard stage.
+Canonical audit:
+`CHAPTER_STORYBOARD_AUDIT.md`
 
-Before freeze, magnifier rays, eye labels, accommodation mechanism and corrective-lens diagrams must all be visually/scientifically inspected after drawing.
+Verdict:
+**PASS_TO_GEMINI_GATE_B_WITH_TARGETED_NOTES**
+
+Findings:
+- no material lesson-boundary change required;
+- no textbook-body topic remains unmapped;
+- no material duplication requires removal;
+- purposeful retrieval/reuse is justified;
+- all four CORE lessons are offline-capable;
+- high-risk science visuals are specified as deterministic/custom;
+- final rendered diagrams and labels remain pre-freeze QA items.
 
 ## Source reconciliation status
 
@@ -126,32 +117,31 @@ Before freeze, magnifier rays, eye labels, accommodation mechanism and correctiv
 - `SI-11-006` cornea/lens focusing roles: RESOLVED.
 - `SI-11-007` eye-camera focusing analogy limit: RESOLVED.
 
-## Chapter-wide QA state
+## Remaining pre-freeze verification items
 
-- G0 Input integrity: PASS_WITH_NOTES.
-- G1 Curriculum/scope analysis: PASS.
-- G2 Critical source verification: PASS_FOR_STORYBOARD.
-- G3 Scientific accuracy: PASS_FOR_STORYBOARD.
-- G4 Timing: PASS_FOR_STORYBOARD.
-- G5 Pedagogy/cognitive load: PASS_FOR_STORYBOARD.
-- Coverage audit: Lessons 1–3 mapped; Lesson 4 pending.
-- Duplication audit: full four-storyboard audit pending.
-- Cross-lesson continuity: PASS at plan level; storyboard-level audit pending.
+1. final ray geometry after assets are drawn;
+2. final eye anatomy/accommodation/corrective-lens diagrams;
+3. film-processing wording after visual compression;
+4. pin current authoritative digital-camera source if L4-S11 stays CORE;
+5. visually verify NCTB exercise-based redraws;
+6. Gemini Gate B external review + independent reconciliation;
+7. final G1–G7 pass and content freeze.
 
 ## Gemini cadence
 
 Gate A is completed and reconciled.
 
-Gate B remains required after **all four storyboards + resource mappings** are complete and immediately before content freeze. Gate B must use the single-file downloadable bundle workflow in `GEMINI_REVIEW_WORKFLOW.md`.
+**Gate B is now the next authorized stage.** It must use a fresh single downloadable Markdown bundle generated from the current canonical files according to `GEMINI_REVIEW_WORKFLOW.md`.
 
 ## Next authorized action
 
-1. Develop Lesson 4 storyboard and resource mapping from the Gate-A-reconciled plan.
-2. Map Lesson 4 slide IDs into `COVERAGE_MATRIX.md`.
-3. Run Lesson 4 storyboard QA and checkpoint.
-4. Run chapter-wide storyboard/resource/duplication audit.
-5. Generate fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
-6. Reconcile Gate B, run final G1–G7, freeze content.
-7. Run RT-01, select renderer routing, render and export-QA.
+1. Generate fresh `GEMINI_GATE_B_BUNDLE.md` from current canonical files.
+2. Record bundle manifest/fingerprint in GitHub.
+3. Give the user a downloadable bundle and one one-click-copy Gemini prompt.
+4. User runs Gemini Gate B and returns full response.
+5. Save raw Gate B review, independently validate all material findings, and record ACCEPT/PARTIAL/REJECT.
+6. Implement validated changes and checkpoint immediately.
+7. Run final G1–G7, then content freeze.
+8. Run RT-01, select renderer routing, render and export-QA.
 
 Do not render final decks yet.
