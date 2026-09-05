@@ -27,9 +27,10 @@ Purpose: preserve textbook wording problems, omissions, simplifications, source 
 - Classroom treatment:
   - preserve that the outcome exists in NCTB;
   - teach only a concise, clearly labelled supplementary spectacles principle if needed: corrective lenses alter the incoming rays so the eye can focus on the retina; diverging lenses correct myopia and converging lenses correct hyperopia;
+  - introduce diverging/concave lens action qualitatively before naming it as the myopia correction lens;
   - do not present this as wording copied from the NCTB chapter body;
   - do not expand into lens power or detailed eye-defect numericals in CORE.
-- Scientific support: OpenStax `Vision Correction` in `SOURCE_MAP.md`.
+- Scientific support: OpenStax `Vision Correction` and `Thin Lenses` in `SOURCE_MAP.md`.
 
 ### SI-11-002 — Refraction wording can sound universal even though normal incidence is an exception to direction change
 
@@ -67,6 +68,49 @@ Purpose: preserve textbook wording problems, omissions, simplifications, source 
   - do not imply that modern digital cameras use photographic-plate/silver-halide chemistry;
   - keep chemistry at the textbook's qualitative level.
 - Scientific support: Kodak processing documentation and Chemistry LibreTexts in `SOURCE_MAP.md`.
+
+### SI-11-005 — Mirage should not be visualized as a single hard mirror-like boundary
+
+- Source location: printed p.112 / PDF p.117.
+- Observation: textbook-level explanations can be interpreted as a sudden reflection/TIR event at one boundary.
+- Scientific verification: atmospheric mirage formation is governed by temperature-dependent refractive-index variation through air layers; the ray path bends progressively through the gradient. A single sharp mirror-like boundary is a pedagogical oversimplification.
+- Classification: `VERIFIED_CLARIFICATION / VISUALIZATION_RISK`.
+- Status: `RESOLVED`.
+- Classroom treatment:
+  - preserve the textbook/exam connection to refraction/TIR where needed;
+  - show hot/cool air layers and gradual ray curvature/stepped bending;
+  - explicitly state that the apparent water is not a real reflecting pool;
+  - avoid gradient-index mathematics in Class 8.
+- Scientific support: OpenStax optics/mirage treatment in `SOURCE_MAP.md`.
+
+### SI-11-006 — Eye focusing must not be attributed to the crystalline lens alone
+
+- Source location: printed p.114 / PDF p.119 and eye-camera comparison on printed p.116 / PDF p.121.
+- Observation: simplified wording/diagram may lead students to treat the crystalline lens as the only major refracting/focusing element.
+- Scientific verification: the cornea provides most of the eye's focusing power; the crystalline lens fine-tunes focus and changes optical power during accommodation.
+- Classification: `VERIFIED_CLARIFICATION`.
+- Status: `RESOLVED`.
+- Classroom treatment:
+  - teach `cornea + crystalline lens` as the focusing system;
+  - state that the cornea does most of the initial bending;
+  - state that ciliary action changes lens shape/optical power for accommodation;
+  - do not use diopter values in CORE.
+- Scientific support: OpenStax `The Eye` / `Lenses` in `SOURCE_MAP.md`.
+
+### SI-11-007 — Eye-camera focusing analogy is functional, not mechanically identical
+
+- Source location: printed p.116 / PDF p.121.
+- Observation: the comparison table can encourage a one-to-one mechanical analogy between camera focusing and eye accommodation.
+- Scientific verification:
+  - the eye focuses by changing crystalline-lens shape/optical power while retina distance is essentially fixed;
+  - conventional cameras commonly focus by adjusting lens/lens-group position relative to the film/sensor/image plane, but modern camera systems are not all mechanically identical.
+- Classification: `VERIFIED_CLARIFICATION / ANALOGY_LIMIT`.
+- Status: `RESOLVED`.
+- Classroom treatment:
+  - compare shared function, then state `different mechanism`;
+  - do not claim every camera focuses by exactly the same method;
+  - do not imply the eye focuses by moving its lens toward/away from the retina.
+- Scientific support: OpenStax `The Eye` and `The Camera` in `SOURCE_MAP.md`.
 
 ## Current unresolved source question
 
