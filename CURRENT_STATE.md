@@ -4,15 +4,51 @@ Last updated: 2026-09-05
 
 ## Project status
 
-Plan v3.0 is the current canonical operating plan.
+Plan v3.0 remains the canonical production plan, with durable policy refinements now recorded in `OPERATING_BRIEF.md` v3.2, `SOURCE_POLICY.md` v3.1, `WORKFLOW.md` v3.1 and `DECISIONS.md` D-031/D-032.
 
-The first real chapter is in the pilot workflow. Full chapter analysis is complete and the revised **four-lesson split has been explicitly approved by the user**. Source reconciliation pass 1 is complete, the coverage matrix has been remapped to four lessons, and detailed lesson-plan drafts now exist for all four lessons.
+The first real chapter is in the pilot workflow. Full chapter analysis is complete, the revised **four-lesson split has been explicitly approved by the user**, source reconciliation pass 1 is complete, the coverage matrix has been remapped to four lessons, and detailed lesson-plan drafts exist for all four lessons.
 
 ## Canonical repository
 
 `iqbalhimel004/science-slides`
 
 This is the only repository authorized for writes for this project.
+
+## New durable source-authority rule
+
+NCTB is used as the primary syllabus/chapter/exam-context source, but **not as automatic scientific authority**.
+
+The user explicitly warned that the underlying textbooks may preserve old content across yearly reprints. Therefore:
+
+- never infer scientific currentness from a recent print/revision year alone;
+- verify material scientific claims against current authoritative sources;
+- when NCTB is outdated, ambiguous, misleading or wrong, record the textbook statement and the verified current science separately;
+- teach the scientifically correct/current explanation;
+- preserve NCTB/exam wording separately when students may encounter it;
+- record verified mismatches in `SOURCE_ISSUES.md` / `SOURCE_MAP.md`.
+
+See:
+- `OPERATING_BRIEF.md`
+- `SOURCE_POLICY.md`
+- `DECISIONS.md` D-006 and D-031
+
+## New universal checkpoint rule
+
+**Finish → record → then continue.**
+
+A meaningful task/stage is not operationally complete until its durable result is saved to GitHub. After analysis, verification, lesson planning, Gemini review/reconciliation, storyboard, resource mapping, QA, RT-01, rendering, export QA or other durable work:
+
+- save/update the relevant artifact;
+- update chapter/lesson `STATUS.md` and `CURRENT_STATE.md` when applicable;
+- update `DECISIONS.md` when a durable rule changes;
+- update Fable reconciliation when a pilot item is resolved/materially reclassified.
+
+A new chat must be able to understand completed work, evidence, decisions, unresolved items and the next authorized action from GitHub alone.
+
+See:
+- `OPERATING_BRIEF.md`
+- `WORKFLOW.md`
+- `DECISIONS.md` D-032
 
 ## Active textbook baseline
 
@@ -28,6 +64,8 @@ Book identity verified from front matter:
 - National Curriculum and Textbook Board, Bangladesh
 - for the 2026 school year
 - revised October 2025
+
+Important interpretation: this publication/revision metadata is source identity only; it does not establish that all underlying scientific content was substantively updated.
 
 The working copy is an image/scanned PDF with unreliable/absent native text extraction. Raw PDF inspection reports 162 pages, while the ChatGPT file-ingestion layer exposed 150 pages. Therefore visible rendered pages plus raw-PDF preflight are authoritative for page integrity; OCR/extractor page counts are advisory only.
 
@@ -52,7 +90,7 @@ Canonical chapter path:
 
 Current status:
 
-`SOURCE_RECONCILIATION_AND_LESSON_PLANNING`
+`DETAILED_PLANS_COMPLETE_PRE_STORYBOARD_REVIEW`
 
 Key files:
 
@@ -92,6 +130,8 @@ Resolved/clarified:
 
 Detailed evidence: `SOURCE_MAP.md` and `SOURCE_ISSUES.md`.
 
+Under the new source-authority policy, slide-level verification must treat current authoritative science as controlling scientific correctness even when NCTB wording differs.
+
 ## Detailed planning status
 
 - Lesson 1: detailed plan draft complete
@@ -109,30 +149,27 @@ Each plan includes:
 - board-writing/visual/resource notes where relevant
 - offline/static fallback expectations
 
-## Resource candidates identified
+## Gemini review cadence
 
-- PhET Bending Light — useful for refraction/TIR, with static fallback required
-- authoritative static/custom ray diagrams for apparent depth, critical angle/TIR and lens/image relationships
-- simplified high-resolution eye/camera diagrams
+Gemini is an independent reviewer, not a second author.
 
-Existing trusted resources remain preferred before custom media generation.
+### Gate A — next action, before storyboard investment
 
-## First chapter = pilot/calibration chapter
+Review the approved four-lesson split, source map/issues, coverage matrix and all four lesson plans for:
 
-The first completed chapter must still provide evidence for:
+- decomposition/scope sanity
+- missing prerequisites / duplication
+- timing plausibility
+- misconception coverage
+- difficult-science risk
+- outdated-textbook risk
+- exam-sensitive wording risk
 
-- Beautiful.ai vs Canva renderer quality/workflow
-- whether a hybrid renderer workflow is worth the complexity
-- Bangla typography/conjunct reliability
-- equation/chemistry notation workflow
-- primary classroom delivery format
-- export fidelity and PDF fallback
-- projector readability
-- Hyperagent SVG/equation/QA value
-- NotebookLM usefulness on the actual source
-- Gemini review cadence/value
-- realism of CORE/FLEX/contingency timing
-- which policy/template files are genuinely useful vs redundant
+Only independently validated findings may alter canonical state.
+
+### Gate B — after all four storyboards/resource mappings, immediately before content freeze
+
+Review slide-level coverage, science, continuity, cognitive load, timing, misconceptions and exam-facing risk. Reconcile and checkpoint validated findings before G1–G7 freeze decision.
 
 ## Renderer status
 
@@ -140,18 +177,14 @@ No permanent default renderer is locked.
 
 Before the first final deck, run RT-01 using representative Bangla/science stress-test content through Beautiful.ai and Canva, adding another practical fallback only if needed.
 
-## Next authorized stage
+## Next authorized action
 
-Proceed to:
+1. perform Gemini Review Gate A;
+2. independently validate/reconcile findings;
+3. checkpoint the completed review/dispositions immediately in GitHub;
+4. then begin Lesson 1 storyboard and continue Lessons 2–4;
+5. populate exact slide IDs into `COVERAGE_MATRIX.md` as storyboards stabilize;
+6. run Gemini Gate B before content freeze;
+7. pass G1–G7, freeze content, then RT-01 and rendering.
 
-1. develop Lesson 1 storyboard first;
-2. assign concrete slide identifiers into `COVERAGE_MATRIX.md` as storyboard sections are accepted;
-3. continue storyboard development for Lessons 2–4;
-4. perform slide-level source/wording QA;
-5. run RT-01 before the first final deck.
-
-Final content freeze and final deck rendering remain blocked until applicable source/QA gates pass and RT-01 is completed.
-
-## End-of-stage rule
-
-Update GitHub before any stage/chat handoff so the next chat can continue without the previous transcript. Update `FABLE_AUDIT_RECONCILIATION_2026-09-05.md` when a first-pilot pending item becomes resolved or materially reclassified.
+Final content freeze and final deck rendering remain blocked until applicable review/QA/RT-01 gates pass.
