@@ -17,8 +17,8 @@ Decision: For a 60-minute class, plan approximately 40–45 minutes CORE + 5–1
 
 Reason: Avoid the earlier ambiguity where “50–55 planned + 5–10 buffer” could be misread as 55–65 total.
 
-## D-006 — NCTB-first source hierarchy
-Decision: NCTB textbook/curriculum/teacher guide is the primary syllabus authority. Established Bangladeshi sources may corroborate wording and explanation. Authoritative international sources may validate science and provide suitable resources.
+## D-006 — NCTB controls scope, not scientific truth
+Decision: NCTB textbook/curriculum/teacher guide is the primary syllabus/scope and exam-facing reference, but it is **not** treated as the final scientific authority. Important scientific claims, definitions, laws, formulas, units, diagrams and explanations must be checked against current authoritative sources. When NCTB is outdated, ambiguous or wrong, preserve the NCTB wording/context for exam-awareness but teach the scientifically correct, current explanation and document the discrepancy.
 
 ## D-007 — Critical science is source-traceable
 Decision: Important definitions, laws, formulas, units and syllabus-critical claims must not rely only on model memory when reliable source material exists.
@@ -97,3 +97,13 @@ Reason: Future edits should be able to answer quickly: what the chapter contains
 Decision: Keep full textbook PDFs outside the Git repository by default. Store durable metadata, government/authorized source links where available, checksums of inspected working copies, page mappings and derived source records in GitHub. Commit the raw textbook only if there is a specific legal/storage/operational reason to do so.
 
 Reason: Git should remain a maintainable project/source-traceability repository rather than a binary textbook archive.
+
+## D-031 — Current authoritative science overrides outdated textbook science
+Decision: Treat NCTB as the required curriculum map and exam-context source, not as proof that a scientific statement is current or correct. For every material scientific claim used in teaching, prefer current authoritative sources such as recognized universities, peer-reviewed/professional scientific organizations, major public scientific/health agencies, high-quality open textbooks and other domain-appropriate primary/authoritative references. Record any mismatch with NCTB in `SOURCE_ISSUES.md` and teach the verified current science while keeping students aware of the textbook/exam wording when necessary.
+
+Operational note: a yearly publication/reprint/revision label must not be assumed to mean that the underlying scientific content was substantively updated unless the actual content change is evidenced.
+
+## D-032 — Successful work is checkpointed immediately
+Decision: A meaningful task or stage is not considered operationally complete until its result/state is saved to the canonical GitHub repository. After completing analysis, verification, lesson planning, Gemini review/reconciliation, storyboard, resource mapping, QA, renderer calibration, rendering, export QA or any other durable project step, immediately update the relevant chapter/lesson artifact plus `STATUS.md`/`CURRENT_STATE.md` as applicable before moving on.
+
+Reason: prevent duplicate work, stale state and context loss; ensure a new chat can determine exactly what is complete, what evidence exists and what the next action is without relying on prior chat history.
