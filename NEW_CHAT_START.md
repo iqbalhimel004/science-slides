@@ -1,6 +1,7 @@
 # New Chat Recovery Protocol
 
-Use this file whenever a new chat starts work on the Science Slides project.
+Version: 3.0
+Last revised: 2026-09-05
 
 ## 1. Verify repository identity first
 
@@ -10,64 +11,57 @@ Authorized write repository:
 
 Do not write to any other connected repository.
 
-## 2. Recover canonical project state
+## 2. Minimal recovery sequence
 
-Read, in order:
+Read in this order:
 
-1. `AGENTS.md`
-2. `PROJECT_MASTER.md`
-3. `CURRENT_STATE.md`
-4. `WORKFLOW.md`
-5. `SOURCE_POLICY.md`
-6. `QUALITY_GATES.md`
-7. `SLIDE_STYLE_GUIDE.md`
-8. `VISUAL_ENGAGEMENT_SYSTEM.md`
-9. `TOOL_ROUTING.md`
-10. `DECISIONS.md`
+1. `OPERATING_BRIEF.md`
+2. `CURRENT_STATE.md`
+3. active chapter `STATUS.md`, if one exists
+4. only the current chapter/lesson files needed for the immediate task
 
-Read `PLAN_AUDIT_2026-09-05.md` when reviewing or changing the master workflow/design system.
+Read `PROJECT_MASTER.md`, `WORKFLOW.md`, `SOURCE_POLICY.md`, `QUALITY_GATES.md`, `TOOL_ROUTING.md`, `SLIDE_STYLE_GUIDE.md`, `VISUAL_ENGAGEMENT_SYSTEM.md`, or `DECISIONS.md` only when the task specifically requires those details.
 
-Then read only the files for the active chapter/lesson identified in `CURRENT_STATE.md`.
+This replaces the former requirement to preload every root policy file into every new chat.
 
-## 3. Do not reconstruct state from old chat history
+## 3. Canonical-state rule
 
-Use the repository as the source of truth. If an old conversation conflicts with current repository state, treat the repository as authoritative unless the user explicitly instructs otherwise.
+Use the repository as the source of truth. If an old conversation conflicts with current repository state, prefer the current repository unless the user explicitly overrides it.
 
-## 4. One chat = one chapter
+## 4. Chapter scope
 
-A production chat should handle one complete chapter from intake through lesson split, lesson/deck production, QA, and chapter-level completion. Do not mix unrelated chapters unless the user explicitly requests it.
+Default: one production chat handles one complete textbook chapter.
 
-## 5. Chapter intake requirement
+If the chat becomes operationally too large, do not rely on an ad-hoc conversational summary. Save the exact stage/status and required handoff state in GitHub before continuing in a new chat.
 
-If the active chapter has not yet been ingested, wait for the user to provide the complete chapter PDF or ordered screenshots. Then perform input integrity checks before content planning.
+## 5. Chapter intake
 
-## 6. Visual-engagement requirement
+If no chapter is active, wait for the user to provide the complete chapter PDF or ordered screenshots.
 
-Do not treat attractiveness as optional polish. Apply the visual-engagement system during storyboard and rendering:
+Then:
 
-- clear focal hierarchy
-- age-appropriate modern UI
-- controlled cognitive load
-- meaningful visual variety
-- purposeful attention resets where useful
-- visual-purpose classification
-- restrained pedagogical motion
-- static fallbacks for core interactive/online media
-- grade-level density calibration
+- verify completeness/order/readability
+- classify text-layer/OCR reliability
+- analyze the full visible chapter before lesson splitting
+- verify critical wording against visible source pages where extraction is uncertain
 
-## 7. Final artifact requirement
+## 6. Timing rule
 
-Do not call a lesson classroom-ready solely from the editor preview. Validate the actual delivery artifact/playback for Bangla rendering, equations, labels, links/QRs, crops, media, contrast, and projector usability.
+For the current 60-minute requirement:
 
-## 8. End-of-chat handoff
+- CORE ~40–45 min
+- FLEX ~5–10 min
+- CORE + FLEX target ~50–55 min
+- 5–10 min contingency remains unallocated
+- STRETCH is appendix-only
 
-Before a chapter chat is considered safely handed off, update:
+## 7. End-of-stage handoff
+
+Update as applicable:
 
 - `CURRENT_STATE.md`
-- the chapter `STATUS.md`
-- chapter/lesson QA files as applicable
+- chapter `STATUS.md`
+- chapter/lesson source/storyboard/QA files
 - `DECISIONS.md` for durable new decisions
-- any source/resource records affected by the work
-- any approved master-theme/design-system changes
 
-The next chat should be able to continue from repository state without needing a summary copied from the previous chat.
+The next chat must be able to continue from GitHub without needing the previous chat transcript.
