@@ -33,7 +33,7 @@ The first completed chapter is therefore also a **pilot/calibration chapter**. I
 | F-15 rigid 7–10 min attention-reset heuristic weakly grounded | **ACCEPTED** | Replaced with segment/response logic: avoid long passive teacher-only stretches; roughly 10 min is only a heuristic ceiling for unchanged exposition, not a biological attention-span rule. |
 | F-16 no numeric visual baselines | **PENDING PILOT CALIBRATION** | The first chapter/RT-01 will establish practical font sizes, density, spacing and projector-safe baselines using actual renderer/export/projector behaviour. Do not lock arbitrary numbers before testing. |
 | F-17 chapter paths/artifact storage/templates inconsistent | **PARTIALLY RESOLVED BY PILOT** | Real workflow has instantiated `chapters/class-8/science/chapter-11-light/`, a versioned source path, `COVERAGE_MATRIX.md` and `SOURCE_ISSUES.md`. Final artifact/deck storage convention remains pending rendering/export evidence. |
-| F-18 Gemini review scope unbounded | **PARTIALLY ACCEPTED** | Gemini is a targeted independent reviewer/research layer at high-value gates, not a duplicate author. Do not force expensive duplicate review when risk is low. Exact cadence is chapter-dependent. |
+| F-18 Gemini review scope unbounded | **PARTIALLY ACCEPTED; GATE A PILOT EVIDENCE OBTAINED** | Gemini is now used at explicit high-value gates, not continuously. Gate A on Chapter 11 produced useful sequencing/prerequisite/analogy findings, but also an overgeneralized camera-focusing claim and an unsourced numerical example. This validates the policy: Gemini is useful as an independent reviewer, but every material finding requires independent validation. Gate B remains scheduled after all four storyboards/resource maps and before content freeze. |
 | F-19 video excerpt wording/ToS risk | **ACCEPTED** | Do not create unauthorized downloaded excerpts. Prefer timestamped source segments/legal embeds and static fallback for classroom-critical online media. |
 | F-20 stale branch / branch policy | **LOW PRIORITY / PENDING** | Not required before first chapter. Do not delete branches solely for neatness without confirming no value remains. |
 | F-21 quality-priority order missing | **ACCEPTED** | Priority is: scientific/source accuracy → pedagogical clarity & cognitive load → realistic timing → attention/visual engagement → polish. |
@@ -67,6 +67,7 @@ The first completed chapter is therefore also a **pilot/calibration chapter**. I
 - explicit project quality-priority order
 - versioned textbook source records and edition fingerprints
 - curriculum index + chapter coverage/source-issue traceability
+- explicit Gemini Gate A/Gate B cadence with independent reconciliation
 
 ## Pending items that the first pilot chapter should resolve
 
@@ -88,7 +89,7 @@ The first completed chapter is therefore also a **pilot/calibration chapter**. I
 11. Hyperagent programmatic SVG/equation/QA value versus added workflow overhead.
 12. **Chapter/source folder convention: PARTIALLY RESOLVED.** Real paths and traceability records are now instantiated; final artifact/export storage convention still awaits rendering evidence.
 13. Numeric visual baselines (font sizes, density, spacing) based on actual projection/export.
-14. Gemini review cadence that gives useful independent findings without duplicating work.
+14. **Gemini review cadence: PARTIALLY RESOLVED BY GATE A.** Gate A is useful before storyboard investment for multi-lesson/high-risk chapters; Gate B remains to test slide-level value before freeze. Do not duplicate full reviews at minor steps.
 15. NotebookLM role: optional vs high-value for long/dense chapters after real source testing.
 
 ### P2 — after classroom use
