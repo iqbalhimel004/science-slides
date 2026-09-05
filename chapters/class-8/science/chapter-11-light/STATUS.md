@@ -3,7 +3,7 @@
 - Class: 8
 - Subject: Science (বিজ্ঞান)
 - Chapter: 11 — আলো
-- Current status: **LESSON_SPLIT_APPROVED**
+- Current status: SOURCE_RECONCILIATION_AND_LESSON_PLANNING
 - Last updated: 2026-09-05
 
 ## Source intake
@@ -20,64 +20,62 @@
 - Critical wording verification: visible rendered textbook pages are authoritative; do not rely on OCR-only text.
 - Missing/cropped/unreadable material: no material chapter loss found in the full PDF.
 
-## Analysis and approved split
+## Analysis and split
 
 - Chapter analysis: COMPLETE
 - Approved lesson count: **4**
-- Lesson split approved by user: **Yes — 2026-09-05**
-- Approved split file: `LESSON_SPLIT_PROPOSAL_V2.md`
+- Lesson split approved: **Yes — user approved 2026-09-05**
+- Approved split record: `LESSON_SPLIT_PROPOSAL_V2.md`
 - Estimated total planned load: approximately 209 minutes across 4 classes, excluding unallocated contingency and STRETCH.
-- Coverage matrix: `COVERAGE_MATRIX.md`
+- Coverage matrix: `COVERAGE_MATRIX.md` — remapped to approved four-lesson structure
 - Source issue register: `SOURCE_ISSUES.md`
+- Source map: `SOURCE_MAP.md`
 
 ## Approved production split
 
 | Lesson | Working title | Status | Planned CORE | Planned FLEX | CORE + FLEX |
 |---|---|---|---:|---:|---:|
-| 1 | আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম | SPLIT_APPROVED | 44 min | 8 min | 52 min |
-| 2 | প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন | SPLIT_APPROVED | 44 min | 8 min | 52 min |
-| 3 | উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা | SPLIT_APPROVED | 45 min | 8 min | 53 min |
-| 4 | আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ | SPLIT_APPROVED | 44 min | 8 min | 52 min |
+| 1 | আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম | DETAILED_PLAN_DRAFT | 44 min | 8 min | 52 min |
+| 2 | প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন | APPROVED_BOUNDARY | 44 min | 8 min | 52 min |
+| 3 | উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা | APPROVED_BOUNDARY | 45 min | 8 min | 53 min |
+| 4 | আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ | APPROVED_BOUNDARY | 44 min | 8 min | 52 min |
 
-## Added conceptual foundations in approved v2
+## Source reconciliation status
 
-The user approved prerequisite/bridge concepts needed to understand the chapter deeply, not only follow the textbook sequence. These will be clearly labelled supplementary support:
-
-- what light is; minimal photon/wave overview
-- how seeing occurs
-- chapter-relevant properties of light
-- optical medium; transparent/translucent/opaque recap
-- interface, normal and angle measurement
-- reflection vs refraction
-- propagation-speed change and optical density vs mass density
-- normal-incidence exception
-- actual vs apparent position
-- convex-lens focus/focal-length prerequisite
-- real/virtual, erect/inverted, magnified/reduced image vocabulary
-- focusing/accommodation bridge for eye/camera
-
-These are not to be misrepresented as verbatim textbook body content.
+- `SI-11-002` normal-incidence nuance: RESOLVED with verified clarification.
+- `SI-11-003` equal incident/emergent angle: RESOLVED as parallel-sided slab geometry dependent.
+- `SI-11-004` film-camera chemistry: RESOLVED_WITH_CONTEXT_LABEL; chemistry independently verified.
+- `SI-11-001` spectacles outcome/body gap: VERIFIED_SOURCE_GAP / PARTIALLY_RESOLVED. Scientific corrective-lens treatment is verified, but a matching 2026 NCTB companion source supplying the missing body subsection was not established in this pass.
 
 ## Chapter-wide QA
 
 - G0 Input integrity: PASS_WITH_NOTES
 - G1 Curriculum/scope analysis: PASS for the 2026 chapter
-- G2 Critical source verification: PARTIAL — authoritative scientific reconciliation still required for flagged issues before content freeze
-- G3 Scientific accuracy: PRELIMINARY_PASS; targeted source reconciliation still required
-- G4 Timing: **PASS_AT_PLAN_LEVEL** for approved split; real classroom timing remains a pilot item
-- Coverage audit: MUST_REMAP_TO_APPROVED_4_LESSON_SPLIT before storyboard completion
+- G2 Critical source verification: PASS_FOR_CURRENT_PLANNING; one curriculum-source gap remains documented for spectacles
+- G3 Scientific accuracy: PASS_FOR_PLANNING; final wording still requires slide-level verification before content freeze
+- G4 Timing: APPROVED_SPLIT; detailed timing now being tested lesson-by-lesson
+- Coverage audit: REMAPPED_TO_4_LESSONS
 - Duplication audit: NOT_RUN
 - Cross-lesson continuity: APPROVED
 
-## Outstanding blockers before content freeze/final rendering
+## First-pilot observations
 
-1. Resolve/verify source issues in `SOURCE_ISSUES.md`.
-2. Verify intended scope of the chapter-opener spectacles outcome before using that reserved slot.
-3. Run source reconciliation for critical definitions/rules and supplementary bridge claims.
-4. Remap `COVERAGE_MATRIX.md` to the approved four-lesson structure.
-5. Complete detailed lesson planning/resource discovery/storyboards.
-6. Run RT-01 before the first final deck.
+- Full-PDF ingestion has been tested.
+- This source is image/scanned and direct native text extraction is not reliable enough for critical science.
+- Rendered-page vision is practical for this chapter and remains authoritative where OCR/extraction disagrees.
+- Supplementary prerequisite/bridge concepts have been separated from textbook body content in the coverage map.
+- Lesson 1 now has a detailed draft plan with explicit misconceptions, student responses, board writing, resource routing and offline fallback.
+
+## Outstanding blockers before final deck
+
+1. Complete detailed plans/storyboards for all four lessons.
+2. Resolve whether a matching official NCTB companion source exists for the spectacles outcome; if not, retain the clearly labelled supplementary treatment.
+3. Perform slide-level source/wording verification before content freeze.
+4. Run RT-01 before the first final deck.
+5. Renderer/export/projector QA before classroom-ready status.
 
 ## Next action
 
-Proceed to source reconciliation/verification, detailed approved lesson planning and resource discovery. Storyboard development is now authorized. Final content freeze and final deck rendering remain gated by source/QA requirements and RT-01.
+- Continue Lesson 2–4 detailed planning and trusted resource discovery.
+- Then develop storyboards and populate exact slide identifiers into `COVERAGE_MATRIX.md`.
+- Do not content-freeze or render final decks before applicable gates and RT-01 pass.
