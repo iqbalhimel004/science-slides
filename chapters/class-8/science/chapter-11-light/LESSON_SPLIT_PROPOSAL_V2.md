@@ -1,8 +1,9 @@
 # Lesson Split Proposal v2 — Class 8 Science, Chapter 11: আলো
 
 Date: 2026-09-05
-Status: **APPROVED BY USER**
+Status: **APPROVED BY USER — GATE_A_REFINED**
 Approval date: 2026-09-05
+Gate A reconciliation date: 2026-09-05
 Source baseline: NCTB Class 8 Science, 2026 school year (revised October 2025)
 
 ## Why v2 exists
@@ -29,7 +30,7 @@ Supplementary material must be labelled as such and must not be presented as ver
 ### Supplementary concepts judged necessary/high-value for understanding
 
 1. what light is — grade-appropriate scientific definition
-2. minimal wave-particle/photon overview; no quantum derivation
+2. very brief non-assessed photon note; no separate wave-particle-duality teaching block
 3. how seeing occurs: light must reach the eye
 4. chapter-relevant properties of light
 5. transparent/translucent/opaque recap and optical medium
@@ -40,33 +41,35 @@ Supplementary material must be labelled as such and must not be presented as ver
 10. optical density versus ordinary mass density
 11. normal-incidence exception: speed may change without directional bending
 12. actual versus apparent position / virtual-image idea for apparent depth
-13. convex-lens prerequisite: converging action, focus and focal length
-14. image vocabulary needed for magnifier/eye/camera: real/virtual, erect/inverted, magnified/reduced
-15. basic focusing/accommodation concept for eye-camera comparison
-16. spectacles-working slot is reserved because the chapter opener states this outcome but the chapter body omits a spectacles subsection; exact treatment requires authoritative reconciliation before content freeze
+13. mirage as a refractive-index-gradient phenomenon, with textbook/TIR context handled carefully
+14. convex-lens prerequisite: converging action, focus and focal length
+15. minimum concave/diverging-lens action needed before spectacle correction
+16. image vocabulary needed for magnifier/eye/camera: real/virtual, erect/inverted, magnified/reduced
+17. cornea + crystalline lens roles and basic focusing/accommodation concept
+18. spectacles-working slot because the chapter opener states this outcome but the body omits a spectacles subsection; exact treatment remains clearly supplementary
+19. eye-camera comparison as similar function but not identical focusing mechanism
 
 ## Deliberately excluded from CORE unless later evidence requires them
 
 - full electromagnetic spectrum
+- formal wave-particle duality treatment
 - wavelength/frequency calculations
 - photon-energy equation
 - Snell's-law calculations
 - refractive-index formula/calculations
 - lens formula and power calculations
 - numerical critical-angle problems
-- detailed eye-defect classification/correction beyond the verified intended scope
+- detailed eye-defect classification/correction beyond the minimal verified spectacle principle
 - numerical optical-fibre/NA treatment
 - detailed digital-camera electronics
-
-These may appear only as FLEX/STRETCH or future linked lessons where pedagogically justified.
 
 ## Approved structure
 
 **4 presentations**, each teachable within one 60-minute class.
 
-Rationale: once light foundations, image/lens prerequisites and the spectacles outcome gap are handled responsibly, the three-lesson plan becomes too compressed for meaningful student response, diagrams, demonstrations and guided practice. Four lessons preserve concept dependency without creating unnecessary one-topic-per-class fragmentation.
+The four-lesson boundary architecture remains exactly as user-approved. Gemini Gate A did **not** justify changing lesson count or boundaries; it produced targeted sequencing and timing refinements only.
 
-Estimated planned load: approximately **209 minutes** total across four classes (CORE + FLEX), leaving unallocated contingency inside each 60-minute period.
+Post-Gate-A planned load: approximately **204 minutes CORE + FLEX** across four classes, leaving roughly 8–10 minutes unallocated contingency in each class.
 
 ---
 
@@ -76,31 +79,20 @@ Estimated planned load: approximately **209 minutes** total across four classes 
 
 Build the minimum optics foundation required before asking students to reason about refraction.
 
-### CORE — 44 min
+### Gate A refinement
 
-1. Retrieval/hook: why can we not see in complete darkness? — 4 min
-2. What light is + minimal photon/wave overview — 4 min
-3. Chapter-relevant properties of light — 5 min
-4. Optical medium + transparent/translucent/opaque recap + straight-line propagation — 5 min
-5. Interface, normal, angle measurement + reflection vs refraction — 5 min
-6. Optical density/speed-change idea + mass-density warning + normal-incidence exception — 5 min
-7. Pencil-in-water observation/demo — 5 min
-8. Refraction explanation + incident/refracted ray vocabulary — 6 min
-9. Rarer→denser / denser→rarer bending rules — 3 min
-10. Hinge/exit check — 2 min
+Use phenomenon-first ordering: pencil-in-water observation occurs before the abstract speed-change/optical-density causal explanation.
 
-**CORE total: 44 min**
+The separate wave-particle-duality block is removed; the photon idea is only a brief non-assessed modern note.
 
-### FLEX — 8 min
+### Current timing
 
-- glass-block ray tracing / extra normal-angle practice — 5 min
-- optional `c ≈ 3.0×10^8 m/s` / very brief visible-light context — 3 min
+- CORE: **43 min**
+- FLEX: **7 min**
+- CORE + FLEX: **50 min**
+- unallocated contingency: **10 min**
 
-**CORE + FLEX: 52 min**
-
-### STRETCH
-
-- refractive-index/Snell-law preview only; not required for chapter success
+Detailed current sequence is canonical in `lessons/lesson-01/LESSON_PLAN.md`.
 
 ### Boundary logic
 
@@ -110,101 +102,68 @@ Students leave Lesson 1 able to explain why and in which direction a ray changes
 
 ## Lesson 2 — প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন
 
-### CORE — 44 min
+### Gate A refinement
 
-1. Retrieval from Lesson 1 — 3 min
-2. Actual vs apparent position / backward-tracing idea — 4 min
-3. Stick + coin applications — 6 min
-4. Fish/apparent-depth application — 4 min
-5. Mirage: grade-appropriate qualitative explanation — 4 min
-6. Progressive dense→rarer ray model leading to critical angle — 7 min
-7. Critical angle + TIR conditions + hinge classification — 7 min
-8. Optical fibre: repeated TIR and uses — 6 min
-9. Summary + exit check — 3 min
+Mirage remains CORE but is clarified as a temperature/refractive-index-gradient effect with progressive ray bending; avoid a single hard mirror-like boundary.
 
-**CORE total: 44 min**
+### Current timing
 
-### FLEX — 8 min
+- CORE: **44 min**
+- FLEX: **8 min**
+- CORE + FLEX: **52 min**
+- unallocated contingency: **8 min**
 
-- trusted TIR/fibre simulation or static sequence — 4 min
-- additional textbook-style ray/CQ practice — 4 min
-
-**CORE + FLEX: 52 min**
-
-### STRETCH
-
-- core/cladding or refractive-index-gradient details only if useful; no numerical fibre optics
+Detailed current sequence is canonical in `lessons/lesson-02/LESSON_PLAN.md`.
 
 ### Boundary logic
 
-Apparent-position phenomena apply ordinary refraction first; critical angle/TIR then extends the same dense→rarer reasoning. Optical fibre is the immediate application, so it belongs in the same lesson.
+Apparent-position phenomena apply ordinary refraction first; critical angle/TIR then extends the same denser→rarer reasoning. Optical fibre is the immediate application, so it belongs in the same lesson.
 
 ---
 
 ## Lesson 3 — উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা
 
-### CORE — 45 min
+### Gate A refinement
 
-1. Retrieval: what happens when light enters a new optical system? — 3 min
-2. Convex-lens prerequisite: converging action, principal idea of focus/focal length — 7 min
-3. Essential image language: real/virtual, erect/inverted, magnified/reduced — 6 min
-4. Magnifying-glass working — 6 min
-5. Human-eye structure and functions — 10 min
-6. Light control + focusing/accommodation concept — 5 min
-7. Spectacles-working reserved slot — 5 min
-8. Summary + exit check — 3 min
+Add a minimum converging-versus-diverging lens prerequisite before spectacles. Teach human-eye anatomy by functional groups rather than nine isolated mini-lectures. Explicitly state that the cornea provides most initial focusing while the crystalline lens fine-tunes through accommodation.
 
-**CORE total: 45 min**
+### Current timing
+
+- CORE: **42 min**
+- FLEX: **8 min**
+- CORE + FLEX: **50 min**
+- unallocated contingency: **10 min**
+
+Detailed current sequence is canonical in `lessons/lesson-03/LESSON_PLAN.md`.
 
 ### Spectacles source rule
 
-The 5-minute spectacles slot is **reserved but not content-frozen**. The chapter opener explicitly lists `চশমার কাজ ব্যাখ্যা করতে পারব`, while the 2026 chapter body contains no spectacles subsection. Before storyboard freeze, verify the intended NCTB/curriculum/teacher-guide scope. Do not invent a detailed myopia/hypermetropia module without that reconciliation.
-
-If the official intended scope proves absent/unsupported, document the gap and convert this slot to eye/magnifier guided practice rather than silently manufacturing syllabus content.
-
-### FLEX — 8 min
-
-- large eye-diagram labelling — 4 min
-- corrective-lens extension only if verified and age/scope appropriate — 4 min
-
-**CORE + FLEX: 53 min**
-
-### STRETCH
-
-- detailed eye defects, lens power, lens formula
+The spectacles material remains scientifically verified but clearly supplementary because the NCTB chapter body omits the subsection despite listing the learning outcome.
 
 ### Boundary logic
 
-The magnifying glass, eye and corrective lenses all depend on convex-lens/image concepts. Teaching those prerequisites here prevents memorization of isolated eye/camera statements.
+The magnifying glass, eye and corrective lenses all depend on basic lens/image concepts. Teaching those prerequisites here prevents memorization of isolated eye/camera statements.
 
 ---
 
 ## Lesson 4 — আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ
 
-### CORE — 44 min
+### Gate A refinement
 
-1. Retrieval from lens/eye lesson — 3 min
-2. Camera parts and their functions — 7 min
-3. Lens-based camera image formation — 6 min
-4. Diaphragm/aperture, shutter and exposure — 6 min
-5. Textbook film-camera development/fixing process — 5 min
-6. Human eye vs camera comparison — 8 min
-7. Whole-chapter concept-map synthesis — 5 min
-8. Guided exam-facing application — 2 min
-9. Exit check — 2 min
+Keep the comparison functional, but explicitly distinguish focusing mechanisms:
 
-**CORE total: 44 min**
+- eye: lens shape/optical power changes while retina distance is essentially fixed;
+- conventional camera: optical system commonly focuses by changing lens/lens-group position relative to film/sensor;
+- do not claim one universal mechanical focusing method for all modern cameras.
 
-### FLEX — 8 min
+### Current timing
 
-- diagram labelling / P-Q-R-S ray reasoning — 4 min
-- extra textbook CQ/short-answer comparison practice — 4 min
+- CORE: **44 min**
+- FLEX: **8 min**
+- CORE + FLEX: **52 min**
+- unallocated contingency: **8 min**
 
-**CORE + FLEX: 52 min**
-
-### STRETCH
-
-- digital camera sensor comparison, clearly marked as modern enrichment rather than the textbook film-camera model
+Detailed current sequence is canonical in `lessons/lesson-04/LESSON_PLAN.md`.
 
 ### Boundary logic
 
@@ -214,10 +173,14 @@ Camera explanation becomes much easier after students already understand convex-
 
 ## Continuity chain
 
-`What is light?` → `how light travels` → `medium/interface/normal` → `refraction` → `apparent position` → `critical angle/TIR` → `optical fibre` → `convex lens/image types` → `magnifier` → `eye` → `spectacles if verified` → `camera` → `eye-camera comparison`.
+`What is light?` → `how light travels` → `observe refraction` → `interface/normal/rays` → `speed-change explanation` → `refraction rules` → `apparent position` → `mirage` → `critical angle/TIR` → `optical fibre` → `converging/diverging lens basics` → `image types` → `magnifier` → `eye` → `spectacles` → `camera` → `eye-camera comparison`.
 
-## Approval record
+## Approval and review record
 
-User explicitly approved this four-lesson split on 2026-09-05.
+- User explicitly approved this four-lesson split on 2026-09-05.
+- Gemini Gate A returned `PASS_WITH_TARGETED_CHANGES`.
+- ChatGPT independently reconciled findings in `reviews/GEMINI_GATE_A_RECONCILIATION_2026-09-05.md`.
+- No material replan or change to the four lesson boundaries was required.
+- Targeted lesson-plan/source clarifications have been incorporated.
 
-This approval authorizes the next stage: source reconciliation/verification, detailed lesson planning, resource discovery and storyboard development. It does **not** authorize final content freeze or final deck rendering before the remaining quality gates and RT-01 are completed.
+This state authorizes storyboard development. It does **not** authorize final content freeze or rendering before the remaining source/QA/Gemini Gate B/RT-01 gates pass.
