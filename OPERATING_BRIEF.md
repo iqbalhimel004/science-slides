@@ -1,6 +1,6 @@
 # Operating Brief — Science Slides
 
-Version: 3.2
+Version: 3.3
 Last revised: 2026-09-05
 
 ## Absolute repository boundary
@@ -70,6 +70,34 @@ A new chat must be able to determine from GitHub alone:
 
 Do not rely on prior chat history as the only record of completed work.
 
+## Copy-ready prompt rule
+
+Whenever the user is expected to paste a prompt into Gemini, Canva, Beautiful.ai, Hyperagent, Codex or another external tool:
+
+- provide the entire prompt in **one single fenced code block**;
+- make it self-contained and one-click copy-ready;
+- do not split one prompt across multiple code blocks;
+- do not require the user to merge surrounding prose into the prompt;
+- keep explanations outside the prompt block;
+- include exact filenames/paths and expected output format inside the prompt when useful.
+
+This is a durable project UX rule, not a chat-specific preference.
+
+## Gemini review transport rule
+
+For planned Gemini review gates, use `GEMINI_REVIEW_WORKFLOW.md`.
+
+Default method:
+
+1. build one consolidated Markdown bundle from the **current canonical GitHub files** relevant to the gate;
+2. give the bundle to the user as a downloadable file;
+3. give one one-click-copy prompt telling Gemini to read the attachment and perform the exact review;
+4. do not depend on Gemini browsing GitHub/raw GitHub or repository import;
+5. record a manifest/fingerprint for the bundle in GitHub;
+6. after Gemini responds, save the raw review, independently reconcile material findings, implement only validated changes, and checkpoint immediately.
+
+An old bundle becomes stale as soon as any included canonical file changes. Future chats must generate a fresh bundle for Gemini Gate B or any later Gemini review gate unless the user explicitly changes this workflow.
+
 ## First pilot override
 
 The **first real chapter** is also the project calibration pilot. For that chapter only, do not rely solely on this compact brief.
@@ -88,7 +116,8 @@ Mandatory first-pilot read order:
 10. `SLIDE_STYLE_GUIDE.md`
 11. `VISUAL_ENGAGEMENT_SYSTEM.md`
 12. `DECISIONS.md`
-13. task-relevant files under `templates/`
+13. `GEMINI_REVIEW_WORKFLOW.md` when any Gemini gate is relevant
+14. task-relevant files under `templates/`
 
 Reason: the first pilot must carry forward every accepted/rejected/pending Fable-audit item and must not accidentally restore superseded assumptions such as Beautiful.ai as unconditional default or rigid 7–10-minute attention resets.
 
@@ -145,7 +174,7 @@ Avoid long passive stretches. Do not use a rigid 7–10-minute biological attent
 
 - **ChatGPT:** project lead, chapter analysis, lesson architecture, source reconciliation, storyboard, QA and GitHub state maintenance through the connected write-capable GitHub integration.
 - **NotebookLM:** conditional source-grounded extraction/citation and student revision materials when it materially helps; never replaces visible source verification or authoritative scientific checking.
-- **Gemini AI Pro:** independent second-opinion review and targeted research at high-value gates, not duplicate authoring by default.
+- **Gemini AI Pro:** independent second-opinion review and targeted research at high-value gates, not duplicate authoring by default. Planned reviews use downloadable single-file bundles per `GEMINI_REVIEW_WORKFLOW.md`.
 - **Beautiful.ai:** candidate full-deck renderer; use only after renderer calibration confirms suitable Bangla/equation/export reliability for this project.
 - **Canva:** candidate full-deck renderer and specialist for bespoke visuals, diagrams, infographics, worksheets and difficult slides; also subject to renderer calibration.
 - **Hyperagent:** specialist build/QA/interactive engine for programmatic SVG/equation assets, custom HTML/JS visualizations, deterministic link/asset checks and genuinely needed custom interaction/media.
@@ -202,8 +231,9 @@ Once the first-pilot pending items have been resolved and `CURRENT_STATE.md` exp
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
-3. active chapter `STATUS.md` if one exists
-4. only the relevant chapter/lesson files
+3. `GEMINI_REVIEW_WORKFLOW.md` if a Gemini review gate is pending/current
+4. active chapter `STATUS.md` if one exists
+5. only the relevant chapter/lesson files
 
 Read deeper policy files only when the task requires them.
 
