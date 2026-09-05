@@ -1,11 +1,11 @@
 # Lesson 1 Plan — আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম
 
-Status: DETAILED_PLAN_DRAFT
+Status: GATE_A_RECONCILED_PLAN
 Source baseline: NCTB Class 8 Science 2026 + verified supplementary bridges in `SOURCE_MAP.md`
 Target duration: 60 min
-Planned CORE: 44 min
-Planned FLEX: 8 min
-Unallocated contingency: 8 min
+Planned CORE: 43 min
+Planned FLEX: 7 min
+Unallocated contingency: 10 min
 
 ## Learning goals
 
@@ -15,11 +15,12 @@ By the end of the lesson, students should be able to:
 2. explain that we see when light from/reflecting from an object reaches the eye;
 3. identify an optical medium, interface and normal;
 4. distinguish reflection from refraction;
-5. explain qualitatively why oblique light changes direction when entering a medium where its speed changes;
-6. distinguish optical density from ordinary mass density;
-7. explain the normal-incidence exception;
-8. identify incident ray, refracted ray, angle of incidence and angle of refraction;
-9. predict bending direction for optically rarer→denser and denser→rarer transitions.
+5. observe and describe the pencil-in-water phenomenon before explaining it;
+6. explain qualitatively why an oblique ray changes direction when light speed changes across media;
+7. distinguish optical density from ordinary mass density;
+8. explain the normal-incidence exception;
+9. identify incident ray, refracted ray, angle of incidence and angle of refraction;
+10. predict bending direction for optically rarer→denser and denser→rarer transitions.
 
 ## Source separation
 
@@ -30,14 +31,14 @@ By the end of the lesson, students should be able to:
 
 ### Supplementary prerequisite support
 - what light is
-- minimal wave/photon framing
 - how seeing occurs
 - optical medium / interface / normal framing
 - reflection vs refraction
 - speed-change causal bridge
 - optical density vs mass density
+- very brief modern photon note only if useful
 
-These supplementary items must be visually labelled as prerequisite/bridge material rather than textbook quotation.
+Supplementary items must be visually labelled as prerequisite/bridge material rather than textbook quotation.
 
 ## Teaching sequence
 
@@ -55,27 +56,18 @@ Visual:
 Response:
 - quick show-of-hands / one-sentence explanation
 
-Purpose:
-- activate seeing/light prerequisite and create need for a definition.
-
-### Segment 2 — আলো কী? — 4 min
+### Segment 2 — আলো কী? — 3 min
 
 Core wording:
-- আলো তড়িৎচৌম্বক বিকিরণের এমন অংশ/রূপ যা দৃশ্যমান ক্ষেত্রে আমাদের চোখে দৃষ্টির অনুভূতি সৃষ্টি করতে পারে.
-- আধুনিক পদার্থবিজ্ঞানে আলো wave-like এবং particle-like behaviour প্রদর্শন করে; energy quanta are called photons.
+- আলো এক ধরনের তড়িৎচৌম্বক বিকিরণ; দৃশ্যমান আলো আমাদের চোখে দৃষ্টির অনুভূতি সৃষ্টি করতে পারে।
 
-Classroom limit:
-- no electromagnetic-spectrum detail
-- no quantum derivation
-- no `E=hf`
+Very brief modern note, non-assessed:
+- quantum description-এ আলোর শক্তি photon নামের discrete quanta হিসেবে exchange হয়.
+- photonকে ordinary tiny material ball হিসেবে দেখানো যাবে না.
 
-Visual:
-- wave icon + photon-dot icon converging to `Light` with a clear “দুই ধরনের আচরণ” label
+Do not teach wave-particle duality as a separate CORE concept. No `E=hf`, no quantum derivation.
 
-Misconception guardrail:
-- photonকে ordinary tiny material ball হিসেবে উপস্থাপন করা যাবে না.
-
-### Segment 3 — এই chapter-এ আলোর যেসব বৈশিষ্ট্য লাগবে — 5 min
+### Segment 3 — এই chapter-এ আলোর যেসব বৈশিষ্ট্য লাগবে — 4 min
 
 Keep only chapter-relevant properties:
 - vacuum-এ চলতে পারে;
@@ -84,66 +76,15 @@ Keep only chapter-relevant properties:
 - oblique incidence হলে direction বদলাতে পারে;
 - reflection/refraction/transmission/absorption ঘটতে পারে.
 
-Visual:
-- one central light ray with four outcomes; emphasize refraction.
-
-Student response:
-- “কোন বৈশিষ্ট্যটি আজকের মূল topic-এর দিকে নিয়ে যাচ্ছে?”
-
-### Segment 4 — Optical medium + transparent/translucent/opaque recap — 5 min
-
-Definitions kept simple:
-- optical medium: যে material-এর মধ্যে দিয়ে light propagate করতে পারে and whose optical properties affect propagation.
+### Segment 4 — Optical medium + transparent/translucent/opaque recap — 4 min
 
 Examples:
 - air, water, glass
 
-Recap:
-- transparent / translucent / opaque
+Important:
+- recap only; do not reteach all three categories in detail unless retrieval shows weakness.
 
-Important wording:
-- not all three need full textbook definitions unless class response shows weakness.
-
-Visual:
-- three material panels with transmitted-ray intensity/clarity.
-
-### Segment 5 — Interface, normal, angle measurement + reflection vs refraction — 5 min
-
-Introduce:
-- boundary/interface
-- point of incidence
-- normal/perpendicular
-- angle measured from the normal, not the surface
-
-Contrast:
-- reflection: light returns into the first medium
-- refraction: light passes into the second medium and may change direction
-
-Hinge mini-question:
-- angle shown from surface vs normal: which is the incidence angle?
-
-Visual:
-- clean ray diagram with normal emphasized.
-
-### Segment 6 — Why does the ray bend? optical density + normal incidence — 5 min
-
-Causal bridge:
-- changing medium changes light speed;
-- with oblique incidence, this produces change of direction;
-- at normal incidence, direction does not deviate even though speed changes.
-
-Optical-density warning:
-- optically denser ≠ necessarily greater mass density.
-- for this lesson, use optical density qualitatively: light travels more slowly in the optically denser medium relative to the comparison medium.
-
-Visual:
-- side-by-side normal incidence and oblique incidence.
-
-Misconceptions addressed:
-- “medium বদলালেই ray অবশ্যই বাঁকবে” — false
-- “denser means heavier” — not necessarily
-
-### Segment 7 — Pencil-in-water observation/demo — 5 min
+### Segment 5 — Phenomenon first: pencil-in-water observation/demo — 5 min
 
 Materials:
 - transparent glass/beaker
@@ -153,63 +94,79 @@ Materials:
 Prompt:
 - পানির কাছে pencil-এর অংশটি displaced/bent মনে হচ্ছে কেন?
 
-Student observation first; explanation after.
+Instructional rule:
+- students observe/predict first;
+- do not give the speed-change explanation before the observation.
 
-Visual fallback:
-- static photo + ray reconstruction if live demo fails.
+Fallback:
+- static photo if live demo fails.
 
-### Segment 8 — Refraction + ray vocabulary — 6 min
+### Segment 6 — Interface, normal, ray vocabulary + reflection vs refraction — 7 min
 
-Use NCTB source wording as exam-facing anchor, with the verified normal-incidence clarification kept separate.
-
-Teach:
+Introduce progressively:
+- boundary/interface
+- point of incidence
+- normal/perpendicular
 - incident ray
 - refracted ray
-- normal
-- angle of incidence `i`
-- angle of refraction `r`
+- `i` and `r`, measured from the normal
 
-Visual:
-- progressively constructed ray diagram, one label at a time.
+Contrast:
+- reflection: light returns into the first medium
+- refraction: light passes into the second medium and may change direction
 
 Student response:
-- identify `i` and `r` on a fresh unlabeled example.
+- identify `i` and `r` on a fresh diagram.
 
-### Segment 9 — Bending rules — 3 min
+### Segment 7 — Why does the ray bend? speed change + optical density + normal incidence — 6 min
+
+Causal bridge:
+- changing medium changes light speed;
+- with oblique incidence, this can change direction;
+- at normal incidence, direction does not deviate even though speed changes.
+
+Optical-density warning:
+- optically denser ≠ necessarily greater mass density.
+- keep this qualitative; do not use a numeric material-comparison example unless its values are source-pinned.
+
+Misconceptions addressed:
+- “medium বদলালেই ray অবশ্যই বাঁকবে” — false
+- “denser means heavier” — false
+
+### Segment 8 — Bending rules — 5 min
 
 Qualitative rules:
 - optically rarer → denser: bends toward normal, so in the shown oblique case `r < i`
 - optically denser → rarer: bends away from normal, so `r > i`
 
-Do not introduce numerical refractive index or Snell calculations in CORE.
+Use paired diagrams and one prediction question.
 
-Visual:
-- mirrored pair of simple diagrams.
+### Segment 9 — Exit hinge — 5 min
 
-### Segment 10 — Exit hinge — 2 min
-
-Three rapid questions:
+Rapid checks:
 1. angle কোন line থেকে মাপি?
 2. normal incidence হলে direction কী হয়?
 3. air→glass oblique ray normal-এর দিকে না দূরে?
+4. optical density কি mass density-এর সমান ধারণা?
 
 Success criterion:
-- majority answers all three correctly before Lesson 2.
+- majority answers all four correctly before Lesson 2.
 
-## FLEX — 8 min
+CORE total: 43 min
+
+## FLEX — 7 min
 
 ### Flex A — Glass-block ray tracing — 5 min
 
 - use textbook geometry
 - explicitly state equal incident/emergent-angle result only for the demonstrated parallel-sided slab geometry
-- if actual apparatus is unavailable, use progressive static diagram
+- if apparatus is unavailable, use progressive static diagram
 
-### Flex B — Speed of light / visible-light context — 3 min
+### Flex B — Modern light note / speed of light — 2 min
 
-Optional factual callout:
-- vacuum speed `c ≈ 3.0 × 10^8 m/s`
-
-Keep as enrichment, not assessed CORE.
+Optional only:
+- `c ≈ 3.0 × 10^8 m/s` in vacuum
+- photon/wave context may be shown here instead of CORE if pacing is tight
 
 ## Board-writing plan
 
@@ -222,21 +179,17 @@ Minimal board content:
 - denser → rarer: away from normal
 - normal incidence: no deviation
 
-Do not duplicate full slide text on board.
-
 ## Visual/resource plan
 
-Priority resources:
-
+Priority:
 1. live pencil-in-water demo
-2. custom/static ray diagrams for normal, rarer→denser, denser→rarer
-3. optional PhET Bending Light for FLEX or teacher-controlled illustration
-
-Trusted resource candidate:
-- PhET Bending Light: `https://phet.colorado.edu/en/simulations/bending-light`
+2. progressive ray vocabulary diagram
+3. normal-incidence vs oblique-incidence comparison
+4. rarer→denser / denser→rarer paired diagrams
+5. optional PhET Bending Light in FLEX
 
 Offline fallback:
-- pre-rendered static three-state ray diagrams stored with lesson assets
+- pre-rendered static diagrams.
 
 ## Misconceptions to test explicitly
 
@@ -245,18 +198,13 @@ Offline fallback:
 - any medium change always bends ray
 - refraction = reflection
 - incident and emergent angles always equal for arbitrary geometry
-
-## Exam-facing anchors
-
-Students should be able to:
-- define/describe refraction in NCTB-compatible wording;
-- label incident ray, refracted ray, normal, `i`, `r`;
-- state rarer↔denser bending directions;
-- state normal-incidence no-deviation case.
+- photon = tiny ordinary material ball
 
 ## QA before storyboard freeze
 
-- critical wording checked against NCTB visible pages
+- phenomenon appears before causal mechanism
+- photon/wave content remains non-assessed and minimal
+- critical wording checked against visible NCTB pages
 - normal-incidence clarification kept distinct from textbook quotation
 - optical-density language remains qualitative and scientifically correct
 - slab equal-angle statement is geometry-bound
