@@ -1,124 +1,167 @@
 # Tool Routing Policy
 
+Version: 3.0
+Last revised: 2026-09-05
+
+## Principle
+
+No tool is the permanent default merely because it is powerful or previously preferred. Route each task to the simplest tool that produces the best verified classroom outcome.
+
+Renderer choices are conditional on real Bangla/science output tests.
+
 ## ChatGPT
 
-Default lead system for:
+Lead system for:
 
-- chapter intake analysis
+- complete-chapter analysis
 - lesson decomposition
 - timing architecture
 - pedagogy
-- storyboard creation
+- storyboard authoring
 - source reconciliation
-- QA
-- visual-engagement coordination
+- QA coordination
 - final content-freeze decisions
-- GitHub project-state maintenance
+- GitHub project-state maintenance through the connected write-capable GitHub integration available in this workspace
+
+Do not duplicate the same authoring task in Gemini/Hyperagent without a specific review or capability reason.
 
 ## NotebookLM
 
-Use when source-grounded study of uploaded textbook/reference material materially helps. Good uses include:
+Use conditionally when source-grounded extraction/citations materially help, especially for long chapters or student revision packs.
 
-- chapter extraction
+Good uses:
+
 - source-constrained summaries
 - concept maps
-- study-guide generation
-- source Q&A
-- cross-checking where a chapter is long or dense
+- cited source Q&A
+- glossary/checklist extraction
+- quiz/flashcard/study-guide generation from verified sources
 
-Do not treat NotebookLM output as a replacement for the actual source text.
+Rules:
+
+- test scanned/image-only PDF behaviour before depending on it
+- never treat extracted text/OCR as more authoritative than the visible textbook page
+- do not make NotebookLM mandatory when it adds duplicate processing without value
 
 ## Gemini AI Pro
 
-Use selectively as an independent reviewer, not as a duplicate author by default. Good uses include:
+Use as an independent reviewer/research layer, not as a second primary author.
 
-- adversarial review of chapter decomposition
-- difficult fact/definition checks
-- missing-topic detection
-- source-conflict review
-- misconception detection
-- external resource research
-- final chapter coverage audit
+Preferred review points:
 
-Verify Gemini findings before accepting them.
+1. chapter split/decomposition sanity check when the chapter is complex, ambiguous, or produces several lessons
+2. pre-freeze review of difficult scientific claims, misconceptions, exam-wording risk, or missing coverage
+3. targeted Deep Research for external resources when normal search is insufficient
+
+Findings must be independently validated before changing canonical state.
 
 ## Beautiful.ai
 
-Primary final presentation renderer after content freeze.
+Beautiful.ai is a **candidate full-deck renderer**, not an unconditional permanent default.
 
-Use Beautiful.ai by default for:
+Verified workspace capability: the connected Beautiful.ai integration can list/retrieve presentations and templates, create presentations from structured outlines, review outlines, and export supported presentations.
 
-- complete lesson-deck assembly
-- consistent slide layout across a chapter
-- typography and hierarchy
+Strengths to evaluate during RT-01:
+
+- fast structured deck assembly
+- consistent hierarchy/layout
+- template adherence
 - standard concept/definition/comparison/process slides
-- charts and structured diagrams supported reliably by the platform
-- chapter-wide theme consistency
-- final presentation playback/export
+- convenient export/playback workflows
 
-Do not let Beautiful.ai independently change verified scientific meaning, definitions, formulas, units, or source-grounded claims.
+Risks to test:
+
+- Bangla rendering and line breaks
+- equations/symbols
+- diagram labels
+- export fidelity
+- editability/workflow friction
+
+Do not let the renderer rewrite verified science, definitions, formulas, units or meaning.
 
 ## Canva
 
-Canva is a secondary specialist visual-production tool, not the default deck-authoring system.
+Canva is both:
 
-Use Canva when one or more of the following is true:
+1. a **candidate full-deck renderer**, and
+2. a specialist visual-production tool.
 
-1. A custom infographic or visual explainer needs more compositional control than Beautiful.ai provides.
-2. A worksheet, handout, poster, printable activity, or classroom reference sheet is needed.
-3. A scientific diagram needs careful custom layout, annotation, layering, callouts, or cleanup.
-4. A special-purpose slide requires a bespoke composition that Beautiful.ai renders poorly or too generically.
-5. A visual asset needs image compositing, background treatment, icon/shape arrangement, or a designed illustration panel before being inserted into the main deck.
-6. A cover/title visual or chapter-summary visual materially benefits from Canva's design flexibility.
-7. A reusable visual template/asset is being created for later use across multiple decks.
+Verified workspace capability: the connected Canva integration can generate presentations/designs, use presentation templates/brand templates when available, import supported files, create/edit designs, and export supported designs.
 
-Do not route routine text/concept slides to Canva if Beautiful.ai can render them well. Avoid duplicating the whole deck in both tools unless there is a specific reason.
+Use Canva when it wins on:
 
-### Canva handoff rule
+- custom visual composition
+- infographics
+- worksheets/handouts/posters
+- bespoke diagrams/callouts
+- difficult visual slides
+- reusable visual components
+- full visual/diagram-heavy lessons if RT-01 proves better Bangla/export/classroom results than Beautiful.ai
 
-If a Canva-created visual or full slide is used in the Beautiful.ai deck:
+Avoid building the same full deck in both Canva and Beautiful.ai unless doing a deliberate comparison or one renderer is needed for a specific fallback.
 
-- preserve the approved scientific wording and meaning
-- record the asset/source in the lesson resource record when material
-- keep text large enough for classroom projection
-- preserve editability where practical
-- verify Bangla rendering and labels after export/import
-- ensure the visual still passes scientific, accessibility, and projector QA
+## Renderer decision after RT-01
 
-Canva is never the authority for scientific facts, definitions, laws, formulas, or units.
+Use the same stress-test content in candidate renderers and compare:
 
-## Beautiful.ai vs Canva decision rule
+- Bangla conjuncts/mixed Bangla-English
+- font size/readability
+- scientific symbols, units, subscripts/superscripts/equations
+- diagram labels
+- visual quality
+- editability
+- export quality
+- projector readability
+- workflow time/friction
 
-Choose the simplest reliable path:
+Then record:
 
-- **Routine classroom deck + consistent chapter presentation:** Beautiful.ai
-- **Custom infographic / worksheet / poster / bespoke visual composition:** Canva
-- **One difficult slide that Beautiful.ai cannot render well:** Canva for that slide/asset, then return to Beautiful.ai for the deck
-- **Custom interactive simulation or advanced dynamic visualization:** Hyperagent, not Canva
-- **Existing trusted simulation/video/diagram already fits:** reuse it instead of rebuilding in Canva or Hyperagent
+- default standard-deck renderer
+- specialist/fallback renderer
+- export/fallback format
 
-The renderer must serve the teaching objective, not the other way around.
+Do not decide solely from vendor documentation.
 
 ## Hyperagent
 
-Use only for high-value custom assets or advanced interaction, for example:
+Use Hyperagent as a **specialist build/QA/interactive engine**, not merely as a media generator.
 
+Good uses:
+
+- programmatic SVG/scientific visual construction
+- equation rendering to SVG/PNG when required
 - custom HTML/JavaScript simulations
-- Bangla-specific interactive models
-- simplified custom visualizations when existing tools are too complex
-- advanced media generation
-- short custom animation/video when a suitable existing resource is unavailable
+- Bangla-specific or syllabus-specific interactive visualizations
+- link/resource checks
+- asset validation
+- optional scripted QA for timing tables, links or other deterministic checks
+- advanced media only when a real teaching gap remains
 
-Existing trusted online resources should be searched first.
+Do not use Hyperagent by default for:
 
-## External resource preference
+- duplicate pedagogy authoring
+- decorative AI visuals
+- generated labelled scientific diagrams without strict scientific verification/redraw
+- generated video when an existing trusted resource or static explanation is sufficient
+- classroom-critical early/experimental interactive features without a fallback
 
-For simulations/visualizations, prioritize reputable resources such as PhET, GeoGebra, universities, scientific organizations, and established educational platforms when they fit the curriculum and classroom need.
+## Existing-resource-first policy
 
-## Cost/efficiency principle
+For simulations, animations, videos and authoritative visuals, search reputable existing resources first. Custom generation is justified only when the existing option is scientifically unsuitable, too complex, inaccessible, language-inappropriate, or fails a specific teaching objective.
 
-Use the least expensive/complex tool that can reliably achieve the teaching objective. Do not generate custom media merely because generation is available.
+## Equations and scientific notation
 
-## Tool fallback principle
+Until the chosen renderer is proven reliable for complex equations/chemistry notation, store the source expression in the storyboard and render complex expressions through a controlled method (for example LaTeX/MathJax → SVG/PNG) when necessary. Verify the final appearance after export.
 
-If a preferred tool cannot reliably perform a task, record the limitation and route the task to the next suitable tool without changing the scientific/content authority chain.
+## Cost/efficiency
+
+Quality outranks token/credit minimization, but avoid:
+
+- duplicate full-model reviews
+- unnecessary custom media
+- repeated source research
+- moving content across tools without a comparative advantage
+
+## Fallback principle
+
+If a preferred tool cannot reliably perform a task, record the limitation and route to the next suitable tool without changing the scientific/source authority chain.
