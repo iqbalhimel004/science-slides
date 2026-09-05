@@ -3,7 +3,7 @@
 - Class: 8
 - Subject: Science (বিজ্ঞান)
 - Chapter: 11 — আলো
-- Current status: **LESSONS_1_2_STORYBOARDS_DRAFT_COMPLETE — LESSON_3_NEXT**
+- Current status: **LESSONS_1_2_3_STORYBOARDS_DRAFT_COMPLETE — LESSON_4_NEXT**
 - Last updated: 2026-09-05
 
 ## Durable workflow rules now active
@@ -31,7 +31,7 @@
 - Gemini Gate A: COMPLETED + RECONCILED.
 - Source reconciliation pass 2: COMPLETE.
 - Four lesson plans: GATE_A_RECONCILED_PLAN.
-- Coverage matrix: Lessons 1–2 concrete slide IDs mapped; Lessons 3–4 pending.
+- Coverage matrix: Lessons 1–3 concrete slide IDs mapped; Lesson 4 pending.
 
 ## Current production split
 
@@ -39,7 +39,7 @@
 |---|---|---|---|---:|---:|---:|
 | 1 | আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম | GATE_A_RECONCILED_PLAN | **DRAFT_COMPLETE / QA_PASS_WITH_NOTES** | 43 min | 7 min | 50 min |
 | 2 | প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন | GATE_A_RECONCILED_PLAN | **DRAFT_COMPLETE / RESOURCE_MAP_COMPLETE / QA_PASS_WITH_NOTES** | 44 min | 8 min | 52 min |
-| 3 | উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা | GATE_A_RECONCILED_PLAN | NOT_STARTED | 42 min | 8 min | 50 min |
+| 3 | উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা | GATE_A_RECONCILED_PLAN | **DRAFT_COMPLETE / RESOURCE_MAP_COMPLETE / QA_PASS_WITH_NOTES** | 42 min | 8 min | 50 min |
 | 4 | আলোক-চিত্রগ্রাহী ক্যামেরা, চোখের সাথে তুলনা ও অধ্যায় সংশ্লেষ | GATE_A_RECONCILED_PLAN | NOT_STARTED | 44 min | 8 min | 52 min |
 
 Estimated total planned load: approximately **204 minutes CORE + FLEX** across four classes.
@@ -73,28 +73,48 @@ Structure:
 - CORE 44 min + FLEX 8 min = 52 min
 - contingency 8 min
 
+Internal QA: `PASS_WITH_NONBLOCKING_NOTES` for storyboard stage.
+
+## Lesson 3 checkpoint
+
+Files:
+- `lessons/lesson-03/LESSON_PLAN.md`
+- `lessons/lesson-03/STORYBOARD.md`
+- `lessons/lesson-03/RESOURCES.md`
+- `lessons/lesson-03/QA.md`
+
+Structure:
+- 13 CORE slides: `L3-S01`–`L3-S13`
+- 2 FLEX slides: `L3-F01`–`L3-F02`
+- CORE 42 min + FLEX 8 min = 50 min
+- contingency 10 min
+
 Key storyboard decisions:
-- retrieval of normal/angle/bending rules without reteaching L1;
-- actual vs apparent position taught using real rays plus dashed backward extensions;
-- stick → coin → fish applications progress from familiar to applied;
-- mirage uses temperature/refractive-index gradient + progressive bending, not a single hard mirror-like boundary;
-- critical angle built progressively and explicitly separated from TIR;
-- TIR requires higher-index→lower-index direction plus `i > C`;
-- optical fibre follows immediately as repeated-TIR application;
-- PhET `Bending Light` is FLEX only; CORE remains fully offline;
-- deterministic/custom scientific diagrams preferred for apparent position, mirage, critical angle/TIR and fibre.
+- minimal converging/diverging lens prerequisite only; no lens formula/power/sign convention;
+- focus/focal length introduced only as needed for magnifier reasoning;
+- real/virtual + erect/inverted + magnified/reduced vocabulary split across two slides;
+- magnifying glass explicitly requires object inside focal length and produces virtual, erect, enlarged image;
+- human eye taught by functional groups instead of nine isolated labels;
+- cornea identified as the major initial refracting/focusing surface; crystalline lens fine-tunes through accommodation;
+- pupil explicitly taught as an opening in the iris;
+- accommodation visual must show lens-shape change, not lens translation toward/away from retina;
+- spectacles slide clearly labelled supplementary because NCTB outcome exists but body explanation is missing;
+- myopia gets a minimal diverging-lens prerequisite; hyperopia gets a minimal converging-lens correction concept;
+- CORE remains fully offline.
 
 Resource mapping:
-- `R2-01` apparent-position ray construction
-- `R2-02` mirage gradient diagram
-- `R2-03` critical-angle/TIR three-state sequence
-- `R2-04` optical-fibre cutaway
-- `R2-05` PhET Bending Light FLEX simulation
-- `R2-06` textbook-style TIR practice redraw
+- `R3-01` converging/diverging lens comparison
+- `R3-02` image-vocabulary mini-panels
+- `R3-03` magnifying-glass ray construction
+- `R3-04` human-eye functional-group cross-section
+- `R3-05` accommodation two-state sequence
+- `R3-06` spectacles minimum correction concept
+- `R3-07` eye labelling practice
+- `R3-08` corrective-lens FLEX extension
 
 Internal QA: `PASS_WITH_NONBLOCKING_NOTES` for storyboard stage.
 
-Before freeze, rendered ray geometry, mirage gradient, `i=C` vs `i>C`, fibre arrows and NCTB exercise redraw must all be visually inspected.
+Before freeze, magnifier rays, eye labels, accommodation mechanism and corrective-lens diagrams must all be visually/scientifically inspected after drawing.
 
 ## Source reconciliation status
 
@@ -114,7 +134,7 @@ Before freeze, rendered ray geometry, mirage gradient, `i=C` vs `i>C`, fibre arr
 - G3 Scientific accuracy: PASS_FOR_STORYBOARD.
 - G4 Timing: PASS_FOR_STORYBOARD.
 - G5 Pedagogy/cognitive load: PASS_FOR_STORYBOARD.
-- Coverage audit: Lessons 1–2 mapped; Lessons 3–4 pending.
+- Coverage audit: Lessons 1–3 mapped; Lesson 4 pending.
 - Duplication audit: full four-storyboard audit pending.
 - Cross-lesson continuity: PASS at plan level; storyboard-level audit pending.
 
@@ -126,13 +146,12 @@ Gate B remains required after **all four storyboards + resource mappings** are c
 
 ## Next authorized action
 
-1. Develop Lesson 3 storyboard and resource mapping from the Gate-A-reconciled plan.
-2. Map Lesson 3 slide IDs into `COVERAGE_MATRIX.md`.
-3. Run Lesson 3 storyboard QA and checkpoint.
-4. Repeat for Lesson 4.
-5. Run chapter-wide storyboard/resource/duplication audit.
-6. Generate fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
-7. Reconcile Gate B, run final G1–G7, freeze content.
-8. Run RT-01, select renderer routing, render and export-QA.
+1. Develop Lesson 4 storyboard and resource mapping from the Gate-A-reconciled plan.
+2. Map Lesson 4 slide IDs into `COVERAGE_MATRIX.md`.
+3. Run Lesson 4 storyboard QA and checkpoint.
+4. Run chapter-wide storyboard/resource/duplication audit.
+5. Generate fresh downloadable Gemini Gate B bundle + one-click-copy prompt.
+6. Reconcile Gate B, run final G1–G7, freeze content.
+7. Run RT-01, select renderer routing, render and export-QA.
 
 Do not render final decks yet.
