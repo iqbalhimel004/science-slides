@@ -1,6 +1,6 @@
 # Operating Brief — Science Slides
 
-Version: 3.1
+Version: 3.2
 Last revised: 2026-09-05
 
 ## Absolute repository boundary
@@ -13,15 +13,36 @@ Before every GitHub write, verify the exact `repository_full_name`. Abort if it 
 
 ## Project goal
 
-Create source-verified, NCTB-aligned, visually engaging science teaching decks for Classes 8–10 that can be realistically completed within one 60-minute class.
+Create scientifically current, source-verified, NCTB-scope-aligned, visually engaging science teaching decks for Classes 8–10 that can be realistically completed within one 60-minute class.
 
 Priority order:
 
-1. scientific/source accuracy
+1. current scientific/source accuracy
 2. pedagogical clarity and cognitive-load control
 3. realistic timing
 4. student attention and visual engagement
 5. visual polish
+
+## Critical source-authority rule
+
+NCTB is the primary source for:
+
+- syllabus/chapter scope
+- learning outcomes
+- textbook sequence
+- local terminology and exam context
+
+NCTB is **not automatically the scientific authority**. A recent reprint/revision year does not prove that the underlying science was substantively updated.
+
+For material scientific claims, independently verify against current trusted authoritative sources. If NCTB is outdated, ambiguous, misleading or wrong:
+
+- record the textbook statement/page;
+- record the verified current science;
+- teach the scientifically correct explanation;
+- preserve NCTB/exam wording separately when students may encounter it;
+- document the mismatch in `SOURCE_ISSUES.md` / `SOURCE_MAP.md`.
+
+Never teach a materially false statement solely because it appears in the textbook.
 
 ## Default production unit
 
@@ -30,6 +51,24 @@ Priority order:
 - Analyze the full chapter before deciding presentation count.
 - Split by instructional load and concept boundaries, never by page count alone.
 - If one chat becomes impractically large, save a complete stage checkpoint in GitHub before continuing in a new chat; this is a fallback, not the default.
+
+## Universal checkpoint rule
+
+**Finish → record → then continue.**
+
+Whenever a meaningful task/stage is successfully completed, immediately persist the durable result to `iqbalhimel004/science-slides` before moving to the next major step.
+
+At minimum update the relevant artifact plus `STATUS.md` / `CURRENT_STATE.md` as applicable.
+
+A new chat must be able to determine from GitHub alone:
+
+- what is complete;
+- what evidence exists;
+- what decisions were made;
+- what is unresolved;
+- the next authorized action.
+
+Do not rely on prior chat history as the only record of completed work.
 
 ## First pilot override
 
@@ -68,13 +107,14 @@ Do not solve timing failure by speaking faster, shrinking text or dropping the e
 
 ## Source rules
 
-- Current NCTB textbook/curriculum/teacher guide is the primary syllabus authority.
+- Use current NCTB materials to establish syllabus/exam context, not to prove scientific currentness.
 - Pin edition/year and page references where identifiable.
-- Important definitions, laws, formulas, units and exam-sensitive claims must be verified against the actual source page/image, not model memory alone.
-- Text extraction/OCR may assist, but the visible page is authoritative when extraction is uncertain.
+- Verify important definitions, laws, formulas, units, diagrams, processes and causal claims against current authoritative science.
+- Important textbook wording must still be checked against the actual source page/image, not model memory alone.
+- Text extraction/OCR may assist, but the visible page is authoritative for what the textbook actually says when extraction is uncertain.
 - Established Bangladeshi sources such as 10 Minute School may corroborate local wording/convention and explanation ideas; they are not independent scientific authority by default.
-- Authoritative international sources may validate science and supply licensed resources.
-- Keep exam-safe/source-grounded wording separate from simpler classroom explanation when useful.
+- Current authoritative international/domain sources validate science and may supply licensed resources.
+- Keep textbook/exam wording separate from current scientific explanation when they differ.
 - Record and resolve material source conflicts explicitly.
 
 ## Pedagogy spine
@@ -104,7 +144,7 @@ Avoid long passive stretches. Do not use a rigid 7–10-minute biological attent
 ## Tool roles
 
 - **ChatGPT:** project lead, chapter analysis, lesson architecture, source reconciliation, storyboard, QA and GitHub state maintenance through the connected write-capable GitHub integration.
-- **NotebookLM:** conditional source-grounded extraction/citation and student revision materials when it materially helps; never replaces the visible textbook page.
+- **NotebookLM:** conditional source-grounded extraction/citation and student revision materials when it materially helps; never replaces visible source verification or authoritative scientific checking.
 - **Gemini AI Pro:** independent second-opinion review and targeted research at high-value gates, not duplicate authoring by default.
 - **Beautiful.ai:** candidate full-deck renderer; use only after renderer calibration confirms suitable Bangla/equation/export reliability for this project.
 - **Canva:** candidate full-deck renderer and specialist for bespoke visuals, diagrams, infographics, worksheets and difficult slides; also subject to renderer calibration.
@@ -169,4 +209,4 @@ Read deeper policy files only when the task requires them.
 
 ## Completion
 
-A chapter is complete only after source, science, timing, pedagogy, visual, export/playback, fallback, coverage, duplication and cross-lesson continuity checks pass and repository state is updated.
+A chapter is complete only after current-science/source, timing, pedagogy, visual, export/playback, fallback, coverage, duplication and cross-lesson continuity checks pass and repository state is updated.
