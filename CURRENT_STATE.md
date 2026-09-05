@@ -6,7 +6,7 @@ Last updated: 2026-09-05
 
 Plan v3.0 is the current canonical operating plan.
 
-The first real chapter has now entered the pilot workflow. Full intake and chapter-wide analysis are complete, and a three-lesson split is proposed but not yet approved.
+The first real chapter is in the pilot workflow. Full chapter analysis is complete and a three-lesson split is proposed but not yet approved.
 
 ## Canonical repository
 
@@ -14,9 +14,37 @@ The first real chapter has now entered the pilot workflow. Full intake and chapt
 
 This is the only repository authorized for writes for this project.
 
+## Active textbook baseline
+
+The user supplied the full **2026 Class 8 Science** PDF.
+
+Canonical source record:
+
+`sources/class-8/science/2026/SOURCE_RECORD.md`
+
+Book identity verified from front matter:
+
+- `বিজ্ঞান — অষ্টম শ্রেণি`
+- National Curriculum and Textbook Board, Bangladesh
+- for the 2026 school year
+- revised October 2025
+
+The working copy is an image/scanned PDF with unreliable/absent native text extraction. Raw PDF inspection reports 162 pages, while the ChatGPT file-ingestion layer exposed 150 pages. Therefore visible rendered pages plus raw-PDF preflight are authoritative for page integrity; OCR/extractor page counts are advisory only.
+
+The project now uses a durable source/version architecture:
+
+- project-wide navigation/status: `CURRICULUM_INDEX.md`
+- versioned source record: `sources/class-8/science/2026/SOURCE_RECORD.md`
+- chapter concept inventory: `CHAPTER_ANALYSIS.md`
+- chapter topic-to-lesson/slide traceability: `COVERAGE_MATRIX.md`
+- textbook ambiguity/error/gap register: `SOURCE_ISSUES.md`
+- detailed claim provenance later: `SOURCE_MAP.md`
+
+Do not commit full textbook PDFs to Git by default; preserve links, edition metadata, fingerprints/checksums and page mappings instead.
+
 ## First-pilot bootstrap — mandatory
 
-For the **first real chapter**, a new chat must read:
+For the first real chapter, a new chat must read:
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
@@ -32,34 +60,7 @@ For the **first real chapter**, a new chat must read:
 12. `DECISIONS.md`
 13. task-relevant files under `templates/`
 
-For this first pilot, do not use the usual minimal-read shortcut. The pilot must carry forward every unresolved renderer/tool/typography/equation/workflow item from the Fable reconciliation.
-
-After the first pilot resolves those items, the compact recovery sequence in `OPERATING_BRIEF.md` may be restored for later chapters.
-
-## External Fable 5.1 audit reconciliation
-
-Accepted material improvements include:
-
-- corrected 60-minute timing architecture: CORE + FLEX + unallocated contingency
-- classroom-profile file instead of guessing hardware/connectivity
-- scanned/image source handling and visible-page verification of critical wording
-- RT-01 renderer calibration before locking a default renderer
-- stronger Bangla/equation/export checks
-- PDF/static/offline fallback policy
-- stronger retrieval/hinge/practice/exit pedagogy spine
-- replacement of rigid attention-reset timing with segment/response design
-- clearer Tier-2 vs Tier-3 source roles
-- expanded Hyperagent build/QA/interactive role
-
-Rejected/corrected audit assumptions include:
-
-- ChatGPT cannot write to GitHub: false in this connected workspace
-- no ChatGPT ↔ Beautiful.ai integration: false in this workspace
-- Canva is only an asset tool: not adopted
-- stage-scoped chats must replace one-chat-one-chapter: not adopted as default
-- PDF must be the sole canonical source artifact: not adopted
-
-Full finding-by-finding disposition and pending items remain in `FABLE_AUDIT_RECONCILIATION_2026-09-05.md`.
+For this first pilot, do not use the usual minimal-read shortcut.
 
 ## Active chapter
 
@@ -69,22 +70,21 @@ Canonical chapter path:
 
 `chapters/class-8/science/chapter-11-light/`
 
-Current chapter status:
+Current status:
 
 `ANALYSIS_COMPLETE_SPLIT_PENDING_APPROVAL`
 
 Key files:
 
-- `chapters/class-8/science/chapter-11-light/STATUS.md`
-- `chapters/class-8/science/chapter-11-light/CHAPTER_ANALYSIS.md`
+- `STATUS.md`
+- `CHAPTER_ANALYSIS.md`
+- `COVERAGE_MATRIX.md`
+- `SOURCE_ISSUES.md`
 
-## First-pilot intake result
+2026 source range:
 
-- Source supplied as ordered screenshots/image-only pages.
-- Visible-page verification was practical without OCR for this chapter.
-- G0 is `PASS_WITH_NOTES`: no material missing content was found; overlapping screenshots compensate for minor UI overlays/crops.
-- A visible `২০২৫` source-year marker exists, but full edition/publication metadata is not identifiable from the screenshots alone.
-- Important unresolved source issue: chapter-opening outcomes include `চশমার কাজ ব্যাখ্যা করতে পারব`, but no spectacles explanation appears in the supplied continuous chapter pages. Do not invent it; resolve against official source/curriculum before content freeze.
+- printed textbook pages 108–118
+- working-copy PDF pages 113–123
 
 ## Proposed lesson split — awaiting user approval
 
@@ -96,9 +96,18 @@ Estimated total planned instructional load: approximately 156 minutes across thr
 
 No storyboard, content freeze or renderer output is authorized before user split approval.
 
+## Source issues confirmed/flagged
+
+- The 2026 chapter opener includes `চশমার কাজ ব্যাখ্যা করতে পারব`, but the full chapter through printed p.118 contains no corresponding spectacles-working subsection. This is now confirmed as a source-internal gap, while its curriculum/teacher-guide treatment remains pending verification.
+- Introductory refraction wording may sound more universal than the later normal-incidence exception; final classroom wording requires source/science reconciliation.
+- Equal incident/emergent-angle wording must be bound to the demonstrated geometry rather than generalized without verification.
+- Photographic-camera chemistry must be clearly labelled as the film-camera model and independently checked before freeze.
+
+Full records: `chapters/class-8/science/chapter-11-light/SOURCE_ISSUES.md`.
+
 ## First chapter = pilot/calibration chapter
 
-The first completed chapter must provide evidence for:
+The first completed chapter must still provide evidence for:
 
 - Beautiful.ai vs Canva renderer quality/workflow
 - whether a hybrid renderer workflow is worth the complexity
@@ -110,11 +119,15 @@ The first completed chapter must provide evidence for:
 - Hyperagent SVG/equation/QA value
 - NotebookLM usefulness on the actual source
 - Gemini review cadence/value
-- source text-layer/OCR/vision reliability
 - realism of CORE/FLEX/contingency timing
 - which policy/template files are genuinely useful vs redundant
 
-Current pilot evidence: screenshot/vision ingestion works well for this chapter; this does not establish general PDF/OCR reliability across future chapters.
+Pilot evidence already obtained:
+
+- full-PDF ingestion behavior has been tested for this source;
+- native/extracted text is unreliable, but page rendering/vision is usable;
+- raw-PDF page count and file-ingestion page count can disagree, so raw preflight + visible page verification is necessary;
+- chapter/source folder convention and project-wide curriculum index have now been instantiated from real workflow evidence.
 
 ## Renderer status
 
@@ -122,7 +135,7 @@ No permanent default renderer is locked.
 
 Before the first final deck, run RT-01 using representative Bangla/science stress-test content through Beautiful.ai and Canva, adding another practical fallback only if needed.
 
-This chapter strongly tests Bangla/mixed-script rendering, degree symbols, ray labels, diagram labels, comparison tables and projector readability, but it is weak as a complex-equation/chemistry-notation stress test. RT-01 therefore still needs an explicit representative equation/notation item.
+This chapter strongly tests Bangla/mixed-script rendering, degree symbols, ray labels, diagram labels, comparison tables and projector readability, but remains weak as a complex-equation/chemistry-notation stress test.
 
 ## Timing status
 
@@ -130,17 +143,13 @@ Confirmed project requirement: one deck must fit within one 60-minute class.
 
 Current model:
 
-- CORE: approximately 40–45 minutes non-skippable
-- FLEX: approximately 5–10 minutes useful but skippable
+- CORE: approximately 40–45 minutes
+- FLEX: approximately 5–10 minutes
 - planned CORE + FLEX: approximately 50–55 minutes
-- contingency: 5–10 minutes intentionally unallocated inside the 60-minute class
+- contingency: 5–10 minutes intentionally unallocated
 - STRETCH: appendix/enrichment only
 
 All student responses, board writing, media setup/debrief, activities and transitions count as time.
-
-## Current source rule
-
-Do not assume a supplied NCTB source has a reliable text layer. Classify the actual source at intake. OCR/vision may assist, but important definitions/laws/formulas/units/exam-sensitive wording must be verified against the visible page/image when extraction is uncertain.
 
 ## Current tool position
 
@@ -151,18 +160,16 @@ Do not assume a supplied NCTB source has a reliable text layer. Classify the act
 - Canva: candidate full-deck renderer + specialist visual tool
 - Hyperagent: specialist build/QA/interactive engine
 
-Existing trusted educational resources remain preferred before custom media/simulation generation.
-
 ## Waiting for
 
 1. user approval/revision of the three-lesson split
-2. resolution of the spectacles outcome/source discrepancy before content freeze
+2. authoritative reconciliation of flagged source issues before content freeze
 3. classroom-profile details when available
 4. RT-01 before the first final deck
 
 ## Next action after split approval
 
-Proceed to source reconciliation/verification, approved lesson planning and resource discovery. Do not render final decks before the applicable quality gates and RT-01.
+Proceed to source reconciliation/verification, approved lesson planning and resource discovery. Then populate concrete slide identifiers into `COVERAGE_MATRIX.md` as storyboards are created.
 
 ## End-of-stage rule
 
