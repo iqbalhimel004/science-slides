@@ -1,9 +1,11 @@
 # Chapter Production Workflow
 
+Version: 2.0
+
 ## Phase 0 - Safety and state recovery
 
 1. Verify the exact repository is `iqbalhimel004/science-slides`.
-2. Read `AGENTS.md`, `PROJECT_MASTER.md`, `CURRENT_STATE.md`, `SOURCE_POLICY.md`, `QUALITY_GATES.md`, `SLIDE_STYLE_GUIDE.md`, `TOOL_ROUTING.md`, and `DECISIONS.md`.
+2. Read `AGENTS.md`, `PROJECT_MASTER.md`, `CURRENT_STATE.md`, `SOURCE_POLICY.md`, `QUALITY_GATES.md`, `SLIDE_STYLE_GUIDE.md`, `VISUAL_ENGAGEMENT_SYSTEM.md`, `TOOL_ROUTING.md`, and `DECISIONS.md`.
 3. Confirm one active chapter only.
 
 ## Phase 1 - Chapter intake
@@ -38,6 +40,8 @@ Produce `CHAPTER_ANALYSIS.md` containing:
 - numerical/problem-solving requirements
 - likely student misconceptions/difficulties
 - textbook examples and applications
+- visual complexity
+- likely high-engagement opportunities
 - approximate total instructional load
 
 ## Phase 3 - Determine lesson count and split
@@ -53,6 +57,7 @@ For each proposed lesson specify:
 - estimated teaching time
 - reason for the boundary
 - bridge to previous/next lesson
+- major visual/interaction opportunities
 
 Target 50-55 minutes planned time per lesson; 60 minutes is a hard maximum.
 
@@ -82,6 +87,8 @@ For each approved lesson create `LESSON_PLAN.md` with:
 - planned questions
 - examples/numericals
 - misconceptions to address
+- attention-reset opportunities where useful
+- visual teaching opportunities
 - optional homework/enrichment
 
 Aim for 50-55 planned minutes and retain practical buffer.
@@ -96,11 +103,11 @@ Before generating custom assets, search for suitable existing:
 - interactive models
 - authoritative images/visualizations
 
-Record selected resources in `RESOURCES.md` / `ASSETS.md` with source, URL/reference, purpose, target slide, classroom suitability, and licensing/usage note where relevant.
+Record selected resources in `RESOURCES.md` / `ASSETS.md` with source, URL/reference, purpose, target slide, classroom suitability, license/usage status, reuse mode, attribution requirement, and fallback where needed.
 
 Custom generation is a fallback, not the default.
 
-## Phase 7 - Storyboard
+## Phase 7 - Storyboard and visual architecture
 
 Create `STORYBOARD.md` for every lesson.
 
@@ -111,13 +118,19 @@ Each slide/item should record:
 - purpose
 - exact approved content or content specification
 - visual/resource requirement
+- visual purpose: Motivate / Explain / Compare / Locate / Sequence / Quantify / Predict / Practice / Summarize
+- layout/slide-family intent
 - teacher note
 - student interaction if any
+- expected response where relevant
 - estimated time
 - source reference(s)
 - transition to next idea
+- static fallback for core online/interactive elements where relevant
 
 The storyboard's total planned time must remain within the lesson limit.
+
+Also inspect visual rhythm across the deck. Avoid long runs of the same composition and place meaningful attention resets where pedagogy benefits.
 
 ## Phase 8 - Independent review when useful
 
@@ -128,6 +141,8 @@ Use Gemini selectively as an independent/adversarial reviewer for:
 - missing-topic checks
 - lesson decomposition sanity checks
 - misconception coverage
+- cognitive-load concerns
+- visual/pedagogical mismatch
 - final chapter coverage audit
 
 Treat Gemini findings as findings to verify, not automatic truth. Incorporate only validated corrections.
@@ -141,12 +156,13 @@ Before design/rendering, pass:
 - scientific QA
 - formula/unit QA
 - timing QA
-- pedagogy/clarity QA
-- chapter coverage QA for the work completed so far
+- pedagogy/clarity/cognitive-load QA
+- resource suitability QA
+- storyboard readiness QA
 
 Once approved, mark content `CONTENT_FROZEN` for design purposes. Design tools must not silently alter scientific content.
 
-## Phase 10 - Final deck rendering
+## Phase 10 - Visual design and rendering
 
 Default renderer: Beautiful.ai.
 
@@ -154,17 +170,55 @@ Use Canva when a custom infographic, worksheet, poster, special diagram, or visu
 
 Hyperagent is reserved for genuinely needed custom simulation/interactive/media assets.
 
-After rendering, perform visual/classroom QA:
+During rendering:
 
+- apply the project master theme
+- preserve grade-appropriate density
+- preserve the slide's declared visual purpose
+- improve layout without changing scientific meaning
+- use motion only when pedagogically meaningful
+- keep static fallbacks available
+
+Any meaning-changing edit reopens content QA.
+
+## Phase 11 - Visual engagement, accessibility, and classroom QA
+
+Check:
+
+- visual attractiveness and age appropriateness
+- focal hierarchy
+- visual rhythm and layout variation
+- cognitive load and clutter
 - projector readability
-- text density
+- contrast
 - Bangla/English terminology consistency
-- diagram correctness
-- layout hierarchy
+- Bangla glyph/conjunct rendering
+- equations/symbols
+- diagram correctness and label size
 - image relevance
 - no scientific content drift introduced by the design tool
+- no key visual requires zooming
 
-## Phase 11 - Chapter-wide final audit
+## Phase 12 - Actual artifact/export QA
+
+Validate the format that will actually be used in class.
+
+As applicable, test:
+
+- Beautiful.ai playback
+- PDF/PPTX export
+- font substitution
+- image crops
+- equations/symbols
+- links and QR codes
+- media launch
+- simulation launch
+- animations/transitions
+- static/offline fallbacks
+
+Do not mark a lesson classroom-ready solely because it looks correct in the editor.
+
+## Phase 13 - Chapter-wide final audit
 
 Compare the original chapter against all lessons.
 
@@ -181,8 +235,9 @@ Also check:
 - logical continuity between lessons
 - no orphan concept lacking prerequisite explanation
 - all presentations remain within the timing limit
+- visual conventions remain coherent across the chapter
 
-## Phase 12 - Completion and handoff
+## Phase 14 - Completion and handoff
 
 Update:
 
@@ -191,10 +246,11 @@ Update:
 - chapter `STATUS.md`
 - `CURRENT_STATE.md`
 - `DECISIONS.md` for durable decisions
+- master-theme decisions if the first chapter or a design-system change was approved
 
 A chapter is not `COMPLETE` until every applicable quality gate passes.
 
-## Phase 13 - Optional post-class calibration
+## Phase 15 - Optional post-class calibration
 
 After classroom delivery, record:
 
@@ -204,5 +260,7 @@ After classroom delivery, record:
 - successful resources
 - student misconceptions observed
 - activities that overran
+- visuals that noticeably improved attention/comprehension
+- visuals or effects that distracted students
 
 Revise to a later version (for example `v1.1`) without losing the prior classroom-ready version history.
