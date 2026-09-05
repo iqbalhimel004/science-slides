@@ -2,25 +2,20 @@
 
 Last updated: 2026-09-06
 
-## Project status
-
-Plan v3.0 remains canonical, with durable policy refinements recorded in `OPERATING_BRIEF.md`, `SOURCE_POLICY.md`, `WORKFLOW.md`, `DECISIONS.md` and `GEMINI_REVIEW_WORKFLOW.md`.
-
-The first real chapter is the pilot/calibration chapter. Full chapter analysis is complete, the four-lesson split is user-approved, Gemini Review Gate A is completed and independently reconciled, source reconciliation pass 2 is complete, all four lesson plans/storyboards/resource maps/QA records now exist, all textbook-body coverage rows are mapped to concrete slide IDs/dispositions, and the chapter-wide storyboard/resource/duplication audit is complete.
-
 ## Canonical repository
 
 `iqbalhimel004/science-slides`
 
 This is the only repository authorized for writes for this project.
 
-## Durable workflow rules
+## Durable rules
 
 - NCTB controls syllabus/exam context, not automatic scientific truth.
-- Material science must be checked against current authoritative sources.
+- Material science is checked against current authoritative sources.
 - **Finish → record → then continue.**
-- External-tool prompts must be one self-contained fenced code block for one-click copy (`D-033`).
-- Planned Gemini reviews use a fresh single-file downloadable Markdown bundle, not GitHub browsing/import (`D-034`, `GEMINI_REVIEW_WORKFLOW.md`).
+- External-tool prompts are one self-contained fenced code block for one-click copy (`D-033`).
+- Planned Gemini reviews use a fresh downloadable single-file Markdown bundle, not GitHub browsing/import (`D-034`).
+- Gemini Gate B is a **targeted implementation audit**, not a second Gate A (`D-035`).
 
 ## Active chapter
 
@@ -30,94 +25,93 @@ Canonical path:
 `chapters/class-8/science/chapter-11-light/`
 
 Current status:
-**ALL_4_STORYBOARDS_MAPPED — CHAPTER_AUDIT_COMPLETE — GEMINI_GATE_B_NEXT**
+**GEMINI_GATE_B_TARGETED_BUNDLE_READY — EXTERNAL_RUN_PENDING**
 
-## Current four-lesson production state
+## Production state
 
-| Lesson | CORE | FLEX | Planned | Contingency | Storyboard/resource/QA |
-|---|---:|---:|---:|---:|---|
-| L1 | 43 | 7 | 50 | 10 | complete draft stage |
-| L2 | 44 | 8 | 52 | 8 | complete draft stage |
-| L3 | 42 | 8 | 50 | 10 | complete draft stage |
-| L4 | 46 | 8 | 54 | 6 | complete draft stage |
+All four lesson plans, storyboards, resource maps and storyboard QA records exist. All textbook-body coverage rows are mapped to concrete slide IDs/dispositions. Chapter-wide storyboard/resource/duplication audit is complete.
+
+| Lesson | CORE | FLEX | Planned | Contingency |
+|---|---:|---:|---:|---:|
+| L1 | 43 | 7 | 50 | 10 |
+| L2 | 44 | 8 | 52 | 8 |
+| L3 | 42 | 8 | 50 | 10 |
+| L4 | 46 | 8 | 54 | 6 |
 
 Chapter planned CORE + FLEX total: **206 minutes**.
 
-Lesson 4's storyboard-level timing superseded the older 44-minute CORE estimate. The current 54-minute planned total still passes the project timing rule but must not absorb more CORE content without removing/compressing something else.
+L4 is closest to the ceiling. Do not add more CORE content before Gate B reconciliation.
 
-## Canonical lesson artifacts
+## Gate A
 
-### Lesson 1
-- `lessons/lesson-01/LESSON_PLAN.md`
-- `lessons/lesson-01/STORYBOARD.md`
-- `lessons/lesson-01/RESOURCES.md`
-- `lessons/lesson-01/QA.md`
+Completed externally and independently reconciled.
 
-### Lesson 2
-- `lessons/lesson-02/LESSON_PLAN.md`
-- `lessons/lesson-02/STORYBOARD.md`
-- `lessons/lesson-02/RESOURCES.md`
-- `lessons/lesson-02/QA.md`
+Canonical Gate-A result:
+**ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED**
 
-### Lesson 3
-- `lessons/lesson-03/LESSON_PLAN.md`
-- `lessons/lesson-03/STORYBOARD.md`
-- `lessons/lesson-03/RESOURCES.md`
-- `lessons/lesson-03/QA.md`
+Important accepted corrections remain canonical:
+- L1 phenomenon-first sequencing;
+- normal-incidence exception;
+- optical-density clarification;
+- slab geometry limit;
+- mirage gradient/progressive bending;
+- minimal diverging-lens prerequisite before myopia correction;
+- cornea major initial focusing + crystalline-lens accommodation;
+- spectacles clearly labelled supplementary source-gap repair;
+- film-camera chemistry context label;
+- eye-camera shared-function/different-mechanism guardrail.
 
-### Lesson 4
-- `lessons/lesson-04/LESSON_PLAN.md`
-- `lessons/lesson-04/STORYBOARD.md`
-- `lessons/lesson-04/RESOURCES.md`
-- `lessons/lesson-04/QA.md`
+## Chapter audit
 
-## Coverage and audit
-
-`COVERAGE_MATRIX.md` now maps C11-001 through C11-021 and all approved supplementary bridge concepts to concrete slide IDs/dispositions.
-
-Chapter-wide audit:
+Canonical audit:
 `chapters/class-8/science/chapter-11-light/CHAPTER_STORYBOARD_AUDIT.md`
 
-Audit verdict:
+Verdict:
 **PASS_TO_GEMINI_GATE_B_WITH_TARGETED_NOTES**
 
-No material lesson-boundary change or missing textbook-body topic was found. Purposeful retrieval/repetition is justified. All four CORE lessons are offline-capable.
+No material lesson-boundary change, missing textbook-body topic or material duplication was found. All CORE lessons are offline-capable.
 
-## Remaining scientific/source risks before freeze
+## Gate B — targeted method
 
-- built ray diagrams must be visually checked for geometry/direction/labels;
-- eye anatomy/accommodation/corrective-lens diagrams must be checked after drawing;
-- film-processing wording must remain accurate after visual compression;
-- pin a current authoritative digital-camera source if L4-S11 remains CORE;
-- NCTB exercise-based redraws must be visually compared with the visible textbook pages;
-- Gemini Gate B must be completed and independently reconciled.
+Gate B must **not** repeat Gate A. It reviews only new implementation-layer risk:
 
-## Gemini review state
+- regression against accepted Gate-A corrections;
+- slide-level science drift;
+- misleading diagram/visual specifications;
+- missing coverage/prerequisite/continuity;
+- unnecessary duplication;
+- timing/cognitive-load risk;
+- resource/fallback risk;
+- pre-freeze blockers.
 
-Gate A:
-- external review completed
-- raw review saved
-- independent reconciliation completed
-- validated changes implemented
+Previously reconciled science is treated as established unless the current storyboard introduces a contradiction, omission, regression or new implementation risk.
 
-Gate B:
-**READY TO PACKAGE — NOT YET RUN**
+Canonical instructions:
+`chapters/class-8/science/chapter-11-light/reviews/GEMINI_GATE_B_TARGETED_PROMPT.md`
 
-Required method:
-1. generate fresh consolidated Markdown bundle from current canonical files;
-2. record manifest/checksum/fingerprint in GitHub;
-3. give user the downloadable bundle;
-4. provide exactly one one-click-copy Gemini prompt in one fenced block;
-5. user uploads bundle to Gemini and returns full review;
-6. save raw review, independently validate findings, disposition ACCEPT/PARTIAL/REJECT;
-7. implement validated changes and checkpoint.
+## Gate B transport bundle
 
-## Renderer status
+User-download filename:
+`GEMINI_GATE_B_TARGETED_BUNDLE.md`
 
-No renderer is locked. RT-01 remains after Gate B reconciliation and final content QA/freeze prerequisites.
+Bundle manifest:
+`chapters/class-8/science/chapter-11-light/reviews/GEMINI_GATE_B_BUNDLE_MANIFEST.md`
 
-## Next authorized action
+Snapshot:
+- size: `18,656 bytes`
+- SHA-256: `3d4e7b78700399cf3baaa46693f21f1ef5a796057c7023a5d919c27b34145fa8`
 
-**Generate the fresh Gemini Gate B bundle and manifest.**
+The bundle is a transport snapshot, not canonical truth. If any review-relevant canonical file changes before Gemini runs, regenerate the bundle.
 
-Do not content-freeze or render final decks before Gate B reconciliation and the final G1–G7 pass.
+## Remaining pre-freeze work
+
+1. User uploads current Gate B bundle to Gemini and returns full review text.
+2. Save raw review in GitHub.
+3. Independently validate every material **new** finding.
+4. Record `ACCEPT / PARTIAL / REJECT`.
+5. Implement only validated changes.
+6. Checkpoint status.
+7. Run final relevant G1–G7 and content freeze.
+8. Then run RT-01, select renderer routing, render, export/projector/offline QA.
+
+Do not content-freeze or render final decks before Gate B reconciliation.
