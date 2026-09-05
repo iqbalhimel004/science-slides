@@ -6,7 +6,7 @@ Last updated: 2026-09-05
 
 Plan v3.0 is the current canonical operating plan.
 
-The first real chapter is in the pilot workflow. Full chapter analysis is complete. The initial three-lesson split has been revised to a **four-lesson proposal** after the user requested the prerequisite/related concepts necessary for deep understanding of the chapter, not only the explicit textbook sequence. The revised split is still awaiting user approval.
+The first real chapter is in the pilot workflow. Full chapter analysis is complete and the revised **four-lesson split has been explicitly approved by the user**.
 
 ## Canonical repository
 
@@ -52,7 +52,7 @@ Canonical chapter path:
 
 Current status:
 
-`ANALYSIS_COMPLETE_SPLIT_PENDING_APPROVAL`
+`LESSON_SPLIT_APPROVED`
 
 Key files:
 
@@ -67,7 +67,7 @@ Key files:
 - printed textbook pages 108–118
 - working-copy PDF pages 113–123
 
-## Revised lesson split — awaiting user approval
+## Approved lesson split
 
 1. **আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম** — CORE 44 + FLEX 8 = 52 min
 2. **প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন** — CORE 44 + FLEX 8 = 52 min
@@ -76,7 +76,7 @@ Key files:
 
 Estimated total planned instructional load: approximately 209 minutes across four 60-minute classes, excluding unallocated contingency and STRETCH.
 
-The revised split adds clearly labelled supplementary prerequisite/bridge concepts needed for conceptual understanding:
+The approved split includes clearly labelled supplementary prerequisite/bridge concepts needed for conceptual understanding:
 
 - what light is; minimal photon/wave overview
 - how seeing occurs
@@ -93,11 +93,9 @@ The revised split adds clearly labelled supplementary prerequisite/bridge concep
 
 These additions must not be presented as verbatim NCTB chapter body content.
 
-No storyboard, content freeze or renderer output is authorized before user split approval.
-
 ## Source issues confirmed/flagged
 
-- The 2026 chapter opener includes `চশমার কাজ ব্যাখ্যা করতে পারব`, but the full chapter through printed p.118 contains no corresponding spectacles-working subsection. A 5-minute Lesson 3 slot is reserved but not content-frozen; intended scope must be verified before use.
+- The 2026 chapter opener includes `চশমার কাজ ব্যাখ্যা করতে পারব`, but the full chapter through printed p.118 contains no corresponding spectacles-working subsection. A Lesson 3 slot is reserved but not content-frozen; intended scope must be verified before use.
 - Introductory refraction wording may sound more universal than the later normal-incidence exception; final classroom wording requires source/science reconciliation.
 - Equal incident/emergent-angle wording must be bound to the demonstrated geometry rather than generalized without verification.
 - Photographic-camera chemistry must be clearly labelled as the film-camera model and independently checked before freeze.
@@ -150,16 +148,16 @@ All student responses, board writing, media setup/debrief, activities and transi
 - Canva: candidate full-deck renderer + specialist visual tool
 - Hyperagent: specialist build/QA/interactive engine
 
-## Waiting for
+## Next authorized stage
 
-1. user approval/revision of the four-lesson split in `LESSON_SPLIT_PROPOSAL_V2.md`
-2. authoritative reconciliation of flagged source issues before content freeze
-3. classroom-profile details when available
-4. RT-01 before the first final deck
+Proceed to:
 
-## Next action after split approval
+1. source reconciliation/verification for flagged textbook issues and supplementary bridge claims;
+2. remap `COVERAGE_MATRIX.md` to the approved four-lesson structure;
+3. detailed lesson planning and resource discovery;
+4. storyboard development.
 
-Proceed to source reconciliation/verification, approved lesson planning and resource discovery. Then remap `COVERAGE_MATRIX.md` to the approved four-lesson structure and populate concrete slide identifiers as storyboards are created.
+Final content freeze and final deck rendering remain blocked until applicable source/QA gates pass and RT-01 is completed.
 
 ## End-of-stage rule
 
