@@ -1,7 +1,7 @@
 # Source Map — Class 8 Science, Chapter 11: আলো
 
 Date: 2026-09-05
-Status: SOURCE_RECONCILIATION_PASS_1_COMPLETE
+Status: SOURCE_RECONCILIATION_PASS_2_COMPLETE_AFTER_GEMINI_GATE_A
 Primary syllabus baseline: `NCTB-C8-SCI-2026-REV2025-10`
 
 Purpose: keep textbook scope, scientific verification, supplementary bridge concepts and classroom treatment traceable without copying long source passages into slides.
@@ -153,9 +153,11 @@ Supports:
 - electromagnetic radiation exhibits wave-like and particle-like properties
 - photon as a discrete quantum/particle-like description of electromagnetic radiation
 
-Classroom limit:
+Classroom limit after Gate A:
 
-- one short conceptual statement only; no quantum derivation or `E=hf` in CORE.
+- do **not** teach wave-particle duality as a separate CORE concept;
+- keep, at most, one brief non-assessed modern note that quantum descriptions use photons as energy quanta;
+- no quantum mathematics.
 
 ### S12 — NASA Science, Visible Light
 
@@ -177,7 +179,8 @@ Supports:
 
 Classroom treatment:
 
-- keep the distinction qualitative; avoid turning 'optical density' into an unnecessary numerical subtopic.
+- keep the distinction qualitative;
+- do not add specific kerosene/water numerical values unless an authoritative table is separately pinned.
 
 ### S14 — Kodak, Processing KODAK Motion Picture Films, Module 5
 
@@ -198,25 +201,98 @@ Supports:
 - fixing removes unexposed silver halide with sodium thiosulfate ('hypo')
 - the remaining metallic-silver pattern constitutes the negative in black-and-white film processing
 
+### S16 — OpenStax Physics, Lenses
+
+URL: `https://openstax.org/books/physics/pages/16-3-lenses`
+
+Supports:
+
+- cornea and crystalline lens act together to focus light on the retina;
+- the largest refractive-index change and greatest bending occur at the cornea;
+- the cornea provides the majority of the eye's focusing power, while the lens provides the remaining adjustable focusing.
+
+Classroom treatment:
+
+- use `cornea does most initial bending; crystalline lens fine-tunes focus`;
+- omit diopter numbers in CORE.
+
+### S17 — OpenStax University Physics Vol. 3, The Eye
+
+URL: `https://openstax.org/books/university-physics-volume-3/pages/2-5-the-eye`
+
+Supports:
+
+- cornea provides most focusing power;
+- the crystalline lens supplies finer focus;
+- ciliary muscles change lens shape and focal length;
+- lens-to-retina distance is essentially fixed in the simplified eye model;
+- this focusing adjustment is accommodation.
+
+### S18 — OpenStax University Physics Vol. 3, Thin Lenses
+
+URL: `https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses`
+
+Supports:
+
+- convex/converging lens bends parallel rays toward a focus;
+- concave/diverging lens spreads parallel rays away from the principal axis;
+- sufficient for the minimal spectacle-correction prerequisite.
+
+### S19 — OpenStax University Physics Vol. 3, The Camera
+
+URL: `https://openstax.org/books/university-physics-volume-3/pages/2-6-the-camera`
+
+Supports:
+
+- cameras form real images using lens systems;
+- conventional point-and-shoot cameras may use movable lenses to change lens-to-image distance;
+- cell-phone/compact camera designs can use fixed detector geometry and other optical/software approaches;
+- therefore a single universal `camera focuses by moving lens-to-sensor distance` statement is too broad.
+
+Classroom treatment:
+
+- compare eye and camera by shared focusing function, then explicitly state different mechanism;
+- for conventional textbook cameras, lens/lens-group movement relative to film/sensor is an acceptable qualitative example.
+
+### S20 — OpenStax optics mirage treatment
+
+Reference: OpenStax Physics optics/refraction discussion and critical-thinking treatment of mirages.
+
+Supports:
+
+- mirage formation depends on temperature-dependent refractive-index variation in air;
+- hot air near the ground has a different refractive index than cooler air above;
+- ray paths are bent through the refractive-index variation.
+
+Classroom treatment:
+
+- show a temperature/refractive-index gradient and progressive ray bending;
+- avoid a single hard mirror-like boundary;
+- keep NCTB/TIR exam-context wording separate from the more accurate visual clarification.
+
 ## Supplementary bridge concept disposition
 
 | Bridge concept | Status | Source basis | Classroom limit |
 |---|---|---|---|
-| What is light? | VERIFIED | S11, S12 | grade-appropriate; visible EM radiation + light as EM radiation; avoid over-definition |
-| Photon/wave overview | VERIFIED | S11 | one concise line; no quantum math |
-| How seeing occurs | VERIFIED | S9 | light reaches eye and is focused on retina |
-| Straight-line ray model | VERIFIED | OpenStax geometric-optics treatment | present as geometric-optics model in uniform medium |
+| What is light? | VERIFIED | S11, S12 | grade-appropriate EM-radiation description |
+| Photon note | VERIFIED_NONASSESSED | S11 | one very brief modern note only; not a separate CORE concept |
+| How seeing occurs | VERIFIED | S9/S16/S17 | light reaches eye and is focused on retina |
+| Straight-line ray model | VERIFIED | geometric-optics treatment | uniform-medium model |
 | Optical medium/interface/normal | VERIFIED | S2, S3 | terminology only |
 | Reflection vs refraction | VERIFIED | S2/S3 | compare mechanisms visually |
 | Speed change and bending | VERIFIED | S2/S3 | qualitative only |
-| Optical vs mass density | VERIFIED_CLARIFICATION | S13 + refractive-index/speed support from S2/S3 | no numerical density treatment |
-| Normal-incidence exception | VERIFIED_CLARIFICATION | Snell law from S2/S3 | ray undeviated; speed may still change |
+| Optical vs mass density | VERIFIED_CLARIFICATION | S13 + S2/S3 | qualitative; no unsourced numeric comparison |
+| Normal-incidence exception | VERIFIED_CLARIFICATION | S2/S3 | ray undeviated; speed may still change |
 | Actual vs apparent position | VERIFIED | NCTB + S2 | use ray-backtracking visual |
-| Convex lens/focus/focal length | VERIFIED | S7/S8 | prerequisite only; no lens formula CORE |
+| Mirage gradient clarification | VERIFIED_CLARIFICATION | S20 | gradual/gradient visual; no gradient math |
+| Convex lens/focus/focal length | VERIFIED | S7/S8/S18 | no lens formula CORE |
+| Diverging/concave lens action | VERIFIED_MINIMAL_PREREQUISITE | S18 | only enough for spectacle correction |
 | Real/virtual; erect/inverted; magnified/reduced | VERIFIED | S8 | only distinctions needed by chapter |
-| Accommodation | VERIFIED | S9 | qualitative focusing change only |
-| Spectacles principle | VERIFIED_SCIENCE / SOURCE_GAP_IN_NCTB_BODY | S10 + NCTB outcome | minimal corrective-lens principle; label supplementary |
+| Cornea's major focusing role | VERIFIED_CLARIFICATION | S16/S17 | no diopter values CORE |
+| Accommodation | VERIFIED | S9/S17 | qualitative lens-shape/optical-power change |
+| Spectacles principle | VERIFIED_SCIENCE / SOURCE_GAP_IN_NCTB_BODY | S10/S18 + NCTB outcome | minimal corrective-lens principle; label supplementary |
+| Eye-camera focusing-mechanism distinction | VERIFIED_CLARIFICATION | S17/S19 | shared function, different mechanism; no universal camera-mechanism claim |
 
 ## Freeze rule
 
-Before content freeze, every critical definition/rule shown on slides must be checked against this map and the visible NCTB page. If the NCTB wording is scientifically defensible but simplified, preserve exam-safe wording and add a concise clarification. If an external source expands beyond NCTB scope, label it supplementary and keep it out of mandatory exam-facing recall unless the user explicitly wants enrichment.
+Before content freeze, every critical definition/rule shown on slides must be checked against this map and the visible NCTB page. If NCTB wording is scientifically defensible but simplified, preserve exam-aware wording and add a concise clarification. If NCTB is materially misleading or outdated, current authoritative science controls the classroom explanation while the textbook wording is separately identified for exam awareness.
