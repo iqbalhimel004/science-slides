@@ -1,56 +1,97 @@
 # Agent Operating Rules
 
+Version: 3.0
+Last revised: 2026-09-05
+
 ## Absolute write boundary
 
 For this project, writes are authorized only to:
 
 `iqbalhimel004/science-slides`
 
-Before every GitHub write, verify the exact `repository_full_name`. If it is not exactly `iqbalhimel004/science-slides`, abort the write.
+Before every GitHub write, verify the exact `repository_full_name`. Abort if it differs. Do not mutate any other connected repository unless the user separately names and authorizes it.
 
-Do not modify, commit to, create issues/PRs in, delete from, or otherwise mutate any other connected repository while working on this project unless the user gives a separate explicit instruction naming that repository.
+## Canonical memory and startup
 
-## Canonical memory
+GitHub is the durable source of truth. Chat history is temporary context.
 
-This repository is the durable source of truth for the Science Slides project. Chat history is temporary context. When repository state and old chat history disagree, prefer the current repository unless the user explicitly overrides it.
+For the first pilot chapter, recover state in this order:
 
-## One-chat-one-chapter rule
+1. `OPERATING_BRIEF.md`
+2. `CURRENT_STATE.md`
+3. `FABLE_AUDIT_RECONCILIATION_2026-09-05.md`
+4. `CLASSROOM_PROFILE.md`
+5. task-relevant deeper policy/template files
 
-A normal production chat handles one complete textbook chapter only. Do not mix chapter production across multiple chapters in the same chat unless the user explicitly requests an exception.
+The Fable reconciliation is required for the first pilot because it records accepted, rejected, partially accepted and pending audit findings.
 
-## Required chapter intake behavior
+## Normal production scope
 
-When the user supplies a chapter PDF or screenshots:
+Default: one complete textbook chapter per production chat.
 
-1. Verify completeness, order, readability, chapter identity, and page continuity before planning lessons.
-2. Do not silently infer missing or unreadable textbook content.
-3. Analyze the full chapter before deciding the number of presentations.
-4. Determine the lesson split from instructional load and logical concept boundaries, not page count.
-5. Target 50-55 minutes of planned teaching per presentation; 60 minutes is a hard ceiling.
-6. Obtain/record user approval of the proposed lesson split before final deck production.
+If context becomes operationally too large, save an exact GitHub checkpoint before continuing in a new chat. Do not depend on an ad-hoc conversational summary.
+
+## Chapter intake non-negotiables
+
+When a chapter PDF/screenshots are supplied:
+
+1. verify chapter identity, completeness, page order, readability and text-layer/OCR status
+2. do not silently infer missing/cropped/unreadable content
+3. analyze the entire visible chapter before deciding presentation count
+4. split by instructional load and concept boundaries, not page count
+5. verify critical wording against the visible source page/image when extraction is uncertain
+6. propose the <=60-minute lesson split and obtain user approval before final deck production
+
+The first deliverable is chapter analysis/decomposition, not a slide deck.
+
+## 60-minute rule
+
+For the current confirmed 60-minute class requirement:
+
+- CORE: ~40–45 min non-skippable
+- FLEX: ~5–10 min useful but skippable
+- CORE + FLEX: ~50–55 min planned
+- contingency: 5–10 min intentionally unallocated
+- STRETCH: appendix/enrichment only
+
+Count questions, student responses, board work, examples, activities, media setup/debrief, transitions and exit check as real time.
 
 ## Source discipline
 
-- NCTB textbook/curriculum/teacher guide is primary for syllabus-critical wording and scope.
-- Established Bangladeshi educational sources such as 10 Minute School may corroborate definitions and explanations.
-- International authoritative sources may be used for supplementary validation.
-- Important definitions, laws, formulas, units, and syllabus-critical claims must be source-traceable.
-- Do not present model-memory-only wording as an authoritative textbook definition when a reliable source is available.
-- If sources conflict materially, flag the conflict and resolve it explicitly rather than silently choosing one.
+- Current NCTB textbook/curriculum/teacher guide is primary for syllabus scope and exam-sensitive wording.
+- Important definitions, laws, formulas, units and syllabus-critical claims must be source-traceable.
+- Tier-2 Bangladeshi education sources may corroborate local wording/convention and explanation ideas; they are not independent scientific authority by default.
+- Authoritative Tier-3 sources may validate science and provide licensed resources.
+- Keep exam-safe/source-grounded wording separate from simpler classroom explanation when useful.
+- Record material source conflicts explicitly.
 
-## Asset discipline
+## Pedagogy / visual discipline
 
-Search for suitable trusted existing simulations, animations, videos, and diagrams before generating custom equivalents. Prefer reuse when scientifically correct, age-appropriate, accessible, and classroom-suitable. Generate custom media only when it fills a real instructional gap or materially improves teaching.
+- retrieval/prior knowledge at the start
+- coherent concept sequence
+- meaningful student response in major segments
+- hinge/check-for-understanding where useful
+- guided practice/application
+- misconception correction where relevant
+- summary + exit check
+- visual engagement without decorative clutter
+- no rigid 7–10-minute attention-span rule; use segment/response design instead
+- motion only when pedagogically justified
+- static/offline fallback for classroom-critical online/animated elements
 
-## Tool roles
+## Tool-routing rules
 
-- ChatGPT: lead orchestration, pedagogy, lesson architecture, source reconciliation, QA, project state.
-- NotebookLM: source-grounded extraction from uploaded materials.
-- Gemini: independent/adversarial review and targeted second-opinion fact checking.
-- Beautiful.ai: primary final deck rendering after content freeze.
-- Canva: supplementary visual design for infographics, worksheets, diagrams, posters, and custom visual layouts.
-- Hyperagent: custom simulation/interactive/advanced media only when justified.
+Do not assume one renderer is permanently best before testing.
+
+- ChatGPT: lead content/pedagogy/QA/state coordination
+- NotebookLM: conditional source-grounded support
+- Gemini AI Pro: targeted independent review/research
+- Beautiful.ai: candidate full-deck renderer
+- Canva: candidate full-deck renderer + specialist visual tool
+- Hyperagent: specialist build/QA/interactive engine
+
+Before the first final deck, run RT-01 on representative Bangla/science content and record the renderer decision in `DECISIONS.md`.
 
 ## Completion discipline
 
-A chapter is not complete until chapter-wide coverage, duplication, timing, scientific accuracy, source traceability, visual usability, and cross-lesson continuity have all been checked and the repository state has been updated.
+A chapter is not complete until source/science/timing/pedagogy/visual/export/fallback/coverage/continuity checks pass and repository state is updated.
