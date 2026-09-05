@@ -1,15 +1,20 @@
 # Chapter Production Workflow
 
-Version: 3.1
+Version: 3.2
 Last revised: 2026-09-05
 
 ## Phase 0 — Safety and state recovery
 
 1. Verify the exact repository is `iqbalhimel004/science-slides`.
 2. Read `OPERATING_BRIEF.md` and `CURRENT_STATE.md`.
-3. If a chapter is active, read its `STATUS.md` and only the files needed for the current stage.
-4. Read deeper policy files only when relevant to the task.
-5. Treat GitHub as canonical operational memory. Do not rely on chat history as the only record of completed work.
+3. If a Gemini review gate is pending/current, read `GEMINI_REVIEW_WORKFLOW.md`.
+4. If a chapter is active, read its `STATUS.md` and only the files needed for the current stage.
+5. Read deeper policy files only when relevant to the task.
+6. Treat GitHub as canonical operational memory. Do not rely on chat history as the only record of completed work.
+
+## Universal user-prompt rule
+
+Whenever the user must paste a prompt into an external tool, provide the whole prompt in **one self-contained fenced code block** so it can be copied in one action. Do not split a single prompt across blocks or require manual merging with surrounding prose.
 
 ## Phase 1 — Chapter intake and source integrity
 
@@ -218,6 +223,25 @@ High-value review points:
 1. lesson-split/decomposition review for complex chapters or several-lesson chapters
 2. pre-freeze review of difficult science, misconception handling, exam-sensitive wording, outdated-textbook risk or missing coverage
 3. targeted external research when needed
+
+### Standard Gemini transport method
+
+Follow `GEMINI_REVIEW_WORKFLOW.md`.
+
+For each planned Gemini gate:
+
+1. generate a **fresh single consolidated Markdown bundle** from the current canonical GitHub files relevant to that gate;
+2. provide it to the user as a downloadable file;
+3. provide exactly one one-click-copy prompt in a single fenced code block;
+4. do not depend on Gemini GitHub browsing/import;
+5. record a manifest/fingerprint in GitHub;
+6. when Gemini returns the review, save the raw review first;
+7. independently validate material findings;
+8. record `ACCEPT / PARTIAL / REJECT` dispositions;
+9. implement only validated changes;
+10. checkpoint status before continuing.
+
+A bundle becomes stale when any included canonical file changes and must then be regenerated.
 
 Findings must be verified independently before incorporation. Gemini cannot override the source hierarchy by itself.
 
