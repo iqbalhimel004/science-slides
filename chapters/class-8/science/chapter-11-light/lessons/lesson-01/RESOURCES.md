@@ -2,7 +2,7 @@
 
 Date: 2026-09-06
 Lesson: `আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম`
-Status: RESOURCE_MAP_DRAFT_COMPLETE
+Status: RESOURCE_MAP_UPDATED_FOR_V2_PRODUCTION
 
 All CORE resources must work offline. High-risk ray diagrams should be deterministic/custom and checked after rendering.
 
@@ -98,17 +98,62 @@ All CORE resources must work offline. High-risk ray diagrams should be determini
 - Offline fallback: primary static diagram
 - QA status: SPEC_COMPLETE — GEOMETRY_QA_PENDING
 
-## R1-09 — PhET Bending Light optional support
+## R1-09 — Primary simulation: PhET Bending Light
 
-- Target: FLEX/teacher support only
+- Target: L1-F02 / FLEX teacher support only
 - Type: simulation
-- Purpose: optional dynamic visualization of refraction
+- Purpose: short prediction-driven dynamic visualization of refraction after students already know the normal and bending-direction rules
 - Source/creator: PhET Interactive Simulations, University of Colorado Boulder
 - URL/reference: `https://phet.colorado.edu/en/simulations/bending-light`
-- Reuse mode: official online simulation/link
-- Planned classroom role: optional only; not required for CORE
+- Selection basis: multi-source comparison under `production/SIMULATION_CANDIDATE_COMPARISON_2026-09-06.md`
+- Why selected for Lesson 1:
+  - strong qualitative refraction fit
+  - Bengali translation available
+  - offline-use path available
+  - strong projector visual quality
+  - low setup friction
+  - clear classroom licensing/attribution
+- Planned classroom role:
+  - FLEX only; not required for CORE
+  - prediction before launch
+  - vary angle/material condition narrowly
+  - 2–4 min target if used
+  - short debrief linked to L1-S09–L1-S12
+- Required attribution: `Simulation by PhET Interactive Simulations, University of Colorado Boulder, licensed under CC BY-NC 4.0 (https://phet.colorado.edu).`
 - Static fallback: R1-05/R1-06/R1-07 staged diagrams
-- QA status: OPTIONAL — LINK_CHECK_LATER
+- QA status: SELECTED_FOR_V2 — LAUNCH/POWERPOINT_LINK_QA_PENDING
+
+## R1-10 — Secondary alternate: The Physics Classroom Refraction Interactive
+
+- Target: teacher alternate for L1-F02; possible stronger candidate for Lesson 2 measurement/TIR work
+- Type: interactive simulation/investigation
+- Source/creator: The Physics Classroom
+- Source site: `https://www.physicsclassroom.com`
+- Purpose: structured refraction investigation with material changes and protractor-based angle measurement
+- Why retained:
+  - stronger than PhET when measurement/evidence collection is the main goal
+  - official classroom activity support exists
+  - relevant to later critical-angle/TIR progression
+- Constraints:
+  - English-first interface
+  - live-site use preferred; do not rehost/download under the site's general usage policy
+  - weaker offline fit than PhET
+- Planned role: alternate/teacher note, not simultaneous required use
+- Static fallback: deterministic project diagrams
+- QA status: VERIFIED_ALTERNATE — EXACT_LAUNCH_PATH_RECHECK_IF_USED
+
+## R1-11 — Reserve geometry option: verified GeoGebra refraction applet
+
+- Target: optional teacher demonstration only when adjustable geometry adds a specific advantage
+- Type: community-created interactive geometry
+- Platform: GeoGebra
+- Candidate examples documented in the comparison record
+- Strength: adjustable refractive index/ray/angle geometry
+- Constraints:
+  - community-created items require exact applet-level scientific QA
+  - interface may add language/cognitive load
+  - licensing/attribution must be checked for the exact item used
+- QA status: RESERVE_ONLY — ITEM_LEVEL_QA_REQUIRED
 
 ## Resource build priority
 
@@ -120,14 +165,18 @@ All CORE resources must work offline. High-risk ray diagrams should be determini
 6. R1-01 seeing hook
 7. R1-02 light-properties schematic
 8. R1-03 medium recap
-9. R1-09 optional simulation
+9. R1-09 PhET launch/support slide
+10. R1-10/R1-11 only when their specific advantage is needed
 
 ## Final resource rule
 
-Do not freeze Lesson 1 until:
+Do not mark Lesson 1 v2 classroom-ready until:
 - all ray directions and angle labels are visually checked;
 - optical-density wording remains qualitative and scientifically safe;
 - normal-incidence case is explicit;
 - slab geometry is not overgeneralized;
 - the photon note does not dominate or mislead;
-- all CORE resources work without internet.
+- all CORE resources work without internet;
+- selected simulation link/button works in Microsoft PowerPoint;
+- the static fallback remains sufficient if the simulation cannot launch;
+- simulation use remains short, prediction-driven and debriefed rather than becoming a disconnected novelty.
