@@ -29,14 +29,36 @@ Canonical path:
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_CONTROLLED_BUILD_PASS_WITH_NOTES — REPOSITORY_CONSISTENCY_CLEANUP_COMPLETE — LESSON_2_PRODUCTION_NEXT**
+**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_SCIENCE_COMPATIBILITY_PASS — LESSON_1_DESIGN_ENGAGEMENT_REVISION_REQUIRED — LESSON_2_ON_HOLD**
+
+## Latest user review — material production finding
+
+The repaired Lesson 1 PPTX now opens correctly in Microsoft PowerPoint.
+
+The user then identified two material shortcomings in the actual deck:
+
+1. no meaningful animation/simulation/interactive implementation is present;
+2. the UI/design/color system is not attractive enough for the original project objective.
+
+This feedback is accepted as valid.
+
+The current Lesson 1 build is therefore a **science-correct controlled prototype**, not the final classroom-ready visual standard.
+
+Canonical revision plan:
+
+`chapters/class-8/science/chapter-11-light/lessons/lesson-01/DESIGN_ENGAGEMENT_REVISION_2026-09-06.md`
+
+Latest Lesson 1 production QA:
+
+`chapters/class-8/science/chapter-11-light/lessons/lesson-01/PRODUCTION_QA_2026-09-06.md`
 
 ## Review / freeze state
 
 - Gemini Gate A: completed + reconciled
 - Gemini Gate B: completed + reconciled
 - Final pre-freeze QA: `PASS — CONTENT/STORYBOARD FREEZE APPROVED`
-- No further Gemini planning review is required unless production introduces a material regression.
+- No content unfreeze is required for the design/engagement revision.
+- No further Gemini planning review is required unless production introduces a material science/content regression.
 
 ## Frozen lesson timing
 
@@ -71,90 +93,96 @@ Beautiful.ai/native Canva AI are not unattended full-deck science authoring rout
 
 Classroom delivery/fallback: **controlled PPTX + verified PDF**.
 
-## Repository consistency cleanup — completed 2026-09-06
+## Repository consistency cleanup
 
-The repository was re-audited after RT-01 and Lesson 1 production.
+Status: complete.
 
-High-risk stale/conflicting operational files were corrected:
+Post-RT-01 stale operational files were refreshed. Current recovery/production authority includes:
 
-- `NEW_CHAT_START.md` → post-RT-01 recovery order;
-- `AGENTS.md` → post-RT-01 tool routing and artifact-persistence rule;
-- `WORKFLOW.md` → controlled PptxGenJS production flow replaces candidate-renderer phase;
-- `PROJECT_MASTER.md` → renderer policy and reproducibility updated;
-- `SLIDE_STYLE_GUIDE.md` → post-RT-01 typography/renderer/notation rules;
-- `README.md` → active Chapter 11 state and current renderer route;
-- `CURRICULUM_INDEX.md` → Chapter 11 content-frozen / L1-produced status;
-- `GEMINI_REVIEW_PROTOCOL.md` → explicitly marked legacy; `GEMINI_REVIEW_WORKFLOW.md` is operational authority;
-- `ARTIFACT_PERSISTENCE.md` → new durable reproducibility policy.
+- `NEW_CHAT_START.md`
+- `AGENTS.md`
+- `WORKFLOW.md`
+- `PROJECT_MASTER.md`
+- `SLIDE_STYLE_GUIDE.md`
+- `README.md`
+- `CURRICULUM_INDEX.md`
+- `RENDERER_ROUTING.md`
+- `ARTIFACT_PERSISTENCE.md`
 
-Repository consistency audit record:
+Consistency audit:
 
 `REPOSITORY_CONSISTENCY_AUDIT_2026-09-06.md`
 
-### Historical-stage metadata rule
-
-Some lesson-level storyboard/QA files intentionally preserve the stage at which they were authored, e.g. `DRAFT`, `PRE_FREEZE`, or `RT-01 pending` in older QA text.
-
-These are **historical stage-local records**, not current operational state.
-
-Use current-state precedence:
-
-1. `CURRENT_STATE.md`
-2. `RENDERER_ROUTING.md`
-3. `DECISIONS.md`
-4. active chapter `STATUS.md`
-5. latest production QA / reconciliation record
-6. older storyboard-stage QA/history
-
-Do not infer that Gate B, content freeze or RT-01 is still pending from an older stage-local file.
+Historical storyboard-stage headers such as `DRAFT`, `PRE_FREEZE`, or `RT-01 pending` do not override current state.
 
 ## Lesson 1 production checkpoint
 
-Canonical QA record:
-`chapters/class-8/science/chapter-11-light/lessons/lesson-01/PRODUCTION_QA_2026-09-06.md`
+### Science/content
 
-Status:
-`PASS_WITH_NONBLOCKING_NOTES`
-
-Built:
-- 16-slide controlled PPTX
-- 16-page PDF fallback
-- 14 CORE + 2 FLEX
-
-Artifact fingerprints:
-- PPTX SHA-256: `baf43046f54165e7bc705c897a02206a8966e3c9294cd3d86d2b1a50f62919c9`
-- PDF SHA-256: `a85cc0821c73b9074a827968ecb8834aa0c7bd90dbd185ea248fe9f102ab3b6a`
+PASS.
 
 Verified:
+
 - deterministic ray/optics diagrams;
 - normal-incidence exception;
-- optical density ≠ mass density guardrail;
+- optical density ≠ mass density;
 - parallel-sided slab geometry;
-- controlled Noto Sans Bengali / Noto Sans typography;
-- `slides_test.py`: PASS, no overflow;
-- PPTX/PDF rendered inspection;
-- PDF preflight: 16 pages, openable, non-scanned, unencrypted;
-- CORE offline capability.
+- controlled Bangla typography;
+- no uncontrolled AI-labelled optics diagram.
 
-### Lesson 1 reproducibility exception
+### PowerPoint compatibility
+
+Initial PPTX triggered Microsoft PowerPoint repair warning.
+
+A normalized/repaired version was generated and the user confirmed it now opens correctly in Microsoft PowerPoint.
+
+Current repaired PPTX fingerprint:
+
+`f5d3d16f724bc5ae2557c008356b28d6482ee0fd0a694c0572cfbb2bfbafe769`
+
+PDF fallback remains valid:
+
+`a85cc0821c73b9074a827968ecb8834aa0c7bd90dbd185ea248fe9f102ab3b6a`
+
+### Design/engagement
+
+**REVISION REQUIRED BEFORE CLASSROOM_READY.**
+
+The first controlled build under-implemented the original project requirements for:
+
+- attractive/high-engagement UI;
+- visual rhythm;
+- purposeful progressive reveal/animation;
+- simulation/interactive support where pedagogically useful.
+
+The storyboard/resource plan already supports these ideas. The production implementation was too static/utilitarian.
+
+Planned v2 targets include:
+
+- progressive reveal for ray construction and comparison slides;
+- prediction → reveal patterns;
+- optional PhET Bending Light support with static fallback;
+- stronger physics visual identity/palette;
+- improved hook, hierarchy, cards/callouts, whitespace, illustration/image use;
+- optional controlled Canva finishing if it improves polish without changing science.
+
+## Lesson 1 reproducibility exception
 
 Lesson 1 was produced before `ARTIFACT_PERSISTENCE.md` was formalized.
 
-Its filenames, SHA-256 fingerprints and QA are durable, but the exact original PptxGenJS generator source was not committed.
-
-This does not invalidate its content/scientific QA. Before the chapter is finally marked `CLASSROOM_READY`, Lesson 1 must be normalized by preserving a reconstructed reproducible generator/build specification or by regenerating a final controlled version whose source is committed under the new policy.
-
-From Lesson 2 onward, this exception does not apply.
+The visual-engagement v2 rebuild should normalize Lesson 1 reproducibility by preserving its generator/build source and exact artifact fingerprints.
 
 ## What remains for the chapter
 
-1. Lesson 2 controlled PPTX/PDF production + QA + reproducible source record;
-2. Lesson 3 controlled PPTX/PDF production + QA + reproducible source record;
-3. Lesson 4 controlled PPTX/PDF production + QA + reproducible source record;
-4. normalize Lesson 1 reproducibility before final classroom-ready lock;
-5. verify remaining offline/static fallbacks;
-6. final rendered chapter-wide continuity/coverage audit;
-7. finalize classroom-ready package and reusable visual baselines.
+1. rebuild Lesson 1 as visual-engagement prototype v2 with purposeful motion/interaction and stronger UI;
+2. user approves the resulting master visual/motion standard;
+3. persist Lesson 1 v2 reproducible source + PPTX/PDF QA;
+4. Lesson 2 controlled production using the approved visual standard;
+5. Lesson 3 controlled production;
+6. Lesson 4 controlled production;
+7. verify remaining offline/static fallbacks;
+8. final rendered chapter-wide continuity/coverage audit;
+9. finalize classroom-ready package and reusable visual baselines.
 
 ## New-chat recovery order — current pilot
 
@@ -172,4 +200,6 @@ Read:
 
 ## Next authorized action
 
-Proceed to **Lesson 2 controlled production** using the frozen storyboard/resource map, the locked PptxGenJS-first route, and the new artifact-persistence policy.
+**Revise Lesson 1 into visual-engagement prototype v2 before Lesson 2 production.**
+
+Preserve frozen science/content, improve UI/design, add purposeful progressive reveal/animation, integrate optional PhET support appropriately, verify PowerPoint/PDF export, and use the approved result as the visual baseline for Lessons 2–4.
