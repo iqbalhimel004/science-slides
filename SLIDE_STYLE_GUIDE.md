@@ -1,7 +1,8 @@
 # Slide Style Guide
 
-Version: 3.0
-Last revised: 2026-09-05
+Version: 4.0
+Last revised: 2026-09-06
+Status: **ACTIVE — POST-RT-01**
 
 ## Format
 
@@ -9,13 +10,13 @@ Last revised: 2026-09-05
 - Design for classroom projectors first, laptop/mobile second.
 - Prefer high contrast and generous spacing.
 - Keep a consistent visual system across Classes 8–10.
-- Use layout variation intentionally so the deck does not feel visually repetitive.
+- Use layout variation intentionally so the deck does not feel repetitive.
 
 ## Primary design objective
 
-Slides must be scientifically correct, cognitively clear, and visually compelling enough to sustain student attention. Visual polish must serve comprehension, curiosity, memory, or participation rather than decoration for its own sake.
+Slides must be scientifically correct, cognitively clear and visually compelling enough to support attention and understanding. Visual polish must serve comprehension, curiosity, memory or participation.
 
-Priority order remains:
+Priority order:
 
 1. scientific/source accuracy
 2. pedagogical clarity and cognitive-load control
@@ -26,54 +27,69 @@ Priority order remains:
 ## Language
 
 - Main teaching language: Bangla.
-- Introduce important English scientific terms in parentheses on first meaningful occurrence, e.g. `ঘনত্ব (Density)`.
-- Do not duplicate whole paragraphs in both languages.
-- Use terminology consistent with the supplied NCTB source unless a correction/clarification is explicitly documented.
+- Introduce important English scientific terms in parentheses on first meaningful occurrence when useful.
+- Do not duplicate full paragraphs in both languages.
+- Use NCTB terminology where appropriate, but preserve documented current-science corrections/clarifications.
 
-## Content density and cognitive load
+## Content density
 
 - Prefer one major teaching idea per slide.
-- Avoid long copied textbook paragraphs.
-- Use short bullets, labelled visuals, equations and examples where they teach better than prose.
-- Put extended explanation in teacher notes rather than crowding the projected slide.
-- Do not show a long paragraph that the teacher is expected to read aloud word-for-word.
-- Segment complex processes and multi-step reasoning when showing everything at once would overload students.
-- Remove decorative items that compete with the focal teaching point.
+- Avoid textbook paragraph dumps.
+- Use short text blocks, labelled visuals, equations and examples where they teach better than prose.
+- Put extended explanation in teacher notes rather than projected text.
+- Do not shrink text to rescue an overcrowded slide; simplify or split it.
+- Segment complex processes and reasoning.
 
 ## Visual hierarchy
 
-Each slide needs an obvious first focal point where practical.
+Each slide should have an obvious first focal point where practical.
 
 Use scale, spacing, contrast, alignment, grouping, arrows/callouts, numbering and controlled emphasis.
 
 Avoid highlighting everything.
 
-## Typography
+## Typography — post-RT-01
 
-- Final Bangla font choices are **not locked before RT-01**.
-- Candidate fonts must be tested for Bangla conjuncts, mixed Bangla/English, numerals, symbols and exported/projected output.
-- Titles must be readable from the back of a normal classroom.
-- Body text and diagram labels must remain large enough for projection.
-- Do not shrink text to rescue an overcrowded slide; simplify or split it.
-- Verify Bangla conjuncts, punctuation, equations, symbols and line breaks in the actual artifact.
+Controlled production is now the default route.
 
-The first pilot chapter should establish numeric font/density baselines from real output rather than arbitrary pre-locking.
+Current production baseline:
+
+- Bangla: `Noto Sans Bengali`
+- Latin/scientific notation: `Noto Sans` where needed
+
+Rules:
+
+- titles must be readable from the back of a normal classroom;
+- body text and diagram labels must remain projector-legible;
+- mixed Bangla/English text must be checked in the actual rendered/exported artifact;
+- do not rely on proprietary renderer font packages for final portability;
+- final numeric font-size/density baselines remain pilot-calibration items and should be refined from real classroom/projector evidence;
+- font files themselves must not be shared/committed as project artifacts.
+
+## Scientific notation
+
+RT-01 showed renderer-specific notation failures are possible.
+
+Operational rule:
+
+- straightforward Unicode such as `°`, `10⁸`, `H₂O`, `CO₂`, `≠` may remain native text only after actual export verification;
+- comparison symbols and renderer-sensitive notation must be checked in the final artifact;
+- complex equations/chemistry may use controlled LaTeX/MathJax → SVG/PNG fallback;
+- preserve source expressions in storyboard/source records.
 
 ## Color and contrast
 
-- Use a restrained project palette with limited accent colors.
-- Aim for approximately 4.5:1 contrast for normal text and 3:1 for large text/important labels where practical.
-- Classroom projection may require stronger contrast than the minimum target.
+- Use a restrained palette with limited accent colors.
+- Aim for strong projection contrast; approximately 4.5:1 normal text and 3:1 large text/important labels where practical.
 - Do not rely on color alone to convey category, direction, state, correctness or comparison.
 - Avoid pastel-on-pastel combinations for essential text.
 
 ## Standard slide families
 
-Maintain reusable patterns for:
+Reusable patterns may include:
 
-- lesson opening/hook
-- retrieval/prior-knowledge opener
-- learning outcomes where useful
+- hook/retrieval opener
+- learning outcome where useful
 - definition/key term
 - concept explanation
 - labelled diagram/process
@@ -82,7 +98,7 @@ Maintain reusable patterns for:
 - compare/contrast
 - misconception/refutation
 - simulation/video/resource launch
-- student practice/check for understanding
+- practice/check-for-understanding
 - prediction/reveal
 - summary
 - exit question
@@ -91,22 +107,20 @@ Not every lesson needs every family.
 
 ## Visual rhythm and attention management
 
-Avoid long runs of slides with the same composition. Variation should support lesson flow, not create chaos.
+Avoid long runs of identical compositions.
 
-Do **not** enforce a rigid 7–10-minute “attention span” timer.
+Do **not** enforce a rigid 7–10-minute attention-span timer.
 
 Instead:
 
-- structure lessons into meaningful segments
-- normally end major segments with a student response, retrieval prompt, prediction, explanation, practice item, diagram interaction, hinge question or observation
-- avoid teacher-only exposition remaining cognitively unchanged for roughly more than 10 minutes when a meaningful response can be inserted
-
-This is a practical heuristic, not a biological rule.
+- structure lessons into meaningful segments;
+- normally end major segments with a student response, retrieval prompt, prediction, explanation, practice item, diagram interaction, hinge question or observation;
+- avoid long teacher-only exposition when a meaningful response can be inserted.
 
 ## Grade calibration
 
 ### Class 8
-- more concrete, familiar, real-life visuals
+- more concrete/familiar visuals
 - lower information density
 - larger diagrams
 - shorter text blocks
@@ -118,7 +132,7 @@ This is a practical heuristic, not a biological rule.
 - stronger compare/contrast and process reasoning
 
 ### Class 10
-- slightly higher conceptual and exam-facing density where justified
+- slightly higher conceptual/exam-facing density where justified
 - more structured formulas, worked examples, synthesis and labelled diagrams
 - still avoid textbook-page-style slides
 
@@ -126,34 +140,50 @@ This is a practical heuristic, not a biological rule.
 
 Where appropriate show:
 
-- term in Bangla + English
-- exam-safe/source-grounded definition
-- a separate clearly labelled simple explanation if useful
-- a relevant visual/example only if it improves understanding
+- term in Bangla + English;
+- exam-safe/source-grounded definition;
+- separately labelled simple explanation if useful;
+- a visual/example only when it improves understanding.
 
-Do not merge the simple explanation into the authoritative definition without marking the distinction.
+Do not silently blend a simplified explanation into the authoritative definition.
 
-## Equation/numerical slide
+## Equation / numerical slide
 
-Use a predictable structure:
+Use a predictable structure where applicable:
 
-Problem → Given → Required → Formula → Substitution → Calculation → Answer + unit → Interpretation where useful
+Problem → Given → Required → Formula → Substitution → Calculation → Answer + unit → Interpretation.
 
-If the selected renderer handles complex equations, chemistry notation, subscripts or superscripts unreliably, preserve the source expression in the storyboard and use a controlled rendering method such as LaTeX/MathJax → SVG/PNG. Verify the exported result visually.
+If native text is unreliable, use controlled equation rendering and verify the export visually.
 
 ## Diagram standard
 
-Scientific correctness outranks aesthetics. Verify labels, arrows/directions, polarity, axes/scales, anatomy/structure, circuit connections, ray/wave directions, relative position and units/symbols.
+Scientific correctness outranks aesthetics.
+
+Verify:
+
+- labels;
+- arrows/directions;
+- polarity;
+- axes/scales;
+- anatomy/structure;
+- circuit connections;
+- ray/wave directions;
+- relative position;
+- units/symbols.
 
 Preferred hierarchy:
 
-1. trusted textbook/authoritative diagram when suitable and legally usable
-2. custom redrawn/code-generated/Canva diagram based on verified science
-3. AI-generated labelled diagram only with strict scientific verification/redraw as needed
+1. trusted authoritative/textbook diagram when suitable and legally usable;
+2. deterministic custom redraw/code-generated SVG/shape visual based on verified science;
+3. AI-generated labelled diagram only with strict scientific verification/redraw.
+
+High-risk science diagrams such as ray optics, lens constructions, circuits and anatomy paths should normally be deterministic.
 
 ## Image standard
 
-Prefer images that create context, curiosity, comparison or application. Avoid random stock photography that does not help teach the concept. Keep illustration/image style reasonably consistent within one lesson.
+Prefer images that create context, curiosity, comparison or application. Avoid random stock photography that does not teach.
+
+Keep illustration/image style reasonably consistent within one lesson.
 
 ## Visual purpose
 
@@ -173,43 +203,61 @@ If no purpose applies, question whether the visual belongs.
 
 ## Motion and animation
 
-Use motion only when it helps communicate sequence, change over time, causality, movement/direction, progressive construction or meaningful reveal.
+Use motion only when it helps communicate sequence, change, causality, direction, progressive construction or reveal.
 
-Avoid decorative spins, bounces and excessive transitions.
+Avoid decorative spins/bounces/excessive transitions.
 
 Every important animated/interactive element needs a usable static fallback.
 
-## Video/simulation slide
+## Video / simulation slide
 
-Keep the slide itself simple:
+Keep it simple:
 
-- what students should observe/predict
-- launch link/button/QR if needed
-- one or two guiding questions
-- planned duration
-- static fallback reference
+- what students should observe/predict;
+- launch link/button/QR if needed;
+- one or two guiding questions;
+- planned duration;
+- static fallback reference.
 
 After the resource, include a brief interpretation/check.
 
-For externally hosted video, use the legal source/embed and a relevant timestamped segment rather than creating an unauthorized downloaded excerpt.
+Use legal source/embed playback rather than unauthorized downloaded excerpts.
 
-## Renderer policy
+## Renderer policy — locked after RT-01
 
-There is **no permanent default renderer before RT-01**.
+Canonical routing:
 
-- Beautiful.ai: candidate full-deck renderer, especially for structured decks
-- Canva: candidate full-deck renderer and specialist for bespoke visuals/infographics/worksheets/diagrams
-- Hyperagent: specialist for programmatic SVG/equation assets, custom HTML/JS interaction and deterministic QA
+`RENDERER_ROUTING.md`
 
-The first pilot chapter must compare real output and workflow friction before locking long-term defaults.
+Default route:
+
+**Controlled PptxGenJS → deterministic SVG/shape science visuals → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF.**
+
+### PptxGenJS
+
+Primary controlled authoring/rendering route.
+
+### Canva
+
+Optional finishing/editing environment after controlled PPTX import. Native Canva AI is not the final authority for science-critical wording or diagrams.
+
+### Beautiful.ai
+
+Low-risk layout exploration/prototyping only; not unattended full-deck science production.
+
+### Hyperagent
+
+Specialist deterministic SVG/equation/interactive/QA work where it adds value.
+
+Do not reopen renderer selection unless the user explicitly asks or materially new tool evidence exists.
 
 ## Accessibility and classroom practicality
 
-- Do not rely on color alone to convey a scientific distinction.
+- Do not rely on color alone for scientific distinctions.
 - Avoid cluttered backgrounds.
 - Ensure labels remain legible after projection.
 - Keep critical information away from slide edges.
-- Prefer stable static fallbacks for any online resource that may fail during class.
+- Prefer stable static fallbacks for classroom-critical online resources.
 - If a key visual requires zooming to teach, redesign it.
 
 ## Final artifact validation
@@ -218,16 +266,20 @@ Judge the deck in the actual delivery format, not only in the editor.
 
 Check:
 
-- Bangla rendering
-- font substitution
-- equations/symbols
-- image crops
-- diagram label size
-- links and QR codes
-- video/simulation launch behaviour
-- animation behaviour where used
-- contrast and readability after export/projection
-- static/offline fallbacks
-- PDF fallback
+- Bangla rendering;
+- font substitution;
+- equations/symbols;
+- image crops;
+- diagram label size;
+- links/QR codes;
+- media/simulation launch behaviour;
+- animation behaviour where used;
+- contrast/readability after export/projection;
+- static/offline fallbacks;
+- PPTX editability where required;
+- PDF fallback;
+- no scientific content drift.
+
+Follow `ARTIFACT_PERSISTENCE.md` for reproducibility/source retention.
 
 Detailed visual principles also live in `VISUAL_ENGAGEMENT_SYSTEM.md`.
