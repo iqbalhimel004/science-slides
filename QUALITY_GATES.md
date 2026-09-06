@@ -1,7 +1,8 @@
 # Quality Gates
 
-Version: 3.0
-Last revised: 2026-09-05
+Version: 4.0
+Last revised: 2026-09-06
+Status: **ACTIVE — POST-PILOT-COMPATIBILITY UPDATE**
 
 A lesson or chapter advances only when the applicable gate passes.
 
@@ -100,30 +101,23 @@ PASS only if every slide/item has enough specification to render without inventi
 - equation/source notation where relevant
 - fallback where needed
 
+For concept-heavy segments, the production handoff must also record a dynamic implementation decision where relevant: `STATIC_INTENTIONAL`, `STAGED_REVEAL`, `NATIVE_ANIMATION`, `PREDICT_THEN_REVEAL`, `LIVE_DEMO`, `SIMULATION`, `INTERACTIVE_NAVIGATION`, or `VIDEO/ANIMATION_RESOURCE`.
+
 ## G8 — Content freeze
 
 PASS only after G1–G7 are satisfied and there are no unresolved material content changes.
 
-After freeze, design tools may improve layout but must not silently change facts, definitions, formulas, units or meaning.
+After freeze, design tools may improve layout/styling but must not silently change facts, definitions, formulas, units or meaning.
 
 ## G9 — Renderer calibration
 
-Before the first final deck, PASS RT-01 for the selected renderer on:
+RT-01 is complete for the first pilot. Current routing is defined in `RENDERER_ROUTING.md`.
 
-- Bangla conjuncts and mixed Bangla/English
-- scientific symbols and notation
-- equations/subscripts/superscripts where needed
-- diagram labels
-- editability
-- export fidelity
-- projector readability
-- workflow practicality
-
-Once a renderer has passed and been recorded in `DECISIONS.md`, repeat only after material tool/workflow changes.
+Repeat calibration only if tool behavior materially changes or the user explicitly requests reconsideration.
 
 ## G10 — Visual engagement and classroom usability
 
-PASS only if:
+PASS only if the **actual rendered deck**, not just the storyboard, satisfies all applicable requirements:
 
 - one clear focal point/hierarchy exists where practical
 - projected text and labels are readable
@@ -132,12 +126,37 @@ PASS only if:
 - visuals serve an instructional purpose
 - Bangla/English terminology is consistent
 - diagrams remain scientifically correct
-- motion is pedagogically justified
+- motion/reveal is pedagogically justified
+- storyboard-planned progressive construction/reveal is actually implemented or intentionally reclassified with reason
+- concept-heavy lessons are not static by accident
+- simulation/demo/interactive support is included where it materially improves learning and was planned
 - decorative clutter is controlled
+- repetitive cards/boxes do not dominate the deck
+- hook, prediction, explanation, rule, misconception, practice, simulation and exit states are visually differentiated where appropriate
+- the first-pilot master visual direction receives user approval before it is propagated to later lessons
 
-## G11 — Export/playback/offline reliability
+A scientifically correct but materially unattractive, overly utilitarian, or accidentally all-static pilot deck FAILS G10.
 
-PASS only if the actual delivery artifact is checked for:
+## G11 — PowerPoint compatibility, export, playback and offline reliability
+
+PASS only if the exact classroom delivery artifacts are checked.
+
+### Microsoft PowerPoint compatibility
+
+For PPTX delivery:
+
+- exact user-facing PPTX is opened/tested in Microsoft PowerPoint when PowerPoint is available
+- no repair/recovery warning appears
+- editable text/shapes remain intact where expected
+- links/buttons used in class work
+- planned reveal/animation/interaction behavior works in PowerPoint
+- if LibreOffice or another tool normalized/resaved the PPTX, PowerPoint playback is retested afterward
+
+A PowerPoint repair warning is an automatic G11 FAIL for that artifact.
+
+### Export/playback/offline
+
+Also verify:
 
 - Bangla rendering/line breaks
 - equations/symbols
@@ -145,8 +164,12 @@ PASS only if the actual delivery artifact is checked for:
 - diagram labels
 - links/QRs
 - media/simulation launch paths
+- animation/reveal behavior where used
 - static/offline fallback
-- PDF fallback availability
+- verified PDF fallback availability
+- no scientific content drift after finishing/export
+
+For fragile progressive explanation, staged duplicate-slide reveal states are preferred over native animation when they provide the same instructional value with greater compatibility.
 
 ## G12 — Chapter-wide coverage
 
@@ -167,11 +190,32 @@ PASS only if:
 - prerequisites precede dependent concepts
 - repetition is purposeful recap or removed
 - lessons bridge logically
+- the approved first-pilot visual/motion system is applied consistently without making every lesson visually identical
 
-## G14 — Final chapter completion
+## G14 — Artifact persistence / reproducibility
 
-PASS only when all applicable lesson gates pass, chapter coverage/continuity pass, and repository state is updated.
+PASS only if the controlled production is durably recoverable under `ARTIFACT_PERSISTENCE.md`:
 
-## Optional G15 — Post-class calibration
+- current artifact filenames/fingerprints are recorded
+- generator/build source or reproducible specification is committed
+- deterministic scientific visual sources/specs are retained where needed
+- asset provenance is recorded
+- export method is recorded
+- PowerPoint compatibility result is recorded
+- simulation/interactive/link fallback status is recorded
 
-After teaching, compare estimated vs actual timing and record confusion points, resource failures and successful elements. Use evidence to improve later versions.
+## G15 — Final chapter completion
+
+PASS only when all applicable lesson gates pass, chapter coverage/continuity pass, classroom artifacts are compatible and visually approved, reproducibility is complete, and repository state is updated.
+
+## Optional G16 — Post-class calibration
+
+After teaching, compare estimated vs actual timing and record confusion points, resource failures, compatibility problems and successful visual/interactive elements. Use evidence to improve later versions.
+
+## Canonical production reliability policy
+
+For detailed implementation rules read:
+
+`PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+
+This policy was added after the first Lesson 1 pilot revealed both a Microsoft PowerPoint repair warning and an under-implemented visual/animation/simulation layer.
