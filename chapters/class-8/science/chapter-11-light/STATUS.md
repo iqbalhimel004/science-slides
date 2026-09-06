@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-06
-- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_SIMULATION_SELECTION_COMPLETE — PRIOR_V2_POWERPOINT_AND_LINK_SMOKE_TEST_PASS — LESSON_1_BANGLA_TEXTBOOK_LANGUAGE_REVISION_BUILT — USER_REVIEW_OF_REVISED_ARTIFACT_PENDING — LESSON_2_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_VISUAL_LANGUAGE_MOTION_REALISM_BASELINE_APPROVED — CANVA_FIRST_VISUAL_ASSET_ROUTING_LOCKED — LESSON_2_PRODUCTION_NEXT**
 
 ## Durable workflow rules
 
@@ -15,7 +15,9 @@
 - controlled production follows `ARTIFACT_PERSISTENCE.md`;
 - compatibility/animation/simulation/UI requirements follow `/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`;
 - simulation provider selection follows `/SIMULATION_RESOURCE_ROUTING.md`;
-- student-facing language/terminology follows `/CLASSROOM_LANGUAGE_POLICY.md`;
+- student-facing language follows `/CLASSROOM_LANGUAGE_POLICY.md`;
+- physical realism follows `/PHYSICAL_VISUAL_REALISM_POLICY.md`;
+- realistic visual asset sourcing/generation follows `/VISUAL_ASSET_ROUTING.md`;
 - universal stage rule: **Finish → record → then continue.**
 
 ## Review / freeze state
@@ -23,7 +25,7 @@
 - Gate A: completed + reconciled
 - Gate B: completed + reconciled
 - Final pre-freeze QA: `PASS — CONTENT/STORYBOARD FREEZE APPROVED`
-- No content unfreeze is required for Lesson 1 v2 language/clarity revision.
+- Lesson 1 master production direction is now approved after iterative user review.
 
 ## Frozen timing
 
@@ -40,121 +42,76 @@ Chapter planned CORE + FLEX total: **202 minutes**.
 
 RT-01 is complete.
 
-Final route:
+Final deck route:
 
 - primary authoring/rendering: controlled PptxGenJS;
-- science-critical visuals: deterministic SVG/shape construction;
+- science-critical overlays/geometry: deterministic SVG/shape/control-layer construction;
 - optional finishing: Canva after controlled PPTX import;
 - classroom delivery/fallback: controlled PPTX + verified PDF;
-- Beautiful.ai/native Canva AI are not unattended science-critical full-deck authors.
+- Beautiful.ai/native Canva full-deck AI are not unattended science-critical authors.
 
-## Lesson 1 v2 — prior user smoke-test result
+## Visual asset route — refined after Lesson 1 pilot
 
-The previous v2 build:
+When a realistic photo/object/base visual is needed:
 
-- opened correctly in Microsoft PowerPoint;
-- did not reproduce the original repair-warning failure;
-- successfully opened both simulation links.
+1. use a verified existing real/authoritative/open/licensed visual when suitable;
+2. otherwise use connected Canva / Canva AI / Canva Pro generation or licensed assets;
+3. otherwise use another connected/legal external visual source/generator;
+4. use custom SVG/programmatic construction where deterministic science is the primary need;
+5. do not routinely use ChatGPT-native image generation; use it only when the user explicitly asks for it or explicitly approves an exception because other routes are unsuitable/unavailable.
 
-## Lesson 1 v2 — user language/clarity findings
+Role separation:
 
-User identified:
+- **Canva/external generation:** realistic physical base assets, contextual scenes, orthographic object views, non-labelled imagery;
+- **PptxGenJS/SVG/control layer:** rays, normals, angles, labels, scales, notation, graphs, circuit topology and other science-critical relationships.
 
-1. the two glass-slab staged slides were not self-explanatory;
-2. too much English appeared in student-facing science terminology;
-3. a static pencil-water instruction slide was labelled `Live demo` despite containing no live element.
-
-These findings were accepted and corrected.
-
-## Current revised Lesson 1 artifact
-
-Current user-facing files:
-
-- `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_FINAL_PPTX_SAFE.pptx`
-- `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_FINAL_PPTX_SAFE.pdf`
-
-Fingerprints:
-
-- PPTX: `f6fe06a932c8db0295a82bec3dc48bb8581134e8b62c29dee18f7c62122db32c`
-- PDF: `bab2b8674cd7a8ae1b26cc4046b85988f86f7b6dd8a4f81e5bc59a3f1861ce58`
-
-Durable production records:
-
-- `lessons/lesson-01/production/build_lesson1_v2.js`
-- `lessons/lesson-01/production/patch_lesson1_v2_bangla_textbook_language.py`
-- `lessons/lesson-01/production/PRODUCTION_QA_V2_2026-09-06.md`
-- `lessons/lesson-01/production/DYNAMIC_MANIFEST.md`
-- `lessons/lesson-01/production/SIMULATION_CANDIDATE_COMPARISON_2026-09-06.md`
-
-## Bangla / textbook-language correction
-
-Student-facing science terms are now Bangla-first.
-
-Key optics vocabulary is explicitly shown in Bangla:
-
-- বিভেদতল (Interface)
-- আপতন বিন্দু (Point of incidence)
-- অভিলম্ব (Normal)
-- আপতন কোণ (i)
-- আপতিত রশ্মি
-- প্রতিসরণ কোণ (r)
-- প্রতিসরিত রশ্মি
-- প্রতিফলিত রশ্মি
-- লম্ব আপতন
-- আলোকীয় ঘনত্ব
-- বিরল মাধ্যম / ঘন মাধ্যম
-
-English remains optional/parenthetical or limited to proper resource names.
+Canva AI is allowed for realistic base-image generation but is **not** the science authority.
 
 Canonical policy:
 
-`/CLASSROOM_LANGUAGE_POLICY.md`
+`/VISUAL_ASSET_ROUTING.md`
 
-## Glass-slab pair — clarified
+## Physical realism + science clarity
 
-The pair now clearly states its function:
+Physical objects should look recognizably real when practical.
 
-- `ধাপ ১ — আগে অনুমান`
-- `ধাপ ২ — উত্তর`
+When scientific geometry matters:
 
-It labels the air/glass regions, first/second interfaces, incident/refracted/emergent rays and parallel helper line.
+- prefer straight-on / orthographic / side / cross-sectional realistic views;
+- avoid dramatic 3D perspective that conflicts with 2D scientific overlays;
+- use hybrid realistic-object + deterministic schematic layouts when clearer;
+- photorealism never overrides science accuracy.
 
-## Pencil-water activity — corrected
+Lesson 1 glass-slab sequence is the reference example.
 
-The slide is now a `শ্রেণিকক্ষ কার্যক্রম`, not a purported embedded live demo.
+## Lesson 1 accepted baseline
 
-Teacher action and static fallback are explicitly stated.
+Accepted production direction includes:
 
-## Revised artifact internal QA
+- Bangla-first textbook terminology;
+- staged prediction/reveal sequences;
+- classroom activity rather than fake embedded-live wording;
+- simulation links with static fallback;
+- attractive dark physics/light UI;
+- realistic physical imagery where appropriate;
+- deterministic science overlays;
+- orthographic realistic glass + deterministic optics geometry;
+- PowerPoint compatibility gate;
+- PDF fallback.
 
-### PPTX
+Current latest Lesson 1 artifacts:
 
-- `slides_test.py`: PASS — no overflow;
-- normalized/resaved with LibreOffice;
-- rendered successfully;
-- montage visually inspected;
-- both external simulation hyperlink relationships remain present.
+- `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_OrthoGlass_PPTX_SAFE.pptx`
+- `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_OrthoGlass_PPTX_SAFE.pdf`
 
-### PDF
+Fingerprints:
 
-- 28 pages;
-- openable;
-- unencrypted;
-- rendered successfully and visually inspected.
+- PPTX: `b626024aee467d1635d6d5bde3757e27c2360252b21dc7ea1e5dd0e6bb5df925`
+- PDF: `bfbf8a4b6e8562946793953cc2622b6ebd53cc0b273e8e8f061717693eeb4fd3`
 
-### Science / terminology
+Latest focused QA:
 
-PASS at prototype level:
-
-- light-to-eye path;
-- ray vocabulary;
-- আপতন কোণ / প্রতিসরণ কোণ explicitly visible;
-- angle-from-normal rule;
-- normal-incidence exception;
-- optical density ≠ mass density;
-- rarer→denser bends toward normal;
-- denser→rarer bends away from normal;
-- slab geometry guardrail preserved.
+`lessons/lesson-01/production/PRODUCTION_QA_V2_ORTHOGLASS_2026-09-06.md`
 
 ## Simulation selection
 
@@ -168,28 +125,14 @@ Secondary alternate:
 
 This does not make PhET the default for later lessons.
 
-## Remaining Lesson 1 hard gates
-
-Before the revised Lesson 1 can establish the master visual/language/motion baseline:
-
-1. user opens the revised PPTX in Microsoft PowerPoint;
-2. confirms no repair/recovery warning;
-3. confirms both simulation buttons still open;
-4. checks that Bangla/textbook terminology now feels correct;
-5. checks that the glass-slab staged pair is understandable;
-6. approves or requests further design/UI revisions.
-
 ## Remaining chapter production
 
-1. user reviews the revised Lesson 1 v2 artifact;
-2. revise again if required;
-3. lock the master visual/language/motion baseline after approval;
-4. produce Lesson 2 using the approved baseline;
-5. produce Lessons 3–4;
-6. final rendered chapter-wide audit and classroom-ready package.
+1. produce Lesson 2 using the approved visual/language/motion/realism baseline;
+2. perform Lesson 2 concept-specific simulation/resource comparison where relevant;
+3. produce Lessons 3–4;
+4. final rendered chapter-wide continuity/coverage audit;
+5. classroom-ready package and final reusable master standards.
 
 ## Next authorized stage
 
-**User review of revised Bangla/textbook-language Lesson 1 v2.**
-
-Do not start Lesson 2 full production until the revised Lesson 1 baseline is approved.
+**Lesson 2 controlled production using the approved Lesson 1 baseline and Canva-first realistic visual-asset routing.**
