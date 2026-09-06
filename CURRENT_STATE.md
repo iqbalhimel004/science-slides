@@ -17,142 +17,104 @@ Only this repository is authorized for Science Slides writes.
 - PowerPoint smoke testing is a hard compatibility gate (`D-037`).
 - Dynamic engagement and attractive classroom UI are hard production gates (`D-038`).
 - Simulation selection is multi-source and concept-fit driven, not PhET-only (`D-039`).
-- Visual asset generation is now Canva/external-first and controlled-science-overlay driven (`VISUAL_ASSET_ROUTING.md`; durable refinement equivalent to `D-040`).
+- Visual asset generation is Canva/external-first and controlled-science-overlay driven (`VISUAL_ASSET_ROUTING.md`; D-040 refinement).
 - Student-facing language is Bangla-first by `CLASSROOM_LANGUAGE_POLICY.md`.
 - Physical apparatus visuals follow `PHYSICAL_VISUAL_REALISM_POLICY.md`.
-- Physical realism must never reduce science-diagram clarity; for geometry-sensitive optics, straight-on/orthographic physical views are preferred.
 - `ARTIFACT_PERSISTENCE.md` controls reproducibility.
 
 ## Active chapter
 
 **Class 8 Science — Chapter 11: আলো**
 
-Canonical path:
-`chapters/class-8/science/chapter-11-light/`
-
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_VISUAL_MOTION_BASELINE_APPROVED — CANVA_FIRST_VISUAL_ASSET_ROUTING_LOCKED — LESSON_2_PRODUCTION_NEXT**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_BUILT_INTERNAL_QA_PASS — USER_POWERPOINT_AND_VISUAL_REVIEW_PENDING — LESSON_3_ON_HOLD**
 
-## Lesson 1 pilot — final accepted direction
+## Lesson 1 baseline
 
-The user accepted the latest orthographic-real-glass correction as visually/scientifically clear.
-
-The Lesson 1 pilot therefore establishes the reusable production baseline:
+Approved production direction:
 
 - controlled PptxGenJS deck authoring;
 - Bangla-first textbook-facing language;
-- staged prediction/reveal rather than fragile animation where equivalent;
-- simulation links only when pedagogically useful, with static fallback;
+- staged prediction/reveal where it replaces fragile animation;
+- simulation links only when useful, with static fallback;
 - realistic physical-object imagery where appropriate;
 - deterministic science overlays for rays, normals, angles, labels and geometry;
-- Microsoft PowerPoint compatibility testing;
+- Microsoft PowerPoint compatibility gate;
 - verified PDF fallback.
 
-Latest Lesson 1 artifact family:
+## Lesson 2 v1 — built
 
-- `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_OrthoGlass_PPTX_SAFE.pptx`
-- `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_OrthoGlass_PPTX_SAFE.pdf`
+Lesson:
+`প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন`
+
+Current user-facing artifacts:
+
+- `Class8_Science_Ch11_Lesson2_ApparentPosition_TIR_PPTX_SAFE.pptx`
+- `Class8_Science_Ch11_Lesson2_ApparentPosition_TIR_PPTX_SAFE.pdf`
 
 Fingerprints:
 
-- PPTX: `b626024aee467d1635d6d5bde3757e27c2360252b21dc7ea1e5dd0e6bb5df925`
-- PDF: `bfbf8a4b6e8562946793953cc2622b6ebd53cc0b273e8e8f061717693eeb4fd3`
+- PPTX: `157b5f8ae2fb21a26dbf514d42ca149c9079c1fb42502327de841a6c8d250ba5`
+- PDF: `ab639041ca653ec3b0de7c645872869cdaec0bd16a2064d333566d66b2f31212`
 
-Latest focused QA:
+Durable records:
 
-`chapters/class-8/science/chapter-11-light/lessons/lesson-01/production/PRODUCTION_QA_V2_ORTHOGLASS_2026-09-06.md`
+- `lessons/lesson-02/production/DYNAMIC_MANIFEST.md`
+- `lessons/lesson-02/production/BUILD_SPEC_V1_2026-09-06.md`
+- `lessons/lesson-02/production/PRODUCTION_QA_V1_2026-09-06.md`
 
-## Refined visual-asset routing — mandatory for future slides
+## Lesson 2 implementation highlights
 
-Canonical policy:
+- 22 physical slides;
+- retrieval predict/reveal;
+- actual vs apparent position with backward ray tracing;
+- pencil/stick, coin and fish apparent-position examples;
+- mirage with gradual refractive-index/temperature-gradient model;
+- increasing incidence-angle predict/reveal;
+- critical angle with `r=90°` and reflected ray present;
+- explicit separation of `i=C` from TIR;
+- TIR two-condition slide;
+- three-state `i<C / i=C / i>C` hinge;
+- optical-fibre repeated-TIR explanation;
+- FLEX simulation launch slide;
+- FLEX TIR practice reveal.
 
-`VISUAL_ASSET_ROUTING.md`
+## Visual asset routing in Lesson 2
 
-### Default source priority
+No ChatGPT-native image generation was used.
 
-When a photo or realistic base image is required:
+Current v1 mainly uses deterministic PptxGenJS/SVG-style concept visuals. This is intentional where exact ray geometry is the teaching priority.
 
-1. use an existing verified real/authoritative/open/licensed visual when it already fits;
-2. otherwise use connected **Canva / Canva AI / Canva Pro** generation or licensed assets;
-3. otherwise use another connected/legal visual source or generator that offers a clear advantage;
-4. use programmatic SVG/Hyperagent/custom construction for deterministic scientific visuals;
-5. do **not** routinely use ChatGPT-native image generation; use it only if the user explicitly asks for it or explicitly approves an exception after the other routes are unsuitable/unavailable.
+If user review finds a physical-object scene too schematic, replace only that base visual under `VISUAL_ASSET_ROUTING.md`:
 
-Reason:
+1. verified existing real/open/licensed image; or
+2. connected Canva/Canva AI/Canva Pro visual;
+3. keep scientific overlays deterministic in PptxGenJS.
 
-- Canva AI can generate realistic physical-object visuals at a more scalable workflow level;
-- routine ChatGPT image generation may consume a limited daily quota;
-- science-critical geometry should not be entrusted to any unconstrained image generator anyway.
+## Internal QA
 
-### Role separation
+- LibreOffice normalization: PASS
+- `slides_test.py`: PASS — no overflow
+- PPTX render: PASS
+- montage inspection: PASS at prototype level
+- PDF export: PASS
+- PDF pages: 22
+- PDF encrypted: no
+- PDF render: PASS
+- no severe unintended text overlap remains
 
-**Canva/external visual generator = realistic physical base asset**
+## Remaining hard gates before Lesson 3
 
-Examples:
+User should review Lesson 2 v1 and confirm:
 
-- glass;
-- lens;
-- mirror;
-- optical fibre;
-- camera;
-- laboratory apparatus;
-- real-world/context scene;
-- orthographic/side-view physical object.
-
-**PptxGenJS/SVG/controlled drawing = scientific authority layer**
-
-Examples:
-
-- ray paths;
-- normals;
-- incident/refraction/reflection angles;
-- scientific labels;
-- scales;
-- graph geometry;
-- circuit topology;
-- equation/notation placement;
-- exact anatomical/optical paths.
-
-Canva AI must not be allowed to decide these science-critical relationships.
-
-### Viewpoint rule
-
-If a scientific overlay must align to a physical object:
-
-- prefer straight-on, orthographic, side-view or cross-sectional base imagery;
-- avoid dramatic perspective that makes 2D geometry ambiguous;
-- use a hybrid realistic-object + deterministic schematic if that is clearer.
-
-The Lesson 1 glass-slab sequence is the reference example:
-
-- flat schematic: visually unrealistic;
-- 3D perspective realistic slab: physical realism but geometry conflict;
-- orthographic realistic slab + deterministic ray overlay: accepted pattern.
-
-## Renderer route — still locked
-
-Deck route remains:
-
-**Controlled PptxGenJS -> deterministic science geometry/labels -> rendered QA -> optional Canva controlled-import finishing -> verified PPTX + verified PDF.**
-
-The new Canva-first asset rule does **not** make Canva the science-content author. It expands Canva's role specifically for realistic base-image/visual asset production and controlled finishing.
-
-Beautiful.ai remains limited to low-risk layout inspiration/prototyping.
-
-## Simulation route
-
-Simulation selection remains multi-source, not PhET-only.
-
-For each concept compare reputable options such as:
-
-- PhET;
-- The Physics Classroom;
-- GeoGebra;
-- Open Source Physics/ComPADRE;
-- other reputable scientific/educational sources.
-
-Use custom interaction only when existing resources fail the objective.
+1. Microsoft PowerPoint opens without repair warning;
+2. staged reveal sequence feels natural;
+3. simulation links open;
+4. Bangla terminology is acceptable;
+5. apparent-position, mirage, critical-angle/TIR and optical-fibre visuals are clear;
+6. any physical-object visual that still feels too schematic is identified for Canva/external realistic replacement;
+7. overall Lesson 2 UI/visual standard is accepted.
 
 ## Frozen timing
 
@@ -163,24 +125,8 @@ Use custom interaction only when existing resources fail the objective.
 | L3 | 42 | 8 | 50 | 10 |
 | L4 | 42 | 8 | 50 | 10 |
 
-## New-chat recovery order
-
-Read:
-
-1. `OPERATING_BRIEF.md`
-2. `CURRENT_STATE.md`
-3. `RENDERER_ROUTING.md`
-4. `VISUAL_ASSET_ROUTING.md`
-5. `PHYSICAL_VISUAL_REALISM_POLICY.md`
-6. `CLASSROOM_LANGUAGE_POLICY.md`
-7. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-8. `SIMULATION_RESOURCE_ROUTING.md`
-9. `ARTIFACT_PERSISTENCE.md`
-10. active chapter `STATUS.md`
-11. active lesson files/production QA
-
-`NEW_CHAT_START.md` contains the full recovery protocol.
-
 ## Next authorized action
 
-**Lesson 2 controlled production using the approved Lesson 1 visual/motion/language/realism baseline and the Canva-first external visual-asset policy.**
+**User PowerPoint + visual review of Lesson 2 v1.**
+
+Do not start Lesson 3 full production until Lesson 2 is approved or revised to approval.
