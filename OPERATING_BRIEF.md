@@ -1,7 +1,7 @@
 # Operating Brief — Science Slides
 
-Version: 3.3
-Last revised: 2026-09-05
+Version: 3.4
+Last revised: 2026-09-06
 
 ## Absolute repository boundary
 
@@ -106,22 +106,25 @@ Mandatory first-pilot read order:
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
-3. `FABLE_AUDIT_RECONCILIATION_2026-09-05.md`
-4. `CLASSROOM_PROFILE.md`
-5. `PROJECT_MASTER.md`
-6. `WORKFLOW.md`
-7. `SOURCE_POLICY.md`
-8. `TOOL_ROUTING.md`
-9. `QUALITY_GATES.md`
-10. `SLIDE_STYLE_GUIDE.md`
-11. `VISUAL_ENGAGEMENT_SYSTEM.md`
-12. `DECISIONS.md`
-13. `GEMINI_REVIEW_WORKFLOW.md` when any Gemini gate is relevant
-14. task-relevant files under `templates/`
+3. `RENDERER_ROUTING.md`
+4. `FABLE_AUDIT_RECONCILIATION_2026-09-05.md`
+5. `CLASSROOM_PROFILE.md`
+6. `PROJECT_MASTER.md`
+7. `WORKFLOW.md`
+8. `SOURCE_POLICY.md`
+9. `TOOL_ROUTING.md`
+10. `QUALITY_GATES.md`
+11. `SLIDE_STYLE_GUIDE.md`
+12. `VISUAL_ENGAGEMENT_SYSTEM.md`
+13. `DECISIONS.md`
+14. `GEMINI_REVIEW_WORKFLOW.md` when any Gemini gate is relevant
+15. task-relevant files under `templates/`
 
 Reason: the first pilot must carry forward every accepted/rejected/pending Fable-audit item and must not accidentally restore superseded assumptions such as Beautiful.ai as unconditional default or rigid 7–10-minute attention resets.
 
-After the first pilot resolves the pending renderer/tool/typography/equation/workflow questions, later chapters may return to the compact recovery sequence near the end of this file.
+`RENDERER_ROUTING.md` is now mandatory in the first-pilot recovery sequence because RT-01 has resolved the renderer/tool path and older pre-RT-01 candidate language remains in some historical records.
+
+After the first pilot resolves the remaining typography/classroom/workflow questions, later chapters may return to the compact recovery sequence near the end of this file.
 
 ## 60-minute rule
 
@@ -170,70 +173,125 @@ Avoid long passive stretches. Do not use a rigid 7–10-minute biological attent
 - Every important online/animated/interactive element needs a static fallback.
 - Bangla typography, equations and labels must be tested in the actual exported/delivery artifact before classroom-ready status.
 
-## Tool roles
+## Tool roles — post-RT-01 canonical routing
 
-- **ChatGPT:** project lead, chapter analysis, lesson architecture, source reconciliation, storyboard, QA and GitHub state maintenance through the connected write-capable GitHub integration.
-- **NotebookLM:** conditional source-grounded extraction/citation and student revision materials when it materially helps; never replaces visible source verification or authoritative scientific checking.
-- **Gemini AI Pro:** independent second-opinion review and targeted research at high-value gates, not duplicate authoring by default. Planned reviews use downloadable single-file bundles per `GEMINI_REVIEW_WORKFLOW.md`.
-- **Beautiful.ai:** candidate full-deck renderer; use only after renderer calibration confirms suitable Bangla/equation/export reliability for this project.
-- **Canva:** candidate full-deck renderer and specialist for bespoke visuals, diagrams, infographics, worksheets and difficult slides; also subject to renderer calibration.
-- **Hyperagent:** specialist build/QA/interactive engine for programmatic SVG/equation assets, custom HTML/JS visualizations, deterministic link/asset checks and genuinely needed custom interaction/media.
+RT-01 is complete. The renderer route is **no longer undecided**.
+
+Canonical routing document: `RENDERER_ROUTING.md`.
+Durable decision: `DECISIONS.md` → `D-036`.
+
+### ChatGPT
+
+Project lead for chapter analysis, lesson architecture, source reconciliation, storyboard, controlled production coordination, QA and GitHub state maintenance.
+
+### PptxGenJS — primary production route
+
+**Default science-deck authoring/rendering route.**
+
+Use controlled PptxGenJS for frozen wording, Bangla layout, notation, projector-safe hierarchy and deterministic scientific SVG/shape construction.
+
+### Canva — optional finishing environment after controlled import
+
+Use Canva primarily after importing a controlled PPTX for manual polish, alignment, low-risk visual finishing, hosting/editing or reusable components.
+
+Canva native AI is **not** the default full-deck author and must not replace science-critical diagrams/wording without controlled QA.
+
+### Beautiful.ai — low-risk prototype/inspiration only
+
+Beautiful.ai is **not** the unattended full-deck renderer after RT-01.
+
+It may be used for low-risk layout exploration or inspiration only. Any reused wording/diagram must be reconciled back to the frozen storyboard and revalidated.
+
+### Hyperagent
+
+Specialist build/QA/interactive engine for programmatic SVG/equation assets, custom HTML/JS visualizations, deterministic link/asset checks and genuinely needed custom interaction/media.
+
+### Gemini AI Pro
+
+Independent second-opinion review and targeted research at high-value gates, not duplicate authoring by default. Planned reviews use downloadable single-file bundles per `GEMINI_REVIEW_WORKFLOW.md`.
+
+### NotebookLM
+
+Conditional source-grounded extraction/citation and student revision materials when it materially helps; never replaces visible source verification or authoritative scientific checking.
 
 Existing trusted simulations, videos, diagrams and educational resources should normally be searched before custom generation.
 
-## Renderer calibration
+## Renderer routing decision — FINAL after RT-01
 
-Before the first final chapter deck, run RT-01 using the same representative Bangla/science stress-test content in Beautiful.ai and Canva; add another practical fallback only if needed.
+The default production chain is:
 
-Test:
+**Controlled PptxGenJS → deterministic SVG/shape science visuals → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF fallback.**
 
-- Bangla conjuncts and mixed Bangla/English
-- scientific symbols, units, subscripts/superscripts and equations
-- diagram labels
-- visual quality
-- projector readability
-- PDF/PPTX/export behaviour as applicable
-- editability
-- workflow time/friction
+Why:
 
-Do not permanently declare one renderer superior before this real test.
+- Canva native AI preserved much notation but produced projector-small text, unrelated template artifacts and an unreliable critical-angle diagram;
+- Beautiful.ai produced cleaner standard layouts but omitted the requested deterministic critical-angle diagram, escaped `<`/`>` notation, rewrote frozen wording and introduced material content drift;
+- controlled PptxGenJS kept scientific wording/geometry under direct control and still allowed Canva finishing after import.
 
-## First-pilot evidence to capture
+### No-confusion precedence rule
 
-The first completed chapter should resolve or materially inform:
+Any older file or historical section saying:
 
-- Beautiful.ai vs Canva default/fallback routing
-- whether hybrid rendering is worth the complexity
-- Bangla typography and numeric visual baselines
-- native vs controlled equation/chemistry notation path
-- primary classroom delivery format
-- Hyperagent SVG/equation/QA value
-- NotebookLM usefulness on the supplied source
-- Gemini review cadence/value
-- actual OCR/vision reliability
-- realism of the 50–55 minute planning model
-- which policy/template files can be safely consolidated after the pilot
+- Beautiful.ai and Canva are still equal full-deck candidates;
+- renderer decision is pending;
+- RT-01 is still pending;
+- Beautiful.ai is the default renderer;
 
-Update `DECISIONS.md`, `CURRENT_STATE.md` and the Fable reconciliation as evidence resolves these items.
+is superseded by:
+
+1. `RENDERER_ROUTING.md`;
+2. `DECISIONS.md` → `D-036`;
+3. the post-RT-01 section of `CURRENT_STATE.md`;
+4. the completed chapter RT-01 evidence record.
+
+Do **not** reopen renderer selection in a new chat unless the user explicitly asks to reconsider it or new documented evidence materially changes the decision.
+
+## Equation / notation route after RT-01
+
+- straightforward native Unicode such as `°`, `10⁸`, `H₂O`, `CO₂` may remain text only after actual export verification;
+- comparison symbols and renderer-sensitive notation must be checked in the final artifact;
+- complex equations/chemistry may use controlled LaTeX/MathJax → SVG/PNG when needed;
+- source expressions remain preserved in storyboard/source records.
 
 ## Classroom artifact package
 
 GitHub storyboard/content remains the canonical source of truth. A classroom-ready lesson should have:
 
-1. primary delivery deck in the selected renderer/format
-2. PDF fallback
-3. fallback assets/resources for any classroom-critical online or animated element
-4. source/storyboard/resource records in GitHub
+1. controlled editable PPTX;
+2. verified PDF fallback;
+3. fallback assets/resources for any classroom-critical online or animated element;
+4. source/storyboard/resource/production-QA records in GitHub;
+5. post-import QA if Canva finishing is used.
+
+## First-pilot evidence still to capture
+
+RT-01 has already resolved:
+
+- default renderer/tool route;
+- Canva native vs controlled-import role;
+- Beautiful.ai full-deck role;
+- controlled diagram requirement;
+- need for verified PPTX + PDF fallback.
+
+Still refine from the first completed chapter/classroom evidence:
+
+- final reusable Bangla typography and numeric visual baselines;
+- exact primary classroom playback preference;
+- Hyperagent SVG/equation/QA value versus workflow overhead;
+- NotebookLM usefulness on real source intake;
+- realism of timing estimates in live classroom use;
+- which policy/template files can be safely consolidated after the pilot.
 
 ## Compact new-chat recovery after the first pilot
 
-Once the first-pilot pending items have been resolved and `CURRENT_STATE.md` explicitly says compact recovery is safe, later chats may read in this order:
+Once the first-pilot pending items are resolved and `CURRENT_STATE.md` explicitly says compact recovery is safe, later chats should read in this order:
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
-3. `GEMINI_REVIEW_WORKFLOW.md` if a Gemini review gate is pending/current
-4. active chapter `STATUS.md` if one exists
-5. only the relevant chapter/lesson files
+3. `RENDERER_ROUTING.md`
+4. `GEMINI_REVIEW_WORKFLOW.md` if a Gemini review gate is pending/current
+5. active chapter `STATUS.md` if one exists
+6. only the relevant chapter/lesson files
 
 Read deeper policy files only when the task requires them.
 
