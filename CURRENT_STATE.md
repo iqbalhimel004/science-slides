@@ -16,6 +16,7 @@ Only this repository is authorized for Science Slides writes.
 - External-tool prompts are one self-contained fenced code block for one-click copy (`D-033`).
 - Planned Gemini reviews use fresh downloadable single-file bundles (`D-034`).
 - Gate B is targeted implementation QA, not a second Gate A (`D-035`).
+- RT-01 renderer route is now locked by evidence (`D-036`).
 
 ## Active chapter
 
@@ -25,7 +26,7 @@ Canonical path:
 `chapters/class-8/science/chapter-11-light/`
 
 Current status:
-**GATE_B_RECONCILED — FINAL_G1_G7_PASS — CONTENT_STORYBOARD_FROZEN — RT_01_NEXT**
+**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — CONTROLLED_PPTX_ROUTE_LOCKED — LESSON_1_PRODUCTION_NEXT**
 
 ## Review state
 
@@ -33,33 +34,10 @@ Gate A: completed + reconciled.
 
 Gate B: completed + reconciled.
 
-Files:
-- `reviews/GEMINI_GATE_B_RAW_2026-09-06.md`
-- `reviews/GEMINI_GATE_B_RECONCILIATION_2026-09-06.md`
-
-Gate B external verdict:
-`PASS_WITH_TARGETED_CHANGES`
-
 Canonical Gate B result:
 **ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED**
 
-## Implemented Gate-B changes
-
-1. **Critical angle visual**
-   - L2-S09/R2-03 now explicitly includes reflected ray at `i=C` together with grazing refracted ray (`r=90°`).
-   - TIR remains only for `i>C`.
-   - No Fresnel/reflected-power fraction is taught.
-
-2. **Magnifier finding**
-   - Rejected as already implemented.
-   - L3-S06/R3-03 already required solid actual rays + dashed backward extensions for the virtual image.
-
-3. **Lesson 4 compression**
-   - removed dedicated digital-camera CORE slide;
-   - retained one-sentence digital contrast on film-chemistry slide;
-   - detailed digital sensor material moved to STRETCH;
-   - standalone chapter concept map merged into final synthesis/exit;
-   - L4 reduced from 46 CORE + 8 FLEX = 54 to **42 CORE + 8 FLEX = 50**.
+No further Gemini planning review is required unless production introduces a new material science/content regression.
 
 ## Frozen lesson timing
 
@@ -80,7 +58,67 @@ Canonical file:
 Result:
 `PASS — CONTENT/STORYBOARD FREEZE APPROVED`
 
-All textbook-body topics remain mapped. No material prerequisite, duplication, continuity, scientific wording or timing blocker remains at storyboard/content level.
+## RT-01 completed
+
+Canonical record:
+`chapters/class-8/science/chapter-11-light/RT01_RENDERER_CALIBRATION_2026-09-06.md`
+
+Final verdict:
+`RT_01_COMPLETE — CONTROLLED_PPTX_PRIMARY — CANVA_CONTROLLED_IMPORT_FINISHING — DIRECT_PPTX_PDF_FALLBACK`
+
+### Evidence summary
+
+**Canva native AI**
+- notation largely survived;
+- projector-small body/table text;
+- unrelated template artifacts appeared;
+- critical-angle diagram was not deterministic/reliable enough.
+
+**Beautiful.ai native**
+- cleaner standard layouts than Canva native;
+- editable PPTX/PDF export works;
+- exported PPTX passed overflow test;
+- however `<`/`>` were exported as escaped text in the TIR stress row;
+- requested critical-angle ray diagram was omitted;
+- verified science wording was rewritten, including material drift in the critical-angle and film-exposure treatment;
+- exported PPTX references Beautiful.ai font packages (`Satoshi Black`, `DM Mono Regular`), creating portability dependence if fonts are not installed.
+
+**Controlled PptxGenJS → Canva import**
+- critical Bangla/notation text preservation passed at Canva content layer;
+- deterministic diagrams remain under project control;
+- Canva remains useful as a finishing/editing/hosting environment after controlled import.
+
+## Locked renderer/tool route
+
+### Primary production authoring/rendering
+
+**Controlled PptxGenJS**
+
+Use:
+- deterministic shapes/SVG for optics/science-critical visuals;
+- project-controlled wording;
+- project-controlled typography/layout;
+- 16:9 source deck.
+
+### Optional finishing environment
+
+**Canva via controlled PPTX import**
+
+Use only when manual polish/hosting/editing materially improves the deck and does not change verified science. Run post-import QA.
+
+### Classroom fallback/delivery
+
+**Direct controlled PPTX + verified PDF fallback**
+
+PDF remains mandatory for portability/offline safety.
+
+### Beautiful.ai after RT-01
+
+Not an unattended science full-deck renderer. May be used only for low-risk layout prototyping/inspiration where all rewritten content is revalidated.
+
+### Native Canva AI after RT-01
+
+Not the default authoring route. May be used only for low-risk visual inspiration/components; not for deterministic scientific diagrams or frozen wording without controlled replacement/QA.
 
 ## What is frozen
 
@@ -98,28 +136,23 @@ Unless later production reveals a material scientific/usability defect:
 The chapter is **not classroom-ready yet**.
 
 Pending:
-- RT-01 renderer calibration;
-- default/fallback renderer decision;
-- deterministic scientific visual construction;
-- rendered diagram/anatomy/process QA;
-- Bangla/notation/export/projector QA;
+- Lesson 1 deterministic visual construction and controlled PPTX build;
+- Lesson 1 rendered scientific/typographic/projector QA;
+- Lesson 1 verified PDF fallback;
+- repeat production/QA for Lessons 2–4;
 - offline/static fallback verification;
-- PDF fallback generation/verification;
-- final rendered chapter audit.
+- final rendered chapter-wide audit;
+- final classroom-ready package and status.
 
 ## Next authorized action
 
-Run **RT-01** using representative Bangla/science content through Beautiful.ai and Canva. Compare:
+Proceed to **Lesson 1 production**:
 
-- Bangla conjunct rendering;
-- mixed Bangla/English scientific text;
-- `i`, `r`, `90°`, subscripts/superscripts/equation notation;
-- scientific diagram labels;
-- editability;
-- export fidelity;
-- projector readability;
-- workflow friction/time.
-
-Then record the default/fallback renderer decision in `DECISIONS.md` before first final-deck rendering.
-
-No further Gemini planning review is required unless a later production step introduces a material content/science regression.
+1. read frozen `lesson-01/STORYBOARD.md`, `lesson-01/RESOURCES.md` and QA notes;
+2. construct deterministic high-risk visuals first;
+3. assemble the controlled 16:9 PPTX in PptxGenJS;
+4. render and inspect actual slides;
+5. run scientific diagram, Bangla/notation, projector-readability and export QA;
+6. optionally import to Canva for finishing only if useful;
+7. generate and verify PDF fallback;
+8. checkpoint Lesson 1 before Lesson 2.
