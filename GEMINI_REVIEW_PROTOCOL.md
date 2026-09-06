@@ -1,38 +1,52 @@
 # Gemini Independent Review Protocol
 
-Gemini is an optional independent/adversarial reviewer. It does not replace primary sources or automatically change canonical project state.
+Status: **LEGACY GUIDANCE — SUPERSEDED FOR PLANNED REVIEWS BY `GEMINI_REVIEW_WORKFLOW.md`**
 
-## When to use
+This file preserves the original adversarial-review posture. It is **not** the operational transport/process authority for current planned Gemini review gates.
 
-Use Gemini when it can materially improve confidence, especially for:
+For any current or future planned Gemini review, use:
 
-- master-workflow gap analysis
-- difficult or ambiguous science
-- chapter decomposition sanity checks
-- missing-topic detection
-- source conflicts
-- misconception detection
-- final chapter coverage review
+`GEMINI_REVIEW_WORKFLOW.md`
 
-## Required review posture
+That workflow requires:
 
-Ask Gemini to find problems, not to endorse the plan.
+- a fresh single-file Markdown bundle built from current canonical GitHub files;
+- a downloadable bundle for the user;
+- one self-contained copy-ready prompt;
+- raw Gemini response saved first;
+- independent validation of material findings;
+- `ACCEPT / PARTIAL / REJECT` reconciliation;
+- checkpoint before continuing.
 
-Suggested master-plan audit prompt:
+Gate B is targeted implementation QA, not a duplicate Gate A review.
 
-> Act as an independent curriculum, pedagogy, scientific-accuracy, classroom-practicality, and production-workflow auditor. Review the supplied Science Slides project plan adversarially. Find missing controls, contradictions, failure modes, unnecessary complexity, source-verification weaknesses, timing risks, accessibility issues, copyright/resource risks, and places where the process could still produce scientifically incorrect or impractical classroom slides. Do not praise the plan. Rank findings by severity and explain the concrete failure each finding could cause. Do not rewrite the entire plan unless a rewrite is necessary to fix a specific high-severity problem.
+## Preserved review posture
 
-Suggested chapter audit prompt:
+Gemini is an optional independent/adversarial reviewer. It does not replace primary sources, current authoritative science, or canonical project state.
 
-> Independently audit this chapter analysis and lesson split against the supplied source material. Identify any omitted concept, incorrect dependency, unrealistic 60-minute timing assumption, scientific ambiguity, exam-facing wording risk, likely student misconception, unnecessary repetition, or lesson boundary that harms understanding. Treat the source material as primary. Return findings ranked by severity with exact evidence/location when possible.
+Useful review purposes include:
+
+- difficult or ambiguous science;
+- chapter decomposition sanity checks;
+- missing-topic detection;
+- source conflicts;
+- misconception detection;
+- targeted pre-freeze implementation risk;
+- final coverage/continuity review when warranted.
+
+Ask Gemini to find concrete problems, not merely endorse the plan.
 
 ## Acceptance rule
 
 For every Gemini finding:
 
-1. independently verify it against the textbook and/or authoritative sources
-2. classify it as valid, partially valid, invalid, or unresolved
-3. update canonical files only for validated findings
-4. record durable changes in `DECISIONS.md` when they alter project policy
+1. independently verify it against the textbook and/or authoritative sources;
+2. classify it as `ACCEPT`, `PARTIAL`, `REJECT`, or unresolved;
+3. update canonical files only for validated findings;
+4. record durable policy changes in `DECISIONS.md` when relevant.
 
 Model agreement alone is not evidence.
+
+## Precedence
+
+If this legacy file conflicts with `GEMINI_REVIEW_WORKFLOW.md`, `CURRENT_STATE.md`, `OPERATING_BRIEF.md`, or a current chapter review reconciliation, the newer canonical record wins.
