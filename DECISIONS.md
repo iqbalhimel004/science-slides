@@ -160,3 +160,42 @@ Operational rule:
 - do not depend on Beautiful.ai proprietary/exported fonts for the final portable classroom package.
 
 Reason: scientific meaning, deterministic diagrams, notation fidelity and projector usability are hard gates that outweigh generic layout polish or generation convenience.
+
+## D-037 — Microsoft PowerPoint smoke test is a hard compatibility gate
+Decision: A user-facing PPTX is not classroom-ready until the exact artifact is tested in Microsoft PowerPoint when PowerPoint is available and opens without repair/recovery warning. ZIP/XML validity, LibreOffice opening, rendered-image QA or PDF conversion alone are insufficient.
+
+Operational rule:
+- `Repair/Recovery warning = FAIL`;
+- if a PPTX is normalized/resaved, re-run science/layout QA and re-test PowerPoint playback/editability;
+- if the deck contains animation, transitions, hyperlinks, buttons or media, verify those behaviours after any normalization/resave;
+- record the exact passing PPTX fingerprint in production QA.
+
+Reason: Lesson 1's first controlled PPTX passed internal/render checks but Microsoft PowerPoint still requested repair.
+
+## D-038 — Dynamic engagement and visual attractiveness are production gates, not optional polish
+Decision: A scientifically correct deck may still fail production if planned progressive reveal, prediction, simulation/interaction, visual rhythm or attractive classroom UI is materially under-implemented. Static presentation is allowed only when it is an intentional pedagogical choice.
+
+Operational rule:
+- for relevant storyboard segments choose an explicit mode such as `STATIC_INTENTIONAL`, `STAGED_REVEAL`, `PREDICT_THEN_REVEAL`, `NATIVE_ANIMATION`, `INTERACTIVE_NAVIGATION`, `LIVE_DEMO`, `SIMULATION`, or `VIDEO/ANIMATION_RESOURCE`;
+- staged deterministic reveal states are preferred over fragile native animation when the teaching value is equivalent;
+- every important dynamic/interactive element needs a static/offline fallback;
+- Lesson 1 v2 must receive user approval of the master UI/motion direction before Lessons 2–4 inherit it;
+- production QA must explicitly report dynamic implementation and visual-attractiveness status.
+
+Canonical procedure: `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`.
+
+Reason: Lesson 1's first controlled build was scientifically sound but too static/utilitarian and did not meet the original visual-engagement objective.
+
+## D-039 — Simulation selection is multi-source and concept-fit driven, not PhET-only
+Decision: PhET is one strong simulation provider, not the automatic or exclusive simulation source. For each concept, compare multiple reputable existing resources when practical and select the best verified option for the exact learning objective, class level, visual clarity, interaction quality, classroom friction, licensing and fallback needs.
+
+Operational rule:
+- use `SIMULATION_RESOURCE_ROUTING.md` as the canonical selection policy;
+- candidate ecosystems include PhET, The Physics Classroom Physics Interactives, GeoGebra, Open Source Physics/ComPADRE, and other reputable university/professional/government/established educational sources;
+- community-created resources such as many GeoGebra activities require item-level scientific QA;
+- do not include multiple simulations merely for variety; add a second only when it serves a distinct instructional role;
+- keep CORE learning independent of internet unless classroom reliability is explicitly confirmed;
+- record why the chosen simulation was preferred over the main alternatives;
+- custom Hyperagent/HTML/JS simulation is used only when existing resources fail the specific teaching objective.
+
+Reason: no single provider is best for every concept. For Chapter 11, The Physics Classroom offers strong refraction and optics-bench interactives, while GeoGebra can be especially useful for adjustable ray/lens geometry; resource choice should therefore be per concept, not per brand.
