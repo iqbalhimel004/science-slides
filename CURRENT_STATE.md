@@ -17,7 +17,8 @@ Only this repository is authorized for Science Slides writes.
 - Planned Gemini reviews use fresh downloadable single-file bundles (`D-034`).
 - Gate B is targeted implementation QA, not a second Gate A (`D-035`).
 - RT-01 renderer route is locked by evidence (`D-036`).
-- `RENDERER_ROUTING.md` is the canonical no-confusion renderer-routing document for future chats.
+- `RENDERER_ROUTING.md` is the canonical renderer-routing record.
+- `ARTIFACT_PERSISTENCE.md` is the canonical controlled-deck reproducibility policy.
 
 ## Active chapter
 
@@ -27,7 +28,8 @@ Canonical path:
 `chapters/class-8/science/chapter-11-light/`
 
 Current status:
-**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_CONTROLLED_BUILD_PASS_WITH_NOTES — LESSON_2_PRODUCTION_NEXT**
+
+**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_CONTROLLED_BUILD_PASS_WITH_NOTES — REPOSITORY_CONSISTENCY_CLEANUP_COMPLETE — LESSON_2_PRODUCTION_NEXT**
 
 ## Review / freeze state
 
@@ -61,104 +63,50 @@ Durable decision:
 Final verdict:
 `RT_01_COMPLETE — CONTROLLED_PPTX_PRIMARY — CANVA_CONTROLLED_IMPORT_FINISHING — DIRECT_PPTX_PDF_FALLBACK`
 
-### Primary authoring/rendering
+Primary authoring/rendering: **controlled PptxGenJS**.
 
-**Controlled PptxGenJS**
+Optional finishing: **Canva after controlled PPTX import**, only when it materially improves visual polish without changing verified science.
 
-Use it for:
-- frozen wording;
-- Bangla typography/layout;
-- projector-safe sizing/hierarchy;
-- deterministic SVG/shape scientific visuals;
-- critical notation/diagram placement;
-- source editable PPTX.
+Beautiful.ai/native Canva AI are not unattended full-deck science authoring routes.
 
-### Optional finishing
+Classroom delivery/fallback: **controlled PPTX + verified PDF**.
 
-**Canva after controlled PPTX import**
+## Repository consistency cleanup — completed 2026-09-06
 
-Use only when it materially improves polish/editing/hosting without changing verified science.
+The repository was re-audited after RT-01 and Lesson 1 production.
 
-Canva native AI is not the default full-deck author and should not replace high-risk scientific diagrams or frozen wording.
+High-risk stale/conflicting operational files were corrected:
 
-### Beautiful.ai
+- `NEW_CHAT_START.md` → post-RT-01 recovery order;
+- `AGENTS.md` → post-RT-01 tool routing and artifact-persistence rule;
+- `WORKFLOW.md` → controlled PptxGenJS production flow replaces candidate-renderer phase;
+- `PROJECT_MASTER.md` → renderer policy and reproducibility updated;
+- `SLIDE_STYLE_GUIDE.md` → post-RT-01 typography/renderer/notation rules;
+- `README.md` → active Chapter 11 state and current renderer route;
+- `CURRICULUM_INDEX.md` → Chapter 11 content-frozen / L1-produced status;
+- `GEMINI_REVIEW_PROTOCOL.md` → explicitly marked legacy; `GEMINI_REVIEW_WORKFLOW.md` is operational authority;
+- `ARTIFACT_PERSISTENCE.md` → new durable reproducibility policy.
 
-**Not an unattended full-deck science renderer.**
+Repository consistency audit record:
 
-Permitted role:
-- low-risk layout exploration;
-- visual inspiration/prototyping.
+`REPOSITORY_CONSISTENCY_AUDIT_2026-09-06.md`
 
-Any reused wording/diagram must be reconciled back to the frozen storyboard and revalidated.
+### Historical-stage metadata rule
 
-### Classroom delivery/fallback
+Some lesson-level storyboard/QA files intentionally preserve the stage at which they were authored, e.g. `DRAFT`, `PRE_FREEZE`, or `RT-01 pending` in older QA text.
 
-**Controlled PPTX + verified PDF fallback**
+These are **historical stage-local records**, not current operational state.
 
-PDF remains mandatory for portability/offline safety.
+Use current-state precedence:
 
-## Why the renderer decision was made
+1. `CURRENT_STATE.md`
+2. `RENDERER_ROUTING.md`
+3. `DECISIONS.md`
+4. active chapter `STATUS.md`
+5. latest production QA / reconciliation record
+6. older storyboard-stage QA/history
 
-### Canva native AI — failed as default author
-
-RT-01 found:
-- notation generally survived;
-- large Bangla headings were often readable;
-- but body/table/checklist text was often too small for projector use;
-- unrelated template artifacts appeared (`SALFORD & CO.`, `PRESENTATION`, `www.reallygreatsite.com`);
-- the critical-angle ray diagram was visually ambiguous and not deterministic enough;
-- generated styling sometimes outranked instructional hierarchy.
-
-Conclusion:
-**Canva remains useful as a controlled finishing/editing environment, not as the uncontrolled source of science content.**
-
-### Beautiful.ai — failed mandatory science-control gates
-
-RT-01 found:
-- cleaner standard layouts than native Canva in several slides;
-- editable PPTX and PDF export work;
-- but requested deterministic critical-angle diagram was omitted;
-- `<`/`>` notation was exported as escaped text in the TIR stress case;
-- verified wording was rewritten despite exact-text preservation being requested;
-- material content drift appeared in critical-angle and film-exposure wording;
-- editable export depended on Beautiful.ai font packages for exact typography/portability.
-
-Conclusion:
-**Beautiful.ai may inspire/prototype layouts but is not trusted as the final unattended science author/renderer.**
-
-### Controlled PptxGenJS — selected
-
-RT-01 showed the controlled route gives:
-- direct control of frozen wording;
-- deterministic scientific geometry;
-- explicit projector font/layout control;
-- reproducible PPTX/PDF output;
-- actual export QA before classroom use;
-- optional Canva finishing without surrendering scientific authority.
-
-## No-confusion precedence rule for future chats
-
-If any older/historical file says:
-
-- Beautiful.ai and Canva are still equal full-deck candidates;
-- renderer is not yet selected;
-- RT-01 is pending;
-- Beautiful.ai should be the default renderer;
-- Canva native AI should generate the whole final science deck;
-
-that wording is **historical and superseded**.
-
-Future chats must use this precedence order:
-
-1. `RENDERER_ROUTING.md`
-2. `DECISIONS.md` → `D-036`
-3. this `CURRENT_STATE.md`
-4. `TOOL_ROUTING.md`
-5. chapter RT-01 evidence record
-
-Do not reopen renderer selection unless:
-- the user explicitly asks to reconsider it, or
-- new documented evidence from actual classroom use materially changes the decision.
+Do not infer that Gate B, content freeze or RT-01 is still pending from an older stage-local file.
 
 ## Lesson 1 production checkpoint
 
@@ -177,46 +125,51 @@ Artifact fingerprints:
 - PPTX SHA-256: `baf43046f54165e7bc705c897a02206a8966e3c9294cd3d86d2b1a50f62919c9`
 - PDF SHA-256: `a85cc0821c73b9074a827968ecb8834aa0c7bd90dbd185ea248fe9f102ab3b6a`
 
-Production QA completed:
-- deterministic ray/optics diagrams built;
-- rarer→denser and denser→rarer geometry checked;
-- normal-incidence exception explicit;
-- optical density ≠ mass density guardrail retained;
-- parallel-sided slab geometry remains bounded;
-- Bangla rendered using controlled Noto Sans Bengali stack;
+Verified:
+- deterministic ray/optics diagrams;
+- normal-incidence exception;
+- optical density ≠ mass density guardrail;
+- parallel-sided slab geometry;
+- controlled Noto Sans Bengali / Noto Sans typography;
 - `slides_test.py`: PASS, no overflow;
-- PPTX montage inspected;
-- PDF montage inspected;
+- PPTX/PDF rendered inspection;
 - PDF preflight: 16 pages, openable, non-scanned, unencrypted;
-- CORE remains offline-capable.
+- CORE offline capability.
 
-Nonblocking notes:
-- exact reusable numeric projector font baseline will be refined from first real classroom use / continued pilot evidence;
-- optional Canva finishing is not required;
-- PhET remains FLEX-only and does not block Lesson 1.
+### Lesson 1 reproducibility exception
+
+Lesson 1 was produced before `ARTIFACT_PERSISTENCE.md` was formalized.
+
+Its filenames, SHA-256 fingerprints and QA are durable, but the exact original PptxGenJS generator source was not committed.
+
+This does not invalidate its content/scientific QA. Before the chapter is finally marked `CLASSROOM_READY`, Lesson 1 must be normalized by preserving a reconstructed reproducible generator/build specification or by regenerating a final controlled version whose source is committed under the new policy.
+
+From Lesson 2 onward, this exception does not apply.
 
 ## What remains for the chapter
 
-- Lesson 2 controlled PPTX/PDF production + QA;
-- Lesson 3 controlled PPTX/PDF production + QA;
-- Lesson 4 controlled PPTX/PDF production + QA;
-- verify remaining offline/static fallbacks;
-- final rendered chapter-wide continuity/coverage audit;
-- finalize classroom-ready package and reusable master-theme baselines.
+1. Lesson 2 controlled PPTX/PDF production + QA + reproducible source record;
+2. Lesson 3 controlled PPTX/PDF production + QA + reproducible source record;
+3. Lesson 4 controlled PPTX/PDF production + QA + reproducible source record;
+4. normalize Lesson 1 reproducibility before final classroom-ready lock;
+5. verify remaining offline/static fallbacks;
+6. final rendered chapter-wide continuity/coverage audit;
+7. finalize classroom-ready package and reusable visual baselines.
 
 ## New-chat recovery order — current pilot
 
-A new chat continuing this project should read, in this order:
+Read:
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
 3. `RENDERER_ROUTING.md`
 4. active chapter `STATUS.md`
-5. active lesson storyboard/resources/production QA
-6. deeper policy files only if the current task requires them
+5. active lesson storyboard/resources/latest production QA
+6. `ARTIFACT_PERSISTENCE.md` for production work
+7. deeper policy files only if required
 
-This is intended to eliminate ambiguity from older pre-RT-01 documents.
+`NEW_CHAT_START.md` contains the full recovery protocol.
 
 ## Next authorized action
 
-Proceed to **Lesson 2 controlled production** using the frozen storyboard/resource map and the locked PptxGenJS-first route.
+Proceed to **Lesson 2 controlled production** using the frozen storyboard/resource map, the locked PptxGenJS-first route, and the new artifact-persistence policy.
