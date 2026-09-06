@@ -24,6 +24,9 @@ Repeat this block for each slide.
 - Slide family/layout intent:
 - Visual/resource:
 - Visual purpose: Motivate / Explain / Compare / Locate / Sequence / Quantify / Predict / Practice / Summarize / N/A
+- **Dynamic implementation mode:** STATIC_INTENTIONAL / STAGED_REVEAL / PREDICT_THEN_REVEAL / NATIVE_ANIMATION / INTERACTIVE_NAVIGATION / LIVE_DEMO / SIMULATION / VIDEO_ANIMATION_RESOURCE
+- Dynamic implementation detail/rationale:
+- PowerPoint dependency/risk:
 - Teacher note:
 - Student action/question:
 - Expected response:
@@ -41,8 +44,11 @@ Repeat this block for each slide.
 - Any decorative visual without instructional purpose?:
 - Any overloaded slide that should be segmented?:
 - Any long passive teacher-only stretch without a meaningful student response?:
+- Any concept-heavy sequence that became static by accident?:
+- Storyboard-planned reveal/interaction/simulation explicitly mapped?:
 - Motion/animation used only for pedagogical purpose?:
 - Bangla/English density appropriate for the grade?:
+- Any repetitive card/box-heavy visual pattern that should be redesigned?:
 
 ## Timing summary
 
@@ -61,6 +67,7 @@ PASS only if:
 - CORE + FLEX is normally about 50–55 min
 - 5–10 min remains unallocated contingency inside the 60-minute class
 - STRETCH is not required for successful lesson completion
+- media/simulation/demo/reveal setup and debrief time is included
 
 ## Content-freeze checklist
 
@@ -74,6 +81,20 @@ PASS only if:
 - [ ] summary + exit check retained
 - [ ] all required visuals/resources identified
 - [ ] visual purpose recorded for nontrivial visuals
-- [ ] fallbacks identified for classroom-critical online/interactive resources
+- [ ] dynamic implementation mode recorded for relevant concept-heavy segments
+- [ ] fallbacks identified for classroom-critical online/interactive/dynamic resources
 - [ ] exact/source expressions preserved for equations/chemistry notation where needed
 - [ ] no unresolved material content changes
+
+## Production handoff checklist
+
+Before the storyboard is considered ready for final controlled production:
+
+- [ ] dynamic elements are represented in `DYNAMIC_MANIFEST.md` or equivalent production record
+- [ ] science-critical progressive constructions have staged states or a tested animation plan
+- [ ] simulation/video/interactive resources have prediction prompts and debrief/fallback plans
+- [ ] UI/visual direction satisfies `SLIDE_STYLE_GUIDE.md`
+- [ ] first-pilot visual direction requires user approval before reuse in later lessons
+
+Canonical production policy:
+`PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
