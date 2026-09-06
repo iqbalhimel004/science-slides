@@ -17,6 +17,7 @@ Only this repository is authorized for Science Slides writes.
 - Planned Gemini reviews use fresh downloadable single-file bundles (`D-034`).
 - Gate B is targeted implementation QA, not a second Gate A (`D-035`).
 - RT-01 renderer route is locked by evidence (`D-036`).
+- `RENDERER_ROUTING.md` is the canonical no-confusion renderer-routing document for future chats.
 
 ## Active chapter
 
@@ -46,21 +47,118 @@ Current status:
 
 Chapter planned CORE + FLEX total: **202 minutes**.
 
-## RT-01 final route
+## RT-01 final route — LOCKED
 
-Canonical record:
+Canonical routing file:
+`RENDERER_ROUTING.md`
+
+Canonical evidence record:
 `chapters/class-8/science/chapter-11-light/RT01_RENDERER_CALIBRATION_2026-09-06.md`
+
+Durable decision:
+`DECISIONS.md` → `D-036`
 
 Final verdict:
 `RT_01_COMPLETE — CONTROLLED_PPTX_PRIMARY — CANVA_CONTROLLED_IMPORT_FINISHING — DIRECT_PPTX_PDF_FALLBACK`
 
-Primary authoring/rendering: **controlled PptxGenJS**.
+### Primary authoring/rendering
 
-Optional finishing: **Canva after controlled PPTX import**, only if it improves the deck without changing verified science.
+**Controlled PptxGenJS**
 
-Classroom delivery/fallback: **controlled PPTX + verified PDF**.
+Use it for:
+- frozen wording;
+- Bangla typography/layout;
+- projector-safe sizing/hierarchy;
+- deterministic SVG/shape scientific visuals;
+- critical notation/diagram placement;
+- source editable PPTX.
 
-Beautiful.ai and native Canva AI are not unattended science full-deck authoring routes.
+### Optional finishing
+
+**Canva after controlled PPTX import**
+
+Use only when it materially improves polish/editing/hosting without changing verified science.
+
+Canva native AI is not the default full-deck author and should not replace high-risk scientific diagrams or frozen wording.
+
+### Beautiful.ai
+
+**Not an unattended full-deck science renderer.**
+
+Permitted role:
+- low-risk layout exploration;
+- visual inspiration/prototyping.
+
+Any reused wording/diagram must be reconciled back to the frozen storyboard and revalidated.
+
+### Classroom delivery/fallback
+
+**Controlled PPTX + verified PDF fallback**
+
+PDF remains mandatory for portability/offline safety.
+
+## Why the renderer decision was made
+
+### Canva native AI — failed as default author
+
+RT-01 found:
+- notation generally survived;
+- large Bangla headings were often readable;
+- but body/table/checklist text was often too small for projector use;
+- unrelated template artifacts appeared (`SALFORD & CO.`, `PRESENTATION`, `www.reallygreatsite.com`);
+- the critical-angle ray diagram was visually ambiguous and not deterministic enough;
+- generated styling sometimes outranked instructional hierarchy.
+
+Conclusion:
+**Canva remains useful as a controlled finishing/editing environment, not as the uncontrolled source of science content.**
+
+### Beautiful.ai — failed mandatory science-control gates
+
+RT-01 found:
+- cleaner standard layouts than native Canva in several slides;
+- editable PPTX and PDF export work;
+- but requested deterministic critical-angle diagram was omitted;
+- `<`/`>` notation was exported as escaped text in the TIR stress case;
+- verified wording was rewritten despite exact-text preservation being requested;
+- material content drift appeared in critical-angle and film-exposure wording;
+- editable export depended on Beautiful.ai font packages for exact typography/portability.
+
+Conclusion:
+**Beautiful.ai may inspire/prototype layouts but is not trusted as the final unattended science author/renderer.**
+
+### Controlled PptxGenJS — selected
+
+RT-01 showed the controlled route gives:
+- direct control of frozen wording;
+- deterministic scientific geometry;
+- explicit projector font/layout control;
+- reproducible PPTX/PDF output;
+- actual export QA before classroom use;
+- optional Canva finishing without surrendering scientific authority.
+
+## No-confusion precedence rule for future chats
+
+If any older/historical file says:
+
+- Beautiful.ai and Canva are still equal full-deck candidates;
+- renderer is not yet selected;
+- RT-01 is pending;
+- Beautiful.ai should be the default renderer;
+- Canva native AI should generate the whole final science deck;
+
+that wording is **historical and superseded**.
+
+Future chats must use this precedence order:
+
+1. `RENDERER_ROUTING.md`
+2. `DECISIONS.md` → `D-036`
+3. this `CURRENT_STATE.md`
+4. `TOOL_ROUTING.md`
+5. chapter RT-01 evidence record
+
+Do not reopen renderer selection unless:
+- the user explicitly asks to reconsider it, or
+- new documented evidence from actual classroom use materially changes the decision.
 
 ## Lesson 1 production checkpoint
 
@@ -106,6 +204,19 @@ Nonblocking notes:
 - final rendered chapter-wide continuity/coverage audit;
 - finalize classroom-ready package and reusable master-theme baselines.
 
+## New-chat recovery order — current pilot
+
+A new chat continuing this project should read, in this order:
+
+1. `OPERATING_BRIEF.md`
+2. `CURRENT_STATE.md`
+3. `RENDERER_ROUTING.md`
+4. active chapter `STATUS.md`
+5. active lesson storyboard/resources/production QA
+6. deeper policy files only if the current task requires them
+
+This is intended to eliminate ambiguity from older pre-RT-01 documents.
+
 ## Next authorized action
 
-Proceed to **Lesson 2 controlled production** using the frozen storyboard/resource map and the same PptxGenJS-first route.
+Proceed to **Lesson 2 controlled production** using the frozen storyboard/resource map and the locked PptxGenJS-first route.
