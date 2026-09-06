@@ -34,7 +34,7 @@ Canonical path:
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_POWERPOINT_COMPATIBILITY_RECOVERED — MULTI_SOURCE_SIMULATION_ROUTING_ADOPTED — LESSON_1_VISUAL_ENGAGEMENT_V2_REQUIRED — LESSON_2_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_POWERPOINT_COMPATIBILITY_RECOVERED — MULTI_SOURCE_SIMULATION_ROUTING_ADOPTED — LESSON_1_SIMULATION_SELECTION_COMPLETE — LESSON_1_VISUAL_ENGAGEMENT_V2_NEXT — LESSON_2_ON_HOLD**
 
 ## New hard production controls — added after Lesson 1 pilot
 
@@ -102,11 +102,53 @@ Selection is based on scientific correctness, concept fit, grade suitability, in
 Canonical policy:
 `SIMULATION_RESOURCE_ROUTING.md`
 
-For Chapter 11:
+## Lesson 1 simulation comparison — COMPLETE
 
-- Lesson 1/2 refraction resource selection must compare PhET Bending Light with The Physics Classroom Refraction Interactive and suitable verified GeoGebra options when useful;
-- Lesson 3 lens exploration should compare The Physics Classroom Optics Bench with suitable verified GeoGebra/other reputable lens interactives;
-- do not include multiple simulations just for variety.
+Canonical comparison record:
+
+`chapters/class-8/science/chapter-11-light/lessons/lesson-01/production/SIMULATION_CANDIDATE_COMPARISON_2026-09-06.md`
+
+Candidates compared:
+
+1. PhET — Bending Light
+2. The Physics Classroom — Refraction Interactive
+3. GeoGebra verified refraction applets
+4. Open Source Physics / ComPADRE as a discovery/curation layer
+
+### Lesson 1 primary selection
+
+**PhET — Bending Light**
+
+Why it won for this specific lesson:
+
+- strong fit to qualitative refraction basics;
+- Bengali translation available;
+- offline-use path available;
+- strong projector visual quality;
+- low teacher setup friction;
+- clear classroom licensing/attribution;
+- supports prediction → observation without forcing Snell-law mathematics.
+
+Role:
+
+- FLEX/teacher support only;
+- 2–4 min target if used;
+- prediction before launch;
+- narrow observation task;
+- short debrief;
+- deterministic static fallback remains L1-S09–L1-S12.
+
+### Secondary alternate
+
+**The Physics Classroom — Refraction Interactive**
+
+Retained for measurement-heavy/protractor-based investigation and as a strong later candidate for Lesson 2 critical-angle/TIR work.
+
+### Reserve
+
+A verified GeoGebra refraction applet remains available only when adjustable geometry offers a specific advantage. Exact applet-level science/licensing QA is required.
+
+This selection does **not** make PhET the chapter default. Later lessons will select again by concept fit.
 
 ## Review / freeze state
 
@@ -174,18 +216,17 @@ Lesson 1 v2 dynamic manifest:
 
 `chapters/class-8/science/chapter-11-light/lessons/lesson-01/production/DYNAMIC_MANIFEST.md`
 
-The manifest no longer hard-codes PhET. The final FLEX simulation will be selected after comparing relevant providers under `SIMULATION_RESOURCE_ROUTING.md`.
+The manifest now records the completed multi-source comparison and selected Lesson 1 simulation route.
 
 ## What remains for the chapter
 
-1. compare/select the best-fit Lesson 1 refraction simulation resource;
-2. build Lesson 1 visual-engagement prototype v2;
-3. run science + G10 visual-engagement + G11 PowerPoint/playback/export QA;
-4. obtain user approval of the master UI/motion direction;
-5. persist Lesson 1 v2 build source, dynamic manifest and final fingerprints;
-6. produce Lesson 2 using the approved master standard;
-7. produce Lessons 3–4;
-8. final rendered chapter-wide audit and classroom-ready package.
+1. build Lesson 1 visual-engagement prototype v2;
+2. run science + G10 visual-engagement + G11 PowerPoint/playback/export QA;
+3. obtain user approval of the master UI/motion direction;
+4. persist Lesson 1 v2 build source, dynamic manifest and final fingerprints;
+5. produce Lesson 2 using the approved master standard and perform its own concept-fit simulation comparison where relevant;
+6. produce Lessons 3–4;
+7. final rendered chapter-wide audit and classroom-ready package.
 
 ## New-chat recovery order — current pilot
 
@@ -203,6 +244,6 @@ Read:
 
 ## Next authorized action
 
-**Select the best-fit Lesson 1 refraction simulation from multiple reputable candidates, then build Lesson 1 visual-engagement prototype v2.**
+**Build Lesson 1 visual-engagement prototype v2.**
 
 Do not start Lesson 2 full production until the Lesson 1 v2 visual/motion direction is approved.
