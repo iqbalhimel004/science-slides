@@ -2,21 +2,58 @@
 
 Lesson: `আলো থেকে প্রতিসরণ: ভিত্তি, মাধ্যম, রশ্মি ও নিয়ম`
 Production route: **Controlled PptxGenJS** per `D-036`
-Status: **FIRST CONTROLLED BUILD COMPLETE — PASS_WITH_NONBLOCKING_NOTES**
+Status: **FIRST CONTROLLED BUILD COMPLETE — USER_POWERPOINT_REPAIR_WARNING_FOUND — REPAIRED_PPTX_PROVIDED**
+
+## Important post-delivery issue
+
+On 2026-09-06, the user opened the initial PPTX in Microsoft PowerPoint on Windows and PowerPoint showed:
+
+> PowerPoint found a problem with content ... PowerPoint can attempt to repair the presentation.
+
+This means the initial PPTX passed ZIP/XML parsing, LibreOffice rendering, `slides_test.py`, PDF generation and visual QA, but still triggered Microsoft PowerPoint's stricter repair check.
+
+Action taken:
+
+- the original PPTX was opened/resaved through LibreOffice to normalize the OpenXML package;
+- the repaired PPTX passed `slides_test.py`;
+- the repaired PPTX rendered successfully to slide images;
+- the rendered montage was visually inspected;
+- the original verified PDF fallback remains unchanged and usable.
+
+Repaired artifact supplied to user:
+
+- `Class8_Science_Ch11_Lesson1_Refraction_Basics_REPAIRED.pptx`
+
+Repaired PPTX SHA-256:
+
+- `f5d3d16f724bc5ae2557c008356b28d6482ee0fd0a694c0572cfbb2bfbafe769`
+
+Production implication:
+
+- The original PPTX must be treated as **superseded for classroom PowerPoint use**.
+- The repaired PPTX should be used for PowerPoint review/classroom testing.
+- Lesson 2 onward must include a Microsoft-PowerPoint-compatibility check if possible, or at minimum a LibreOffice normalize/resave step plus user-side PowerPoint smoke test before classroom-ready lock.
 
 ## Built artifacts
 
 Generated classroom artifacts in the active production runtime:
 
-- `Class8_Science_Ch11_Lesson1_Refraction_Basics.pptx`
-- `Class8_Science_Ch11_Lesson1_Refraction_Basics.pdf`
+Initial artifacts:
+
+- `Class8_Science_Ch11_Lesson1_Refraction_Basics.pptx` — superseded for PowerPoint use because it triggered a Microsoft repair warning
+- `Class8_Science_Ch11_Lesson1_Refraction_Basics.pdf` — still valid fallback
+
+Current user-facing repaired PPTX:
+
+- `Class8_Science_Ch11_Lesson1_Refraction_Basics_REPAIRED.pptx`
 
 SHA-256:
 
-- PPTX: `baf43046f54165e7bc705c897a02206a8966e3c9294cd3d86d2b1a50f62919c9`
+- Original PPTX: `baf43046f54165e7bc705c897a02206a8966e3c9294cd3d86d2b1a50f62919c9`
+- Repaired PPTX: `f5d3d16f724bc5ae2557c008356b28d6482ee0fd0a694c0572cfbb2bfbafe769`
 - PDF: `a85cc0821c73b9074a827968ecb8834aa0c7bd90dbd185ea248fe9f102ab3b6a`
 
-Note: GitHub storyboard/source records remain canonical. Binary classroom artifacts are generated deliverables; this record preserves their exact filenames/fingerprints and the production/QA state.
+Note: GitHub storyboard/source records remain canonical. Binary classroom artifacts are generated deliverables; this record preserves exact filenames/fingerprints and the production/QA state. Lesson 1 still needs reproducibility normalization before final chapter `CLASSROOM_READY` status because the first-build generator source was not committed before artifact creation.
 
 ## Deck structure
 
@@ -110,7 +147,7 @@ PDF text layer is substantially more usable than the native-AI RT-01 outputs; re
 
 - 16:9 widescreen: PASS
 - `slides_test.py`: PASS — no overflow detected
-- rendered slide montage inspected: PASS_WITH_NOTES
+- repaired PPTX render montage inspected: PASS_WITH_NOTES
 - PDF render montage inspected: PASS_WITH_NOTES
 - high-risk labels/rays remain legible at the rendered slide level
 - no slide requires internet to teach CORE content
@@ -140,13 +177,15 @@ Rendered PDF visually matches the controlled PPTX closely at the current QA leve
 
 ## Remaining Lesson 1 decisions before classroom-ready lock
 
-1. Decide whether Canva finishing materially improves this controlled deck; this is optional, not required.
-2. If Canva finishing is used, rerun post-import visual/export QA before replacing the direct controlled deck.
-3. Real classroom/projector use should inform final numeric font-size baseline for the reusable master theme.
-4. Optional PhET link check remains nonblocking because PhET is FLEX-only and static fallbacks exist.
+1. User should open the repaired PPTX in Microsoft PowerPoint and confirm the repair warning is gone.
+2. Decide whether Canva finishing materially improves this controlled deck; this is optional, not required.
+3. If Canva finishing is used, rerun post-import visual/export QA before replacing the direct controlled deck.
+4. Real classroom/projector use should inform final numeric font-size baseline for the reusable master theme.
+5. Optional PhET link check remains nonblocking because PhET is FLEX-only and static fallbacks exist.
+6. Lesson 1 reproducibility should be normalized before final chapter `CLASSROOM_READY` lock.
 
 ## Production verdict
 
-`PASS_WITH_NONBLOCKING_NOTES — CONTROLLED PPTX/PDF BUILD IS READY FOR USER REVIEW AND CAN PROCEED TO OPTIONAL FINISHING OR LESSON 2 AFTER CHECKPOINT.`
+`REPAIRED PPTX PROVIDED — USER POWERPOINT SMOKE TEST PENDING — CONTENT/SCIENCE QA STILL PASS_WITH_NONBLOCKING_NOTES.`
 
 No content/storyboard unfreeze is required.
