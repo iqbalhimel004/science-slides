@@ -1,8 +1,8 @@
 # Slide Style Guide
 
-Version: 4.0
+Version: 4.1
 Last revised: 2026-09-06
-Status: **ACTIVE — POST-RT-01**
+Status: **ACTIVE — POST-RT-01 / POST-PILOT-ENGAGEMENT UPDATE**
 
 ## Format
 
@@ -23,6 +23,8 @@ Priority order:
 3. realistic timing
 4. student attention and visual engagement
 5. visual polish
+
+A deck that is scientifically correct but visually unfinished, repetitive or utilitarian is not `CLASSROOM_READY` for the first pilot.
 
 ## Language
 
@@ -50,9 +52,7 @@ Avoid highlighting everything.
 
 ## Typography — post-RT-01
 
-Controlled production is now the default route.
-
-Current production baseline:
+Current controlled production baseline:
 
 - Bangla: `Noto Sans Bengali`
 - Latin/scientific notation: `Noto Sans` where needed
@@ -63,7 +63,7 @@ Rules:
 - body text and diagram labels must remain projector-legible;
 - mixed Bangla/English text must be checked in the actual rendered/exported artifact;
 - do not rely on proprietary renderer font packages for final portability;
-- final numeric font-size/density baselines remain pilot-calibration items and should be refined from real classroom/projector evidence;
+- final numeric font-size/density baselines remain pilot-calibration items;
 - font files themselves must not be shared/committed as project artifacts.
 
 ## Scientific notation
@@ -79,22 +79,48 @@ Operational rule:
 
 ## Color and contrast
 
-- Use a restrained palette with limited accent colors.
-- Aim for strong projection contrast; approximately 4.5:1 normal text and 3:1 large text/important labels where practical.
+- Use a restrained but visually distinctive palette with limited accent colors.
+- Physics/general-science decks may use a dark or light technical base with a small number of high-contrast accents, provided projector readability remains strong.
+- Aim for approximately 4.5:1 contrast for normal text and 3:1 for large text/important labels where practical.
 - Do not rely on color alone to convey category, direction, state, correctness or comparison.
 - Avoid pastel-on-pastel combinations for essential text.
+- Avoid a monotonous all-white-card look across the deck.
+
+## UI / composition quality
+
+The first pilot establishes a reusable visual language. Slides should look intentionally designed, not like a technical report exported to PowerPoint.
+
+Required direction:
+
+- strong hook/opening visual when appropriate;
+- generous whitespace with purposeful balance rather than empty unused space;
+- clear foreground/background hierarchy;
+- large science diagrams and contextual imagery;
+- consistent callout/badge/label language;
+- restrained use of gradient, glow, transparency or depth only when it improves hierarchy;
+- distinct visual treatment for observation, prediction, explanation, rule, misconception, practice, simulation/resource and exit states;
+- visually varied slide families while retaining one coherent lesson identity.
+
+Avoid:
+
+- repetitive white rectangles/cards on nearly every slide;
+- generic template blocks;
+- flat diagram dumps with no focal guidance;
+- token icons that add no teaching value;
+- tiny captions carrying essential content;
+- random stock decoration;
+- large blank zones without instructional purpose.
 
 ## Standard slide families
 
 Reusable patterns may include:
 
 - hook/retrieval opener
-- learning outcome where useful
+- observation/demo prompt
 - definition/key term
 - concept explanation
 - labelled diagram/process
-- law/formula
-- worked numerical
+- rule/law/formula
 - compare/contrast
 - misconception/refutation
 - simulation/video/resource launch
@@ -115,7 +141,8 @@ Instead:
 
 - structure lessons into meaningful segments;
 - normally end major segments with a student response, retrieval prompt, prediction, explanation, practice item, diagram interaction, hinge question or observation;
-- avoid long teacher-only exposition when a meaningful response can be inserted.
+- avoid long teacher-only exposition when a meaningful response can be inserted;
+- use visual novelty only when it supports the teaching sequence.
 
 ## Grade calibration
 
@@ -125,6 +152,7 @@ Instead:
 - larger diagrams
 - shorter text blocks
 - stronger guided cues
+- more prediction/reveal and observation-based interaction where useful
 
 ### Class 9
 - balanced visuals, definitions, applications and equations
@@ -136,40 +164,11 @@ Instead:
 - more structured formulas, worked examples, synthesis and labelled diagrams
 - still avoid textbook-page-style slides
 
-## Definition slide
-
-Where appropriate show:
-
-- term in Bangla + English;
-- exam-safe/source-grounded definition;
-- separately labelled simple explanation if useful;
-- a visual/example only when it improves understanding.
-
-Do not silently blend a simplified explanation into the authoritative definition.
-
-## Equation / numerical slide
-
-Use a predictable structure where applicable:
-
-Problem → Given → Required → Formula → Substitution → Calculation → Answer + unit → Interpretation.
-
-If native text is unreliable, use controlled equation rendering and verify the export visually.
-
 ## Diagram standard
 
 Scientific correctness outranks aesthetics.
 
-Verify:
-
-- labels;
-- arrows/directions;
-- polarity;
-- axes/scales;
-- anatomy/structure;
-- circuit connections;
-- ray/wave directions;
-- relative position;
-- units/symbols.
+Verify labels, arrows/directions, polarity, axes/scales, anatomy/structure, circuit connections, ray/wave directions, relative position and units/symbols.
 
 Preferred hierarchy:
 
@@ -177,7 +176,7 @@ Preferred hierarchy:
 2. deterministic custom redraw/code-generated SVG/shape visual based on verified science;
 3. AI-generated labelled diagram only with strict scientific verification/redraw.
 
-High-risk science diagrams such as ray optics, lens constructions, circuits and anatomy paths should normally be deterministic.
+High-risk ray optics, lens constructions, circuits and anatomy paths should normally be deterministic.
 
 ## Image standard
 
@@ -201,13 +200,32 @@ Every nontrivial visual should have at least one explicit purpose:
 
 If no purpose applies, question whether the visual belongs.
 
-## Motion and animation
+## Motion / progressive reveal — mandatory planning discipline
+
+Motion is not required on every slide, but dynamic teaching must not disappear during production.
+
+For each relevant segment choose one:
+
+- `STATIC_INTENTIONAL`
+- `STAGED_REVEAL`
+- `PREDICT_THEN_REVEAL`
+- `NATIVE_ANIMATION`
+- `INTERACTIVE_NAVIGATION`
+- `LIVE_DEMO`
+- `SIMULATION`
+- `VIDEO/ANIMATION_RESOURCE`
 
 Use motion only when it helps communicate sequence, change, causality, direction, progressive construction or reveal.
 
 Avoid decorative spins/bounces/excessive transitions.
 
-Every important animated/interactive element needs a usable static fallback.
+### Compatibility preference
+
+For science-critical progressive construction, staged duplicate-slide states are preferred over fragile native animation when both teach the concept equally well.
+
+Use native PowerPoint animation when it adds clear instructional value and the exact artifact can be playback-tested in Microsoft PowerPoint.
+
+Every important dynamic/interactive element needs a usable static fallback.
 
 ## Video / simulation slide
 
@@ -217,11 +235,12 @@ Keep it simple:
 - launch link/button/QR if needed;
 - one or two guiding questions;
 - planned duration;
-- static fallback reference.
-
-After the resource, include a brief interpretation/check.
+- static fallback reference;
+- brief interpretation/check after use.
 
 Use legal source/embed playback rather than unauthorized downloaded excerpts.
+
+CORE must remain teachable if an optional online simulation fails unless classroom reliability has been explicitly confirmed.
 
 ## Renderer policy — locked after RT-01
 
@@ -243,13 +262,27 @@ Optional finishing/editing environment after controlled PPTX import. Native Canv
 
 ### Beautiful.ai
 
-Low-risk layout exploration/prototyping only; not unattended full-deck science production.
+Low-risk layout exploration/prototyping only.
 
 ### Hyperagent
 
 Specialist deterministic SVG/equation/interactive/QA work where it adds value.
 
-Do not reopen renderer selection unless the user explicitly asks or materially new tool evidence exists.
+## Microsoft PowerPoint compatibility
+
+Internal generation success is not enough.
+
+For the exact classroom PPTX, when PowerPoint is available:
+
+- open it in Microsoft PowerPoint;
+- confirm there is no repair/recovery warning;
+- verify expected editability;
+- verify planned reveals, hyperlinks, buttons, media or native animations;
+- if the file was normalized/resaved through LibreOffice or another tool, retest those behaviours afterward.
+
+A repair warning means that artifact is not classroom-ready.
+
+See `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`.
 
 ## Accessibility and classroom practicality
 
@@ -259,6 +292,17 @@ Do not reopen renderer selection unless the user explicitly asks or materially n
 - Keep critical information away from slide edges.
 - Prefer stable static fallbacks for classroom-critical online resources.
 - If a key visual requires zooming to teach, redesign it.
+
+## First-pilot approval rule
+
+Lesson 1 v2 is the master visual/motion prototype.
+
+Before Lessons 2–4 inherit the style:
+
+- Lesson 1 v2 must pass visual-engagement QA;
+- exact PPTX must pass PowerPoint compatibility/playback QA;
+- PDF/static fallback must pass;
+- the user must approve the overall UI/motion direction.
 
 ## Final artifact validation
 
@@ -273,13 +317,12 @@ Check:
 - diagram label size;
 - links/QR codes;
 - media/simulation launch behaviour;
-- animation behaviour where used;
+- animation/reveal behaviour where used;
 - contrast/readability after export/projection;
 - static/offline fallbacks;
 - PPTX editability where required;
+- Microsoft PowerPoint repair warning status;
 - PDF fallback;
 - no scientific content drift.
 
-Follow `ARTIFACT_PERSISTENCE.md` for reproducibility/source retention.
-
-Detailed visual principles also live in `VISUAL_ENGAGEMENT_SYSTEM.md`.
+Follow `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md` and `ARTIFACT_PERSISTENCE.md`.
