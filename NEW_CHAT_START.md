@@ -1,8 +1,8 @@
 # New Chat Recovery Protocol
 
-Version: 4.1
+Version: 4.2
 Last revised: 2026-09-06
-Status: **ACTIVE — POST-RT-01 / POST-PILOT-COMPATIBILITY UPDATE**
+Status: **ACTIVE — POST-RT-01 / POST-PILOT-COMPATIBILITY / CANVA-FIRST VISUAL ROUTING**
 
 ## 1. Verify repository identity first
 
@@ -19,84 +19,142 @@ For the active first pilot chapter, read in this order:
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
 3. `RENDERER_ROUTING.md`
-4. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-5. `ARTIFACT_PERSISTENCE.md`
-6. active chapter `STATUS.md`
-7. active lesson `STORYBOARD.md`, `RESOURCES.md`, latest production QA, and any design-engagement revision record
-8. deeper policy/template files only when the current task requires them
+4. `VISUAL_ASSET_ROUTING.md`
+5. `PHYSICAL_VISUAL_REALISM_POLICY.md`
+6. `CLASSROOM_LANGUAGE_POLICY.md`
+7. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+8. `SIMULATION_RESOURCE_ROUTING.md`
+9. `ARTIFACT_PERSISTENCE.md`
+10. active chapter `STATUS.md`
+11. active lesson storyboard/resources/latest production QA and production manifests
+12. deeper policy/template files only when the current task requires them
 
 Do **not** restart renderer selection. RT-01 is complete.
 
 ## 3. Canonical state / precedence
 
-GitHub is the durable source of truth. If old chat history or an older repository section conflicts with current canonical state, use this precedence:
+GitHub is the durable source of truth. If old chat history or older repository wording conflicts with current policy, use this precedence:
 
 1. `CURRENT_STATE.md`
 2. `RENDERER_ROUTING.md`
-3. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-4. `ARTIFACT_PERSISTENCE.md`
-5. active chapter `STATUS.md`
-6. latest stage-specific QA/reconciliation record
-7. older historical planning/audit documents
+3. `VISUAL_ASSET_ROUTING.md`
+4. `PHYSICAL_VISUAL_REALISM_POLICY.md`
+5. `CLASSROOM_LANGUAGE_POLICY.md`
+6. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+7. active chapter `STATUS.md`
+8. latest stage-specific QA/reconciliation record
+9. older historical planning/audit documents
 
-Historical pre-RT-01 or pre-pilot-production wording must not override current routing/compatibility/engagement rules.
+Historical pre-RT-01 or pre-pilot-production wording must not override current routing, compatibility, language, realism or visual-asset rules.
 
 ## 4. Renderer route — already decided
 
-Current default production route:
+Current default deck-production route:
 
-**Controlled PptxGenJS authoring/rendering → deterministic SVG/shape scientific visuals → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF fallback.**
+**Controlled PptxGenJS authoring/rendering → deterministic scientific overlays/geometry → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF fallback.**
 
 - PptxGenJS: primary science-deck authoring/rendering route.
 - Canva: optional finishing/editing after controlled import; native AI is not the science authority.
 - Beautiful.ai: low-risk prototype/layout inspiration only.
 
-## 5. Pilot compatibility and visual-engagement correction
+## 5. Visual asset route — refined after Lesson 1 pilot
 
-The first Lesson 1 controlled build revealed two important production failures:
+For photos/realistic physical-object visuals, the default is **not ChatGPT-native image generation**.
 
-1. Microsoft PowerPoint initially showed a repair warning even though internal/LibreOffice/render tests had passed;
-2. the deck was science-correct but too static/utilitarian and underused the planned animation/simulation/interactive/visual-engagement layer.
+Use this priority:
 
-These are now controlled by:
+1. verified existing real/authoritative/open/licensed visual when suitable;
+2. connected Canva / Canva AI / Canva Pro generation or licensed asset library;
+3. another connected/legal external visual source/generator when advantageous;
+4. programmatic/SVG/Hyperagent construction for deterministic scientific visuals;
+5. ChatGPT-native image generation only when the user explicitly asks for it or explicitly approves an exception because the other routes are unsuitable/unavailable.
 
-`PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+The preferred pattern is:
+
+**Canva/external source = realistic physical base**
+
+**PptxGenJS/SVG = science-critical rays, normals, angles, labels, scales, notation and geometry**
+
+Canva AI may generate unlabeled realistic glass, lenses, mirrors, camera/apparatus, fibre, real-world scenes and orthographic base visuals. It must not be trusted to author final science-critical ray paths, labels, angles, graphs, circuit topology, equations or exact anatomical relationships.
+
+Canonical policy:
+
+`VISUAL_ASSET_ROUTING.md`
+
+## 6. Physical realism + scientific clarity
+
+Real physical objects should look recognizably real when practical, but photorealism never outranks scientific clarity.
+
+When geometry matters:
+
+- prefer straight-on / orthographic / side / cross-sectional realistic views;
+- avoid dramatic perspective that conflicts with deterministic overlays;
+- use a hybrid realistic-object + schematic layout when that is clearer;
+- use pure deterministic schematic geometry when realism would distract.
+
+Lesson 1 glass-slab evidence established this rule: flat schematic looked artificial; 3D perspective looked realistic but conflicted with 2D optics; orthographic realistic glass + deterministic rays was accepted.
+
+Canonical policy:
+
+`PHYSICAL_VISUAL_REALISM_POLICY.md`
+
+## 7. Bangla-first classroom language
+
+Student-facing slides use textbook-facing Bangla first. English is optional, normally only as a first parenthetical introduction or proper resource/product name.
+
+Examples:
+
+- বিভেদতল (Interface)
+- আপতন বিন্দু
+- অভিলম্ব (Normal)
+- আপতন কোণ (i)
+- আপতিত রশ্মি
+- প্রতিসরণ কোণ (r)
+- প্রতিসরিত রশ্মি
+- প্রতিফলিত রশ্মি
+- লম্ব আপতন
+- আলোকীয় ঘনত্ব
+
+Canonical policy:
+
+`CLASSROOM_LANGUAGE_POLICY.md`
+
+## 8. Pilot compatibility and visual-engagement controls
+
+The first Lesson 1 build exposed two important failures:
+
+1. Microsoft PowerPoint initially showed a repair warning despite internal/render checks;
+2. the deck was science-correct but too static/utilitarian.
 
 Mandatory implications:
 
-- a PowerPoint repair/recovery warning is a hard failure for that PPTX;
-- when PowerPoint is available, test the exact user-facing PPTX in Microsoft PowerPoint;
-- after any normalize/resave operation, retest planned animation/reveal/interaction behaviour;
-- storyboard-planned dynamic teaching elements must not disappear during production;
-- static presentation must be intentional, not accidental;
-- the first-pilot master UI/motion direction must be user-approved before it is propagated to later lessons.
+- PowerPoint repair/recovery warning = hard FAIL;
+- test the exact user-facing PPTX in Microsoft PowerPoint when available;
+- after normalization/resave, retest reveal/animation/interaction/link behaviour;
+- storyboard-planned dynamic teaching elements must not silently disappear;
+- static presentation must be intentional;
+- staged deterministic reveals are preferred over fragile native animation when pedagogically equivalent;
+- every important online/interactive element needs a static fallback.
 
-## 6. Active first pilot
+Canonical policy:
 
-Active chapter:
+`PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
 
-`chapters/class-8/science/chapter-11-light/`
+## 9. Simulation rule
 
-Current state is in `CURRENT_STATE.md` and chapter `STATUS.md`.
+Simulation selection is multi-source and concept-fit driven, not PhET-only.
 
-Current next stage:
+Candidates may include PhET, The Physics Classroom, GeoGebra, Open Source Physics/ComPADRE and other reputable sources. Compare per concept and choose the best verified option. Do not add multiple simulations merely for variety.
 
-**Lesson 1 visual-engagement prototype v2.**
+Canonical policy:
 
-Lesson 2 full production is on hold until Lesson 1 v2 establishes an approved UI/motion standard.
+`SIMULATION_RESOURCE_ROUTING.md`
 
-## 7. Lesson 1 compatibility history
-
-- initial controlled PPTX: triggered Microsoft PowerPoint repair warning;
-- repaired/normalized PPTX: user confirmed it opens correctly in Microsoft PowerPoint;
-- repaired PPTX fingerprint and incident details are in `lessons/lesson-01/PRODUCTION_QA_2026-09-06.md`;
-- current v1 deck is not `CLASSROOM_READY` because visual/motion/interactive quality needs revision.
-
-## 8. Source/science rule
+## 10. Source/science rule
 
 NCTB controls curriculum/scope/exam context, not automatic scientific truth. Material scientific claims are verified against current authoritative sources; mismatches are documented.
 
-## 9. Timing rule
+## 11. Timing rule
 
 For a 60-minute class:
 
@@ -108,39 +166,25 @@ For a 60-minute class:
 
 Media setup, interaction, prediction/reveal and simulation debrief count as real time.
 
-## 10. Dynamic implementation rule
-
-For concept-heavy segments use, where appropriate:
-
-- `STAGED_REVEAL`
-- `PREDICT_THEN_REVEAL`
-- `LIVE_DEMO`
-- `SIMULATION`
-- `INTERACTIVE_NAVIGATION`
-- `NATIVE_ANIMATION` only when reliable/testable
-- `STATIC_INTENTIONAL` when static is genuinely better
-
-For science-critical progressive construction, staged duplicate-slide states are preferred over fragile native animation when they achieve the same instructional goal.
-
-Every important dynamic/online element needs a static/offline fallback.
-
-## 11. Artifact persistence rule
+## 12. Artifact persistence rule
 
 Follow `ARTIFACT_PERSISTENCE.md`.
 
-From Lesson 1 v2 onward, preserve:
+For controlled production preserve:
 
-- generator/build source;
+- generator/build source or reproducible specification;
 - artifact fingerprints;
-- dynamic implementation manifest where applicable;
+- asset provenance/generation route;
+- deterministic visual source/specs;
+- dynamic implementation manifest where relevant;
 - PowerPoint compatibility status;
 - export/fallback QA.
 
-## 12. External prompt rule
+## 13. External prompt rule
 
 Any external-tool prompt must be one self-contained fenced code block.
 
-## 13. End-of-stage checkpoint
+## 14. End-of-stage checkpoint
 
 **Finish → record → then continue.**
 
