@@ -22,10 +22,27 @@ Purpose: one durable map of what exists in each textbook chapter, what Science S
 | 8 | রাসায়নিক বিক্রিয়া | 75–88 | NOT_STARTED | NOT_STARTED | — | — | — |
 | 9 | বর্তনী ও চলবিদ্যুৎ | 89–97 | NOT_STARTED | NOT_STARTED | — | — | — |
 | 10 | অম্ল, ক্ষারক ও লবণ | 98–107 | NOT_STARTED | NOT_STARTED | — | — | — |
-| 11 | আলো | 108–118 | COMPLETE | **4 lessons SPLIT_APPROVED** | `chapters/class-8/science/chapter-11-light/COVERAGE_MATRIX.md` | `chapters/class-8/science/chapter-11-light/SOURCE_ISSUES.md` | 2026-09-05 |
+| 11 | আলো | 108–118 | COMPLETE | **CONTENT_FROZEN; L1 RENDERED/QA PASS_WITH_NOTES; L2 PRODUCTION NEXT** | `chapters/class-8/science/chapter-11-light/COVERAGE_MATRIX.md` | `chapters/class-8/science/chapter-11-light/SOURCE_ISSUES.md` | 2026-09-06 |
 | 12 | মহাকাশ ও উপগ্রহ | 119–128 | NOT_STARTED | NOT_STARTED | — | — | — |
 | 13 | খাদ্য ও পুষ্টি | 129–146 | NOT_STARTED | NOT_STARTED | — | — | — |
 | 14 | পরিবেশ এবং বাস্তুতন্ত্র | 147–156 | NOT_STARTED | NOT_STARTED | — | — | — |
+
+## Chapter 11 production note
+
+Current canonical state:
+
+- 4-lesson split approved;
+- all four storyboards mapped;
+- Gemini Gate A and targeted Gate B completed/reconciled;
+- content/storyboard freeze approved;
+- RT-01 complete;
+- primary route = controlled PptxGenJS;
+- Canva = optional controlled-import finishing;
+- Beautiful.ai/native Canva AI are not unattended science full-deck routes;
+- Lesson 1 controlled PPTX/PDF production passed with nonblocking notes;
+- Lesson 2 production is next.
+
+See `CURRENT_STATE.md` and chapter `STATUS.md` for exact live state.
 
 ## Class 9
 
@@ -44,7 +61,7 @@ No textbook/source baseline registered yet.
 - `STORYBOARDING` — lesson/storyboard production underway.
 - `CONTENT_FROZEN` — scientific/source/pedagogical content frozen.
 - `RENDERED` — primary deck rendered but final QA may remain.
-- `CLASSROOM_READY` — all applicable quality/export/fallback gates passed.
+- `CLASSROOM_READY` — all applicable quality/export/fallback/reproducibility gates passed.
 - `POST_CLASS_REVIEWED` — actual classroom timing/feedback recorded.
 
 ## Maintenance rule
