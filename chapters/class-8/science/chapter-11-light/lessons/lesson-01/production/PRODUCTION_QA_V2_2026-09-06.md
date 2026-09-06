@@ -3,83 +3,121 @@
 Date: 2026-09-06
 Lesson: Class 8 Science, Chapter 11 — আলো, Lesson 1
 Route: controlled PptxGenJS source → deterministic diagrams → LibreOffice normalized PPTX → PDF fallback
-Status: **V2 BUILT — USER POWERPOINT SMOKE TEST + VISUAL APPROVAL PENDING**
+Status: **POWERPOINT/LINK SMOKE TEST PASS ON PRIOR V2 — BANGLA/TEXTBOOK-LANGUAGE REVISION BUILT — USER REVIEW OF REVISED FILE PENDING**
 
-## User-facing artifacts
+## User review checkpoint
 
-- PPTX: `Class8_Science_Ch11_Lesson1_v2_Visual_Engagement_PPTX_SAFE.pptx`
-- PDF: `Class8_Science_Ch11_Lesson1_v2_Visual_Engagement_PPTX_SAFE.pdf`
-- Source: `production/build_lesson1_v2.js`
+The user confirmed that the prior v2 PPTX:
 
-## SHA-256 fingerprints
+- opens correctly in Microsoft PowerPoint without the earlier repair problem;
+- opens both simulation hyperlinks successfully.
 
-- PPTX: `6b0173457053ba42f5fd1fadbf212f56ec6b8a716a5d4e2d1aee85b695819413`
-- PDF: `9af37c18c8ef00693107092b7382cfa4a0651a17995f3d2c7185ee0afc2a6caa`
-- Build source: `48b47ad6e715dd38eb87ee613541677567c72d7442cd969e91a8e72727e73772`
-- Render montage: `4aa03410b86932ef92b0794a5b8e2e0a937632d680a48c177280b1e4775b65cc`
+The user then identified three material presentation issues:
 
-## Structure
+1. the two parallel-sided glass-slab staged slides were not self-explanatory;
+2. student-facing science terminology used too much English instead of Bangla/book language;
+3. the pencil-water slide was labelled `Live demo` even though the slide itself contained no live element.
 
-- Physical slides: 28
-- Dynamic strategy: staged duplicate-slide reveal states, not fragile native animation
-- Content scope: frozen Lesson 1 science/content; no content unfreeze
-- CORE learning: offline-capable
-- FLEX simulation: PhET Bending Light primary launch target, Physics Classroom Refraction Interactive alternate
+These findings are accepted and were corrected before visual baseline approval.
+
+Canonical language policy created from this feedback:
+
+`/CLASSROOM_LANGUAGE_POLICY.md`
+
+## Current revised user-facing artifacts
+
+- PPTX: `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_FINAL_PPTX_SAFE.pptx`
+- PDF: `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_FINAL_PPTX_SAFE.pdf`
+
+Current SHA-256 fingerprints:
+
+- PPTX: `f6fe06a932c8db0295a82bec3dc48bb8581134e8b62c29dee18f7c62122db32c`
+- PDF: `bab2b8674cd7a8ae1b26cc4046b85988f86f7b6dd8a4f81e5bc59a3f1861ce58`
+
+Reproducibility records:
+
+- base build source: `production/build_lesson1_v2.js`
+- Bangla/textbook-language patch source: `production/patch_lesson1_v2_bangla_textbook_language.py`
+- dynamic manifest: `production/DYNAMIC_MANIFEST.md`
+- simulation comparison: `production/SIMULATION_CANDIDATE_COMPARISON_2026-09-06.md`
+
+## Bangla / textbook-language revision
+
+Student-facing instructional wording is now Bangla-first.
+
+Implemented examples include:
+
+- `বিভেদতল (Interface)` on first introduction;
+- `আপতন বিন্দু (Point of incidence)`;
+- `অভিলম্ব (Normal)`;
+- `আপতন কোণ (i)`;
+- `আপতিত রশ্মি`;
+- `প্রতিসরণ কোণ (r)`;
+- `প্রতিসরিত রশ্মি`;
+- `প্রতিফলিত রশ্মি`;
+- `লম্ব আপতন`;
+- `আলোকীয় ঘনত্ব`;
+- Bangla prediction/check/instruction wording instead of generic English UI phrases.
+
+English remains only where useful/optional, especially proper resource names such as `PhET Bending Light` and `Physics Classroom — Refraction Interactive`.
+
+## Glass-slab clarification
+
+The FLEX glass-slab pair is now explicitly staged:
+
+- `ধাপ ১ — আগে অনুমান`;
+- `ধাপ ২ — উত্তর`.
+
+Visible labels now identify:
+
+- কাচের পাত;
+- বায়ু;
+- প্রথম বিভেদতল;
+- দ্বিতীয় বিভেদতল;
+- আপতিত রশ্মি;
+- প্রতিসরিত রশ্মি;
+- নির্গত রশ্মি;
+- the thin orange line as the parallel reference/helper line.
+
+This makes the pedagogical purpose of the two slides explicit rather than presenting two unexplained near-duplicate diagrams.
+
+## Pencil-water classroom activity clarification
+
+The static slide is no longer described as `Live demo`.
+
+It is now labelled as a **শ্রেণিকক্ষ কার্যক্রম** and explicitly instructs the teacher to demonstrate using a transparent glass, water and a partially immersed pencil. If materials are unavailable, the static diagram is the fallback.
+
+Therefore the slide no longer falsely implies that it contains embedded/live media.
 
 ## Dynamic implementation
 
-Implemented modes:
+Implemented modes remain:
 
-- `PREDICT_THEN_REVEAL`: seeing hook, medium classification, reflection/refraction, normal incidence, bending rules, exit check
-- `STAGED_REVEAL`: light-to-eye sequence, chapter properties, ray vocabulary, slab geometry
-- `LIVE_DEMO`: pencil/straw-in-water observation slide with static fallback visual
-- `SIMULATION`: FLEX PhET launch support with prediction task, debrief cue and static fallback
-- `INTERACTIVE_NAVIGATION`: limited to external launch buttons; complex branching intentionally not used
+- `PREDICT_THEN_REVEAL`: seeing hook, medium classification, reflection/refraction, normal incidence, bending rules, exit check;
+- `STAGED_REVEAL`: light-to-eye sequence, chapter properties, ray vocabulary, slab geometry;
+- classroom physical demonstration: pencil/straw in water with static fallback;
+- `SIMULATION`: FLEX PhET primary launch + Physics Classroom alternate;
+- external launch buttons only; no complex branching.
 
-Native animation: none required. Staged slides preserve the same pedagogical effect with stronger PDF/static fallback reliability.
+Native PowerPoint animation remains unnecessary because staged slide states provide the instructional reveal with stronger compatibility/PDF fallback reliability.
 
-## Simulation selection
+## Technical QA — revised artifact
 
-Primary: PhET Bending Light
+### PPTX
 
-Rationale: selected after multi-source comparison because it best fits Lesson 1 qualitative refraction basics, has Bengali availability, supports offline use, has clear classroom licensing, and avoids unnecessary Snell-law mathematics.
+- `slides_test.py`: PASS — no overflow detected;
+- LibreOffice-normalized PPTX created;
+- normalized PPTX rendered successfully;
+- full montage visually inspected;
+- hyperlink relationships remain present for both external simulation resources.
 
-Secondary alternate: The Physics Classroom Refraction Interactive, retained for measurement-heavy/protractor-based investigation.
+### PDF
 
-Canonical comparison:
-`production/SIMULATION_CANDIDATE_COMPARISON_2026-09-06.md`
-
-## Technical QA
-
-### PPTX package/render/overflow
-
-- `slides_test.py`: PASS — no overflow detected
-- LibreOffice normalized/resaved PPTX created to reduce Microsoft PowerPoint repair risk
-- normalized PPTX rendered successfully to images
-- render montage visually inspected
-
-### PDF fallback
-
-- PDF generated from normalized PPTX with LibreOffice
-- PDF preflight:
-  - pages: 28
-  - encrypted: no
-  - openable: yes
-  - likely scanned: no
-- PDF rendered successfully to images
-- PDF montage visually inspected
-
-### Diagnostic notes
-
-PptxGenJS helper overlap diagnostics produced non-severe overlap warnings mostly from intended scientific geometry:
-
-- lamp icon parts overlapping by design;
-- rays crossing interfaces;
-- rays crossing transparent medium regions;
-- slab ray paths crossing slab body;
-- diagram labels near ray constructions.
-
-No severe overlap warnings remained after correction.
+- pages: 28;
+- encrypted: no;
+- openable: yes;
+- rendered successfully;
+- PDF montage visually inspected.
 
 ## Science/content QA
 
@@ -87,50 +125,30 @@ PASS at prototype level.
 
 Checked:
 
-- seeing sequence: light path from source/object to eye;
+- seeing/light-to-eye sequence;
 - refraction introduced after observation;
-- ray vocabulary: interface, point of incidence, normal, incident and refracted ray;
-- angles are measured from normal, not surface;
+- বিভেদতল / আপতন বিন্দু / অভিলম্ব vocabulary;
+- আপতন কোণ and প্রতিসরণ কোণ now explicitly labelled;
+- angles measured from the normal, not the surface;
 - normal-incidence exception retained;
 - optical density separated from mass density;
-- rarer→denser bends toward normal;
-- denser→rarer bends away from normal;
-- slab equality is explicitly geometry-bound.
+- rarer→denser toward-normal rule;
+- denser→rarer away-from-normal rule;
+- parallel-sided slab geometry guardrail.
 
-## Visual-engagement QA
+## Remaining hard gates
 
-Improved from v1:
+The revised artifact still requires user-side review before it becomes the master baseline:
 
-- stronger dark physics/light identity;
-- improved contrast and visual rhythm;
-- staged explain/reveal sequence rather than one static deck;
-- prediction prompts visually distinct;
-- larger deterministic ray diagrams;
-- live demo and simulation support included;
-- repeated box-heavy static feel reduced.
-
-Still pending:
-
-- user visual/motion approval;
-- Microsoft PowerPoint user-side open test;
-- hyperlink/button playback test in PowerPoint;
-- real projector readability judgment.
-
-## PowerPoint compatibility gate
-
-Internal result:
-
-- normalized PPTX generated and render-tested.
-
-Hard gate still pending:
-
-- user must open the exact PPTX in Microsoft PowerPoint;
-- repair warning must be absent;
-- hyperlinks/buttons must be tested;
-- staged slide order should be checked in Slide Show mode.
+1. open the **revised** PPTX in Microsoft PowerPoint;
+2. confirm no repair warning;
+3. verify both simulation buttons still open;
+4. review the clarified glass-slab pair;
+5. review the Bangla terminology/textbook-language treatment;
+6. approve or request further UI/design changes.
 
 ## Verdict
 
-`V2 BUILT — SCIENCE QA PASS — EXPORT QA PASS — USER POWERPOINT SMOKE TEST + VISUAL APPROVAL PENDING`
+`REVISED V2 BUILT — INTERNAL SCIENCE/EXPORT QA PASS — PRIOR V2 POWERPOINT/LINK SMOKE TEST PASS — REVISED ARTIFACT USER REVIEW PENDING.`
 
-Lesson 2 remains on hold until user approves the Lesson 1 v2 visual/motion direction.
+Lesson 2 remains on hold until the Lesson 1 visual/language baseline is approved.
