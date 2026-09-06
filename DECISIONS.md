@@ -115,7 +115,7 @@ Operational rule:
 - do not split one prompt across multiple code blocks;
 - do not require the user to manually merge instructions from surrounding prose;
 - put any explanation before or after the block, not inside the copy workflow;
-- when practical, include exact filenames/paths and expected output format in the prompt itself.
+- when practical, include exact filenames/paths and expected output format inside the prompt itself.
 
 Reason: reduce mobile friction and copy/paste errors.
 
@@ -142,3 +142,21 @@ Operational rule:
 - use the downloadable single-file bundle workflow from D-034.
 
 Reason: retain independent pre-freeze quality control without duplicating Gate A work.
+
+## D-036 — RT-01 selects controlled PPTX production, not native AI full-deck generation
+Decision: For this project, the primary production route is **controlled PptxGenJS authoring with deterministic science visuals**, optionally imported into Canva for manual finishing/editing/hosting. Direct controlled PPTX plus verified PDF is the classroom fallback/delivery route.
+
+Evidence from RT-01:
+- Canva native AI preserved much notation but produced projector-small body text, unrelated template artifacts, and an unreliable critical-angle diagram;
+- Beautiful.ai produced cleaner standard layouts and editable exports, but failed exact science-control requirements: the requested deterministic critical-angle diagram was omitted, `<`/`>` became escaped text in the exported deck, and verified wording was rewritten with material drift;
+- controlled PptxGenJS → Canva import preserved the critical Bangla/notation text layer and kept scientific geometry under project control.
+
+Operational rule:
+- do not use Canva native AI or Beautiful.ai as unattended author/renderers for science-critical full decks;
+- Canva is the preferred finishing environment when it adds value after controlled import;
+- Beautiful.ai is limited to low-risk layout prototyping/inspiration unless every rewritten element is revalidated;
+- high-risk scientific diagrams must be deterministic SVG/shape constructions and must pass rendered visual QA;
+- straightforward Unicode notation may remain native only when verified in the actual export; complex/renderer-sensitive notation uses the controlled SVG/LaTeX fallback;
+- do not depend on Beautiful.ai proprietary/exported fonts for the final portable classroom package.
+
+Reason: scientific meaning, deterministic diagrams, notation fidelity and projector usability are hard gates that outweigh generic layout polish or generation convenience.
