@@ -1,6 +1,6 @@
 # Production Compatibility and Engagement Policy
 
-Version: 1.0
+Version: 1.1
 Date: 2026-09-06
 Status: **ACTIVE — MANDATORY FOR CLASSROOM-READY DECKS**
 
@@ -177,8 +177,6 @@ Before Lesson 2 full production:
 
 Only after that approval should Lessons 2–4 inherit the master visual/motion system.
 
-This prevents propagating an unattractive or overly static design across the chapter.
-
 ---
 
 ## F. Production QA record requirements
@@ -236,17 +234,18 @@ A lesson cannot receive `CLASSROOM_READY` if any of these remain unresolved:
 
 ---
 
-## Canonical relations
+## Canonical authority / relations
 
-This file operationalizes and strengthens:
+This file is the canonical operational policy for PowerPoint compatibility and production-level visual/dynamic engagement. It operationalizes and strengthens existing durable decisions:
 
 - `D-014` visual engagement;
 - `D-018` pedagogically justified motion;
 - `D-019` first-chapter master visual calibration;
 - `D-020` actual artifact playback QA;
 - `D-024` PDF/static fallback;
-- `D-036` controlled PptxGenJS-first renderer route;
-- new decisions `D-037` and `D-038`.
+- `D-036` controlled PptxGenJS-first renderer route.
+
+No separate numbered decision is required for a new chat to apply this policy; `CURRENT_STATE.md`, `NEW_CHAT_START.md`, `AGENTS.md`, `WORKFLOW.md`, `QUALITY_GATES.md`, and chapter `STATUS.md` explicitly point to it.
 
 Also read:
 
