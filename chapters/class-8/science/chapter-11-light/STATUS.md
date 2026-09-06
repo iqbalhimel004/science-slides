@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-06
-- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — CONTROLLED_PPTX_ROUTE_LOCKED — LESSON_1_PRODUCTION_NEXT**
+- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_CONTROLLED_BUILD_PASS_WITH_NOTES — LESSON_2_PRODUCTION_NEXT**
 
 ## Durable workflow rules
 
@@ -13,16 +13,12 @@
 - Gate B is targeted implementation QA, not Gate A repetition;
 - universal stage rule: **Finish → record → then continue.**
 
-## Review gates
+## Review / freeze state
 
-### Gate A
-Completed + independently reconciled.
-Result: targeted corrections; no material replan.
-
-### Gate B
-Completed + independently reconciled.
-External verdict: `PASS_WITH_TARGETED_CHANGES`.
-Canonical verdict: `ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED`.
+- Gate A: completed + reconciled
+- Gate B: completed + reconciled
+- Final pre-freeze QA: `PASS — CONTENT/STORYBOARD FREEZE APPROVED`
+- No material planning blocker remains.
 
 ## Frozen timing
 
@@ -35,64 +31,56 @@ Canonical verdict: `ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED`.
 
 Chapter planned CORE + FLEX total: **202 minutes**.
 
-## Final pre-freeze QA
-
-Canonical record:
-`FINAL_PRE_FREEZE_QA_2026-09-06.md`
-
-Result:
-`PASS — CONTENT/STORYBOARD FREEZE APPROVED`
-
-All textbook-body topics are mapped. No material prerequisite, continuity or duplication blocker remains.
-
 ## RT-01 renderer calibration
-
-Canonical record:
-`RT01_RENDERER_CALIBRATION_2026-09-06.md`
 
 Status: **COMPLETE**
 
 Final route:
 
-- **Primary authoring/rendering:** controlled PptxGenJS
-- **Science-critical visuals:** deterministic SVG/shape construction
-- **Optional finishing:** Canva after controlled PPTX import
-- **Classroom fallback/delivery:** direct controlled PPTX + verified PDF
-- **Beautiful.ai:** low-risk layout prototype/inspiration only; not unattended science full-deck rendering
-- **Canva native AI:** not default authoring; low-risk visual inspiration/components only
+- primary authoring/rendering: **controlled PptxGenJS**
+- science-critical visuals: deterministic SVG/shape construction
+- optional finishing: Canva after controlled PPTX import
+- classroom delivery/fallback: controlled PPTX + verified PDF
+- Beautiful.ai: low-risk layout prototype/inspiration only
+- native Canva AI: low-risk visual inspiration/components only
 
-RT-01 evidence that drove the decision:
+Decision record: `D-036`.
 
-- Canva native: small projector text, unrelated template artifacts, unreliable critical-angle visual.
-- Beautiful.ai: cleaner standard layout but requested critical-angle diagram omitted, `<`/`>` notation escaped in export, verified content rewritten with material drift, and editable export depends on Beautiful.ai font packages for exact typography.
-- Controlled PPTX → Canva import preserved critical Bangla/notation and retained deterministic science control.
+## Lesson 1 production
 
-Decision record: `D-036` in root `DECISIONS.md`.
+Status: **CONTROLLED BUILD COMPLETE — PASS_WITH_NONBLOCKING_NOTES**
 
-## Freeze boundary
+Canonical production QA:
+`lessons/lesson-01/PRODUCTION_QA_2026-09-06.md`
 
-Frozen unless a later build reveals a material defect:
-- four-lesson architecture;
-- slide IDs/sequence;
-- CORE/FLEX classification;
-- storyboard scientific wording/guardrails;
-- source-gap labels;
-- timing architecture;
-- resource specifications.
+Built:
+- 16-slide controlled PPTX
+- 16-page PDF fallback
+- 14 CORE + 2 FLEX
 
-## Not yet classroom-ready
+Verified:
+- deterministic refraction/ray visuals
+- normal-incidence exception
+- optical-density misconception guardrail
+- parallel-sided slab geometry bound correctly
+- Bangla Noto Sans Bengali rendering
+- no PPTX overflow
+- PDF render/preflight
+- CORE offline capability
 
-Remaining production work:
+Artifact fingerprints:
+- PPTX: `baf43046f54165e7bc705c897a02206a8966e3c9294cd3d86d2b1a50f62919c9`
+- PDF: `a85cc0821c73b9074a827968ecb8834aa0c7bd90dbd185ea248fe9f102ab3b6a`
 
-1. Lesson 1 deterministic visual build + controlled PPTX;
-2. Lesson 1 rendered science/Bangla/projector/export QA + PDF fallback;
-3. repeat for Lessons 2–4;
-4. verify all static/offline fallbacks;
-5. final rendered chapter coverage/continuity audit;
-6. classroom-ready package and final status.
+## Remaining chapter production
+
+1. Lesson 2 controlled PPTX/PDF production + QA
+2. Lesson 3 controlled PPTX/PDF production + QA
+3. Lesson 4 controlled PPTX/PDF production + QA
+4. remaining static/offline fallback verification
+5. final rendered chapter-wide audit
+6. classroom-ready package + reusable visual-baseline lock
 
 ## Next authorized stage
 
-**Lesson 1 production.**
-
-Build the high-risk visuals first, assemble the 16:9 controlled PPTX, render and visually inspect it, verify the PDF fallback, then checkpoint before proceeding to Lesson 2.
+**Lesson 2 controlled production.**
