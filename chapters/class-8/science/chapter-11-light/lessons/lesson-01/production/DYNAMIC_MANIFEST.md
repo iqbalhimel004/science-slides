@@ -10,6 +10,8 @@ The first controlled build was too static. Lesson 1 v2 must preserve the frozen 
 
 For science-critical progressive construction, prefer staged duplicate-slide reveal states over fragile native animation when the teaching effect is equivalent.
 
+Simulation choice is **multi-source and concept-fit driven**. PhET is a candidate, not an automatic default. Follow `/SIMULATION_RESOURCE_ROUTING.md`.
+
 ## Slide-level dynamic plan
 
 | Slide | Mode | Instructional purpose | Planned implementation | PowerPoint risk | Static/PDF fallback |
@@ -29,7 +31,7 @@ For science-critical progressive construction, prefer staged duplicate-slide rev
 | L1-S13 | INTERACTIVE_NAVIGATION | concept-chain recap | optional clickable concept nodes/back-to-slide navigation if robust; otherwise staged reveal | medium | static concept chain |
 | L1-S14 | PREDICT_THEN_REVEAL | exit check | questions appear first; answer key is teacher-controlled later state or hidden notes | low | question-only PDF preferred; answer version optional |
 | L1-F01 | STAGED_REVEAL | slab geometry | build incident → refracted → emergent path in stages; final parallel emergence comparison | low | complete slab diagram |
-| L1-F02 | SIMULATION / VIDEO_ANIMATION_RESOURCE | optional dynamic refraction support | PhET Bending Light official launch button with prediction prompt | external-link risk | L1-S09–S12 deterministic static states |
+| L1-F02 | SIMULATION / VIDEO_ANIMATION_RESOURCE | optional dynamic refraction support | launch the **best verified refraction simulation selected after candidate comparison**, with a prediction prompt and short debrief | external-link risk | L1-S09–S12 deterministic static states |
 
 ## Native PowerPoint animation policy for v2
 
@@ -44,20 +46,48 @@ Native animation may be added only for low-risk emphasis/reveal if:
 
 Decorative spins/bounces are prohibited.
 
-## PhET plan
+## Simulation candidate-selection plan
 
-Resource:
-`https://phet.colorado.edu/en/simulations/bending-light`
+`L1-F02` does **not** hard-code PhET.
+
+Before final v2 build, compare at minimum:
+
+1. **PhET — Bending Light**
+   - strong visual exploration of refraction;
+   - familiar, research-based simulation;
+   - CC BY-NC 4.0 regular HTML simulation licensing with attribution.
+
+2. **The Physics Classroom — Refraction Interactive**
+   - physics-specific refraction tool;
+   - allows changing media and measuring angles with a protractor;
+   - relevant for refraction and later TIR progression;
+   - classroom activity/concept-check support exists.
+
+3. **GeoGebra — suitable verified refraction/ray activity if one adds a real advantage**
+   - potentially strong for adjustable geometry and angle/ray visualization;
+   - community-created items require item-level scientific QA and licensing/attribution review.
+
+Additional reputable candidates may be considered under `/SIMULATION_RESOURCE_ROUTING.md`.
+
+Selection criteria:
+
+- exact fit to Lesson 1 objective;
+- Class 8 simplicity;
+- ray/angle visual clarity;
+- projector readability;
+- teacher-demo friction;
+- loading/device constraints;
+- licensing/attribution;
+- static/offline fallback;
+- whether the resource adds something the staged deterministic slides do not already teach well.
 
 Role:
 - FLEX/teacher support only;
 - not required for CORE;
-- used to vary incidence angle and observe refraction qualitatively;
 - prediction prompt before launch;
 - short debrief afterward.
 
-Required attribution when shown/recorded:
-`Simulation by PhET Interactive Simulations, University of Colorado Boulder, licensed under CC BY-NC 4.0 (https://phet.colorado.edu).`
+Final selected provider/title/URL/attribution will be recorded in `RESOURCES.md` and this manifest before classroom-ready lock.
 
 Fallback:
 L1-S09–S12 staged deterministic diagrams.
@@ -68,7 +98,7 @@ Optional low-risk features:
 
 - home/section icon only if it does not clutter the interface;
 - back-to-summary button on FLEX/resource slides;
-- PhET launch button;
+- selected simulation launch button;
 - no complex branching required for CORE.
 
 Every button must be tested in Microsoft PowerPoint.
@@ -91,9 +121,10 @@ Before v2 is approved:
 - [ ] prediction slides visually distinct from explanation slides
 - [ ] ray diagrams large and focal
 - [ ] no repetitive box-heavy appearance
-- [ ] PhET launch slide looks purposeful, not like a link dump
+- [ ] simulation launch slide looks purposeful, not like a link dump
 - [ ] exit slide visually distinct and readable
 - [ ] user approves overall UI/motion direction before Lesson 2 begins
 
-Canonical policy:
-`/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+Canonical policies:
+- `/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+- `/SIMULATION_RESOURCE_ROUTING.md`
