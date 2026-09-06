@@ -1,25 +1,26 @@
 # Project Master Specification
 
-Version: 3.0
-Last revised: 2026-09-05
+Version: 4.0
+Last revised: 2026-09-06
+Status: **ACTIVE — POST-RT-01**
 
 ## Mission
 
 Create source-verified, NCTB-aligned, visually compelling and classroom-reliable science presentations for Classes 8–10.
 
-The goal is not merely a correct slide deck. Each lesson must help students notice, understand, remember, apply and participate while remaining realistic for a single 60-minute class.
+Each lesson should help students notice, understand, remember, apply and participate while remaining realistic for a single 60-minute class.
 
 ## Priority order
 
 When trade-offs exist, prioritize:
 
-1. scientific and source accuracy
+1. scientific/source accuracy
 2. pedagogical clarity and cognitive-load control
 3. realistic classroom timing
 4. student attention and visual engagement
 5. visual polish
 
-Aesthetic appeal may never override correctness or readability.
+Aesthetic appeal may never override correctness, readability or reproducibility.
 
 ## Core production unit
 
@@ -27,8 +28,8 @@ Aesthetic appeal may never override correctness or readability.
 - Analyze the complete chapter before deciding presentation count.
 - A chapter may produce one or several lesson decks.
 - Split by instructional load and logical concept boundaries, not page count.
-- Default workflow keeps one complete chapter in one production chat when practical.
-- If the chat becomes operationally too large, create a durable GitHub stage checkpoint before continuing in a new chat; this is an exception/fallback, not the normal target.
+- Keep one complete chapter in one production chat when practical.
+- If the chat becomes operationally too large, create a durable GitHub stage checkpoint before continuing in a new chat.
 
 ## 60-minute lesson architecture
 
@@ -36,133 +37,167 @@ Every lesson must fit inside a 60-minute class including teacher explanation, bo
 
 Default planning model:
 
-- CORE: about 40–45 minutes of non-skippable instruction
-- FLEX: about 5–10 minutes of useful but skippable practice/example
+- CORE: about 40–45 minutes
+- FLEX: about 5–10 minutes
 - planned CORE + FLEX: about 50–55 minutes
-- contingency: 5–10 minutes intentionally left unallocated inside the 60-minute class
-- STRETCH: appendix/enrichment only; not part of planned core delivery
+- contingency: 5–10 minutes intentionally unallocated
+- STRETCH: appendix/enrichment only
 
-Do not solve timing failure by speaking unrealistically fast, shrinking slide text, or deleting the exit check.
-
-`CLASSROOM_PROFILE.md` records the assumed period length and classroom environment. If the actual period differs, re-budget before rendering.
+Do not solve timing failure by speaking unrealistically fast, shrinking slide text or deleting the exit check.
 
 ## Chapter analysis requirements
 
-Before lesson splitting, identify:
+Before lesson splitting identify:
 
-- chapter identity and edition/year where possible
-- source completeness/readability/text-layer status
-- learning outcomes or explicit curricular objectives where available
-- prerequisites
-- key concepts
-- definitions, laws, formulas, units
-- diagrams/processes
-- experiments/activities
-- worked examples/numericals
-- likely misconceptions
-- exam-facing practice opportunities where appropriate
-- visual complexity
-- instructional load
+- chapter identity and edition/year where possible;
+- source completeness/readability/text-layer status;
+- learning outcomes;
+- prerequisites;
+- key concepts;
+- definitions/laws/formulas/units;
+- diagrams/processes;
+- experiments/activities;
+- worked examples/numericals;
+- likely misconceptions;
+- exam-facing practice opportunities;
+- visual complexity;
+- instructional load;
+- potentially outdated/ambiguous/scientifically weak claims.
 
 ## Source standard
 
-NCTB textbook/curriculum/teacher guide is the primary syllabus authority.
+NCTB textbook/curriculum/teacher guide is the primary **syllabus/scope/exam-context** source.
 
-Important definitions, laws, formulas, units and exam-sensitive statements must be traceable to the source and verified against the visible page/image when OCR/text extraction is uncertain.
+It is not automatic scientific authority.
 
-Established Bangladeshi education sources may corroborate wording and supply explanation ideas. Authoritative international sources may validate science, clarify simplifications and supply licensed educational resources.
+Important definitions, laws, formulas, units, diagrams, processes and causal claims must be traceable and scientifically verified against current authoritative sources. When NCTB is outdated/ambiguous/wrong:
 
-Keep:
+- preserve what students may encounter in the textbook/exam context;
+- teach the scientifically correct explanation;
+- record the mismatch in source issue/map records.
 
-1. exam-safe/source-grounded definition
-2. simpler classroom explanation
-
-as distinct layers when appropriate.
+Established Bangladeshi education sources may support local wording/convention and explanation ideas but are not independent scientific authority by default.
 
 ## Pedagogical standard
 
 A lesson should normally include:
 
-- retrieval/prior-knowledge opener
-- coherent concept sequence
-- purposeful visual/example
-- meaningful student response within each major segment
-- hinge/check-for-understanding where useful
-- guided practice/application
-- misconception correction where relevant
-- summary and exit check
+- retrieval/prior-knowledge opener;
+- coherent concept sequence;
+- purposeful visual/example;
+- meaningful student response within major segments;
+- hinge/check-for-understanding where useful;
+- guided practice/application;
+- misconception correction where relevant;
+- summary + exit check.
 
-Avoid long passive stretches. As a heuristic, major teaching segments should normally end in a student response and teacher-only exposition should not remain cognitively unchanged for roughly more than 10 minutes when a meaningful response can be inserted.
+Avoid long passive stretches. Do not use a rigid biological 7–10-minute attention-span rule.
 
 ## Visual engagement standard
 
-Visual engagement is a first-class quality dimension.
-
 Decks should:
 
-- maintain a clear focal point and hierarchy
-- use attractive, modern, age-appropriate layouts
-- prefer explanatory diagrams, process visuals, comparisons, worked steps and meaningful imagery over text blocks
-- avoid long runs of identical slide layouts
-- segment complex ideas
-- use signaling such as arrows, grouping, numbering and highlighting
-- avoid decorative clutter and redundant on-screen prose
-- use motion only when it explains sequence, change, direction, causality or progressive reveal
-- provide static fallbacks for important animated/interactive elements
+- maintain a clear focal hierarchy;
+- use attractive, modern, age-appropriate layouts;
+- prefer explanatory diagrams/process visuals/comparisons/worked steps over text blocks;
+- avoid long runs of identical layouts;
+- segment complex ideas;
+- use signaling such as arrows/grouping/numbering/highlighting;
+- avoid decorative clutter;
+- use motion only when it explains sequence/change/direction/causality/reveal;
+- provide static fallbacks for classroom-critical animation/interaction.
 
 ## Grade calibration
 
 - Class 8: more concrete visuals, shorter text blocks, stronger guidance
 - Class 9: balanced visuals, definitions, applications, diagrams and equations
-- Class 10: slightly higher conceptual/exam-facing density where justified, without becoming textbook-page-like
+- Class 10: slightly higher conceptual/exam-facing density where justified
 
-## Renderer policy
+## Renderer / production policy — resolved by RT-01
 
-No permanent default renderer is assumed before real project testing.
+Canonical routing file:
 
-Candidate full-deck renderers include:
+`RENDERER_ROUTING.md`
 
-- Beautiful.ai
-- Canva
+Durable decision:
 
-Before the first final deck, run RT-01 using the same Bangla/science stress-test content. Compare:
+`DECISIONS.md` → `D-036`
 
-- Bangla conjunct/rendering quality
-- mixed Bangla/English layout
-- scientific notation/equations
-- diagram labels
-- visual quality
-- editability
-- export quality
-- projector readability
-- workflow friction
+Default production route:
 
-Record the chosen standard renderer and fallback in `DECISIONS.md` after the test.
+**Controlled PptxGenJS authoring/rendering → deterministic SVG/shape scientific visuals → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF fallback.**
 
-Hyperagent may support programmatic SVG/equation assets, deterministic QA, custom HTML/JS interaction or other specialist tasks where it has a comparative advantage.
+### PptxGenJS
+
+Primary route for:
+
+- frozen wording;
+- Bangla layout/typography;
+- projector-safe sizing/hierarchy;
+- deterministic scientific geometry;
+- final editable source PPTX.
+
+### Canva
+
+Optional finishing/editing/hosting after controlled PPTX import.
+
+Canva native AI is not the science authority and must not replace high-risk scientific wording/geometry without controlled QA.
+
+### Beautiful.ai
+
+Low-risk layout exploration/prototyping only after RT-01. Not the unattended full-deck science renderer.
+
+### Hyperagent
+
+Specialist deterministic SVG/equation/interactive/QA work when it has a comparative advantage.
 
 ## Existing-resource-first policy
 
-Search for trusted existing simulations, videos, animations, diagrams and authoritative visuals before creating custom equivalents.
+Search trusted existing simulations, videos, animations, diagrams and authoritative visuals before creating custom equivalents.
 
-Custom generation is justified only when the existing option is scientifically unsuitable, too complex, inaccessible, language-inappropriate, or fails a specific teaching objective.
+Custom generation is justified when existing resources are scientifically unsuitable, too complex, inaccessible, language-inappropriate or fail a specific teaching objective.
+
+## Artifact persistence / reproducibility
+
+Canonical policy:
+
+`ARTIFACT_PERSISTENCE.md`
+
+A controlled deck should have enough durable source/build information in GitHub to reproduce or verify it later.
+
+From Lesson 2 onward, production checkpoint requires:
+
+- reproducible generator/build source/specification;
+- output filenames;
+- SHA-256 fingerprints;
+- font/toolchain record;
+- asset/source manifest where relevant;
+- production QA.
+
+Do not commit secrets or font binaries.
 
 ## Classroom artifact package
 
-GitHub storyboard/content remains the canonical source of truth.
-
 A classroom-ready lesson should include:
 
-1. primary delivery deck in the selected renderer/format
-2. PDF fallback
-3. static/offline fallback for every classroom-critical online/animated element
-4. source/storyboard/resource records in GitHub
+1. controlled editable PPTX;
+2. verified PDF fallback;
+3. static/offline fallback for classroom-critical online/animated elements;
+4. source/storyboard/resource/production-QA records in GitHub;
+5. reproducibility/build records;
+6. post-import QA if Canva finishing is used.
 
 ## GitHub as canonical memory
 
 This repository is the durable source of truth. Chat history is temporary working context.
 
-New-chat recovery should begin with `OPERATING_BRIEF.md` and `CURRENT_STATE.md`, then only the active chapter/lesson files needed for the task.
+New-chat recovery should begin with:
+
+1. `OPERATING_BRIEF.md`
+2. `CURRENT_STATE.md`
+3. `RENDERER_ROUTING.md`
+4. active chapter `STATUS.md`
+5. active lesson files
 
 ## Repository write boundary
 
@@ -176,17 +211,15 @@ Every GitHub write must verify this exact repository identity before execution.
 
 A chapter may be marked complete only after:
 
-- full source coverage is confirmed
-- lesson split is approved and recorded
-- important definitions/formulas/units are verified
-- every lesson fits the timing model
-- storyboards/decks are complete
-- scientific QA passes
-- source QA passes
-- pedagogy/cognitive-load QA passes
-- visual-engagement QA passes
-- Bangla/equation/projector/export QA passes
-- resource fallback checks pass
-- chapter-wide coverage audit passes
-- duplication and cross-lesson continuity checks pass
-- repository state is updated
+- full source coverage is confirmed;
+- lesson split is approved and recorded;
+- important definitions/formulas/units are verified;
+- every lesson fits the timing model;
+- storyboards/decks are complete;
+- scientific/source/pedagogy/cognitive-load QA passes;
+- visual-engagement QA passes;
+- Bangla/equation/projector/export QA passes;
+- resource fallback checks pass;
+- chapter-wide coverage and continuity checks pass;
+- controlled artifacts are durable/reproducible per `ARTIFACT_PERSISTENCE.md`;
+- repository state is updated.
