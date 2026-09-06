@@ -4,13 +4,15 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-06
-- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_CONTROLLED_BUILD_PASS_WITH_NOTES — LESSON_2_PRODUCTION_NEXT**
+- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_CONTROLLED_BUILD_PASS_WITH_NOTES — REPOSITORY_CONSISTENCY_CLEANUP_COMPLETE — LESSON_2_PRODUCTION_NEXT**
 
 ## Durable workflow rules
 
 - external-tool prompts are one-click copy-ready;
 - Gemini reviews use fresh downloadable single-file bundles;
 - Gate B is targeted implementation QA, not Gate A repetition;
+- renderer route is locked by `D-036` / `RENDERER_ROUTING.md`;
+- controlled production follows `ARTIFACT_PERSISTENCE.md`;
 - universal stage rule: **Finish → record → then continue.**
 
 ## Review / freeze state
@@ -46,6 +48,22 @@ Final route:
 
 Decision record: `D-036`.
 
+## Repository consistency cleanup
+
+Status: **COMPLETE**
+
+Post-RT-01 stale operational files were refreshed, including new-chat recovery, agent rules, workflow, project master, README, slide style guide, curriculum index and Gemini legacy-protocol clarification.
+
+New reproducibility policy:
+
+`/ARTIFACT_PERSISTENCE.md`
+
+Consistency audit:
+
+`/REPOSITORY_CONSISTENCY_AUDIT_2026-09-06.md`
+
+Older storyboard-stage headers such as `DRAFT`, `PRE_FREEZE`, or `RT-01 pending` are historical authoring-stage metadata and do not override this chapter status or `CURRENT_STATE.md`.
+
 ## Lesson 1 production
 
 Status: **CONTROLLED BUILD COMPLETE — PASS_WITH_NONBLOCKING_NOTES**
@@ -72,15 +90,22 @@ Artifact fingerprints:
 - PPTX: `baf43046f54165e7bc705c897a02206a8966e3c9294cd3d86d2b1a50f62919c9`
 - PDF: `a85cc0821c73b9074a827968ecb8834aa0c7bd90dbd185ea248fe9f102ab3b6a`
 
+### Lesson 1 reproducibility exception
+
+The exact original PptxGenJS generator source was not committed before the artifact-persistence policy existed.
+
+Before final `CLASSROOM_READY` chapter lock, normalize Lesson 1 by preserving a reconstructed reproducible build specification/source or regenerating a final controlled version with committed source.
+
 ## Remaining chapter production
 
-1. Lesson 2 controlled PPTX/PDF production + QA
-2. Lesson 3 controlled PPTX/PDF production + QA
-3. Lesson 4 controlled PPTX/PDF production + QA
-4. remaining static/offline fallback verification
-5. final rendered chapter-wide audit
-6. classroom-ready package + reusable visual-baseline lock
+1. Lesson 2 controlled PPTX/PDF production + QA + reproducible source record
+2. Lesson 3 controlled PPTX/PDF production + QA + reproducible source record
+3. Lesson 4 controlled PPTX/PDF production + QA + reproducible source record
+4. normalize Lesson 1 reproducibility before final chapter lock
+5. remaining static/offline fallback verification
+6. final rendered chapter-wide audit
+7. classroom-ready package + reusable visual-baseline lock
 
 ## Next authorized stage
 
-**Lesson 2 controlled production.**
+**Lesson 2 controlled production under the locked PptxGenJS-first route and artifact-persistence policy.**
