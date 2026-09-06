@@ -19,6 +19,7 @@ Only this repository is authorized for Science Slides writes.
 - Simulation selection is multi-source and concept-fit driven, not PhET-only (`D-039`).
 - Student-facing language is Bangla-first by `CLASSROOM_LANGUAGE_POLICY.md`.
 - Physical apparatus visuals follow `PHYSICAL_VISUAL_REALISM_POLICY.md`.
+- Physical realism must never reduce science-diagram clarity; for optics, straight-on/orthographic physical views are preferred when ray geometry must be overlaid.
 - `ARTIFACT_PERSISTENCE.md` controls reproducibility.
 
 ## Active chapter
@@ -30,70 +31,52 @@ Canonical path:
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_REALGLASS_CORRECTION_BUILT — USER_REVIEW_OF_REALGLASS_ARTIFACT_PENDING — LESSON_2_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_ORTHOGRAPHIC_REALGLASS_CORRECTION_BUILT — USER_REVIEW_PENDING — LESSON_2_ON_HOLD**
 
 ## Latest user feedback — accepted and implemented
 
-The user confirmed the previous revised Lesson 1 v2:
+The prior realistic 3D glass-slab version was still rejected because the physical perspective of the glass did not align with the 2D ray geometry.
 
-- opened correctly in Microsoft PowerPoint;
-- simulation links opened correctly;
-- all remaining content/design was acceptable except the glass-slab visual.
+Correction implemented:
 
-Remaining issue identified:
-
-- the parallel-sided glass slab looked like a flat artificial shape, not real glass.
-
-Implemented correction:
-
-- added `PHYSICAL_VISUAL_REALISM_POLICY.md`;
-- replaced the glass-slab FLEX pair with a realistic glass-slab visual base plus deterministic ray overlays;
-- retained Bangla-first terminology and the same scientific rule;
-- kept the staged pair: path prediction -> answer/explanation.
+- replaced the perspective glass with a straight-on/orthographic photorealistic glass slab;
+- retained deterministic ray overlays;
+- first and second slab faces are now visually parallel;
+- normals are drawn perpendicular to the vertical interfaces;
+- incident, refracted and emergent rays share the same 2D optical plane;
+- emergent ray is parallel to the incident ray for the parallel-sided slab construction;
+- Bangla-first labels and the staged prediction -> answer pair are preserved.
 
 ## Current Lesson 1 user-facing artifacts
 
-Use these latest files, not the earlier v2/Bangla-only builds:
+Use these latest files:
 
-- PPTX: `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_RealGlass_PPTX_SAFE.pptx`
-- PDF: `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_RealGlass_PPTX_SAFE.pdf`
+- PPTX: `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_OrthoGlass_PPTX_SAFE.pptx`
+- PDF: `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_OrthoGlass_PPTX_SAFE.pdf`
 
 Fingerprints:
 
-- PPTX: `1041598ab9e3ec4979e3a85c579b8a73917b61b3371f3ef4e0ce88e3c69a65c6`
-- PDF: `f1ff2994dbfb0d6dc8d00cd202ec5fe17d6ea5bf0e17b11314b88a20c1785a4b`
+- PPTX: `b626024aee467d1635d6d5bde3757e27c2360252b21dc7ea1e5dd0e6bb5df925`
+- PDF: `bfbf8a4b6e8562946793953cc2622b6ebd53cc0b273e8e8f061717693eeb4fd3`
+- orthographic glass crop asset: `ffc4d995edc1abf77b1deac7a3438008942af826f72d12697a5fe3b1d07bb3e1`
 
 Latest QA record:
 
-`chapters/class-8/science/chapter-11-light/lessons/lesson-01/production/PRODUCTION_QA_V2_REALGLASS_2026-09-06.md`
+`chapters/class-8/science/chapter-11-light/lessons/lesson-01/production/PRODUCTION_QA_V2_ORTHOGLASS_2026-09-06.md`
 
-Relevant policies:
+Reproducibility patch:
 
-- `CLASSROOM_LANGUAGE_POLICY.md`
-- `PHYSICAL_VISUAL_REALISM_POLICY.md`
-- `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-- `SIMULATION_RESOURCE_ROUTING.md`
-- `RENDERER_ROUTING.md`
+`chapters/class-8/science/chapter-11-light/lessons/lesson-01/production/patch_lesson1_v2_orthographic_glass_slides.py`
 
 ## Lesson 1 current state
 
 ### Science/content
 
-PASS at prototype level.
-
-Retained:
-
-- refraction after observation;
-- interface / point of incidence / normal vocabulary;
-- angles measured from normal;
-- normal-incidence exception;
-- optical density vs mass density distinction;
-- rarer-to-denser and denser-to-rarer rules;
-- parallel-sided slab geometry guardrail.
+PASS at focused correction level.
 
 ### Dynamic/interaction
 
-Implemented:
+Retained:
 
 - prediction/reveal states;
 - staged ray construction;
@@ -102,19 +85,29 @@ Implemented:
 - Physics Classroom Refraction Interactive alternate link;
 - deterministic static fallbacks.
 
-### Latest correction
+### Orthographic glass correction
 
-Slides 26-27 now use realistic glass visual treatment instead of a flat schematic slab.
+Slides 26-27 now use a straight-on realistic glass slab with deterministic 2D optics geometry rather than a perspective photograph with mismatched ray overlays.
+
+Internal checks:
+
+- PPTX ZIP integrity: PASS;
+- LibreOffice normalization: PASS;
+- PPTX render: PASS;
+- slide 26 visual inspection: PASS_WITH_USER_REVIEW_PENDING;
+- slide 27 visual inspection: PASS_WITH_USER_REVIEW_PENDING;
+- PDF export/render: PASS.
+
+`slides_test.py` timed out on the image-heavy corrected deck; this is recorded as a tooling limitation rather than silently treated as PASS.
 
 ## Remaining hard gates before Lesson 2
 
-User must review the latest `RealGlass` PPTX and confirm:
+User should review the latest `OrthoGlass` PPTX and confirm:
 
 1. Microsoft PowerPoint opens it without repair warning;
-2. slide 26-27 now look sufficiently realistic and understandable;
-3. staged reveal order remains acceptable;
-4. simulation links remain functional;
-5. the Lesson 1 visual/motion direction is approved as the baseline for Lesson 2.
+2. slides 26-27 are now realistic and scientifically clear;
+3. the staged reveal order remains acceptable;
+4. the Lesson 1 visual/motion direction is approved as the baseline for Lesson 2.
 
 ## Frozen timing
 
@@ -127,6 +120,6 @@ User must review the latest `RealGlass` PPTX and confirm:
 
 ## Next authorized action
 
-**User review of Lesson 1 real-glass corrected v2 artifact.**
+**User review of Lesson 1 orthographic-real-glass corrected v2 artifact.**
 
 Do not start Lesson 2 full production until this is approved or revised to approval.
