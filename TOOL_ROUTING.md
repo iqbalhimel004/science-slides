@@ -1,13 +1,15 @@
 # Tool Routing Policy
 
-Version: 3.1
+Version: 3.2
 Last revised: 2026-09-06
 
 ## Principle
 
-No tool is the permanent default merely because it is powerful or previously preferred. Route each task to the simplest tool that produces the best verified classroom outcome.
+No tool or simulation provider is the permanent default merely because it is powerful, familiar, or previously preferred. Route each task to the simplest option that produces the best verified classroom outcome.
 
-RT-01 has now resolved the first-pilot renderer route: science-critical deck authoring/rendering is controlled, with Canva used as an optional finishing environment rather than as the uncontrolled source of truth.
+RT-01 has resolved the first-pilot renderer route: science-critical deck authoring/rendering is controlled, with Canva used as an optional finishing environment rather than as the uncontrolled source of truth.
+
+Simulation routing is separately governed by `SIMULATION_RESOURCE_ROUTING.md`: **multi-source, concept-fit driven, not PhET-only.**
 
 ## ChatGPT
 
@@ -161,6 +163,39 @@ Do not use Hyperagent by default for:
 ## Existing-resource-first policy
 
 For simulations, animations, videos and authoritative visuals, search reputable existing resources first. Custom generation is justified only when the existing option is scientifically unsuitable, too complex, inaccessible, language-inappropriate, or fails a specific teaching objective.
+
+### Simulation provider routing
+
+Do **not** default to PhET merely because it is familiar.
+
+Canonical policy:
+`SIMULATION_RESOURCE_ROUTING.md`
+
+Candidate ecosystems may include:
+
+- PhET Interactive Simulations;
+- The Physics Classroom Physics Interactives;
+- GeoGebra;
+- Open Source Physics / ComPADRE;
+- reputable university, professional-science, museum, government, or established educational platforms;
+- custom Hyperagent/HTML/JS only when existing options fail the objective.
+
+Select per concept using:
+
+- scientific correctness;
+- exact concept fit;
+- Class 8–10 suitability;
+- interaction/measurement quality;
+- projector clarity;
+- setup/device/login friction;
+- licensing/attribution;
+- language burden;
+- offline/static fallback;
+- timing.
+
+Community-created activities require item-level scientific QA.
+
+Do not add two simulations merely for variety. A second resource must serve a distinct instructional role.
 
 ## Equations and scientific notation
 
