@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-06
-- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_SIMULATION_SELECTION_COMPLETE — LESSON_1_V2_BUILT_AND_INTERNAL_QA_PASS — USER_POWERPOINT_SMOKE_TEST_AND_VISUAL_APPROVAL_PENDING — LESSON_2_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_SIMULATION_SELECTION_COMPLETE — PRIOR_V2_POWERPOINT_AND_LINK_SMOKE_TEST_PASS — LESSON_1_BANGLA_TEXTBOOK_LANGUAGE_REVISION_BUILT — USER_REVIEW_OF_REVISED_ARTIFACT_PENDING — LESSON_2_ON_HOLD**
 
 ## Durable workflow rules
 
@@ -15,6 +15,7 @@
 - controlled production follows `ARTIFACT_PERSISTENCE.md`;
 - compatibility/animation/simulation/UI requirements follow `/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`;
 - simulation provider selection follows `/SIMULATION_RESOURCE_ROUTING.md`;
+- student-facing language/terminology follows `/CLASSROOM_LANGUAGE_POLICY.md`;
 - universal stage rule: **Finish → record → then continue.**
 
 ## Review / freeze state
@@ -22,7 +23,7 @@
 - Gate A: completed + reconciled
 - Gate B: completed + reconciled
 - Final pre-freeze QA: `PASS — CONTENT/STORYBOARD FREEZE APPROVED`
-- No content unfreeze is required for Lesson 1 v2.
+- No content unfreeze is required for Lesson 1 v2 language/clarity revision.
 
 ## Frozen timing
 
@@ -35,85 +36,119 @@
 
 Chapter planned CORE + FLEX total: **202 minutes**.
 
-## RT-01 renderer calibration
+## Renderer route
 
-Status: **COMPLETE**
+RT-01 is complete.
 
 Final route:
 
-- primary authoring/rendering: controlled PptxGenJS
-- science-critical visuals: deterministic SVG/shape construction
-- optional finishing: Canva after controlled PPTX import
-- classroom delivery/fallback: controlled PPTX + verified PDF
-- Beautiful.ai: low-risk layout prototype/inspiration only
-- native Canva AI: low-risk visual inspiration/components only
+- primary authoring/rendering: controlled PptxGenJS;
+- science-critical visuals: deterministic SVG/shape construction;
+- optional finishing: Canva after controlled PPTX import;
+- classroom delivery/fallback: controlled PPTX + verified PDF;
+- Beautiful.ai/native Canva AI are not unattended science-critical full-deck authors.
 
-## Lesson 1 v2 production
+## Lesson 1 v2 — prior user smoke-test result
 
-Status: **BUILT — INTERNAL QA PASS — USER APPROVAL GATE PENDING**
+The previous v2 build:
 
-Current user-facing artifacts:
+- opened correctly in Microsoft PowerPoint;
+- did not reproduce the original repair-warning failure;
+- successfully opened both simulation links.
 
-- `Class8_Science_Ch11_Lesson1_v2_Visual_Engagement_PPTX_SAFE.pptx`
-- `Class8_Science_Ch11_Lesson1_v2_Visual_Engagement_PPTX_SAFE.pdf`
+## Lesson 1 v2 — user language/clarity findings
+
+User identified:
+
+1. the two glass-slab staged slides were not self-explanatory;
+2. too much English appeared in student-facing science terminology;
+3. a static pencil-water instruction slide was labelled `Live demo` despite containing no live element.
+
+These findings were accepted and corrected.
+
+## Current revised Lesson 1 artifact
+
+Current user-facing files:
+
+- `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_FINAL_PPTX_SAFE.pptx`
+- `Class8_Science_Ch11_Lesson1_v2_Bangla_Textbook_FINAL_PPTX_SAFE.pdf`
 
 Fingerprints:
 
-- PPTX: `6b0173457053ba42f5fd1fadbf212f56ec6b8a716a5d4e2d1aee85b695819413`
-- PDF: `9af37c18c8ef00693107092b7382cfa4a0651a17995f3d2c7185ee0afc2a6caa`
-- build source: `48b47ad6e715dd38eb87ee613541677567c72d7442cd969e91a8e72727e73772`
+- PPTX: `f6fe06a932c8db0295a82bec3dc48bb8581134e8b62c29dee18f7c62122db32c`
+- PDF: `bab2b8674cd7a8ae1b26cc4046b85988f86f7b6dd8a4f81e5bc59a3f1861ce58`
 
 Durable production records:
 
 - `lessons/lesson-01/production/build_lesson1_v2.js`
+- `lessons/lesson-01/production/patch_lesson1_v2_bangla_textbook_language.py`
 - `lessons/lesson-01/production/PRODUCTION_QA_V2_2026-09-06.md`
-- `lessons/lesson-01/production/ARTIFACT_MANIFEST_V2_2026-09-06.md`
 - `lessons/lesson-01/production/DYNAMIC_MANIFEST.md`
 - `lessons/lesson-01/production/SIMULATION_CANDIDATE_COMPARISON_2026-09-06.md`
 
-## Lesson 1 v2 dynamic implementation
+## Bangla / textbook-language correction
 
-Implemented:
+Student-facing science terms are now Bangla-first.
 
-- predict/reveal hook;
-- staged light-source → object → eye sequence;
-- medium classification prediction/reveal;
-- pencil-water live-demo slide with static fallback;
-- staged ray vocabulary construction;
-- reflection/refraction prediction/reveal;
-- normal-incidence prediction/reveal;
-- rarer→denser and denser→rarer prediction/reveal;
-- staged glass-slab FLEX sequence;
-- simulation/resource launch slide;
-- PhET Bending Light primary target;
-- The Physics Classroom Refraction Interactive alternate;
-- deterministic static fallback for science-critical content.
+Key optics vocabulary is explicitly shown in Bangla:
 
-Native PowerPoint animation is not required in this version; staged duplicate slides are the preferred compatibility-safe dynamic mechanism.
+- বিভেদতল (Interface)
+- আপতন বিন্দু (Point of incidence)
+- অভিলম্ব (Normal)
+- আপতন কোণ (i)
+- আপতিত রশ্মি
+- প্রতিসরণ কোণ (r)
+- প্রতিসরিত রশ্মি
+- প্রতিফলিত রশ্মি
+- লম্ব আপতন
+- আলোকীয় ঘনত্ব
+- বিরল মাধ্যম / ঘন মাধ্যম
 
-## Internal QA result
+English remains optional/parenthetical or limited to proper resource names.
+
+Canonical policy:
+
+`/CLASSROOM_LANGUAGE_POLICY.md`
+
+## Glass-slab pair — clarified
+
+The pair now clearly states its function:
+
+- `ধাপ ১ — আগে অনুমান`
+- `ধাপ ২ — উত্তর`
+
+It labels the air/glass regions, first/second interfaces, incident/refracted/emergent rays and parallel helper line.
+
+## Pencil-water activity — corrected
+
+The slide is now a `শ্রেণিকক্ষ কার্যক্রম`, not a purported embedded live demo.
+
+Teacher action and static fallback are explicitly stated.
+
+## Revised artifact internal QA
 
 ### PPTX
 
-- `slides_test.py`: PASS — no overflow detected
-- normalized/resaved with LibreOffice before user delivery
-- normalized PPTX rendered successfully
-- rendered montage visually inspected
+- `slides_test.py`: PASS — no overflow;
+- normalized/resaved with LibreOffice;
+- rendered successfully;
+- montage visually inspected;
+- both external simulation hyperlink relationships remain present.
 
 ### PDF
 
-- 28 pages
-- openable
-- unencrypted
-- likely scanned: no
-- PDF rendered successfully and visually inspected
+- 28 pages;
+- openable;
+- unencrypted;
+- rendered successfully and visually inspected.
 
-### Science
+### Science / terminology
 
-Prototype-level PASS:
+PASS at prototype level:
 
 - light-to-eye path;
 - ray vocabulary;
+- আপতন কোণ / প্রতিসরণ কোণ explicitly visible;
 - angle-from-normal rule;
 - normal-incidence exception;
 - optical density ≠ mass density;
@@ -123,8 +158,6 @@ Prototype-level PASS:
 
 ## Simulation selection
 
-Multi-source comparison completed.
-
 Primary Lesson 1 option:
 
 **PhET — Bending Light**
@@ -133,32 +166,30 @@ Secondary alternate:
 
 **The Physics Classroom — Refraction Interactive**
 
-GeoGebra remains a reserve geometry option if a specific verified applet adds value.
-
-This selection does not make PhET the default for later lessons.
+This does not make PhET the default for later lessons.
 
 ## Remaining Lesson 1 hard gates
 
-Before Lesson 1 can establish the master visual/motion standard:
+Before the revised Lesson 1 can establish the master visual/language/motion baseline:
 
-1. user opens the exact v2 PPTX in Microsoft PowerPoint;
-2. repair/recovery warning must be absent;
-3. staged reveal sequence must play in the intended order;
-4. simulation hyperlinks should be tested;
-5. user evaluates UI/color/visual attractiveness;
-6. user approves the visual/motion direction or requests revision.
+1. user opens the revised PPTX in Microsoft PowerPoint;
+2. confirms no repair/recovery warning;
+3. confirms both simulation buttons still open;
+4. checks that Bangla/textbook terminology now feels correct;
+5. checks that the glass-slab staged pair is understandable;
+6. approves or requests further design/UI revisions.
 
 ## Remaining chapter production
 
-1. user tests/reviews Lesson 1 v2;
-2. revise v2 if required;
-3. lock master visual/motion baseline after approval;
+1. user reviews the revised Lesson 1 v2 artifact;
+2. revise again if required;
+3. lock the master visual/language/motion baseline after approval;
 4. produce Lesson 2 using the approved baseline;
 5. produce Lessons 3–4;
 6. final rendered chapter-wide audit and classroom-ready package.
 
 ## Next authorized stage
 
-**User PowerPoint smoke test + visual/motion review of Lesson 1 v2.**
+**User review of revised Bangla/textbook-language Lesson 1 v2.**
 
-Do not start Lesson 2 full production until Lesson 1 v2 is approved or revised to approval.
+Do not start Lesson 2 full production until the revised Lesson 1 baseline is approved.
