@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-06
-- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_POWERPOINT_COMPATIBILITY_RECOVERED — LESSON_1_VISUAL_ENGAGEMENT_V2_REQUIRED — LESSON_2_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — LESSON_1_SIMULATION_SELECTION_COMPLETE — LESSON_1_V2_BUILT_AND_INTERNAL_QA_PASS — USER_POWERPOINT_SMOKE_TEST_AND_VISUAL_APPROVAL_PENDING — LESSON_2_ON_HOLD**
 
 ## Durable workflow rules
 
@@ -14,6 +14,7 @@
 - renderer route is locked by `D-036` / `RENDERER_ROUTING.md`;
 - controlled production follows `ARTIFACT_PERSISTENCE.md`;
 - compatibility/animation/simulation/UI requirements follow `/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`;
+- simulation provider selection follows `/SIMULATION_RESOURCE_ROUTING.md`;
 - universal stage rule: **Finish → record → then continue.**
 
 ## Review / freeze state
@@ -47,77 +48,117 @@ Final route:
 - Beautiful.ai: low-risk layout prototype/inspiration only
 - native Canva AI: low-risk visual inspiration/components only
 
-## New production reliability hard gates
+## Lesson 1 v2 production
 
-The first Lesson 1 pilot revealed two production failures that are now permanently controlled:
+Status: **BUILT — INTERNAL QA PASS — USER APPROVAL GATE PENDING**
 
-1. the first PPTX triggered a Microsoft PowerPoint repair warning despite passing internal/render checks;
-2. the deck was scientifically correct but too static/utilitarian and under-implemented the intended animation/simulation/interactive/visual-engagement layer.
+Current user-facing artifacts:
 
-Canonical control:
+- `Class8_Science_Ch11_Lesson1_v2_Visual_Engagement_PPTX_SAFE.pptx`
+- `Class8_Science_Ch11_Lesson1_v2_Visual_Engagement_PPTX_SAFE.pdf`
 
-`/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+Fingerprints:
 
-Key consequences:
+- PPTX: `6b0173457053ba42f5fd1fadbf212f56ec6b8a716a5d4e2d1aee85b695819413`
+- PDF: `9af37c18c8ef00693107092b7382cfa4a0651a17995f3d2c7185ee0afc2a6caa`
+- build source: `48b47ad6e715dd38eb87ee613541677567c72d7442cd969e91a8e72727e73772`
 
-- a PPTX repair warning is a hard compatibility FAIL;
-- Microsoft PowerPoint smoke test is required for the exact user-facing PPTX when available;
-- normalization/resave must be followed by playback re-test when animation/interaction exists;
-- concept-heavy lessons may not become static by accident;
-- storyboard-planned progressive reveal/interaction/simulation must be implemented or intentionally reclassified with reason;
-- G10 now rejects materially unattractive/utilitarian first-pilot decks;
-- Lesson 1 v2 must receive user visual/motion approval before Lessons 2–4 inherit the style.
+Durable production records:
 
-## Lesson 1 production state
+- `lessons/lesson-01/production/build_lesson1_v2.js`
+- `lessons/lesson-01/production/PRODUCTION_QA_V2_2026-09-06.md`
+- `lessons/lesson-01/production/ARTIFACT_MANIFEST_V2_2026-09-06.md`
+- `lessons/lesson-01/production/DYNAMIC_MANIFEST.md`
+- `lessons/lesson-01/production/SIMULATION_CANDIDATE_COMPARISON_2026-09-06.md`
 
-### Science/content
+## Lesson 1 v2 dynamic implementation
 
-PASS. Frozen science/content remains valid.
+Implemented:
 
-### Microsoft PowerPoint compatibility
+- predict/reveal hook;
+- staged light-source → object → eye sequence;
+- medium classification prediction/reveal;
+- pencil-water live-demo slide with static fallback;
+- staged ray vocabulary construction;
+- reflection/refraction prediction/reveal;
+- normal-incidence prediction/reveal;
+- rarer→denser and denser→rarer prediction/reveal;
+- staged glass-slab FLEX sequence;
+- simulation/resource launch slide;
+- PhET Bending Light primary target;
+- The Physics Classroom Refraction Interactive alternate;
+- deterministic static fallback for science-critical content.
 
-- initial PPTX: failed user-side PowerPoint open with repair warning;
-- normalized/repaired PPTX: user confirmed it opens correctly in Microsoft PowerPoint;
-- repaired PPTX SHA-256: `f5d3d16f724bc5ae2557c008356b28d6482ee0fd0a694c0572cfbb2bfbafe769`;
-- PDF fallback SHA-256: `a85cc0821c73b9074a827968ecb8834aa0c7bd90dbd185ea248fe9f102ab3b6a`.
+Native PowerPoint animation is not required in this version; staged duplicate slides are the preferred compatibility-safe dynamic mechanism.
 
-### Visual/motion/interaction
+## Internal QA result
 
-**FAIL FOR CLASSROOM_READY — REVISION REQUIRED.**
+### PPTX
 
-The current build is a science-correct controlled prototype, not the final master visual standard.
+- `slides_test.py`: PASS — no overflow detected
+- normalized/resaved with LibreOffice before user delivery
+- normalized PPTX rendered successfully
+- rendered montage visually inspected
 
-Required v2 improvements are defined in:
+### PDF
 
-`lessons/lesson-01/DESIGN_ENGAGEMENT_REVISION_2026-09-06.md`
+- 28 pages
+- openable
+- unencrypted
+- likely scanned: no
+- PDF rendered successfully and visually inspected
 
-and governed by:
+### Science
 
-`/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+Prototype-level PASS:
 
-Targets include:
+- light-to-eye path;
+- ray vocabulary;
+- angle-from-normal rule;
+- normal-incidence exception;
+- optical density ≠ mass density;
+- rarer→denser bends toward normal;
+- denser→rarer bends away from normal;
+- slab geometry guardrail preserved.
 
-- stronger UI/color/visual identity;
-- improved hook and slide rhythm;
-- purposeful staged reveal / predict-then-reveal;
-- optional PhET Bending Light launch support with static fallback;
-- interactive/hyperlink support only where pedagogically useful;
-- PowerPoint playback compatibility;
-- verified PDF/static fallback;
-- reproducible build source committed under artifact-persistence policy.
+## Simulation selection
+
+Multi-source comparison completed.
+
+Primary Lesson 1 option:
+
+**PhET — Bending Light**
+
+Secondary alternate:
+
+**The Physics Classroom — Refraction Interactive**
+
+GeoGebra remains a reserve geometry option if a specific verified applet adds value.
+
+This selection does not make PhET the default for later lessons.
+
+## Remaining Lesson 1 hard gates
+
+Before Lesson 1 can establish the master visual/motion standard:
+
+1. user opens the exact v2 PPTX in Microsoft PowerPoint;
+2. repair/recovery warning must be absent;
+3. staged reveal sequence must play in the intended order;
+4. simulation hyperlinks should be tested;
+5. user evaluates UI/color/visual attractiveness;
+6. user approves the visual/motion direction or requests revision.
 
 ## Remaining chapter production
 
-1. build Lesson 1 visual-engagement prototype v2;
-2. run science/visual/PowerPoint/playback/PDF QA;
-3. obtain user approval of the master visual/motion direction;
-4. persist Lesson 1 v2 reproducible production source and dynamic manifest;
-5. produce Lesson 2 using the approved baseline;
-6. produce Lessons 3–4;
-7. final rendered chapter-wide audit and classroom-ready package.
+1. user tests/reviews Lesson 1 v2;
+2. revise v2 if required;
+3. lock master visual/motion baseline after approval;
+4. produce Lesson 2 using the approved baseline;
+5. produce Lessons 3–4;
+6. final rendered chapter-wide audit and classroom-ready package.
 
 ## Next authorized stage
 
-**Lesson 1 visual-engagement prototype v2.**
+**User PowerPoint smoke test + visual/motion review of Lesson 1 v2.**
 
-Do not start Lesson 2 full production until Lesson 1 v2's visual/motion direction is approved.
+Do not start Lesson 2 full production until Lesson 1 v2 is approved or revised to approval.
