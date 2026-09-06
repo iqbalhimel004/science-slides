@@ -1,8 +1,8 @@
 # Agent Operating Rules
 
-Version: 4.0
+Version: 4.1
 Last revised: 2026-09-06
-Status: **ACTIVE — POST-RT-01**
+Status: **ACTIVE — POST-RT-01 / POST-PILOT-COMPATIBILITY UPDATE**
 
 ## Absolute write boundary
 
@@ -10,7 +10,7 @@ For this project, writes are authorized only to:
 
 `iqbalhimel004/science-slides`
 
-Before every GitHub write, verify the exact `repository_full_name`. Abort if it differs. Do not mutate any other connected repository unless the user separately names and authorizes it.
+Before every GitHub write, verify the exact `repository_full_name`. Abort if it differs.
 
 ## Canonical memory and startup
 
@@ -21,11 +21,11 @@ For the active first pilot chapter, recover state in this order:
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
 3. `RENDERER_ROUTING.md`
-4. active chapter `STATUS.md`
-5. active lesson storyboard/resources/latest production QA
-6. deeper policy/template files only when relevant
-
-`FABLE_AUDIT_RECONCILIATION_2026-09-05.md` is historical/pilot evidence; read it when unresolved pilot items matter, not as a replacement for current state.
+4. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+5. `ARTIFACT_PERSISTENCE.md`
+6. active chapter `STATUS.md`
+7. active lesson storyboard/resources/latest production QA/design revision
+8. deeper policy/template files only when relevant
 
 ## Precedence rule
 
@@ -33,18 +33,19 @@ If an older file conflicts with current routing/state, prefer:
 
 1. `CURRENT_STATE.md`
 2. `RENDERER_ROUTING.md`
-3. `DECISIONS.md`
-4. active chapter `STATUS.md`
-5. latest stage-specific QA/reconciliation record
-6. older planning/audit records
+3. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+4. `ARTIFACT_PERSISTENCE.md`
+5. active chapter `STATUS.md`
+6. latest stage-specific QA/reconciliation record
+7. older planning/audit records
 
-Do not revive pre-RT-01 candidate-renderer assumptions.
+Do not revive pre-RT-01 or pre-pilot-production assumptions.
 
 ## Normal production scope
 
 Default: one complete textbook chapter per production chat.
 
-If context becomes operationally too large, save an exact GitHub checkpoint before continuing in a new chat. Do not depend on an ad-hoc conversational summary.
+If context becomes operationally too large, save an exact GitHub checkpoint before continuing in a new chat.
 
 ## Chapter intake non-negotiables
 
@@ -65,7 +66,7 @@ When a chapter PDF/screenshots are supplied:
 - contingency: 5–10 min intentionally unallocated
 - STRETCH: appendix/enrichment only
 
-Count questions, student responses, board work, examples, activities, media setup/debrief, transitions and exit checks as real time.
+Count questions, student responses, board work, examples, activities, media setup/debrief, simulation/interaction time, transitions and exit checks as real time.
 
 ## Source discipline
 
@@ -84,10 +85,12 @@ Count questions, student responses, board work, examples, activities, media setu
 - guided practice/application;
 - misconception correction where relevant;
 - summary + exit check;
-- visual engagement without decorative clutter;
+- high visual engagement without decorative clutter;
 - no rigid 7–10-minute attention-span rule;
 - motion only when pedagogically justified;
 - static/offline fallback for classroom-critical online/animated elements.
+
+A concept-heavy lesson must not become fully static merely because that is easier to generate. Storyboard-planned progressive reveal, prediction, live demo, simulation or interaction must either be implemented or intentionally reclassified with a reason.
 
 ## Tool routing — locked after RT-01
 
@@ -96,18 +99,48 @@ Canonical record: `RENDERER_ROUTING.md`.
 - ChatGPT: lead content/pedagogy/QA/state coordination.
 - PptxGenJS: **primary controlled science-deck authoring/rendering route**.
 - Canva: optional controlled-import finishing/editing/hosting; native AI is not the final science authority.
-- Beautiful.ai: low-risk layout exploration/prototyping only; not unattended full-deck science production.
+- Beautiful.ai: low-risk layout exploration/prototyping only.
 - Hyperagent: specialist deterministic SVG/equation/interactive/QA work where it adds value.
-- Gemini AI Pro: independent targeted review/research, not duplicate primary authoring.
+- Gemini AI Pro: independent targeted review/research.
 - NotebookLM: conditional source-grounded support only when useful.
 
-Do not rerun RT-01 unless tool behaviour materially changes or the user explicitly asks to reconsider the decision.
+## Microsoft PowerPoint compatibility — mandatory production gate
+
+The first Lesson 1 pilot proved that internal ZIP/XML/LibreOffice/render checks are not sufficient: Microsoft PowerPoint may still show a repair warning.
+
+Therefore:
+
+- the exact user-facing PPTX must be smoke-tested in Microsoft PowerPoint when PowerPoint is available;
+- any repair/recovery warning means that artifact FAILS;
+- only the repaired/rebuilt artifact that opens without warning may become current;
+- after any LibreOffice or other normalization/resave operation, retest planned animation/reveal/hyperlink/media behaviour in PowerPoint;
+- do not assume a normalization pass preserves native animation or interactive features.
+
+Read `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md` for the full gate.
+
+## Progressive reveal / animation preference
+
+For science-critical progressive construction:
+
+1. staged duplicate-slide reveal / predict-then-reveal;
+2. deterministic static states;
+3. PowerPoint-native animation only when it adds real instructional value and can be reliably tested.
+
+This preference protects PowerPoint compatibility and PDF/static fallback while still keeping lessons dynamic.
+
+## Visual-attractiveness hard gate
+
+A scientifically correct but materially unattractive, repetitive, box-heavy or utilitarian pilot deck is not classroom-ready.
+
+The first pilot must establish a user-approved visual/motion standard before later lessons inherit it.
+
+Lesson 1 v2 is the current master-style prototype.
 
 ## Controlled artifact persistence
 
 Read and follow `ARTIFACT_PERSISTENCE.md`.
 
-From Lesson 2 onward, a controlled deck is not durably checkpointed until reproducible source/build records are committed along with output filenames/fingerprints and production QA.
+From Lesson 1 v2 onward, a controlled deck is not durably checkpointed until reproducible source/build records, artifact fingerprints, dynamic implementation records, compatibility status and production QA are committed.
 
 Do not commit font files, secrets or credentials.
 
@@ -117,7 +150,7 @@ Any prompt the user must paste into an external tool must be provided as one sel
 
 ## Completion discipline
 
-A chapter is not complete until source/science/timing/pedagogy/visual/export/fallback/coverage/continuity checks pass and repository state is updated.
+A chapter is not complete until source/science/timing/pedagogy/visual/PowerPoint-compatibility/export/fallback/coverage/continuity/reproducibility checks pass and repository state is updated.
 
 Universal stage rule:
 
