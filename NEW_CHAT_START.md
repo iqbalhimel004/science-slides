@@ -1,7 +1,8 @@
 # New Chat Recovery Protocol
 
-Version: 3.1
-Last revised: 2026-09-05
+Version: 4.0
+Last revised: 2026-09-06
+Status: **ACTIVE — POST-RT-01**
 
 ## 1. Verify repository identity first
 
@@ -11,121 +12,123 @@ Authorized write repository:
 
 Do not write to any other connected repository.
 
-## 2. Mandatory recovery sequence for the FIRST pilot chapter
+## 2. Current first-pilot recovery sequence
 
-Read in this exact order:
+For the active first pilot chapter, read in this order:
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
-3. `FABLE_AUDIT_RECONCILIATION_2026-09-05.md`
-4. `CLASSROOM_PROFILE.md`
-5. `PROJECT_MASTER.md`
-6. `WORKFLOW.md`
-7. `SOURCE_POLICY.md`
-8. `TOOL_ROUTING.md`
-9. `QUALITY_GATES.md`
-10. `SLIDE_STYLE_GUIDE.md`
-11. `VISUAL_ENGAGEMENT_SYSTEM.md`
-12. `DECISIONS.md`
-13. relevant files under `templates/`
+3. `RENDERER_ROUTING.md`
+4. active chapter `STATUS.md`
+5. active lesson `STORYBOARD.md`, `RESOURCES.md`, and latest production QA if relevant
+6. `FABLE_AUDIT_RECONCILIATION_2026-09-05.md` only when unresolved pilot items matter
+7. deeper policy/template files only when the current task requires them
 
-For the first pilot chapter, do **not** use the minimal-recovery shortcut. The objective is to carry forward every unresolved renderer/tool/typography/equation/workflow decision from the Fable audit reconciliation.
+Do **not** restart renderer selection. RT-01 is complete.
 
-After the first pilot chapter is complete and those pending decisions are resolved, future chats may return to the compact recovery sequence defined in `OPERATING_BRIEF.md`.
+## 3. Canonical state / precedence
 
-## 3. Canonical-state rule
+GitHub is the durable source of truth. If old chat history or an older repository section conflicts with current canonical state, use this precedence:
 
-Use the repository as the source of truth. If an old conversation conflicts with current repository state, prefer the current repository unless the user explicitly overrides it.
+1. `CURRENT_STATE.md`
+2. `RENDERER_ROUTING.md`
+3. `DECISIONS.md`
+4. active chapter `STATUS.md`
+5. latest stage-specific QA/reconciliation record
+6. older historical planning/audit documents
 
-## 4. Chapter scope
+Historical pre-RT-01 wording must not override current routing.
 
-Default: one production chat handles one complete textbook chapter.
+## 4. Renderer route — already decided
 
-If context becomes operationally too large, do not rely on an ad-hoc conversational summary. Save the exact stage/status and required handoff state in GitHub before continuing in a new chat.
+Current default production route:
 
-## 5. First chapter is also the pilot/calibration chapter
+**Controlled PptxGenJS authoring/rendering → deterministic SVG/shape scientific visuals → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF fallback.**
 
-The first real chapter must evaluate, where applicable:
+- PptxGenJS: primary science-deck authoring/rendering route.
+- Canva: optional finishing/editing after controlled import; native AI is not the science authority.
+- Beautiful.ai: low-risk prototype/layout inspiration only, not unattended full-deck science production.
 
-- Beautiful.ai vs Canva full-deck quality/workflow
-- whether hybrid rendering is worth the complexity
-- Bangla typography and conjunct reliability
-- equation/chemistry notation workflow
-- export fidelity and PDF fallback
-- projector readability
-- Hyperagent SVG/equation/QA usefulness
-- NotebookLM usefulness on the actual supplied source
-- Gemini review cadence/value
-- source text-layer/OCR/vision reliability
-- timing realism of CORE/FLEX/contingency
-- which policy/template files are genuinely useful vs redundant
+Read `RENDERER_ROUTING.md` for evidence and exact constraints.
 
-Do not lock long-term renderer/tool defaults before evidence from this pilot.
+## 5. Active first pilot
 
-## 6. Chapter intake
+Active chapter:
 
-If no chapter is active, wait for the user to provide the complete chapter PDF or ordered screenshots.
+`chapters/class-8/science/chapter-11-light/`
 
-Then:
+Current production state is recorded in `CURRENT_STATE.md` and chapter `STATUS.md`.
 
-- verify chapter identity, edition/year if identifiable, completeness, page order and readability
-- classify text layer: reliable / partial / scanned-image / screenshots
-- do not silently infer missing/cropped/unreadable material
-- analyze the complete visible chapter before lesson splitting
-- verify important definitions/laws/formulas/units against the visible page/image when extraction is uncertain
+At the 2026-09-06 checkpoint:
 
-## 7. First deliverable
+- content/storyboards are frozen;
+- Gemini Gate A and targeted Gate B are complete/reconciled;
+- RT-01 is complete;
+- Lesson 1 controlled PPTX/PDF build passed production QA with nonblocking notes;
+- Lesson 2 controlled production is the next authorized stage.
 
-Do **not** immediately generate slides.
+Do not redo completed planning/review/calibration unless a new material regression is found.
 
-First produce:
+## 6. Source/science rule
 
-1. input-integrity result
-2. full chapter analysis/concept map
-3. definitions/laws/formulas/diagrams/activities/numericals/misconceptions inventory
-4. instructional-load estimate
-5. justified number of <=60-minute presentations
-6. proposed CORE/FLEX/STRETCH boundaries and continuity between lessons
+NCTB controls curriculum/scope/exam context, not automatic scientific truth.
 
-Obtain user approval of the split before final deck production.
+For material scientific claims:
 
-## 8. Timing rule
+- verify against current authoritative sources;
+- preserve NCTB/exam wording separately when relevant;
+- document mismatches in source issue/map records;
+- never restore an outdated textbook claim merely because an old planning file contains it.
 
-For the current confirmed 60-minute requirement:
+## 7. Timing rule
 
-- CORE ~40–45 min
-- FLEX ~5–10 min
-- CORE + FLEX target ~50–55 min
-- 5–10 min contingency remains unallocated
-- STRETCH is appendix-only
+For a 60-minute class:
 
-Every question, student response, board-writing segment, media setup/debrief, activity and transition counts as time.
+- CORE: normally about 40–45 min
+- FLEX: normally about 5–10 min
+- planned CORE + FLEX: about 50–55 min
+- contingency: 5–10 min intentionally unallocated
+- STRETCH: appendix/enrichment only
 
-## 9. Renderer calibration requirement
+Questions, student responses, board work, media setup/debrief, activities and transitions count as real classroom time.
 
-Before the first final deck, run RT-01 using representative Bangla/science content in Beautiful.ai and Canva; add a fallback renderer only if needed.
+## 8. External prompt rule
 
-Compare:
+Whenever the user must paste a prompt into Gemini, Canva, Beautiful.ai, Hyperagent, Codex or another external tool, provide the complete prompt in **one self-contained fenced code block**.
 
-- Bangla conjuncts/mixed Bangla-English
-- equations, subscripts/superscripts and symbols
-- diagram labels
-- visual quality
-- editability
-- export quality
-- projector readability
-- workflow time/friction
+## 9. Gemini rule
 
-Record the result in `DECISIONS.md` and `CURRENT_STATE.md`.
+Planned Gemini reviews use `GEMINI_REVIEW_WORKFLOW.md`:
 
-## 10. End-of-stage handoff
+- fresh single-file Markdown bundle from current canonical files;
+- downloadable bundle for the user;
+- one copy-ready prompt;
+- raw response saved first;
+- independent validation;
+- `ACCEPT / PARTIAL / REJECT` reconciliation;
+- checkpoint before continuing.
 
-Update as applicable:
+Gate B is targeted implementation QA, not a repeat of Gate A.
 
-- `CURRENT_STATE.md`
-- active chapter `STATUS.md`
-- chapter/lesson source/storyboard/QA/resource files
-- `DECISIONS.md` for durable changes
-- `FABLE_AUDIT_RECONCILIATION_2026-09-05.md` only if a pending pilot item is resolved or materially reclassified
+## 10. Artifact persistence rule
 
-The next chat must be able to continue from GitHub without needing the previous chat transcript.
+Read `ARTIFACT_PERSISTENCE.md` before/while producing controlled decks.
+
+From Lesson 2 onward, a production stage is not durable merely because a PPTX/PDF existed in a temporary runtime. Preserve reproducibility records/source as defined there.
+
+Lesson 1's first controlled build is a documented pilot exception: exact filenames/fingerprints and QA are recorded, but its original generation source was not durably committed. It must be normalized under the artifact-persistence policy before final chapter completion.
+
+## 11. End-of-stage checkpoint
+
+**Finish → record → then continue.**
+
+At each meaningful stage update, as applicable:
+
+- the actual artifact/specification/source file;
+- active lesson production QA;
+- chapter `STATUS.md`;
+- root `CURRENT_STATE.md`;
+- `DECISIONS.md` only for durable policy changes;
+- source/resource records where affected.
+
+The next chat must be able to continue from GitHub without needing the previous transcript.
