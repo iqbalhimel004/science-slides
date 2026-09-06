@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-06
-- Current status: **GATE_B_RECONCILED — FINAL_G1_G7_PASS — CONTENT_STORYBOARD_FROZEN — RT_01_NEXT**
+- Current status: **CONTENT_STORYBOARD_FROZEN — RT_01_COMPLETE — CONTROLLED_PPTX_ROUTE_LOCKED — LESSON_1_PRODUCTION_NEXT**
 
 ## Durable workflow rules
 
@@ -23,20 +23,6 @@ Result: targeted corrections; no material replan.
 Completed + independently reconciled.
 External verdict: `PASS_WITH_TARGETED_CHANGES`.
 Canonical verdict: `ACCEPT WITH TARGETED CHANGES; NO MATERIAL REPLAN REQUIRED`.
-
-Files:
-- `reviews/GEMINI_GATE_B_RAW_2026-09-06.md`
-- `reviews/GEMINI_GATE_B_RECONCILIATION_2026-09-06.md`
-
-## Gate-B changes implemented
-
-- L2-S09/R2-03: critical-angle panel requires grazing refracted ray **and** reflected ray; TIR remains only for `i>C`; no reflected-power fraction taught.
-- L3 magnifier finding rejected because dashed backward extensions were already explicit in L3-S06/R3-03.
-- L4 dedicated digital-camera CORE slide removed.
-- L4 digital distinction reduced to one sentence on film-chemistry slide.
-- L4 detailed digital-sensor content is STRETCH only.
-- L4 standalone concept-map lecture merged into final synthesis/exit.
-- L4 timing reduced from 54 planned minutes to 50.
 
 ## Frozen timing
 
@@ -59,6 +45,30 @@ Result:
 
 All textbook-body topics are mapped. No material prerequisite, continuity or duplication blocker remains.
 
+## RT-01 renderer calibration
+
+Canonical record:
+`RT01_RENDERER_CALIBRATION_2026-09-06.md`
+
+Status: **COMPLETE**
+
+Final route:
+
+- **Primary authoring/rendering:** controlled PptxGenJS
+- **Science-critical visuals:** deterministic SVG/shape construction
+- **Optional finishing:** Canva after controlled PPTX import
+- **Classroom fallback/delivery:** direct controlled PPTX + verified PDF
+- **Beautiful.ai:** low-risk layout prototype/inspiration only; not unattended science full-deck rendering
+- **Canva native AI:** not default authoring; low-risk visual inspiration/components only
+
+RT-01 evidence that drove the decision:
+
+- Canva native: small projector text, unrelated template artifacts, unreliable critical-angle visual.
+- Beautiful.ai: cleaner standard layout but requested critical-angle diagram omitted, `<`/`>` notation escaped in export, verified content rewritten with material drift, and editable export depends on Beautiful.ai font packages for exact typography.
+- Controlled PPTX → Canva import preserved critical Bangla/notation and retained deterministic science control.
+
+Decision record: `D-036` in root `DECISIONS.md`.
+
 ## Freeze boundary
 
 Frozen unless a later build reveals a material defect:
@@ -70,20 +80,19 @@ Frozen unless a later build reveals a material defect:
 - timing architecture;
 - resource specifications.
 
-Not yet classroom-ready:
-- high-risk diagrams still need actual build + scientific inspection;
-- RT-01 not yet run;
-- renderer not yet locked;
-- export/projector/offline QA pending;
-- PDF fallbacks pending.
+## Not yet classroom-ready
+
+Remaining production work:
+
+1. Lesson 1 deterministic visual build + controlled PPTX;
+2. Lesson 1 rendered science/Bangla/projector/export QA + PDF fallback;
+3. repeat for Lessons 2–4;
+4. verify all static/offline fallbacks;
+5. final rendered chapter coverage/continuity audit;
+6. classroom-ready package and final status.
 
 ## Next authorized stage
 
-1. Run **RT-01** representative Bangla/science renderer calibration through Beautiful.ai and Canva.
-2. Compare Bangla conjuncts, mixed Bangla/English, symbols, sub/sup/equation handling, editability, export fidelity, projector readability and workflow friction.
-3. Record renderer default/fallback decision in `DECISIONS.md`.
-4. Build deterministic high-risk visuals.
-5. Render lessons and run scientific visual/export/offline/projector QA.
-6. Produce PDF/static fallbacks and classroom-ready package.
+**Lesson 1 production.**
 
-No further Gemini planning review is required unless later production introduces a material content/science regression.
+Build the high-risk visuals first, assemble the 16:9 controlled PPTX, render and visually inspect it, verify the PDF fallback, then checkpoint before proceeding to Lesson 2.
