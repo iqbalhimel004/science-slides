@@ -1,8 +1,8 @@
 # New Chat Recovery Protocol
 
-Version: 4.0
+Version: 4.1
 Last revised: 2026-09-06
-Status: **ACTIVE — POST-RT-01**
+Status: **ACTIVE — POST-RT-01 / POST-PILOT-COMPATIBILITY UPDATE**
 
 ## 1. Verify repository identity first
 
@@ -19,10 +19,11 @@ For the active first pilot chapter, read in this order:
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
 3. `RENDERER_ROUTING.md`
-4. active chapter `STATUS.md`
-5. active lesson `STORYBOARD.md`, `RESOURCES.md`, and latest production QA if relevant
-6. `FABLE_AUDIT_RECONCILIATION_2026-09-05.md` only when unresolved pilot items matter
-7. deeper policy/template files only when the current task requires them
+4. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+5. `ARTIFACT_PERSISTENCE.md`
+6. active chapter `STATUS.md`
+7. active lesson `STORYBOARD.md`, `RESOURCES.md`, latest production QA, and any design-engagement revision record
+8. deeper policy/template files only when the current task requires them
 
 Do **not** restart renderer selection. RT-01 is complete.
 
@@ -32,12 +33,13 @@ GitHub is the durable source of truth. If old chat history or an older repositor
 
 1. `CURRENT_STATE.md`
 2. `RENDERER_ROUTING.md`
-3. `DECISIONS.md`
-4. active chapter `STATUS.md`
-5. latest stage-specific QA/reconciliation record
-6. older historical planning/audit documents
+3. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+4. `ARTIFACT_PERSISTENCE.md`
+5. active chapter `STATUS.md`
+6. latest stage-specific QA/reconciliation record
+7. older historical planning/audit documents
 
-Historical pre-RT-01 wording must not override current routing.
+Historical pre-RT-01 or pre-pilot-production wording must not override current routing/compatibility/engagement rules.
 
 ## 4. Renderer route — already decided
 
@@ -47,88 +49,99 @@ Current default production route:
 
 - PptxGenJS: primary science-deck authoring/rendering route.
 - Canva: optional finishing/editing after controlled import; native AI is not the science authority.
-- Beautiful.ai: low-risk prototype/layout inspiration only, not unattended full-deck science production.
+- Beautiful.ai: low-risk prototype/layout inspiration only.
 
-Read `RENDERER_ROUTING.md` for evidence and exact constraints.
+## 5. Pilot compatibility and visual-engagement correction
 
-## 5. Active first pilot
+The first Lesson 1 controlled build revealed two important production failures:
+
+1. Microsoft PowerPoint initially showed a repair warning even though internal/LibreOffice/render tests had passed;
+2. the deck was science-correct but too static/utilitarian and underused the planned animation/simulation/interactive/visual-engagement layer.
+
+These are now controlled by:
+
+`PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+
+Mandatory implications:
+
+- a PowerPoint repair/recovery warning is a hard failure for that PPTX;
+- when PowerPoint is available, test the exact user-facing PPTX in Microsoft PowerPoint;
+- after any normalize/resave operation, retest planned animation/reveal/interaction behaviour;
+- storyboard-planned dynamic teaching elements must not disappear during production;
+- static presentation must be intentional, not accidental;
+- the first-pilot master UI/motion direction must be user-approved before it is propagated to later lessons.
+
+## 6. Active first pilot
 
 Active chapter:
 
 `chapters/class-8/science/chapter-11-light/`
 
-Current production state is recorded in `CURRENT_STATE.md` and chapter `STATUS.md`.
+Current state is in `CURRENT_STATE.md` and chapter `STATUS.md`.
 
-At the 2026-09-06 checkpoint:
+Current next stage:
 
-- content/storyboards are frozen;
-- Gemini Gate A and targeted Gate B are complete/reconciled;
-- RT-01 is complete;
-- Lesson 1 controlled PPTX/PDF build passed production QA with nonblocking notes;
-- Lesson 2 controlled production is the next authorized stage.
+**Lesson 1 visual-engagement prototype v2.**
 
-Do not redo completed planning/review/calibration unless a new material regression is found.
+Lesson 2 full production is on hold until Lesson 1 v2 establishes an approved UI/motion standard.
 
-## 6. Source/science rule
+## 7. Lesson 1 compatibility history
 
-NCTB controls curriculum/scope/exam context, not automatic scientific truth.
+- initial controlled PPTX: triggered Microsoft PowerPoint repair warning;
+- repaired/normalized PPTX: user confirmed it opens correctly in Microsoft PowerPoint;
+- repaired PPTX fingerprint and incident details are in `lessons/lesson-01/PRODUCTION_QA_2026-09-06.md`;
+- current v1 deck is not `CLASSROOM_READY` because visual/motion/interactive quality needs revision.
 
-For material scientific claims:
+## 8. Source/science rule
 
-- verify against current authoritative sources;
-- preserve NCTB/exam wording separately when relevant;
-- document mismatches in source issue/map records;
-- never restore an outdated textbook claim merely because an old planning file contains it.
+NCTB controls curriculum/scope/exam context, not automatic scientific truth. Material scientific claims are verified against current authoritative sources; mismatches are documented.
 
-## 7. Timing rule
+## 9. Timing rule
 
 For a 60-minute class:
 
-- CORE: normally about 40–45 min
-- FLEX: normally about 5–10 min
+- CORE: about 40–45 min
+- FLEX: about 5–10 min
 - planned CORE + FLEX: about 50–55 min
-- contingency: 5–10 min intentionally unallocated
+- contingency: 5–10 min unallocated
 - STRETCH: appendix/enrichment only
 
-Questions, student responses, board work, media setup/debrief, activities and transitions count as real classroom time.
+Media setup, interaction, prediction/reveal and simulation debrief count as real time.
 
-## 8. External prompt rule
+## 10. Dynamic implementation rule
 
-Whenever the user must paste a prompt into Gemini, Canva, Beautiful.ai, Hyperagent, Codex or another external tool, provide the complete prompt in **one self-contained fenced code block**.
+For concept-heavy segments use, where appropriate:
 
-## 9. Gemini rule
+- `STAGED_REVEAL`
+- `PREDICT_THEN_REVEAL`
+- `LIVE_DEMO`
+- `SIMULATION`
+- `INTERACTIVE_NAVIGATION`
+- `NATIVE_ANIMATION` only when reliable/testable
+- `STATIC_INTENTIONAL` when static is genuinely better
 
-Planned Gemini reviews use `GEMINI_REVIEW_WORKFLOW.md`:
+For science-critical progressive construction, staged duplicate-slide states are preferred over fragile native animation when they achieve the same instructional goal.
 
-- fresh single-file Markdown bundle from current canonical files;
-- downloadable bundle for the user;
-- one copy-ready prompt;
-- raw response saved first;
-- independent validation;
-- `ACCEPT / PARTIAL / REJECT` reconciliation;
-- checkpoint before continuing.
+Every important dynamic/online element needs a static/offline fallback.
 
-Gate B is targeted implementation QA, not a repeat of Gate A.
+## 11. Artifact persistence rule
 
-## 10. Artifact persistence rule
+Follow `ARTIFACT_PERSISTENCE.md`.
 
-Read `ARTIFACT_PERSISTENCE.md` before/while producing controlled decks.
+From Lesson 1 v2 onward, preserve:
 
-From Lesson 2 onward, a production stage is not durable merely because a PPTX/PDF existed in a temporary runtime. Preserve reproducibility records/source as defined there.
+- generator/build source;
+- artifact fingerprints;
+- dynamic implementation manifest where applicable;
+- PowerPoint compatibility status;
+- export/fallback QA.
 
-Lesson 1's first controlled build is a documented pilot exception: exact filenames/fingerprints and QA are recorded, but its original generation source was not durably committed. It must be normalized under the artifact-persistence policy before final chapter completion.
+## 12. External prompt rule
 
-## 11. End-of-stage checkpoint
+Any external-tool prompt must be one self-contained fenced code block.
+
+## 13. End-of-stage checkpoint
 
 **Finish → record → then continue.**
-
-At each meaningful stage update, as applicable:
-
-- the actual artifact/specification/source file;
-- active lesson production QA;
-- chapter `STATUS.md`;
-- root `CURRENT_STATE.md`;
-- `DECISIONS.md` only for durable policy changes;
-- source/resource records where affected.
 
 The next chat must be able to continue from GitHub without needing the previous transcript.
