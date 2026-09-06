@@ -1,13 +1,13 @@
 # Tool Routing Policy
 
-Version: 3.0
-Last revised: 2026-09-05
+Version: 3.1
+Last revised: 2026-09-06
 
 ## Principle
 
 No tool is the permanent default merely because it is powerful or previously preferred. Route each task to the simplest tool that produces the best verified classroom outcome.
 
-Renderer choices are conditional on real Bangla/science output tests.
+RT-01 has now resolved the first-pilot renderer route: science-critical deck authoring/rendering is controlled, with Canva used as an optional finishing environment rather than as the uncontrolled source of truth.
 
 ## ChatGPT
 
@@ -50,77 +50,90 @@ Use as an independent reviewer/research layer, not as a second primary author.
 Preferred review points:
 
 1. chapter split/decomposition sanity check when the chapter is complex, ambiguous, or produces several lessons
-2. pre-freeze review of difficult scientific claims, misconceptions, exam-wording risk, or missing coverage
+2. targeted pre-freeze implementation audit when a real new risk exists
 3. targeted Deep Research for external resources when normal search is insufficient
 
 Findings must be independently validated before changing canonical state.
 
+## Controlled PPTX production — primary route after RT-01
+
+For science-critical classroom decks, the default production route is now:
+
+**PptxGenJS-controlled authoring → deterministic SVG/shape scientific visuals → rendered QA → optional Canva finishing → verified PPTX/PDF delivery.**
+
+Use controlled PPTX authoring for:
+
+- frozen storyboard wording
+- Bangla typography/layout control
+- ray/optics geometry
+- eye/camera/lens diagrams
+- equations/chemistry notation requiring deterministic placement
+- projector-safe font sizing and visual hierarchy
+- final source deck that must not be silently rewritten by an AI renderer
+
+Rules:
+
+- build high-risk scientific visuals deterministically;
+- render actual slides and inspect them before classroom-ready status;
+- keep PDF as mandatory portable/offline fallback;
+- if Canva finishing is used, run post-import QA before export;
+- do not let an external renderer rewrite verified science.
+
 ## Beautiful.ai
 
-Beautiful.ai is a **candidate full-deck renderer**, not an unconditional permanent default.
+RT-01 result: **not the unattended full-deck renderer for this project.**
 
-Verified workspace capability: the connected Beautiful.ai integration can list/retrieve presentations and templates, create presentations from structured outlines, review outlines, and export supported presentations.
-
-Strengths to evaluate during RT-01:
+Verified strengths:
 
 - fast structured deck assembly
-- consistent hierarchy/layout
-- template adherence
-- standard concept/definition/comparison/process slides
-- convenient export/playback workflows
+- generally cleaner standard layouts than native Canva generation in RT-01
+- editable PPTX export available
+- PDF export available
+- editor/player accessible
 
-Risks to test:
+RT-01 failures relevant to this project:
 
-- Bangla rendering and line breaks
-- equations/symbols
-- diagram labels
-- export fidelity
-- editability/workflow friction
+- requested critical-angle diagram was omitted and replaced by text explanation;
+- `<`/`>` notation in the TIR stress row exported as escaped text;
+- verified wording was rewritten despite exact-text preservation being requested;
+- material content drift appeared in critical-angle and film-exposure wording;
+- editable export depends on Beautiful.ai font packages for exact typography/portability.
 
-Do not let the renderer rewrite verified science, definitions, formulas, units or meaning.
+Use Beautiful.ai only for:
+
+- low-risk layout exploration
+- visual inspiration
+- standard non-critical prototype slides
+
+Any Beautiful.ai-generated wording or diagram used in a final lesson must be reconciled back to the frozen storyboard and independently checked.
 
 ## Canva
 
-Canva is both:
+RT-01 result: **preferred finishing/editing environment after controlled PPTX import; native AI is not the default authoring route.**
 
-1. a **candidate full-deck renderer**, and
-2. a specialist visual-production tool.
+### Strong uses
 
-Verified workspace capability: the connected Canva integration can generate presentations/designs, use presentation templates/brand templates when available, import supported files, create/edit designs, and export supported designs.
-
-Use Canva when it wins on:
-
+- import controlled PPTX decks
+- manual polishing and visual adjustment
 - custom visual composition
 - infographics
 - worksheets/handouts/posters
-- bespoke diagrams/callouts
-- difficult visual slides
+- bespoke low-risk diagrams/callouts
+- presentation hosting/editing
 - reusable visual components
-- full visual/diagram-heavy lessons if RT-01 proves better Bangla/export/classroom results than Beautiful.ai
 
-Avoid building the same full deck in both Canva and Beautiful.ai unless doing a deliberate comparison or one renderer is needed for a specific fallback.
+### Native-AI limitations found in RT-01
 
-## Renderer decision after RT-01
+- unrelated template artifacts appeared;
+- several body/table/checklist regions were too small for projector-first use;
+- critical-angle diagram was visually ambiguous and not deterministic enough;
+- generated design emphasized theme decoration over instructional hierarchy.
 
-Use the same stress-test content in candidate renderers and compare:
+Therefore:
 
-- Bangla conjuncts/mixed Bangla-English
-- font size/readability
-- scientific symbols, units, subscripts/superscripts/equations
-- diagram labels
-- visual quality
-- editability
-- export quality
-- projector readability
-- workflow time/friction
-
-Then record:
-
-- default standard-deck renderer
-- specialist/fallback renderer
-- export/fallback format
-
-Do not decide solely from vendor documentation.
+- do not delegate high-risk labelled scientific diagrams to native Canva generation;
+- do not treat native Canva wording as authoritative/frozen content;
+- when importing a controlled PPTX, verify that Bangla, notation, diagrams and layout remain intact before delivery/export.
 
 ## Hyperagent
 
@@ -151,7 +164,14 @@ For simulations, animations, videos and authoritative visuals, search reputable 
 
 ## Equations and scientific notation
 
-Until the chosen renderer is proven reliable for complex equations/chemistry notation, store the source expression in the storyboard and render complex expressions through a controlled method (for example LaTeX/MathJax → SVG/PNG) when necessary. Verify the final appearance after export.
+RT-01 showed that simple Unicode notation can survive in some routes, but renderer-specific failures are possible.
+
+Operational rule:
+
+- straightforward native notation such as `°`, `10⁸`, `H₂O` may remain text only after actual export verification;
+- comparison symbols and any renderer-sensitive notation must be checked in the exported file;
+- complex equations/chemistry use a controlled LaTeX/MathJax/SVG/PNG fallback when native text is unreliable;
+- source expressions remain stored in the storyboard/source record.
 
 ## Cost/efficiency
 
@@ -165,3 +185,10 @@ Quality outranks token/credit minimization, but avoid:
 ## Fallback principle
 
 If a preferred tool cannot reliably perform a task, record the limitation and route to the next suitable tool without changing the scientific/source authority chain.
+
+Current renderer fallback chain:
+
+1. controlled PptxGenJS source deck;
+2. optional Canva controlled import for finishing;
+3. direct controlled PPTX for classroom delivery;
+4. verified PDF fallback for portability/offline use.
