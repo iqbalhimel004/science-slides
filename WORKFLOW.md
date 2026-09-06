@@ -1,20 +1,29 @@
 # Chapter Production Workflow
 
-Version: 3.2
-Last revised: 2026-09-05
+Version: 4.0
+Last revised: 2026-09-06
+Status: **ACTIVE — POST-RT-01**
 
 ## Phase 0 — Safety and state recovery
 
 1. Verify the exact repository is `iqbalhimel004/science-slides`.
 2. Read `OPERATING_BRIEF.md` and `CURRENT_STATE.md`.
-3. If a Gemini review gate is pending/current, read `GEMINI_REVIEW_WORKFLOW.md`.
-4. If a chapter is active, read its `STATUS.md` and only the files needed for the current stage.
-5. Read deeper policy files only when relevant to the task.
+3. Read `RENDERER_ROUTING.md` before any production/rendering work.
+4. If a Gemini review gate is pending/current, read `GEMINI_REVIEW_WORKFLOW.md`.
+5. If a chapter is active, read its `STATUS.md` and only the files needed for the current stage.
 6. Treat GitHub as canonical operational memory. Do not rely on chat history as the only record of completed work.
 
 ## Universal user-prompt rule
 
-Whenever the user must paste a prompt into an external tool, provide the whole prompt in **one self-contained fenced code block** so it can be copied in one action. Do not split a single prompt across blocks or require manual merging with surrounding prose.
+Whenever the user must paste a prompt into an external tool, provide the whole prompt in **one self-contained fenced code block** so it can be copied in one action.
+
+## Universal checkpoint rule
+
+**Finish → record → then continue.**
+
+A meaningful stage is not complete until its durable result is saved to GitHub and status is updated as applicable.
+
+---
 
 ## Phase 1 — Chapter intake and source integrity
 
@@ -22,45 +31,43 @@ The user supplies the complete chapter as PDF or ordered screenshots.
 
 Check:
 
-- chapter title and class/subject
-- edition/year if identifiable
-- first/last page and page continuity
-- missing/cropped pages
-- readability of Bangla text, equations, tables and diagrams
-- source type: reliable text layer / partial text / scanned-image PDF / screenshots
+- chapter identity and edition/year where possible;
+- first/last page and page continuity;
+- missing/cropped pages;
+- readability of Bangla text, equations, tables and diagrams;
+- source type: reliable text layer / partial text / scanned-image / screenshots.
 
-Do not silently infer missing material.
+Do not silently infer missing material. Critical wording must be checked against the visible source page/image when extraction is uncertain.
 
-OCR/text extraction may assist, but critical wording must be checked against the visible source page/image when extraction is uncertain.
+### Checkpoint
 
-### Immediate checkpoint
+Save source identity/integrity records and update `STATUS.md` / `CURRENT_STATE.md`.
 
-After intake/integrity is complete, save the result in the chapter/source records and update `STATUS.md`/`CURRENT_STATE.md` before moving on.
+---
 
 ## Phase 2 — Full chapter analysis
 
-Analyze the complete chapter before lesson splitting.
-
 Record:
 
-- chapter scope and concept map
-- curricular/textbook learning outcomes where available
-- prerequisites
-- key definitions, laws, formulas and units
-- diagrams/processes
-- experiments/activities
-- textbook examples/applications
-- numerical/problem-solving load
-- misconceptions/difficult points
-- exam-facing practice opportunities where appropriate
-- total instructional load and visual complexity
-- claims/sections that look outdated, ambiguous, scientifically weak or technology-specific and therefore require later verification
+- chapter scope and concept map;
+- learning outcomes;
+- prerequisites;
+- key definitions/laws/formulas/units;
+- diagrams/processes;
+- experiments/activities;
+- examples/applications/numericals;
+- misconceptions/difficult points;
+- exam-facing practice opportunities;
+- total instructional load and visual complexity;
+- claims that may be outdated/ambiguous/scientifically weak.
 
-At this stage distinguish **what the textbook contains** from whether it is scientifically current/correct.
+Distinguish what the textbook contains from whether it is scientifically current/correct.
 
-### Immediate checkpoint
+### Checkpoint
 
-Save `CHAPTER_ANALYSIS.md`, source issues and chapter state before moving on.
+Save `CHAPTER_ANALYSIS.md`, source issues and chapter state.
+
+---
 
 ## Phase 3 — Determine lesson count and split
 
@@ -68,324 +75,294 @@ Split by logical instructional boundaries and realistic classroom load.
 
 For each proposed lesson specify:
 
-- title
-- concepts covered
-- prerequisites
-- learning outcomes
-- CORE content
-- FLEX content
-- STRETCH/appendix content if useful
-- estimated classroom time
-- reason for boundary
-- bridge from/to adjacent lessons
+- title and concept scope;
+- prerequisites;
+- learning outcomes;
+- CORE/FLEX/STRETCH;
+- estimated time;
+- boundary rationale;
+- bridge to adjacent lessons.
 
 Default 60-minute model:
 
-- CORE: ~40–45 min
-- FLEX: ~5–10 min
-- planned CORE + FLEX: ~50–55 min
-- contingency: 5–10 min intentionally left unallocated
-- STRETCH: not part of planned core delivery
+- CORE ~40–45 min;
+- FLEX ~5–10 min;
+- planned CORE + FLEX ~50–55 min;
+- 5–10 min contingency unallocated;
+- STRETCH appendix-only.
 
-Obtain user approval of the lesson split before final deck production.
+Obtain user approval before final deck production.
 
-### Immediate checkpoint
+### Checkpoint
 
-As soon as the user approves/revises the split, record that exact decision in GitHub before continuing.
+Record approved split immediately.
+
+---
 
 ## Phase 4 — Source verification and scientific reconciliation
 
-Build claim/source records before content freeze.
+### NCTB role
 
-### 4A — NCTB role
+Use NCTB/current curriculum materials for:
 
-Use NCTB/current curriculum materials to establish:
+- syllabus scope;
+- learning outcomes;
+- textbook wording students will encounter;
+- exam-facing context;
+- page-level provenance.
 
-- syllabus scope
-- learning outcomes
-- textbook wording students will encounter
-- exam-facing context
-- page-level provenance
+Do not treat NCTB as automatic scientific authority.
 
-Do **not** assume NCTB scientific content is current or correct merely because the copy has a recent print/revision year.
+### Current-science verification
 
-### 4B — Current-science verification
+For material claims, verify against appropriate current authoritative sources.
 
-For material scientific claims, verify against current authoritative sources appropriate to the subject, such as:
+For important definitions/laws/formulas/units/processes/diagrams/causal claims:
 
-- recognized universities / high-quality open university texts
-- professional scientific organizations
-- major public scientific, health and standards agencies
-- primary literature when genuinely necessary
+- pin NCTB page where relevant;
+- verify what the page actually says;
+- independently verify current science;
+- record mismatches explicitly;
+- distinguish exam wording from scientifically correct explanation.
 
-For every important definition/law/formula/unit/process/diagram/causal claim:
+### Checkpoint
 
-- pin the NCTB page when relevant
-- verify what the NCTB page actually says
-- independently verify the science
-- record mismatches explicitly
-- distinguish textbook/exam wording from current scientifically correct explanation
-- never teach a materially false statement solely to mirror NCTB
+Update `SOURCE_MAP.md`, `SOURCE_ISSUES.md`, relevant lesson files and status.
 
-Use Tier B Bangladesh sources for local wording/convention/explanation ideas, not as automatic scientific authority.
-
-### Immediate checkpoint
-
-When source reconciliation for a claim, issue or chapter pass is complete, update `SOURCE_MAP.md`, `SOURCE_ISSUES.md`, applicable lesson files and status immediately.
+---
 
 ## Phase 5 — Lesson planning
 
-For each approved lesson create a lesson plan containing:
+Each lesson plan should contain:
 
-- learning outcomes
-- CORE/FLEX/STRETCH classification
-- time budget
-- retrieval/prior-knowledge opener
-- teaching sequence
-- teacher actions
-- student actions
-- questions/prompts
-- hinge/check-for-understanding where useful
-- worked examples/numericals
-- misconceptions/refutation where relevant
-- guided practice/application
-- summary + exit check
-- homework/enrichment as optional material
-- explicit separation of NCTB/exam context from updated scientific explanation when they differ
+- learning outcomes;
+- CORE/FLEX/STRETCH classification;
+- time budget;
+- retrieval/prior-knowledge opener;
+- teaching sequence;
+- teacher/student actions;
+- questions/prompts;
+- hinge/check-for-understanding where useful;
+- practice/application;
+- misconception correction;
+- summary + exit check;
+- explicit NCTB/current-science distinction where needed.
 
-Every student response, board-writing segment, media launch, transition and debrief counts as time.
+Every response, board-writing segment, media launch, transition and debrief counts as real time.
 
-### Immediate checkpoint
+### Checkpoint
 
-When a lesson plan is complete enough to advance, save it and update chapter/lesson status before beginning the next major task.
+Save the lesson plan and update state before the next major task.
+
+---
 
 ## Phase 6 — Resource discovery
 
-Search existing trusted resources before generating custom equivalents.
+Search trusted existing resources before generating custom equivalents.
 
-Consider:
+Record for accepted resources:
 
-- simulations
-- videos/animations
-- diagrams/images
-- interactive models
-- authoritative visualizations
+- source/creator;
+- URL/reference;
+- instructional purpose;
+- target slide;
+- classroom time;
+- licensing/reuse note where material;
+- online/offline status;
+- static fallback.
 
-Record:
+### Checkpoint
 
-- source/creator
-- URL/reference
-- instructional purpose
-- target slide
-- classroom time
-- licensing/reuse note where material
-- online/offline status
-- static fallback
+Persist accepted resource/fallback choices.
 
-For online video, prefer legal embed/source playback with timestamps rather than creating unauthorized clips.
-
-### Immediate checkpoint
-
-Persist accepted resource choices/fallbacks before storyboard rendering depends on them.
+---
 
 ## Phase 7 — Storyboard
 
 For every slide/item record:
 
-- slide number/title
-- segment: CORE / FLEX / STRETCH
-- purpose
-- exact approved content or specification
-- whether content is NCTB/exam-context, current-science clarification, or supplementary
-- visual purpose
-- visual/resource requirement
-- teacher note
-- student action/question
-- expected response
-- estimated time
-- source references
-- equation/source notation where relevant
-- static/offline fallback when needed
-- transition
+- slide ID/title;
+- CORE/FLEX/STRETCH;
+- purpose;
+- approved content/specification;
+- source/current-science/supplementary role;
+- visual purpose/resource requirement;
+- teacher/student action;
+- expected response;
+- estimated time;
+- source references;
+- notation source where relevant;
+- fallback;
+- transition.
 
-The planned CORE + FLEX total should normally remain 50–55 minutes and may never exceed the 60-minute class ceiling.
+Update `COVERAGE_MATRIX.md` with concrete slide IDs.
 
-### Immediate checkpoint
+### Checkpoint
 
-Save each stable storyboard/section and update `COVERAGE_MATRIX.md` with concrete slide IDs as soon as the mapping is known.
+Save each stable storyboard/resource mapping and update status.
+
+---
 
 ## Phase 8 — Independent review
 
-Use Gemini selectively, not automatically for every trivial step.
+Use Gemini selectively at high-value gates.
 
-High-value review points:
+Follow `GEMINI_REVIEW_WORKFLOW.md`:
 
-1. lesson-split/decomposition review for complex chapters or several-lesson chapters
-2. pre-freeze review of difficult science, misconception handling, exam-sensitive wording, outdated-textbook risk or missing coverage
-3. targeted external research when needed
+1. fresh single Markdown bundle from current canonical GitHub files;
+2. downloadable file;
+3. one copy-ready prompt;
+4. save raw review first;
+5. independently validate material findings;
+6. record `ACCEPT / PARTIAL / REJECT`;
+7. implement only validated changes;
+8. checkpoint.
 
-### Standard Gemini transport method
+Gate B is targeted implementation QA, not a duplicate Gate A review.
 
-Follow `GEMINI_REVIEW_WORKFLOW.md`.
-
-For each planned Gemini gate:
-
-1. generate a **fresh single consolidated Markdown bundle** from the current canonical GitHub files relevant to that gate;
-2. provide it to the user as a downloadable file;
-3. provide exactly one one-click-copy prompt in a single fenced code block;
-4. do not depend on Gemini GitHub browsing/import;
-5. record a manifest/fingerprint in GitHub;
-6. when Gemini returns the review, save the raw review first;
-7. independently validate material findings;
-8. record `ACCEPT / PARTIAL / REJECT` dispositions;
-9. implement only validated changes;
-10. checkpoint status before continuing.
-
-A bundle becomes stale when any included canonical file changes and must then be regenerated.
-
-Findings must be verified independently before incorporation. Gemini cannot override the source hierarchy by itself.
-
-### Immediate checkpoint
-
-Record Gemini review findings, dispositions and validated changes as soon as reconciliation is complete so the review is not repeated unnecessarily.
+---
 
 ## Phase 9 — Content QA and freeze
 
-Before rendering, verify:
+Before rendering verify:
 
-- curriculum/scope
-- source provenance
-- scientific accuracy/currentness
-- textbook-vs-current-science discrepancies handled correctly
-- formulas/units/calculations
-- realistic timing
-- pedagogy/cognitive load
-- misconception handling
-- resource suitability
-- storyboard completeness
+- curriculum/scope;
+- source provenance;
+- scientific accuracy/currentness;
+- formulas/units/calculations;
+- timing;
+- pedagogy/cognitive load;
+- misconception handling;
+- resource suitability;
+- storyboard completeness.
 
-Then obtain/record content approval and mark `CONTENT_FROZEN`.
+Mark `CONTENT_FROZEN` only after applicable G1–G7 checks pass and state is recorded.
 
-After freeze, design tools may improve layout/styling but may not silently alter scientific meaning.
+---
 
-### Immediate checkpoint
+## Phase 10 — Renderer calibration status
 
-Content freeze is not complete until canonical files, `STATUS.md` and `CURRENT_STATE.md` record it.
+RT-01 has already been completed for the first pilot.
 
-## Phase 10 — Renderer calibration (RT-01)
+Canonical routing:
 
-Before locking a default renderer, run the same small stress-test through Beautiful.ai and Canva; add another fallback renderer only if needed.
+`RENDERER_ROUTING.md`
 
-Test:
+Durable decision:
 
-- Bangla conjuncts and mixed Bangla/English
-- scientific symbols/units
-- subscripts/superscripts/equations
-- diagram labels
-- visual hierarchy
-- editability
-- export fidelity
-- projector readability
-- workflow friction
+`DECISIONS.md` → `D-036`
 
-Record the decision in `DECISIONS.md`.
+Current route:
 
-RT-01 is one-time unless tool behaviour materially changes.
+**Controlled PptxGenJS → deterministic SVG/shape science visuals → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF fallback.**
 
-### Immediate checkpoint
+Do not repeat RT-01 unless tool behavior materially changes or the user explicitly asks to reconsider the decision.
 
-Record RT-01 evidence and renderer routing immediately when the comparison is complete.
+---
 
-## Phase 11 — Rendering
+## Phase 11 — Controlled production
 
-Choose the renderer that best fits the lesson and passed calibration.
+Primary production steps:
 
-- Beautiful.ai: candidate for structured full decks
-- Canva: candidate for full visual/diagram-heavy decks and bespoke visual work
-- Hyperagent: programmatic SVG/equation assets, custom HTML/JS simulations/visualizations, deterministic QA, or other specialist build tasks
+1. read frozen storyboard/resource/QA files;
+2. build high-risk scientific visuals deterministically;
+3. assemble the controlled 16:9 PPTX with PptxGenJS;
+4. render actual slides;
+5. run scientific/typographic/layout/projector QA;
+6. optionally import the controlled PPTX to Canva **only if** manual finishing materially improves the result;
+7. if Canva is used, run post-import QA;
+8. generate and verify PDF fallback;
+9. preserve reproducibility/source records under `ARTIFACT_PERSISTENCE.md`;
+10. checkpoint lesson state before continuing.
 
-Prefer one primary renderer per lesson. Avoid unnecessary cross-tool round trips.
+### Production tool roles
+
+- PptxGenJS: primary controlled authoring/rendering.
+- Canva: optional finishing/editing after controlled import.
+- Beautiful.ai: low-risk prototype/layout inspiration only.
+- Hyperagent: specialist deterministic SVG/equation/interactive/QA tasks where it adds value.
+
+High-risk scientific diagrams must not be delegated to unconstrained native-AI generation.
+
+---
 
 ## Phase 12 — Visual, export and classroom QA
 
-Check the actual artifact, not just the editor:
+Check the actual artifact:
 
-- Bangla rendering and line breaks
-- equation/symbol rendering
-- text size and contrast
-- diagram labels/arrows
-- crop/layout integrity
-- projector readability
-- links/QRs
-- media/simulation launch
-- static/offline fallback
-- no scientific content drift
+- Bangla rendering and line breaks;
+- equation/symbol rendering;
+- text size and contrast;
+- diagram labels/arrows;
+- crop/layout integrity;
+- projector readability;
+- links/QRs;
+- media/simulation launch;
+- static/offline fallback;
+- no scientific content drift;
+- PDF fallback.
 
-The classroom package should contain:
+Classroom package should contain:
 
-1. primary delivery deck
-2. PDF fallback
-3. fallback resources/assets for classroom-critical online/animated elements
-4. GitHub storyboard/source records
+1. controlled editable PPTX;
+2. verified PDF fallback;
+3. fallback resources/assets for classroom-critical online/animated elements;
+4. source/storyboard/resource/production-QA records;
+5. reproducibility/build records required by `ARTIFACT_PERSISTENCE.md`.
 
-### Immediate checkpoint
+### Checkpoint
 
-As each deck passes/fails QA, record its exact status and outstanding defects before proceeding.
+Record exact pass/fail status and outstanding defects.
+
+---
 
 ## Phase 13 — Chapter-wide final audit
 
-Compare all lessons back to the original chapter and to verified current science.
+Compare all lessons against the original chapter and verified current science.
 
-Every meaningful textbook subsection should be classified as:
+Classify each meaningful textbook subsection as:
 
-- Covered
-- Supplementary
-- Homework/self-study
-- Intentionally omitted with reason
-- Corrected/updated from textbook, with source record where applicable
+- Covered;
+- Supplementary;
+- Homework/self-study;
+- Intentionally omitted with reason;
+- Corrected/updated from textbook.
 
 Also verify:
 
-- no unnecessary duplication
-- prerequisites precede dependent concepts
-- bridges between lessons are coherent
-- no important content was lost during splitting
-- no outdated or erroneous textbook statement survived uncorrected into teaching content
+- no unnecessary duplication;
+- prerequisites precede dependent concepts;
+- lesson bridges are coherent;
+- no content was lost during splitting;
+- no outdated/erroneous textbook claim survived uncorrected;
+- all production artifacts/fallbacks are durable and traceable.
+
+---
 
 ## Phase 14 — Completion and handoff
 
-Update immediately:
+Update:
 
-- lesson/chapter QA records
-- chapter `STATUS.md`
-- `CURRENT_STATE.md`
-- `DECISIONS.md` for durable new decisions
-- source/resource records
-- Fable reconciliation when a pilot item is resolved/materially reclassified
+- lesson/chapter QA records;
+- chapter `STATUS.md`;
+- root `CURRENT_STATE.md`;
+- `DECISIONS.md` for durable policy changes;
+- source/resource records;
+- pilot reconciliation when a pending item is materially resolved/reclassified.
 
-A meaningful stage is not operationally complete until this checkpoint is written.
+A chapter is not complete until applicable gates pass and repository state is current.
+
+---
 
 ## Phase 15 — Post-class calibration
 
-For at least the first few lessons/chapters, record:
+For the first few lessons/chapters record:
 
-- actual time
-- what overran/finished early
-- confusing concepts
-- effective resources
-- observed misconceptions
-- resource/technical failures
+- actual time;
+- overruns/early finishes;
+- confusing concepts;
+- effective resources;
+- observed misconceptions;
+- technical failures.
 
-Use real classroom evidence to recalibrate future timing and design heuristics.
-
-## Universal checkpoint rule
-
-**Finish → record → then continue.**
-
-Whenever a meaningful task is successfully completed, save the durable result to `iqbalhimel004/science-slides` immediately. A new chat must be able to determine from GitHub alone:
-
-- what has already been completed;
-- what evidence/verification exists;
-- what decisions were made;
-- what remains unresolved;
-- the single next authorized action.
+Use real classroom evidence to calibrate future timing and design baselines.
