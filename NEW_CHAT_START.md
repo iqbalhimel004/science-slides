@@ -1,8 +1,8 @@
 # New Chat Recovery Protocol
 
-Version: 4.2
-Last revised: 2026-09-06
-Status: **ACTIVE — POST-RT-01 / POST-PILOT-COMPATIBILITY / CANVA-FIRST VISUAL ROUTING**
+Version: 4.3
+Last revised: 2026-09-07
+Status: **ACTIVE — ACCURACY-ENFORCEMENT / CANVA-FIRST VISUAL ROUTING**
 
 ## 1. Verify repository identity first
 
@@ -12,149 +12,137 @@ Authorized write repository:
 
 Do not write to any other connected repository.
 
-## 2. Current first-pilot recovery sequence
+## 2. Mandatory production recovery sequence
 
-For the active first pilot chapter, read in this order:
+For any active production lesson, read in this order:
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
-3. `RENDERER_ROUTING.md`
-4. `VISUAL_ASSET_ROUTING.md`
-5. `PHYSICAL_VISUAL_REALISM_POLICY.md`
-6. `CLASSROOM_LANGUAGE_POLICY.md`
-7. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-8. `SIMULATION_RESOURCE_ROUTING.md`
-9. `ARTIFACT_PERSISTENCE.md`
-10. active chapter `STATUS.md`
-11. active lesson storyboard/resources/latest production QA and production manifests
-12. deeper policy/template files only when the current task requires them
+3. `ACCURACY_ENFORCEMENT.md`
+4. `QUALITY_GATES.md`
+5. `RENDERER_ROUTING.md`
+6. `VISUAL_ASSET_ROUTING.md`
+7. `PHYSICAL_VISUAL_REALISM_POLICY.md`
+8. `CLASSROOM_LANGUAGE_POLICY.md`
+9. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+10. `SIMULATION_RESOURCE_ROUTING.md`
+11. `ARTIFACT_PERSISTENCE.md`
+12. active chapter `STATUS.md`
+13. active chapter `TERMINOLOGY_LOCK.md` if present
+14. active chapter/lesson `DIAGRAM_CONTRACTS.md` if present
+15. active lesson `STORYBOARD.md`, `RESOURCES.md`, latest `production/SLIDE_COPY_V*.md`, dynamic manifest, latest production QA
+16. deeper policy/template files only when needed
 
-Do **not** restart renderer selection. RT-01 is complete.
+Do **not** depend on prior chat memory for technical terminology, slide copy or high-risk diagram geometry.
 
-## 3. Canonical state / precedence
+## 3. Canonical precedence
 
-GitHub is the durable source of truth. If old chat history or older repository wording conflicts with current policy, use this precedence:
+If old chat history or older repository wording conflicts with current policy, use this precedence:
 
 1. `CURRENT_STATE.md`
-2. `RENDERER_ROUTING.md`
-3. `VISUAL_ASSET_ROUTING.md`
-4. `PHYSICAL_VISUAL_REALISM_POLICY.md`
-5. `CLASSROOM_LANGUAGE_POLICY.md`
-6. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-7. active chapter `STATUS.md`
-8. latest stage-specific QA/reconciliation record
-9. older historical planning/audit documents
+2. `ACCURACY_ENFORCEMENT.md`
+3. active chapter `TERMINOLOGY_LOCK.md`
+4. active chapter/lesson `DIAGRAM_CONTRACTS.md`
+5. `RENDERER_ROUTING.md`
+6. `VISUAL_ASSET_ROUTING.md`
+7. `CLASSROOM_LANGUAGE_POLICY.md`
+8. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+9. active chapter `STATUS.md`
+10. latest stage-specific QA/reconciliation record
+11. older historical planning/audit documents
 
-Historical pre-RT-01 or pre-pilot-production wording must not override current routing, compatibility, language, realism or visual-asset rules.
+Historical prototype/v1 files must not override a later failure reconciliation or v2 record.
 
-## 4. Renderer route — already decided
+## 4. Accuracy-enforcement rule — mandatory
 
-Current default deck-production route:
+Before a science deck may be called `INTERNAL_QA_PASS`:
 
-**Controlled PptxGenJS authoring/rendering → deterministic scientific overlays/geometry → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF fallback.**
+1. freeze exact student-facing copy in `production/SLIDE_COPY_V*.md`;
+2. follow chapter `TERMINOLOGY_LOCK.md`;
+3. run student-facing terminology lint where practical;
+4. enforce high-risk `DIAGRAM_CONTRACTS.md`;
+5. run programmatic geometry assertions where practical;
+6. render and inspect each high-risk slide individually;
+7. run overflow/render/export checks;
+8. test exact PPTX in Microsoft PowerPoint when user-side PowerPoint is available.
 
-- PptxGenJS: primary science-deck authoring/rendering route.
-- Canva: optional finishing/editing after controlled import; native AI is not the science authority.
-- Beautiful.ai: low-risk prototype/layout inspiration only.
+A montage-only review or `slides_test.py` PASS is never sufficient science QA.
 
-## 5. Visual asset route — refined after Lesson 1 pilot
+Canonical workflow:
 
-For photos/realistic physical-object visuals, the default is **not ChatGPT-native image generation**.
+`ACCURACY_ENFORCEMENT.md`
 
-Use this priority:
+## 5. Bangla-first classroom language
 
-1. verified existing real/authoritative/open/licensed visual when suitable;
-2. connected Canva / Canva AI / Canva Pro generation or licensed asset library;
-3. another connected/legal external visual source/generator when advantageous;
-4. programmatic/SVG/Hyperagent construction for deterministic scientific visuals;
-5. ChatGPT-native image generation only when the user explicitly asks for it or explicitly approves an exception because the other routes are unsuitable/unavailable.
+Student-facing slides use textbook-facing Bangla first.
 
-The preferred pattern is:
-
-**Canva/external source = realistic physical base**
-
-**PptxGenJS/SVG = science-critical rays, normals, angles, labels, scales, notation and geometry**
-
-Canva AI may generate unlabeled realistic glass, lenses, mirrors, camera/apparatus, fibre, real-world scenes and orthographic base visuals. It must not be trusted to author final science-critical ray paths, labels, angles, graphs, circuit topology, equations or exact anatomical relationships.
-
-Canonical policy:
-
-`VISUAL_ASSET_ROUTING.md`
-
-## 6. Physical realism + scientific clarity
-
-Real physical objects should look recognizably real when practical, but photorealism never outranks scientific clarity.
-
-When geometry matters:
-
-- prefer straight-on / orthographic / side / cross-sectional realistic views;
-- avoid dramatic perspective that conflicts with deterministic overlays;
-- use a hybrid realistic-object + schematic layout when that is clearer;
-- use pure deterministic schematic geometry when realism would distract.
-
-Lesson 1 glass-slab evidence established this rule: flat schematic looked artificial; 3D perspective looked realistic but conflicted with 2D optics; orthographic realistic glass + deterministic rays was accepted.
-
-Canonical policy:
-
-`PHYSICAL_VISUAL_REALISM_POLICY.md`
-
-## 7. Bangla-first classroom language
-
-Student-facing slides use textbook-facing Bangla first. English is optional, normally only as a first parenthetical introduction or proper resource/product name.
-
-Examples:
-
-- বিভেদতল (Interface)
-- আপতন বিন্দু
-- অভিলম্ব (Normal)
-- আপতন কোণ (i)
-- আপতিত রশ্মি
-- প্রতিসরণ কোণ (r)
-- প্রতিসরিত রশ্মি
-- প্রতিফলিত রশ্মি
-- লম্ব আপতন
-- আলোকীয় ঘনত্ব
+- full Bangla term is primary;
+- English is optional parenthetical support or a proper resource name;
+- symbols such as `i`, `r`, `C` are introduced after their Bangla meaning;
+- standalone English acronyms such as `TIR` are not allowed as the primary Class-8 teaching term;
+- questions/instructions must be complete, standalone-readable sentences.
 
 Canonical policy:
 
 `CLASSROOM_LANGUAGE_POLICY.md`
 
-## 8. Pilot compatibility and visual-engagement controls
+## 6. Renderer route — already decided
 
-The first Lesson 1 build exposed two important failures:
+Current default deck-production route:
 
-1. Microsoft PowerPoint initially showed a repair warning despite internal/render checks;
-2. the deck was science-correct but too static/utilitarian.
+**Controlled PptxGenJS -> deterministic scientific overlays/geometry -> accuracy/render QA -> optional Canva controlled-import finishing -> verified PPTX + verified PDF fallback.**
 
-Mandatory implications:
+- PptxGenJS: primary science-deck authoring/rendering route.
+- Canva: realistic visual asset generation/finishing where useful; not science authority.
+- Beautiful.ai: low-risk prototype/layout inspiration only.
+
+## 7. Visual asset route
+
+For photos/realistic physical-object visuals, default priority:
+
+1. verified existing real/authoritative/open/licensed visual;
+2. connected Canva / Canva AI / Canva Pro;
+3. another connected/legal external visual source/generator;
+4. programmatic/SVG/Hyperagent deterministic construction;
+5. ChatGPT-native image generation only by explicit user request/approved exception.
+
+Preferred separation:
+
+**Canva/external source = realistic physical base**
+
+**PptxGenJS/SVG = rays, normals, angles, labels, scales, graphs, notation and other science-critical geometry**
+
+## 8. Physical realism + science clarity
+
+Real physical objects should look recognizably real when practical, but photorealism never outranks scientific clarity.
+
+When geometry matters:
+
+- prefer straight-on / orthographic / side / cross-sectional views;
+- avoid perspective that conflicts with 2D overlays;
+- use realistic-object + deterministic schematic hybrid when clearer;
+- use pure schematic geometry when realism would reduce clarity.
+
+## 9. PowerPoint compatibility / dynamic engagement
 
 - PowerPoint repair/recovery warning = hard FAIL;
-- test the exact user-facing PPTX in Microsoft PowerPoint when available;
-- after normalization/resave, retest reveal/animation/interaction/link behaviour;
-- storyboard-planned dynamic teaching elements must not silently disappear;
-- static presentation must be intentional;
-- staged deterministic reveals are preferred over fragile native animation when pedagogically equivalent;
-- every important online/interactive element needs a static fallback.
+- test exact user-facing PPTX when available;
+- after normalization/resave, retest links/reveal/interaction;
+- staged deterministic reveals are preferred over fragile native animation when equivalent;
+- every important online/interactive element needs a static fallback;
+- concept-heavy lessons must not become static by accident.
 
-Canonical policy:
-
-`PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-
-## 9. Simulation rule
+## 10. Simulation rule
 
 Simulation selection is multi-source and concept-fit driven, not PhET-only.
 
-Candidates may include PhET, The Physics Classroom, GeoGebra, Open Source Physics/ComPADRE and other reputable sources. Compare per concept and choose the best verified option. Do not add multiple simulations merely for variety.
+Compare reputable options such as PhET, The Physics Classroom, GeoGebra, Open Source Physics/ComPADRE and other suitable sources. Use one best-fit resource unless a second serves a distinct instructional role.
 
-Canonical policy:
-
-`SIMULATION_RESOURCE_ROUTING.md`
-
-## 10. Source/science rule
+## 11. Source/science rule
 
 NCTB controls curriculum/scope/exam context, not automatic scientific truth. Material scientific claims are verified against current authoritative sources; mismatches are documented.
 
-## 11. Timing rule
+## 12. Timing rule
 
 For a 60-minute class:
 
@@ -164,28 +152,24 @@ For a 60-minute class:
 - contingency: 5–10 min unallocated
 - STRETCH: appendix/enrichment only
 
-Media setup, interaction, prediction/reveal and simulation debrief count as real time.
-
-## 12. Artifact persistence rule
+## 13. Artifact persistence
 
 Follow `ARTIFACT_PERSISTENCE.md`.
 
-For controlled production preserve:
+For high-risk controlled production preserve:
 
+- exact slide-copy lock;
 - generator/build source or reproducible specification;
 - artifact fingerprints;
-- asset provenance/generation route;
-- deterministic visual source/specs;
-- dynamic implementation manifest where relevant;
+- terminology lint/checker source;
+- diagram-contract source/checker;
+- asset provenance;
+- dynamic implementation manifest;
 - PowerPoint compatibility status;
 - export/fallback QA.
 
-## 13. External prompt rule
-
-Any external-tool prompt must be one self-contained fenced code block.
-
 ## 14. End-of-stage checkpoint
 
-**Finish → record → then continue.**
+**Finish -> record -> then continue.**
 
 The next chat must be able to continue from GitHub without needing the previous transcript.
