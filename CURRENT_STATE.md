@@ -15,6 +15,7 @@ Only this repository is authorized for Science Slides writes.
 - **Finish -> record -> then continue.**
 - Renderer route: `RENDERER_ROUTING.md`.
 - Accuracy enforcement: `ACCURACY_ENFORCEMENT.md`.
+- Reference-locked visual gate: `REFERENCE_LOCKED_VISUAL_PIPELINE.md`.
 - PowerPoint smoke testing is a hard compatibility gate.
 - Dynamic engagement and attractive classroom UI are hard production gates.
 - Simulation selection is multi-source and concept-fit driven.
@@ -29,25 +30,33 @@ Only this repository is authorized for Science Slides writes.
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — ACCURACY_SAFEGUARDS_ACTIVE — LESSON_2_V2_INTERNAL_QA_PASS — USER_POWERPOINT_AND_VISUAL_REVIEW_PENDING — LESSON_3_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_VISUAL_PACK_GATE_ACTIVE — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
-## Why the workflow changed
+## Why Lesson 2 v2 is no longer an internal pass
 
-Lesson 2 v1 passed overflow/render prototype checks but user review found material language and science-diagram errors. This proved that montage/render checks alone are not enough.
+User visual review found that the delivered v2 still failed important classroom-visual requirements:
 
-V1 is now explicitly superseded.
+- coin/fish/context visuals were not recognizably realistic enough;
+- several high-risk diagrams remained hard to interpret as physical situations;
+- a blank rendered/exported page appeared even though prior page-count/render checks passed;
+- the approved `reference-locked hybrid visual + High-Risk Visual Pack first` workflow had not been durably enforced before full deck assembly.
 
-Historical failure record:
+Therefore all earlier wording that calls Lesson 2 v2 `INTERNAL_QA_PASS` is superseded by the current state.
 
-`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/PRODUCTION_QA_V1_2026-09-06.md`
+Lesson 2 v2 disposition:
 
-## Accuracy safeguards now active
+**FAILED_USER_VISUAL_REVIEW — DO_NOT_USE FOR CLASSROOM — REBUILD REQUIRED AFTER HIGH-RISK VISUAL APPROVAL**
+
+## Accuracy and visual safeguards now active
 
 Root:
 
 - `ACCURACY_ENFORCEMENT.md`
-- `QUALITY_GATES.md` v4.1
-- `CLASSROOM_LANGUAGE_POLICY.md` v1.1
+- `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+- `QUALITY_GATES.md`
+- `CLASSROOM_LANGUAGE_POLICY.md`
+- `VISUAL_ASSET_ROUTING.md`
+- `PHYSICAL_VISUAL_REALISM_POLICY.md`
 - `tools/student_text_lint.py`
 
 Chapter:
@@ -55,91 +64,50 @@ Chapter:
 - `chapters/class-8/science/chapter-11-light/TERMINOLOGY_LOCK.md`
 - `chapters/class-8/science/chapter-11-light/DIAGRAM_CONTRACTS.md`
 
-Lesson 2:
+Durable decisions:
 
-- `lessons/lesson-02/production/SLIDE_COPY_V2.md`
-- `lessons/lesson-02/production/check_l2_geometry_contracts.py`
-- `lessons/lesson-02/production/BUILD_SPEC_V2_2026-09-07.md`
-- `lessons/lesson-02/production/PRODUCTION_QA_V2_2026-09-07.md`
+- `DECISIONS_ADDENDUM_2026-09-07.md` D-040, D-041, D-042
 
 ## Mandatory production sequence from now on
 
-For high-risk science lessons:
+For a lesson with high-risk science visuals:
 
-1. verify content/storyboard;
+1. verify content/storyboard and source basis;
 2. freeze exact student-facing copy;
-3. follow chapter terminology lock;
-4. build deterministic high-risk diagrams;
-5. run terminology lint;
-6. run diagram/geometry contracts;
-7. render and inspect high-risk slides individually;
-8. run slide overflow/render/export QA;
-9. test the exact PPTX in Microsoft PowerPoint when available;
-10. checkpoint before continuing.
+3. follow terminology lock;
+4. identify high-risk visual set;
+5. lock authoritative/reference topology and invariants for each visual;
+6. build a separate High-Risk Visual Pack only;
+7. use recognizable real/Canva/external base imagery for physical/context objects where useful;
+8. use deterministic PptxGenJS/SVG for rays, normals, angles, labels and scientific topology;
+9. run terminology lint + diagram/geometry contracts;
+10. render each high-risk visual individually;
+11. check expected visual/page manifest and reject blank/missing pages;
+12. obtain user visual/science approval of the High-Risk Visual Pack;
+13. only then assemble the full lesson deck;
+14. run full PowerPoint/PDF/export QA and user smoke test;
+15. checkpoint before continuing.
 
-`INTERNAL_QA_PASS` must not be used unless applicable hard checks above pass.
+## Lesson 2 high-risk visual set
 
-## Lesson 2 v2 — current artifact
+The next deliverable is **not** the full Lesson 2 deck.
 
-PPTX:
-`Class8_Science_Ch11_Lesson2_v2_Bangla_Accurate_PPTX_SAFE.pptx`
+The pre-deck visual pack must cover:
 
-SHA-256:
-`4136eb757aed1d1992a1238fce48b6fc9ffcca3fed40a7404c2eef38ab845814`
+1. apparent position / apparent depth;
+2. coin becoming visible after water is added;
+3. fish appearing shallower;
+4. road mirage / temperature-gradient refraction;
+5. critical angle;
+6. full internal reflection;
+7. optical fibre.
 
-PDF:
-`Class8_Science_Ch11_Lesson2_v2_Bangla_Accurate_PPTX_SAFE.pdf`
+## Visual construction rule for this pack
 
-SHA-256:
-`52e3ff2916992a4284749382bbf797794c75309184eb41ae4d1eb898188e6355`
-
-## Lesson 2 v2 QA result
-
-### Copy / terminology
-
-- exact student-facing copy frozen: PASS
-- complete readable Bangla questions: PASS
-- Bangla-first technical terminology: PASS
-- standalone `TIR`: removed
-- definition-before-symbol rule: applied
-- automated terminology lint: **PASS**
-
-### High-risk diagrams
-
-Focused contracts/checks:
-
-- apparent position: PASS
-- backward tracing: PASS
-- coin visibility: PASS
-- fish apparent depth: PASS
-- mirage gradient: PASS
-- critical angle: PASS
-- full internal reflection: PASS
-- three-state comparison: PASS
-- optical fibre: PASS
-
-Automated lesson geometry checker:
-
-`DIAGRAM_CONTRACTS_L2_V2: PASS`
-
-Focused rendered high-risk review:
-
-`PASS_WITH_USER_VISUAL_REVIEW_PENDING`
-
-### Technical/export
-
-- LibreOffice normalization: PASS
-- `slides_test.py`: PASS — no overflow
-- PPTX render: PASS
-- PDF export/render: PASS
-- PDF pages: 22
-- simulation hyperlink relationships present in normalized PPTX
-
-## Visual asset route
-
-No ChatGPT-native image generation was used for Lesson 2 v2.
-
-Science-critical geometry is controlled/deterministic. If a physical/context visual later needs more realism, use verified existing/Canva/external base imagery and keep the science overlay controlled.
+- physical/context base assets: verified existing real/open/licensed source first, or connected Canva/Canva AI/Canva Pro where generation is needed;
+- ChatGPT-native image generation: not routine/default;
+- science-critical layer: deterministic PptxGenJS/SVG only;
+- when realism and exact geometry conflict: use a two-panel hybrid (real/context visual + clean schematic) instead of forcing both into one image.
 
 ## Frozen timing
 
@@ -156,20 +124,20 @@ Read:
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
-3. `ACCURACY_ENFORCEMENT.md`
-4. `QUALITY_GATES.md`
-5. `RENDERER_ROUTING.md`
-6. `VISUAL_ASSET_ROUTING.md`
-7. `CLASSROOM_LANGUAGE_POLICY.md`
-8. active chapter `TERMINOLOGY_LOCK.md`
-9. active chapter `DIAGRAM_CONTRACTS.md`
-10. active lesson storyboard/resources/`SLIDE_COPY_V*.md`/latest QA
-11. other task-relevant policies
-
-`NEW_CHAT_START.md` contains the full recovery protocol.
+3. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+4. `ACCURACY_ENFORCEMENT.md`
+5. `QUALITY_GATES.md`
+6. `RENDERER_ROUTING.md`
+7. `VISUAL_ASSET_ROUTING.md`
+8. `PHYSICAL_VISUAL_REALISM_POLICY.md`
+9. `CLASSROOM_LANGUAGE_POLICY.md`
+10. active chapter `TERMINOLOGY_LOCK.md`
+11. active chapter `DIAGRAM_CONTRACTS.md`
+12. active lesson storyboard/resources/copy lock/latest failure or QA record
+13. other task-relevant policies
 
 ## Next authorized action
 
-**User Microsoft PowerPoint + visual review of Lesson 2 v2.**
+**Build and review Lesson 2 High-Risk Visual Pack.**
 
-Do not start Lesson 3 full production until Lesson 2 v2 is approved or revised to approval.
+Do not assemble a new full Lesson 2 deck and do not start Lesson 3 until the High-Risk Visual Pack is approved.
