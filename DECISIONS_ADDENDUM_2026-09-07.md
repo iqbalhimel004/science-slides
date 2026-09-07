@@ -60,6 +60,35 @@ Chapter 11 implementations:
 - `chapters/class-8/science/chapter-11-light/TERMINOLOGY_LOCK.md`
 - `chapters/class-8/science/chapter-11-light/DIAGRAM_CONTRACTS.md`
 
+## D-042 — High-risk visual pack must be approved before full deck rebuild
+
+Decision:
+
+After a high-risk visual failure or in first-pilot calibration, a full classroom deck must not be assembled or released until a separate High-Risk Visual Pack is produced and approved.
+
+The pack must lock the scientific reference/topology first, then build visuals using the approved separation:
+
+- realistic physical/context base: verified existing image or Canva/external visual source where useful;
+- science-critical layer: deterministic controlled PptxGenJS/SVG overlay;
+- no AI-generated or stock visual may decide rays, normals, angles, labels, scales, equations or scientific topology.
+
+The pack must explicitly check:
+
+1. visual recognizability of physical objects/context;
+2. scientific geometry/invariant correctness;
+3. Bangla-first terminology;
+4. projector readability;
+5. absence of unexpected blank/missing rendered pages;
+6. static/offline fallback for any external/dynamic element.
+
+Reason:
+
+Lesson 2 v2 passed internal text/render checks but user review still found that coin/fish/mirage/context visuals were not classroom-clear and a blank rendered page appeared. Therefore the existing `INTERNAL_QA_PASS` state was too strong and must be revoked.
+
+Canonical policy:
+
+`REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+
 ## Precedence
 
-For production work after 2026-09-07, D-040 and D-041 refine older generic routing/QA wording. If an older file implies that montage/render PASS alone is enough, D-041 supersedes that implication.
+For production work after 2026-09-07, D-040, D-041 and D-042 refine older generic routing/QA wording. If an older file implies that montage/render PASS alone is enough, or that full deck assembly may precede high-risk visual approval after a visual failure, these decisions supersede that implication.
