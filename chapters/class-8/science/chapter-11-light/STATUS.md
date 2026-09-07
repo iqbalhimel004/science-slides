@@ -4,12 +4,13 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-07
-- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — ACCURACY_SAFEGUARDS_ACTIVE — LESSON_2_V2_INTERNAL_QA_PASS — USER_POWERPOINT_AND_VISUAL_REVIEW_PENDING — LESSON_3_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_VISUAL_PACK_GATE_ACTIVE — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Durable workflow rules
 
 - renderer route: `RENDERER_ROUTING.md`;
 - accuracy enforcement: `ACCURACY_ENFORCEMENT.md`;
+- reference-locked visual workflow: `/REFERENCE_LOCKED_VISUAL_PIPELINE.md`;
 - student-facing language: `CLASSROOM_LANGUAGE_POLICY.md`;
 - chapter terminology lock: `TERMINOLOGY_LOCK.md`;
 - high-risk optics invariants: `DIAGRAM_CONTRACTS.md`;
@@ -38,106 +39,75 @@ Master visual/language/motion/realism baseline approved by user.
 
 The original v1 build is **not classroom-ready** and must not be used as a reference implementation.
 
-User review identified:
-
-- fragmentary/unclear wording;
-- unnecessary English/mixed-language text;
-- unexplained standalone `TIR`;
-- insufficient apparent-position/fish ray construction;
-- critical-angle reflected ray in the wrong medium;
-- full-internal-reflection geometry error;
-- hinge wording/visual mismatch.
-
 Historical failure record:
 
 `lessons/lesson-02/production/PRODUCTION_QA_V1_2026-09-06.md`
 
-## Accuracy safeguards added after v1
+## Lesson 2 v2 — failed user visual review
+
+V2 improved language and several geometry rules, but user visual review found material implementation failures:
+
+- coin/fish physical objects were not recognizably realistic enough;
+- apparent-position/context visuals remained too diagrammatic/unclear for the intended classroom presentation;
+- mirage/context visual was not acceptable;
+- an unexpected blank rendered/exported page appeared;
+- the previously approved `High-Risk Visual Pack first` approach had not been turned into a durable hard gate before full deck assembly.
+
+Disposition:
+
+**FAILED_USER_VISUAL_REVIEW — DO NOT USE FOR CLASSROOM**
+
+Any older v2 QA wording that says `INTERNAL_QA_PASS` is superseded.
+
+## Current safeguards
 
 Root/chapter safeguards:
 
 - `/ACCURACY_ENFORCEMENT.md`
-- `/QUALITY_GATES.md` v4.1
-- `/CLASSROOM_LANGUAGE_POLICY.md` v1.1
+- `/REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+- `/QUALITY_GATES.md`
+- `/CLASSROOM_LANGUAGE_POLICY.md`
+- `/VISUAL_ASSET_ROUTING.md`
+- `/PHYSICAL_VISUAL_REALISM_POLICY.md`
 - `/tools/student_text_lint.py`
 - `TERMINOLOGY_LOCK.md`
 - `DIAGRAM_CONTRACTS.md`
 
-Lesson 2 safeguards:
+Durable decisions:
 
-- `lessons/lesson-02/production/SLIDE_COPY_V2.md`
-- `lessons/lesson-02/production/check_l2_geometry_contracts.py`
-- `lessons/lesson-02/production/BUILD_SPEC_V2_2026-09-07.md`
-- `lessons/lesson-02/production/PRODUCTION_QA_V2_2026-09-07.md`
+- `/DECISIONS_ADDENDUM_2026-09-07.md` D-040, D-041, D-042
 
-## Lesson 2 v2 — current artifact
+## Current production gate — Lesson 2 High-Risk Visual Pack
 
-PPTX:
-`Class8_Science_Ch11_Lesson2_v2_Bangla_Accurate_PPTX_SAFE.pptx`
+Before another full Lesson 2 deck is built, produce and obtain approval for a dedicated pack covering:
 
-SHA-256:
-`4136eb757aed1d1992a1238fce48b6fc9ffcca3fed40a7404c2eef38ab845814`
+1. apparent position / apparent depth;
+2. coin visibility after water is added;
+3. fish apparent depth;
+4. road mirage;
+5. critical angle;
+6. full internal reflection;
+7. optical fibre.
 
-PDF:
-`Class8_Science_Ch11_Lesson2_v2_Bangla_Accurate_PPTX_SAFE.pdf`
+### Visual construction model
 
-SHA-256:
-`52e3ff2916992a4284749382bbf797794c75309184eb41ae4d1eb898188e6355`
+- use verified real/open/licensed or Canva/external base assets for recognizable physical objects/context;
+- do not use ChatGPT-native image generation by default;
+- do not trust generated/stock imagery for science geometry;
+- rays, normals, angles, labels, apparent construction and other science-critical topology remain deterministic PptxGenJS/SVG;
+- prefer two-panel real/context + schematic layouts when combining realism and exact geometry in one image would be confusing.
 
-## Lesson 2 v2 QA
+### Hard checks before approval
 
-### Language/copy
-
-- exact visible copy frozen before final build;
-- full Bangla questions/instructions;
-- no standalone `TIR`;
-- Bangla-first terminology;
-- proper simulation names are the main allowed English exception;
-- automated terminology lint: **PASS**.
-
-### High-risk science diagrams
-
-Focused contract checks passed for:
-
-- apparent position;
-- backward ray tracing;
-- coin visibility;
-- fish apparent depth;
-- mirage gradient;
-- critical angle;
-- full internal reflection;
-- three-state comparison;
-- optical fibre.
-
-Automated geometry result:
-
-`DIAGRAM_CONTRACTS_L2_V2: PASS`
-
-Focused rendered high-risk slide review: **PASS_WITH_USER_REVIEW_PENDING**.
-
-### Technical
-
-- LibreOffice normalization: PASS
-- `slides_test.py`: PASS — no overflow
-- PPTX render: PASS
-- PDF export/render: PASS
-- PDF pages: 22
-- simulation hyperlinks present in normalized PPTX
-
-## Remaining hard gate
-
-User should review Lesson 2 v2 in Microsoft PowerPoint and report:
-
-1. repair/recovery warning YES/NO;
-2. simulation links working/not working;
-3. staged reveal flow;
-4. visible Bangla readability;
-5. apparent-position/coin/fish/mirage/critical-angle/full-internal-reflection/fibre clarity;
-6. any physical/context visual that should be upgraded through Canva/external realistic asset routing;
-7. overall acceptance or specific revisions.
+- physical objects recognizable at projection size;
+- reference topology/invariants correct;
+- Bangla-first labels;
+- projector readability;
+- no unexpected blank/missing page;
+- each visual rendered and inspected individually.
 
 ## Next authorized stage
 
-**Lesson 2 v2 user PowerPoint + visual review.**
+**Build and review Lesson 2 High-Risk Visual Pack only.**
 
-Lesson 3 remains on hold until Lesson 2 v2 is approved or revised to approval.
+Do not rebuild the full Lesson 2 deck and do not start Lesson 3 until this visual pack is approved.
