@@ -1,8 +1,8 @@
 # New Chat Recovery Protocol
 
-Version: 4.3
+Version: 4.4
 Last revised: 2026-09-07
-Status: **ACTIVE — ACCURACY-ENFORCEMENT / CANVA-FIRST VISUAL ROUTING**
+Status: **ACTIVE — ACCURACY + REFERENCE-LOCKED VISUAL PACK GATE**
 
 ## 1. Verify repository identity first
 
@@ -18,42 +18,65 @@ For any active production lesson, read in this order:
 
 1. `OPERATING_BRIEF.md`
 2. `CURRENT_STATE.md`
-3. `ACCURACY_ENFORCEMENT.md`
-4. `QUALITY_GATES.md`
-5. `RENDERER_ROUTING.md`
-6. `VISUAL_ASSET_ROUTING.md`
-7. `PHYSICAL_VISUAL_REALISM_POLICY.md`
-8. `CLASSROOM_LANGUAGE_POLICY.md`
-9. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-10. `SIMULATION_RESOURCE_ROUTING.md`
-11. `ARTIFACT_PERSISTENCE.md`
-12. active chapter `STATUS.md`
-13. active chapter `TERMINOLOGY_LOCK.md` if present
-14. active chapter/lesson `DIAGRAM_CONTRACTS.md` if present
-15. active lesson `STORYBOARD.md`, `RESOURCES.md`, latest `production/SLIDE_COPY_V*.md`, dynamic manifest, latest production QA
-16. deeper policy/template files only when needed
+3. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+4. `ACCURACY_ENFORCEMENT.md`
+5. `QUALITY_GATES.md`
+6. `RENDERER_ROUTING.md`
+7. `VISUAL_ASSET_ROUTING.md`
+8. `PHYSICAL_VISUAL_REALISM_POLICY.md`
+9. `CLASSROOM_LANGUAGE_POLICY.md`
+10. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+11. `SIMULATION_RESOURCE_ROUTING.md`
+12. `ARTIFACT_PERSISTENCE.md`
+13. active chapter `STATUS.md`
+14. active chapter `TERMINOLOGY_LOCK.md` if present
+15. active chapter/lesson `DIAGRAM_CONTRACTS.md` if present
+16. active lesson `STORYBOARD.md`, `RESOURCES.md`, latest `production/SLIDE_COPY_V*.md`, dynamic manifest, latest failure/production QA
+17. deeper policy/template files only when needed
 
-Do **not** depend on prior chat memory for technical terminology, slide copy or high-risk diagram geometry.
+Do **not** depend on prior chat memory for technical terminology, slide copy, high-risk visual geometry, or current artifact approval state.
 
 ## 3. Canonical precedence
 
 If old chat history or older repository wording conflicts with current policy, use this precedence:
 
 1. `CURRENT_STATE.md`
-2. `ACCURACY_ENFORCEMENT.md`
-3. active chapter `TERMINOLOGY_LOCK.md`
-4. active chapter/lesson `DIAGRAM_CONTRACTS.md`
-5. `RENDERER_ROUTING.md`
-6. `VISUAL_ASSET_ROUTING.md`
-7. `CLASSROOM_LANGUAGE_POLICY.md`
-8. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-9. active chapter `STATUS.md`
-10. latest stage-specific QA/reconciliation record
-11. older historical planning/audit documents
+2. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+3. `ACCURACY_ENFORCEMENT.md`
+4. active chapter `TERMINOLOGY_LOCK.md`
+5. active chapter/lesson `DIAGRAM_CONTRACTS.md`
+6. `RENDERER_ROUTING.md`
+7. `VISUAL_ASSET_ROUTING.md`
+8. `CLASSROOM_LANGUAGE_POLICY.md`
+9. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+10. active chapter `STATUS.md`
+11. latest stage-specific failure/QA/reconciliation record
+12. older historical planning/audit documents
 
-Historical prototype/v1 files must not override a later failure reconciliation or v2 record.
+A later user visual rejection supersedes an older internal QA pass.
 
-## 4. Accuracy-enforcement rule — mandatory
+## 4. High-risk visual pack hard gate
+
+If the active lesson has high-risk visuals, or a previous user review rejected visuals, **do not build/release the full deck first**.
+
+Required sequence:
+
+1. identify high-risk visuals;
+2. lock authoritative/reference topology and invariants;
+3. freeze Bangla-first visible labels/copy;
+4. obtain recognizable real/Canva/external physical/context base assets where useful;
+5. build science-critical rays/normals/angles/labels/topology deterministically in PptxGenJS/SVG;
+6. produce a separate High-Risk Visual Pack;
+7. render every pack slide individually;
+8. verify no blank/missing page;
+9. obtain user visual/science approval;
+10. only then assemble the full lesson deck.
+
+Canonical policy:
+
+`REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+
+## 5. Accuracy-enforcement rule — mandatory
 
 Before a science deck may be called `INTERNAL_QA_PASS`:
 
@@ -63,16 +86,13 @@ Before a science deck may be called `INTERNAL_QA_PASS`:
 4. enforce high-risk `DIAGRAM_CONTRACTS.md`;
 5. run programmatic geometry assertions where practical;
 6. render and inspect each high-risk slide individually;
-7. run overflow/render/export checks;
-8. test exact PPTX in Microsoft PowerPoint when user-side PowerPoint is available.
+7. run expected-slide/blank-page check;
+8. run overflow/render/export checks;
+9. test exact PPTX in Microsoft PowerPoint when user-side PowerPoint is available.
 
 A montage-only review or `slides_test.py` PASS is never sufficient science QA.
 
-Canonical workflow:
-
-`ACCURACY_ENFORCEMENT.md`
-
-## 5. Bangla-first classroom language
+## 6. Bangla-first classroom language
 
 Student-facing slides use textbook-facing Bangla first.
 
@@ -86,7 +106,7 @@ Canonical policy:
 
 `CLASSROOM_LANGUAGE_POLICY.md`
 
-## 6. Renderer route — already decided
+## 7. Renderer route — already decided
 
 Current default deck-production route:
 
@@ -96,7 +116,7 @@ Current default deck-production route:
 - Canva: realistic visual asset generation/finishing where useful; not science authority.
 - Beautiful.ai: low-risk prototype/layout inspiration only.
 
-## 7. Visual asset route
+## 8. Visual asset route
 
 For photos/realistic physical-object visuals, default priority:
 
@@ -112,7 +132,7 @@ Preferred separation:
 
 **PptxGenJS/SVG = rays, normals, angles, labels, scales, graphs, notation and other science-critical geometry**
 
-## 8. Physical realism + science clarity
+## 9. Physical realism + science clarity
 
 Real physical objects should look recognizably real when practical, but photorealism never outranks scientific clarity.
 
@@ -123,7 +143,18 @@ When geometry matters:
 - use realistic-object + deterministic schematic hybrid when clearer;
 - use pure schematic geometry when realism would reduce clarity.
 
-## 9. PowerPoint compatibility / dynamic engagement
+## 10. Blank/missing page rule
+
+For every pack/deck export:
+
+- expected slide count must match;
+- each planned slide ID must render to non-blank content;
+- no unexpected blank page is allowed;
+- no high-risk visual may disappear during normalization/export.
+
+Unexpected blank page = hard FAIL.
+
+## 11. PowerPoint compatibility / dynamic engagement
 
 - PowerPoint repair/recovery warning = hard FAIL;
 - test exact user-facing PPTX when available;
@@ -132,17 +163,17 @@ When geometry matters:
 - every important online/interactive element needs a static fallback;
 - concept-heavy lessons must not become static by accident.
 
-## 10. Simulation rule
+## 12. Simulation rule
 
 Simulation selection is multi-source and concept-fit driven, not PhET-only.
 
 Compare reputable options such as PhET, The Physics Classroom, GeoGebra, Open Source Physics/ComPADRE and other suitable sources. Use one best-fit resource unless a second serves a distinct instructional role.
 
-## 11. Source/science rule
+## 13. Source/science rule
 
 NCTB controls curriculum/scope/exam context, not automatic scientific truth. Material scientific claims are verified against current authoritative sources; mismatches are documented.
 
-## 12. Timing rule
+## 14. Timing rule
 
 For a 60-minute class:
 
@@ -152,7 +183,7 @@ For a 60-minute class:
 - contingency: 5–10 min unallocated
 - STRETCH: appendix/enrichment only
 
-## 13. Artifact persistence
+## 15. Artifact persistence
 
 Follow `ARTIFACT_PERSISTENCE.md`.
 
@@ -163,12 +194,13 @@ For high-risk controlled production preserve:
 - artifact fingerprints;
 - terminology lint/checker source;
 - diagram-contract source/checker;
+- high-risk visual-pack manifest/review status;
 - asset provenance;
 - dynamic implementation manifest;
 - PowerPoint compatibility status;
 - export/fallback QA.
 
-## 14. End-of-stage checkpoint
+## 16. End-of-stage checkpoint
 
 **Finish -> record -> then continue.**
 
