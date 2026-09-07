@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-06
+Last updated: 2026-09-07
 
 ## Canonical repository
 
@@ -13,13 +13,14 @@ Only this repository is authorized for Science Slides writes.
 - NCTB controls syllabus/exam context, not automatic scientific truth.
 - Material science is checked against current authoritative sources.
 - **Finish -> record -> then continue.**
-- Renderer route is locked by `D-036` / `RENDERER_ROUTING.md`.
-- PowerPoint smoke testing is a hard compatibility gate (`D-037`).
-- Dynamic engagement and attractive classroom UI are hard production gates (`D-038`).
-- Simulation selection is multi-source and concept-fit driven, not PhET-only (`D-039`).
-- Visual asset generation is Canva/external-first and controlled-science-overlay driven (`VISUAL_ASSET_ROUTING.md`; D-040 refinement).
-- Student-facing language is Bangla-first by `CLASSROOM_LANGUAGE_POLICY.md`.
-- Physical apparatus visuals follow `PHYSICAL_VISUAL_REALISM_POLICY.md`.
+- Renderer route: `RENDERER_ROUTING.md`.
+- Accuracy enforcement: `ACCURACY_ENFORCEMENT.md`.
+- PowerPoint smoke testing is a hard compatibility gate.
+- Dynamic engagement and attractive classroom UI are hard production gates.
+- Simulation selection is multi-source and concept-fit driven.
+- Visual asset generation is Canva/external-first with deterministic science overlays.
+- Student-facing language is Bangla-first.
+- Chapter terminology and high-risk diagram invariants must be locked before build where relevant.
 - `ARTIFACT_PERSISTENCE.md` controls reproducibility.
 
 ## Active chapter
@@ -28,93 +29,117 @@ Only this repository is authorized for Science Slides writes.
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_BUILT_INTERNAL_QA_PASS — USER_POWERPOINT_AND_VISUAL_REVIEW_PENDING — LESSON_3_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — ACCURACY_SAFEGUARDS_ACTIVE — LESSON_2_V2_INTERNAL_QA_PASS — USER_POWERPOINT_AND_VISUAL_REVIEW_PENDING — LESSON_3_ON_HOLD**
 
-## Lesson 1 baseline
+## Why the workflow changed
 
-Approved production direction:
+Lesson 2 v1 passed overflow/render prototype checks but user review found material language and science-diagram errors. This proved that montage/render checks alone are not enough.
 
-- controlled PptxGenJS deck authoring;
-- Bangla-first textbook-facing language;
-- staged prediction/reveal where it replaces fragile animation;
-- simulation links only when useful, with static fallback;
-- realistic physical-object imagery where appropriate;
-- deterministic science overlays for rays, normals, angles, labels and geometry;
-- Microsoft PowerPoint compatibility gate;
-- verified PDF fallback.
+V1 is now explicitly superseded.
 
-## Lesson 2 v1 — built
+Historical failure record:
 
-Lesson:
-`প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন`
+`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/PRODUCTION_QA_V1_2026-09-06.md`
 
-Current user-facing artifacts:
+## Accuracy safeguards now active
 
-- `Class8_Science_Ch11_Lesson2_ApparentPosition_TIR_PPTX_SAFE.pptx`
-- `Class8_Science_Ch11_Lesson2_ApparentPosition_TIR_PPTX_SAFE.pdf`
+Root:
 
-Fingerprints:
+- `ACCURACY_ENFORCEMENT.md`
+- `QUALITY_GATES.md` v4.1
+- `CLASSROOM_LANGUAGE_POLICY.md` v1.1
+- `tools/student_text_lint.py`
 
-- PPTX: `157b5f8ae2fb21a26dbf514d42ca149c9079c1fb42502327de841a6c8d250ba5`
-- PDF: `ab639041ca653ec3b0de7c645872869cdaec0bd16a2064d333566d66b2f31212`
+Chapter:
 
-Durable records:
+- `chapters/class-8/science/chapter-11-light/TERMINOLOGY_LOCK.md`
+- `chapters/class-8/science/chapter-11-light/DIAGRAM_CONTRACTS.md`
 
-- `lessons/lesson-02/production/DYNAMIC_MANIFEST.md`
-- `lessons/lesson-02/production/BUILD_SPEC_V1_2026-09-06.md`
-- `lessons/lesson-02/production/PRODUCTION_QA_V1_2026-09-06.md`
+Lesson 2:
 
-## Lesson 2 implementation highlights
+- `lessons/lesson-02/production/SLIDE_COPY_V2.md`
+- `lessons/lesson-02/production/check_l2_geometry_contracts.py`
+- `lessons/lesson-02/production/BUILD_SPEC_V2_2026-09-07.md`
+- `lessons/lesson-02/production/PRODUCTION_QA_V2_2026-09-07.md`
 
-- 22 physical slides;
-- retrieval predict/reveal;
-- actual vs apparent position with backward ray tracing;
-- pencil/stick, coin and fish apparent-position examples;
-- mirage with gradual refractive-index/temperature-gradient model;
-- increasing incidence-angle predict/reveal;
-- critical angle with `r=90°` and reflected ray present;
-- explicit separation of `i=C` from TIR;
-- TIR two-condition slide;
-- three-state `i<C / i=C / i>C` hinge;
-- optical-fibre repeated-TIR explanation;
-- FLEX simulation launch slide;
-- FLEX TIR practice reveal.
+## Mandatory production sequence from now on
 
-## Visual asset routing in Lesson 2
+For high-risk science lessons:
 
-No ChatGPT-native image generation was used.
+1. verify content/storyboard;
+2. freeze exact student-facing copy;
+3. follow chapter terminology lock;
+4. build deterministic high-risk diagrams;
+5. run terminology lint;
+6. run diagram/geometry contracts;
+7. render and inspect high-risk slides individually;
+8. run slide overflow/render/export QA;
+9. test the exact PPTX in Microsoft PowerPoint when available;
+10. checkpoint before continuing.
 
-Current v1 mainly uses deterministic PptxGenJS/SVG-style concept visuals. This is intentional where exact ray geometry is the teaching priority.
+`INTERNAL_QA_PASS` must not be used unless applicable hard checks above pass.
 
-If user review finds a physical-object scene too schematic, replace only that base visual under `VISUAL_ASSET_ROUTING.md`:
+## Lesson 2 v2 — current artifact
 
-1. verified existing real/open/licensed image; or
-2. connected Canva/Canva AI/Canva Pro visual;
-3. keep scientific overlays deterministic in PptxGenJS.
+PPTX:
+`Class8_Science_Ch11_Lesson2_v2_Bangla_Accurate_PPTX_SAFE.pptx`
 
-## Internal QA
+SHA-256:
+`4136eb757aed1d1992a1238fce48b6fc9ffcca3fed40a7404c2eef38ab845814`
+
+PDF:
+`Class8_Science_Ch11_Lesson2_v2_Bangla_Accurate_PPTX_SAFE.pdf`
+
+SHA-256:
+`52e3ff2916992a4284749382bbf797794c75309184eb41ae4d1eb898188e6355`
+
+## Lesson 2 v2 QA result
+
+### Copy / terminology
+
+- exact student-facing copy frozen: PASS
+- complete readable Bangla questions: PASS
+- Bangla-first technical terminology: PASS
+- standalone `TIR`: removed
+- definition-before-symbol rule: applied
+- automated terminology lint: **PASS**
+
+### High-risk diagrams
+
+Focused contracts/checks:
+
+- apparent position: PASS
+- backward tracing: PASS
+- coin visibility: PASS
+- fish apparent depth: PASS
+- mirage gradient: PASS
+- critical angle: PASS
+- full internal reflection: PASS
+- three-state comparison: PASS
+- optical fibre: PASS
+
+Automated lesson geometry checker:
+
+`DIAGRAM_CONTRACTS_L2_V2: PASS`
+
+Focused rendered high-risk review:
+
+`PASS_WITH_USER_VISUAL_REVIEW_PENDING`
+
+### Technical/export
 
 - LibreOffice normalization: PASS
 - `slides_test.py`: PASS — no overflow
 - PPTX render: PASS
-- montage inspection: PASS at prototype level
-- PDF export: PASS
+- PDF export/render: PASS
 - PDF pages: 22
-- PDF encrypted: no
-- PDF render: PASS
-- no severe unintended text overlap remains
+- simulation hyperlink relationships present in normalized PPTX
 
-## Remaining hard gates before Lesson 3
+## Visual asset route
 
-User should review Lesson 2 v1 and confirm:
+No ChatGPT-native image generation was used for Lesson 2 v2.
 
-1. Microsoft PowerPoint opens without repair warning;
-2. staged reveal sequence feels natural;
-3. simulation links open;
-4. Bangla terminology is acceptable;
-5. apparent-position, mirage, critical-angle/TIR and optical-fibre visuals are clear;
-6. any physical-object visual that still feels too schematic is identified for Canva/external realistic replacement;
-7. overall Lesson 2 UI/visual standard is accepted.
+Science-critical geometry is controlled/deterministic. If a physical/context visual later needs more realism, use verified existing/Canva/external base imagery and keep the science overlay controlled.
 
 ## Frozen timing
 
@@ -125,8 +150,26 @@ User should review Lesson 2 v1 and confirm:
 | L3 | 42 | 8 | 50 | 10 |
 | L4 | 42 | 8 | 50 | 10 |
 
+## New-chat production recovery order
+
+Read:
+
+1. `OPERATING_BRIEF.md`
+2. `CURRENT_STATE.md`
+3. `ACCURACY_ENFORCEMENT.md`
+4. `QUALITY_GATES.md`
+5. `RENDERER_ROUTING.md`
+6. `VISUAL_ASSET_ROUTING.md`
+7. `CLASSROOM_LANGUAGE_POLICY.md`
+8. active chapter `TERMINOLOGY_LOCK.md`
+9. active chapter `DIAGRAM_CONTRACTS.md`
+10. active lesson storyboard/resources/`SLIDE_COPY_V*.md`/latest QA
+11. other task-relevant policies
+
+`NEW_CHAT_START.md` contains the full recovery protocol.
+
 ## Next authorized action
 
-**User PowerPoint + visual review of Lesson 2 v1.**
+**User Microsoft PowerPoint + visual review of Lesson 2 v2.**
 
-Do not start Lesson 3 full production until Lesson 2 is approved or revised to approval.
+Do not start Lesson 3 full production until Lesson 2 v2 is approved or revised to approval.
