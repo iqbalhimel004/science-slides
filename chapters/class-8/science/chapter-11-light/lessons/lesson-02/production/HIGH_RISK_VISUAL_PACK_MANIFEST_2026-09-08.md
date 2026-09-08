@@ -1,7 +1,7 @@
 # Lesson 2 High-Risk Visual Pack Manifest
 
 Date: 2026-09-08
-Status: **BUILT_IN_CANVA — USER_REVIEW_PENDING — FULL_LESSON_2_REBUILD_BLOCKED**
+Status: **BUILT_IN_CANVA_REVIEW_PACK — USER_VISUAL_APPROVAL_PENDING — FULL_LESSON_2_REBUILD_BLOCKED**
 
 ## Scope
 
@@ -11,31 +11,39 @@ It is **not** the full Lesson 2 classroom deck.
 
 The full Lesson 2 rebuild remains blocked until the user approves this visual pack.
 
-## Canva design
+## Canva review pack — corrected v2
 
 Design ID:
 
-`DAHUl9F8yQc`
+`DAHUl-r85fw`
 
 Title:
 
 `Lesson 2 High-Risk Visual Pack — Reference Locked v2`
 
-Current review URL captured during build:
+Canva edit URL:
 
-`https://www.canva.com/d/Nka2rWEPnKHDCm8`
+`https://www.canva.com/d/CPgq5j4wu-Qc9M9`
 
-Note: Canva may rotate signed/share URLs. The stable internal design identifier is the design ID above.
+Canva view URL:
+
+`https://www.canva.com/d/Yl53GftBWQ08y6o`
 
 Page count:
 
 `7`
 
-Canva checks completed:
+Important note:
 
-- `get-design-pages`: returned exactly 7 pages;
-- `get-design-content`: visible text extracted and reviewed for Bangla-first wording;
-- `get-presenter-notes`: source notes exist on all 7 pages.
+An earlier first import existed, but this corrected v2 is the current review pack. The first import had remaining mixed-English fragments and is superseded.
+
+## Canva checks completed
+
+- `get-design-pages`: returned exactly 7 pages with thumbnail metadata;
+- `fetch`: visible text extracted and reviewed for Bangla-first wording;
+- page count: 7;
+- no full Lesson 2 deck has been rebuilt;
+- user visual/science review remains pending.
 
 ## Source/reference lock
 
@@ -159,7 +167,7 @@ Visible text was extracted from Canva and reviewed.
 
 Result:
 
-`PASS_WITH_SYMBOL_EXCEPTIONS`
+`PASS_WITH_SYMBOL_AND_LICENSE_EXCEPTIONS`
 
 Allowed exceptions:
 
@@ -169,7 +177,7 @@ Allowed exceptions:
 
 No standalone `TIR` is used.
 
-No `boundary`, `bending`, `ray`, `diagram`, `store`, `guide`-style English production fragments remain in the visible classroom wording.
+Remaining mixed-English fragments from the first import were removed in the corrected v2.
 
 ## Page/blank check
 
