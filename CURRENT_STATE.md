@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-07
+Last updated: 2026-09-08
 
 ## Canonical repository
 
@@ -30,24 +30,24 @@ Only this repository is authorized for Science Slides writes.
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_VISUAL_PACK_GATE_ACTIVE — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_VISUAL_PACK_BUILD_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
-## Why Lesson 2 v2 is no longer an internal pass
+## Lesson 2 v2 disposition
 
-User visual review found that the delivered v2 still failed important classroom-visual requirements:
+Lesson 2 v2 remains:
+
+**FAILED_USER_VISUAL_REVIEW — DO NOT USE FOR CLASSROOM — REBUILD REQUIRED AFTER HIGH-RISK VISUAL APPROVAL**
+
+Reasons already established:
 
 - coin/fish/context visuals were not recognizably realistic enough;
-- several high-risk diagrams remained hard to interpret as physical situations;
-- a blank rendered/exported page appeared even though prior page-count/render checks passed;
-- the approved `reference-locked hybrid visual + High-Risk Visual Pack first` workflow had not been durably enforced before full deck assembly.
+- several high-risk diagrams were hard to interpret as physical situations;
+- a blank rendered/exported page appeared;
+- the approved High-Risk Visual Pack-first workflow was not enforced before the earlier full-deck build.
 
-Therefore all earlier wording that calls Lesson 2 v2 `INTERNAL_QA_PASS` is superseded by the current state.
+Any older wording that calls Lesson 2 v2 `INTERNAL_QA_PASS` is superseded.
 
-Lesson 2 v2 disposition:
-
-**FAILED_USER_VISUAL_REVIEW — DO_NOT_USE FOR CLASSROOM — REBUILD REQUIRED AFTER HIGH-RISK VISUAL APPROVAL**
-
-## Accuracy and visual safeguards now active
+## Accuracy and visual safeguards active
 
 Root:
 
@@ -68,16 +68,42 @@ Durable decisions:
 
 - `DECISIONS_ADDENDUM_2026-09-07.md` D-040, D-041, D-042
 
-## Mandatory production sequence from now on
+## High-risk reference-lock checkpoint — complete
 
-For a lesson with high-risk science visuals:
+Canonical Lesson 2 lock:
+
+`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_REFERENCE_LOCK_2026-09-08.md`
+
+All seven required high-risk concepts now have an explicit reference/topology lock:
+
+1. apparent position / apparent depth;
+2. coin visibility after water is added;
+3. fish apparent depth;
+4. road mirage / temperature-gradient refraction;
+5. critical angle;
+6. full internal reflection;
+7. optical fibre.
+
+The lock defines, for each visual:
+
+- intended scientific claim;
+- authoritative/current reference basis;
+- required visible invariants;
+- forbidden errors;
+- Bangla-first labels;
+- visual construction route: pure deterministic schematic or realistic/context + deterministic two-panel hybrid;
+- asset-routing constraints.
+
+Primary external references locked include OpenStax University Physics, OpenStax Physics, University of Iowa Physics, Idaho State University, Physics Classroom, Harvard Natural Sciences Lecture Demonstrations and HyperPhysics, with NCTB retaining scope/terminology/exam authority.
+
+## Mandatory production sequence from now on
 
 1. verify content/storyboard and source basis;
 2. freeze exact student-facing copy;
 3. follow terminology lock;
 4. identify high-risk visual set;
-5. lock authoritative/reference topology and invariants for each visual;
-6. build a separate High-Risk Visual Pack only;
+5. lock authoritative/reference topology and invariants;
+6. **build a separate High-Risk Visual Pack only**;
 7. use recognizable real/Canva/external base imagery for physical/context objects where useful;
 8. use deterministic PptxGenJS/SVG for rays, normals, angles, labels and scientific topology;
 9. run terminology lint + diagram/geometry contracts;
@@ -88,26 +114,13 @@ For a lesson with high-risk science visuals:
 14. run full PowerPoint/PDF/export QA and user smoke test;
 15. checkpoint before continuing.
 
-## Lesson 2 high-risk visual set
+## Visual construction rule for the upcoming pack
 
-The next deliverable is **not** the full Lesson 2 deck.
-
-The pre-deck visual pack must cover:
-
-1. apparent position / apparent depth;
-2. coin becoming visible after water is added;
-3. fish appearing shallower;
-4. road mirage / temperature-gradient refraction;
-5. critical angle;
-6. full internal reflection;
-7. optical fibre.
-
-## Visual construction rule for this pack
-
-- physical/context base assets: verified existing real/open/licensed source first, or connected Canva/Canva AI/Canva Pro where generation is needed;
+- physical/context base assets: verified existing real/open/licensed source first, or connected Canva/Canva AI/Canva Pro when generation is needed;
 - ChatGPT-native image generation: not routine/default;
 - science-critical layer: deterministic PptxGenJS/SVG only;
-- when realism and exact geometry conflict: use a two-panel hybrid (real/context visual + clean schematic) instead of forcing both into one image.
+- when realism and exact geometry conflict: use a two-panel hybrid instead of forcing both into one image;
+- no generated/stock image is trusted for rays, normals, angles, apparent image positions, labels or scientific topology.
 
 ## Frozen timing
 
@@ -118,26 +131,8 @@ The pre-deck visual pack must cover:
 | L3 | 42 | 8 | 50 | 10 |
 | L4 | 42 | 8 | 50 | 10 |
 
-## New-chat production recovery order
-
-Read:
-
-1. `OPERATING_BRIEF.md`
-2. `CURRENT_STATE.md`
-3. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
-4. `ACCURACY_ENFORCEMENT.md`
-5. `QUALITY_GATES.md`
-6. `RENDERER_ROUTING.md`
-7. `VISUAL_ASSET_ROUTING.md`
-8. `PHYSICAL_VISUAL_REALISM_POLICY.md`
-9. `CLASSROOM_LANGUAGE_POLICY.md`
-10. active chapter `TERMINOLOGY_LOCK.md`
-11. active chapter `DIAGRAM_CONTRACTS.md`
-12. active lesson storyboard/resources/copy lock/latest failure or QA record
-13. other task-relevant policies
-
 ## Next authorized action
 
-**Build and review Lesson 2 High-Risk Visual Pack.**
+**Select/create realistic base assets where required and build the seven-visual Lesson 2 High-Risk Visual Pack.**
 
-Do not assemble a new full Lesson 2 deck and do not start Lesson 3 until the High-Risk Visual Pack is approved.
+Do not assemble a new full Lesson 2 deck and do not start Lesson 3 until the High-Risk Visual Pack is rendered, individually QA'd and approved by the user.
