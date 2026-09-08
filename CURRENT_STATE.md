@@ -16,10 +16,9 @@ Read first:
 
 `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
 
-Durable decisions:
+Durable architecture refinement after user review:
 
-- `DECISIONS_ADDENDUM_2026-09-07.md` -> D-043
-- `DECISIONS_ADDENDUM_2026-09-07.md` -> D-044
+`SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
 
 Core rule:
 
@@ -31,13 +30,11 @@ Core rule:
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — PRODUCTION_SYSTEM_V2_1_AUDIT_HARDENED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_HRV_05_06_07_COMPONENTS_COMMITTED — COMPLETE_7_PAGE_CONTROLLED_VALIDATION_PACK_INTERNAL_QA_PASS — USER_ACCEPTANCE_NEXT — FULL_LESSON_2_BLOCKED — LESSON_3_ON_HOLD**
+**LESSON_1_BASELINE_APPROVED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_R3_PACK_V0_2_USER_REVIEW_REJECTED_WITH_TARGETED_FEEDBACK — SLIDE_SURFACE_RULE_REFINED — HRV_02_REBUILT — HRV_04_MECHANISM_REBUILT — CONTROLLED_R3_PACK_V0_3_INTERNAL_QA_PASS — USER_REVIEW_REQUIRED — FULL_LESSON_2_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Lesson 1
 
 **COMPLETED / USER-APPROVED BASELINE — PRESERVE**
-
-Do not rebuild Lesson 1 merely because the production system changed.
 
 ## Lesson 2 retained work
 
@@ -50,104 +47,110 @@ Retain/reuse all still-valid work:
 - current terminology lock;
 - `DIAGRAM_CONTRACTS.md`;
 - high-risk reference lock;
-- recognizable physical/context assets;
-- accepted mirage context/mechanism;
+- accepted physical/context assets;
+- controlled HRV-05/06/07 components;
 - historical QA/failure records as regression evidence.
 
-Canonical migration override:
+## User review of controlled pack v0.2
 
-`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/PRODUCTION_SYSTEM_V2_1_MIGRATION_2026-09-08.md`
+The user did **not** accept v0.2 as final.
 
-## Current terminology
+Material feedback:
 
-Revised Lesson 2 student-facing critical-angle/TIR terminology:
+- HRV-02 empty-vessel visual did not clearly show what it meant;
+- HRV-04 mirage scientific explanation diagram was not sufficiently correct/clear;
+- visible teacher-facing panel `বোর্ডে বলার মূল কথা` should not appear on classroom slides;
+- the teacher will explain the slide directly, so visible slides should contain the necessary student-facing diagrams, concise information, animation/video/simulation/media where pedagogically needed, while teacher narration belongs in notes.
 
-- `ঘন মাধ্যম`
-- `হালকা মাধ্যম`
+This feedback supersedes the prior `USER_ACCEPTANCE_NEXT` wording for v0.2.
 
-Historical `বিরল মাধ্যম` wording remains historical unless explicitly quoted as textbook/exam wording.
+## New durable slide-surface rule
 
-## Controlled optics components
+Canonical addendum:
 
-Committed source:
+`SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
 
-`components/optics/ch11_l2_r3_optics_components_v0_1.js`
+Visible slide surface = student-facing learning surface.
 
-Committed semantic tests:
+Teacher prompts, narration cues, board-work suggestions and internal instructions belong in speaker notes/teacher notes.
 
-`components/optics/test_ch11_l2_r3_optics_components_v0_1.js`
+Slides must contain enough necessary visual/information/media content to support live explanation and must not depend on teacher narration to rescue an unclear visual.
 
-The controlled component checkpoint established semantic and rendered PASS for:
-
-- HRV-05 critical angle;
-- HRV-06 full internal reflection;
-- HRV-07 optical fibre.
-
-## Complete seven-page controlled validation pack — internal PASS
-
-A complete seven-page controlled high-risk validation pack has now been assembled using retained HRV-01..04 science/reference work plus the controlled HRV-05..07 components.
+## Controlled validation pack v0.3 — rebuilt
 
 Artifact:
 
-`Lesson2_R3_Optics_Controlled_Validation_v0_2.pptx`
+`Lesson2_R3_Optics_Controlled_Validation_v0_3.pptx`
 
 PDF fallback:
 
-`Lesson2_R3_Optics_Controlled_Validation_v0_2.pdf`
+`Lesson2_R3_Optics_Controlled_Validation_v0_3.pdf`
 
 QA checkpoint:
 
-`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/CONTROLLED_R3_VALIDATION_PACK_QA_2026-09-08.md`
+`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/CONTROLLED_R3_VALIDATION_PACK_V0_3_QA_2026-09-08.md`
 
-Internal results:
+### HRV-02 correction
+
+- explicit labels distinguish `খালি পাত্রে মুদ্রা দেখা যায় না` vs `পানি দিলে মুদ্রা দেখা যায়`;
+- left panel shows a dashed/red straight sight line from coin to eye blocked by the vessel rim;
+- right panel shows the water surface and refracted light path reaching the eye;
+- coin remains in the same physical position.
+
+### HRV-04 correction
+
+- separate context and scientific mechanism panels retained;
+- mechanism shows cooler/optically denser air above and warmer/optically lighter air near the hot road;
+- light follows a smooth curved path through the vertical refractive-index gradient;
+- final ray reaches the observer after bending upward;
+- dashed backward extension indicates the apparent/virtual direction below the road line;
+- road is explicitly not real water;
+- no single mirror-like boundary is used.
+
+### Global visible-slide correction
+
+- removed visible `বোর্ডে বলার মূল কথা` framing;
+- student-facing concise information remains on the slide;
+- teacher-only guidance is moved to speaker notes;
+- future full Lesson 2 must use necessary diagrams, photos, animation/video/simulation and concise information according to pedagogical need rather than teacher-script boxes.
+
+## v0.3 internal QA
 
 - slide count: 7;
-- `slides_test.py`: PASS, no overflow;
-- PptxGenJS helper overlap/out-of-bounds warnings: none in final build;
-- render: PASS, seven PNG slides;
-- PDF export: PASS, seven pages, unencrypted;
-- semantic science report: PASS for HRV-01..07;
-- direct pixel QA: PASS for user-review candidate;
-- current Bangla-first terminology: PASS;
-- HRV-05 angle: from normal, `r = 90°` along interface;
-- HRV-06: `i > C`, no outside refracted ray;
-- HRV-07: reflection vertices on core–cladding boundary and previous text-overlap issue removed;
-- HRV-04: generated mirage context is explicitly disclosed as explanatory imagery and scientific mechanism remains separately controlled.
+- `slides_test.py`: PASS — no overflow;
+- render: PASS — 7 PNG slides;
+- PDF export: PASS — 7 pages;
+- semantic report: PASS for HRV-01..07;
+- direct rendered review completed after targeted HRV-04 label-position correction;
+- terminology remains Bangla-first and current.
 
-Artifact fingerprints:
+Fingerprints:
 
-- PPTX SHA-256: `32e1ff790c46fcf20b469c64a5867a4dd358b5cdfd7b9b949cda5afb3ae9dbb9`
-- PDF SHA-256: `5346b57614da1d88461a4405a969c871cae2254bb949be4266fad6f83d827cbb`
+- PPTX SHA-256: `757f48036696b6d5c28aad25a69c77294686995f867affb864d9e18d1d1ccbbb`
+- PDF SHA-256: `72fda1d8838f2d09076dc07ce3a6ddbb34eb0254232d0c08815fb8c506325d5c`
 
 ## Current gate
 
-**USER ACCEPTANCE OF THE INTERNALLY-PASSED 7-PAGE VALIDATION PACK IS NEXT.**
+**USER REVIEW OF V0.3 IS REQUIRED.**
 
-Do not assemble the full Lesson 2 controlled PPTX until the user accepts this pack or gives targeted revision instructions.
+Do not assemble the full Lesson 2 controlled PPTX until the user accepts v0.3 or gives further targeted revision instructions.
 
-After user acceptance:
+After validation-pack acceptance:
 
-1. create the current exact Lesson 2 copy lock/structured spec from already-validated content plus v2.1 terminology;
-2. assemble the full Lesson 2 controlled PPTX;
-3. run full lesson automated/text/layout/semantic/pixel QA;
-4. run PowerPoint/export/PDF/offline QA;
-5. obtain final user acceptance;
-6. checkpoint before Lesson 3.
+1. create current exact Lesson 2 copy lock / structured specification;
+2. map each lesson segment to required visual/media route;
+3. assemble full Lesson 2 controlled PPTX;
+4. include teacher-only prompts in notes rather than visible teacher-script boxes;
+5. run full automated/text/layout/semantic/pixel/accessibility QA;
+6. run PowerPoint/export/PDF/offline QA;
+7. obtain final user acceptance;
+8. checkpoint before Lesson 3.
 
 ## Hard blocks
 
 Do not call Lesson 2 classroom-ready yet.
 Do not start Lesson 3 yet.
 Do not return to repeated Canva raster micro-patching as the primary science-production route.
-
-## Execution-time gates still pending
-
-- exact Microsoft PowerPoint opening/playback of future final Lesson 2 PPTX;
-- actual classroom device/projector behavior;
-- live internet/resource availability at teaching time;
-- real post-class timing calibration.
-
-Use explicit pending statuses until tested.
 
 ## Universal stage rule
 
