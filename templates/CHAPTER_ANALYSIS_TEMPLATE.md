@@ -1,113 +1,102 @@
-# Chapter Analysis Template
+# Chapter Analysis Template — Production System v2.1
 
-## Identity
+## Identity / input integrity
 
 - Class:
 - Subject:
-- Subject code, if applicable:
-- Chapter title:
+- Chapter:
 - Source edition/year:
-- Official/source URL or reference:
-- Teacher's Guide reference, if available:
+- Official/source reference:
+- Teacher guide reference if available:
 - Source page range:
-- Input type: PDF / screenshots / other
-- Text-layer status: reliable / partial / scanned-image / screenshots
-- Input integrity status: PASS / FAIL
-
-## Input integrity notes
-
-- First page confirmed:
-- Last page confirmed:
-- Page continuity confirmed:
+- Input type:
+- Text-layer status:
+- Input integrity: PASS / FAIL
 - Missing/cropped/unreadable material:
-- Diagrams/tables/equations readable:
-- OCR/vision used?:
-- Any critical OCR uncertainty?:
+- Critical OCR/vision uncertainty:
 
 ## Curriculum / textbook outcomes
 
-List explicit textbook/curriculum learning outcomes where available. Do not invent missing outcomes.
+List explicit outcomes/scope. Do not invent missing outcomes.
 
-## Chapter concept map
+## Concept/prerequisite map
 
-List every meaningful concept/subconcept in textbook order and note dependencies.
+List meaningful concepts/subconcepts in logical/textbook order and note dependencies.
 
-## Prerequisites
+## Scientific/source analysis
 
-What students should already know before this chapter.
+For important items record textbook location, authoritative verification need, freshness class and conflict status.
 
-## Definitions
-
-| Term | Textbook wording/location | OCR/extraction status | Visually verified against page? | Secondary check? | Notes |
+| Item | Type | Textbook location | Scientific verification | Freshness | Conflict/notes |
 |---|---|---|---|---|---|
+| | definition/law/formula/process/data | | | STABLE/REVISION_SENSITIVE/CURRENT_DATA | |
 
-## Laws / formulas / units
+## Formula / numerical / graph load
 
-| Item | Textbook location | OCR/extraction status | Visually verified? | Verification need | Notes |
-|---|---|---|---|---|---|
+List formulas, units, constants, conversions, numerical problem types, graph/data needs, expected dimensional checks and estimated teaching/practice time.
+
+## Visual/scientific risk map
+
+| Concept/visual | R1/R2/R3 | Scientific meaning carried | Recommended route | Existing component? |
+|---|---|---|---|---|
+| | | | | |
 
 ## Diagrams / processes
 
-| Diagram/process | Teaching importance | Source page | Visual complexity | Notes |
-|---|---|---|---|---|
+Record source page, teaching importance, geometry/topology risk, model/scale caveat and component-reuse opportunity.
 
-## Experiments / activities
+## Experiments / activities safety map
 
-| Activity | Classroom relevance | Estimated time | Core/Flex candidate | Notes |
-|---|---|---:|---|---|
+| Activity | Teaching value | Hazard/risk | Teacher/student boundary | Time | CORE/FLEX | Safer/static fallback |
+|---|---|---|---|---:|---|---|
+| | | | | | | |
 
-## Numerical/problem-solving load
+## Media / simulation opportunity map
 
-List types of examples/problems and estimated explanation/practice time.
+For each candidate note instructional purpose, why static may be insufficient, official source possibilities, setup time, internet dependency and static fallback.
 
-## Likely misconceptions / difficult areas
+## Accessibility considerations
 
-List likely student difficulties, why they matter, and whether a refutation/hinge check may be useful.
+Flag where critical meaning may depend on color, fine labels, audio, motion, low contrast, inaccessible image detail or captions/transcript.
+
+## Models / idealizations
+
+Identify representations requiring `সরলীকৃত চিত্র`, `স্কেল অনুযায়ী নয়`, symbolic model, idealized system or other disclosure.
+
+## Misconceptions / difficult areas
+
+List likely student difficulties, why they matter and possible refutation/check.
 
 ## Exam-facing opportunities
 
-Record relevant CQ/short/MCQ/practical-style opportunities only where appropriate for the subject/grade/chapter. Do not force the same pattern into every lesson.
+Record only where appropriate; do not force the same exam pattern into every lesson.
 
-## Instructional load estimate
+## Instructional load / lesson split
 
-Estimate teaching load by concept cluster, including explanation, visuals, student responses, board work, examples, activities, media, practice and transitions.
+Estimate realistic time including explanation, board work, student response, activity/media setup/debrief, practice and transitions.
 
-## Proposed number of presentations
-
-- Recommended count:
-- Total estimated instructional load:
-- Rationale:
-
-## Proposed lesson boundaries
+### Proposed lesson boundaries
 
 For each lesson:
 
-- Working title:
-- Concepts:
-- Learning outcomes:
-- Prerequisites:
-- CORE content:
-- FLEX content:
-- STRETCH/appendix content:
-- Estimated CORE time:
-- Estimated FLEX time:
-- Planned CORE + FLEX:
-- Why this boundary is logical:
-- Previous/next lesson bridge:
+- title;
+- concepts/outcomes;
+- prerequisites;
+- CORE/FLEX/STRETCH;
+- R3/new-component burden;
+- safety/media needs;
+- planned time;
+- logical boundary/bridge.
 
-## First-pilot calibration opportunities
+## Component/golden-master plan
 
-For the first real chapter only, flag where the chapter can meaningfully test:
-
-- Bangla typography/rendering
-- equations/subscripts/superscripts/chemistry notation
-- diagram-heavy slides
-- Beautiful.ai vs Canva rendering
-- Hyperagent SVG/equation/interactive/QA support
-- NotebookLM source utility
-- Gemini review value
-- online/offline fallback behaviour
+- approved components reusable:
+- new R3 families needed:
+- independent second-review triggers:
+- likely reusable components to create for future chapters:
 
 ## Coverage check
 
-Confirm every meaningful textbook subsection is assigned to a lesson, supplementary material, homework/self-study, or an explicitly justified omission.
+Assign every meaningful subsection to Covered / Supplementary / Homework-self-study / Intentionally omitted with reason.
+
+Canonical architecture: `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
