@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-08
-- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_VISUAL_PACK_BUILT_CANVA_REVIEW_PENDING — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_VISUAL_PACK_PIXEL_QA_FAIL — ASSET_PANEL_REPAIR_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Durable workflow rules
 
@@ -51,40 +51,45 @@ The seven required high-risk visuals are reference-locked:
 6. full internal reflection;
 7. optical fibre.
 
-## High-risk visual pack checkpoint — built, user review pending
+## High-risk visual pack checkpoint
 
 Manifest:
 
 `lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_MANIFEST_2026-09-08.md`
 
-Corrected Canva design ID:
+Metadata/text QA:
+
+`lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_METADATA_QA_2026-09-08.md`
+
+Pixel-level QA:
+
+`lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
+
+Current Canva design ID:
 
 `DAHUl-r85fw`
-
-Canva view URL:
-
-`https://www.canva.com/d/Yl53GftBWQ08y6o`
 
 Page count:
 
 `7`
 
-Canva checks completed:
+Metadata/text checks passed, but pixel-level QA did not.
 
-- exactly seven page records returned;
-- visible text extracted and reviewed for Bangla-first wording;
-- corrected v2 removed remaining mixed-English fragments from the first import.
+### Pixel-level failures
 
-Status:
+- HRV-02 coin: context-image render path unreliable; text/footer crowding observed.
+- HRV-03 fish: realistic/context panel not dependable in local render path.
+- HRV-04 mirage: real-road context panel not dependable in local render path.
+- HRV-07 optical fibre: real-fibre context panel not dependable in local render path.
 
-**USER_REVIEW_PENDING**
+The deterministic science components HRV-01, HRV-05 and HRV-06 remain useful, but the complete review pack is not yet ready for user approval.
 
 ## Current hard block
 
-Do not rebuild the full Lesson 2 deck and do not start Lesson 3 until the High-Risk Visual Pack is approved.
+Do not send the current High-Risk Visual Pack for user approval yet.
+Do not rebuild full Lesson 2 v3.
+Do not start Lesson 3.
 
 ## Next authorized stage
 
-**User reviews Lesson 2 High-Risk Visual Pack.**
-
-If approved, assemble full Lesson 2 v3 using these approved visuals. If rejected, revise only the failed visuals and keep full Lesson 2 blocked.
+**Repair HRV-02, HRV-03, HRV-04 and HRV-07 using transport-safe embedded/local raster assets or Canva-native asset placement, then rerender all seven pages and rerun pixel QA.**
