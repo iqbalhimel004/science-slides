@@ -1,25 +1,24 @@
-# Lesson Plan Template
+# Lesson Plan Template — v2.1
 
 ## Identity
 
 - Chapter:
-- Lesson number:
+- Lesson:
 - Lesson title:
-- Version:
-- Status:
+- Version/status:
 
 ## Duration
 
 - Class period: 60 min
 - CORE target: 40–45 min
 - FLEX target: 5–10 min
-- Planned CORE + FLEX target: 50–55 min
-- Contingency retained: 5–10 min
+- CORE+FLEX target: 50–55 min
+- contingency: 5–10 min
 - STRETCH: appendix/enrichment only
 
 ## Learning outcomes
 
-By the end of the lesson, students should be able to:
+By the end, students should be able to:
 
 1.
 2.
@@ -27,81 +26,103 @@ By the end of the lesson, students should be able to:
 
 ## Prerequisites
 
-- 
+-
+
+## Scientific truth / source notes
+
+For important definitions/laws/formulas/processes record:
+
+- NCTB/textbook wording/location;
+- scientifically precise form;
+- classroom wording;
+- authoritative verification source;
+- freshness class: STABLE / REVISION_SENSITIVE / CURRENT_DATA;
+- last verification date where relevant.
+
+## Risk map
+
+| Concept/visual/activity | R1/R2/R3 | Why | Required contract/component |
+|---|---|---|---|
+| | | | |
+
+## Safety map
+
+For experiments/demos:
+
+- hazard(s):
+- teacher-only/student-permitted action:
+- PPE/setup/disposal if relevant:
+- unsafe variant to avoid:
+- safer/static fallback:
 
 ## Time budget
 
 | Segment | Class | Planned time | Notes |
 |---|---|---:|---|
-| Retrieval / prior knowledge | CORE | | |
+| Retrieval/prior knowledge | CORE | | |
 | Core concept(s) | CORE | | |
-| Visual / diagram / first example | CORE | | |
-| Hinge / understanding check | CORE | | |
-| Essential practice/application | CORE | | |
-| Summary / exit check | CORE | | |
-| Extra example / extra practice | FLEX | | |
+| Visual/demo/example | CORE | | |
+| Understanding check | CORE | | |
+| Practice/application | CORE | | |
+| Summary/exit | CORE | | |
+| Extra example/practice | FLEX | | |
 | Enrichment | STRETCH | | |
 | **CORE total** | | | |
 | **FLEX total** | | | |
-| **CORE + FLEX** | | | |
-
-PASS only if CORE + FLEX normally fits 50–55 minutes and the entire class can remain within 60 minutes.
+| **CORE+FLEX** | | | |
 
 ## Teaching sequence
 
-For each major segment record:
+For each major segment:
 
-- segment type: CORE / FLEX / STRETCH
-- teacher action
-- student action/response
-- questions/prompts
-- expected response
-- board-writing requirement and time if relevant
-- transition
+- segment class;
+- teacher action;
+- student action/response;
+- prompt/expected response;
+- visual/media route;
+- dynamic mode;
+- board/setup/debrief time;
+- accessibility consideration;
+- static/offline fallback;
+- transition.
 
-Avoid long passive teacher-only stretches. Major segments should normally end with a meaningful student response.
+## Quantitative/numerical work
 
-## Important definitions / laws / formulas
+For each example:
 
-For each verified item record:
+Problem -> Given -> Required -> Formula -> Unit/conversion check -> Substitution -> Calculation -> Answer + unit -> Interpretation.
 
-- exact/source-grounded wording or expression
-- simple explanation where useful
-- page/image/source reference
-- OCR/extraction reliability if relevant
-- visually verified against source page?: yes/no
+Independently recompute and check dimensional consistency where applicable.
 
-## Worked examples / numericals
+## Models / schematics
 
-For each:
-
-Problem → Given → Required → Formula → Substitution → Calculation → Answer + unit → Interpretation
+Record any `সরলীকৃত চিত্র`, `স্কেল অনুযায়ী নয়`, idealization or representational limitation that students need to know.
 
 ## Misconceptions / refutation
 
-Where relevant:
+- likely incorrect idea;
+- correct idea;
+- evidence/reasoning/visual used to resolve it.
 
-- common incorrect idea
-- correct idea
-- evidence/reasoning/example used to resolve it
+## Resources / accessibility
 
-## Resources/assets
-
-For each classroom-critical online/animated element include a static/offline fallback.
+- authoritative/existing resource first;
+- source/licensing/freshness;
+- critical meaning not color/audio/motion-only;
+- captions/transcript/summary for important media where needed;
+- static/offline fallback.
 
 ## Assessment spine
 
-- retrieval/prior-knowledge prompt
-- hinge/check-for-understanding
-- guided practice/application
-- exam-style item where appropriate
-- exit question/ticket
-
-## Homework / enrichment
-
-Optional material that does not consume required CORE time unless explicitly planned.
+- retrieval;
+- hinge/check;
+- guided practice/application;
+- exam-style item where appropriate;
+- exit check.
 
 ## Continuity
 
-- What this lesson assumes from previous learning:
-- Bridge to the next lesson:
+- previous learning assumed:
+- bridge to next lesson:
+
+Canonical architecture: `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
