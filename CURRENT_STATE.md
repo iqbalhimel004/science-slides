@@ -8,161 +8,157 @@ Last updated: 2026-09-08
 
 Only this repository is authorized for Science Slides writes.
 
+## Canonical production architecture
+
+**Science Slides Production System v2 is ACTIVE.**
+
+Read first for production architecture:
+
+`SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+
+Durable decision:
+
+`DECISIONS_ADDENDUM_2026-09-07.md` -> `D-043`
+
+Core rule:
+
+**Do not reset valid prior work. Continue from the latest valid checkpoint and rebuild only defective/fragile production layers.**
+
 ## Active chapter
 
 **Class 8 Science — Chapter 11: আলো**
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_ASSET_PANEL_REPAIR_COMMITTED — DIRECT_PIXEL_QA_FAIL — REPAIR_ROUND_2_COMMITTED — USER_VISUAL_REVIEW_FOUND_ADDITIONAL_DEFECTS — REPAIR_ROUND_3_COMMITTED — DIRECT_PIXEL_QA_RERUN_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — PRODUCTION_SYSTEM_V2_ADOPTED — LESSON_2_CONTINUES_WITHOUT_RESET — HIGH_RISK_REFERENCE_LOCK_COMPLETE — REPAIR_ROUND_3_COMMITTED — LATEST_DIRECT_PDF_QA_PAGES_1_TO_6_ACCEPTABLE — HRV_07_REMAINS_UNRESOLVED — CONTROLLED_COMPONENT_MIGRATION_NEXT — FULL_LESSON_2_BLOCKED — LESSON_3_ON_HOLD**
 
-## Lesson 2 v2 disposition
+## Lesson 1
 
-Lesson 2 v2 remains:
+Disposition:
 
-**FAILED_USER_VISUAL_REVIEW — DO NOT USE FOR CLASSROOM — REBUILD REQUIRED AFTER HIGH-RISK VISUAL APPROVAL**
+**COMPLETED / USER-APPROVED BASELINE — PRESERVE**
 
-Any older wording that calls Lesson 2 v2 `INTERNAL_QA_PASS` is superseded.
+Production System v2 adoption does not trigger a Lesson 1 rebuild.
 
-## Active safeguards
+Only make targeted future changes if later classroom/compatibility evidence requires them.
 
-- `ACCURACY_ENFORCEMENT.md`
-- `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
-- `QUALITY_GATES.md`
-- `CLASSROOM_LANGUAGE_POLICY.md`
-- `VISUAL_ASSET_ROUTING.md`
-- `PHYSICAL_VISUAL_REALISM_POLICY.md`
-- `tools/student_text_lint.py`
-- `chapters/class-8/science/chapter-11-light/TERMINOLOGY_LOCK.md`
-- `chapters/class-8/science/chapter-11-light/DIAGRAM_CONTRACTS.md`
-- `DECISIONS_ADDENDUM_2026-09-07.md` D-040, D-041, D-042
+## Lesson 2 — no-reset migration
 
-## Completed checkpoint — reference lock
+Lesson 2 is not restarted.
 
-Canonical Lesson 2 lock:
+Retain and reuse all still-valid work:
 
-`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_REFERENCE_LOCK_2026-09-08.md`
+- chapter/lesson analysis;
+- source verification/reconciliation;
+- frozen storyboard;
+- terminology lock;
+- `DIAGRAM_CONTRACTS.md`;
+- high-risk reference lock;
+- verified Bangla-first wording;
+- accepted/recognizable physical/context assets;
+- corrected HRV-04 mirage context;
+- corrected HRV-05 critical-angle concept/terminology;
+- corrected HRV-06 TIR concept/terminology;
+- QA/failure records as regression evidence.
 
-All seven high-risk concepts have explicit reference/topology locks:
+Historical Lesson 2 v1/v2 artifacts that failed review remain regression evidence and must not be used as classroom-ready outputs.
 
-1. apparent position / apparent depth;
-2. coin visibility after water is added;
-3. fish apparent depth;
-4. road mirage / temperature-gradient refraction;
-5. critical angle;
-6. full internal reflection;
-7. optical fibre.
+## High-risk visual history
 
-## High-risk visual pack
-
-Current corrected Canva design ID:
+Current Canva design ID:
 
 `DAHUl-r85fw`
 
-Page count:
-
-`7`
-
-Directly inspected user export:
-
-`Lesson 2 High-Risk Visual Pack — Reference Locked v2_20260908_172119_0000.pdf`
-
-## Direct pixel QA result before later repair rounds
-
-The user-supplied seven-page PDF was rendered at 200 DPI and every page was visually inspected.
-
-Result:
-
-**DIRECT_PIXEL_QA_FAIL**
-
-Initial mandatory defects included:
-
-- HRV-03 — underwater context photo did not show a clearly recognizable focal fish at classroom viewing scale;
-- HRV-06 — `বাইরে প্রতিসরিত রশ্মি নেই` was materially overlapped/obscured by the two-condition box;
-- HRV-07 — core label had insufficient contrast against the light-cyan core.
-
-Canonical pixel-QA record:
-
-`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
-
-## Repair Round 2 — committed
-
-Canva transaction:
+Repair Round 2 committed:
 
 `433986704618412418`
 
-Status:
-
-`committed`
-
-Committed changes:
-
-- HRV-03: replaced the generic underwater context image with a transport-safe raster Pexels image containing a clearly recognizable underwater fish;
-- HRV-06: replaced the earlier TIR diagram with an overlap-reduced version;
-- HRV-07: replaced the earlier fibre diagram with a higher-contrast version.
-
-## User visual review after Repair Round 2
-
-The user identified additional material defects from direct Canva screenshots:
-
-- HRV-05 and HRV-06 angle arcs were drawn incorrectly; the incidence angle must be measured from the normal;
-- terminology should use `হালকা মাধ্যম` instead of `বিরল মাধ্যম` in the student-facing copy;
-- HRV-04 context photo did not actually show a visible mirage and its over-photo label was clipped;
-- HRV-07 optical-fibre diagram remained scientifically/visually confusing, with poor label organization and reflection geometry.
-
-These observations override any earlier assumption that those specific pages were ready.
-
-## Repair Round 3 — committed
-
-Canva transaction:
+Repair Round 3 committed:
 
 `2132969665247235516`
 
-Status:
+Repair Round 3 included:
 
-`committed`
+- HRV-04: visible road-mirage context + clipped over-photo label removed;
+- HRV-05: critical-angle diagram corrected so `i = C` is measured from the normal and `r = 90°` lies along the interface; student-facing terminology uses `হালকা মাধ্যম`;
+- HRV-06: TIR diagram corrected so `i > C` is measured from the normal and no transmitted ray is shown; student-facing terminology uses `হালকা মাধ্যম`;
+- HRV-07: optical-fibre diagram revised, but later direct export still exposed a remaining readability/overlap defect.
 
-Committed changes:
+## Latest directly inspected user export
 
-- HRV-04: replaced the plain hot-road image with an AI-generated realistic road-mirage context image showing a water-like distant shimmer/reflection; removed the clipped over-photo label; visible caption now explicitly identifies the scene as AI-generated explanatory imagery;
-- HRV-05: replaced the deterministic critical-angle diagram with a corrected version where the `i = C` angle is measured from the normal and `r = 90°` is shown along the interface;
-- HRV-05 student-facing medium terminology changed from `বিরল মাধ্যম` to `হালকা মাধ্যম`;
-- HRV-06: replaced the deterministic TIR diagram with a corrected version where `i > C` is measured from the normal and no transmitted ray is shown;
-- HRV-06 student-facing medium terminology changed from `বিরল মাধ্যম` to `হালকা মাধ্যম`;
-- HRV-07: replaced the optical-fibre diagram with a cleaner version where core and cladding are separated and the ray reflects repeatedly at the core–cladding boundary; title/explanatory wording simplified to reduce clutter.
+`Lesson 2 High-Risk Visual Pack — Reference Locked v2_20260908_182041_0000.pdf`
 
-New Canva asset IDs:
+This seven-page PDF was directly inspected after Repair Round 3.
 
-- HRV-04 road-mirage context: `MAHUnII28Do`;
-- HRV-05 corrected critical-angle diagram: `MAHUnP8tAW4`;
-- HRV-06 corrected TIR diagram: `MAHUnOTSNts`;
-- HRV-07 corrected optical-fibre diagram: `MAHUnLWxwE0`.
+Latest direct-pixel disposition:
 
-## Current block
+- HRV-01: materially acceptable;
+- HRV-02: materially acceptable;
+- HRV-03: materially acceptable and fish recognizable;
+- HRV-04: materially acceptable; mirage is visibly communicated and clipped photo label is gone;
+- HRV-05: materially acceptable; `i = C` is measured from the normal, `r = 90°` is readable, `হালকা মাধ্যম` is used;
+- HRV-06: materially acceptable; `i > C` is measured from the normal, no outside refracted ray is shown, `হালকা মাধ্যম` is used;
+- HRV-07: **FAIL / UNRESOLVED** because lower explanatory text remained overlapped/crowded in the rendered page.
 
-Do not assemble full Lesson 2 v3.
-Do not start Lesson 3.
-Do not call the High-Risk Visual Pack approved yet.
+A cleaner HRV-07 v5 raster replacement was prepared in a Canva draft during the same chat, but it was **not established as a committed/final direct-pixel-QA PASS before Production System v2 was adopted**. Do not assume that draft is the current saved truth.
 
-## Next authorized action
+## Production System v2 migration classification for Lesson 2 high-risk pack
 
-**Export the latest seven-page Canva visual pack again and rerun direct pixel-level QA on all seven rendered pages.**
+- HRV-01: `REUSE_AS_REFERENCE` / port only if needed during controlled full-deck build;
+- HRV-02: `REUSE_AS_REFERENCE` / retain physical coin assets;
+- HRV-03: `REUSE_AS_REFERENCE` / retain recognizable fish asset and verified apparent-depth topology;
+- HRV-04: `REUSE_AS_REFERENCE` / retain corrected mirage context and deterministic mechanism concept;
+- HRV-05: `PORT_TO_CONTROLLED_COMPONENT` using corrected critical-angle geometry as reference;
+- HRV-06: `PORT_TO_CONTROLLED_COMPONENT` using corrected TIR geometry as reference;
+- HRV-07: `REBUILD/PORT_TO_CONTROLLED_COMPONENT` first; stop raster micro-patching.
 
-The rerun must verify:
+Why HRV-05/06 are marked for controlled component port even though the latest render is acceptable: they are R3 visuals and should become reusable deterministic golden components for the full Lesson 2 build and future optics lessons.
 
-- exact page count = 7;
-- HRV-03 fish remains clearly recognizable;
-- HRV-04 visibly communicates mirage and has no clipped/overlapping label;
-- HRV-05 angle arc is clearly between the incident ray and normal, with `i = C` and `r = 90°` readable;
-- HRV-06 angle arc is clearly between the incident ray and normal, with `i > C` readable and no outside refracted ray;
-- HRV-07 ray visibly reflects at the core–cladding boundary and all labels are readable;
-- `হালকা মাধ্যম` terminology is used consistently where required;
-- no regression on HRV-01/02/03;
-- no blank/broken/missing image region;
-- projector readability;
-- science topology remains compliant with `DIAGRAM_CONTRACTS.md` and the reference lock.
+## Immediate next authorized action
 
-Only after this direct QA passes may the pack be shown to the user for final visual/science approval and the full Lesson 2 v3 rebuild gate be considered.
+**Do not restart Lesson 2 research or rebuild all seven Canva pages.**
+
+Next sequence under Production System v2:
+
+1. recover the latest Lesson 2 specs/locks/source files;
+2. create controlled reusable optics components for the remaining R3 production needs, prioritizing HRV-07 optical fibre and then porting HRV-05/06 geometry into source-controlled components;
+3. preserve HRV-01..04 as validated references/assets unless fresh evidence shows a regression;
+4. assemble a controlled high-risk validation pack with PptxGenJS + editable/native labels + deterministic SVG/vector science layers;
+5. run automated structural/text/layout QA;
+6. run semantic science assertions;
+7. render PNGs and inspect every R3 page individually;
+8. internally repair/rebuild until PASS, using the v2 repair circuit breaker;
+9. show the internally-passed high-risk pack once for user acceptance;
+10. then assemble the full Lesson 2 controlled PPTX using all already-validated content/assets;
+11. run full lesson PowerPoint/export/PDF/offline QA;
+12. checkpoint before starting Lesson 3.
+
+## Current hard block
+
+Do not call Lesson 2 classroom-ready yet.
+Do not start Lesson 3 yet.
+Do not return to repeated Canva raster micro-patching as the primary science-production route.
+
+## Active safeguards
+
+- `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+- `NEW_CHAT_START.md`
+- `OPERATING_BRIEF.md`
+- `ACCURACY_ENFORCEMENT.md`
+- `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+- `QUALITY_GATES.md`
+- `RENDERER_ROUTING.md`
+- `VISUAL_ASSET_ROUTING.md`
+- `CLASSROOM_LANGUAGE_POLICY.md`
+- `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+- `ARTIFACT_PERSISTENCE.md`
+- `chapters/class-8/science/chapter-11-light/TERMINOLOGY_LOCK.md`
+- `chapters/class-8/science/chapter-11-light/DIAGRAM_CONTRACTS.md`
+- `DECISIONS_ADDENDUM_2026-09-07.md` D-040 through D-043
+
+## Universal stage rule
+
+**Finish -> record -> then continue.**
 
 ## Frozen timing
 
