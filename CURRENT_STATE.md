@@ -14,7 +14,7 @@ Only this repository is authorized for Science Slides writes.
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_VISUAL_PACK_PIXEL_QA_FAIL — ASSET_PANEL_REPAIR_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_ASSET_PANEL_REPAIR_COMMITTED — POST_REPAIR_PIXEL_QA_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Lesson 2 v2 disposition
 
@@ -53,7 +53,7 @@ All seven high-risk concepts have explicit reference/topology locks:
 6. full internal reflection;
 7. optical fibre.
 
-## Visual pack status
+## High-risk visual pack
 
 Manifest:
 
@@ -63,9 +63,13 @@ Metadata/text QA:
 
 `chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_METADATA_QA_2026-09-08.md`
 
-Pixel-level QA:
+Previous pixel-level QA:
 
 `chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
+
+Asset-repair checkpoint:
+
+`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_ASSET_REPAIR_2026-09-08.md`
 
 Current corrected Canva design ID:
 
@@ -75,38 +79,50 @@ Page count:
 
 `7`
 
-Metadata/text checks:
+## Asset panel repair checkpoint — committed
 
-- exactly seven Canva page records exist;
-- visible text is Bangla-first;
-- no standalone `TIR` remains.
+The previous four material asset-panel defects were repaired in Canva and committed in transaction:
 
-Pixel-level disposition:
+`8433505536310832264`
 
-**FAIL — USER REVIEW DEFERRED**
+Repairs:
 
-Material defects found in the source render path:
+- HRV-02 coin: the two existing raster coin demonstration images were rebound, alt text added, and the crowded caption moved upward;
+- HRV-03 fish: a transport-safe raster real-fish context image was inserted on the physical/context side; deterministic science geometry preserved separately;
+- HRV-04 mirage: a transport-safe raster hot-road context image was inserted; the visible wording now identifies it as a hot-road context rather than falsely claiming the photo itself is a verified mirage image; deterministic mirage mechanism diagram preserved separately;
+- HRV-07 optical fibre: a transport-safe raster fibre/cable context image was inserted; deterministic repeated-internal-reflection diagram preserved separately.
 
-- HRV-02 coin: physical/context images did not render reliably; footer/text crowding also observed;
-- HRV-03 fish: realistic/context panel not dependable in the local render path;
-- HRV-04 mirage: real-road context panel not dependable in the local render path;
-- HRV-07 optical fibre: real-fibre context panel not dependable in the local render path.
+Post-commit Canva metadata confirms the design still has exactly seven pages and the design was updated successfully.
 
-The pure deterministic geometry pages HRV-01, HRV-05 and HRV-06 remain usable as science-reference components, but the seven-page pack cannot be approved until the affected asset panels are repaired and rerendered.
+## Current QA disposition
+
+**ASSET PANEL REPAIR COMMITTED — POST-REPAIR PIXEL QA PENDING**
+
+The pack is still not approved and must not yet be presented as classroom-ready.
 
 ## Important block
 
-Do not send the current pack for user approval yet.
 Do not assemble full Lesson 2 v3.
 Do not start Lesson 3.
+Do not call the High-Risk Visual Pack approved until post-repair pixel QA passes.
 
-## Visual construction rule for repair
+## Next authorized action
 
-- repair affected physical/context panels using transport-safe embedded/local raster assets or Canva-native asset placement;
-- realistic object/context layer must remain separate from science-critical geometry;
-- science-critical layer remains deterministic PptxGenJS/SVG;
-- rerender all seven pages after repair;
-- no blank, broken-image, clipped-label or unreadable object panel may remain.
+**Rerender/inspect all seven high-risk pages at usable resolution and rerun pixel-level QA.**
+
+Required checks include:
+
+- exactly seven rendered pages;
+- no blank/missing page;
+- no broken/disappearing context asset;
+- recognizable coin/fish/hot-road/fibre physical visuals;
+- no clipping/crowding;
+- readable Bangla-first labels;
+- projector readability;
+- science topology against `DIAGRAM_CONTRACTS.md` and the reference lock;
+- expected HRV ID ↔ page mapping.
+
+Only after this QA passes may the pack be shown to the user for visual/science approval.
 
 ## Frozen timing
 
@@ -116,9 +132,3 @@ Do not start Lesson 3.
 | L2 | 44 | 8 | 52 | 8 |
 | L3 | 42 | 8 | 50 | 10 |
 | L4 | 42 | 8 | 50 | 10 |
-
-## Next authorized action
-
-**Repair HRV-02, HRV-03, HRV-04 and HRV-07 asset panels; rerender all seven high-risk pages; rerun pixel QA.**
-
-Only after that passes may the pack be shown to the user for visual approval.
