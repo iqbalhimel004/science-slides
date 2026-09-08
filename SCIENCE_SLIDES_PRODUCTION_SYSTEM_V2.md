@@ -1,309 +1,338 @@
 # Science Slides Production System v2
 
-Version: 2.0
+Version: 2.1
 Date adopted: 2026-09-08
-Status: **ACTIVE — CANONICAL PRODUCTION ARCHITECTURE**
+Last audited: 2026-09-08
+Status: **ACTIVE — CANONICAL PRODUCTION ARCHITECTURE — AUDIT-HARDENED**
 
-## 0. Purpose
+## 0. Purpose and precedence
 
-This document is the canonical production architecture for Science Slides after the Chapter 11 Lesson 2 visual-production failure analysis.
+This is the canonical production architecture for Science Slides. It was created after the Chapter 11 Lesson 2 visual-production failure analysis and hardened after a repository-wide plan audit.
 
-It exists to achieve all of the following at the same time:
+Goals, in order of importance:
 
 1. maximum practical scientific accuracy;
-2. NCTB/class/exam appropriateness;
-3. projector-readable and visually engaging slides;
-4. support for photos, diagrams, animations, videos, simulations and interactives across different science domains;
-5. deterministic control of science-critical geometry and notation;
-6. reasonable production time;
-7. reproducibility in GitHub;
-8. minimal user involvement in internal debugging;
-9. reliable continuation across new chats without depending on chat history.
+2. NCTB/class/exam appropriateness without treating NCTB as automatic scientific authority;
+3. pedagogical clarity and realistic 60-minute timing;
+4. projector readability, accessibility and visual engagement;
+5. correct routing of photos, diagrams, equations, animations, videos, simulations and interactives;
+6. deterministic control of science-critical geometry/topology/notation;
+7. reasonable production time through reuse, risk-based QA and selective revalidation;
+8. reproducibility and durable recovery from GitHub;
+9. minimal user involvement in internal debugging.
 
-This file refines, but does not discard, the existing policies in `OPERATING_BRIEF.md`, `QUALITY_GATES.md`, `RENDERER_ROUTING.md`, `VISUAL_ASSET_ROUTING.md`, `REFERENCE_LOCKED_VISUAL_PIPELINE.md`, `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`, `ARTIFACT_PERSISTENCE.md` and `WORKFLOW.md`.
-
-If older workflow wording conflicts with this file on production architecture, risk routing, repair strategy, or continuation behavior, this file has precedence unless a later dated durable decision explicitly supersedes it.
+If older repository wording conflicts with this file on production architecture, risk routing, repair strategy, current first-pilot status, or user-review order, this file wins unless a later dated durable decision explicitly supersedes it.
 
 ---
 
-# 1. Failure analysis that triggered v2
+## 1. Failure analysis that triggered v2
 
-The Lesson 2 high-risk visual pack revealed that the project had good policy intentions but execution drifted into a slow Canva patch loop.
-
-Observed failure classes included:
+Lesson 2 exposed these recurring failure classes:
 
 - science-critical diagrams repeatedly edited as raster/composite assets;
-- wrong angle construction despite previous geometry checks;
-- student-facing terminology drift (`বিরল মাধ্যম` vs chapter-preferred `হালকা মাধ্যম`);
-- a road photo that did not actually communicate mirage;
-- clipped or overlapping labels visible only after export;
-- optical-fibre labels and ray geometry becoming visually confusing;
-- physical/context image recognizability failure;
-- user review discovering defects that should have been caught internally;
+- wrong angle construction despite earlier presence-oriented checks;
+- terminology drift;
+- realistic images that did not actually communicate the claimed phenomenon;
+- clipping/overlap visible only after export;
+- optical-fibre labels/geometry becoming confusing;
+- physical/context imagery not recognizable at classroom scale;
+- user review finding defects that should have been caught internally;
 - repeated edit -> approval -> export -> repair loops consuming unreasonable time;
-- final rendered pixels behaving differently from editor/metadata expectations.
+- final rendered pixels differing from editor/metadata expectations.
 
-The lesson is not that Canva is unusable. The lesson is that **science-critical production must not depend on manual patching inside a design editor as the primary control system**.
+Core lesson:
 
----
-
-# 2. Canonical architecture
-
-The permanent production chain is:
-
-**Scientific Truth Layer -> Structured Lesson Specification -> Risk Classification -> Visual Router -> Specialized Asset/Diagram Route -> Controlled PptxGenJS Assembly -> Automated QA -> Semantic Science QA -> Direct Pixel QA -> PowerPoint/Export QA -> User Acceptance -> Durable GitHub Checkpoint**
-
-Important principle:
-
-> One common production system, multiple specialized visual engines.
-
-PptxGenJS is the controlled assembly/orchestration layer. It is **not** required to create every scientific image, animation or simulation itself.
+**Science-critical production must be source-controlled and testable. A design editor may assist, but it must not become the scientific control system.**
 
 ---
 
-# 3. No-reset migration rule — previous work is preserved
+## 2. Permanent production chain
 
-Adopting v2 does **not** cancel completed or partially completed work.
+**Scientific Truth Layer -> Structured Lesson Specification -> Risk Classification -> Visual/Media Router -> Specialized Asset or Component Route -> Controlled PptxGenJS Assembly -> Automated QA -> Semantic Science QA -> Direct Pixel QA -> Compatibility/Export/Offline QA -> Internal PASS -> User Acceptance -> Durable GitHub Checkpoint**
 
-Mandatory migration behavior:
+One production framework is used across science, but different scientific needs may use different specialized engines.
 
-- Lesson 1 remains completed/approved baseline work unless later classroom evidence requires a targeted change.
-- Lesson 2 content analysis, source reconciliation, storyboard, terminology lock, diagram contracts, reference locks, visual research, corrected assets and QA findings remain valid project assets where still scientifically correct.
-- Do not restart Lesson 2 from zero.
-- Continue from the latest canonical checkpoint.
-- Reuse verified content, verified sources, approved wording, accepted visuals and proven components.
-- Rebuild only the rendering/component layer that is defective, fragile, unreproducible or incompatible with v2.
-- Historical failed Canva/PPTX artifacts remain regression evidence; do not treat them as current classroom-ready artifacts.
+PptxGenJS is the primary controlled assembly/orchestration layer, not the only possible visual generator.
 
-For an in-progress lesson, migration sequence is:
+---
+
+## 3. No-reset migration rule
+
+Adopting or improving the workflow does **not** cancel valid completed work.
+
+For any in-progress lesson:
 
 1. recover current canonical state;
-2. classify existing outputs as `REUSE_AS_IS`, `REUSE_AS_REFERENCE`, `PORT_TO_CONTROLLED_COMPONENT`, `REPAIR`, or `RETIRE`;
-3. continue from the nearest valid checkpoint;
-4. never repeat already-completed research/verification merely because the renderer changes.
+2. preserve verified analysis, sources, wording, storyboard, terminology, approved assets and accepted science;
+3. classify existing production outputs as:
+   - `REUSE_AS_IS`
+   - `REUSE_AS_REFERENCE`
+   - `PORT_TO_CONTROLLED_COMPONENT`
+   - `REPAIR`
+   - `RETIRE`;
+4. rebuild only defective, fragile, unreproducible or incompatible layers;
+5. continue from the nearest valid checkpoint.
+
+Historical failed artifacts remain regression evidence, not classroom-ready authority.
+
+Current Chapter 11 rule:
+
+- Lesson 1 remains completed/user-approved baseline work;
+- Lesson 2 continues from its current high-risk-visual checkpoint;
+- Lesson 3+ use this system from the start.
 
 ---
 
-# 4. Scientific Truth Layer
+## 4. Scientific Truth Layer
 
 Before production, establish what is scientifically and pedagogically allowed to appear.
 
-For each chapter/lesson preserve:
+Preserve as applicable:
 
 - NCTB scope and exam context;
 - learning outcomes;
 - definitions/laws/principles;
 - formulas, symbols, units and sign conventions;
 - terminology lock;
-- common misconceptions;
+- misconceptions;
 - textbook ambiguity/error register;
 - verified current-science interpretation;
 - source hierarchy;
 - prerequisite relationships;
-- age/class-level depth limits.
+- age/class-level depth limits;
+- safety constraints for experiments/demonstrations;
+- model/idealization limits;
+- freshness requirements for changeable claims/data.
 
-NCTB controls curriculum/scope/exam context, not automatic scientific truth.
-
-When NCTB wording and precise current science differ, record separately:
+When NCTB wording and precise science differ, explicitly separate:
 
 `TEXTBOOK/EXAM WORDING -> SCIENTIFICALLY PRECISE FORM -> CLASSROOM WORDING`
 
-No visual tool may silently reinterpret this layer.
+No renderer or image generator may silently reinterpret this layer.
 
 ---
 
-# 5. Structured Lesson Specification
+## 5. Source freshness classification
 
-Every production lesson should have a machine-readable or consistently structured specification before final build.
+Every material source-dependent claim should be treated as one of:
+
+- `STABLE` — basic laws/definitions unlikely to change;
+- `REVISION_SENSITIVE` — taxonomy, nomenclature, standards, technology, health/environment guidance or other content that can be revised;
+- `CURRENT_DATA` — statistics, current measurements, contemporary environmental/astronomical/technology data.
+
+Rules:
+
+- `STABLE`: verify with authoritative source; no artificial recurring recheck is required.
+- `REVISION_SENSITIVE`: record source date/edition and verify against a current authoritative source before content freeze.
+- `CURRENT_DATA`: record value date + source date + last verification date; recheck at production time if classroom wording depends on the current value.
+
+A source being recent does not automatically make its science correct; freshness and authority are separate checks.
+
+---
+
+## 6. Structured Lesson Specification — source of truth for build
+
+Every production lesson must have a structured specification before final build. A Markdown table, YAML/JSON, or equivalent consistent schema is acceptable if it is machine-readable enough for production.
 
 Minimum fields per slide/state:
 
-- `slide_id`;
-- `segment` = CORE/FLEX/STRETCH;
-- `learning_goal`;
-- `student_copy`;
-- `teacher_note`;
-- `concept_type`;
-- `science_risk` = R1/R2/R3;
-- `visual_route`;
-- `required_invariants`;
-- `source_refs`;
-- `dynamic_mode`;
-- `offline_fallback`;
-- `estimated_time`;
-- `qa_status`.
+- `slide_id`
+- `segment` = CORE/FLEX/STRETCH
+- `learning_goal`
+- `student_copy`
+- `teacher_note`
+- `concept_type`
+- `science_risk` = R1/R2/R3
+- `visual_route`
+- `required_invariants`
+- `source_refs`
+- `source_freshness`
+- `dynamic_mode`
+- `offline_fallback`
+- `safety_status` where relevant
+- `accessibility_notes` where relevant
+- `model_or_scale_note` where relevant
+- `estimated_time`
+- `qa_status`
 
-The renderer may format this specification but must not invent new core science.
+The renderer may format the specification. It must not invent new core science.
 
 ---
 
-# 6. Science-risk classification
+## 7. Science-risk classification
 
-## R1 — Low risk
+### R1 — Low risk
 
-Visual errors are unlikely to teach incorrect science.
+Errors are unlikely to teach incorrect science.
 
-Examples:
+Examples: title/background, decorative context image, low-risk icon, recap styling.
 
-- title/background;
-- decorative context image;
-- low-risk icon;
-- recap styling;
-- non-scientific callout.
+QA: normal source/text/layout/render checks.
 
-Allowed: broader Canva/AI/design freedom, subject to normal QA.
+### R2 — Medium risk
 
-## R2 — Medium risk
+Interpretation matters, but exact geometry/topology is not the primary scientific claim.
 
-Visual interpretation matters, but exact geometry/topology is not the primary scientific claim.
+Examples: apparatus photograph, organism/object photograph, qualitative process flow, contextual real-world example.
 
-Examples:
+QA: source/provenance + recognizability + controlled labels + render inspection.
 
-- apparatus photograph;
-- organism/object photograph;
-- qualitative process flow;
-- contextual real-world example;
-- comparison image.
+### R3 — High risk
 
-Required: verified reference/provenance, controlled labels, recognizability check.
-
-## R3 — High risk
-
-Visual geometry, topology, scale, position, sequence, notation or structure carries scientific meaning.
+Geometry, topology, scale, position, sequence, notation or structure carries scientific meaning.
 
 Examples:
 
-- optics ray diagrams;
-- angle constructions;
-- force/vector diagrams;
+- optics ray/angle diagrams;
+- forces/vectors;
 - circuits;
 - graphs/scales;
 - anatomy with position-sensitive labels;
 - chromosome/cell-stage relationships;
-- chemical structural formulae;
+- chemical structures;
 - molecular geometry when material;
 - orbital/phase geometry;
-- experimental geometry;
-- quantitative diagrams.
+- experiment geometry;
+- quantitative models.
 
 R3 hard rule:
 
-**Unconstrained generative AI must not be the science authority.**
+**Unconstrained generative AI must not be the scientific authority.**
 
 ---
 
-# 7. Adaptive Visual Router
+## 8. Adaptive visual/media router
 
-Choose the representation based on the scientific need, not on the convenience of one tool.
+Choose representation by scientific need, not by whichever tool is already open.
 
 | Need | Primary route |
 |---|---|
-| Optics rays / angles / normals | deterministic SVG/code/vector |
-| Mechanics force/vector diagrams | deterministic vector component |
-| Circuit topology | topology-driven deterministic component |
-| Graphs / axes / scales | programmatic chart/graph |
-| Formula / equation | verified native text or LaTeX/Math -> SVG |
-| Chemical equation | structured equation renderer |
-| Chemical structure / bonding | verified chemistry structure renderer/reference + controlled labels |
-| Real organism / plant / apparatus / object | authoritative/real licensed photo first |
-| Anatomy | authoritative scientific illustration + controlled editable overlay |
-| Cell/tissue | microscopy/reference visual or controlled scientific illustration |
-| Earth/geology layers | authoritative diagram/data + controlled labels |
-| Astronomy | NASA/ESA/authoritative imagery + deterministic overlay |
-| Maps | verified geographic data/map source + controlled annotation |
-| Abstract process | deterministic schematic/flow |
-| Continuous motion | staged reveal, animation or video depending on need |
-| Parameter exploration | simulation/interactive |
-| Demonstration phenomenon | real demo/video/photo + static fallback |
+| optics rays/angles/normals | deterministic SVG/code/vector |
+| mechanics force/vector | deterministic vector component |
+| circuit topology | topology-driven deterministic component |
+| graphs/axes/scales | programmatic graph/chart |
+| formula/equation | verified native text or LaTeX/Math -> SVG |
+| chemical equation | structured equation renderer |
+| chemical structure/bonding | verified chemistry renderer/reference + controlled labels |
+| real organism/plant/apparatus/object | authoritative/real licensed photo first |
+| anatomy | authoritative scientific illustration + editable controlled overlay |
+| cell/tissue | microscopy/reference visual or controlled scientific illustration |
+| earth/geology | authoritative diagram/data + controlled labels |
+| astronomy | authoritative agency imagery/data + deterministic overlay |
+| maps | verified geographic data/map + controlled annotation |
+| abstract process | deterministic schematic/flow |
+| continuous motion | staged states, animation or video depending on objective |
+| parameter exploration | simulation/interactive |
+| demonstration phenomenon | real demo/video/photo + static fallback |
 
-Decision tree:
+Decision order:
 
-1. Does geometry/topology/scale carry scientific meaning? -> deterministic route.
-2. Otherwise, is real appearance important? -> authoritative/real visual first.
-3. Is the concept time-dependent? -> staged reveal/animation/video.
+1. Does geometry/topology/scale/notation carry meaning? -> deterministic/structured route.
+2. Otherwise, is real appearance scientifically useful? -> authoritative real/educational visual first.
+3. Is continuous change essential to understanding? -> animation/video.
 4. Must students manipulate parameters? -> simulation/interactive.
 5. Otherwise -> controlled illustration/schematic.
 
 ---
 
-# 8. Domain-specific accuracy contracts
+## 9. Domain-specific accuracy contracts
 
-## Physics
+### Physics
 
-Verify as applicable:
+Check as applicable: direction, normal/reference axis, angle endpoints, sign convention, vector direction/magnitude, force application point, circuit connectivity, ray topology, graph axes/units/scales, boundary conditions, object/image orientation.
 
-- direction;
-- normal/reference axis;
-- angle definition and angle endpoints;
-- sign convention;
-- vector magnitude/direction where meaningful;
-- force application point;
-- circuit connectivity;
-- ray topology;
-- graph axes/units/scales;
-- boundary conditions;
-- object/image orientation.
+### Chemistry
 
-## Chemistry
+Check: formula/subscript/superscript, charge, valency/oxidation state where relevant, balancing, state/conditions, bond connectivity, model limits, apparatus arrangement, no impossible AI-invented structure.
 
-Verify as applicable:
+### Biology
 
-- formula/subscript/superscript;
-- ionic charge;
-- valency/oxidation state where relevant;
-- balanced equation;
-- physical state/condition where relevant;
-- bond connectivity;
-- molecular representation limits;
-- apparatus arrangement;
-- no AI-invented impossible structure.
+Check: anatomical orientation, relative structure position, process direction, structure-function relationship, stage/chromosome sequence, scale, microscopy-vs-illustration distinction, labels, no decorative anatomy treated as authority.
 
-## Biology
+### Earth/Environmental Science
 
-Verify as applicable:
+Check: direction/orientation, map legend, scale, layer order, temporal/geological sequence, units, data date/source, causal wording, and `not to scale` where applicable.
 
-- anatomical orientation;
-- relative structure position;
-- process direction;
-- structure-function relation;
-- cell-stage/chromosome sequence;
-- scale distinction;
-- microscopy vs illustration distinction;
-- label placement;
-- no decorative anatomy treated as authoritative anatomy.
+### Astronomy
 
-## Earth / Environmental Science
-
-Verify as applicable:
-
-- direction/orientation;
-- legend;
-- scale;
-- layer order;
-- geological/temporal sequence;
-- units;
-- data date/source;
-- causal wording;
-- `not to scale` marking where needed.
-
-## Astronomy
-
-Verify as applicable:
-
-- relative position;
-- phase/orbit geometry;
-- direction where relevant;
-- scale disclaimer;
-- image provenance;
-- false size/distance implications avoided.
+Check: relative position, phase/orbit geometry, direction, scale disclaimer, image/data provenance, and avoidance of false size/distance implications.
 
 ---
 
-# 9. Scientific Component Library
+## 10. Quantitative and numerical integrity gate
 
-Reusable, tested components should gradually be built and stored in GitHub.
+For calculations, graphs, equations and quantitative claims:
 
-Recommended structure:
+- verify formula/law selection;
+- verify units and conversions;
+- run dimensional-consistency checks where applicable;
+- independently recompute worked numerical answers;
+- verify sign/rounding/precision appropriate to the syllabus and given data;
+- verify graph axes, units, scale, plotted points/trend and intercept interpretation;
+- preserve the exact source expression where renderer-sensitive.
+
+A visually correct equation with a wrong value/unit fails science QA.
+
+---
+
+## 11. Experiment/demo safety gate
+
+Any classroom experiment, demonstration or suggested student activity that involves heat, flame, chemicals, electricity, glass, pressure, biological material, sharp objects, lasers/bright sources, moving equipment or other plausible hazards must have an explicit safety review before it enters CORE/FLEX.
+
+Record where relevant:
+
+- hazard(s);
+- teacher-only vs student-permitted action;
+- PPE/equipment requirement;
+- safe setup/disposal;
+- prohibited unsafe variant;
+- safer substitute/static fallback;
+- whether the classroom profile supports the activity.
+
+If safety cannot be established, do not recommend the live activity; use a safe demonstration resource/static explanation instead.
+
+---
+
+## 12. Model, idealization and scale transparency
+
+Scientific visuals frequently simplify reality. Whenever a simplification could materially mislead students, explicitly mark or explain it.
+
+Examples:
+
+- `সরলীকৃত চিত্র`;
+- `স্কেল অনুযায়ী নয়`;
+- ideal ray model;
+- particle model;
+- schematic anatomy;
+- exaggerated layer thickness;
+- symbolic circuit layout.
+
+A model may simplify complexity, but it must not imply a materially false relationship.
+
+---
+
+## 13. Accessibility and multimodal clarity
+
+Final teaching meaning must not depend only on color, motion or audio.
+
+Check as applicable:
+
+- high contrast at projector scale;
+- color is not the sole carrier of a critical distinction;
+- line style/shape/text labels support color-coded meanings;
+- essential labels are readable without zooming;
+- videos have usable captions or teacher-readable transcript/summary when language/audio matters;
+- essential animation meaning also exists in a static/final state;
+- alt text is recorded for reusable digital image assets where practical;
+- avoid flashing or unnecessarily distracting motion.
+
+Accessibility is part of classroom usability, not optional polish.
+
+---
+
+## 14. Scientific component library and golden masters
+
+Reusable tested components should live under a shared library such as:
 
 ```text
 components/
@@ -318,183 +347,174 @@ components/
   common/
 ```
 
-Each reusable R3 component should preserve:
+Each R3 component should preserve:
 
 - source/build code;
-- input parameters;
-- invariants/tests;
-- a rendered golden example;
+- parameters;
+- semantic invariants/tests;
+- rendered golden reference;
 - usage notes;
-- approved terminology where applicable.
+- source basis;
+- terminology assumptions;
+- version/change record.
 
-Once a component is approved, future lessons should reuse it instead of redrawing from scratch.
+### Golden-master regression rule
+
+When a previously approved R3 component changes, rerender it and compare against the last approved golden reference. Any material geometry, label, crop or readability change requires targeted re-QA before reuse.
+
+Do not rebuild approved components from scratch unless requirements changed.
 
 ---
 
-# 10. Image policy
+## 15. New R3 component independent-review trigger
 
-Priority:
+A targeted independent second review is required before a **new R3 component family** becomes a reusable golden master, and may also be triggered when:
 
-1. authoritative/real/open/licensed visual;
-2. authoritative educational illustration;
-3. controlled AI-generated context/illustration;
-4. simplified schematic.
+- authoritative sources conflict;
+- a component has repeated material failure;
+- the concept is unusually subtle/contested;
+- a model/simplification could easily mislead.
 
-AI-generated imagery is acceptable for:
+The second review can be another authoritative source plus a targeted independent AI/reviewer check where useful. Findings are advisory until independently reconciled against authoritative evidence.
 
-- contextual scenes;
-- non-critical realistic backgrounds;
-- otherwise unavailable illustrative context.
+Routine reuse of an already approved unchanged component does not require a fresh external review every time.
 
-AI-generated imagery must not determine final:
+---
 
-- labels;
-- equations;
-- ray paths;
-- angle geometry;
-- graph scales;
-- circuit topology;
-- anatomy topology;
-- chemical structure;
-- exact quantitative relationships.
+## 16. Image policy
 
-High-risk rule:
+Priority for scientific/context imagery:
 
-**Do not bake student-facing scientific labels into a generated/raster image when editable controlled text can be used instead.**
+1. authoritative real/open/licensed image or scientific agency source;
+2. authoritative educational/scientific illustration;
+3. controlled AI-generated contextual/illustrative image when authoritative alternatives are unsuitable;
+4. simplified controlled schematic when pedagogically superior.
+
+AI-generated imagery may provide context but must not determine final science-critical labels, equations, ray paths, angles, graph scales, circuit topology, anatomy topology, chemical structures or exact quantitative relationships.
 
 Preferred separation:
 
 - photo/background = raster;
-- scientific geometry = SVG/vector;
-- Bangla labels = native editable text where practical;
-- formulas = native verified text or controlled SVG.
+- scientific geometry = SVG/vector/native shapes;
+- Bangla labels = editable native text where practical;
+- equations = verified native text or controlled SVG.
+
+Do not bake editable scientific labels into raster/generated images when avoidable.
 
 ---
 
-# 11. Dynamic / animation / simulation routing
+## 17. Dynamic, animation and simulation routing
 
-Dynamic implementation is chosen for pedagogical value, not decoration.
-
-Preferred order for science-critical progression:
+Preferred science-critical progression:
 
 1. `PREDICT_THEN_REVEAL`;
-2. `STAGED_REVEAL` using duplicate/sequential controlled slide states;
+2. `STAGED_REVEAL` with duplicate/sequential states;
 3. deterministic diagram-state sequence;
-4. native PowerPoint animation when it materially adds value and can be tested;
-5. video/animation resource for continuous motion;
+4. native PowerPoint animation only when it adds real value and can be tested;
+5. video/animation for continuous motion;
 6. simulation for parameter manipulation.
-
-Native animation is not mandatory.
-
-Use video/animation when continuous motion itself is important, e.g. wave propagation, heart motion, mitosis motion, orbit, fluid/particle motion.
-
-Use simulation when changing parameters is part of the learning objective.
 
 Every classroom-critical simulation/online resource requires:
 
 - instructional purpose;
 - prediction/observation prompt;
-- debrief question;
-- launch time budget;
-- verified link/source;
+- debrief/check;
+- launch/setup time budget;
+- verified source/link;
+- licensing note where relevant;
 - static/offline fallback.
 
-CORE learning must not depend on internet unless reliability is explicitly established.
+CORE must not depend on internet unless reliability is explicitly established.
 
 ---
 
-# 12. Controlled assembly
+## 18. Controlled assembly
 
-PptxGenJS is the canonical primary assembly route.
+PptxGenJS is the canonical primary assembly route for:
 
-Responsibilities:
-
-- 16:9 slide assembly;
+- 16:9 lesson decks;
 - frozen wording;
 - Bangla typography;
 - editable labels;
 - native/vector overlays;
-- images/media placement;
-- staged reveal states;
-- hyperlinks/buttons;
-- speaker-note sources;
-- consistent layout system;
+- images/media;
+- staged states;
+- links/buttons;
+- speaker-note `[Sources]` blocks;
+- consistent layouts;
 - reproducible PPTX generation.
 
-Canva is optional finishing, not primary science authority.
+Canva is optional finishing/asset support, not science authority.
 
-Canva may be used for:
-
-- low-risk visual polish;
-- photo treatment;
-- decorative assets;
-- manual alignment when truly useful;
-- social/derivative designs;
-- hosting/presentation.
-
-If Canva materially edits a controlled deck, post-Canva science/render/export QA is mandatory.
+If Canva materially edits a controlled deck, post-Canva science/render/export QA is mandatory and the pre-Canva source remains the scientific authority.
 
 ---
 
-# 13. Automated QA pipeline
+## 19. Automated QA pipeline
 
-Every build should run applicable automated checks before user review.
+Run applicable automated checks before user review.
 
-## Structural QA
+### Structural
 
 - expected slide IDs/count;
-- no missing slide;
-- no unexpected blank page;
+- missing/duplicate/blank slide;
 - asset existence;
-- broken media/link detection where practical;
-- source-note presence;
-- manifest consistency.
+- broken media/link checks where practical;
+- manifest consistency;
+- required source-note presence.
 
-## Text QA
+### Text
 
-- terminology lock;
-- forbidden/outdated term detection;
-- Bangla-first policy;
-- unexplained acronym detection;
 - exact copy drift;
+- terminology lock;
+- prohibited/outdated terms;
+- Bangla-first policy;
+- unexplained acronym;
 - formula/symbol integrity;
-- minimum readable size warnings.
+- minimum readable-size warnings.
 
-## Layout QA
+### Layout
 
-- text overflow;
-- out-of-bounds elements;
-- unintended overlaps;
+- overflow;
+- out-of-bounds;
+- unintended overlap;
 - unsafe margins;
-- image cropping/focal loss;
-- minimum essential-label size;
+- image crop/focal loss;
+- essential-label size;
 - contrast/readability warnings where practical.
+
+### Quantitative
+
+- formula/unit/checksum tests where applicable;
+- graph/data consistency;
+- dimensional checks where appropriate.
 
 ---
 
-# 14. Semantic science tests
+## 20. Semantic science tests for R3
 
-R3 visuals require tests that check scientific meaning, not merely that objects exist.
+Tests must check meaning, not presence only.
 
 Example — critical angle:
 
 ```text
 incident medium = dense
-exit medium = light
-normal passes through incidence point
-angle i is between incident ray and normal
+exit medium = optically lighter
+normal passes incidence point
+angle arc endpoints lie on incident ray and normal
 i = C
 refracted ray lies along interface
 r = 90 degrees
 reflected ray remains in dense medium
 ```
 
-Example — total internal reflection:
+Example — full internal reflection:
 
 ```text
 incident from dense side
+angle i is measured between incident ray and normal
 i > C
-reflected ray exists in dense medium
+reflected ray remains in dense medium
 transmitted/refracted ray count = 0
 ```
 
@@ -505,66 +525,59 @@ core/cladding distinction present
 n_core > n_cladding when index relation is taught
 ray remains inside core
 reflection points lie on core-cladding boundary
-no segment incorrectly propagates through cladding in the simplified TIR model
+no simplified ray segment propagates through cladding
 ```
 
-Equivalent semantic contracts must be created for circuits, anatomy, chemistry structures, graphs and other R3 visuals where practical.
+Equivalent semantic contracts should be created for circuits, anatomy, chemistry structures, graphs and other R3 families where practical.
 
 ---
 
-# 15. Direct pixel QA
+## 21. Direct pixel QA
 
-Automated checks never replace visual inspection of final rendered pixels.
+Automated tests never replace inspection of final rendered pixels.
 
-Required production route:
+Required route:
 
-`PPTX -> rendered PNGs -> montage overview -> individual R3 slide inspection`
+`PPTX -> rendered PNGs -> montage overview -> individual R3 inspection`
 
 Inspect:
 
 - blank/broken/missing content;
-- clipping;
-- overlap;
+- clipping/overlap;
 - Bangla glyphs/line breaks;
 - diagram-label relation;
-- arrow/ray direction;
+- ray/arrow direction;
 - image recognizability;
 - projector readability;
-- color/contrast;
+- contrast/color-independent meaning;
 - visual ambiguity;
 - final science meaning.
 
-For R3 slides, individual inspection is mandatory.
+R3 pages must be inspected individually.
 
 ---
 
-# 16. Two-pass science review
+## 22. Two-pass science review
 
-Every R3-heavy lesson uses two science-review passes.
+### Pass A — pre-build
 
-## Pass A — pre-build
+What science are we intending to teach?
 
-Question:
+Review sources, terminology, formulas, invariants, safety and model limits.
 
-**What science are we intending to teach?**
+### Pass B — post-render
 
-Review sources, wording, invariants, formulas and topology.
+What science will a student actually infer from the rendered slide?
 
-## Pass B — post-render
-
-Question:
-
-**What science will a student actually infer from the rendered slide?**
-
-This catches cases where correct source content is rendered misleadingly.
+This catches correct source content rendered in a misleading way.
 
 ---
 
-# 17. User-review policy
+## 23. User-review policy
 
 The user is not the primary internal QA detector.
 
-Before showing a production pack/deck to the user, the system should complete:
+Before showing a production pack/deck to the user:
 
 1. build;
 2. automated QA;
@@ -573,159 +586,152 @@ Before showing a production pack/deck to the user, the system should complete:
 5. internal repair/rebuild if needed;
 6. second internal QA.
 
-User review is primarily for:
+User review is mainly for final acceptance, subjective visual preference, classroom-specific choice, or approval of a genuinely new master visual family.
 
-- final visual/science acceptance;
-- subjective design preference;
-- approval of a new master visual family;
-- classroom-specific preference.
-
-Do not repeatedly ask the user to approve intermediate micro-edits unless a connector requires explicit save approval or the change is genuinely subjective/material.
+Connector-required save approval is an exception.
 
 ---
 
-# 18. Repair circuit breaker
+## 24. Repair circuit breaker
 
-This is a hard time-control rule.
+For one visual/component:
 
-For one slide/visual:
+- first material failure -> repair from controlled source;
+- second material failure -> stop micro-patching and clean rebuild;
+- rebuild still fails -> change representation route;
+- roughly 20–30 minutes of non-converging repair -> route-change trigger.
 
-### First material failure
+Examples of route change:
 
-Repair from controlled source and rerun QA.
-
-### Second material failure of the same visual
-
-Stop micro-patching. Rebuild the visual/component cleanly from source/specification.
-
-### Rebuild still fails
-
-Change representation route, e.g.:
-
-- composite raster -> separate photo + deterministic schematic;
+- composite raster -> photo + separate deterministic schematic;
 - AI illustration -> authoritative image + controlled overlay;
-- native animation -> staged reveal;
-- complex single slide -> split states.
+- native animation -> staged states;
+- overloaded single slide -> split states.
 
-### Time cap
-
-If one visual is consuming roughly 20–30 minutes of repeated repair without convergence, stop patching and change route.
-
-A single high-risk slide consuming days is a workflow failure and must trigger route change.
+A single slide consuming days is a process failure.
 
 ---
 
-# 19. No-silent-failure rule
+## 25. Selective invalidation — efficiency rule
 
-If an asset/tool/source fails, do not substitute an unrelated image, blank panel, placeholder or unverified AI output.
+Do not rerun every expensive stage after every small change. Revalidate only what can logically be affected.
 
-Mark the state explicitly, e.g.:
+| Change | Minimum required revalidation |
+|---|---|
+| source/science claim changes | science review + affected copy + affected visuals + downstream render/export |
+| terminology/copy changes | text lint + affected layout/render + science meaning check |
+| R3 geometry changes | semantic tests + affected pixel QA + downstream export |
+| photo/context asset only | recognizability/crop/layout + affected pixel QA |
+| visual-only low-risk spacing | layout/render QA for affected slides |
+| animation/link/media changes | playback/link/offline QA for affected items |
+| toolchain/font/export method changes | broader compatibility/render regression |
 
-`ASSET_BLOCKED`
+This rule prevents both under-testing and wasteful full re-audits.
+
+---
+
+## 26. No-silent-failure rule
+
+If a source, asset or tool fails, do not silently substitute an unrelated image, blank panel, placeholder or unverified generated output.
+
+Use an explicit state such as:
+
+`ASSET_BLOCKED`, `SOURCE_BLOCKED`, `RENDER_BLOCKED`, or `COMPATIBILITY_PENDING`
 
 Then use a documented fallback route.
 
 ---
 
-# 20. Golden-master library
+## 27. Classroom readability and density
 
-User-approved and internally verified R3 components/visual families should become reusable golden masters.
-
-Examples:
-
-- critical angle;
-- TIR;
-- apparent depth;
-- lens ray construction;
-- common circuit symbols/topologies;
-- graph style;
-- anatomy overlay style;
-- chemistry equation/structure style.
-
-A golden master stores source + tests + rendered reference, not only a screenshot.
-
----
-
-# 21. Classroom readability and density
-
-Default principles:
+Principles:
 
 - one primary teaching purpose per slide/state;
-- essential text must be projector readable;
-- essential diagram labels must not require zooming;
-- high contrast for science-critical labels;
-- secondary attribution may be smaller but must not collide with content;
-- split or stage content rather than shrinking essential text;
-- avoid dense textbook dumps.
+- split/stage rather than shrink essential content;
+- essential labels must be projector readable;
+- high contrast for critical text/lines;
+- avoid textbook dumps and decorative clutter.
 
-Typical starting ranges, adjustable by slide context:
+Typical starting ranges, not rigid absolutes:
 
-- title: about 28–34+ pt;
-- main student text: about 20–24+ pt;
-- essential diagram labels: ideally about 18–20+ pt.
+- title: ~28–34+ pt;
+- main student text: ~20–24+ pt;
+- essential diagram labels: ideally ~18–20+ pt.
 
-These are starting standards, not rigid absolute values; actual render readability decides PASS/FAIL.
+Actual rendered readability decides PASS/FAIL.
 
 ---
 
-# 22. Source/provenance rules
+## 28. Source/provenance and media record
 
 Every externally sourced non-trivial claim and asset must be traceable.
 
-Speaker notes should include `[Sources]` blocks as required by the slide toolchain.
+Record as applicable:
 
-Asset manifest should record as applicable:
-
-- source;
+- source/creator/organization;
 - URL/reference;
-- author/organization;
+- date/edition;
+- freshness class and last verification date;
 - license/reuse status;
-- whether real/generated/modified;
+- real/generated/modified status;
 - generation route;
-- intended slide/use.
+- intended slide/use;
+- static fallback;
+- safety note for demos;
+- AI-generated disclosure where relevant.
+
+Speaker notes should include `[Sources]` blocks for externally sourced non-trivial claims/assets used in the final deck.
 
 ---
 
-# 23. PowerPoint / export / offline gate
+## 29. Compatibility/export/offline gate
 
 A deck is not classroom-ready because it renders successfully.
 
 Verify the exact delivery artifact:
 
 - Microsoft PowerPoint opens without repair/recovery warning when testing is available;
-- Bangla and notation survive;
+- Bangla/notation survives;
 - editability survives where expected;
 - links/buttons work;
-- animation/reveal/media works where used;
-- PDF fallback is verified;
-- static/offline fallback exists for classroom-critical online resources;
-- no science drift after export/finishing.
+- reveal/animation/media works where used;
+- verified PDF fallback exists;
+- static/offline fallback exists for classroom-critical online content;
+- no science drift after finishing/export.
+
+If PowerPoint testing is unavailable, status must remain explicit, e.g. `DELIVERY_COMPATIBILITY_PENDING`; do not claim a tested PowerPoint PASS.
 
 ---
 
-# 24. Production speed strategy
+## 30. Status ladder
 
-Use the minimum rigor required by risk, not the same heavy process for every slide.
+Use precise states rather than vague “done”:
 
-## FAST path
+`DRAFT -> CONTENT_VERIFIED -> CONTENT_FROZEN -> BUILT -> INTERNAL_QA_PASS -> USER_ACCEPTED -> DELIVERY_VERIFIED -> CLASSROOM_READY`
 
-Mostly R1/R2 content, simple photos/text/flows.
+A lesson may skip `USER_ACCEPTED` only when user approval is not required by current project state/policy.
 
-Use normal source, layout, render and text QA.
+`CLASSROOM_READY` requires all applicable hard gates, not just a successful render.
 
-## STANDARD path
+---
 
-Normal science lesson with mixed content.
+## 31. Production-speed strategy
 
-Use full content, visual, render and lesson QA.
+Use the minimum rigor appropriate to risk.
 
-## HIGH-RISK path
+### FAST path
 
-R3-heavy lesson or prior visual failure.
+Mostly R1/R2. Normal source/text/layout/render QA.
 
-Use reference lock, semantic contracts, controlled components, individual pixel QA and stricter acceptance.
+### STANDARD path
 
-Reasonable production targets after content freeze and after the reusable library matures:
+Mixed normal science lesson. Full content/visual/render lesson QA.
+
+### HIGH-RISK path
+
+R3-heavy or previously failed. Reference lock, semantic contracts, controlled components, individual pixel QA, stricter acceptance.
+
+Planning targets after content freeze and component-library maturity:
 
 | Lesson type | Target range |
 |---|---:|
@@ -734,35 +740,37 @@ Reasonable production targets after content freeze and after the reusable librar
 | multiple new R3 visuals | ~2–4 h |
 | heavy new simulation/animation/visual system | ~3–5 h |
 
-These are planning targets, not guarantees. New reusable component families may initially take longer, but their cost must be amortized by reuse.
+These are targets, not guarantees. Reusable component work should reduce later cost.
 
 ---
 
-# 25. Chapter intake under v2
+## 32. Chapter intake under v2.1
 
 For every new chapter:
 
 1. source integrity;
-2. topic inventory;
+2. topic/concept inventory;
 3. textbook error/confusion register;
-4. scientific verification map;
-5. risk map (R1/R2/R3);
-6. visual/media/simulation opportunity map;
-7. lesson split and timing;
-8. component reuse check;
-9. new component requirements;
-10. storyboard/specification;
-11. build/QA.
+4. scientific verification + freshness map;
+5. R1/R2/R3 risk map;
+6. safety map for experiments/demos;
+7. visual/media/simulation opportunity map;
+8. lesson split and timing;
+9. component/golden-master reuse check;
+10. new component requirements;
+11. storyboard + structured specification;
+12. content freeze;
+13. build and risk-routed QA.
 
-Do not create custom assets before checking whether a verified existing resource or reusable component already solves the need.
+Search for an authoritative existing resource or approved reusable component before generating a new asset.
 
 ---
 
-# 26. Versioning / repository layout
+## 33. Repository layout and versioning
 
-Prefer stable semantic names over endless `final_v5_corrected` filenames.
+Prefer semantic names over `final_v5_corrected` names.
 
-Recommended lesson-local production layout:
+Recommended lesson-local layout:
 
 ```text
 production/
@@ -775,112 +783,54 @@ production/
   QA/
 ```
 
-Recommended component names describe function, e.g.:
+Build identity should come from source version/commit/checksum.
 
-`critical_angle_diagram.svg`
-`optical_fibre_tir.svg`
-
-Build identity should come from source version/commit/checksum, not from increasingly long filenames.
+Approved reusable components belong under `components/` with source + tests + golden render.
 
 ---
 
-# 27. Current Chapter 11 migration rule
+## 34. Current Chapter 11 migration
 
-## Lesson 1
+### Lesson 1
 
-Treat Lesson 1 as completed/approved baseline work. Do not rebuild it merely because v2 is adopted.
+Completed/user-approved baseline. Preserve. Do not rebuild solely because v2.1 exists.
 
-Future changes to Lesson 1 should be targeted and evidence-driven.
+### Lesson 2
 
-## Lesson 2
+Do not restart. Reuse completed analysis, source reconciliation, storyboard, terminology, reference locks, accepted wording/assets and regression evidence.
 
-Do not restart.
+Current immediate production migration:
 
-Retain and reuse:
+- HRV-01..04: retain as validated references/assets unless fresh evidence shows regression;
+- HRV-05: port corrected critical-angle geometry to a controlled reusable component;
+- HRV-06: port corrected TIR geometry to a controlled reusable component;
+- HRV-07: rebuild/port first as a clean controlled optical-fibre component; do not return to raster micro-patching.
 
-- completed content analysis and storyboard;
-- source map/reconciliation;
-- terminology lock;
-- diagram contracts;
-- seven high-risk reference locks;
-- validated physical/context assets;
-- accepted corrected concepts/wording;
-- failure/QA records as regression evidence.
+Then build one controlled high-risk validation pack, run internal automated + semantic + pixel QA, show the internally-passed pack once for user acceptance, and assemble the full Lesson 2 from already-validated content/assets.
 
-Continue from the current high-risk-visual checkpoint.
+### Lesson 3+
 
-At migration time, previously accepted high-risk pages/visuals are references/components to reuse. Only remaining defective or fragile visuals should be rebuilt/ported first.
-
-When full Lesson 2 assembly resumes, use the v2 controlled production chain. The move to controlled PptxGenJS/source-controlled components is a rendering/production migration, **not a reset of the lesson's already-completed scientific work**.
-
-## Lesson 3+
-
-Use v2 from the start.
+Use v2.1 from the start.
 
 ---
 
-# 28. Current Lesson 2 immediate continuation
+## 35. New-chat recovery
 
-At the time v2 was adopted:
+Every new production chat must recover from GitHub, not from chat memory.
 
-- the latest user-supplied seven-page PDF showed pages 1–6 materially acceptable after the latest corrections;
-- HRV-07 still had a remaining text-overlap/readability problem;
-- a cleaner HRV-07 v5 replacement was prepared in a Canva draft but was not yet established as a final direct-pixel-QA PASS;
-- full Lesson 2 rebuild remained blocked pending completion/acceptance of the high-risk visual gate.
+Minimum precedence:
 
-Therefore the next Lesson 2 work is **not** to restart research or recreate all seven visuals.
+1. `CURRENT_STATE.md` — exact checkpoint;
+2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` — this architecture;
+3. `NEW_CHAT_START.md`;
+4. later dated durable decision;
+5. active chapter/lesson locks/specs/QA;
+6. supporting policies.
 
-Next sequence:
-
-1. recover latest canonical state and latest actual saved Canva/PPTX artifacts;
-2. treat HRV-01..06 as retained verified references unless fresh evidence shows regression;
-3. finish/rebuild HRV-07 under v2 using controlled source/component principles rather than repeated raster micro-patching;
-4. rerun direct pixel QA on the seven visual pack pages;
-5. obtain one user acceptance of the internally-passed pack;
-6. assemble full Lesson 2 using controlled PptxGenJS/source-controlled production;
-7. reuse validated content/assets rather than rebuilding from zero;
-8. run full lesson automated/science/pixel/PowerPoint/export QA.
+Never infer that a new workflow invalidates already-verified prior work.
 
 ---
 
-# 29. New-chat recovery rule
+## 36. Durable operating principle
 
-Every new chat working on Science Slides must read this file before production work.
-
-New-chat precedence for production architecture:
-
-1. `CURRENT_STATE.md` — exact current checkpoint;
-2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` — canonical production architecture;
-3. `OPERATING_BRIEF.md`;
-4. `NEW_CHAT_START.md`;
-5. `QUALITY_GATES.md`;
-6. `RENDERER_ROUTING.md`;
-7. active chapter/lesson locks, specs and latest QA/failure records.
-
-Do not infer that adopting a newer workflow cancels prior completed work. Use the no-reset migration rule.
-
----
-
-# 30. Completion definition
-
-A lesson is `CLASSROOM_READY` only when applicable requirements all pass:
-
-- scientifically correct;
-- curriculum/class appropriate;
-- terminology consistent;
-- formulas/units correct;
-- R3 semantics correct;
-- actual rendered pixels readable and unambiguous;
-- visual design engaging and coherent;
-- dynamic/simulation choices justified;
-- PowerPoint compatibility verified when available;
-- PDF/static fallback verified;
-- sources/provenance recorded;
-- build/source reproducible;
-- user final acceptance obtained where required.
-
----
-
-# 31. Durable operating principle
-
-**AI plans and assists. Authoritative evidence determines scientific truth. Deterministic components control science-critical geometry. Specialized tools create the right media for the concept. PptxGenJS assembles. Automated tests catch mechanical and semantic defects. Final rendered pixels are independently inspected. The user reviews internally-passed work, not unfinished debugging. GitHub preserves the complete state so the next chat resumes exactly where the previous one stopped.**
+**AI plans and assists. Authoritative evidence determines scientific truth. Risk classification determines rigor. Deterministic components control science-critical geometry. Specialized tools create the right media for the concept. PptxGenJS assembles. Automated tests catch mechanical and semantic defects. Rendered pixels are independently inspected. Safety, accessibility, model limits, freshness and compatibility are explicit gates. Revalidation is selective. The user reviews internally-passed work, not unfinished debugging. GitHub preserves enough state for a fresh chat to resume exactly where the previous one stopped.**
