@@ -33,13 +33,13 @@ Library copies:
 - `/Science Slides/Lesson2_Controlled_Full_v0_4.pptx`
 - `/Science Slides/Lesson2_Controlled_Full_v0_4.pdf`
 
-## Fingerprints
+## Final fingerprints after metadata-normalized rebuild
 
-- PPTX SHA-256: `13aa67430e6d3712460c4a62122a0602575b28b99e815cedeaf20eef45c3b4f6`
-- PDF SHA-256: `5468cbae6d0a76371a498d536e2195cd24db1f3ced62cd4577bddae8c12681ca`
+- PPTX SHA-256: `538141d96a61f6650f377f0241d5e4ddebeaf0601906fea83e23b3756b1ed5d4`
+- PDF SHA-256: `a92d6d7c10f9d2f20b59bc8a8b456e05768a9e947f58a65f275081a7aa326293`
 - montage SHA-256: `62eacfcfc91a4cf823022cc73f76c762d43a2c7d403218fdc6341b9b8a5563fb`
 - semantic report SHA-256: `e6c90167ce1e0e5ea445cfba16e8dae5aeba802273314e99b6870ed50c9fd9e5`
-- local build source SHA-256: `1e4f844e12da9e2a2a1ffd9d321073778f61e58ccc4f98d51d0690f36266a1bd`
+- local build source SHA-256: `77a9efdae3d6cb8267aa39afdf2176a002bc5ea13a9acb194dd2b3199f11ae07`
 
 ## Slide count
 
@@ -50,29 +50,29 @@ Library copies:
 
 ### Slide 11 — `সংকট কোণের পথে: আপতন কোণ বাড়ালে কী হয়?`
 
-Corrected by replacing the earlier generic PowerPoint arc shapes with deterministic segmented angle arcs:
+The earlier generic PowerPoint arc shapes were replaced with deterministic segmented angle arcs:
 
-- purple `i` arc is drawn below the interface between the incident ray and the normal;
-- orange `r` arc is drawn above the interface between the normal and the refracted ray;
-- both arcs are larger, high-contrast, and visually connected to the intended lines.
+- purple `i` arc is drawn **between the incident ray and the normal** in the dense medium;
+- orange `r` arc is drawn **between the normal and the refracted ray** in the light medium;
+- both arcs are larger, high-contrast, and visibly anchored at the point of incidence.
 
 ### Slide 12 — `সংকট কোণ (C): প্রতিসরণ কোণ r = 90°`
 
-Corrected by replacing the earlier generic PowerPoint arc shapes with deterministic segmented angle arcs:
+The earlier generic PowerPoint arc shapes were replaced with deterministic segmented angle arcs:
 
-- purple `i = C` arc is explicitly drawn between the incident ray and the normal;
-- orange `r = 90°` arc is drawn as a clear right angle between the normal and the grazing refracted ray along the interface;
-- the slide still avoids visible reflected-ray emphasis, preserving the user/Gemini correction from v0.3.
+- purple `i = C` arc is explicitly drawn **between the incident ray and the normal**;
+- orange `r = 90°` arc is drawn as a clear **right angle between the normal and the interface-parallel refracted ray**;
+- visible reflected-ray emphasis remains removed, preserving the accepted v0.3 correction.
 
 ## Automated QA
 
-- `slides_test.py`: PASS — no overflow detected.
-- render: PASS — 18 PNG slides rendered.
-- PDF export: PASS — 18 pages.
+- `slides_test.py`: **PASS — no overflow detected**.
+- render: **PASS — 18 PNG slides rendered**.
+- PDF export: **PASS — 18 pages**.
 
 ## Direct rendered QA
 
-Direct individual inspection was performed on the two affected slides:
+Direct individual inspection was performed on the two affected slides after the final rebuild:
 
 - slide 11: corrected `i` and `r` arcs are visible and correctly referenced to the normal;
 - slide 12: corrected `i = C` and `r = 90°` arcs are visible and correctly referenced to the normal/interface.
