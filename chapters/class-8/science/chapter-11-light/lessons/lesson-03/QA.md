@@ -1,126 +1,137 @@
-# QA — Lesson 3 Storyboard
+# QA — Lesson 3 Startup / Storyboard Reconciliation
+
+Version: 2.1 startup reconciliation
+Date: 2026-09-09
+Status: **STORYBOARD_SOURCE_BASE_VALID — V2_1_AUDIT_REQUIRED_BEFORE_CONTENT_FREEZE — R3_VALIDATION_PACK_NEXT**
 
 ## Identity
 
 - Chapter: Class 8 Science, Chapter 11 — আলো
 - Lesson: 3 — উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা
-- Version: Storyboard draft v1 after Gemini Gate A reconciliation
-- Reviewer: ChatGPT lead/internal QA
-- Date: 2026-09-05
+- Class period: 60 min
+- Planned CORE: 42 min
+- Planned FLEX: 8 min
+- Contingency: 10 min
 
-## Gate results
+## Precedence / supersession note
 
-| Gate | Result | Evidence / notes |
+This file supersedes the old 2026-09-05 `Required next action` that said to proceed to Lesson 4 planning.
+
+Current canonical direction is:
+
+- Lesson 2 v0.5 is accepted for continuation;
+- Lesson 3 is now the active next work;
+- Lesson 4 remains on hold;
+- full Lesson 3 build must not begin until the v2.1 startup audit, structured copy/spec and R3 validation stage are complete.
+
+Read with:
+
+- `/CURRENT_STATE.md`
+- `/SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+- `/TARGETED_REVISION_SCOPE_LOCK.md`
+- `/SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
+- `SEMANTIC_CONTRACTS_V2_1.md`
+- `production/LESSON_3_PRODUCTION_HANDOFF_2026-09-09.md`
+
+## Existing storyboard/source-base disposition
+
+The existing `LESSON_PLAN.md`, `STORYBOARD.md` and `RESOURCES.md` remain useful and should be reused, not recreated from zero.
+
+They were prepared before the final Lesson 2 workflow lessons were fully known, so they must be audited against Production System v2.1 before content freeze.
+
+## Current gate summary
+
+| Area | Current state | Required before build |
 |---|---|---|
-| G0 Input integrity | PASS_WITH_NOTES | Full chapter source available; scanned/image PDF; visible page remains authoritative for NCTB wording. |
-| G1 Curriculum and scope | PASS | Magnifying glass + eye mapped; spectacles handled as documented source-gap supplement. |
-| G2 Source verification | PASS_FOR_STORYBOARD | Lens, eye, accommodation and spectacles claims traced to S7/S8/S9/S10/S16/S17/S18. |
-| G3 Scientific accuracy | PASS_FOR_STORYBOARD | Cornea/lens focusing roles, diverging-lens prerequisite, magnifier object placement and pupil-as-opening guardrails included. |
-| G4 Realistic 60-minute timing | PASS | CORE 42 + FLEX 8 = 50 min; 10 min contingency retained. |
-| G5 Pedagogy and cognitive load | PASS | Lens prerequisites minimal; eye anatomy grouped functionally; frequent hinge/retrieval prompts; spectacles tightly bounded. |
-| G6 Resource suitability / fallback | PASS_WITH_NOTES | CORE can run fully offline; all key visuals have custom/static fallback plans. Actual diagrams still require build and visual QA. |
-| G7 Storyboard readiness | PASS | Slide IDs, purpose, content, visual role, student response, timing, source links and transitions recorded. |
-| G8 Content freeze | FAIL / NOT_DUE | Gate B and final G1–G7 pass still required. |
-| G9 Renderer calibration | N/A / PENDING | RT-01 later. |
-| G10 Visual engagement / classroom usability | PASS_FOR_STORYBOARD | Visual rhythm varies and anatomy is staged; projector validation pending renderer. |
-| G11 Export / playback / offline reliability | N/A / PENDING | No rendered artifact yet. |
-| G12 Chapter-wide coverage | N/A / PENDING | Lessons 1–3 mapped after checkpoint; Lesson 4 pending. |
-| G13 Cross-lesson continuity / duplication | PASS_FOR_CURRENT_STAGE | L3 prepares the exact lens/eye concepts required by L4 camera comparison. |
-| G14 Final chapter completion | N/A / PENDING | Not due. |
-| G15 Post-class calibration | PENDING | Not taught yet. |
+| NCTB scope | PASS_WITH_NOTES | visually recheck critical magnifier/eye wording where needed |
+| authoritative science | PASS_FOR_STORYBOARD | targeted re-verification before copy freeze |
+| timing | PASS | keep 42 CORE + 8 FLEX + 10 contingency |
+| pedagogy | PASS_FOR_STORYBOARD | convert visible surfaces to student-facing Bangla-first copy |
+| resource map | PASS_FOR_STORYBOARD | validate actual R3 visuals before full build |
+| content freeze | NOT YET | v2.1 audit + structured copy/spec first |
+| R3 semantic contracts | NOW DEFINED | use `SEMANTIC_CONTRACTS_V2_1.md` |
+| renderer | NOT YET FOR L3 | build validation pack first |
+| direct pixel QA | NOT YET | individual R3 inspection mandatory |
+| full PPTX/PDF | BLOCKED | validation-pack acceptance first |
 
-## Critical findings
+## Critical scientific checks before content freeze
 
-No blocker prevents advancing from Lesson 3 storyboard draft to Lesson 4 storyboard.
+1. Magnifying-glass diagram:
+   - convex lens;
+   - object inside focal length;
+   - outgoing rays diverge;
+   - dashed backward extensions meet on object side;
+   - virtual, erect, enlarged image.
 
-Before content freeze:
+2. Human-eye diagram:
+   - pupil is an opening in iris;
+   - cornea is correctly positioned and not treated as merely a window;
+   - cornea provides most initial refractive focusing;
+   - crystalline lens fine-tunes focus;
+   - retina/anterior/posterior structures are placed correctly enough for Class 8.
 
-1. inspect the final magnifying-glass ray diagram to ensure the object is inside focal length and the virtual image is placed correctly;
-2. inspect eye diagram labels/anatomy and ensure the cornea is not visually de-emphasized as merely a window;
-3. verify accommodation visuals do not imply lens translation toward/away from retina;
-4. keep spectacles explicitly labelled supplementary/source-gap repair;
-5. verify myopia/hyperopia ray sketches after drawing and avoid adding numerical lens power.
+3. Accommodation:
+   - do not imply lens translation toward/away from retina;
+   - show shape/optical-power change qualitatively.
 
-## Non-critical improvements
+4. Spectacles:
+   - myopia -> diverging/concave lens;
+   - hyperopia -> converging/convex lens;
+   - keep supplementary/source-gap status explicit in notes/source record;
+   - no numerical lens power in CORE.
 
-- If L3-S08 feels label-heavy on projector, reveal support/media labels in two states without increasing classroom time.
-- The choroid wording should remain functional and simple; no histology expansion is needed.
-- If class pace is slow, L3-F02 remains optional and L3-S12 can stay one-sentence conceptual.
+5. Real/virtual image convention:
+   - actual rays solid;
+   - virtual backward extensions dashed;
+   - dashed construction lines are not real light paths.
 
-## Timing check
+## Lesson 2 workflow lessons now mandatory in Lesson 3 QA
 
-- CORE planned time: 42 min
-- FLEX planned time: 8 min
-- CORE + FLEX: 50 min
-- Contingency retained: 10 min
-- STRETCH required for lesson success?: No
-- Questions/board work/transitions counted?: Yes at storyboard level.
-- Unrealistic pacing assumptions?: Main watch points are S06 magnifier and S07–S11 eye sequence; functional grouping reduces overload risk.
+- final rendered pixels are authoritative for visual PASS/FAIL;
+- `slides_test.py`/overflow PASS does not prove science correctness;
+- individually inspect every new/materially changed R3 slide;
+- targeted user edits are hard scope locks; do not modify unrelated content;
+- external AI/reviewer feedback is advisory until independently verified;
+- no visible teacher-script boxes or internal workflow labels;
+- scientific geometry/topology should be deterministic/controlled;
+- keep labels/copy editable and separate from fragile raster science diagrams where practical;
+- use selective revalidation, not full-deck rebuilds for narrow fixes.
 
-## Scientific/source checks
+## Accessibility / projector requirements
 
-- Definitions source-traceable: Yes.
-- Critical OCR/extracted wording visually checked where uncertain: NCTB eye/magnifier pages already visually inspected; final exam-facing wording recheck still required before freeze.
-- Laws/formulas/units verified: no formulas/numerical units required in CORE.
-- Calculations checked: N/A.
-- Diagram labels/directions checked: specifications checked; actual rendered vectors pending.
-- Material source conflicts resolved: SI-11-001, SI-11-006 addressed; SI-11-007 prepared for L4.
-- Equation/source expression preserved where needed: focus `F`; no equation burden.
+Before R3 user review:
 
-## Pedagogy and cognitive load
-
-- Retrieval/prior knowledge activated?: Yes — S01.
-- Learning sequence logical?: Yes — lens action → focus → image vocabulary → magnifier → eye functional groups → accommodation → spectacles.
-- Major segments include meaningful student response?: Yes.
-- Hinge/check-for-understanding present?: Yes — S04, S06, S09, S10, S12, S13.
-- Guided practice/application present?: Yes — vocabulary classification, eye pathway, spectacles matching; FLEX labelling.
-- Misconceptions addressed?: Yes.
-- Summary + exit check retained?: Yes — S13.
-- Textbook dumping avoided?: Yes.
-- Complex material segmented?: Yes — especially eye anatomy.
-- Redundant prose controlled?: planned yes.
-- Long passive teacher-only stretches avoided?: Yes.
-
-## Visual engagement / UI
-
-- Overall attractiveness: strong diagram-first structure; render QA pending.
-- Age appropriateness: high at storyboard stage.
-- Clear focal hierarchy on each slide?: specified yes.
-- Layout variation without chaos?: yes.
-- Visuals have declared teaching purpose?: yes.
-- Decorative clutter absent?: yes by specification.
-- Grade-density profile appropriate?: yes.
-- Motion/animation pedagogically justified?: only progressive ray/label reveal; static fallback specified.
-
-## Accessibility / projector
-
-- Back-of-room readability: large simplified diagrams planned.
-- Contrast: renderer QA pending.
-- Color-independent meaning: mandatory; labels/ray direction must remain interpretable without color.
-- Bangla glyph/conjunct rendering: RT-01 pending.
-- Diagram label size: actual renderer QA pending.
-- Any key visual requires zooming?: should not; fail if it does.
+- essential labels readable at projector scale;
+- critical meaning not color-only;
+- solid/dashed ray distinction survives grayscale/poor projection;
+- anatomy labels do not overlap or cross ambiguously;
+- Bangla conjunct/glyph rendering directly inspected;
+- no essential visual requires zooming.
 
 ## Resource resilience
 
-- Online links checked: no online resource required for CORE.
-- Core media/simulation fallback available: yes; all core resources are static/custom diagrams.
-- Licensing/attribution recorded: original redraws preferred; external source attribution retained in GitHub.
-- Unauthorized downloaded video clips avoided?: Yes / none planned.
+Current plan remains offline-capable.
 
-## Final artifact check
+No external video/simulation is required for CORE. If a dynamic resource is later added, it must materially improve learning and have a static/offline fallback.
 
-- Primary delivery format tested: No.
-- PDF fallback available and checked: No, not rendered yet.
-- Font substitution issues: PENDING.
-- Image crop issues: PENDING.
-- Scientific content drift after rendering?: PENDING.
-- Offline/static fallback works?: specified, not built/tested yet.
+## Next required action
 
-## Final decision
+1. Audit `LESSON_PLAN.md`, `STORYBOARD.md`, `RESOURCES.md` against Production System v2.1 and this QA.
+2. Verify critical source/science wording.
+3. Create/update exact Bangla-first structured copy/spec.
+4. Use `SEMANTIC_CONTRACTS_V2_1.md` for R3 build requirements.
+5. Build a compact R3 validation pack containing at minimum:
+   - converging/diverging lens + focus/focal length;
+   - real vs virtual image;
+   - magnifying-glass construction;
+   - human-eye cross-section;
+   - accommodation;
+   - myopia/hyperopia correction.
+6. Run automated QA + semantic QA + individual direct pixel QA internally.
+7. Repair/rebuild until internal PASS.
+8. Show one internally-passed validation pack to the user.
+9. Only after user acceptance, assemble the full Lesson 3 deck.
 
-`PASS_WITH_NONBLOCKING_NOTES` for **storyboard draft stage only**.
+## Current decision
 
-## Required next action
-
-- Map Lesson 3 slide IDs into `COVERAGE_MATRIX.md`, checkpoint chapter/current state, then continue Lesson 4 storyboard/resource planning. Do not content-freeze or render final decks yet.
+**READY_FOR_V2_1_STARTUP_AUDIT — NOT CONTENT_FROZEN — NOT FULL_BUILD_READY**
