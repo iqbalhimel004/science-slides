@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-08
-- Current status: **LESSON_1_BASELINE_APPROVED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_R3_PACK_V0_3_USER_ACCEPTED — CURRENT_COPY_SPEC_V2_1_LOCKED — FULL_LESSON_2_V0_1_SUPERSEDED_AFTER_TARGETED_PIXEL_DEFECT — FULL_LESSON_2_CONTROLLED_BUILD_V0_2_INTERNAL_QA_PASS — USER_FINAL_REVIEW_NEXT — LESSON_3_ON_HOLD**
+- Current status: **LESSON_1_BASELINE_APPROVED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_R3_PACK_V0_3_USER_ACCEPTED — FULL_LESSON_2_V0_2_SUPERSEDED_AFTER_USER_GEMINI_REVIEW — FULL_LESSON_2_CONTROLLED_BUILD_V0_3_INTERNAL_QA_PASS — USER_FINAL_REVIEW_NEXT — LESSON_3_ON_HOLD**
 
 ## Canonical architecture
 
@@ -16,61 +16,48 @@
 
 **COMPLETED / USER-APPROVED BASELINE — PRESERVE**
 
-## Lesson 2 accepted high-risk validation pack
+## Lesson 2 current review candidate
 
-User accepted controlled pack v0.3.
+Artifacts:
 
-Accepted foundation:
+- `Lesson2_Controlled_Full_v0_3.pptx`
+- `Lesson2_Controlled_Full_v0_3.pdf`
 
-- `Lesson2_R3_Optics_Controlled_Validation_v0_3.pptx`
-- `Lesson2_R3_Optics_Controlled_Validation_v0_3.pdf`
+QA:
 
-The accepted visual/science decisions for HRV-01..07 remain in force.
-
-## Current full Lesson 2 build
-
-Current user-review candidate:
-
-- `Lesson2_Controlled_Full_v0_2.pptx`
-- `Lesson2_Controlled_Full_v0_2.pdf`
-
-Current QA:
-
-`lessons/lesson-02/production/FULL_LESSON_2_CONTROLLED_BUILD_V0_2_QA_2026-09-08.md`
-
-Current source:
-
-`lessons/lesson-02/production/build_lesson2_controlled_v0_2.js`
+`lessons/lesson-02/production/FULL_LESSON_2_CONTROLLED_BUILD_V0_3_QA_2026-09-08.md`
 
 Results:
 
-- 19 slides / 19 PDF pages;
+- 18 slides / 18 PDF pages;
 - overflow QA PASS;
 - render PASS;
 - PDF export PASS;
-- semantic report PASS;
-- montage review PASS;
-- targeted individual inspection of newly generated/materially changed R3/R3-adjacent slides completed;
-- v0.1 cropped increasing-incidence label fixed;
-- Bangla-first title surface;
-- internal slide IDs removed from newly generated student-facing surfaces;
-- optional PhET Bending Light link provided with static/offline fallback;
-- accepted coin, mirage, critical-angle, TIR and optical-fibre corrections retained.
+- semantic report PASS_CANDIDATE;
+- corrected fish, mirage, incidence, critical-angle, three-state comparison and fibre-use slides individually reviewed;
+- typo corrected to `দাগকাটা সহায়ক রেখা`;
+- critical-angle slide now emphasizes `r=90°` and the grazing refracted ray, not reflected-ray wording;
+- mirage slide now makes the hot-air/TIR-like turning explanation explicit while preserving the gradient model;
+- shorthand `ছোট i / বড় i` wording replaced with `আপতন কোণ (i) বাড়লে প্রতিসরণ কোণ (r) বাড়ে`;
+- `i<C`, `i=C`, `i>C` comparison consolidated into one slide;
+- broadband internet added as a familiar optical-fibre application;
+- optional PhET Bending Light link retains static/offline fallback.
 
-## Superseded full build
+## Superseded full builds
 
-`Lesson2_Controlled_Full_v0_1` remains historical regression evidence and is not the current final-review candidate because targeted individual inspection later found a cropped larger-incidence label.
+- `Lesson2_Controlled_Full_v0_1` — superseded after cropped-label defect.
+- `Lesson2_Controlled_Full_v0_2` — superseded after user/Gemini content review.
+
+These remain regression evidence only.
 
 ## Current gate
 
-**User final visual/science review of full Lesson 2 v0.2 is next.**
+**User final visual/science review of full Lesson 2 v0.3 is next.**
 
 Do not call Lesson 2 `CLASSROOM_READY` yet.
 Do not start Lesson 3 yet.
 
-If user accepts v0.2, record acceptance and proceed to exact delivery-artifact/PDF/offline verification before the final lesson checkpoint.
-
-If a targeted defect is found, selectively revise/revalidate only affected slides/components; do not restart the lesson.
+If further targeted defects are found, selectively revise only affected slides/components; do not restart the lesson.
 
 ## Execution-time pending gates
 
