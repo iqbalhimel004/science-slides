@@ -57,9 +57,13 @@ Manifest:
 
 `lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_MANIFEST_2026-09-08.md`
 
-Canva design ID:
+Corrected Canva design ID:
 
-`DAHUl9F8yQc`
+`DAHUl-r85fw`
+
+Canva view URL:
+
+`https://www.canva.com/d/Yl53GftBWQ08y6o`
 
 Page count:
 
@@ -69,7 +73,7 @@ Canva checks completed:
 
 - exactly seven page records returned;
 - visible text extracted and reviewed for Bangla-first wording;
-- presenter/source notes exist on all seven pages.
+- corrected v2 removed remaining mixed-English fragments from the first import.
 
 Status:
 
