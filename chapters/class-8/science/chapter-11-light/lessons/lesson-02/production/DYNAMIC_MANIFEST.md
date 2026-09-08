@@ -1,87 +1,62 @@
-# Lesson 2 Dynamic Implementation Manifest
+# Lesson 2 Dynamic Implementation Manifest — Historical v2 Record
 
 Date: 2026-09-07
-Status: **V2_INTERNAL_QA_PASS — USER_POWERPOINT_REVIEW_PENDING**
-Lesson: `প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন`
+Status: **HISTORICAL / SUPERSEDED FOR CURRENT PRODUCTION**
 
-## Principle
+Lesson:
+`প্রতিসরণের ফল, আপাত অবস্থান, সংকট কোণ ও পূর্ণ অভ্যন্তরীণ প্রতিফলন`
 
-Lesson 2 v2 follows the Lesson 1 approved baseline and the new accuracy-enforcement workflow:
+## Current authority
 
-- Bangla-first textbook terminology;
-- exact student-facing copy frozen before final build;
-- staged duplicate-slide reveal states where they replace fragile animation;
-- deterministic high-risk ray geometry;
-- diagram contracts for apparent position / critical angle / full internal reflection;
-- simulation links as FLEX only;
-- PDF/static fallback remains meaningful.
+This manifest records the intended v2 dynamic sequence but must not be read as a current internal-QA PASS.
 
-## Slide-level dynamic implementation
+Current production authority:
 
-| Physical slide(s) | Mode | Purpose | Static/PDF fallback |
-|---:|---|---|---|
-| 1-2 | PREDICT_THEN_REVEAL | retrieve bending direction, normal-incidence behavior, angle-from-normal rule | answer slide included |
-| 3 | STATIC_INTENTIONAL | lesson roadmap | same |
-| 4 | STATIC_EXPLANATORY | actual vs apparent position using two rays + backward extensions | complete diagram |
-| 5 | STATIC_EXPLANATORY | distinguish real rays from dashed construction lines | complete diagram |
-| 6 | LIVE_DEMO_CONTEXT / STATIC_FALLBACK | pencil/straw classroom demonstration | static visual included |
-| 7 | STATIC_EXPLANATORY | coin visibility before/after water | before/after comparison |
-| 8 | STATIC_EXPLANATORY | fish apparent depth using two rays + backward extensions | complete diagram |
-| 9 | STATIC_EXPLANATORY | mirage as gradual atmospheric bending | complete gradient/multi-segment visual |
-| 10-11 | PREDICT_THEN_REVEAL | increasing incidence angle toward the critical-angle condition | answer slide included |
-| 12 | STATIC_EXPLANATORY | সংকট কোণ, `r = 90°`, reflected ray remains in incident medium | complete diagram |
-| 13 | STATIC_EXPLANATORY | পূর্ণ অভ্যন্তরীণ প্রতিফলনের two conditions | complete diagram and rule boxes |
-| 14-15 | PREDICT_THEN_REVEAL | classify `i<C`, `i=C`, `i>C` | answer diagrams included |
-| 16 | STATIC_EXPLANATORY | optical fibre and repeated internal reflection | complete diagram |
-| 17 | STATIC_EXPLANATORY | uses: endoscope and optical-fibre communication | complete slide |
-| 18-19 | PREDICT_THEN_REVEAL | summary + final check | answer slide included |
-| 20 | SIMULATION_LINKS | PhET primary and Physics Classroom alternate | CORE static diagrams remain complete |
-| 21-22 | PRACTICE_REVEAL | textbook-style three-state classification practice | answer slide included |
+- root `CURRENT_STATE.md`;
+- root `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` v2.1+;
+- `PRODUCTION_SYSTEM_V2_1_MIGRATION_2026-09-08.md`;
+- current structured spec/dynamic manifest to be produced before the full Lesson 2 v2.1 build.
 
-## Native PowerPoint animation policy
+## Reusable historical dynamic intent
 
-No native PowerPoint animation is required in v2.
+The following pedagogical intent remains useful unless the current structured spec changes it:
 
-Reason:
+| Concept/segment | Intended mode | Purpose |
+|---|---|---|
+| retrieval | PREDICT_THEN_REVEAL | activate prior knowledge |
+| roadmap | STATIC_INTENTIONAL | orient lesson |
+| apparent position / real-vs-construction rays | STATIC/STAGED EXPLANATORY | distinguish actual light path from backward construction |
+| pencil/straw | LIVE_DEMO_CONTEXT + STATIC_FALLBACK | connect refraction to real observation |
+| coin/fish | STATIC EXPLANATORY | apparent-depth applications |
+| mirage | STATIC EXPLANATORY | gradual atmospheric bending |
+| increasing incidence angle | PREDICT_THEN_REVEAL | lead to critical angle |
+| critical angle | STATIC/DETERMINISTIC | `i = C`, `r = 90°` |
+| full internal reflection | STATIC/DETERMINISTIC | two conditions and no outside refracted ray |
+| three-state classification | PREDICT_THEN_REVEAL | compare `i<C`, `i=C`, `i>C` |
+| optical fibre | STATIC/DETERMINISTIC | repeated boundary reflection |
+| uses | STATIC EXPLANATORY | endoscope/fibre communication |
+| summary / practice | PREDICT_THEN_REVEAL | retrieval and consolidation |
+| simulation | FLEX | optional parameter exploration |
 
-- staged duplicate slides provide the same teaching value more reliably;
-- PDF fallback remains useful;
-- science-critical geometry is fixed and inspectable on every state.
+## Historical animation decision
 
-## Simulation links
+No native PowerPoint animation was required. Staged duplicate states were preferred for compatibility and PDF fallback.
+
+That general preference remains compatible with v2.1, but the exact sequence must be re-recorded in the current manifest during full Lesson 2 assembly.
+
+## Simulation intent
 
 FLEX only:
 
-1. `PhET Bending Light`
-2. `Physics Classroom Refraction Interactive`
+- PhET Bending Light;
+- Physics Classroom Refraction Interactive or current best-fit alternate after fresh link/resource verification.
 
-CORE does not depend on internet.
+CORE remains offline-capable.
 
-## Accuracy controls
+## Why superseded
 
-Before v2 internal QA PASS:
+Later user/direct-render review invalidated the old `V2_INTERNAL_QA_PASS` claim for the visual implementation. Current production also changed Chapter 11 student-facing terminology to `হালকা মাধ্যম` and strengthened R3 semantic contracts.
 
-- exact copy lock: PASS
-- Bangla terminology lint: PASS
-- lesson geometry contracts: PASS
-- focused high-risk rendered review: PASS_WITH_USER_REVIEW_PENDING
-- overflow test: PASS
-- PDF fallback: PASS
+## Current next action
 
-## Visual-asset routing
-
-No ChatGPT-native image generation was used for Lesson 2 v2.
-
-High-risk science diagrams are deterministic. If a later polish pass requires more photorealistic physical/context visuals, use verified existing/Canva/external base assets while preserving the controlled scientific overlays.
-
-## PowerPoint compatibility checklist
-
-- [ ] User opens exact v2 PPTX in Microsoft PowerPoint without repair warning
-- [ ] Staged reveal order feels natural
-- [ ] Simulation links open
-- [ ] PDF fallback remains readable
-- [ ] User accepts high-risk diagram clarity
-
-## User review gate
-
-Lesson 2 v2 is not `CLASSROOM_READY` until the user confirms PowerPoint smoke test and visual acceptance.
+Do not rebuild the whole lesson or reuse this manifest as a PASS artifact. Follow the v2.1 migration override, rebuild/port the remaining R3 components, validate the high-risk pack internally, then create/update the current dynamic manifest for the full controlled Lesson 2 build.
