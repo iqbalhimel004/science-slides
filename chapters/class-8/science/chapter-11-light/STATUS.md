@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-08
-- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — PRODUCTION_SYSTEM_V2_1_AUDIT_HARDENED — LESSON_2_CONTINUES_WITHOUT_RESET — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HRV_01_TO_04_RETAINED_AS_VALIDATED_REFERENCES — CONTROLLED_HRV_05_06_07_COMPONENTS_V0_1_COMMITTED — SEMANTIC_TESTS_PASS — 3_SLIDE_R3_RENDER_QA_PASS — COMPLETE_7_PAGE_CONTROLLED_VALIDATION_PACK_NEXT — LESSON_2_FULL_BUILD_BLOCKED — LESSON_3_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — PRODUCTION_SYSTEM_V2_1_AUDIT_HARDENED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_HRV_05_06_07_COMPONENTS_COMMITTED — COMPLETE_7_PAGE_CONTROLLED_VALIDATION_PACK_INTERNAL_QA_PASS — USER_ACCEPTANCE_NEXT — LESSON_2_FULL_BUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Canonical architecture
 
@@ -18,108 +18,57 @@ No-reset rule: valid completed work is preserved; only defective/fragile product
 
 **COMPLETED / USER-APPROVED BASELINE — PRESERVE**
 
-No workflow-driven restart is required.
+## Lesson 2 controlled R3 validation pack
 
-## Lesson 2 validated work to preserve
+Complete seven-page controlled pack:
 
-- analysis/storyboard;
-- source reconciliation;
-- validated student-copy concepts;
-- current terminology lock;
-- diagram/reference contracts;
-- accepted physical/context assets;
-- HRV-01..04 latest validated references;
-- historical failure/QA records as regression evidence.
+`Lesson2_R3_Optics_Controlled_Validation_v0_2.pptx`
 
-Migration override:
+PDF fallback:
 
-`lessons/lesson-02/production/PRODUCTION_SYSTEM_V2_1_MIGRATION_2026-09-08.md`
-
-## Current terminology override
-
-Current revised Lesson 2 student-facing medium terminology:
-
-- `ঘন মাধ্যম`
-- `হালকা মাধ্যম`
-
-Historical `বিরল মাধ্যম` wording in v2 files is superseded for new production except explicit textbook/exam quotation.
-
-## Latest retained direct-render evidence
-
-Latest inspected PDF:
-
-`Lesson 2 High-Risk Visual Pack — Reference Locked v2_20260908_182041_0000.pdf`
-
-Retained reference disposition:
-
-- HRV-01: materially acceptable;
-- HRV-02: materially acceptable;
-- HRV-03: materially acceptable;
-- HRV-04: materially acceptable;
-- old HRV-05/06 renders: materially acceptable reference only;
-- old HRV-07 raster: failed regression evidence.
-
-## Controlled optics components v0.1
-
-Committed source:
-
-`/components/optics/ch11_l2_r3_optics_components_v0_1.js`
-
-Committed semantic tests:
-
-`/components/optics/test_ch11_l2_r3_optics_components_v0_1.js`
+`Lesson2_R3_Optics_Controlled_Validation_v0_2.pdf`
 
 QA checkpoint:
 
-`lessons/lesson-02/production/CONTROLLED_OPTICS_COMPONENTS_V0_1_QA_2026-09-08.md`
+`lessons/lesson-02/production/CONTROLLED_R3_VALIDATION_PACK_QA_2026-09-08.md`
 
-Current results:
+Internal QA result:
 
-- HRV-05 critical angle: semantic PASS + rendered component PASS;
-- HRV-06 full internal reflection: semantic PASS + rendered component PASS;
-- HRV-07 optical fibre: semantic PASS + rendered component PASS;
-- 3-slide PptxGenJS validation build: generated;
-- overflow test: PASS;
-- direct-pixel review: PASS after internal label-placement refinement.
+**PASS — USER REVIEW CANDIDATE**
 
-These results do **not** yet approve the complete seven-page visual pack.
+Verified internally:
 
-## Audit-hardening controls mandatory
+- 7 slides / 7 PDF pages;
+- no overflow;
+- no final helper overlap/out-of-bounds warning;
+- rendered PNG inspection completed;
+- semantic science assertions PASS for HRV-01..07;
+- Bangla-first current terminology;
+- HRV-05 angle from normal and `r = 90°` along interface;
+- HRV-06 `i > C` with no outside refracted ray;
+- HRV-07 boundary reflection topology and no previous explanatory-text overlap;
+- HRV-04 mirage scene/mechanism separated and generated context explicitly disclosed.
 
-As applicable:
+## Current gate
 
-- source freshness classification;
-- quantitative/unit/dimensional checks;
-- demo/experiment safety;
-- model/scale transparency;
-- accessibility/color-independent meaning;
-- semantic R3 tests;
-- golden-master regression;
-- targeted independent review for new R3 component families;
-- selective revalidation;
-- user review after internal PASS.
+**User acceptance of the internally-passed seven-page validation pack is required before full Lesson 2 assembly.**
 
-## Current hard block
+After user acceptance:
 
-Do not call Lesson 2 classroom-ready.
-Do not start Lesson 3.
+1. create current exact Lesson 2 copy lock / structured spec;
+2. assemble full controlled Lesson 2 PPTX using validated prior work;
+3. run full lesson automated + semantic + direct-pixel QA;
+4. run PowerPoint/export/PDF/offline compatibility checks;
+5. obtain final user acceptance;
+6. checkpoint before Lesson 3.
+
+## Hard blocks
+
+Do not call Lesson 2 classroom-ready yet.
+Do not start Lesson 3 yet.
 Do not restart Lesson 2 from zero.
 Do not resume Canva raster micro-patching as primary science production.
 
-## Next authorized stage
-
-1. build the complete controlled seven-page validation pack using retained HRV-01..04 and new HRV-05..07 components;
-2. run full-pack automated structural/text/layout checks;
-3. run applicable semantic science tests;
-4. render all seven pages and inspect R3 pages individually;
-5. run accessibility/projector and post-render student-inference QA;
-6. internally repair/rebuild until PASS;
-7. obtain one user acceptance;
-8. create current exact Lesson 2 copy/spec;
-9. assemble full Lesson 2 from validated work;
-10. run compatibility/export/offline QA;
-11. checkpoint before Lesson 3.
-
 ## Execution-time pending gates
 
-PowerPoint exact-artifact testing, actual classroom device/projector behavior, live network availability and post-class timing remain pending until tested.
+Microsoft PowerPoint exact-artifact testing, actual classroom device/projector behavior, live network availability and post-class timing remain pending until tested.
