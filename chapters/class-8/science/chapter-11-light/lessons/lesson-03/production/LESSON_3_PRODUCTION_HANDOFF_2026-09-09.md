@@ -1,6 +1,6 @@
 # Lesson 3 Production Handoff — 2026-09-09
 
-Status: **READY_FOR_NEW_CHAT_START — PRODUCTION_SYSTEM_V2_1**
+Status: **READY_FOR_NEW_CHAT_START — PRODUCTION_SYSTEM_V2_1 — REGRESSION-HARDENED**
 
 ## Purpose
 
@@ -33,6 +33,14 @@ Do not write to any other connected repository.
 - QA record:
   - `../lesson-02/production/FULL_LESSON_2_CONTROLLED_BUILD_V0_5_QA_2026-09-08.md`
 
+## Mandatory Lesson 2 regression source
+
+Read before any Lesson 3 R3 build:
+
+`/LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md`
+
+This file converts concrete Lesson 2 failures into mandatory F-xxx regression checks. Applicable checks must be copied into the active Lesson 3 prebuild/QA record and evidenced before `INTERNAL_QA_PASS`.
+
 Lesson 2 v0.5 lessons that must carry forward:
 
 1. visible slide = student-facing learning surface; teacher narration belongs in notes;
@@ -44,7 +52,8 @@ Lesson 2 v0.5 lessons that must carry forward:
 7. when the user says only one thing is wrong, change only that target and verify unaffected slides remain unchanged when practical;
 8. diagrams and student-facing labels should be separate/editable where practical, not baked together into fragile raster assets;
 9. avoid visible internal workflow language such as `FLEX`, `L3-Sxx`, `শিক্ষক বলবেন`, `বোর্ডে বলার মূল কথা`;
-10. Bangla-first terminology and projector readability are mandatory.
+10. Bangla-first terminology and projector readability are mandatory;
+11. known Lesson 2 failure patterns must be actively regression-tested, not just remembered.
 
 ## Mandatory Lesson 3 source files
 
@@ -52,23 +61,26 @@ Before producing any Lesson 3 artifact, read at minimum:
 
 1. `/CURRENT_STATE.md`
 2. `/SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
-3. `/TARGETED_REVISION_SCOPE_LOCK.md`
-4. `/SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
-5. `/AGENTS.md`
-6. `/QUALITY_GATES.md`
-7. `/RENDERER_ROUTING.md`
-8. `/VISUAL_ASSET_ROUTING.md`
-9. `/CLASSROOM_LANGUAGE_POLICY.md`
-10. `/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-11. `/chapters/class-8/science/chapter-11-light/STATUS.md`
-12. `/chapters/class-8/science/chapter-11-light/TERMINOLOGY_LOCK.md`
-13. `/chapters/class-8/science/chapter-11-light/DIAGRAM_CONTRACTS.md`
-14. Lesson 3 `LESSON_PLAN.md`
-15. Lesson 3 `STORYBOARD.md`
-16. Lesson 3 `RESOURCES.md`
-17. Lesson 3 `QA.md`
-18. chapter `SOURCE_MAP.md`
-19. chapter `SOURCE_ISSUES.md`
+3. `/LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md`
+4. `/TARGETED_REVISION_SCOPE_LOCK.md`
+5. `/SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
+6. `/AGENTS.md`
+7. `/QUALITY_GATES.md`
+8. `/RENDERER_ROUTING.md`
+9. `/VISUAL_ASSET_ROUTING.md`
+10. `/CLASSROOM_LANGUAGE_POLICY.md`
+11. `/PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+12. `/chapters/class-8/science/chapter-11-light/STATUS.md`
+13. `/chapters/class-8/science/chapter-11-light/TERMINOLOGY_LOCK.md`
+14. `/chapters/class-8/science/chapter-11-light/DIAGRAM_CONTRACTS.md`
+15. Lesson 3 `LESSON_PLAN.md`
+16. Lesson 3 `STORYBOARD.md`
+17. Lesson 3 `RESOURCES.md`
+18. Lesson 3 `QA.md`
+19. Lesson 3 `SEMANTIC_CONTRACTS_V2_1.md`
+20. Lesson 3 `PREBUILD_REGRESSION_CHECKLIST_V2_1.md`
+21. chapter `SOURCE_MAP.md`
+22. chapter `SOURCE_ISSUES.md`
 
 Historical files may be consulted only when necessary.
 
@@ -156,7 +168,7 @@ Before building the full Lesson 3 deck, create a small controlled validation pac
 5. R3-05 — accommodation two-state comparison;
 6. R3-06 — myopia/hyperopia corrective-lens concept.
 
-The validation pack should be internally QA'd before user review.
+The validation pack must pass automated, semantic, individual pixel, adversarial student-inference and applicable known-failure regression QA before user review.
 
 ## Lesson 3 semantic contracts
 
@@ -255,44 +267,58 @@ Teacher explanations, prompts and board-work suggestions belong in speaker notes
 ## Production order for Lesson 3
 
 1. Recover state and read the mandatory files.
-2. Audit Lesson 3 plan/storyboard/resources against Production System v2.1 and the Lesson 2 lessons learned.
+2. Audit Lesson 3 plan/storyboard/resources against Production System v2.1 and the Lesson 2 failure registry.
 3. Verify critical NCTB wording/source gaps before content freeze.
 4. Create/update a Lesson 3 structured copy/spec with Bangla-first student-facing wording.
-5. Create Lesson 3-specific semantic/diagram contracts if chapter-wide contracts are insufficient.
-6. Build R3 validation pack first.
-7. Run automated QA + semantic tests + direct individual pixel QA on every R3 slide.
-8. Internally repair/rebuild until PASS.
-9. Show the user one internally-passed R3 validation pack for visual/science acceptance.
-10. Only after validation-pack acceptance, assemble the full Lesson 3 controlled PPTX/PDF.
-11. Run full structural/text/layout/science/pixel/accessibility/export QA.
-12. Save final artifacts to Library and durable source/QA/state to GitHub.
-13. Do not call `CLASSROOM_READY` unless all applicable delivery gates are actually passed.
+5. Review/create Lesson 3 semantic/diagram contracts.
+6. Complete `PREBUILD_REGRESSION_CHECKLIST_V2_1.md`, selecting applicable F-xxx checks.
+7. Build R3 validation pack first.
+8. Run automated QA + semantic tests + direct individual pixel QA + known-failure regression QA on every applicable R3 slide.
+9. Perform adversarial student-inference review: ask what a student could misread or infer incorrectly from the rendered pixels.
+10. Internally repair/rebuild until PASS, then run a second internal QA pass.
+11. Show the user one internally-passed R3 validation pack for visual/science acceptance.
+12. Only after validation-pack acceptance, assemble the full Lesson 3 controlled PPTX/PDF.
+13. Run full structural/text/layout/science/pixel/accessibility/regression/export QA.
+14. Save final artifacts to Library and durable source/QA/state to GitHub.
+15. Do not call `CLASSROOM_READY` unless all applicable delivery gates are actually passed.
 
-## Lesson 2 regression lessons that are mandatory in Lesson 3
+## Mandatory regression lessons from Lesson 2
 
-### A. Do not trust generic arc/connector shapes for critical geometry
+### A. Geometry relationships, not object presence
 
-Where angles or ray relationships matter, construct them deterministically from the actual ray/reference geometry and inspect the final rendered pixels.
+Do not accept an angle/ray diagram because an arc, normal, lens or ray merely exists. Verify the exact relationship that carries the science.
 
-### B. Do not replace accepted visuals while fixing an unrelated issue
+### B. Basic visual meaning must survive without verbal rescue
 
-The user explicitly rejected this behavior during Lesson 2. `TARGETED_REVISION_SCOPE_LOCK.md` is now a hard rule.
+A comparison/context diagram must visually communicate what is being shown and what changed before the teacher adds deeper explanation.
 
-### C. Do not rely on montage-only QA
+### C. Context image must visibly support the claim
 
-Inspect every new R3 slide individually at actual rendered scale.
+A thematically related image is not sufficient. Check final rendered recognizability/phenomenon visibility at classroom scale.
 
-### D. Do not let a renderer PASS substitute for science PASS
+### D. Do not replace accepted visuals while fixing an unrelated issue
+
+`TARGETED_REVISION_SCOPE_LOCK.md` is a hard rule. Unaffected slides should remain pixel-identical when practical.
+
+### E. Do not rely on montage-only QA
+
+Inspect every new/materially changed R3 slide individually at actual rendered scale.
+
+### F. Do not let a renderer PASS substitute for science PASS
 
 `slides_test.py` checks mechanical overflow; it does not prove scientific correctness.
 
-### E. External AI review is useful but not authoritative
+### G. External AI review is useful but not authoritative
 
-Gemini helped identify real Lesson 2 issues, but future external feedback must be independently verified before applying.
+Classify and independently verify external feedback before applying it.
 
-### F. Preserve accepted content and selectively revalidate
+### H. Preserve accepted content and selectively revalidate
 
 A small correction should not restart or redesign the whole lesson.
+
+### I. Stop non-converging repair loops
+
+Apply the repair circuit breaker; after repeated material failure, rebuild or change representation route instead of endless micro-patching.
 
 ## Fresh-chat first deliverable
 
@@ -303,6 +329,7 @@ First deliverable should be a concise audit/report confirming:
 - Lesson 3 scope still matches current production system;
 - critical source/science gaps are identified;
 - proposed R3 validation-pack slide list;
+- applicable Lesson 2 F-xxx regression checks are identified;
 - any storyboard wording that needs updating before build;
 - exact next build checkpoint.
 
