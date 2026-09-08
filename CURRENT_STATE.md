@@ -27,7 +27,7 @@ Core rule:
 
 Current status:
 
-**LESSON_1_BASELINE_APPROVED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_R3_PACK_V0_3_USER_ACCEPTED — CURRENT_COPY_SPEC_V2_1_LOCKED — FULL_LESSON_2_V0_2_SUPERSEDED_AFTER_USER_GEMINI_REVIEW — FULL_LESSON_2_CONTROLLED_BUILD_V0_3_INTERNAL_QA_PASS — USER_FINAL_REVIEW_NEXT — CLASSROOM_READY_PENDING — LESSON_3_ON_HOLD**
+**LESSON_1_BASELINE_APPROVED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_R3_PACK_V0_3_USER_ACCEPTED — CURRENT_COPY_SPEC_V2_1_LOCKED — FULL_LESSON_2_V0_2_SUPERSEDED_AFTER_USER_GEMINI_REVIEW — FULL_LESSON_2_V0_3_SUPERSEDED_AFTER_TARGETED_ANGLE_ARC_REVIEW — FULL_LESSON_2_CONTROLLED_BUILD_V0_4_INTERNAL_QA_PASS — USER_FINAL_REVIEW_NEXT — CLASSROOM_READY_PENDING — LESSON_3_ON_HOLD**
 
 ## Lesson 1
 
@@ -35,7 +35,7 @@ Current status:
 
 ## Lesson 2 accepted high-risk foundation
 
-The user accepted the controlled high-risk validation pack v0.3. That accepted pack remains the science/visual basis for the lesson, except where later targeted full-deck review required a clearer student-facing surface.
+The user accepted the controlled high-risk validation pack v0.3. Later full-deck targeted corrections refine individual student-facing surfaces without resetting the accepted foundation.
 
 ## Current copy/spec
 
@@ -50,63 +50,61 @@ Current student-facing terminology:
 
 Visible slides are student-facing; teacher narration/operational prompts belong in notes.
 
-## Full Lesson 2 v0.2 disposition
+## Superseded full builds
 
-`Lesson2_Controlled_Full_v0_2` is now **SUPERSEDED AS FINAL-REVIEW CANDIDATE**.
+- `Lesson2_Controlled_Full_v0_1` — superseded after cropped-label defect.
+- `Lesson2_Controlled_Full_v0_2` — superseded after user/Gemini content review.
+- `Lesson2_Controlled_Full_v0_3` — superseded only after the user identified unclear/missing angle arcs on the increasing-incidence and critical-angle slides.
 
-Trigger:
+These remain regression evidence.
 
-The user supplied a Gemini Pro review identifying a typo/clarity issue on the fish apparent-depth slide, excessive reflected-ray emphasis on the critical-angle slide, a need for clearer mirage mechanism wording, shorthand incidence/refraction wording, redundant three-state slides, and a request to add a broadband fibre example.
-
-## Current full Lesson 2 controlled build v0.3
+## Current full Lesson 2 controlled build v0.4
 
 Artifacts:
 
-- `Lesson2_Controlled_Full_v0_3.pptx`
-- `Lesson2_Controlled_Full_v0_3.pdf`
+- `Lesson2_Controlled_Full_v0_4.pptx`
+- `Lesson2_Controlled_Full_v0_4.pdf`
 
 QA checkpoint:
 
-`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/FULL_LESSON_2_CONTROLLED_BUILD_V0_3_QA_2026-09-08.md`
+`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/FULL_LESSON_2_CONTROLLED_BUILD_V0_4_QA_2026-09-08.md`
 
 Slide/PDF page count:
 
 `18`
 
-### Corrections incorporated
+### Targeted v0.4 correction
 
-- fish apparent-depth slide rebuilt; correct visible term `দাগকাটা সহায়ক রেখা` used;
-- critical-angle slide rebuilt to focus on `i = C`, `r = 90°`, and the grazing refracted ray; visible reflected-ray emphasis removed;
-- mirage slide rebuilt with temperature/optical-density gradient plus carefully worded TIR-like upward-turning explanation, without a hard mirror-like air boundary;
-- increasing-incidence slide now uses the full sentence `আপতন কোণ (i) বাড়লে প্রতিসরণ কোণ (r) বাড়ে` rather than shorthand `ছোট i / বড় i` labels;
-- previous separate three-state question and answer slides merged into one three-column comparison (`i<C`, `i=C`, `i>C`), reducing repetition;
-- optical-fibre uses slide now includes `ব্রডব্যান্ড ইন্টারনেট`, while retaining endoscope and long-distance communication examples;
-- optional PhET Bending Light link and static/offline fallback retained.
+Only the user-identified angle-rendering defect was changed:
 
-### Internal v0.3 QA
+- on `সংকট কোণের পথে`, the purple `i` arc is now explicitly between the incident ray and normal, and the orange `r` arc is explicitly between the normal and refracted ray;
+- on `সংকট কোণ (C)`, the purple `i = C` arc is explicitly between incident ray and normal, and the orange `r = 90°` is drawn as a clear right angle between the normal and the interface-parallel refracted ray;
+- the earlier generic PowerPoint arc shapes were replaced with deterministic segmented arcs for reliable rendering;
+- all other v0.3 content/science decisions were preserved.
+
+### Internal v0.4 QA
 
 - PptxGenJS controlled build: PASS;
 - `slides_test.py`: PASS — no overflow;
 - render: PASS — 18 PNG slides;
 - PDF export: PASS — 18 pages;
-- semantic report: PASS_CANDIDATE;
-- full montage inspected;
-- corrected fish, mirage, incidence, critical-angle, three-state comparison, and fibre-use slides individually inspected.
+- targeted direct rendered inspection of slides 11 and 12: PASS;
+- no other full-deck content was intentionally changed.
 
 Artifact fingerprints:
 
-- PPTX SHA-256: `7f3638168a9529e008daba6bd5ec2b424678b60f7caaffb20fa830f14829d683`
-- PDF SHA-256: `08f2c67837b5fb647c562bab7a2571dc0f1b58b533b20056956af4d381527921`
-- montage SHA-256: `5676337624d48da9a580de1e05de9a4c1b75c158f48adb21296f695efe535242`
+- PPTX SHA-256: `538141d96a61f6650f377f0241d5e4ddebeaf0601906fea83e23b3756b1ed5d4`
+- PDF SHA-256: `a92d6d7c10f9d2f20b59bc8a8b456e05768a9e947f58a65f275081a7aa326293`
+- montage SHA-256: `62eacfcfc91a4cf823022cc73f76c762d43a2c7d403218fdc6341b9b8a5563fb`
 
 Library copies:
 
-- `/Science Slides/Lesson2_Controlled_Full_v0_3.pptx`
-- `/Science Slides/Lesson2_Controlled_Full_v0_3.pdf`
+- `/Science Slides/Lesson2_Controlled_Full_v0_4.pptx`
+- `/Science Slides/Lesson2_Controlled_Full_v0_4.pdf`
 
 ## Current gate
 
-**USER FINAL REVIEW OF FULL LESSON 2 V0.3 IS NEXT.**
+**USER FINAL REVIEW OF FULL LESSON 2 V0.4 IS NEXT.**
 
 Do not mark `CLASSROOM_READY` yet.
 Do not start Lesson 3 yet.
