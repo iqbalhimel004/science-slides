@@ -1,8 +1,8 @@
 # New Chat Recovery Protocol
 
-Version: 5.2
+Version: 5.3
 Last revised: 2026-09-09
-Status: **ACTIVE — SCIENCE SLIDES PRODUCTION SYSTEM V2.1 — LESSON 3 STARTUP**
+Status: **ACTIVE — SCIENCE SLIDES PRODUCTION SYSTEM V2.1 — LESSON 3 STARTUP — REGRESSION-HARDENED**
 
 ## 1. Repository boundary
 
@@ -18,30 +18,32 @@ For active production work, read in this order:
 
 1. `CURRENT_STATE.md`
 2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
-3. `TARGETED_REVISION_SCOPE_LOCK.md`
-4. `SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
-5. `AGENTS.md`
-6. `OPERATING_BRIEF.md`
-7. `QUALITY_GATES.md`
-8. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
-9. `ACCURACY_ENFORCEMENT.md`
-10. `RENDERER_ROUTING.md`
-11. `VISUAL_ASSET_ROUTING.md`
-12. `CLASSROOM_LANGUAGE_POLICY.md`
-13. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-14. `SIMULATION_RESOURCE_ROUTING.md`
-15. `ARTIFACT_PERSISTENCE.md`
-16. active chapter `STATUS.md`
-17. active chapter `TERMINOLOGY_LOCK.md`
-18. active chapter `DIAGRAM_CONTRACTS.md`
-19. active lesson `LESSON_PLAN.md`
-20. active lesson `STORYBOARD.md`
-21. active lesson `RESOURCES.md`
-22. active lesson `QA.md`
-23. active lesson `production/LESSON_3_PRODUCTION_HANDOFF_2026-09-09.md` when Lesson 3 is active
-24. chapter `SOURCE_MAP.md`
-25. chapter `SOURCE_ISSUES.md`
-26. deeper historical files only when needed
+3. `LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md`
+4. `TARGETED_REVISION_SCOPE_LOCK.md`
+5. `SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
+6. `AGENTS.md`
+7. `OPERATING_BRIEF.md`
+8. `QUALITY_GATES.md`
+9. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+10. `ACCURACY_ENFORCEMENT.md`
+11. `RENDERER_ROUTING.md`
+12. `VISUAL_ASSET_ROUTING.md`
+13. `CLASSROOM_LANGUAGE_POLICY.md`
+14. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+15. `SIMULATION_RESOURCE_ROUTING.md`
+16. `ARTIFACT_PERSISTENCE.md`
+17. active chapter `STATUS.md`
+18. active chapter `TERMINOLOGY_LOCK.md`
+19. active chapter `DIAGRAM_CONTRACTS.md`
+20. active lesson `LESSON_PLAN.md`
+21. active lesson `STORYBOARD.md`
+22. active lesson `RESOURCES.md`
+23. active lesson `QA.md`
+24. active lesson semantic contracts
+25. active lesson production handoff
+26. chapter `SOURCE_MAP.md`
+27. chapter `SOURCE_ISSUES.md`
+28. deeper historical files only when needed
 
 Do not depend on prior chat memory for current state, user acceptance, copy, terminology, science geometry, artifact identity or next action.
 
@@ -51,15 +53,16 @@ If files conflict:
 
 1. `CURRENT_STATE.md`
 2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
-3. `TARGETED_REVISION_SCOPE_LOCK.md` for targeted edits
-4. later dated durable decision/addendum
-5. active chapter terminology/diagram/semantic contracts
-6. active lesson handoff/current structured spec
-7. `NEW_CHAT_START.md` / `AGENTS.md`
-8. current renderer/source/compatibility policies
-9. active chapter `STATUS.md`
-10. latest stage-specific QA/failure record
-11. older historical build/audit records
+3. `LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md` for known failure prevention
+4. `TARGETED_REVISION_SCOPE_LOCK.md` for targeted edits
+5. later dated durable decision/addendum
+6. active chapter terminology/diagram/semantic contracts
+7. active lesson handoff/current structured spec
+8. `NEW_CHAT_START.md` / `AGENTS.md`
+9. current renderer/source/compatibility policies
+10. active chapter `STATUS.md`
+11. latest stage-specific QA/failure record
+12. older historical build/audit records
 
 A later user rejection/direct-pixel failure supersedes an older internal PASS.
 
@@ -82,7 +85,19 @@ For an in-progress lesson:
 - rebuild only defective/fragile/unreproducible layers;
 - continue from the nearest valid checkpoint.
 
-## 6. Risk-routed production
+## 6. Known-failure regression rule
+
+Before any new R3 validation pack or final deck is shown to the user:
+
+1. read `LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md`;
+2. identify which known failure patterns apply to the active lesson;
+3. include those checks in the active QA record;
+4. verify them against source geometry, semantic contracts, rendered pixels, or artifact comparison as appropriate;
+5. any applicable unanswered regression item blocks `INTERNAL_QA_PASS`.
+
+Known Lesson 2 failures are regression tests, not merely historical notes.
+
+## 7. Risk-routed production
 
 Classify visual/scientific representations as R1/R2/R3.
 
@@ -90,7 +105,7 @@ R3 visuals carry scientific meaning through geometry/topology/scale/position/not
 
 Unconstrained generative AI must not decide R3 science.
 
-## 7. Mandatory science controls
+## 8. Mandatory science controls
 
 Before `INTERNAL_QA_PASS`, apply as relevant:
 
@@ -106,11 +121,12 @@ Before `INTERNAL_QA_PASS`, apply as relevant:
 - direct individual pixel QA of all R3 slides;
 - post-render student-inference science review;
 - accessibility/multimodal review;
+- known-failure regression gate;
 - compatibility/export/offline QA.
 
 Montage-only review or `slides_test.py` PASS is never sufficient science QA.
 
-## 8. Slide-surface rule
+## 9. Slide-surface rule
 
 Visible slide = student-facing learning surface.
 
@@ -120,7 +136,7 @@ Do not show teacher scripts, internal slide IDs, QA labels, workflow jargon, `�
 
 Teacher narration/board-work guidance belongs in speaker notes.
 
-## 9. Targeted-revision scope lock
+## 10. Targeted-revision scope lock
 
 When the user requests one narrow correction, treat it as a hard boundary.
 
@@ -129,13 +145,13 @@ When the user requests one narrow correction, treat it as a hard boundary.
 - compare unaffected rendered slides against the prior artifact when practical;
 - if the tool would force collateral changes, stop and explain before making them.
 
-## 10. External-review rule
+## 11. External-review rule
 
 Gemini/other AI/reviewer findings are useful but advisory.
 
-Independently verify against authoritative science/contracts before applying. Do not change user-accepted correct material just because another AI recommends a different presentation.
+Independently verify against authoritative science/contracts before applying. Classify recommendations as factual error, science clarification, pedagogical option, or unsupported suggestion. Do not change user-accepted correct material solely because another AI prefers a different presentation.
 
-## 11. Dynamics/simulation
+## 12. Dynamics/simulation
 
 Preferred order:
 
@@ -148,30 +164,31 @@ Preferred order:
 
 Any classroom-critical online/dynamic element requires a static/offline fallback.
 
-## 12. Lesson 3 startup sequence
+## 13. Lesson 3 startup sequence
 
 Do not immediately assemble the full Lesson 3 deck.
 
 First:
 
-1. audit existing Lesson 3 `LESSON_PLAN.md`, `STORYBOARD.md`, `RESOURCES.md`, `QA.md` against Production System v2.1;
+1. audit existing Lesson 3 `LESSON_PLAN.md`, `STORYBOARD.md`, `RESOURCES.md`, `QA.md` against Production System v2.1 and the Lesson 2 regression registry;
 2. verify NCTB/source-gap wording and current science;
 3. create/update a Bangla-first structured copy/spec;
 4. create Lesson 3-specific semantic/diagram contracts where chapter contracts are insufficient;
-5. build a small R3 validation pack containing at least:
+5. create a Lesson 3 prebuild regression checklist referencing applicable F-xxx items from `LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md`;
+6. build a small R3 validation pack containing at least:
    - converging/diverging lens + focus/focal length;
    - real vs virtual image convention;
    - magnifying-glass ray construction;
    - human-eye cross-section;
    - accommodation;
    - myopia/hyperopia corrective-lens concept;
-6. run automated + semantic + individual pixel QA internally until PASS;
-7. show one internally-passed validation pack for user acceptance;
-8. after acceptance, build the full Lesson 3 controlled PPTX/PDF;
-9. run full structural/text/science/pixel/accessibility/export QA;
-10. record and checkpoint before Lesson 4.
+7. run automated + semantic + individual pixel + regression QA internally until PASS;
+8. show one internally-passed validation pack for user acceptance;
+9. after acceptance, build the full Lesson 3 controlled PPTX/PDF;
+10. run full structural/text/science/pixel/accessibility/regression/export QA;
+11. record and checkpoint before Lesson 4.
 
-## 13. Lesson 3 hard science reminders
+## 14. Lesson 3 hard science reminders
 
 - convex/converging: parallel rays toward focus;
 - concave/diverging: parallel rays spread;
@@ -187,7 +204,7 @@ First:
 - hyperopia correction = converging/convex lens;
 - spectacles material is supplementary support for an NCTB learning-outcome gap.
 
-## 14. PowerPoint/export
+## 15. PowerPoint/export
 
 PowerPoint repair/recovery warning = hard FAIL.
 
@@ -195,7 +212,7 @@ If exact PowerPoint testing is unavailable, use `DELIVERY_COMPATIBILITY_PENDING`
 
 Verify PDF/static fallback separately.
 
-## 15. End-of-stage rule
+## 16. End-of-stage rule
 
 **Finish -> record -> then continue.**
 
