@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-08
-- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — PRODUCTION_SYSTEM_V2_1_AUDIT_HARDENED — REPOSITORY_POLICY_ALIGNMENT_COMPLETE — LESSON_2_CONTINUES_WITHOUT_RESET — HIGH_RISK_REFERENCE_LOCK_COMPLETE — LATEST_DIRECT_PDF_QA_PAGES_1_TO_6_ACCEPTABLE — HRV_07_UNRESOLVED — CONTROLLED_COMPONENT_MIGRATION_NEXT — LESSON_2_FULL_BUILD_BLOCKED — LESSON_3_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — PRODUCTION_SYSTEM_V2_1_AUDIT_HARDENED — LESSON_2_CONTINUES_WITHOUT_RESET — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HRV_01_TO_04_RETAINED_AS_VALIDATED_REFERENCES — CONTROLLED_HRV_05_06_07_COMPONENTS_V0_1_COMMITTED — SEMANTIC_TESTS_PASS — 3_SLIDE_R3_RENDER_QA_PASS — COMPLETE_7_PAGE_CONTROLLED_VALIDATION_PACK_NEXT — LESSON_2_FULL_BUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Canonical architecture
 
@@ -28,7 +28,7 @@ No workflow-driven restart is required.
 - current terminology lock;
 - diagram/reference contracts;
 - accepted physical/context assets;
-- corrected mirage/critical-angle/TIR science as rendered references;
+- HRV-01..04 latest validated references;
 - historical failure/QA records as regression evidence.
 
 Migration override:
@@ -44,35 +44,47 @@ Current revised Lesson 2 student-facing medium terminology:
 
 Historical `বিরল মাধ্যম` wording in v2 files is superseded for new production except explicit textbook/exam quotation.
 
-## Latest direct-render evidence
+## Latest retained direct-render evidence
 
 Latest inspected PDF:
 
 `Lesson 2 High-Risk Visual Pack — Reference Locked v2_20260908_182041_0000.pdf`
 
+Retained reference disposition:
+
 - HRV-01: materially acceptable;
 - HRV-02: materially acceptable;
 - HRV-03: materially acceptable;
 - HRV-04: materially acceptable;
-- HRV-05: materially acceptable rendered reference -> controlled component port;
-- HRV-06: materially acceptable rendered reference -> controlled component port;
-- HRV-07: **UNRESOLVED / FAIL** due text overlap/crowding.
+- old HRV-05/06 renders: materially acceptable reference only;
+- old HRV-07 raster: failed regression evidence.
 
-Reconciled QA:
+## Controlled optics components v0.1
 
-`lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
+Committed source:
 
-## Current migration classification
+`/components/optics/ch11_l2_r3_optics_components_v0_1.js`
 
-- HRV-01: `REUSE_AS_REFERENCE`
-- HRV-02: `REUSE_AS_REFERENCE`
-- HRV-03: `REUSE_AS_REFERENCE`
-- HRV-04: `REUSE_AS_REFERENCE`
-- HRV-05: `PORT_TO_CONTROLLED_COMPONENT`
-- HRV-06: `PORT_TO_CONTROLLED_COMPONENT`
-- HRV-07: `REBUILD/PORT_TO_CONTROLLED_COMPONENT` first
+Committed semantic tests:
 
-## Audit-hardening controls now mandatory
+`/components/optics/test_ch11_l2_r3_optics_components_v0_1.js`
+
+QA checkpoint:
+
+`lessons/lesson-02/production/CONTROLLED_OPTICS_COMPONENTS_V0_1_QA_2026-09-08.md`
+
+Current results:
+
+- HRV-05 critical angle: semantic PASS + rendered component PASS;
+- HRV-06 full internal reflection: semantic PASS + rendered component PASS;
+- HRV-07 optical fibre: semantic PASS + rendered component PASS;
+- 3-slide PptxGenJS validation build: generated;
+- overflow test: PASS;
+- direct-pixel review: PASS after internal label-placement refinement.
+
+These results do **not** yet approve the complete seven-page visual pack.
+
+## Audit-hardening controls mandatory
 
 As applicable:
 
@@ -96,11 +108,11 @@ Do not resume Canva raster micro-patching as primary science production.
 
 ## Next authorized stage
 
-1. build controlled HRV-07 component first;
-2. port HRV-05/06 controlled optics components;
-3. retain HRV-01..04 references/assets unless regression appears;
-4. build controlled PptxGenJS high-risk validation pack;
-5. run automated + semantic + direct-pixel + accessibility QA;
+1. build the complete controlled seven-page validation pack using retained HRV-01..04 and new HRV-05..07 components;
+2. run full-pack automated structural/text/layout checks;
+3. run applicable semantic science tests;
+4. render all seven pages and inspect R3 pages individually;
+5. run accessibility/projector and post-render student-inference QA;
 6. internally repair/rebuild until PASS;
 7. obtain one user acceptance;
 8. create current exact Lesson 2 copy/spec;
@@ -110,4 +122,4 @@ Do not resume Canva raster micro-patching as primary science production.
 
 ## Execution-time pending gates
 
-PowerPoint exact-artifact testing, actual classroom device/projector behavior, live network availability and post-class timing cannot be pre-certified by a repository plan. Record them explicitly as pending until tested.
+PowerPoint exact-artifact testing, actual classroom device/projector behavior, live network availability and post-class timing remain pending until tested.
