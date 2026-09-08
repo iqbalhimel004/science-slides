@@ -27,22 +27,7 @@ Core rule:
 
 ## Repository/plan audit — complete
 
-A full production-plan and repository consistency audit was completed on 2026-09-08 before further Lesson 2 build work.
-
-Material gaps found and corrected included:
-
-- stale startup/recovery order that could miss Production System v2;
-- stale first-pilot wording implying Lesson 1 must be rebuilt before Lesson 2;
-- missing explicit source-freshness, quantitative, safety, model/scale and accessibility controls;
-- insufficiently semantic R3 tests (e.g. angle arc existence without endpoint/reference validation);
-- no golden-master regression rule for reusable components;
-- no selective revalidation matrix to control production time;
-- stale QA-template gate numbering;
-- Chapter 11 `বিরল মাধ্যম` terminology conflicting with the user-approved current `হালকা মাধ্যম` wording;
-- optical-fibre contract not explicitly requiring reflection points on the core-cladding boundary;
-- stale Lesson 2 direct-pixel QA file that did not reflect the latest `182041` export.
-
-Canonical v2.1 now includes all these controls.
+The production-plan/repository consistency audit is complete. Production System v2.1 contains source-freshness, quantitative, safety, model/scale, accessibility, semantic-R3, golden-master regression and selective-revalidation controls.
 
 ## Active chapter
 
@@ -50,13 +35,13 @@ Canonical v2.1 now includes all these controls.
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — PRODUCTION_SYSTEM_V2_1_AUDIT_HARDENED — REPOSITORY_POLICY_ALIGNMENT_COMPLETE — LESSON_2_CONTINUES_WITHOUT_RESET — HIGH_RISK_REFERENCE_LOCK_COMPLETE — LATEST_DIRECT_PDF_QA_PAGES_1_TO_6_ACCEPTABLE — HRV_07_UNRESOLVED — CONTROLLED_COMPONENT_MIGRATION_NEXT — FULL_LESSON_2_BLOCKED — LESSON_3_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — PRODUCTION_SYSTEM_V2_1_AUDIT_HARDENED — LESSON_2_CONTINUES_WITHOUT_RESET — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HRV_01_TO_04_RETAINED_AS_VALIDATED_REFERENCES — CONTROLLED_HRV_05_06_07_COMPONENTS_V0_1_COMMITTED — SEMANTIC_TESTS_PASS — 3_SLIDE_R3_RENDER_QA_PASS — COMPLETE_7_PAGE_CONTROLLED_VALIDATION_PACK_NEXT — FULL_LESSON_2_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Lesson 1
 
 **COMPLETED / USER-APPROVED BASELINE — PRESERVE**
 
-Do not rebuild Lesson 1 merely because the production system changed. Historical reproducibility limitations remain documented, but they are not a reason to discard or restart the approved lesson.
+Do not rebuild Lesson 1 merely because the production system changed.
 
 ## Lesson 2 — no-reset migration
 
@@ -65,85 +50,95 @@ Retain/reuse all still-valid work:
 - lesson/chapter analysis;
 - source verification/reconciliation;
 - storyboard;
-- validated student copy concepts;
+- validated student-copy concepts;
 - current terminology lock;
 - `DIAGRAM_CONTRACTS.md`;
 - high-risk reference lock;
 - recognizable physical/context assets;
 - accepted HRV-04 mirage context;
-- accepted corrected HRV-05/06 rendered science as reference;
+- direct-render evidence for HRV-01..06;
 - QA/failure records as regression evidence.
 
 Historical Lesson 2 v1/v2 artifacts that failed review are not classroom-ready.
 
-Canonical v2.1 Lesson 2 migration override:
+Canonical migration override:
 
 `chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/PRODUCTION_SYSTEM_V2_1_MIGRATION_2026-09-08.md`
 
 ## Current Chapter 11 terminology
 
-For revised Lesson 2 student-facing critical-angle/TIR content:
+For revised Lesson 2 critical-angle/TIR student-facing content:
 
 - `ঘন মাধ্যম`
 - `হালকা মাধ্যম`
 
-Older `বিরল মাধ্যম` wording in historical v2 files is superseded for new production unless explicitly quoted as textbook/exam wording.
+Older `বিরল মাধ্যম` wording is historical unless explicitly quoted as textbook/exam wording.
 
-Scientific meaning remains lower optical density/refractive index for the `হালকা মাধ্যম` side.
+## Retained high-risk evidence
 
-## Latest direct-render evidence
-
-Latest inspected export:
+Latest inspected user export:
 
 `Lesson 2 High-Risk Visual Pack — Reference Locked v2_20260908_182041_0000.pdf`
 
-Direct-pixel result:
+Retained disposition:
 
-- HRV-01: materially acceptable;
-- HRV-02: materially acceptable;
-- HRV-03: materially acceptable, fish recognizable;
-- HRV-04: materially acceptable, mirage represented and clipped label removed;
-- HRV-05: materially acceptable rendered reference; angle from normal, `r = 90°`, `হালকা মাধ্যম`;
-- HRV-06: materially acceptable rendered reference; angle from normal, no outside refracted ray, `হালকা মাধ্যম`;
-- HRV-07: **UNRESOLVED / FAIL** due lower explanatory text overlap/crowding.
+- HRV-01: materially acceptable reference;
+- HRV-02: materially acceptable reference;
+- HRV-03: materially acceptable reference, fish recognizable;
+- HRV-04: materially acceptable reference, mirage communicated;
+- HRV-05/06: old rendered versions were materially acceptable references but are now superseded for controlled production by source-controlled components;
+- HRV-07: old raster version remains failed regression evidence and is superseded for controlled production by the new component candidate.
 
-Canonical reconciled pixel-QA record:
+## Controlled optics components v0.1 — completed checkpoint
 
-`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
+Committed controlled source:
 
-A later HRV-07 v5 Canva draft was not established as a committed/final direct-pixel PASS and is not current authority.
+`components/optics/ch11_l2_r3_optics_components_v0_1.js`
 
-## V2.1 migration classification
+Committed semantic test:
 
-- HRV-01: `REUSE_AS_REFERENCE`;
-- HRV-02: `REUSE_AS_REFERENCE`, retain coin assets;
-- HRV-03: `REUSE_AS_REFERENCE`, retain fish asset/topology;
-- HRV-04: `REUSE_AS_REFERENCE`, retain mirage context/mechanism;
-- HRV-05: `PORT_TO_CONTROLLED_COMPONENT`;
-- HRV-06: `PORT_TO_CONTROLLED_COMPONENT`;
-- HRV-07: `REBUILD/PORT_TO_CONTROLLED_COMPONENT` first.
+`components/optics/test_ch11_l2_r3_optics_components_v0_1.js`
+
+QA checkpoint:
+
+`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/CONTROLLED_OPTICS_COMPONENTS_V0_1_QA_2026-09-08.md`
+
+Results:
+
+- HRV-05 critical-angle component: semantic PASS;
+- HRV-06 full-internal-reflection component: semantic PASS;
+- HRV-07 optical-fibre component: semantic PASS;
+- PptxGenJS 3-slide validation build: generated successfully;
+- `slides_test.py`: PASS, no overflow;
+- direct rendered-pixel review: PASS for all three component slides after internal label-placement refinement.
+
+Key semantic controls now enforced:
+
+- incidence angles are defined from the normal;
+- HRV-05 `r = 90°` ray lies along the interface;
+- HRV-06 outside transmitted/refracted ray count is zero;
+- HRV-07 every intended reflection vertex lies on a core-cladding boundary and the ray remains inside the core in the simplified path;
+- current terminology uses `ঘন মাধ্যম` / `হালকা মাধ্যম`.
+
+## Important limitation
+
+The complete seven-page controlled High-Risk Visual Pack is **not yet internally complete**.
+
+HRV-01..04 are retained rather than rebuilt, but they still need to be incorporated into the complete controlled validation pack and rechecked together with the new HRV-05..07 components before user acceptance.
 
 ## Immediate next authorized action
 
-**No slide/component production begins until this audit checkpoint is recorded; that condition is now satisfied.**
-
-Next production sequence:
-
-1. recover current Lesson 2 locks/specs/migration override;
-2. build a source-controlled HRV-07 optical-fibre component first;
-3. port HRV-05 critical-angle and HRV-06 TIR into reusable controlled optics components;
-4. preserve HRV-01..04 validated references/assets unless regression evidence appears;
-5. assemble a controlled high-risk validation pack with PptxGenJS + deterministic science layers + editable/native labels;
-6. run automated structural/text/layout/quantitative checks;
-7. run semantic science assertions, including angle endpoints and fibre boundary membership;
-8. render and inspect every R3 page individually;
-9. run accessibility/projector and post-render student-inference review;
-10. internally repair/rebuild until PASS using the circuit breaker and selective revalidation;
-11. show one internally-passed pack for user acceptance;
-12. create a current exact Lesson 2 copy lock/structured spec from already-validated content plus v2.1 terminology override;
-13. assemble the full Lesson 2 controlled PPTX;
-14. run PowerPoint/export/PDF/offline QA;
-15. checkpoint before Lesson 3.
+1. assemble the complete controlled seven-page high-risk validation pack using retained HRV-01..04 references/assets and new controlled HRV-05..07 components;
+2. run structural/text/layout QA on the complete pack;
+3. run applicable semantic science assertions;
+4. render every page and inspect every R3 page individually;
+5. run accessibility/projector and post-render student-inference review;
+6. internally repair/rebuild until PASS using the circuit breaker and selective revalidation;
+7. show one internally-passed complete pack for user acceptance;
+8. create the current exact Lesson 2 copy lock/structured spec;
+9. assemble the full Lesson 2 controlled PPTX from already-validated content/assets;
+10. run PowerPoint/export/PDF/offline QA;
+11. checkpoint before Lesson 3.
 
 ## Current hard blocks
 
@@ -151,35 +146,14 @@ Do not call Lesson 2 classroom-ready yet.
 Do not start Lesson 3 yet.
 Do not return to repeated Canva raster micro-patching as the primary science-production route.
 
-## Execution-time gates that cannot be pre-certified by repository policy
+## Execution-time gates not yet certifiable
 
-These are not plan gaps; they must be checked when the relevant artifact/context exists:
-
-- exact Microsoft PowerPoint opening/playback of a new final PPTX;
-- actual classroom device/projector behavior when available;
+- exact Microsoft PowerPoint opening/playback of the future final PPTX;
+- actual classroom device/projector behavior;
 - live internet/resource availability at teaching time;
-- real classroom timing/post-class calibration.
+- real post-class timing calibration.
 
-Until tested, use explicit pending statuses rather than claiming PASS.
-
-## Active safeguards
-
-- `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` v2.1
-- `NEW_CHAT_START.md` v5.1
-- `AGENTS.md` v5.0
-- `OPERATING_BRIEF.md` v4.0
-- `WORKFLOW.md` v5.0
-- `QUALITY_GATES.md` v5.0
-- `ACCURACY_ENFORCEMENT.md`
-- `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
-- `RENDERER_ROUTING.md`
-- `VISUAL_ASSET_ROUTING.md`
-- `CLASSROOM_LANGUAGE_POLICY.md`
-- `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-- `ARTIFACT_PERSISTENCE.md`
-- chapter `TERMINOLOGY_LOCK.md` v1.1
-- chapter `DIAGRAM_CONTRACTS.md` v1.1
-- D-040 through D-044
+Use explicit pending status until tested.
 
 ## Universal stage rule
 
