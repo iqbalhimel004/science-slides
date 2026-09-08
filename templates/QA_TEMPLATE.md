@@ -1,10 +1,10 @@
-# QA Template
+# QA Template — Production System v2.1
 
 ## Identity
 
 - Chapter:
 - Lesson:
-- Version:
+- Version/build:
 - Reviewer:
 - Date:
 
@@ -14,125 +14,114 @@
 |---|---|---|
 | G0 Input integrity | PASS / FAIL / N/A | |
 | G1 Curriculum and scope | PASS / FAIL | |
-| G2 Source verification | PASS / FAIL | |
+| G2 Source verification and freshness | PASS / FAIL | |
 | G3 Scientific accuracy | PASS / FAIL | |
+| G3A Copy/terminology | PASS / FAIL / N/A | |
+| G3B R3 semantic/diagram contracts | PASS / FAIL / N/A | |
+| G3C Quantitative/numerical integrity | PASS / FAIL / N/A | |
+| G3D Model/scale transparency | PASS / FAIL / N/A | |
 | G4 Realistic 60-minute timing | PASS / FAIL | |
-| G5 Pedagogy and cognitive load | PASS / FAIL | |
-| G6 Resource suitability / fallback | PASS / FAIL / N/A | |
-| G7 Storyboard readiness | PASS / FAIL | |
+| G5 Pedagogy/cognitive load | PASS / FAIL | |
+| G6 Resource suitability/licensing/fallback | PASS / FAIL / N/A | |
+| G6A Experiment/demo safety | PASS / FAIL / N/A | |
+| G7 Storyboard/structured-spec readiness | PASS / FAIL | |
 | G8 Content freeze | PASS / FAIL | |
-| G9 Renderer calibration | PASS / FAIL / N/A | |
-| G10 Visual engagement / classroom usability | PASS / FAIL | |
-| G11 Export / playback / offline reliability | PASS / FAIL / N/A | |
+| G9 Renderer/tool routing | PASS / FAIL / N/A | |
+| G10 Visual engagement/classroom usability | PASS / FAIL | |
+| G10A Accessibility/multimodal clarity | PASS / FAIL / N/A | |
+| G11 PowerPoint/export/playback/offline | PASS / FAIL / PENDING / N/A | |
 | G12 Chapter-wide coverage | PASS / FAIL / N/A | |
-| G13 Cross-lesson continuity / duplication | PASS / FAIL / N/A | |
-| G14 Final chapter completion | PASS / FAIL / N/A | |
-| G15 Post-class calibration | DONE / PENDING / N/A | |
+| G13 Continuity/duplication | PASS / FAIL / N/A | |
+| G14 Persistence/component regression | PASS / FAIL / N/A | |
+| G15 Final completion | PASS / FAIL / N/A | |
+| G16 Post-class calibration | DONE / PENDING / N/A | |
 
 ## Critical findings
 
-List any issue that must be fixed before release.
+List blockers only.
 
 ## Non-critical improvements
 
-List optional improvements separately from blockers.
+List optional improvements separately.
 
-## Timing check
+## Source/science checks
 
-- CORE planned time:
-- FLEX planned time:
+- authoritative science verified:
+- freshness class/date recorded where relevant:
+- textbook vs precise science conflict resolved:
+- formulas/units/constants verified:
+- calculations independently recomputed:
+- dimensional consistency checked where applicable:
+- graphs/data/axes/scales verified:
+- R3 semantic contracts passed:
+- post-render student-inference science review passed:
+
+## Safety / model checks
+
+- live demo/activity hazard review:
+- teacher-only/student-permitted action clear:
+- safer/static fallback:
+- schematic/model/`not to scale` disclosure where needed:
+
+## Timing / pedagogy
+
+- CORE:
+- FLEX:
 - CORE + FLEX:
-- Contingency retained:
-- STRETCH required for lesson success?:
-- Questions/board work/media setup/transitions counted?:
-- Unrealistic pacing assumptions?:
-
-## Scientific/source checks
-
-- Definitions source-traceable:
-- Critical OCR/extracted wording visually checked where uncertain:
-- Laws/formulas/units verified:
-- Calculations checked:
-- Diagram labels/directions checked:
-- Material source conflicts resolved:
-- Equation/source expression preserved where needed:
-
-## Pedagogy and cognitive load
-
-- Retrieval/prior knowledge activated?:
-- Learning sequence logical?:
-- Major segments include meaningful student response?:
-- Hinge/check-for-understanding useful and present where needed?:
-- Guided practice/application present?:
-- Misconceptions addressed where relevant?:
-- Summary + exit check retained?:
-- Textbook dumping avoided?:
-- Complex material segmented?:
-- Redundant on-screen prose controlled?:
-- Long passive teacher-only stretches avoided?:
-
-## Visual engagement / UI
-
-- Overall attractiveness:
-- Age appropriateness:
-- Clear focal hierarchy on each slide?:
-- Layout variation without chaos?:
-- Visuals have declared teaching purpose?:
-- Decorative clutter absent?:
-- Grade-density profile appropriate?:
-- Motion/animation pedagogically justified?:
-
-## Renderer calibration / first-pilot checks
-
-For the first chapter only, record:
-
-- Beautiful.ai RT-01 result:
-- Canva RT-01 result:
-- Bangla conjunct rendering comparison:
-- Equation/notation comparison:
-- Editability comparison:
-- Export fidelity comparison:
-- Projector-readability comparison:
-- Workflow friction/time comparison:
-- Selected default/fallback renderer decision:
-- Any Hyperagent SVG/equation/QA support used and value gained:
-- NotebookLM usefulness on actual source:
-- Gemini review usefulness/cadence:
+- contingency:
+- setup/debrief/transitions counted:
+- student-response/check/practice spine adequate:
+- summary + exit retained:
 
 ## Accessibility / projector
 
-- Back-of-room readability:
-- Contrast:
-- Color-independent meaning:
-- Bangla glyph/conjunct rendering:
-- Equation/symbol rendering:
-- Diagram label size:
-- Any key visual requires zooming?:
+- back-of-room readability:
+- contrast:
+- color-independent meaning:
+- Bangla glyphs/conjuncts:
+- essential label size:
+- media captions/transcript/summary where relevant:
+- static/final state preserves essential animation meaning:
 
 ## Resource resilience
 
-- Online links checked:
-- QR codes checked:
-- Core media/simulation fallback available:
-- Licensing/attribution recorded:
-- Unauthorized downloaded video clips avoided?:
+- links/QRs checked:
+- licensing/attribution recorded:
+- static/offline fallback usable:
+- source/asset provenance complete:
 
-## Final artifact check
+## Final artifact
 
-- Primary delivery format tested:
-- PDF fallback available and checked:
-- Font substitution issues:
-- Image crop issues:
-- Media/animation behaviour:
-- Scientific content drift after rendering?:
-- Offline/static fallback works?:
+- PPTX render checked:
+- PDF checked:
+- PowerPoint exact-artifact smoke test: PASS / FAIL / NOT_TESTED
+- repair warning: YES / NO / UNKNOWN
+- editability:
+- playback/links/media:
+- science drift after export/finishing?:
+
+## Reproducibility / regression
+
+- build/source committed:
+- component source/tests committed:
+- changed R3 golden-master regression checked where applicable:
+- fingerprints recorded:
+- toolchain/export method recorded:
 
 ## Final decision
 
 - `PASS`
 - `PASS_WITH_NONBLOCKING_NOTES`
 - `FAIL_REQUIRES_REVISION`
+- `DELIVERY_COMPATIBILITY_PENDING`
 
 ## Required next action
 
-- 
+-
+
+Canonical references:
+
+- `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+- `QUALITY_GATES.md`
+- `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+- `ARTIFACT_PERSISTENCE.md`
