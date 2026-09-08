@@ -14,7 +14,7 @@ Only this repository is authorized for Science Slides writes.
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_VISUAL_PACK_BUILT_CANVA_REVIEW_PENDING — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_VISUAL_PACK_PIXEL_QA_FAIL — ASSET_PANEL_REPAIR_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Lesson 2 v2 disposition
 
@@ -53,49 +53,60 @@ All seven high-risk concepts have explicit reference/topology locks:
 6. full internal reflection;
 7. optical fibre.
 
-## Completed checkpoint — visual pack built
+## Visual pack status
 
 Manifest:
 
 `chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_MANIFEST_2026-09-08.md`
 
+Metadata/text QA:
+
+`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_METADATA_QA_2026-09-08.md`
+
+Pixel-level QA:
+
+`chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
+
 Current corrected Canva design ID:
 
 `DAHUl-r85fw`
-
-Title:
-
-`Lesson 2 High-Risk Visual Pack — Reference Locked v2`
-
-Canva view URL:
-
-`https://www.canva.com/d/Yl53GftBWQ08y6o`
 
 Page count:
 
 `7`
 
-Canva checks completed:
+Metadata/text checks:
 
-- `get-design-pages`: returned exactly seven page records with thumbnail metadata;
-- `fetch`: visible text reviewed for Bangla-first wording;
-- corrected v2 removed mixed-English fragments from the first imported review pack.
+- exactly seven Canva page records exist;
+- visible text is Bangla-first;
+- no standalone `TIR` remains.
 
-Status:
+Pixel-level disposition:
 
-**USER_REVIEW_PENDING**
+**FAIL — USER REVIEW DEFERRED**
+
+Material defects found in the source render path:
+
+- HRV-02 coin: physical/context images did not render reliably; footer/text crowding also observed;
+- HRV-03 fish: realistic/context panel not dependable in the local render path;
+- HRV-04 mirage: real-road context panel not dependable in the local render path;
+- HRV-07 optical fibre: real-fibre context panel not dependable in the local render path.
+
+The pure deterministic geometry pages HRV-01, HRV-05 and HRV-06 remain usable as science-reference components, but the seven-page pack cannot be approved until the affected asset panels are repaired and rerendered.
 
 ## Important block
 
-Do not assemble the full Lesson 2 deck and do not start Lesson 3 until the user approves the High-Risk Visual Pack.
+Do not send the current pack for user approval yet.
+Do not assemble full Lesson 2 v3.
+Do not start Lesson 3.
 
-## Visual construction rule for this pack
+## Visual construction rule for repair
 
-- physical/context base assets: verified existing real/open/licensed source first, or connected Canva/Canva AI/Canva Pro when generation is needed;
-- ChatGPT-native image generation: not routine/default;
-- science-critical layer: deterministic PptxGenJS/SVG only;
-- when realism and exact geometry conflict: use a two-panel hybrid;
-- no generated/stock image is trusted for rays, normals, angles, apparent image positions, labels or scientific topology.
+- repair affected physical/context panels using transport-safe embedded/local raster assets or Canva-native asset placement;
+- realistic object/context layer must remain separate from science-critical geometry;
+- science-critical layer remains deterministic PptxGenJS/SVG;
+- rerender all seven pages after repair;
+- no blank, broken-image, clipped-label or unreadable object panel may remain.
 
 ## Frozen timing
 
@@ -108,6 +119,6 @@ Do not assemble the full Lesson 2 deck and do not start Lesson 3 until the user 
 
 ## Next authorized action
 
-**User reviews Lesson 2 High-Risk Visual Pack.**
+**Repair HRV-02, HRV-03, HRV-04 and HRV-07 asset panels; rerender all seven high-risk pages; rerun pixel QA.**
 
-If approved, assemble full Lesson 2 v3 using these approved visuals. If rejected, revise only the failed visuals and keep full Lesson 2 blocked.
+Only after that passes may the pack be shown to the user for visual approval.
