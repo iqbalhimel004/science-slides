@@ -59,13 +59,17 @@ Manifest:
 
 `chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_MANIFEST_2026-09-08.md`
 
-Canva design ID:
+Current corrected Canva design ID:
 
-`DAHUl9F8yQc`
+`DAHUl-r85fw`
 
 Title:
 
 `Lesson 2 High-Risk Visual Pack — Reference Locked v2`
+
+Canva view URL:
+
+`https://www.canva.com/d/Yl53GftBWQ08y6o`
 
 Page count:
 
@@ -73,9 +77,9 @@ Page count:
 
 Canva checks completed:
 
-- `get-design-pages`: returned exactly seven page records;
-- `get-design-content`: visible text reviewed for Bangla-first wording;
-- `get-presenter-notes`: source notes present on all seven pages.
+- `get-design-pages`: returned exactly seven page records with thumbnail metadata;
+- `fetch`: visible text reviewed for Bangla-first wording;
+- corrected v2 removed mixed-English fragments from the first imported review pack.
 
 Status:
 
