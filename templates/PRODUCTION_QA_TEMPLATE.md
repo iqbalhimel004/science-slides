@@ -1,9 +1,9 @@
-# Production QA — Template
+# Production QA — Template v2.1
 
 Lesson:
 Build version:
 Date:
-Status: DRAFT / FAIL / PASS_WITH_NOTES / CLASSROOM_READY
+Status: DRAFT / FAIL / INTERNAL_QA_PASS / USER_ACCEPTED / DELIVERY_VERIFIED / CLASSROOM_READY
 
 ## Artifact identity
 
@@ -12,16 +12,66 @@ Status: DRAFT / FAIL / PASS_WITH_NOTES / CLASSROOM_READY
 - PDF filename:
 - PDF SHA-256:
 - generator/source path:
+- structured spec/copy-lock path:
 - font stack:
 - Canva finishing used?: YES / NO
-- Canva design reference if used:
+- Canva reference if used:
 
 ## Scientific/content integrity
 
 - [ ] frozen wording preserved
-- [ ] high-risk diagrams scientifically correct
-- [ ] notation/units/formulas correct
-- [ ] no content drift after visual finishing
+- [ ] source freshness/current-data checks complete where relevant
+- [ ] terminology lock/lint passed
+- [ ] R3 semantic contracts passed
+- [ ] post-render student-inference review passed
+- [ ] formulas/units/calculations/graphs verified where applicable
+- [ ] model/idealization/scale disclosures correct where needed
+- [ ] no science drift after finishing/export
+
+## Safety
+
+- live experiment/demo present?: YES / NO
+- safety review: PASS / FAIL / NA
+- teacher-only/student action boundary clear: PASS / FAIL / NA
+- safer/static fallback: PASS / FAIL / NA
+
+## Automated/layout QA
+
+- expected slide manifest: PASS / FAIL
+- blank/missing/duplicate slide check: PASS / FAIL
+- text lint: PASS / FAIL / NA
+- overflow: PASS / FAIL
+- unintended overlap: PASS / FAIL
+- out-of-bounds: PASS / FAIL
+- asset/link existence: PASS / FAIL / NA
+
+## Direct pixel QA
+
+- montage overview: PASS / FAIL
+- every R3 slide inspected individually: PASS / FAIL / NA
+- projector readability: PASS / FAIL
+- image recognizability/crop: PASS / FAIL / NA
+- Bangla glyph/line break: PASS / FAIL
+- diagram-label relation: PASS / FAIL / NA
+- color-independent critical meaning: PASS / FAIL
+
+## Accessibility / multimodal
+
+- contrast: PASS / FAIL
+- critical meaning not color-only: PASS / FAIL
+- essential animation has static/final-state meaning: PASS / FAIL / NA
+- important video/audio captions/transcript/teacher summary: PASS / FAIL / NA
+- distracting/flashing motion review: PASS / FAIL / NA
+
+## Dynamic implementation
+
+- staged/predict reveal implemented where planned: PASS / FAIL / NA
+- native animation inventory:
+- interactive navigation/buttons:
+- simulation/video:
+- hyperlinks/QRs tested: PASS / FAIL / NA
+- static/offline fallback tested: PASS / FAIL / NA
+- `DYNAMIC_MANIFEST.md` current: YES / NO / NA
 
 ## Microsoft PowerPoint compatibility
 
@@ -32,64 +82,47 @@ Status: DRAFT / FAIL / PASS_WITH_NOTES / CLASSROOM_READY
 - RETEST_AFTER_RESAVE: PASS / FAIL / NA / NOT_TESTED
 - PLAYBACK_REVEAL_INTERACTION: PASS / FAIL / NA / NOT_TESTED
 
-A repair/recovery warning is a hard FAIL for the current PPTX.
-
-## Dynamic implementation
-
-- progressive reveal used where planned: PASS / FAIL / NA
-- staged reveal sequences:
-- native animation inventory:
-- interactive navigation/buttons:
-- live demo support:
-- simulation/video resources:
-- hyperlinks/QRs tested: PASS / FAIL / NA
-- static/offline fallback tested: PASS / FAIL
-- `DYNAMIC_MANIFEST.md` updated: YES / NO
-
-## Visual engagement / UI
-
-- hook impact: PASS / FAIL
-- coherent subject palette/identity: PASS / FAIL
-- focal hierarchy: PASS / FAIL
-- layout variety: PASS / FAIL
-- projector readability: PASS / FAIL
-- diagram/image integration: PASS / FAIL
-- repetitive card/box review: PASS / FAIL
-- observation/prediction/rule/practice/simulation/exit states visually differentiated where appropriate: PASS / FAIL / NA
-- first-pilot user visual approval: APPROVED / NOT_APPROVED / NA
-
-A scientifically correct but materially unattractive/utilitarian first-pilot deck cannot pass final visual QA.
+If exact PowerPoint testing is unavailable, final status cannot be `DELIVERY_VERIFIED`; use `DELIVERY_COMPATIBILITY_PENDING` where appropriate.
 
 ## Export / fallback
 
 - [ ] PPTX render checked
 - [ ] PDF render checked
-- [ ] Bangla rendering checked
 - [ ] equations/symbols checked
 - [ ] crops/labels checked
 - [ ] static/offline fallbacks checked
-- [ ] PDF preserves essential meaning without animation
+- [ ] PDF preserves essential meaning
 
-## Reproducibility
+## Reproducibility / golden regression
 
 - [ ] build/generator source committed
-- [ ] asset manifest committed if applicable
-- [ ] dynamic manifest committed if applicable
-- [ ] output filenames/fingerprints recorded
+- [ ] asset/source manifest committed if applicable
+- [ ] deterministic component source/tests committed if applicable
+- [ ] changed reusable R3 component compared against golden reference
+- [ ] output fingerprints recorded
 - [ ] toolchain/export method recorded
+
+## Selective revalidation record
+
+- change made:
+- affected gate chain:
+- checks rerun:
+- unaffected expensive checks intentionally not rerun:
 
 ## Final gate verdict
 
 - G3 Science:
-- G10 Visual engagement:
-- G11 PowerPoint/export/playback:
-- G14 Reproducibility:
+- G6A Safety:
+- G10/G10A Visual + accessibility:
+- G11 Compatibility/export:
+- G14 Reproducibility/regression:
 
 Final verdict:
 
 Next action:
 
 Canonical policies:
+- `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+- `QUALITY_GATES.md`
 - `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
 - `ARTIFACT_PERSISTENCE.md`
-- `QUALITY_GATES.md`
