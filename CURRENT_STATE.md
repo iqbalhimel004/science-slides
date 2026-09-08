@@ -14,7 +14,7 @@ Only this repository is authorized for Science Slides writes.
 
 Current status:
 
-**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_ASSET_PANEL_REPAIR_COMMITTED — DIRECT_PIXEL_QA_FAIL — REPAIR_ROUND_2_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
+**CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_ASSET_PANEL_REPAIR_COMMITTED — DIRECT_PIXEL_QA_FAIL — REPAIR_ROUND_2_COMMITTED — DIRECT_PIXEL_QA_RERUN_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Lesson 2 v2 disposition
 
@@ -67,7 +67,7 @@ Directly inspected user export:
 
 `Lesson 2 High-Risk Visual Pack — Reference Locked v2_20260908_172119_0000.pdf`
 
-## Direct pixel QA result
+## Direct pixel QA result before Repair Round 2
 
 The user-supplied seven-page PDF was rendered at 200 DPI and every page was visually inspected.
 
@@ -75,37 +75,61 @@ Result:
 
 **DIRECT_PIXEL_QA_FAIL — REPAIR_ROUND_2_REQUIRED**
 
-Pass/acceptable pages:
+Mandatory defects identified:
 
-- HRV-02 — concept and physical demonstration acceptable; only minor caption-contrast polish desirable;
-- HRV-04 — pass;
-- HRV-05 — pass.
-
-Mandatory repair targets:
-
-- HRV-03 — current underwater context photo does not show a clearly recognizable focal fish at classroom viewing scale; replace with a transport-safe raster image containing a clearly visible underwater fish;
-- HRV-06 — `বাইরে প্রতিসরিত রশ্মি নেই` is materially overlapped/obscured by the two-condition box; reposition/rebuild text layout while preserving TIR geometry;
-- HRV-07 — core label has insufficient contrast against the light-cyan core; increase contrast while preserving repeated-reflection geometry.
-
-Recommended polish in the same round:
-
-- HRV-01 — improve green apparent-position/construction-label contrast/placement;
-- HRV-02 — improve caption contrast;
-- HRV-03 — improve green apparent-position/construction-label contrast if the diagram panel is touched.
+- HRV-03 — underwater context photo did not show a clearly recognizable focal fish at classroom viewing scale;
+- HRV-06 — `বাইরে প্রতিসরিত রশ্মি নেই` was materially overlapped/obscured by the two-condition box;
+- HRV-07 — core label had insufficient contrast against the light-cyan core.
 
 Canonical pixel-QA record:
 
 `chapters/class-8/science/chapter-11-light/lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
 
+## Repair Round 2 — committed
+
+Canva transaction:
+
+`433986704618412418`
+
+Status:
+
+`committed`
+
+Committed changes:
+
+- HRV-03: replaced the generic underwater context image with a transport-safe raster Pexels image containing a clearly recognizable underwater fish; science diagram preserved separately;
+- HRV-06: replaced the deterministic TIR diagram asset with a corrected version in which the two-condition box and `বাইরে প্রতিসরিত রশ্মি নেই` label are separated and fully readable; incident/reflected-ray geometry and `i > C` condition preserved;
+- HRV-07: replaced the deterministic fibre diagram asset with a corrected version using a high-contrast core label while preserving repeated internal reflection geometry;
+- HRV-04 and HRV-05 were not intentionally changed.
+
+New Canva asset IDs:
+
+- HRV-03 clear-fish context: `MAHUm-0AwNE`;
+- HRV-06 corrected TIR diagram: `MAHUm3jdg3Y`;
+- HRV-07 corrected optical-fibre diagram: `MAHUmzHZPrI`.
+
 ## Current block
 
 Do not assemble full Lesson 2 v3.
 Do not start Lesson 3.
-Do not call the High-Risk Visual Pack approved.
+Do not call the High-Risk Visual Pack approved yet.
 
 ## Next authorized action
 
-**Repair HRV-03, HRV-06 and HRV-07 in Canva, include low-risk readability polish where safe, then export all seven pages again and rerun direct pixel QA.**
+**Export the updated seven-page Canva visual pack again and rerun direct pixel-level QA on all seven rendered pages.**
+
+The rerun must verify:
+
+- exact page count = 7;
+- HRV-03 fish is clearly recognizable at classroom scale;
+- HRV-06 overlap is gone and all condition/no-transmitted-ray labels are readable;
+- HRV-07 core label contrast is sufficient;
+- no regressions on HRV-01/02/04/05;
+- no blank/broken/missing image region;
+- projector readability;
+- science topology remains compliant with `DIAGRAM_CONTRACTS.md` and the reference lock.
+
+Only after this direct QA passes may the pack be shown to the user for visual/science approval and the full Lesson 2 v3 rebuild gate be considered.
 
 ## Frozen timing
 
