@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-08
-- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_ASSET_PANEL_REPAIR_COMMITTED — POST_REPAIR_PIXEL_QA_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_ASSET_PANEL_REPAIR_COMMITTED — POST_REPAIR_QA_PARTIAL — DIRECT_RENDER_INSPECTION_REQUIRED — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Durable workflow rules
 
@@ -61,7 +61,7 @@ Metadata/text QA:
 
 `lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_METADATA_QA_2026-09-08.md`
 
-Previous pixel-level QA:
+Post-repair QA:
 
 `lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
 
@@ -90,13 +90,32 @@ Committed repairs:
 - HRV-04 mirage: real hot-road context image added and visible wording corrected so the photo is presented as context rather than asserted as direct mirage evidence;
 - HRV-07 optical fibre: real raster fibre/cable context image added while deterministic internal-reflection geometry remains separate.
 
-Post-commit Canva metadata still reports exactly seven pages.
+Follow-up HRV-04 layout correction transaction:
+
+`5929504143379362817`
+
+The enlarged context-label box produced by the wording change was resized/repositioned.
+
+## Post-repair QA evidence
+
+Fresh Canva evidence confirms:
+
+- seven page records remain;
+- all pages are `1280 x 720`;
+- expected HRV order is intact;
+- repaired raster context assets remain structurally present;
+- visible text is Bangla-first;
+- no standalone `TIR` remains.
+
+Fresh geometry-checker execution:
+
+`DIAGRAM_CONTRACTS_L2_V2: PASS`
 
 ## Current QA disposition
 
-**ASSET PANEL REPAIR COMMITTED — POST-REPAIR PIXEL QA PENDING**
+**POST_REPAIR_QA_PARTIAL — STRUCTURE/GEOMETRY PASS — DIRECT RENDER INSPECTION REQUIRED**
 
-This is not yet a visual-pack PASS.
+A full pixel-level PASS is not claimed because the current execution environment can obtain signed Canva thumbnail/render URLs but cannot ingest those final rendered images into the visual-inspection pipeline at usable resolution.
 
 ## Current hard block
 
@@ -106,8 +125,8 @@ Do not start Lesson 3.
 
 ## Next authorized stage
 
-**Rerender/inspect all seven pages and rerun pixel QA.**
+**Obtain a directly inspectable raster/PDF/PPTX export of the seven pages or equivalent direct visual access, then complete pixel-level inspection.**
 
-The post-repair QA must verify all seven page renders individually, physical/context asset visibility and recognizability, science topology, Bangla-first text, clipping/crowding, blank/missing pages, projector readability and exact HRV page mapping.
+The final high-risk-pack QA must verify all seven rendered pages individually, physical/context asset recognizability, science topology, Bangla-first text, clipping/crowding/layering, blank/missing pages, projector readability and exact HRV page mapping.
 
 Only after PASS may the High-Risk Visual Pack be shown to the user for visual/science approval.
