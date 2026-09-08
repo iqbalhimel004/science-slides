@@ -1,4 +1,4 @@
-# Storyboard Template
+# Storyboard Template — Production System v2.1
 
 ## Lesson metadata
 
@@ -7,52 +7,69 @@
 - Class:
 - Subject:
 - Class period: 60 min
-- Target planned CORE + FLEX: 50–55 min
-- Content status: DRAFT / VERIFIED / CONTENT_FROZEN
-- Grade-density profile: Class 8 / Class 9 / Class 10
-- Renderer status: NOT_TESTED / RT01_PASSED / SELECTED
+- Target CORE + FLEX: 50–55 min
+- Content status: DRAFT / CONTENT_VERIFIED / CONTENT_FROZEN
 
-## Slide records
+## Slide/state record
 
-Repeat this block for each slide.
+Repeat for each slide/state.
 
 ### Slide XX — Title
 
 - Segment: CORE / FLEX / STRETCH
-- Purpose:
-- Core content:
-- Slide family/layout intent:
-- Visual/resource:
-- Visual purpose: Motivate / Explain / Compare / Locate / Sequence / Quantify / Predict / Practice / Summarize / N/A
-- **Dynamic implementation mode:** STATIC_INTENTIONAL / STAGED_REVEAL / PREDICT_THEN_REVEAL / NATIVE_ANIMATION / INTERACTIVE_NAVIGATION / LIVE_DEMO / SIMULATION / VIDEO_ANIMATION_RESOURCE
-- Dynamic implementation detail/rationale:
-- PowerPoint dependency/risk:
+- Learning goal/purpose:
+- Approved student copy:
 - Teacher note:
+- Concept type:
+- Science risk: R1 / R2 / R3
+- Visual/resource route:
+- Visual purpose: Motivate / Explain / Compare / Locate / Sequence / Quantify / Predict / Practice / Summarize / N/A
+- Required R3 invariants/semantic contract:
+- Source reference(s):
+- Source freshness: STABLE / REVISION_SENSITIVE / CURRENT_DATA / N/A
+- Equation/source expression if applicable:
+- Dynamic mode: STATIC_INTENTIONAL / STAGED_REVEAL / PREDICT_THEN_REVEAL / NATIVE_ANIMATION / INTERACTIVE_NAVIGATION / LIVE_DEMO / SIMULATION / VIDEO_ANIMATION_RESOURCE
+- Dynamic rationale/implementation:
+- PowerPoint dependency/risk:
 - Student action/question:
 - Expected response:
-- Segment-response role: retrieval / hinge / practice / explain / predict / observe / exit / none
 - Estimated time:
-- Source reference(s):
-- Equation/source expression, if applicable:
-- Static/offline fallback if needed:
-- Transition to next slide:
+- Safety status/notes if activity/demo:
+- Accessibility notes: contrast / color-independent cues / captions / static state / N/A
+- Model/scale note: schematic / simplified / not-to-scale / N/A
+- Static/offline fallback:
+- Transition:
+- QA status:
 
-## Visual rhythm and cognitive-load review
+## Lesson-level reviews
 
-- Any long run of visually identical layouts?:
-- Focal hierarchy clear on every slide?:
-- Any decorative visual without instructional purpose?:
-- Any overloaded slide that should be segmented?:
-- Any long passive teacher-only stretch without a meaningful student response?:
-- Any concept-heavy sequence that became static by accident?:
-- Storyboard-planned reveal/interaction/simulation explicitly mapped?:
-- Motion/animation used only for pedagogical purpose?:
-- Bangla/English density appropriate for the grade?:
-- Any repetitive card/box-heavy visual pattern that should be redesigned?:
+### Visual/cognitive load
+
+- clear focal hierarchy?:
+- overloaded slides split/staged?:
+- repetitive layout controlled?:
+- decorative clutter absent?:
+- long passive stretches avoided?:
+- concept-heavy sequences dynamic intentionally?:
+
+### Risk/component routing
+
+- all R3 visuals identified?:
+- approved component/golden-master reuse checked?:
+- new R3 components requiring independent second review identified?:
+- authoritative imagery searched before custom generation?:
+
+### Safety/accessibility/model review
+
+- live demo hazards identified?:
+- safer fallback identified?:
+- critical meaning color-independent?:
+- important audio/video has caption/transcript/teacher summary?:
+- misleading simplifications/scale issues disclosed?:
 
 ## Timing summary
 
-| Slide/segment | Segment class | Time |
+| Slide/segment | Class | Time |
 |---|---|---:|
 | | CORE/FLEX/STRETCH | |
 | **CORE total** | | |
@@ -60,41 +77,20 @@ Repeat this block for each slide.
 | **CORE + FLEX** | | |
 | **STRETCH total** | | |
 
-PASS only if:
-
-- CORE is normally about 40–45 min
-- FLEX is normally about 5–10 min
-- CORE + FLEX is normally about 50–55 min
-- 5–10 min remains unallocated contingency inside the 60-minute class
-- STRETCH is not required for successful lesson completion
-- media/simulation/demo/reveal setup and debrief time is included
+PASS normally requires CORE ~40–45 min, FLEX ~5–10 min, CORE+FLEX ~50–55 min, 5–10 min contingency, and setup/debrief/transitions included.
 
 ## Content-freeze checklist
 
-- [ ] scientific QA passed
-- [ ] source QA passed
-- [ ] formula/unit QA passed where applicable
-- [ ] timing QA passed
-- [ ] pedagogy/cognitive-load QA passed
-- [ ] retrieval/prior-knowledge opener present where appropriate
-- [ ] hinge/check-for-understanding present where useful
-- [ ] summary + exit check retained
-- [ ] all required visuals/resources identified
-- [ ] visual purpose recorded for nontrivial visuals
-- [ ] dynamic implementation mode recorded for relevant concept-heavy segments
-- [ ] fallbacks identified for classroom-critical online/interactive/dynamic resources
-- [ ] exact/source expressions preserved for equations/chemistry notation where needed
+- [ ] source/science/freshness QA
+- [ ] terminology/copy QA
+- [ ] formula/unit/numerical QA where applicable
+- [ ] R3 semantic contracts defined
+- [ ] safety review where applicable
+- [ ] model/scale disclosures identified
+- [ ] accessibility needs identified
+- [ ] timing/pedagogy QA
+- [ ] resources/fallbacks identified
+- [ ] dynamic modes mapped
 - [ ] no unresolved material content changes
 
-## Production handoff checklist
-
-Before the storyboard is considered ready for final controlled production:
-
-- [ ] dynamic elements are represented in `DYNAMIC_MANIFEST.md` or equivalent production record
-- [ ] science-critical progressive constructions have staged states or a tested animation plan
-- [ ] simulation/video/interactive resources have prediction prompts and debrief/fallback plans
-- [ ] UI/visual direction satisfies `SLIDE_STYLE_GUIDE.md`
-- [ ] first-pilot visual direction requires user approval before reuse in later lessons
-
-Canonical production policy:
-`PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+Canonical architecture: `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
