@@ -1,263 +1,225 @@
 # Chapter Production Workflow
 
-Version: 4.1
-Last revised: 2026-09-06
-Status: **ACTIVE — POST-RT-01 / POST-PILOT-COMPATIBILITY UPDATE**
+Version: 5.0
+Last revised: 2026-09-08
+Status: **ACTIVE — PRODUCTION SYSTEM V2.1**
 
 ## Phase 0 — Safety and state recovery
 
-1. Verify the exact repository is `iqbalhimel004/science-slides`.
-2. Read `OPERATING_BRIEF.md` and `CURRENT_STATE.md`.
-3. Read `RENDERER_ROUTING.md` before any production/rendering work.
-4. Read `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md` before producing or revising classroom PPTX files.
-5. If a Gemini review gate is pending/current, read `GEMINI_REVIEW_WORKFLOW.md`.
-6. If a chapter is active, read its `STATUS.md` and only the files needed for the current stage.
-7. Treat GitHub as canonical operational memory. Do not rely on chat history as the only record of completed work.
+1. Verify repo = `iqbalhimel004/science-slides`.
+2. Read `CURRENT_STATE.md`.
+3. Read `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`.
+4. Read `NEW_CHAT_START.md` and `AGENTS.md`.
+5. Read active chapter `STATUS.md`, terminology/diagram contracts and current lesson files.
+6. Read supporting source/renderer/compatibility policies relevant to the task.
+7. Treat GitHub as canonical operational memory; chat history is not sufficient.
 
-## Universal user-prompt rule
-
-Whenever the user must paste a prompt into an external tool, provide the whole prompt in **one self-contained fenced code block** so it can be copied in one action.
-
-## Universal checkpoint rule
-
-**Finish → record → then continue.**
-
-A meaningful stage is not complete until its durable result is saved to GitHub and status is updated as applicable.
-
----
+Universal rule: **Finish -> record -> then continue.**
 
 ## Phase 1 — Chapter intake and source integrity
 
-Check chapter identity, edition/year where possible, page continuity, missing/cropped pages, readability of Bangla/equations/tables/diagrams, and text-layer status. Do not silently infer missing material. Verify critical wording against the visible source when extraction is uncertain.
+Verify chapter identity, edition/year where possible, page continuity, missing/cropped material, Bangla/equation/table/diagram readability, and text-layer/OCR status. Visually verify important wording when extraction is uncertain.
 
-### Checkpoint
-
-Save source identity/integrity records and update `STATUS.md` / `CURRENT_STATE.md`.
-
----
+Checkpoint source identity/integrity and state.
 
 ## Phase 2 — Full chapter analysis
 
-Record chapter scope, learning outcomes, prerequisites, key definitions/laws/formulas/units, diagrams/processes, activities, examples/applications/numericals, misconceptions, exam-facing opportunities, instructional load, visual complexity, and claims that may be outdated/ambiguous/scientifically weak.
+Record:
 
-Distinguish what the textbook contains from whether it is scientifically current/correct.
+- scope/outcomes/prerequisites;
+- concepts/subconcepts;
+- definitions/laws/formulas/units;
+- diagrams/processes;
+- experiments/activities;
+- numericals;
+- misconceptions;
+- exam-facing opportunities;
+- instructional load;
+- textbook ambiguities/errors;
+- source freshness class (`STABLE`, `REVISION_SENSITIVE`, `CURRENT_DATA`);
+- R1/R2/R3 risk map;
+- experiment/demo safety map;
+- visual/media/simulation opportunity map;
+- reusable component/golden-master opportunities.
 
-### Checkpoint
+Checkpoint chapter analysis/source issues/state.
 
-Save `CHAPTER_ANALYSIS.md`, source issues and chapter state.
+## Phase 3 — Lesson count and split
 
----
+Split by logical instructional boundaries and realistic load, not page count.
 
-## Phase 3 — Determine lesson count and split
-
-Split by logical instructional boundaries and realistic classroom load, not page count.
-
-Default 60-minute model:
+Default 60-min architecture:
 
 - CORE ~40–45 min;
 - FLEX ~5–10 min;
-- planned CORE + FLEX ~50–55 min;
-- 5–10 min contingency unallocated;
-- STRETCH appendix-only.
+- CORE+FLEX ~50–55 min;
+- contingency 5–10 min;
+- STRETCH appendix/enrichment only.
 
-Obtain user approval before final deck production and record it immediately.
-
----
+Obtain user approval of lesson split before final deck production and record immediately.
 
 ## Phase 4 — Source verification and scientific reconciliation
 
-Use NCTB for syllabus/scope/exam context, not automatic scientific authority. Independently verify material science against current authoritative sources. Record mismatches and preserve exam wording separately where useful.
+Use NCTB for syllabus/exam context, not automatic truth. Verify material science against authoritative sources. Resolve/record conflicts.
 
-### Checkpoint
+For revision-sensitive/current-data claims, record date/edition/last check.
 
-Update `SOURCE_MAP.md`, `SOURCE_ISSUES.md`, relevant lesson files and status.
+For calculations/formulas/graphs, verify units, conversions, answers and dimensional consistency where appropriate.
 
----
+Checkpoint source map/issues.
 
 ## Phase 5 — Lesson planning
 
-Each lesson plan should contain learning outcomes, CORE/FLEX/STRETCH, timing, retrieval opener, teaching sequence, teacher/student actions, questions, hinge checks, practice/application, misconception correction, summary/exit, and explicit NCTB/current-science distinctions where needed.
+Plan learning outcomes, CORE/FLEX/STRETCH, retrieval, sequence, teacher/student actions, checks, practice, misconceptions, summary/exit and timing.
 
-Every response, board-writing segment, media launch, transition and debrief counts as real time.
+For live demos/activities, include safety status and fallback.
 
----
+For models/schematics, note simplification or `not to scale` where needed.
 
 ## Phase 6 — Resource discovery
 
-Search trusted existing resources before generating custom equivalents. Record source/creator, URL/reference, instructional purpose, target slide, planned time, licensing/reuse note, online/offline status and static fallback.
+Search authoritative/trusted existing resources and approved reusable components before custom generation.
 
----
+Record source/creator, date, purpose, risk, licensing, accessibility, planned time, setup friction, fallback and last verification date where relevant.
 
-## Phase 7 — Storyboard
+## Phase 7 — Storyboard + structured specification
 
-For every slide/item record:
+For every slide/state record:
 
 - slide ID/title;
 - CORE/FLEX/STRETCH;
-- purpose;
-- approved content/specification;
-- visual purpose/resource requirement;
+- learning purpose;
+- frozen/approved copy;
+- concept type;
+- R1/R2/R3;
+- visual/media route;
+- R3 invariants;
+- source refs/freshness;
 - teacher/student action;
-- expected response;
-- estimated time;
-- source references;
-- notation source where relevant;
+- timing;
+- dynamic mode;
+- safety/accessibility/model notes where relevant;
 - fallback;
 - transition.
 
-For concept-heavy segments, also record a **dynamic implementation decision** where relevant:
+Dynamic modes include `STATIC_INTENTIONAL`, `STAGED_REVEAL`, `PREDICT_THEN_REVEAL`, `NATIVE_ANIMATION`, `INTERACTIVE_NAVIGATION`, `LIVE_DEMO`, `SIMULATION`, `VIDEO/ANIMATION_RESOURCE`.
 
-- `STATIC_INTENTIONAL`
-- `STAGED_REVEAL`
-- `NATIVE_ANIMATION`
-- `PREDICT_THEN_REVEAL`
-- `LIVE_DEMO`
-- `SIMULATION`
-- `INTERACTIVE_NAVIGATION`
-- `VIDEO/ANIMATION_RESOURCE`
+Update coverage matrix.
 
-A lesson must not become fully static merely because the first renderer implementation is easier that way.
+## Phase 8 — Targeted independent review
 
-Update `COVERAGE_MATRIX.md` with concrete slide IDs.
+Use an independent second review when it adds real value, especially:
 
----
+- new R3 component family before golden-master approval;
+- conflicting sources;
+- subtle/contested concepts;
+- repeated material component failure;
+- high-risk model/idealization.
 
-## Phase 8 — Independent review
+Gemini may be used via `GEMINI_REVIEW_WORKFLOW.md`, but findings must be reconciled against authoritative evidence before implementation.
 
-Use Gemini selectively. Follow `GEMINI_REVIEW_WORKFLOW.md`: fresh bundle, one copy-ready prompt, save raw review, independently validate findings, record dispositions, implement only validated changes, then checkpoint.
-
-Gate B is targeted implementation QA, not a duplicate Gate A review.
-
----
+Do not duplicate full authoring merely for redundancy.
 
 ## Phase 9 — Content QA and freeze
 
-Verify curriculum/scope, source provenance, scientific accuracy/currentness, formulas/units/calculations, timing, pedagogy/cognitive load, misconception handling, resource suitability and storyboard completeness.
+Apply G1–G7 including source freshness, quantitative checks, safety, model limits and structured-spec completeness.
 
-Mark `CONTENT_FROZEN` only after applicable G1–G7 checks pass and state is recorded.
+Freeze exact student-facing copy/spec only after applicable gates pass.
 
----
+## Phase 10 — Component routing and reuse
 
-## Phase 10 — Renderer calibration status
+Before building:
 
-RT-01 is complete. Canonical route:
-
-**Controlled PptxGenJS → deterministic SVG/shape science visuals → rendered QA → optional Canva controlled-import finishing → verified PPTX + verified PDF fallback.**
-
-Do not repeat RT-01 unless tool behavior materially changes or the user explicitly asks to reconsider the decision.
-
----
+1. check approved component/golden-master library;
+2. reuse unchanged approved components when suitable;
+3. port existing validated lesson visuals into controlled source when needed;
+4. create new R3 component only when no suitable approved component exists;
+5. give new R3 families semantic tests and targeted independent review before golden-master status.
 
 ## Phase 11 — Controlled production
 
-Before building, read `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md` and `ARTIFACT_PERSISTENCE.md`.
+1. read frozen spec/copy/resources/locks;
+2. build/assemble R3 components deterministically or through the appropriate specialized structured engine;
+3. assemble 16:9 PPTX with PptxGenJS;
+4. keep science-critical labels editable/native where practical;
+5. implement planned staged states/interaction/media;
+6. include `[Sources]` notes for externally sourced non-trivial claims/assets;
+7. render actual slides;
+8. run automated structural/text/layout/quantitative checks;
+9. run semantic science assertions;
+10. inspect R3 pages individually;
+11. run post-render student-inference science review;
+12. run accessibility/projector review;
+13. apply repair circuit breaker if needed;
+14. perform only selective revalidation after changes;
+15. optionally use Canva for finishing only if it materially improves low-risk visual presentation;
+16. if Canva is used, rerun affected science/render/export QA.
 
-Primary production steps:
+## Phase 12 — Internal acceptance before user review
 
-1. read frozen storyboard/resource/QA files;
-2. identify planned dynamic states and ensure none are accidentally omitted;
-3. build high-risk scientific visuals deterministically;
-4. assemble the controlled 16:9 PPTX with PptxGenJS;
-5. implement purposeful staged reveal/predict-then-reveal/interaction/simulation support where planned;
-6. render actual slides and run scientific/typographic/layout/projector QA;
-7. run visual-engagement QA: hook impact, palette, hierarchy, layout variety, diagram/image integration, card/box repetition, Class-8 attractiveness;
-8. optionally import the controlled PPTX to Canva only if manual finishing materially improves the result;
-9. if Canva is used, rerun science/notation/layout/export QA and verify no frozen wording/diagram drift;
-10. generate and verify PDF/static fallback;
-11. normalize/rebuild the PPTX only if needed for compatibility; do not assume a LibreOffice resave preserves animation/media;
-12. preserve reproducibility/source records under `ARTIFACT_PERSISTENCE.md`;
-13. checkpoint before continuing.
+Before showing a pack/deck to the user:
 
-### Production tool roles
+- automated QA passed;
+- semantic science QA passed;
+- R3 direct pixel QA passed;
+- safety/model/accessibility checks passed where applicable;
+- internal repair/rebuild completed;
+- second internal QA completed.
 
-- PptxGenJS: primary controlled authoring/rendering.
-- Canva: optional finishing/editing after controlled import.
-- Beautiful.ai: low-risk prototype/layout inspiration only.
-- Hyperagent: specialist deterministic SVG/equation/interactive/QA work where useful.
+User review is for final acceptance or subjective classroom/design preference, not primary defect detection.
 
-High-risk scientific diagrams must not be delegated to unconstrained native-AI generation.
+## Phase 13 — Compatibility, export and offline QA
 
-### Progressive reveal compatibility preference
+Test exact classroom artifacts.
 
-When native animation and staged duplicate-slide states teach the same thing, prefer staged states for science-critical progressive construction because they are more robust across PowerPoint/PDF/static fallback workflows.
+When Microsoft PowerPoint is available:
 
-Use native animation when it adds real instructional value and can be tested reliably in Microsoft PowerPoint.
+- open exact PPTX;
+- no repair/recovery warning;
+- verify editability;
+- verify links/buttons/reveal/animation/media;
+- after normalization/resave, retest affected behavior.
 
----
+If PowerPoint testing is unavailable, record `DELIVERY_COMPATIBILITY_PENDING`.
 
-## Phase 12 — Microsoft PowerPoint, visual, export and classroom QA
+Also verify PDF/static fallback, Bangla/notation, crops, labels, media launch and offline resilience.
 
-A PPTX is **not** classroom-ready because it merely passes ZIP/XML parsing, LibreOffice rendering or `slides_test.py`.
+## Phase 14 — Persistence / regression checkpoint
 
-Check the exact user-facing artifact.
+Record:
 
-### Microsoft PowerPoint smoke test
+- source/build spec/code;
+- output names/fingerprints;
+- component source/tests/golden references;
+- asset provenance/licensing;
+- dynamic manifest;
+- compatibility/export result;
+- current QA status.
 
-When a PowerPoint environment is available:
+When an approved R3 component changed, perform targeted golden-master regression review before reuse.
 
-- open the exact PPTX in Microsoft PowerPoint;
-- confirm no repair/recovery warning;
-- verify editability where expected;
-- verify buttons/hyperlinks;
-- verify planned reveal/animation/interaction behavior;
-- if any normalization/resave occurred, retest playback afterward.
+## Phase 15 — Chapter-wide audit
 
-A PowerPoint repair warning is a hard FAIL for that artifact.
+Verify coverage, duplication, prerequisites, bridges, source conflicts, terminology continuity, timing, visual consistency, safety/fallbacks, current-data freshness and artifact traceability.
 
-### Visual / engagement QA
+## Phase 16 — Completion and handoff
 
-Check:
+Use precise status ladder:
 
-- strong focal hierarchy;
-- projector readability;
-- attractive/coherent palette and subject identity;
-- visual rhythm and layout variety;
-- progressive reveal implemented where planned;
-- simulation/demo/interactive support implemented where it materially improves learning;
-- no accidental all-static concept-heavy deck;
-- no repetitive box-heavy/utilitarian appearance;
-- no scientific diagram drift after polish.
+`DRAFT -> CONTENT_VERIFIED -> CONTENT_FROZEN -> BUILT -> INTERNAL_QA_PASS -> USER_ACCEPTED -> DELIVERY_VERIFIED -> CLASSROOM_READY`
 
-### Export / offline QA
+Update lesson/chapter QA, `STATUS.md`, `CURRENT_STATE.md` and durable decisions when needed.
 
-Check:
+## Phase 17 — Post-class calibration
 
-- Bangla rendering and line breaks;
-- equation/symbol rendering;
-- image crops;
-- diagram labels/arrows;
-- links/QRs;
-- media/simulation launch;
-- static/offline fallback;
-- PDF fallback;
-- no scientific content drift.
+Record actual timing, confusion points, resource failures, safety/setup issues, PowerPoint/playback issues and effective visual/interactive elements. Use real classroom evidence to calibrate future production.
 
-Classroom package should contain:
+## Selective invalidation rule
 
-1. controlled editable PPTX;
-2. verified PDF fallback;
-3. fallback resources/assets for classroom-critical online/animated elements;
-4. source/storyboard/resource/production-QA records;
-5. reproducibility/build records required by `ARTIFACT_PERSISTENCE.md`.
+Do not rerun every phase after a small edit. Follow the selective-revalidation table in `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` and rerun only the affected downstream gates.
 
-For the first pilot, user approval of the Lesson 1 v2 visual/motion direction is required before that style is propagated to Lessons 2–4.
+## Current Chapter 11 override
 
----
+Lesson 1 is completed/user-approved baseline and is preserved.
 
-## Phase 13 — Chapter-wide final audit
-
-Compare all lessons against the original chapter and verified current science. Verify coverage classification, no unnecessary duplication, prerequisite order, coherent bridges, no content loss, no outdated claim surviving uncorrected, visual/motion consistency, and durable artifact traceability.
-
----
-
-## Phase 14 — Completion and handoff
-
-Update lesson/chapter QA, chapter `STATUS.md`, root `CURRENT_STATE.md`, durable decisions where needed, source/resource records, and pilot reconciliation where materially changed.
-
-A chapter is not complete until applicable quality, compatibility, engagement, fallback and persistence gates pass.
-
----
-
-## Phase 15 — Post-class calibration
-
-Record actual time, overruns/early finishes, confusing concepts, effective resources, observed misconceptions, technical failures, PowerPoint/playback issues and successful visual/interactive elements. Use real classroom evidence to calibrate future timing/design baselines.
+Lesson 2 does not restart. Continue from its current high-risk migration: HRV-07 controlled rebuild first, HRV-05/06 controlled component port, HRV-01..04 retained as validated references unless regression evidence appears, then internally-passed high-risk pack -> user acceptance -> full Lesson 2 assembly.
