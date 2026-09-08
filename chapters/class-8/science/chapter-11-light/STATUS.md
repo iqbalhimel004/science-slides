@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-08
-- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_VISUAL_PACK_PIXEL_QA_FAIL — ASSET_PANEL_REPAIR_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
+- Current status: **CONTENT_STORYBOARD_FROZEN — LESSON_1_BASELINE_APPROVED — LESSON_2_V1_SUPERSEDED — LESSON_2_V2_FAILED_USER_VISUAL_REVIEW — HIGH_RISK_REFERENCE_LOCK_COMPLETE — HIGH_RISK_ASSET_PANEL_REPAIR_COMMITTED — POST_REPAIR_PIXEL_QA_NEXT — LESSON_2_FULL_REBUILD_BLOCKED — LESSON_3_ON_HOLD**
 
 ## Durable workflow rules
 
@@ -61,9 +61,13 @@ Metadata/text QA:
 
 `lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_METADATA_QA_2026-09-08.md`
 
-Pixel-level QA:
+Previous pixel-level QA:
 
 `lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_PIXEL_QA_2026-09-08.md`
+
+Asset-repair checkpoint:
+
+`lessons/lesson-02/production/HIGH_RISK_VISUAL_PACK_ASSET_REPAIR_2026-09-08.md`
 
 Current Canva design ID:
 
@@ -73,23 +77,37 @@ Page count:
 
 `7`
 
-Metadata/text checks passed, but pixel-level QA did not.
+## Asset panel repair — committed
 
-### Pixel-level failures
+Canva repair transaction:
 
-- HRV-02 coin: context-image render path unreliable; text/footer crowding observed.
-- HRV-03 fish: realistic/context panel not dependable in local render path.
-- HRV-04 mirage: real-road context panel not dependable in local render path.
-- HRV-07 optical fibre: real-fibre context panel not dependable in local render path.
+`8433505536310832264`
 
-The deterministic science components HRV-01, HRV-05 and HRV-06 remain useful, but the complete review pack is not yet ready for user approval.
+Committed repairs:
+
+- HRV-02 coin: raster coin images rebound; caption crowding reduced;
+- HRV-03 fish: real raster fish context image added on the physical/context side while deterministic science geometry remains separate;
+- HRV-04 mirage: real hot-road context image added and visible wording corrected so the photo is presented as context rather than asserted as direct mirage evidence;
+- HRV-07 optical fibre: real raster fibre/cable context image added while deterministic internal-reflection geometry remains separate.
+
+Post-commit Canva metadata still reports exactly seven pages.
+
+## Current QA disposition
+
+**ASSET PANEL REPAIR COMMITTED — POST-REPAIR PIXEL QA PENDING**
+
+This is not yet a visual-pack PASS.
 
 ## Current hard block
 
-Do not send the current High-Risk Visual Pack for user approval yet.
+Do not send the pack as approved yet.
 Do not rebuild full Lesson 2 v3.
 Do not start Lesson 3.
 
 ## Next authorized stage
 
-**Repair HRV-02, HRV-03, HRV-04 and HRV-07 using transport-safe embedded/local raster assets or Canva-native asset placement, then rerender all seven pages and rerun pixel QA.**
+**Rerender/inspect all seven pages and rerun pixel QA.**
+
+The post-repair QA must verify all seven page renders individually, physical/context asset visibility and recognizability, science topology, Bangla-first text, clipping/crowding, blank/missing pages, projector readability and exact HRV page mapping.
+
+Only after PASS may the High-Risk Visual Pack be shown to the user for visual/science approval.
