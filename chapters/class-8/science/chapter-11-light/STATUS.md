@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-08
-- Current status: **LESSON_1_BASELINE_APPROVED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_R3_PACK_V0_2_USER_REVIEW_REJECTED_WITH_TARGETED_FEEDBACK — SLIDE_SURFACE_RULE_REFINED — HRV_02_REBUILT — HRV_04_MECHANISM_REBUILT — CONTROLLED_R3_PACK_V0_3_INTERNAL_QA_PASS — USER_REVIEW_REQUIRED — LESSON_2_FULL_BUILD_BLOCKED — LESSON_3_ON_HOLD**
+- Current status: **LESSON_1_BASELINE_APPROVED — LESSON_2_CONTINUES_WITHOUT_RESET — CONTROLLED_R3_PACK_V0_3_USER_ACCEPTED — CURRENT_COPY_SPEC_V2_1_LOCKED — FULL_LESSON_2_V0_1_SUPERSEDED_AFTER_TARGETED_PIXEL_DEFECT — FULL_LESSON_2_CONTROLLED_BUILD_V0_2_INTERNAL_QA_PASS — USER_FINAL_REVIEW_NEXT — LESSON_3_ON_HOLD**
 
 ## Canonical architecture
 
@@ -16,53 +16,65 @@
 
 **COMPLETED / USER-APPROVED BASELINE — PRESERVE**
 
-## User feedback incorporated
+## Lesson 2 accepted high-risk validation pack
 
-The v0.2 validation pack was not accepted as final.
+User accepted controlled pack v0.3.
 
-User-identified issues:
+Accepted foundation:
 
-- HRV-02 empty-vessel illustration was unclear;
-- HRV-04 scientific mirage mechanism was not clear/correct enough;
-- teacher-script UI such as `বোর্ডে বলার মূল কথা` should not appear visibly on classroom slides.
+- `Lesson2_R3_Optics_Controlled_Validation_v0_3.pptx`
+- `Lesson2_R3_Optics_Controlled_Validation_v0_3.pdf`
 
-Durable refinement:
+The accepted visual/science decisions for HRV-01..07 remain in force.
 
-The visible slide is a student-facing learning surface. Necessary diagrams, concise information, photos/animation/video/simulation belong on the slide according to pedagogical need; teacher prompts and narration cues belong in notes.
+## Current full Lesson 2 build
 
-## Current validation pack
+Current user-review candidate:
 
-- PPTX: `Lesson2_R3_Optics_Controlled_Validation_v0_3.pptx`
-- PDF: `Lesson2_R3_Optics_Controlled_Validation_v0_3.pdf`
-- QA: `lessons/lesson-02/production/CONTROLLED_R3_VALIDATION_PACK_V0_3_QA_2026-09-08.md`
+- `Lesson2_Controlled_Full_v0_2.pptx`
+- `Lesson2_Controlled_Full_v0_2.pdf`
 
-Internal QA result:
+Current QA:
 
-**PASS — USER REVIEW REQUIRED**
+`lessons/lesson-02/production/FULL_LESSON_2_CONTROLLED_BUILD_V0_2_QA_2026-09-08.md`
 
-Key corrections:
+Current source:
 
-- HRV-02 now explicitly shows the blocked straight sight line in the empty vessel and a refracted path reaching the eye after water is added;
-- HRV-04 now shows a vertical air-temperature/optical-density gradient, smooth ray curvature, upward final ray to the observer, and dashed apparent backward extension;
-- visible teacher-script labels removed and replaced by concise student-facing information;
-- teacher-specific explanation moved to speaker notes.
+`lessons/lesson-02/production/build_lesson2_controlled_v0_2.js`
 
-Automated/render status:
+Results:
 
-- 7 slides;
-- overflow test PASS;
+- 19 slides / 19 PDF pages;
+- overflow QA PASS;
 - render PASS;
-- PDF 7 pages;
-- semantic assertions PASS;
-- direct pixel review completed.
+- PDF export PASS;
+- semantic report PASS;
+- montage review PASS;
+- targeted individual inspection of newly generated/materially changed R3/R3-adjacent slides completed;
+- v0.1 cropped increasing-incidence label fixed;
+- Bangla-first title surface;
+- internal slide IDs removed from newly generated student-facing surfaces;
+- optional PhET Bending Light link provided with static/offline fallback;
+- accepted coin, mirage, critical-angle, TIR and optical-fibre corrections retained.
+
+## Superseded full build
+
+`Lesson2_Controlled_Full_v0_1` remains historical regression evidence and is not the current final-review candidate because targeted individual inspection later found a cropped larger-incidence label.
 
 ## Current gate
 
-User review of v0.3 is required before full Lesson 2 assembly.
+**User final visual/science review of full Lesson 2 v0.2 is next.**
 
-## Hard blocks
+Do not call Lesson 2 `CLASSROOM_READY` yet.
+Do not start Lesson 3 yet.
 
-Do not call Lesson 2 classroom-ready.
-Do not start Lesson 3.
-Do not restart Lesson 2 from zero.
-Do not return to Canva raster micro-patching as primary science production.
+If user accepts v0.2, record acceptance and proceed to exact delivery-artifact/PDF/offline verification before the final lesson checkpoint.
+
+If a targeted defect is found, selectively revise/revalidate only affected slides/components; do not restart the lesson.
+
+## Execution-time pending gates
+
+- exact Microsoft PowerPoint opening/playback in a real PowerPoint environment;
+- actual projector/classroom behavior;
+- optional internet availability;
+- post-class timing calibration.
