@@ -1,8 +1,8 @@
 # Agent Operating Rules
 
-Version: 4.1
-Last revised: 2026-09-06
-Status: **ACTIVE — POST-RT-01 / POST-PILOT-COMPATIBILITY UPDATE**
+Version: 5.0
+Last revised: 2026-09-08
+Status: **ACTIVE — PRODUCTION SYSTEM V2.1**
 
 ## Absolute write boundary
 
@@ -16,133 +16,144 @@ Before every GitHub write, verify the exact `repository_full_name`. Abort if it 
 
 GitHub is the durable source of truth. Chat history is temporary context.
 
-For the active first pilot chapter, recover state in this order:
+For any active production lesson, recover state in this order:
 
-1. `OPERATING_BRIEF.md`
-2. `CURRENT_STATE.md`
-3. `RENDERER_ROUTING.md`
-4. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-5. `ARTIFACT_PERSISTENCE.md`
-6. active chapter `STATUS.md`
-7. active lesson storyboard/resources/latest production QA/design revision
-8. deeper policy/template files only when relevant
+1. `CURRENT_STATE.md`
+2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+3. `NEW_CHAT_START.md`
+4. `OPERATING_BRIEF.md`
+5. `QUALITY_GATES.md`
+6. `RENDERER_ROUTING.md`
+7. active chapter `STATUS.md`
+8. active chapter terminology/diagram contracts
+9. active lesson storyboard/resources/structured spec/copy lock/dynamic manifest/latest QA
+10. deeper policy/template files only when relevant
+
+Do not rely on prior chat memory for current artifact state, terminology, copy, geometry, production route, user acceptance, or remaining work.
 
 ## Precedence rule
 
-If an older file conflicts with current routing/state, prefer:
+If older files conflict, prefer:
 
 1. `CURRENT_STATE.md`
-2. `RENDERER_ROUTING.md`
-3. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
-4. `ARTIFACT_PERSISTENCE.md`
-5. active chapter `STATUS.md`
-6. latest stage-specific QA/reconciliation record
-7. older planning/audit records
+2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+3. `NEW_CHAT_START.md`
+4. later dated durable decision/addendum
+5. chapter/lesson terminology and semantic/diagram contracts
+6. current renderer/source/compatibility policies
+7. chapter `STATUS.md`
+8. latest stage-specific QA/failure record
+9. historical planning/audit artifacts
 
-Do not revive pre-RT-01 or pre-pilot-production assumptions.
+A later user rejection or direct-pixel failure supersedes an older internal PASS.
 
-## Normal production scope
+## No-reset rule
 
-Default: one complete textbook chapter per production chat.
+A workflow revision does not cancel valid completed work.
 
-If context becomes operationally too large, save an exact GitHub checkpoint before continuing in a new chat.
+For in-progress lessons:
+
+- preserve verified analysis, sources, storyboard, copy, terminology, accepted assets and accepted science;
+- classify prior production as `REUSE_AS_IS`, `REUSE_AS_REFERENCE`, `PORT_TO_CONTROLLED_COMPONENT`, `REPAIR`, or `RETIRE`;
+- rebuild only defective/fragile/unreproducible layers;
+- continue from the nearest valid checkpoint.
+
+Current Chapter 11:
+
+- Lesson 1: completed/user-approved baseline; preserve;
+- Lesson 2: continue without reset from current high-risk visual migration;
+- Lesson 3+: use Production System v2.1 from the start.
 
 ## Chapter intake non-negotiables
 
 When a chapter PDF/screenshots are supplied:
 
-1. verify chapter identity, completeness, page order, readability and text-layer/OCR status;
+1. verify identity/completeness/page order/readability/text-layer status;
 2. do not silently infer missing/cropped/unreadable content;
-3. analyze the entire visible chapter before deciding presentation count;
+3. analyze the complete visible chapter before deciding lesson count;
 4. split by instructional load and concept boundaries, not page count;
-5. verify critical wording against the visible source page/image when extraction is uncertain;
-6. propose the <=60-minute lesson split and obtain user approval before final deck production.
+5. visually verify critical textbook wording when extraction is uncertain;
+6. create science/freshness/risk/safety/media maps before production;
+7. obtain user approval of the lesson split before final deck production.
 
 ## 60-minute rule
 
-- CORE: ~40–45 min non-skippable
-- FLEX: ~5–10 min useful but skippable
+- CORE: ~40–45 min
+- FLEX: ~5–10 min
 - CORE + FLEX: ~50–55 min planned
 - contingency: 5–10 min intentionally unallocated
 - STRETCH: appendix/enrichment only
 
-Count questions, student responses, board work, examples, activities, media setup/debrief, simulation/interaction time, transitions and exit checks as real time.
+Count questions, responses, board work, activities, media/simulation setup and debrief, transitions and exit checks as real time.
 
 ## Source discipline
 
 - NCTB controls syllabus/scope/exam context, not automatic scientific truth.
-- Important scientific claims must be checked against current authoritative sources.
-- Tier-2 Bangladeshi education sources may support local wording/convention, not independent scientific validation by default.
+- Material scientific claims require current authoritative verification as appropriate.
+- Freshness and authority are separate: classify source-dependent claims as `STABLE`, `REVISION_SENSITIVE`, or `CURRENT_DATA`.
 - Keep exam-facing wording separate from corrected/current-science explanation when necessary.
-- Record material source conflicts explicitly.
+- Record source conflicts explicitly.
 
-## Pedagogy / visual discipline
+## Risk-routed production
 
-- retrieval/prior knowledge at the start;
-- coherent concept sequence;
-- meaningful student response in major segments;
-- hinge/check-for-understanding where useful;
-- guided practice/application;
-- misconception correction where relevant;
-- summary + exit check;
-- high visual engagement without decorative clutter;
-- no rigid 7–10-minute attention-span rule;
-- motion only when pedagogically justified;
-- static/offline fallback for classroom-critical online/animated elements.
+Classify production visuals:
 
-A concept-heavy lesson must not become fully static merely because that is easier to generate. Storyboard-planned progressive reveal, prediction, live demo, simulation or interaction must either be implemented or intentionally reclassified with a reason.
+- R1 low risk;
+- R2 medium risk;
+- R3 high risk.
 
-## Tool routing — locked after RT-01
+R3 visuals must use controlled/deterministic science authority and semantic tests. Unconstrained AI may provide context but must not decide geometry/topology/notation/scale/structure.
 
-Canonical record: `RENDERER_ROUTING.md`.
+## Safety, models and accessibility
 
-- ChatGPT: lead content/pedagogy/QA/state coordination.
-- PptxGenJS: **primary controlled science-deck authoring/rendering route**.
-- Canva: optional controlled-import finishing/editing/hosting; native AI is not the final science authority.
-- Beautiful.ai: low-risk layout exploration/prototyping only.
-- Hyperagent: specialist deterministic SVG/equation/interactive/QA work where it adds value.
-- Gemini AI Pro: independent targeted review/research.
-- NotebookLM: conditional source-grounded support only when useful.
+- live experiments/demos with plausible hazards require an explicit safety review;
+- misleading simplifications require model/idealization/`not to scale` disclosure where appropriate;
+- critical meaning must not depend only on color, motion or audio;
+- verify contrast, readable labels and static/final states for essential dynamic meaning.
 
-## Microsoft PowerPoint compatibility — mandatory production gate
+## Tool routing
 
-The first Lesson 1 pilot proved that internal ZIP/XML/LibreOffice/render checks are not sufficient: Microsoft PowerPoint may still show a repair warning.
+- ChatGPT: lead content/pedagogy/source/QA/state coordination.
+- PptxGenJS: primary controlled assembly/authoring route.
+- Specialized SVG/code/chart/chemistry/anatomy routes: R3 asset generation as appropriate.
+- Canva: optional finishing/context asset tool; not science authority.
+- Beautiful.ai: low-risk prototyping/inspiration only.
+- Hyperagent: specialist deterministic SVG/equation/interactive/QA work where useful.
+- Gemini: targeted independent review/research at high-value gates; not duplicate primary authoring.
+- NotebookLM: conditional source-grounded support.
 
-Therefore:
+## Repair circuit breaker
 
-- the exact user-facing PPTX must be smoke-tested in Microsoft PowerPoint when PowerPoint is available;
-- any repair/recovery warning means that artifact FAILS;
-- only the repaired/rebuilt artifact that opens without warning may become current;
-- after any LibreOffice or other normalization/resave operation, retest planned animation/reveal/hyperlink/media behaviour in PowerPoint;
-- do not assume a normalization pass preserves native animation or interactive features.
+- first material failure -> source-level repair;
+- second material failure -> stop micro-patching and clean rebuild;
+- rebuild still fails -> change representation route;
+- ~20–30 minutes of non-converging repair -> route-change trigger.
 
-Read `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md` for the full gate.
+## Selective revalidation
 
-## Progressive reveal / animation preference
+Do not rerun every expensive QA stage after every change. Revalidate the affected chain only, using the selective-invalidation table in `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`.
 
-For science-critical progressive construction:
+## User-review rule
 
-1. staged duplicate-slide reveal / predict-then-reveal;
-2. deterministic static states;
-3. PowerPoint-native animation only when it adds real instructional value and can be reliably tested.
+The user is not the primary internal defect detector.
 
-This preference protects PowerPoint compatibility and PDF/static fallback while still keeping lessons dynamic.
+Before user review:
 
-## Visual-attractiveness hard gate
+1. build;
+2. automated QA;
+3. semantic science QA;
+4. direct pixel QA;
+5. internal repair/rebuild;
+6. second internal QA.
 
-A scientifically correct but materially unattractive, repetitive, box-heavy or utilitarian pilot deck is not classroom-ready.
+Ask the user mainly for final acceptance, subjective design choice, or approval of a new visual family. Connector-required save confirmation is an exception.
 
-The first pilot must establish a user-approved visual/motion standard before later lessons inherit it.
+## Compatibility and persistence
 
-Lesson 1 v2 is the current master-style prototype.
-
-## Controlled artifact persistence
-
-Read and follow `ARTIFACT_PERSISTENCE.md`.
-
-From Lesson 1 v2 onward, a controlled deck is not durably checkpointed until reproducible source/build records, artifact fingerprints, dynamic implementation records, compatibility status and production QA are committed.
-
-Do not commit font files, secrets or credentials.
+- exact final PPTX must be PowerPoint-tested when available; repair/recovery warning = FAIL;
+- static/PDF fallback is mandatory for classroom-critical dynamic/online elements;
+- source/build/component/test/provenance/fingerprint records must be durable in GitHub;
+- do not commit font binaries, credentials or secrets.
 
 ## External-prompt rule
 
@@ -150,8 +161,8 @@ Any prompt the user must paste into an external tool must be provided as one sel
 
 ## Completion discipline
 
-A chapter is not complete until source/science/timing/pedagogy/visual/PowerPoint-compatibility/export/fallback/coverage/continuity/reproducibility checks pass and repository state is updated.
+Use precise state labels. `CLASSROOM_READY` requires all applicable hard gates.
 
 Universal stage rule:
 
-**Finish → record → then continue.**
+**Finish -> record -> then continue.**
