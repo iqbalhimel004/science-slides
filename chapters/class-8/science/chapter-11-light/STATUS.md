@@ -3,16 +3,23 @@
 - Class: 8
 - Subject: Science
 - Chapter: 11 — আলো
-- Last updated: 2026-09-08
-- Current status: **LESSON_1_BASELINE_APPROVED — LESSON_2_CONTINUES_WITHOUT_RESET — FULL_LESSON_2_V0_4_SUPERSEDED_AFTER_USER_IMAGE_ONLY_RESTORE_REQUEST — FULL_LESSON_2_CONTROLLED_BUILD_V0_5_INTERNAL_QA_PASS — USER_FINAL_REVIEW_NEXT — LESSON_3_ON_HOLD**
+- Last updated: 2026-09-09
+- Current status: **LESSON_1_BASELINE_APPROVED — LESSON_2_V0_5_USER_ACCEPTED_FOR_CONTINUATION_WITH_DELIVERY_GATES_PENDING — LESSON_3_START_AUTHORIZED — LESSON_3_PRODUCTION_HANDOFF_READY — LESSON_4_ON_HOLD**
+
+## Canonical architecture
+
+- `/SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` v2.1
+- `/TARGETED_REVISION_SCOPE_LOCK.md`
+- `/SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
+- `/CURRENT_STATE.md`
 
 ## Lesson 1
 
 **COMPLETED / USER-APPROVED BASELINE — PRESERVE**
 
-## Lesson 2 current review candidate
+## Lesson 2 handoff state
 
-Artifacts:
+Latest accepted-for-continuation artifact:
 
 - `Lesson2_Controlled_Full_v0_5.pptx`
 - `Lesson2_Controlled_Full_v0_5.pdf`
@@ -21,34 +28,76 @@ QA:
 
 `lessons/lesson-02/production/FULL_LESSON_2_CONTROLLED_BUILD_V0_5_QA_2026-09-08.md`
 
-## Targeted v0.5 scope
+User disposition:
 
-User explicitly requested that only the degraded images be fixed and nothing else be changed.
+**`মোটামুটি ঠিক আছে সব` — accepted as sufficient to proceed to Lesson 3.**
 
-Changed only:
+Do not claim unresolved runtime gates have passed:
 
-- slide 9 fish apparent-depth image panel;
-- slide 10 mirage image panels.
+- exact Microsoft PowerPoint opening/playback: pending unless later tested;
+- projector/classroom behavior: pending;
+- optional network availability: pending;
+- post-class timing calibration: pending.
 
-Preserved:
+Do not reopen Lesson 2 unless the user requests a targeted correction or classroom evidence reveals a defect.
 
-- v0.4 angle corrections on slides 11 and 12;
-- all other slides, text, terminology, ordering and notes.
+## Lesson 3 — current active next work
 
-Rendered comparison confirms slides 1–8 and 11–18 are pixel-identical to v0.4; only slides 9 and 10 differ.
+Topic:
 
-## QA result
+**উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা**
 
-- 18 slides / 18 PDF pages;
-- overflow QA PASS;
-- render PASS;
-- PDF export PASS;
-- restored slide 9 and 10 visuals directly inspected;
-- slide 11 and 12 angle corrections retained unchanged.
+Existing planning files to reuse/audit:
 
-## Current gate
+- `lessons/lesson-03/LESSON_PLAN.md`
+- `lessons/lesson-03/STORYBOARD.md`
+- `lessons/lesson-03/RESOURCES.md`
+- `lessons/lesson-03/QA.md`
 
-**User final visual/science review of full Lesson 2 v0.5 is next.**
+Fresh-chat production handoff:
 
-Do not call Lesson 2 `CLASSROOM_READY` yet.
-Do not start Lesson 3 yet.
+`lessons/lesson-03/production/LESSON_3_PRODUCTION_HANDOFF_2026-09-09.md`
+
+Planned timing:
+
+- CORE: 42 min
+- FLEX: 8 min
+- contingency: 10 min
+
+## Lesson 3 first gate
+
+Before full-deck build:
+
+1. audit current Lesson 3 plan/storyboard/resources against Production System v2.1;
+2. verify NCTB/source-gap wording and current science;
+3. create/update Bangla-first structured copy/spec;
+4. add Lesson 3 semantic/diagram contracts where needed;
+5. build compact R3 validation pack for:
+   - converging/diverging lens + focus/focal length;
+   - real vs virtual image;
+   - magnifying-glass ray construction;
+   - human-eye cross-section;
+   - accommodation;
+   - myopia/hyperopia correction;
+6. run automated + semantic + individual pixel QA internally;
+7. show one internally-passed pack for user acceptance;
+8. only then build full Lesson 3 controlled PPTX/PDF.
+
+## Mandatory carry-forward lessons from Lesson 2
+
+- visible slide = student-facing learning surface;
+- teacher narration belongs in notes;
+- R3 science visuals must be controlled/deterministic;
+- final rendered pixels determine visual PASS/FAIL;
+- targeted user revisions are hard scope locks;
+- external AI/reviewer feedback is advisory until independently verified;
+- no collateral redesign during targeted fixes;
+- no visible internal workflow jargon;
+- Bangla-first and projector-readable labels;
+- `slides_test.py` PASS never substitutes for science/pixel QA.
+
+## Hard blocks
+
+- Do not restart Lessons 1 or 2.
+- Do not start Lesson 4 yet.
+- Do not build the full Lesson 3 deck before the R3 validation stage is internally passed and user-accepted.
