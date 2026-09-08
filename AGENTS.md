@@ -1,8 +1,8 @@
 # Agent Operating Rules
 
-Version: 5.1
+Version: 5.2
 Last revised: 2026-09-09
-Status: **ACTIVE — PRODUCTION SYSTEM V2.1 — LESSON 3 STARTUP**
+Status: **ACTIVE — PRODUCTION SYSTEM V2.1 — LESSON 3 STARTUP — REGRESSION-HARDENED**
 
 ## Absolute write boundary
 
@@ -20,16 +20,17 @@ For any active production lesson, recover state in this order:
 
 1. `CURRENT_STATE.md`
 2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
-3. `TARGETED_REVISION_SCOPE_LOCK.md`
-4. `SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
-5. `NEW_CHAT_START.md`
-6. `OPERATING_BRIEF.md`
-7. `QUALITY_GATES.md`
-8. `RENDERER_ROUTING.md`
-9. active chapter `STATUS.md`
-10. active chapter terminology/diagram contracts
-11. active lesson plan/storyboard/resources/QA/structured spec/handoff/latest production QA
-12. deeper policy/template files only when relevant
+3. `LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md`
+4. `TARGETED_REVISION_SCOPE_LOCK.md`
+5. `SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
+6. `NEW_CHAT_START.md`
+7. `OPERATING_BRIEF.md`
+8. `QUALITY_GATES.md`
+9. `RENDERER_ROUTING.md`
+10. active chapter `STATUS.md`
+11. active chapter terminology/diagram contracts
+12. active lesson plan/storyboard/resources/QA/structured spec/semantic contracts/handoff/latest production QA
+13. deeper policy/template files only when relevant
 
 Do not rely on prior chat memory for current artifact state, terminology, copy, geometry, production route, user acceptance, or remaining work.
 
@@ -39,15 +40,16 @@ If older files conflict, prefer:
 
 1. `CURRENT_STATE.md`
 2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
-3. `TARGETED_REVISION_SCOPE_LOCK.md` for targeted edits
-4. later dated durable decision/addendum
-5. active chapter/lesson terminology and semantic/diagram contracts
-6. current lesson handoff/structured spec
-7. `NEW_CHAT_START.md`
-8. current renderer/source/compatibility policies
-9. chapter `STATUS.md`
-10. latest stage-specific QA/failure record
-11. historical planning/audit artifacts
+3. `LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md` for known failure prevention
+4. `TARGETED_REVISION_SCOPE_LOCK.md` for targeted edits
+5. later dated durable decision/addendum
+6. active chapter/lesson terminology and semantic/diagram contracts
+7. current lesson handoff/structured spec
+8. `NEW_CHAT_START.md`
+9. current renderer/source/compatibility policies
+10. chapter `STATUS.md`
+11. latest stage-specific QA/failure record
+12. historical planning/audit artifacts
 
 A later user rejection or direct-pixel failure supersedes an older internal PASS.
 
@@ -68,6 +70,20 @@ Current Chapter 11:
 - Lesson 2: `Lesson2_Controlled_Full_v0_5` accepted as sufficient to continue; do not reopen unless user/classroom evidence requires a targeted correction;
 - Lesson 3: authorized next work under Production System v2.1;
 - Lesson 4: on hold.
+
+## Known-failure regression rule
+
+`LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md` is mandatory before any new R3 validation pack or final deck is shown to the user.
+
+Required behavior:
+
+1. identify which F-xxx failure patterns apply to the active lesson;
+2. add those checks to the lesson prebuild/QA checklist;
+3. verify each applicable check through semantic/source geometry, rendered pixels, or exact artifact comparison;
+4. record PASS/FAIL evidence;
+5. any applicable unanswered regression item blocks `INTERNAL_QA_PASS`.
+
+Known failures are executable/checkable regression gates, not background reading.
 
 ## Targeted-revision hard scope lock
 
@@ -120,6 +136,7 @@ Count questions, responses, board work, activities, media/simulation setup and d
 - Keep exam-facing wording separate from corrected/current-science explanation when necessary.
 - Record source conflicts explicitly.
 - Gemini/other AI/reviewer findings are advisory until independently verified against authoritative science/contracts.
+- Classify external suggestions as `FACTUAL_ERROR`, `SCIENCE_CLARIFICATION`, `PEDAGOGICAL_OPTION`, or `UNSUPPORTED` before applying.
 
 ## Risk-routed production
 
@@ -170,8 +187,10 @@ Before user review:
 2. automated QA;
 3. semantic science QA;
 4. direct individual pixel QA of R3 slides;
-5. internal repair/rebuild;
-6. second internal QA.
+5. known-failure regression QA;
+6. adversarial student-inference review;
+7. internal repair/rebuild;
+8. second internal QA.
 
 Ask the user mainly for final acceptance, subjective design choice, or approval of a new visual family. Connector-required save confirmation is an exception.
 
@@ -179,13 +198,14 @@ Ask the user mainly for final acceptance, subjective design choice, or approval 
 
 Before full Lesson 3 assembly:
 
-1. audit existing `LESSON_PLAN.md`, `STORYBOARD.md`, `RESOURCES.md`, `QA.md` against Production System v2.1;
+1. audit existing `LESSON_PLAN.md`, `STORYBOARD.md`, `RESOURCES.md`, `QA.md` against Production System v2.1 and the Lesson 2 failure registry;
 2. verify NCTB/source-gap wording and current science;
 3. create/update a Bangla-first structured copy/spec;
 4. create lesson-specific semantic/diagram contracts where needed;
-5. build and internally validate a compact R3 pack for lens action/focus, real-vs-virtual, magnifier, eye anatomy, accommodation, and spectacle correction;
-6. show one internally-passed R3 pack for user acceptance;
-7. only then assemble full Lesson 3.
+5. create a Lesson 3 prebuild regression checklist referencing applicable F-xxx items;
+6. build and internally validate a compact R3 pack for lens action/focus, real-vs-virtual, magnifier, eye anatomy, accommodation, and spectacle correction;
+7. show one internally-passed R3 pack for user acceptance;
+8. only then assemble full Lesson 3.
 
 Mandatory Lesson 3 guardrails include:
 
