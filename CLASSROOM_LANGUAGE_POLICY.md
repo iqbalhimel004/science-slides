@@ -1,197 +1,69 @@
 # Classroom Language Policy
 
-Version: 1.1
-Date: 2026-09-07
+Version: 1.2
+Date: 2026-09-08
 Status: **ACTIVE — MANDATORY FOR STUDENT-FACING SCIENCE SLIDES**
-
-## Purpose
-
-Prevent mixed-language classroom slides from drifting away from NCTB/book terminology and the user's preferred teaching language, and prevent production-time shorthand from making sentences difficult to understand.
 
 ## Core rule
 
-Student-facing teaching text must be **Bangla-first and textbook-facing**.
+Student-facing teaching text must be Bangla-first, textbook-aware and scientifically correct.
 
-Use the Bangla term as the primary visible label. English is optional and should normally appear only in parentheses on the first meaningful introduction when it genuinely helps.
+The active chapter `TERMINOLOGY_LOCK.md` is the authority for exact student-facing scientific terms. Generic examples in this root policy never override a chapter-specific lock or a later user-approved terminology decision.
 
-Examples:
+English may normally appear only:
 
-- `বিভেদতল (Interface)`
-- `অভিলম্ব (Normal)`
-- `আপতন বিন্দু (Point of incidence)`
-- `আপতন কোণ (i)`
-- `আপতিত রশ্মি`
-- `প্রতিসরণ কোণ (r)`
-- `প্রতিসরিত রশ্মি`
-- `প্রতিফলিত রশ্মি`
-- `লম্ব আপতন`
-- `আলোকীয় ঘনত্ব`
-- `বিরল মাধ্যম`
-- `ঘন মাধ্যম`
+- as optional parenthetical support on first meaningful introduction;
+- as a proper resource/product name;
+- where a standard scientific symbol/notation has already been introduced in Bangla.
 
-Do not make the English term the main heading with Bangla as a secondary translation unless there is a specific pedagogical reason.
+## Definition-before-symbol/acronym
 
-## Definition-before-symbol/acronym rule
+Introduce meaning before repeated symbol use, e.g.:
 
-A symbol or acronym must not appear before its meaning has been introduced.
+- `আপতন কোণ (i)`;
+- `প্রতিসরণ কোণ (r)`;
+- `সংকট কোণ (C)`.
 
-Examples:
+Do not use unexplained English acronyms such as standalone `TIR` as the primary Class-8 term when a locked Bangla term exists.
 
-- introduce `আপতন কোণ (i)` before using `i` repeatedly;
-- introduce `প্রতিসরণ কোণ (r)` before using `r` repeatedly;
-- introduce `সংকট কোণ (C)` before using `C` repeatedly.
+## Standalone readability
 
-For Class 8 student-facing material, prefer the full Bangla term `পূর্ণ অভ্যন্তরীণ প্রতিফলন`. Do not use standalone `TIR` as the main visible term.
+Questions/instructions/explanations must make sense without the teacher mentally supplying missing verbs/objects. Short diagram labels may be short; prompts must remain complete and clear.
 
-An English acronym is not treated the same as a mathematical symbol.
+## Copy lock
 
-## What may remain English
+Before final production, freeze exact visible wording in a current `SLIDE_COPY_V*.md` or equivalent structured lesson specification.
 
-English may remain when it is a proper product/resource name or where translation would reduce clarity, for example:
+If wording changes after freeze:
 
-- `PhET Bending Light`
-- `Physics Classroom — Refraction Interactive`
+1. update the current copy/spec authority;
+2. run terminology/text lint where practical;
+3. rerun affected layout/render/science-meaning checks under selective revalidation.
 
-Even in those cases, the surrounding instruction/prompt must remain Bangla.
+Historical copy files remain historical and do not override later chapter locks/migration records.
 
-## Mixed-language anti-patterns
+## Student-facing language checks
 
-Avoid student-facing phrases such as:
+Before internal PASS:
 
-- `Prediction: ...`
-- `Normal incidence: ...`
-- `Ray কোথায় যাবে?`
-- `speed বদলায়`
-- `Refraction = ...`
-- `Live demo`
-- `Exit Check`
-- `TIR`
-- `boundary`
-- `bending`
-- `ray diagram`
-- `transmitted ray`
-- `store`, `guide`, `data transmission` as English classroom prose
+- Bangla-first explanatory text;
+- current chapter terminology;
+- no unnecessary English fragments;
+- symbols/acronyms introduced before use;
+- diagram labels match the chapter lock;
+- complete prompts/instructions;
+- generated/raster images do not contain uncontrolled scientific wording when editable text is practical;
+- terminology linter passes where applicable;
+- manual high-risk readability review passes.
 
-Preferred replacements:
+## Dynamic/demo wording
 
-- `অনুমান করো`
-- `লম্ব আপতন`
-- `রশ্মি কোথায় যাবে?`
-- `বেগ বদলায়`
-- `প্রতিসরণ = ...`
-- `শ্রেণিকক্ষ কার্যক্রম / প্রদর্শনী`
-- `শেষ যাচাই`
-- `পূর্ণ অভ্যন্তরীণ প্রতিফলন`
-- `বিভেদতল`
-- `রশ্মি বাঁকে`
-- `রশ্মিচিত্র`
-- `বাইরের দিকে প্রতিসরিত রশ্মি`
-- `সংরক্ষণ করে না`, `পথ নির্দেশ করে`, `তথ্য আদান-প্রদান`
+Teacher-led physical activity should be labelled in clear Bangla such as `শ্রেণিকক্ষ কার্যক্রম` / `শ্রেণিকক্ষ প্রদর্শনী`, not falsely presented as embedded/live media.
 
-## Standalone-readability rule
+Staged reveals should make prediction/answer/explanation roles clear when near-duplicate states could confuse.
 
-Student-facing questions and explanatory sentences must make sense on their own. Do not rely on the teacher mentally filling missing verbs/objects.
+## Chapter-specific precedence example
 
-FAIL examples:
+For Class 8 Chapter 11, current `TERMINOLOGY_LOCK.md` uses the user-approved student-facing `হালকা মাধ্যম` for the lower-optical-density/lower-index side in revised Lesson 2. Older generic/historical `বিরল মাধ্যম` wording does not override that lock.
 
-- `কম → বেশি ঘন মাধ্যমে রশ্মি?`
-- `অভিলম্ব বরাবর পড়লে দিক?`
-- `কোন diagram-এ transmitted ray আছে?`
-
-Preferred:
-
-- `আলো আলোকীয়ভাবে বিরল মাধ্যম থেকে ঘন মাধ্যমে গেলে প্রতিসরিত রশ্মি অভিলম্বের কোন দিকে বেঁকে যায়?`
-- `লম্ব আপতনে রশ্মির দিক পরিবর্তন হয় কি? মাধ্যম বদলালে বেগের কী হতে পারে?`
-- `প্রতিটি অবস্থায় প্রতিসরণ থাকবে, সংকট অবস্থা হবে, নাকি পূর্ণ অভ্যন্তরীণ প্রতিফলন হবে?`
-
-Short diagram labels may remain short. Instructions/questions must be complete.
-
-## Slide-copy lock
-
-For a new/revised production lesson, create/freeze exact visible wording before the final deck build:
-
-`production/SLIDE_COPY_V*.md`
-
-The deck-building stage must not freely paraphrase or shorten that wording.
-
-If wording needs to change after copy freeze, update the copy file and treat the deck as needing re-QA.
-
-## Classroom demo wording
-
-A slide itself must not be labelled `Live demo` unless it actually contains or launches a live/embedded element.
-
-For a teacher-led physical demonstration, use wording such as:
-
-`শ্রেণিকক্ষ কার্যক্রম` or `শ্রেণিকক্ষ প্রদর্শনী`.
-
-The slide should explicitly state the teacher action, required materials, student observation prompt, and static fallback if materials are unavailable.
-
-## Progressive-reveal wording
-
-Staged duplicate slides should clearly identify their role when the sequence could otherwise be confusing:
-
-- `ধাপ ১ — আগে অনুমান`
-- `ধাপ ২ — উত্তর`
-- `ধাপ ৩ — ব্যাখ্যা`
-
-Do not rely on unlabeled near-duplicate slides for a science concept where the teacher/student may not immediately understand why both states exist.
-
-## Diagram labeling rule
-
-For science-critical diagrams, visible labels must use the Bangla textbook terms. English can appear once in parentheses where useful.
-
-A ray-optics vocabulary diagram should not be considered complete if the required topic includes the terms but the diagram omits them. Verify as relevant:
-
-- বিভেদতল
-- অভিলম্ব
-- আপতন বিন্দু
-- আপতন কোণ
-- আপতিত রশ্মি
-- প্রতিসরণ কোণ
-- প্রতিসরিত রশ্মি
-- প্রতিফলিত রশ্মি
-- সংকট কোণ
-- পূর্ণ অভ্যন্তরীণ প্রতিফলন
-
-## Automated lint rule
-
-For programmatically generated decks, run a student-facing text lint when practical.
-
-The linter should flag known unwanted English fragments/acronyms while allowlisting proper resource names and agreed scientific symbols.
-
-A linter PASS does not prove language quality; it prevents common drift. Manual Bangla readability review is still required for high-risk slides.
-
-Canonical generic linter:
-
-`tools/student_text_lint.py`
-
-## QA gate
-
-Before `CLASSROOM_READY`, production QA must check:
-
-1. student-facing explanatory text is Bangla-first;
-2. textbook terminology is used consistently;
-3. unnecessary English fragments are removed;
-4. English proper names/resources remain only where appropriate;
-5. symbols/acronyms were introduced before use;
-6. diagram labels include required Bangla terms;
-7. physical-demo slides are not falsely presented as embedded/live content;
-8. staged reveal pairs are clear about prediction vs answer when ambiguity is possible;
-9. questions/instructions are standalone-readable;
-10. exact slide copy is frozen for production lessons;
-11. automated terminology lint passes where applicable.
-
-## Chapter terminology lock
-
-When a chapter has many technical terms, maintain a chapter-local `TERMINOLOGY_LOCK.md`. It takes precedence over ad-hoc production wording.
-
-## Evidence
-
-This policy was first created after Lesson 1 v2 identified mixed-language/clarity issues, and strengthened after Lesson 2 v1 exposed additional failures:
-
-- fragmentary Bangla questions;
-- standalone `TIR` despite Bangla-first policy;
-- English fragments such as `boundary`, `bending`, `store`, `guide`, `data transmission`;
-- a QA process that incorrectly treated `TIR` like a standard mathematical symbol.
-
-Lesson 2 v2 is the first build under the strengthened copy-lock + lint workflow.
+Canonical architecture: `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`.
