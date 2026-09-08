@@ -89,6 +89,52 @@ Canonical policy:
 
 `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
 
+## D-043 — Adopt Science Slides Production System v2; continue in-progress work without reset
+
+Decision:
+
+Adopt `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` as the canonical production architecture for future Science Slides work.
+
+Core production chain:
+
+**Scientific truth -> structured specification -> R1/R2/R3 risk routing -> specialized visual route -> controlled PptxGenJS assembly -> automated QA -> semantic science QA -> direct pixel QA -> PowerPoint/export QA -> user acceptance -> GitHub checkpoint.**
+
+Key requirements:
+
+1. use one common production framework but multiple specialized visual engines according to concept type;
+2. treat PptxGenJS as the controlled assembly/orchestration layer, not as the only possible visual generator;
+3. keep science-critical geometry/topology/notation deterministic and independently testable;
+4. introduce domain-specific accuracy contracts for Physics, Chemistry, Biology, Earth/Environmental Science and Astronomy;
+5. use semantic geometry/science assertions for R3 visuals rather than presence-only checks;
+6. keep editable scientific labels separate from raster/generated imagery where practical;
+7. run automated structural/text/layout QA before direct rendered-pixel QA;
+8. require two-pass science review: pre-build intended science and post-render student-inferred science;
+9. move user review after internal QA rather than using the user as the primary defect detector;
+10. apply a repair circuit breaker: after repeated material failure, stop micro-patching and rebuild/change representation route;
+11. grow a reusable golden-master/component library to reduce future production time;
+12. maintain PPTX/PDF/offline fallback and reproducibility requirements.
+
+No-reset migration rule:
+
+- adopting v2 does not invalidate scientifically correct prior work;
+- Lesson 1 remains completed/approved baseline work;
+- Lesson 2 does not restart from zero;
+- retain its completed analysis, storyboard, source reconciliation, terminology lock, diagram contracts, reference locks, accepted assets/wording and QA evidence;
+- continue from the latest valid checkpoint and rebuild only defective/fragile production layers;
+- Lesson 3 and later work should use v2 from the beginning.
+
+Reason:
+
+Lesson 2 exposed a non-converging Canva micro-patch workflow: wrong angle construction, terminology drift, non-representative mirage imagery, clipping/overlap, optical-fibre diagram/readability defects and repeated user-discovered errors. The failure was primarily production architecture drift, not a need to discard the chapter's already-verified scientific work.
+
+Canonical policy:
+
+`SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+
+New-chat recovery:
+
+`NEW_CHAT_START.md` must load Production System v2 immediately after `CURRENT_STATE.md` so a fresh chat follows the same architecture without depending on prior chat history.
+
 ## Precedence
 
-For production work after 2026-09-07, D-040, D-041 and D-042 refine older generic routing/QA wording. If an older file implies that montage/render PASS alone is enough, or that full deck assembly may precede high-risk visual approval after a visual failure, these decisions supersede that implication.
+For production work after 2026-09-08, D-043 and `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` refine D-040 through D-042 and older production wording. Existing accuracy/reference-lock rules remain active unless specifically refined by v2.
