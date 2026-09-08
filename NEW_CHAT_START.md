@@ -1,10 +1,10 @@
 # New Chat Recovery Protocol
 
-Version: 5.0
+Version: 5.1
 Last revised: 2026-09-08
-Status: **ACTIVE — SCIENCE SLIDES PRODUCTION SYSTEM V2**
+Status: **ACTIVE — SCIENCE SLIDES PRODUCTION SYSTEM V2.1**
 
-## 1. Verify repository identity first
+## 1. Repository boundary
 
 Authorized write repository:
 
@@ -12,258 +12,184 @@ Authorized write repository:
 
 Do not write to any other connected repository.
 
-## 2. Mandatory production recovery sequence
+## 2. Mandatory recovery order
 
-For any active production lesson, read in this order:
+For active production work, read in this order:
 
 1. `CURRENT_STATE.md`
 2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
-3. `OPERATING_BRIEF.md`
-4. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
-5. `ACCURACY_ENFORCEMENT.md`
-6. `QUALITY_GATES.md`
-7. `RENDERER_ROUTING.md`
-8. `VISUAL_ASSET_ROUTING.md`
-9. `PHYSICAL_VISUAL_REALISM_POLICY.md`
+3. `AGENTS.md`
+4. `OPERATING_BRIEF.md`
+5. `QUALITY_GATES.md`
+6. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`
+7. `ACCURACY_ENFORCEMENT.md`
+8. `RENDERER_ROUTING.md`
+9. `VISUAL_ASSET_ROUTING.md`
 10. `CLASSROOM_LANGUAGE_POLICY.md`
 11. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
 12. `SIMULATION_RESOURCE_ROUTING.md`
 13. `ARTIFACT_PERSISTENCE.md`
 14. active chapter `STATUS.md`
 15. active chapter `TERMINOLOGY_LOCK.md` if present
-16. active chapter/lesson `DIAGRAM_CONTRACTS.md` if present
-17. active lesson `STORYBOARD.md`, `RESOURCES.md`, latest `production/SLIDE_COPY_V*.md`, structured spec/dynamic manifest, latest failure/production QA
-18. deeper policy/template files only when needed
+16. active chapter/lesson `DIAGRAM_CONTRACTS.md` or semantic contracts if present
+17. active lesson `STORYBOARD.md`, `RESOURCES.md`, latest copy lock/structured spec/dynamic manifest/latest QA/failure record
+18. deeper historical files only when needed
 
-Do **not** depend on prior chat memory for technical terminology, slide copy, high-risk visual geometry, current artifact approval state, production route or remaining work.
+Do not depend on prior chat memory for current state, copy, terminology, science geometry, user approval, artifact identity or next action.
 
-## 3. Canonical precedence
+## 3. Precedence
 
-If old chat history or older repository wording conflicts with current policy, use this precedence:
+If files conflict:
 
-1. `CURRENT_STATE.md` — exact current checkpoint;
-2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md` — canonical production architecture and migration behavior;
-3. later dated durable decision/addendum;
-4. `REFERENCE_LOCKED_VISUAL_PIPELINE.md`;
-5. `ACCURACY_ENFORCEMENT.md`;
-6. active chapter `TERMINOLOGY_LOCK.md`;
-7. active chapter/lesson `DIAGRAM_CONTRACTS.md`;
-8. `RENDERER_ROUTING.md`;
-9. `VISUAL_ASSET_ROUTING.md`;
-10. `CLASSROOM_LANGUAGE_POLICY.md`;
-11. `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`;
-12. active chapter `STATUS.md`;
-13. latest stage-specific failure/QA/reconciliation record;
-14. older historical planning/audit documents.
+1. `CURRENT_STATE.md`
+2. `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+3. later dated durable decision/addendum
+4. active chapter terminology/diagram/semantic contracts
+5. `NEW_CHAT_START.md` / `AGENTS.md`
+6. current source/renderer/compatibility policies
+7. active chapter `STATUS.md`
+8. latest stage-specific QA/failure record
+9. older historical build/audit records
 
-A later user visual rejection supersedes an older internal QA pass.
+A later user rejection or direct-pixel failure supersedes an older internal PASS.
 
-## 4. No-reset migration rule
+## 4. No-reset rule
 
-Adopting a newer production architecture does **not** cancel valid prior work.
+A production-system revision does not invalidate still-correct prior work.
 
 For an in-progress lesson:
 
-1. recover the latest canonical checkpoint;
-2. preserve completed content analysis, source verification, storyboard, terminology locks, diagram contracts, approved assets and accepted visuals when still valid;
-3. classify existing production outputs as `REUSE_AS_IS`, `REUSE_AS_REFERENCE`, `PORT_TO_CONTROLLED_COMPONENT`, `REPAIR`, or `RETIRE`;
-4. rebuild only defective/fragile/unreproducible rendering layers;
-5. continue from the nearest valid checkpoint rather than restarting the lesson.
+- preserve verified research, source reconciliation, storyboard, copy, terminology, accepted assets and accepted science;
+- classify production artifacts as `REUSE_AS_IS`, `REUSE_AS_REFERENCE`, `PORT_TO_CONTROLLED_COMPONENT`, `REPAIR`, or `RETIRE`;
+- rebuild only defective/fragile/unreproducible layers;
+- continue from the nearest valid checkpoint.
 
-Current Chapter 11 implication:
+Current Chapter 11:
 
-- Lesson 1 remains completed/approved baseline work;
-- Lesson 2 remains in progress and must continue from its current high-risk visual checkpoint;
-- Lesson 3+ use Production System v2 from the start.
+- Lesson 1 = completed/user-approved baseline, preserve;
+- Lesson 2 = continue without reset from current high-risk migration;
+- Lesson 3+ = use v2.1 from the start.
 
-## 5. Risk-routed production rule
+## 5. Risk-routed production
 
-Every production visual should be classified:
+Classify visual/scientific representations as R1/R2/R3.
 
-- `R1` low risk;
-- `R2` medium risk;
-- `R3` high risk.
+R3 visuals carry scientific meaning through geometry/topology/scale/position/notation/structure and require controlled science authority, semantic contracts and individual rendered inspection.
 
-R3 visuals carry scientific meaning through geometry/topology/scale/notation/position and must not use unconstrained generative AI as science authority.
+Unconstrained generative AI must not decide R3 science.
 
-Use the adaptive visual router defined in `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`.
+## 6. Mandatory science controls
 
-## 6. High-risk visual hard gate
+Before `INTERNAL_QA_PASS`, apply as relevant:
 
-If the active lesson has R3/high-risk visuals, or a previous user review rejected visuals, do not assemble/release a full classroom deck until the applicable high-risk gate passes.
-
-Required sequence:
-
-1. lock authoritative/reference topology and invariants;
-2. freeze Bangla-first visible labels/copy;
-3. choose the correct visual route;
-4. build science-critical geometry/topology deterministically;
-5. run semantic science assertions where practical;
-6. render every high-risk visual individually;
-7. verify no blank/missing page;
-8. run direct pixel QA;
-9. internally repair/rebuild and rerun QA;
-10. obtain user acceptance only after internal PASS;
-11. then assemble/release the full lesson deck.
-
-## 7. Accuracy-enforcement rule — mandatory
-
-Before a science deck may be called `INTERNAL_QA_PASS`:
-
-1. freeze exact student-facing copy in `production/SLIDE_COPY_V*.md` or equivalent structured spec;
-2. follow chapter `TERMINOLOGY_LOCK.md`;
-3. run student-facing terminology lint where practical;
-4. enforce high-risk `DIAGRAM_CONTRACTS.md` / semantic contracts;
-5. run programmatic geometry assertions where practical;
-6. render and inspect each high-risk slide individually;
-7. run expected-slide/blank-page check;
-8. run overflow/overlap/out-of-bounds/render/export checks;
-9. perform post-render science review: what will the student actually infer?;
-10. test exact PPTX in Microsoft PowerPoint when user-side PowerPoint is available.
+- authoritative science verification;
+- source freshness class: `STABLE`, `REVISION_SENSITIVE`, or `CURRENT_DATA`;
+- exact student-facing copy/structured spec;
+- terminology lock + lint;
+- quantitative/unit/dimensional checks;
+- safety review for experiments/demos;
+- model/idealization/scale disclosure where needed;
+- semantic/diagram contracts for R3;
+- automated structural/text/layout QA;
+- direct pixel QA of all R3 slides;
+- post-render student-inference science review;
+- accessibility/multimodal review;
+- compatibility/export/offline QA.
 
 A montage-only review or `slides_test.py` PASS is never sufficient science QA.
 
-## 8. Bangla-first classroom language
+## 7. Accessibility and classroom safety
 
-Student-facing slides use textbook-facing Bangla first.
+Critical meaning must not rely only on color, motion or audio. Verify contrast, readable labels, line-style/text redundancy, captions/summary for important media, and static/final states for essential animation meaning.
 
-- full Bangla term is primary;
-- English is optional parenthetical support or a proper resource name;
-- symbols such as `i`, `r`, `C` are introduced after their Bangla meaning;
-- standalone English acronyms such as `TIR` are not allowed as the primary Class-8 teaching term;
-- questions/instructions must be complete, standalone-readable sentences.
+Any live experiment/demo with plausible heat, chemical, electrical, glass, laser/bright-light, pressure, biological, sharp-object or mechanical risk requires explicit safety review. If safety cannot be established, use a safer/static alternative.
 
-Canonical policy:
+## 8. Visual/media routing
 
-`CLASSROOM_LANGUAGE_POLICY.md`
+Use the adaptive router in Production System v2.1.
 
-## 9. Renderer route — already decided
+Priority for contextual scientific imagery:
 
-Current default deck-production route:
+1. authoritative real/open/licensed image;
+2. authoritative educational/scientific illustration;
+3. controlled AI-generated context when appropriate;
+4. controlled schematic when clearer.
 
-**Controlled PptxGenJS -> deterministic/specialized scientific assets -> automated + semantic QA -> direct rendered-pixel QA -> optional Canva controlled finishing -> verified PPTX + verified PDF/static fallback.**
+Keep science-critical labels/geometry/notation controlled and editable where practical.
 
-- PptxGenJS: primary controlled assembly/authoring route.
-- Specialized deterministic code/SVG/chart/chemistry/anatomy routes: science-critical asset route as applicable.
-- Canva: optional finishing/realistic context asset tool; not science authority.
-- Beautiful.ai: low-risk prototype/layout inspiration only.
+## 9. Repair circuit breaker
 
-## 10. Visual asset route
-
-For photos/realistic physical-object visuals, default priority:
-
-1. verified existing real/authoritative/open/licensed visual;
-2. authoritative educational illustration;
-3. connected Canva / Canva AI / Canva Pro or another approved generator for context imagery;
-4. controlled illustration/schematic when more appropriate.
-
-Science-critical labels, rays, normals, angles, scales, graphs, notation, circuit topology, anatomy topology and chemical structures remain controlled/deterministic.
-
-Do not bake editable scientific text into raster imagery when avoidable.
-
-## 11. Repair circuit breaker
-
-For one visual:
-
-- first material failure -> repair from controlled source;
-- second material failure -> stop micro-patching and cleanly rebuild the visual/component;
+- first material failure -> source-level repair;
+- second material failure -> clean rebuild, no micro-patching;
 - rebuild still fails -> change representation route;
-- roughly 20–30 minutes of non-converging repeated repair -> route-change trigger.
+- ~20–30 minutes of non-converging repair -> route change.
 
-Do not spend days repeatedly patching one slide.
+## 10. Selective revalidation
 
-## 12. User-review rule
+Do not rerun every expensive stage after a small change. Use the selective-invalidation matrix in Production System v2.1 and recheck the affected chain only.
+
+## 11. User review
 
 The user is not the primary internal QA detector.
 
-Before user review:
+Before user review: build -> automated QA -> semantic science QA -> pixel QA -> internal repair -> second internal QA.
 
-1. build;
-2. automated QA;
-3. semantic science QA;
-4. direct pixel QA;
-5. internal repair/rebuild if needed;
-6. second internal QA.
+Ask the user mainly for final acceptance, subjective visual choice or approval of a new visual family. Connector-required save confirmation is an exception.
 
-Ask the user mainly for final acceptance, subjective design preference, or approval of a new visual family. Connector-required explicit save approvals are an exception.
-
-## 13. Physical realism + science clarity
-
-Real physical objects should look recognizably real when practical, but photorealism never outranks scientific clarity.
-
-When geometry matters:
-
-- prefer straight-on / orthographic / side / cross-sectional views;
-- avoid perspective that conflicts with deterministic overlays;
-- use realistic-object + deterministic schematic hybrid when clearer;
-- use pure schematic geometry when realism reduces clarity.
-
-## 14. Dynamic engagement / simulation rule
+## 12. Dynamics/simulation
 
 Preferred science-critical progression:
 
-1. `PREDICT_THEN_REVEAL`;
-2. `STAGED_REVEAL`;
-3. deterministic diagram states;
-4. native animation only when materially useful and reliably testable;
-5. video/animation for continuous motion;
-6. simulation for parameter manipulation.
+1. `PREDICT_THEN_REVEAL`
+2. `STAGED_REVEAL`
+3. deterministic diagram states
+4. native animation only if materially useful and testable
+5. video/animation for continuous motion
+6. simulation for parameter manipulation
 
-Every important online/interactive item requires a static/offline fallback.
+Every classroom-critical online/dynamic resource needs a static/offline fallback.
 
-## 15. Blank/missing page rule
+## 13. PowerPoint/export
 
-For every pack/deck export:
+PowerPoint repair/recovery warning = hard FAIL.
 
-- expected slide count must match;
-- each planned slide ID must render to non-blank content;
-- no unexpected blank page is allowed;
-- no high-risk visual may disappear during normalization/export.
+If exact PowerPoint testing is unavailable, use explicit status `DELIVERY_COMPATIBILITY_PENDING`; never claim a tested PASS.
 
-Unexpected blank page = hard FAIL.
+Verify PDF/static fallback separately.
 
-## 16. PowerPoint compatibility
+## 14. Golden-master regression
 
-- PowerPoint repair/recovery warning = hard FAIL;
-- test exact user-facing PPTX when available;
-- after normalization/resave, retest links/reveal/interaction/media;
-- verify PDF/static fallback separately.
+When a reusable R3 component changes, rerender and compare with its approved golden reference. Material geometry/label/readability changes require targeted re-QA.
 
-## 17. Source/science rule
+A new R3 component family receives targeted independent second review before becoming a reusable golden master.
 
-NCTB controls curriculum/scope/exam context, not automatic scientific truth. Material scientific claims are verified against current authoritative sources; mismatches are documented.
+## 15. Status ladder
 
-## 18. Timing rule
+Use:
 
-For a 60-minute class:
+`DRAFT -> CONTENT_VERIFIED -> CONTENT_FROZEN -> BUILT -> INTERNAL_QA_PASS -> USER_ACCEPTED -> DELIVERY_VERIFIED -> CLASSROOM_READY`
 
-- CORE: about 40–45 min;
-- FLEX: about 5–10 min;
-- planned CORE + FLEX: about 50–55 min;
-- contingency: 5–10 min unallocated;
-- STRETCH: appendix/enrichment only.
+Use explicit pending/fail states instead of overstating completion.
 
-## 19. Artifact persistence
+## 16. Current Lesson 2 next action
 
-Follow `ARTIFACT_PERSISTENCE.md` and Production System v2.
+Do not restart Lesson 2 and do not return to Canva raster micro-patching as primary production.
 
-For high-risk controlled production preserve:
+Current migration sequence:
 
-- structured lesson/slide specification;
-- exact slide-copy lock;
-- generator/build source or reproducible specification;
-- artifact fingerprints;
-- deterministic visual/component source;
-- semantic/geometry tests;
-- terminology lint/checker source;
-- high-risk visual review status;
-- asset provenance;
-- dynamic implementation manifest;
-- PowerPoint compatibility status;
-- export/fallback QA.
+1. recover current Lesson 2 locks/specs/QA;
+2. rebuild/port HRV-07 as controlled optical-fibre component;
+3. port HRV-05/06 into reusable controlled optics components;
+4. retain HRV-01..04 validated references/assets unless regression evidence appears;
+5. build controlled high-risk validation pack with PptxGenJS + deterministic science layers + editable labels;
+6. run automated, semantic and direct-pixel QA internally until PASS;
+7. show one internally-passed pack for user acceptance;
+8. assemble full Lesson 2 from already-validated work;
+9. run full compatibility/export/offline QA;
+10. checkpoint before Lesson 3.
 
-## 20. End-of-stage checkpoint
+## 17. End-of-stage rule
 
 **Finish -> record -> then continue.**
 
-The next chat must be able to continue from GitHub without needing the previous transcript.
+A fresh chat must be able to continue from GitHub without the previous transcript.
