@@ -1,241 +1,191 @@
 # Quality Gates
 
-Version: 4.1
-Last revised: 2026-09-07
-Status: **ACTIVE — ACCURACY-ENFORCEMENT UPDATE**
+Version: 5.0
+Last revised: 2026-09-08
+Status: **ACTIVE — PRODUCTION SYSTEM V2.1**
 
-A lesson or chapter advances only when every applicable gate passes. Rendering, overflow checks or visual attractiveness alone are never sufficient evidence of science correctness.
+A lesson/chapter advances only when every applicable gate passes. Rendering, overflow checks, attractive design or metadata alone never prove scientific correctness.
 
 ## G0 — Input integrity
 
-PASS only if:
-
-- complete chapter/source material is supplied;
-- page/screenshot order is known;
-- text, equations, tables and diagrams are readable enough to analyze;
-- text-layer status is classified;
-- missing/cropped material is resolved or documented.
+PASS only if chapter/source identity, order, completeness, readability and text-layer/OCR status are known; missing/cropped/uncertain material is resolved or explicitly documented.
 
 ## G1 — Curriculum and scope
 
-PASS only if:
+PASS only if the lesson maps to the intended NCTB/current curriculum scope, important outcomes/subsections are represented, prerequisites are identified and unnecessary depth is controlled.
 
-- lesson content maps to the supplied chapter and intended class level;
-- important learning outcomes/subsections are represented;
-- unnecessary depth is controlled;
-- prerequisites are identified.
-
-## G2 — Source verification
+## G2 — Source verification and freshness
 
 PASS only if:
 
-- key definitions are source-traceable;
-- important laws/formulas/units are verified;
-- exam-sensitive wording prioritizes authoritative syllabus sources;
-- critical extracted wording is checked against the visible source page when reliability is uncertain;
-- source conflicts are resolved or explicitly flagged.
+- key definitions/laws/formulas/units/claims are source-traceable;
+- critical extracted textbook wording is visually checked when uncertain;
+- source conflicts are resolved/flagged;
+- NCTB scope authority is separated from scientific authority;
+- material claims are classified as `STABLE`, `REVISION_SENSITIVE` or `CURRENT_DATA` where relevant;
+- revision-sensitive/current-data claims have an appropriate date/edition/last-check record.
+
+Recent publication date alone is not evidence of scientific correctness.
 
 ## G3 — Scientific accuracy
 
+PASS only if concepts, causal explanations, process direction, labels, formulas, units, diagrams and simplifications are correct and do not materially mislead.
+
+### G3A — Student-facing copy and terminology
+
 PASS only if:
 
-- concepts are scientifically correct;
-- diagrams/process directions/labels are correct;
-- formulas and units are correct;
-- worked calculations are checked;
-- simplifications do not become materially false;
-- misleading wording/visuals are removed.
-
-### G3A — Student-facing copy and terminology lock
-
-For technical science lessons, PASS only if:
-
-- exact visible copy is frozen in `production/SLIDE_COPY_V*.md` before final rendering;
-- questions/explanations are standalone-readable, not fragmentary shorthand;
-- chapter `TERMINOLOGY_LOCK.md` is followed where present;
+- exact visible copy is frozen in `SLIDE_COPY_V*.md` or equivalent structured spec;
+- chapter terminology lock is followed;
 - symbols/acronyms are introduced before use;
-- Bangla-first policy is followed;
-- automated student-text lint passes when programmatic production makes it practical;
-- any lint exception is explicitly justified.
+- Bangla-first rules are followed;
+- automated text lint passes where practical;
+- questions/instructions are standalone-readable.
 
-A deck with unexplained acronyms, avoidable mixed-language fragments or production-time wording drift FAILS G3A.
+### G3B — R3 semantic/diagram contracts
 
-### G3B — Diagram-contract and geometry enforcement
+For R3 visuals, PASS only if:
 
-For high-risk visuals, PASS only if:
+- explicit invariants/semantic contracts exist;
+- geometry/topology assertions pass where practical;
+- angle definitions are checked by endpoints/reference line, not merely by the presence of an arc;
+- each R3 slide is rendered and individually inspected;
+- post-render student-inference science review agrees with intended science.
 
-- a chapter/lesson `DIAGRAM_CONTRACTS.md` or equivalent invariant specification exists;
-- required rays/labels/positions are present;
-- programmatic coordinate/geometry assertions pass where practical;
-- each high-risk slide is rendered and inspected individually, not only through a montage;
-- the rendered slide is checked against the invariant list.
+Wrong/missing invariant = automatic FAIL.
 
-Examples of high-risk visuals include apparent-image/depth diagrams, critical angle, full internal reflection, lens ray construction, circuits, anatomy, graphs/scales and equation-heavy visual models.
+### G3C — Quantitative/numerical integrity
 
-Any missing or wrong invariant is an automatic FAIL even when the slide looks attractive.
+Where applicable, PASS only if:
+
+- formula/law choice is correct;
+- units/conversions are correct;
+- dimensional consistency is checked where meaningful;
+- worked answers are independently recomputed;
+- signs/rounding/precision are appropriate;
+- graph axes/units/scales/data/trends are verified.
+
+### G3D — Model/idealization/scale transparency
+
+PASS only if a simplification does not materially falsify the phenomenon. When needed, label visuals as `সরলীকৃত চিত্র`, `স্কেল অনুযায়ী নয়`, idealized model, schematic, etc.
 
 ## G4 — Realistic 60-minute timing
 
-PASS only if:
-
-- CORE is normally about 40–45 minutes;
-- FLEX is normally about 5–10 minutes;
-- planned CORE + FLEX is normally about 50–55 minutes;
-- 5–10 minutes remains unallocated contingency;
-- STRETCH is appendix-only;
-- questions, board work, activities, examples, media setup/debrief, transitions and exit check are included;
-- FLEX can be dropped without breaking the lesson.
-
-FAIL action: reduce/split/resequence. Do not assume unrealistically fast teaching.
+PASS only if CORE is normally ~40–45 min, FLEX ~5–10 min, CORE+FLEX ~50–55 min, 5–10 min contingency remains, STRETCH is non-essential, and all responses/board work/activities/media setup/debrief/transitions/exit checks are counted.
 
 ## G5 — Pedagogy and cognitive load
 
-PASS only if:
+PASS only if learning sequence is age-appropriate, prior knowledge is activated, meaningful student response/check/practice is present where useful, misconceptions are addressed, summary/exit retained, and text is not a textbook dump.
 
-- learning outcomes are meaningful;
-- sequence is logical;
-- explanations are age-appropriate;
-- prior knowledge is activated;
-- major segments normally end with student response;
-- checks/misconceptions/practice are present where useful;
-- summary and exit check are retained;
-- text is not a textbook dump.
+## G6 — Resource suitability, licensing and resilience
 
-## G6 — Resource suitability
+PASS only if external resources are scientifically suitable, relevant, age-appropriate, classroom-usable, legally/reasonably reusable, provenance is recorded and classroom-critical resources have a practical fallback.
 
-PASS only if each external resource is:
+### G6A — Experiment/demo safety
 
-- scientifically correct;
-- relevant and age-appropriate;
-- classroom-usable;
-- not excessively long/complex;
-- legally/reasonably reusable;
-- accompanied by practical fallback if classroom-critical.
+For live experiments/demonstrations, PASS only if plausible hazards have been reviewed, teacher/student permissions are clear, required PPE/setup/disposal is stated where relevant, unsafe variants are excluded and a safer/static fallback exists when needed.
 
-## G7 — Storyboard readiness
+If safety cannot be established, the live activity cannot be CORE/FLEX.
 
-PASS only if every slide/item has enough specification to render without inventing core science:
+## G7 — Storyboard/structured-spec readiness
 
-- CORE/FLEX/STRETCH segment;
-- purpose/content;
-- visual purpose/resource need;
-- estimated time;
-- source reference;
-- teacher/student action where relevant;
-- equation/source notation where relevant;
-- fallback where needed.
+PASS only if each slide/state has enough specification to render without inventing science, including:
 
-For concept-heavy segments, record a dynamic implementation decision where relevant: `STATIC_INTENTIONAL`, `STAGED_REVEAL`, `NATIVE_ANIMATION`, `PREDICT_THEN_REVEAL`, `LIVE_DEMO`, `SIMULATION`, `INTERACTIVE_NAVIGATION`, or `VIDEO/ANIMATION_RESOURCE`.
+- segment;
+- purpose/learning goal;
+- exact/approved content;
+- R1/R2/R3 risk;
+- visual route;
+- required invariants for R3;
+- sources/freshness where relevant;
+- timing;
+- teacher/student action;
+- dynamic mode;
+- fallback;
+- safety/accessibility/model notes where relevant.
 
 ## G8 — Content freeze
 
-PASS only after G1–G7 are satisfied and there are no unresolved material content changes.
+PASS only after G1–G7 are satisfied and no unresolved material content change remains. Visual finishing must not silently alter frozen science.
 
-After freeze, design tools may improve layout/styling but must not silently change facts, definitions, formulas, units or meaning.
+## G9 — Renderer/tool routing
 
-## G9 — Renderer calibration
+Current canonical architecture is `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`. PptxGenJS is primary controlled assembly; specialized scientific engines are routed by concept; Canva is optional finishing/context support, not science authority.
 
-RT-01 is complete for the first pilot. Current routing is defined in `RENDERER_ROUTING.md`.
-
-Repeat calibration only if tool behavior materially changes or the user explicitly requests reconsideration.
+Repeat renderer calibration only if tool behavior materially changes or the user explicitly requests reconsideration.
 
 ## G10 — Visual engagement and classroom usability
 
-PASS only if the **actual rendered deck** satisfies applicable requirements:
+PASS only if actual rendered slides have clear hierarchy, projector-readable text/labels, controlled density, purposeful visuals, coherent rhythm/layout variety, scientifically correct diagrams and intentional dynamic treatment where useful.
 
-- one clear focal point/hierarchy exists where practical;
-- projected text and labels are readable;
-- visual density is controlled;
-- layout variation supports attention without chaos;
-- visuals serve an instructional purpose;
-- terminology is consistent;
-- diagrams remain scientifically correct;
-- motion/reveal is justified and implemented;
-- concept-heavy lessons are not static by accident;
-- simulation/demo/interactive support is included where useful and planned;
-- decorative clutter/repetitive cards are controlled;
-- hook, prediction, explanation, rule, misconception, practice, simulation and exit states are differentiated where appropriate.
+A correct but materially unreadable/utilitarian deck fails G10. An attractive but scientifically wrong deck fails G3/G3B.
 
-A scientifically correct but materially unattractive/overly utilitarian deck fails G10. Conversely, an attractive deck with incorrect geometry fails G3/G3B.
+### G10A — Accessibility and multimodal clarity
+
+PASS only if critical meaning does not rely solely on color, motion or audio. As applicable verify:
+
+- high contrast;
+- color-independent line/style/text cues;
+- essential labels readable without zoom;
+- captions/transcript/teacher summary for important audio/video meaning;
+- static/final state preserves essential animation meaning;
+- no unnecessary flashing/distracting motion.
 
 ## G11 — PowerPoint compatibility, export, playback and offline reliability
 
-PASS only if the exact classroom delivery artifacts are checked.
+PASS only if exact classroom delivery artifacts are checked.
 
-### Microsoft PowerPoint compatibility
+When Microsoft PowerPoint is available:
 
-- exact user-facing PPTX is opened/tested in Microsoft PowerPoint when available;
-- no repair/recovery warning appears;
-- editable text/shapes remain intact where expected;
-- links/buttons work;
-- reveal/animation/interaction works;
-- after normalization/resave, playback is retested.
+- exact PPTX opens without repair/recovery warning;
+- editability is preserved where expected;
+- links/buttons/reveal/animation/media work;
+- any normalized/resaved artifact is retested.
 
-A PowerPoint repair warning is an automatic FAIL for that artifact.
+If PowerPoint testing is unavailable, status is `DELIVERY_COMPATIBILITY_PENDING`, not PASS.
 
-### Export/playback/offline
-
-Also verify:
-
-- Bangla rendering/line breaks;
-- equations/symbols;
-- image crops;
-- diagram labels;
-- links/QRs;
-- media/simulation launch paths;
-- static/offline fallback;
-- verified PDF fallback;
-- no science drift after finishing/export.
+Also verify Bangla/notation, image crops, diagram labels, media/simulation launch, PDF fallback and offline/static fallback.
 
 ## G12 — Chapter-wide coverage
 
-Map every meaningful original subsection to:
-
-- Covered
-- Supplementary
-- Homework/self-study
-- Intentionally omitted with reason
-
-PASS only if nothing important disappeared silently.
+Every meaningful textbook subsection must be classified as Covered, Supplementary, Homework/self-study, or Intentionally omitted with reason.
 
 ## G13 — Cross-lesson continuity and duplication
 
-PASS only if:
+PASS only if order/prerequisites/bridges are coherent, duplication is purposeful or removed, and the visual/motion system is consistent without forcing identical slides.
 
-- order is coherent;
-- prerequisites precede dependent concepts;
-- repetition is purposeful recap or removed;
-- lessons bridge logically;
-- the approved visual/motion system is applied consistently without making every lesson identical.
+## G14 — Artifact persistence, component regression and reproducibility
 
-## G14 — Artifact persistence / reproducibility
+PASS only if production is durably recoverable:
 
-PASS only if production is durably recoverable under `ARTIFACT_PERSISTENCE.md`:
+- current artifact filenames/fingerprints;
+- build/generator source/spec;
+- deterministic component sources/tests;
+- asset provenance/licensing;
+- export method;
+- compatibility status;
+- dynamic/fallback status;
+- copy/terminology/semantic-contract records.
 
-- current artifact filenames/fingerprints are recorded;
-- generator/build source or reproducible specification is committed;
-- deterministic visual sources/specs are retained;
-- asset provenance is recorded;
-- export method is recorded;
-- PowerPoint compatibility result is recorded;
-- simulation/interactive/fallback status is recorded;
-- copy-lock/lint/diagram-contract artifacts are retained for high-risk lessons.
+For changed reusable R3 components, targeted golden-master regression review is required before reuse.
 
-## G15 — Final chapter completion
+## G15 — Final lesson/chapter completion
 
-PASS only when all applicable lesson gates pass, chapter coverage/continuity pass, classroom artifacts are compatible and visually approved, reproducibility is complete, and repository state is updated.
+PASS only when all applicable lesson gates, coverage/continuity, compatibility, visual acceptance, fallbacks and reproducibility requirements pass and repository state is updated.
 
 ## Optional G16 — Post-class calibration
 
-After teaching, compare estimated vs actual timing and record confusion points, resource failures, compatibility problems and successful visual/interactive elements.
+After teaching, record actual timing, confusion points, resource/compatibility failures and successful visual/interactive elements. Use classroom evidence to calibrate future work.
 
-## Mandatory accuracy workflow
+## Selective revalidation rule
 
-For production details read:
+After a change, rerun only the affected gate chain, using the selective-invalidation matrix in Production System v2.1. This prevents both under-testing and wasteful full re-audits.
 
+## Mandatory production references
+
+- `SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
 - `ACCURACY_ENFORCEMENT.md`
-- `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
 - `CLASSROOM_LANGUAGE_POLICY.md`
-- active chapter `TERMINOLOGY_LOCK.md` / `DIAGRAM_CONTRACTS.md` when present.
-
-Lesson 2 v1 is the regression example showing why overflow/render/montage checks cannot substitute for copy and geometry enforcement.
+- `PRODUCTION_COMPATIBILITY_ENGAGEMENT.md`
+- `ARTIFACT_PERSISTENCE.md`
+- active chapter terminology/diagram/semantic contracts.
