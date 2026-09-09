@@ -23,17 +23,17 @@ This file is the build authority for the validation pack only. It does not repla
 
 ## Validation pack slide list
 
-### VP-01 — Convex ও Concave lens: parallel rays কী করে?
+### VP-01 — উত্তল ও অবতল লেন্স: সমান্তরাল আলোকরশ্মির কী হয়?
 
 - Segment: validation / CORE prerequisite
 - Learning goal: Students distinguish converging and diverging lens action qualitatively.
 - Science risk: R3
 - Visual route: deterministic ray diagram, two panels.
 - Visible student copy:
-  - Title: `Convex ও Concave lens: parallel rays কী করে?`
-  - Left label: `Convex lens — rays একদিকে জড়ো হয়`
-  - Right label: `Concave lens — rays ছড়িয়ে যায়`
-  - Small note: `সরলীকৃত ray model`
+  - Title: `উত্তল ও অবতল লেন্স: সমান্তরাল আলোকরশ্মির কী হয়?`
+  - Left label: `উত্তল (converging) লেন্স — রশ্মিগুলো একদিকে জড়ো হয়`
+  - Right label: `অবতল (diverging) লেন্স — রশ্মিগুলো ছড়িয়ে যায়`
+  - Small note: `সরলীকৃত রশ্মি-চিত্র`
 - Diagram requirements:
   - Left: incident rays parallel to principal axis; emergent rays converge toward focus on outgoing side.
   - Right: incident rays parallel to principal axis; emergent rays diverge after lens.
@@ -46,16 +46,16 @@ This file is the build authority for the validation pack only. It does not repla
 - Source refs: S18; SC-L3-01; SC-L3-02.
 - Applicable regression checks: F-001, F-008, F-009, F-010, F-011, F-012.
 
-### VP-02 — Focus ও focal length
+### VP-02 — প্রধান ফোকাস ও ফোকাস দূরত্ব
 
 - Segment: validation / CORE prerequisite
 - Learning goal: Students locate principal focus and focal length for a convex lens qualitatively.
 - Science risk: R3
 - Visual route: deterministic ray diagram.
 - Visible student copy:
-  - Title: `Focus ও focal length`
-  - Label: `F = principal focus`
-  - Label: `focal length = lens-এর মাঝখান থেকে F পর্যন্ত দূরত্ব`
+  - Title: `প্রধান ফোকাস ও ফোকাস দূরত্ব`
+  - Label: `F = প্রধান ফোকাস`
+  - Label: `ফোকাস দূরত্ব = লেন্সের মাঝখান থেকে F পর্যন্ত দূরত্ব`
   - Small note: `স্কেল অনুযায়ী নয়`
 - Diagram requirements:
   - Convex lens on vertical line; principal axis horizontal.
@@ -63,21 +63,21 @@ This file is the build authority for the validation pack only. It does not repla
   - Focal length indicator from simplified optical center/thin-lens center to `F`.
   - No sign convention; no equation.
 - Speaker-note purpose:
-  - Use `focus` and `focal length` only as concepts needed for magnifying glass.
+  - Use focus and focal length only as concepts needed for magnifying glass.
 - Source refs: S7, S8, S18; SC-L3-01.
 - Applicable regression checks: F-001, F-008, F-009, F-011, F-012.
 
-### VP-03 — Real image বনাম Virtual image
+### VP-03 — বাস্তব ও অবাস্তব প্রতিবিম্ব
 
 - Segment: validation / CORE vocabulary
 - Learning goal: Students distinguish real and virtual image by ray behavior.
 - Science risk: R3
 - Visual route: deterministic two-panel ray comparison.
 - Visible student copy:
-  - Title: `Real image বনাম Virtual image`
-  - Left label: `Real image: বাস্তব rays মিলিত হয়`
-  - Right label: `Virtual image: dashed extension মিলিত বলে মনে হয়`
-  - Callout: `দাগকাটা রেখা = সহায়ক construction line, বাস্তব light path নয়`
+  - Title: `বাস্তব ও অবাস্তব প্রতিবিম্ব`
+  - Left label: `বাস্তব প্রতিবিম্ব: বাস্তব আলোকরশ্মি মিলিত হয়`
+  - Right label: `অবাস্তব প্রতিবিম্ব: দাগকাটা পেছনের সহায়ক রেখাগুলো মিলিত বলে মনে হয়`
+  - Callout: `দাগকাটা রেখা বাস্তব আলোর পথ নয়`
 - Diagram requirements:
   - Real panel: solid rays converge at image point; screen cue optional.
   - Virtual panel: outgoing solid rays diverge; dashed backward extensions meet at apparent image point.
@@ -88,16 +88,16 @@ This file is the build authority for the validation pack only. It does not repla
 - Source refs: S8; SC-L3-03.
 - Applicable regression checks: F-001, F-008, F-009, F-010, F-011, F-012.
 
-### VP-04 — Magnifying glass: object focal length-এর ভেতরে
+### VP-04 — বিবর্ধক কাচ: বস্তু F-এর ভেতরে
 
 - Segment: validation / CORE explanation
 - Learning goal: Students explain why a magnifying glass forms a virtual, erect and enlarged image.
 - Science risk: R3
 - Visual route: deterministic ray construction.
 - Visible student copy:
-  - Title: `Magnifying glass: object focal length-এর ভেতরে`
-  - Key statement: `Object F-এর ভেতরে থাকলে image হয় virtual, erect ও enlarged`
-  - Labels: `object`, `F`, `virtual enlarged image`, `দাগকাটা extension`
+  - Title: `বিবর্ধক কাচ: বস্তু F-এর ভেতরে`
+  - Key statement: `বস্তু F-এর ভেতরে থাকলে প্রতিবিম্ব হয় অবাস্তব, সোজা ও বিবর্ধিত`
+  - Labels: `বস্তু`, `F`, `অবাস্তব বিবর্ধিত প্রতিবিম্ব`, `দাগকাটা সহায়ক রেখা`
 - Diagram requirements:
   - Convex lens.
   - Object between object-side focus and lens.
@@ -111,17 +111,17 @@ This file is the build authority for the validation pack only. It does not repla
 - Source refs: NCTB magnifier scope; S7, S8; SC-L3-04.
 - Applicable regression checks: F-001, F-008, F-009, F-010, F-011, F-012.
 
-### VP-05 — Human eye: focusing system ও receiving layer
+### VP-05 — মানব চক্ষু: আলোকে ফোকাস করা ও গ্রহণ করা
 
 - Segment: validation / CORE anatomy-optics bridge
 - Learning goal: Students identify major eye parts by function and avoid the lens-only focusing misconception.
 - Science risk: R3
 - Visual route: controlled simplified eye cross-section.
 - Visible student copy:
-  - Title: `Human eye: focusing system ও receiving layer`
-  - Key statement: `Cornea বেশি initial bending করে; crystalline lens fine focus করে`
-  - Labels: `cornea`, `iris`, `pupil opening`, `crystalline lens`, `retina`, `sclera`, `choroid`, `aqueous humour`, `vitreous humour`
-  - Small note: `সরলীকৃত cross-section`
+  - Title: `মানব চক্ষু: আলোকে ফোকাস করা ও গ্রহণ করা`
+  - Key statement: `কর্নিয়া আলোকে প্রথমে বেশি বাঁকায়; ক্রিস্টালাইন লেন্স সূক্ষ্মভাবে ফোকাস ঠিক করে`
+  - Labels: `কর্নিয়া`, `আইরিস`, `পিউপিলের ছিদ্র`, `ক্রিস্টালাইন লেন্স`, `রেটিনা`, `স্ক্লেরা`, `কোরয়েড`, `অ্যাকুয়াস হিউমার`, `ভিট্রিয়াস হিউমার`
+  - Small note: `সরলীকৃত ছেদনচিত্র`
 - Diagram requirements:
   - Cornea as curved transparent front surface.
   - Iris surrounding pupil; pupil shown as opening, not solid body.
@@ -136,17 +136,17 @@ This file is the build authority for the validation pack only. It does not repla
 - Source refs: NCTB eye scope; S9, S16, S17; SI-11-006; SC-L3-05; SC-L3-07.
 - Applicable regression checks: F-004, F-008, F-009, F-010, F-011, F-012.
 
-### VP-06 — Accommodation: focus করতে lens সরে না, shape বদলায়
+### VP-06 — উপযোজন: ফোকাস করতে লেন্স সরে না, আকৃতি বদলায়
 
 - Segment: validation / CORE explanation
 - Learning goal: Students understand accommodation as lens-shape/optical-power adjustment with fixed retina distance.
 - Science risk: R3
 - Visual route: deterministic two-state eye comparison.
 - Visible student copy:
-  - Title: `Accommodation: focus করতে lens সরে না, shape বদলায়`
+  - Title: `উপযোজন: ফোকাস করতে লেন্স সরে না, আকৃতি বদলায়`
   - Left label: `দূরের বস্তু`
   - Right label: `কাছের বস্তু`
-  - Key statement: `Retina স্থির থাকে; crystalline lens-এর shape/optical power বদলায়`
+  - Key statement: `রেটিনার অবস্থান স্থির থাকে; ক্রিস্টালাইন লেন্সের আকৃতি ও ফোকাস করার ক্ষমতা বদলায়`
   - Small note: `সরলীকৃত চিত্র`
 - Diagram requirements:
   - Same eye outline/retina position in both states.
@@ -159,17 +159,16 @@ This file is the build authority for the validation pack only. It does not repla
 - Source refs: S17; SI-11-006; SI-11-007; SC-L3-06.
 - Applicable regression checks: F-005, F-008, F-009, F-010, F-011, F-012.
 
-### VP-07 — Spectacles: myopia ও hyperopia correction ধারণা
+### VP-07 — চশমা: মায়োপিয়া ও হাইপারোপিয়া সংশোধনের ধারণা
 
 - Segment: validation / supplementary support for NCTB outcome gap
 - Learning goal: Students know the qualitative corrective-lens direction for myopia and hyperopia.
 - Science risk: R3
 - Visual route: deterministic paired correction schematic.
 - Visible student copy:
-  - Title: `Spectacles: myopia ও hyperopia correction ধারণা`
-  - Left label: `Myopia → diverging / concave lens`
-  - Right label: `Hyperopia → converging / convex lens`
-  - Small note: `NCTB outcome আছে; body explanation নেই — এখানে সংক্ষিপ্ত support idea`
+  - Title: `চশমা: মায়োপিয়া ও হাইপারোপিয়া সংশোধনের ধারণা`
+  - Left label: `মায়োপিয়া (দূরের বস্তু ঝাপসা) → অবতল / diverging লেন্স`
+  - Right label: `হাইপারোপিয়া (কাছের বস্তু ঝাপসা) → উত্তল / converging লেন্স`
 - Diagram requirements:
   - Myopia correction uses diverging/concave spectacle lens before eye.
   - Hyperopia correction uses converging/convex spectacle lens before eye.
@@ -179,6 +178,7 @@ This file is the build authority for the validation pack only. It does not repla
   - Corrective ray direction must not reverse the defect.
 - Speaker-note purpose:
   - Mark spectacles as supplementary because the NCTB chapter opener lists the outcome but the body omits the explanation.
+  - Keep the detailed NCTB source-gap provenance in notes/GitHub rather than exposing production/source-status language on the student-facing surface.
 - Source refs: NCTB learning outcome; S10, S18; SI-11-001; SC-L3-08; SC-L3-09; SC-L3-10.
 - Applicable regression checks: F-001, F-005, F-008, F-009, F-010, F-011, F-012.
 
