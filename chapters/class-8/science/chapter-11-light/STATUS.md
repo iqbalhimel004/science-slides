@@ -4,7 +4,7 @@
 - Subject: Science
 - Chapter: 11 — আলো
 - Last updated: 2026-09-09
-- Current status: **LESSON_1_BASELINE_APPROVED — LESSON_2_V0_5_USER_ACCEPTED_FOR_CONTINUATION_WITH_DELIVERY_GATES_PENDING — LESSON_3_START_AUTHORIZED — LESSON_3_PRODUCTION_HANDOFF_READY — LESSON_4_ON_HOLD**
+- Current status: **LESSON_1_BASELINE_APPROVED — LESSON_2_V0_5_USER_ACCEPTED_FOR_CONTINUATION_WITH_DELIVERY_GATES_PENDING — LESSON_3_R3_VALIDATION_V1_8_PASS_FOR_USER_REVIEW — AWAITING_USER_ACCEPTANCE — LESSON_4_ON_HOLD**
 
 ## Canonical architecture
 
@@ -39,65 +39,70 @@ Do not claim unresolved runtime gates have passed:
 - optional network availability: pending;
 - post-class timing calibration: pending.
 
-Do not reopen Lesson 2 unless the user requests a targeted correction or classroom evidence reveals a defect.
-
-## Lesson 3 — current active next work
+## Lesson 3 — current active work
 
 Topic:
 
 **উত্তল লেন্স, বিবর্ধক কাচ, মানব চক্ষু ও চশমার ধারণা**
 
-Existing planning files to reuse/audit:
-
-- `lessons/lesson-03/LESSON_PLAN.md`
-- `lessons/lesson-03/STORYBOARD.md`
-- `lessons/lesson-03/RESOURCES.md`
-- `lessons/lesson-03/QA.md`
-
-Fresh-chat production handoff:
-
-`lessons/lesson-03/production/LESSON_3_PRODUCTION_HANDOFF_2026-09-09.md`
-
-Planned timing:
+Target timing:
 
 - CORE: 42 min
 - FLEX: 8 min
 - contingency: 10 min
 
-## Lesson 3 first gate
+## Lesson 3 validation history
 
-Before full-deck build:
+The earlier `Lesson3_R3_Validation_Pack_v0_9` was **user-rejected** because its science diagrams were materially unreliable. It is not an accepted baseline.
 
-1. audit current Lesson 3 plan/storyboard/resources against Production System v2.1;
-2. verify NCTB/source-gap wording and current science;
-3. create/update Bangla-first structured copy/spec;
-4. add Lesson 3 semantic/diagram contracts where needed;
-5. build compact R3 validation pack for:
-   - converging/diverging lens + focus/focal length;
-   - real vs virtual image;
-   - magnifying-glass ray construction;
-   - human-eye cross-section;
-   - accommodation;
-   - myopia/hyperopia correction;
-6. run automated + semantic + individual pixel QA internally;
-7. show one internally-passed pack for user acceptance;
-8. only then build full Lesson 3 controlled PPTX/PDF.
+The R3 visual layer was clean-rebuilt rather than patched.
 
-## Mandatory carry-forward lessons from Lesson 2
+## Current validation artifact
 
-- visible slide = student-facing learning surface;
-- teacher narration belongs in notes;
-- R3 science visuals must be controlled/deterministic;
-- final rendered pixels determine visual PASS/FAIL;
-- targeted user revisions are hard scope locks;
-- external AI/reviewer feedback is advisory until independently verified;
-- no collateral redesign during targeted fixes;
-- no visible internal workflow jargon;
-- Bangla-first and projector-readable labels;
-- `slides_test.py` PASS never substitutes for science/pixel QA.
+**`Lesson3_R3_Validation_Pack_v1_8_rebuild`**
+
+QA record:
+
+`lessons/lesson-03/production/LESSON_3_R3_VALIDATION_PACK_V1_8_QA_2026-09-09.md`
+
+Internal disposition:
+
+**PASS_FOR_USER_REVIEW — AWAITING_USER_ACCEPTANCE — NOT_CLASSROOM_READY**
+
+Validated visual families:
+
+- converging/diverging lens action;
+- principal focus and focal length;
+- real vs virtual image;
+- magnifying-glass ray construction;
+- human-eye cross-section;
+- accommodation;
+- myopia/hyperopia correction.
+
+Completed internal QA:
+
+- deterministic R3 geometry;
+- semantic/numeric geometry checks;
+- `slides_test.py` no-overflow PASS;
+- zero severe text-overlap diagnostics;
+- individual PPTX pixel inspection;
+- PDF parity inspection;
+- adversarial student-inference review.
+
+Important internal correction: accommodation now locks the crystalline-lens center and varies curvature only, so the slide does not imply lens translation toward/away from the retina.
+
+## Remaining gates
+
+Pending:
+
+- user acceptance of v1.8 validation visuals;
+- exact Microsoft PowerPoint opening/playback test;
+- projector/classroom behavior;
+- post-class timing calibration.
 
 ## Hard blocks
 
 - Do not restart Lessons 1 or 2.
 - Do not start Lesson 4 yet.
-- Do not build the full Lesson 3 deck before the R3 validation stage is internally passed and user-accepted.
+- Do not build the full Lesson 3 controlled PPTX/PDF before user acceptance of the validation pack.
+- Any requested correction to v1.8 must follow the targeted-revision scope lock.
