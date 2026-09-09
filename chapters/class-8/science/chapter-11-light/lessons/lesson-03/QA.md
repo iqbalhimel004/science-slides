@@ -2,7 +2,7 @@
 
 Version: 2.1 startup reconciliation
 Date: 2026-09-09
-Status: **STORYBOARD_SOURCE_BASE_VALID — V2_1_AUDIT_REQUIRED_BEFORE_CONTENT_FREEZE — R3_VALIDATION_PACK_NEXT**
+Status: **V2_1_STARTUP_AUDIT_COMPLETE — VALIDATION_PACK_SPEC_READY — R3_INTERNAL_BUILD_NEXT — FULL_DECK_BLOCKED**
 
 ## Identity
 
@@ -15,46 +15,50 @@ Status: **STORYBOARD_SOURCE_BASE_VALID — V2_1_AUDIT_REQUIRED_BEFORE_CONTENT_FR
 
 ## Precedence / supersession note
 
-This file supersedes the old 2026-09-05 `Required next action` that said to proceed to Lesson 4 planning.
-
 Current canonical direction is:
 
 - Lesson 2 v0.5 is accepted for continuation;
-- Lesson 3 is now the active next work;
+- Lesson 3 is active;
 - Lesson 4 remains on hold;
-- full Lesson 3 build must not begin until the v2.1 startup audit, structured copy/spec and R3 validation stage are complete.
+- full Lesson 3 build must not begin until the R3 validation stage is complete and user-accepted.
 
 Read with:
 
 - `/CURRENT_STATE.md`
 - `/SCIENCE_SLIDES_PRODUCTION_SYSTEM_V2.md`
+- `/LESSON_2_FAILURE_REGISTRY_AND_REGRESSION_TESTS.md`
 - `/TARGETED_REVISION_SCOPE_LOCK.md`
 - `/SLIDE_SURFACE_AND_TEACHER_NOTES_RULE_2026-09-08.md`
 - `SEMANTIC_CONTRACTS_V2_1.md`
+- `PREBUILD_REGRESSION_CHECKLIST_V2_1.md`
+- `VALIDATION_PACK_STRUCTURED_SPEC_V2_1.md`
+- `production/LESSON_3_STARTUP_AUDIT_2026-09-09.md`
 - `production/LESSON_3_PRODUCTION_HANDOFF_2026-09-09.md`
 
 ## Existing storyboard/source-base disposition
 
-The existing `LESSON_PLAN.md`, `STORYBOARD.md` and `RESOURCES.md` remain useful and should be reused, not recreated from zero.
+The existing `LESSON_PLAN.md`, `STORYBOARD.md` and `RESOURCES.md` remain useful source/planning evidence and must be reused rather than recreated from zero.
 
-They were prepared before the final Lesson 2 workflow lessons were fully known, so they must be audited against Production System v2.1 before content freeze.
+The v2.1 startup audit is complete. The audit identified stale renderer metadata, mixed English/Bangla visible-copy examples and student-surface source-status wording in the old storyboard. These do not block the lesson plan itself, but the validation build must use the new Bangla-first structured spec rather than copying old visible wording literally.
 
 ## Current gate summary
 
-| Area | Current state | Required before build |
+| Area | Current state | Required next |
 |---|---|---|
-| NCTB scope | PASS_WITH_NOTES | visually recheck critical magnifier/eye wording where needed |
-| authoritative science | PASS_FOR_STORYBOARD | targeted re-verification before copy freeze |
+| NCTB scope | PASS_WITH_SOURCE_GAP_NOTE | preserve spectacles gap provenance in notes/GitHub |
+| authoritative science | PASS_FOR_VALIDATION_BUILD | semantic-check actual R3 visuals |
 | timing | PASS | keep 42 CORE + 8 FLEX + 10 contingency |
-| pedagogy | PASS_FOR_STORYBOARD | convert visible surfaces to student-facing Bangla-first copy |
-| resource map | PASS_FOR_STORYBOARD | validate actual R3 visuals before full build |
-| content freeze | NOT YET | v2.1 audit + structured copy/spec first |
-| R3 semantic contracts | NOW DEFINED | use `SEMANTIC_CONTRACTS_V2_1.md` |
-| renderer | NOT YET FOR L3 | build validation pack first |
-| direct pixel QA | NOT YET | individual R3 inspection mandatory |
-| full PPTX/PDF | BLOCKED | validation-pack acceptance first |
+| pedagogy | PASS_FOR_VALIDATION_BUILD | use student-facing Bangla-first copy |
+| resource map | PASS_FOR_VALIDATION_BUILD | create/validate actual R3 visuals |
+| validation-pack copy/spec | READY | use `VALIDATION_PACK_STRUCTURED_SPEC_V2_1.md` |
+| R3 semantic contracts | READY | use `SEMANTIC_CONTRACTS_V2_1.md` |
+| known-failure regression | READY / NOT EXECUTED | execute `PREBUILD_REGRESSION_CHECKLIST_V2_1.md` during build/QA |
+| renderer route | DECIDED | controlled PptxGenJS + deterministic SVG/native shapes |
+| direct pixel QA | NOT YET | individual R3 inspection mandatory after build |
+| validation-pack user review | BLOCKED | internal PASS required first |
+| full PPTX/PDF | BLOCKED | validation-pack user acceptance first |
 
-## Critical scientific checks before content freeze
+## Critical scientific checks for the validation pack
 
 1. Magnifying-glass diagram:
    - convex lens;
@@ -72,12 +76,13 @@ They were prepared before the final Lesson 2 workflow lessons were fully known, 
 
 3. Accommodation:
    - do not imply lens translation toward/away from retina;
-   - show shape/optical-power change qualitatively.
+   - show shape/optical-power change qualitatively;
+   - retina position fixed in the simplified comparison.
 
 4. Spectacles:
    - myopia -> diverging/concave lens;
    - hyperopia -> converging/convex lens;
-   - keep supplementary/source-gap status explicit in notes/source record;
+   - keep source-gap provenance in notes/source record;
    - no numerical lens power in CORE.
 
 5. Real/virtual image convention:
@@ -85,7 +90,12 @@ They were prepared before the final Lesson 2 workflow lessons were fully known, 
    - virtual backward extensions dashed;
    - dashed construction lines are not real light paths.
 
-## Lesson 2 workflow lessons now mandatory in Lesson 3 QA
+6. Converging/diverging prerequisite:
+   - parallel incident rays actually parallel to principal axis in the demonstration state;
+   - convex rays converge toward a principal focus;
+   - concave rays diverge with no false real focus on outgoing side.
+
+## Lesson 2 workflow lessons mandatory in Lesson 3 QA
 
 - final rendered pixels are authoritative for visual PASS/FAIL;
 - `slides_test.py`/overflow PASS does not prove science correctness;
@@ -93,9 +103,10 @@ They were prepared before the final Lesson 2 workflow lessons were fully known, 
 - targeted user edits are hard scope locks; do not modify unrelated content;
 - external AI/reviewer feedback is advisory until independently verified;
 - no visible teacher-script boxes or internal workflow labels;
-- scientific geometry/topology should be deterministic/controlled;
+- scientific geometry/topology must be deterministic/controlled;
 - keep labels/copy editable and separate from fragile raster science diagrams where practical;
-- use selective revalidation, not full-deck rebuilds for narrow fixes.
+- use selective revalidation, not full-deck rebuilds for narrow fixes;
+- apply F-001/F-004/F-005/F-007/F-008/F-009/F-010/F-011/F-012/F-014/F-015/F-016 as relevant.
 
 ## Accessibility / projector requirements
 
@@ -114,24 +125,39 @@ Current plan remains offline-capable.
 
 No external video/simulation is required for CORE. If a dynamic resource is later added, it must materially improve learning and have a static/offline fallback.
 
+## Completed startup actions
+
+- [x] Mandatory GitHub recovery completed.
+- [x] Lesson 3 plan/storyboard/resources audited against Production System v2.1.
+- [x] Lesson 2 failure registry reviewed and mapped to Lesson 3.
+- [x] Critical source/current-science wording rechecked.
+- [x] Lesson 3 semantic contracts reviewed; no additional contract family required before first build.
+- [x] Bangla-first validation-pack structured copy/spec created and frozen for internal build.
+- [x] Startup audit recorded in `production/LESSON_3_STARTUP_AUDIT_2026-09-09.md`.
+
 ## Next required action
 
-1. Audit `LESSON_PLAN.md`, `STORYBOARD.md`, `RESOURCES.md` against Production System v2.1 and this QA.
-2. Verify critical source/science wording.
-3. Create/update exact Bangla-first structured copy/spec.
-4. Use `SEMANTIC_CONTRACTS_V2_1.md` for R3 build requirements.
-5. Build a compact R3 validation pack containing at minimum:
-   - converging/diverging lens + focus/focal length;
-   - real vs virtual image;
-   - magnifying-glass construction;
-   - human-eye cross-section;
-   - accommodation;
-   - myopia/hyperopia correction.
-6. Run automated QA + semantic QA + individual direct pixel QA internally.
-7. Repair/rebuild until internal PASS.
-8. Show one internally-passed validation pack to the user.
-9. Only after user acceptance, assemble the full Lesson 3 deck.
+Build **`Lesson3_R3_Validation_Pack_v0_1` only** with seven validation slides covering:
+
+1. converging/diverging lens action;
+2. principal focus/focal length;
+3. real vs virtual image convention;
+4. magnifying-glass construction;
+5. human-eye cross-section;
+6. accommodation;
+7. myopia/hyperopia correction.
+
+Then run:
+
+1. automated mechanical QA;
+2. semantic-contract QA;
+3. individual rendered-pixel QA of every slide;
+4. known-failure regression QA;
+5. adversarial student-inference review;
+6. repair/rebuild until PASS;
+7. second internal QA;
+8. only then user review.
 
 ## Current decision
 
-**READY_FOR_V2_1_STARTUP_AUDIT — NOT CONTENT_FROZEN — NOT FULL_BUILD_READY**
+**PASS_FOR_R3_VALIDATION_BUILD — NOT_PASS_FOR_USER_REVIEW — NOT_FULL_BUILD_READY**
